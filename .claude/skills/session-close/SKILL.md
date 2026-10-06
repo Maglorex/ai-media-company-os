@@ -1,0 +1,19 @@
+---
+name: session-close
+description: Çalışma oturumunu kapatır; şirket hafızasını, backlog'u ve dashboard'u günceller, yerel commit'i hazırlar. Oturum sonunda veya Founder kapanış istediğinde kullan.
+---
+
+# Session Close
+
+## Adımlar
+1. **Backlog:** `company/backlog.md` — tamamlananları işaretle, yeni işleri ekle, önceliği güncelle.
+2. **Dashboard:** `dashboards/company.md` — faz, ilerleme tablosu, metrikler, finans, onay bekleyenler, riskler, "Son güncelleme" tarihi.
+3. **Hedefler:** `company/goals.md` — durum değişikliği varsa.
+4. **Kararlar:** Bu oturumda alınan önemli kararlar `company/decision-log.md`'de mi? Değilse ekle.
+5. **Öğrenimler:** Kalıcı öğrenim varsa `company/lessons.md`.
+6. **Deneyler:** Açık deney dosyaları güncel mi?
+7. **Git:**
+   - Secret/credential kontrolü yap (`.claude/rules/git-and-secrets.md`).
+   - Shell erişimi varsa anlamlı mesajla **yerel commit** oluştur. Push yapma.
+   - Shell erişimi yoksa Founder'a commit için önerilen mesajı ver.
+8. **Kapanış notu (≤5 satır):** Ne yapıldı · ne kaydedildi · sıradaki önerilen iş · Founder'dan gereken (push dahil).

@@ -6,13 +6,14 @@
 **Faz:** 0 tamamlandı → Faz 1 (Niş araştırması) onay bekliyor
 
 ## Özet
-Şirket OS kuruldu, başlangıç koşulları doğrulandı (D-002), Founder Intake tamamlandı (D-003). Model: YouTube, İngilizce/uluslararası (varsayım H-001), orijinal faceless long-form, organik büyüme. Niş, kanal veya içerik yok.
+Şirket OS kuruldu, başlangıç koşulları doğrulandı (D-002), Founder Intake tamamlandı (D-003). Company OS v0.2 kuruldu: 3 agent, 4 skill, 4 kural (D-004). Model: YouTube, İngilizce/uluslararası (varsayım H-001), orijinal faceless long-form, organik büyüme. Niş, kanal veya içerik yok.
 
 ## İlerleme
 | Kilometre taşı | Durum |
 |---|---|
 | G-0 Şirket OS | ✅ |
 | G-1 Founder Intake | ✅ |
+| Company OS v0.2 | ✅ |
 | G-2 Niş araştırması ve seçimi | ⏳ Onay bekliyor |
 
 ## Kanallar

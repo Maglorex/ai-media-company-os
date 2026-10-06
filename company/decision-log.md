@@ -45,3 +45,12 @@
 - Geri dönüş koşulu: H-001 için niş araştırması sonucu; diğerleri Founder kararı.
 - Durum: Aktif
 - Detay: `company/constraints.md`
+
+### D-004 — Company OS v0.2
+- Tarih: 2026-10-06
+- Karar veren: Founder
+- Bağlam: Ölçeklenebilir çalışma düzeni; CLAUDE.md'nin kısa tutulması.
+- Karar: 3 uzman agent (research-analyst, analytics-analyst, production-engineer), 4 skill (founder-brief, research-request, decision-review, session-close), 4 kural grubu (founder-approval, evidence-and-research, git-and-secrets, company-memory). Ana oturum COO olarak kalır. Kanıt etiketleri yalnızca araştırma raporları, önemli stratejik kararlar ve kritik belirsizliklerde kullanılır.
+- Gerekçe: Founder talimatı.
+- Geri dönüş koşulu: Founder kararı.
+- Durum: Aktif

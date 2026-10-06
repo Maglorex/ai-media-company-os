@@ -7,8 +7,7 @@
 - [ ] `[ONAY]` Faz 1 niş araştırmasını başlat (G-2).
 
 ## Sıradaki — kurulum
-- [ ] `.claude/rules/` altına operasyon kurallarını taşı (onay matrisi, kayıt formatları, git, ChatGPT).
-- [ ] Oturum başı Founder Brief skill'i.
+- [ ] ElevenLabs kredi kullanım politikasını netleştir (mevcut kredilerin onaysız kullanımı serbest mi?).
 - [ ] Deney ve araştırma şablonları (`production/templates/`).
 
 ## Sonra
@@ -21,3 +20,4 @@
 - [x] 2026-10-06 — Başlangıç koşulları doğrulandı ve kaydedildi (D-002).
 - [x] 2026-10-06 — ChatGPT prompt şablonu ve `.gitignore` eklendi.
 - [x] 2026-10-06 — Founder Intake tamamlandı (D-003).
+- [x] 2026-10-06 — Company OS v0.2: agents, skills, rules (D-004).
