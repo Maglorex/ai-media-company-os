@@ -13,6 +13,7 @@
 ## Sonra
 - [ ] Faz 1: Pazar ve niş araştırması (Intake tamamlandıktan sonra).
 - [ ] Remotion / FFmpeg değerlendirmesi (production pipeline aşamasında).
+- [ ] Render bilgisayarını `machine-onboarding` ile bağla; operasyon bilgisayarının donanımını `company/machines.md`'ye işle.
 - [ ] Sayısal expansion kriterlerini tanımla (ilk kanal verisi oluştuktan sonra).
 
 ## Tamamlandı
@@ -21,3 +22,4 @@
 - [x] 2026-10-06 — ChatGPT prompt şablonu ve `.gitignore` eklendi.
 - [x] 2026-10-06 — Founder Intake tamamlandı (D-003).
 - [x] 2026-10-06 — Company OS v0.2: agents, skills, rules (D-004).
+- [x] 2026-10-06 — Company OS v0.3: self-management katmanı (D-005).

@@ -54,3 +54,13 @@
 - Gerekçe: Founder talimatı.
 - Geri dönüş koşulu: Founder kararı.
 - Durum: Aktif
+
+### D-005 — Company OS v0.3: self-management katmanı
+- Tarih: 2026-10-06
+- Karar veren: Founder
+- Bağlam: Niş araştırmasından önce sistemin kendi sağlığını ve iki bilgisayar düzenini yönetebilmesi; Founder'ın teknik yükünün azaltılması.
+- Karar: `systems-operator` agent'ı; `system-health-check`, `machine-onboarding`, `founder-help` skill'leri; `self-repair-and-escalation.md` kuralı (önce teşhis ve güvenli yerel onarım, Founder'a tek çözümle eskalasyon; para, yayın, credential, remote git ve geri döndürülemez işlemler onaylı kalır); `FOUNDER-MANUAL.md`; makine kaydı `company/machines.md`. CLAUDE.md'ye yalnızca kısa referans eklendi. İlk health check: 9/9 geçti.
+- Gerekçe: Founder talimatı.
+- Geri dönüş koşulu: Founder kararı.
+- Durum: Aktif
+- Detay: `.claude/`, `FOUNDER-MANUAL.md`, `company/machines.md`

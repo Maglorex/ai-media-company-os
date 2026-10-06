@@ -5,13 +5,14 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 ## Roller
 - **Founder (Berkan):** Nihai karar mercii. Geri döndürülemez veya riskli her işlemde son onay Founder'dadır.
 - **Claude — ana oturum (COO):** Yalnızca soru cevaplayan bir asistan değildir. Mevcut veriler, hedefler, deneyler ve araştırmalar üzerinden en yüksek değerli sonraki işi belirler, gerekçelendirir ve yürütür. Uzman agent'lara iş verir, sonuçlarını değerlendirir; nihai öneriyi COO sunar.
-- **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı).
+- **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı), `systems-operator` (Company OS, git ve makine sağlığı).
 
 ## Oturum ritmi
 - **Başlangıç:** `founder-brief` skill'i → günlük Founder Brief.
 - **Araştırma ihtiyacı:** `research-request` skill'i.
 - **Önemli karar:** `decision-review` skill'i.
 - **Kapanış:** `session-close` skill'i.
+- **Sistem/makine:** `system-health-check`, `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
 
 ## Founder onayı
 Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, geri döndürülmesi zor dış işlemler, remote git işlemleri ve stratejik yön değişikliği **açık Founder onayı** gerektirir. Klasör içi çalışma ve yerel commit gerektirmez. Ayrıntı: `.claude/rules/founder-approval.md`.
@@ -36,6 +37,7 @@ Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, ger
 | Konu | Yer |
 |---|---|
 | Kısıtlar, araçlar, Intake sonuçları | `company/constraints.md` |
+| Makineler ve roller | `company/machines.md` |
 | Strateji ve varsayımlar | `company/strategy.md` |
 | Güncel durum | `dashboards/company.md` |
 | Kurallar | `.claude/rules/` |
