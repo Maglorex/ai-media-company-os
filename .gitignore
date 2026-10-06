@@ -1,0 +1,22 @@
+# Secrets & credentials — asla commit edilmez
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*secret*
+*credential*
+client_secret*.json
+token*.json
+
+# Büyük medya / render çıktıları
+*.mp4
+*.mov
+*.wav
+renders/
+node_modules/
+
+# OS
+Thumbs.db
+.DS_Store
