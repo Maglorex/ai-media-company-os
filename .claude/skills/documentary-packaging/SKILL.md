@@ -7,6 +7,9 @@ description: Tam senaryodan önce bir video fikri için dürüst ama güçlü ti
 
 Kapsam: `Industrial & Technology Autopsies` (N2), faceless, belge-öncelikli belgesel. Girdi: `documentary-virality-gate` sonucu `READY FOR PILOT` olan fikir + kaynak/kanıt notları (örn. `production/pilots/.../P*.md`). Çıktı: packaging değerlendirme dosyası; görsel, senaryo, ses veya render üretilmez.
 
+## Kanıt bağı
+Videonun `documentary-evidence-ledger` kaydı varsa her başlık/thumbnail iddiası oradaki bir satıra bağlanır; yoksa bu skill'in doğruluk sınırları sonradan ledger'a aktarılır.
+
 ## Ne yapmaz
 - Tıklanma veya CTR **tahmin etmez**; "algoritma böyle ister" demez.
 - Nihai packaging'i seçmez: öneri danışma notudur; onay `decision-review`/Founder'dadır. Yayın, thumbnail yapımı, harcama ve araç kurulumu başlatmaz.

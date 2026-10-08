@@ -7,7 +7,31 @@
 - [x] 2026-10-07 — Birincil niş kararı onaylandı: N2 (D-007).
 - [x] 2026-10-08 — Skill Lab v0.1 kuruldu (D-009); 4 aday PENDING REVIEW.
 - [x] 2026-10-07 — Pilot taslak testi Aşama 1: 3 pilot (Brewster, J40, NS Savannah) + Pilot Selection Report (D-008, EXP-001).
-- [ ] `[ONAY]` P3 packaging yönü (Concept 1) → ardından ilk tam pilot senaryosu: P3 NS Savannah (premise v2, READY FOR PILOT) (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
+- [x] 2026-10-08 — P3 packaging onaylandı (D-012).
+- [x] 2026-10-08 — P3 kaynak doğrulaması tamamlandı (`P3-source-ledger.md`): taban = aynı hattaki konvansiyonel gemilere ödenen ort. işletme sübvansiyonu; 3 kalem ≈1,9M $ (GAO'nun rakamı); kapak: GAO özet s.2 + NARA 542141 (kamu malı).
+- [x] 2026-10-08 — `documentary-evidence-ledger` skill'i + P3 kanıt kaydı (rapor tarihi, 2,9M $ ortalama dönemi ve '10 gemi' düzeltmeleri; NPS teyitleri).
+- [x] 2026-10-08 — `documentary-script` skill'i + P3 senaryo v1 (~11 dk, self-review yapıldı).
+- [x] 2026-10-08 — P3 senaryo v1 yönü onaylandı; v2 revizyonu (açılış, 'worked' tanımı, arka plan, ana sonuç).
+- [x] 2026-10-08 — P3 senaryo v2 onaylandı ve kilitlendi (D-013).
+- [x] 2026-10-08 — `documentary-visual-plan` skill'i + P3 görsel plan v1.
+- [x] 2026-10-08 — P3 asset araştırması: Galveston/ticari dönem fotoğrafı yok (şema + belge ile çözüldü); 1962–64 CC0/PD port fotoğrafları, NARA 542141 'Use: Unrestricted'; CC BY-SA görseller kullanılmaz.
+- [x] 2026-10-08 — Remotion lisansı doğrulandı: ≤3 kişi Free License, ticari kullanım serbest; ChatGPT Image Generation araç envanterine eklendi.
+- [x] 2026-10-08 — Senaryo v2.1: 'fuel elements' düzeltmesi (D-014).
+- [x] 2026-10-08 — `documentary-voice-director` skill'i + P3 voice brief/test planı (kredi tavanı ≤4.500).
+- [x] 2026-10-08 — ElevenLabs API bağlantısı kuruldu (kısıtlı anahtar, kredi limiti 10.000, repo dışı DPAPI). Plan: `payg` → ticari lisans yok.
+- [x] 2026-10-08 — Starter aboneliği onaylandı (D-015); Founder ödemeyi yapacak.
+- [x] 2026-10-08 — Ses kütüphanesi taraması → 3 finalist; Founder tercihi Bill L. Oxley (D-016).
+- [x] 2026-10-08 — Bill L. Oxley A/B testi: 597 kredi; Founder tercihi A / Multilingual v2 (kalite referansı).
+- [ ] EXP-002 ElevenLabs v4 kampanyası (12 Ekim'de biter): takip; şu an stok üretim önerilmez.
+- [x] 2026-10-08 — `documentary-edit-plan` skill'i + P3 edit plan v1 (~9 dk, ölçülen anlatıcı hızıyla).
+- [x] 2026-10-08 — Üretim/montaj hattı kurulum planı (`production/tools/production-pipeline-plan.md`).
+- [x] 2026-10-08 — Production planı onaylandı (D-017).
+- [ ] Render bilgisayarı onboarding (durum doğrulama) → sonra Node.js LTS + Remotion.
+- [ ] P3: Premiere timeline XML küçük testi (garanti değil).
+- [ ] Kanal marka kimliği (Founder + ChatGPT) — yayından önce; şablonlar tema dosyasıyla bekler.
+- [ ] Eksik kalıcı sistem: müzik/SFX kaynak ve lisans kuralları (ücretsiz kaynak öncelikli).
+- [ ] Eksik kalıcı sistem: yayın öncesi QA kapısı (kanıt, haklar, AI açıklaması, altyazı).
+- [ ] `[ONAY]` Ses testi ≤4.500 kredi; sonra ana ses seçimi; tam seslendirme ayrı onay. (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
 - [ ] P3 ölçülen süresine göre D-007'nin >40 s koşulunu yeniden yaz → Founder onayı.
 
 ## Sıradaki — Skill Lab

@@ -7,9 +7,10 @@ description: Günlük Founder Brief'i hazırlar. Her yeni oturumun başında vey
 
 ## Adımlar
 1. Sırayla oku: `dashboards/company.md`, `company/goals.md`, `company/backlog.md`, `company/decision-log.md` (son 3 kayıt), `company/lessons.md` (son kayıtlar), aktif `intelligence/experiments/` dosyaları.
-2. Son brief'ten bu yana değişenleri belirle (dosya değişiklikleri, tamamlanan işler, yeni veri).
-3. Backlog'dan en yüksek değerli sonraki işi seç: etki × öğrenme değeri ÷ efor, kısıtlar içinde.
-4. Aşağıdaki formatta yaz.
+2. **Süreli fırsatlar:** açık `intelligence/experiments/` fırsat kayıtlarını (ör. EXP-002 ElevenLabs kampanyası) bitiş tarihine göre kontrol et; şartları karşılayan iş varsa Founder'a sade dille tek öneri olarak getir ("Agam, kampanya bitmeden seslendirmeye hazır X kilitli senaryomuz var; şimdi üretirsek yaklaşık şu avantaj var."). Founder'dan tarih takibi bekleme.
+3. Son brief'ten bu yana değişenleri belirle (dosya değişiklikleri, tamamlanan işler, yeni veri).
+4. Backlog'dan en yüksek değerli sonraki işi seç: etki × öğrenme değeri ÷ efor, kısıtlar içinde.
+5. Aşağıdaki formatta yaz.
 
 ## Format (≤10 satır, sade Türkçe; iç adlar yok)
 ```

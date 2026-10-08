@@ -28,3 +28,10 @@
 
 ## Aşama 2 — Tam pilot (P3), onay bekliyor
 Ölçüm alanları: araştırma/doğrulama · senaryo · görsel kaynak + hak kaydı · grafik/animasyon · kurgu (render yok) · QA. Her biri için ayrı ayrı: AI süresi ve Founder süresi.
+
+### 2026-10-08 — P3 kaynak doğrulaması (senaryo öncesi)
+| Adım | AI (masa) | Founder | Not |
+|---|---|---|---|
+| GAO raporunun tamamını okuma, merkez rakam + karşılaştırma tabanı + 3 kalem sayfa no | ~1 oturum içi (duvar saati ölçülmedi) | 0 s | `P3-source-ledger.md` |
+| Kapak varlıkları: rapor kesiti + gemi fotoğrafı lisansı | aynı oturum | 0 s | PDF işleme aracı yoktu; yerel geçici betikle sayfa görüntüsü çıkarıldı |
+Not: Bu adımda duvar saati kaydı tutulmadı; tam pilotta adım başına başlangıç/bitiş saati yazılacak.

@@ -23,7 +23,9 @@
 
 ## Birincil öneri: Concept 1
 **"The Nuclear Ship Worked. The Audit Priced the Nuclear Part."** — thumbnail: üç parçalı özgün GAO yığılmış barı + küçük Savannah fotoğrafı, text yok.
-## Yedek: Concept 5 (koşullu)
+## Yedek: Concept 5 (koşullu) — **2026-10-08 güncelleme: geçersiz.** GAO rakamları nükleer yakıt maliyetini hariç tutuyor; "reaktör değildi" iddiası kurulamaz. Yedek: **Concept 4**. Final başlık ve kapak: D-012; kaynaklar: `P3-source-ledger.md`.
+
+### (eski metin)
 Geçerli olması için: GAO tablosunda ek yükün bileşenleri ve karşılaştırma tabanı teyit edilmeli (zaten pilot öncesi görev) ve reaktör/yakıt kalemlerinin ek yükte olmadığı doğrulanmalı. Doğrulanmazsa yedek: **Concept 4**.
 
 ## Birincil neden evidence açısından güvenli

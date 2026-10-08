@@ -22,6 +22,9 @@ Gemi 1971'de hizmetten çekildi `[VERİ]`.
 
 **Çıkarılan iddialar:** (a) "Vitrin/demonstrasyon gemisi olduğu için ticari olarak optimize değildi" nedenselliği; (b) kargo kapasitesi ve yolcu kabini ödünleşimi (kaynaklı sayı yok); (c) "hiçbir ABD armatörü ikincisini sipariş etmedi". Araştırmada bunları destekleyen güçlü birincil kaynak yok; yeni geniş araştırma yapılmadı. İleride Senato duruşması / NPS dosyası bunları açıkça destekliyorsa ayrı karar olarak geri alınabilir.
 
+> **2026-10-08 kanıt kaydı:** Senaryonun temel kaynağı artık `P3-evidence-ledger.md`. Bu taslaktaki tarih ('1970-02-13') ve 'yıllık ortalama ~2,9M $' bağlamı kayıtta düzeltildi; çelişki halinde kayıt geçerlidir.
+> **2026-10-08 kaynak doğrulaması:** Merkez iddia, karşılaştırma tabanı, 3 kalem, kapak varlıkları ve lisanslar `P3-source-ledger.md`'de. Önemli: GAO rakamları **nükleer yakıt maliyetini içermiyor**; ~1,9M $ üç-kalem toplamı GAO'nun kendi rakamı. Paketleme yedeği Concept 5 geçersiz, yedek Concept 4.
+
 ## 4. Kullanılabilecek birincil kaynaklar
 | Kaynak | Durum | Telif |
 |---|---|---|

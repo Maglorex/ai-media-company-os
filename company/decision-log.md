@@ -126,3 +126,47 @@
 - Geri dönüş koşulu: Founder kararı; packaging/gate sonuçları şirketin kendi Studio verisiyle çelişirse veri önceliklidir.
 - Durum: Aktif. Onay bekleyen: P3 packaging yönü, ardından P3 tam senaryosu.
 - Detay: `.claude/skills/{documentary-virality-gate,documentary-packaging,founder-interface}/`, `production/pilots/2026-10-n2-pilot-test/`
+
+### D-012 — P3 NS Savannah packaging onaylandı
+- Tarih: 2026-10-08
+- Karar veren: Founder
+- Karar: Final başlık: "America's Nuclear Cargo Ship Worked. Then Auditors Counted the Extra Cost." Kapak: GAO denetim sayfasından gerçek kesit, nükleere özgü 3 maliyet satırı vurgulu, geminin gerçek fotoğrafı destek görseli, yazısız veya çok sade. Ana vaat: teknik olarak çalışan gemi ile nükleere özgü ekonomik yük arasındaki gerilim.
+- Sınırlar: "loss/failure/waste" ve kaynaksız nedensellik yok; kapakta uydurma rakam veya toplam etiketi yok.
+- Geri dönüş koşulu: Kaynak doğrulamasında GAO satırları farklı çıkarsa veya fotoğraf lisansı uygun değilse kapak/başlık yeniden değerlendirilir; yayın sonrası şirketin kendi CTR/Test & Compare verisi önceliklidir.
+- Durum: Aktif. Sıradaki: kaynak doğrulaması, ardından tam senaryo onayı.
+- Detay: `production/pilots/2026-10-n2-pilot-test/P3-packaging-eval.md`
+
+### D-013 — P3 senaryo v2 onaylandı ve kilitlendi
+- Tarih: 2026-10-08
+- Karar veren: Founder
+- Karar: `production/pilots/2026-10-n2-pilot-test/P3-script-v2.md` pilotun onaylı senaryosudur. Yeni kanıt veya ciddi production problemi çıkmadıkça metin kendiliğinden yeniden yazılmaz. ElevenLabs kullanılmaz ve kredi harcanmaz (ayrı onay gerekir).
+- Gerekçe: Dört revizyon noktası (açılış, "worked" tanımı, arka plan, ana sonuç) uygulandı; kanıt kontrolü temiz.
+- Geri dönüş koşulu: Ledger'ı değiştiren yeni kanıt veya üretimde çözülemeyen görsel/hak sorunu → değişiklik Founder'a tek karar olarak gelir.
+- Durum: Aktif. Sıradaki: görsel plan (`documentary-visual-plan`).
+
+### D-014 — P3 senaryo v2.1 teknik düzeltme
+- Tarih: 2026-10-08
+- Karar veren: Founder
+- Karar: Kilitli senaryoda yalnız "fuel bundles" → "fuel elements" (NPS teknik bölümü ve MARAD 1961 açıklamasına göre çekirdek 32 yakıt elemanından oluşur; ledger E-8, C-43). Başka değişiklik yok; senaryo kilitli kalır (D-013).
+- Durum: Aktif.
+
+### D-015 — ElevenLabs: doğrudan API entegrasyonu ve Starter aboneliği
+- Tarih: 2026-10-08
+- Karar veren: Founder
+- Karar: (1) ElevenLabs için üçüncü taraf plugin/MCP yerine doğrudan REST API + şirketin kendi PowerShell betikleri (Skill Lab SL-005…SL-008). Kısıtlı anahtar (Text to Speech Access, Voices Read, User Read; kredi limiti 10.000), repo dışında DPAPI şifreli dosyada. (2) Hesap `payg` tier'ında (abonelik yok) → ToS'a göre ticari kullanım yalnız ücretli abonelikte → **Starter aylık abonelik onaylandı** (6 $/ay; ilk ay 1 $ promosyon). Ödemeyi Founder yapar.
+- Kurallar: Maliyet sabit tahminle değil, API'den ölçülen gerçek kredi tüketimiyle kaydedilir. Starter API kotası (~60.000 karakter, Founder kaydı) kesin veri sayılmaz.
+- Geri dönüş koşulu: Video üretim hacmi kotayı aşarsa plan yeniden değerlendirilir; kullanılmazsa abonelik iptal edilir.
+- Durum: Aktif — 2026-10-08 API ile doğrulandı: tier `starter`, status active, aylık kota (karakter limiti) 63.174.
+
+### D-016 — Kanal ana anlatıcı adayı: Bill L. Oxley
+- Tarih: 2026-10-08
+- Karar veren: Founder (ücretsiz önizleme dinlemesiyle)
+- Karar: 3 finalist (Annie K, Bill L. Oxley, Max) arasından Founder **Bill L. Oxley**'i (voice_id `iiidtqDt9FBdT1vfBluA`, professional, American, 730 gün kaldırılma bildirimi, ek ücret yok) tercih etti. COO önerisi Annie K idi; Founder tercihi geçerli.
+- Koşul: Kalıcı kanal sesi kararı, senaryo test metniyle kısa API testinden (telaffuz + model seçimi) sonra kesinleşir.
+- Durum: Aktif (test bekleniyor).
+
+### D-017 — Production hattı planı onaylandı; ikinci bilgisayar ana production/render makinesi
+- Tarih: 2026-10-08
+- Karar veren: Founder
+- Karar: `production/tools/production-pipeline-plan.md` onaylandı (Premiere Pro son montaj + Media Encoder render; Remotion tekrar eden grafik/şema şablonları; ayrı FFmpeg kurulmaz; büyük medya GitHub dışında). İkinci bilgisayar ana production/render makinesi. Sıra: `machine-onboarding` ile bağlama ve durum doğrulama → ancak sonra Node.js + Remotion. Premiere'e hazır timeline (XML) yalnız P3'te küçük test; güvenilir çıkarsa standart olur.
+- Durum: Aktif (onboarding başlıyor).

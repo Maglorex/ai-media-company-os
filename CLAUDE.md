@@ -14,6 +14,8 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Önemli karar:** `decision-review` skill'i.
 - **Video fikri üretime girmeden önce:** `documentary-virality-gate` skill'i (danışma notu; karar Founder'da).
 - **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
+- **Kanıt kaydı (senaryodan önce, script/packaging buna dayanır):** `documentary-evidence-ledger` skill'i.
+- **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri.
 - **Kapanış:** `session-close` skill'i.
 - **Sistem/makine:** `system-health-check`, `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
 - **Üçüncü taraf skill/plugin/MCP:** önce Skill Lab (`skill-evaluator`, `intelligence/skill-lab/`, `.claude/rules/third-party-skill-security.md`); Founder onayı olmadan kurulmaz.
