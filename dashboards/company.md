@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-08 (Skill Lab v0.1 + SL-002 değerlendirmesi)
+**Son güncelleme:** 2026-10-08 (Skill Lab, SL-002 uyarlamaları, Founder Interface)
 **Faz:** Faz 2 (Pilot üretim testi) — Aşama 1 tamamlandı; P3 tam pilotu onay bekliyor (D-008)
 
 ## Özet
@@ -16,8 +16,9 @@
 | Company OS v0.2 | ✅ |
 | Company OS v0.3 self-management | ✅ (health check 9/9) |
 | G-2 Niş araştırması ve seçimi | ✅ N2 (D-007) |
-| Skill Lab v0.1 (D-009) | ✅ kuruldu · SL-002 incelendi (D-010) · SL-001/003/004 PENDING REVIEW |
-| G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ → P3 tam pilotu **onay bekliyor** |
+| Skill Lab v0.1 (D-009) | ✅ kuruldu · SL-002 incelendi (D-010), 2/5 uyarlandı (D-011) · SL-001/003/004 PENDING REVIEW |
+| Founder Interface (D-011) | ✅ |
+| G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ · P3 premise v2 + gate READY + packaging önerisi hazır → **Founder onayı bekliyor** |
 
 ## Kanallar
 | Kanal | Durum | Video | Abone | Ort. retention | CTR |
@@ -33,7 +34,7 @@
 - Bu ay yeni harcama: 0 · Onay bekleyen: yok
 
 ## Founder onayı / kararı bekleyenler
-- **SL-002 adaptasyonu:** 5 bileşenin Company OS'a özgü yeniden yazımı (`intelligence/skill-lab/evaluations/2026-10-08-youtuber-skills.md`).
+- **P3 packaging yönü** (Concept 1) onayı; sonra P3 tam senaryosu. SL-002 kalan 3 uyarlama ayrı onay bekliyor.
 - **İlk tam pilot senaryosu: P3 NS Savannah** (`production/pilots/2026-10-n2-pilot-test/pilot-selection-report.md`).
 
 ## Riskler / blokajlar

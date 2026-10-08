@@ -18,6 +18,7 @@ description: Founder sistem soruları sorduğunda ("ne yapmam lazım?", "bu nede
 5. **Yalnızca eksik kalan bilgiyi sor** ve sadece dosyalardan gerçekten çıkarılamıyorsa. Karar gerekiyorsa karar sor, bilgi sorma.
 
 ## Kurallar
+- **Founder'a giden cevap `founder-interface` kurallarına uyar:** sade Türkçe; dosya yolu, komut, agent/skill adı yalnızca hata çözmek, güvenlik/onay veya Founder isterse; manuel işlemlerde tek adım; sorunda "problem → anlamı → senden istediğim" biçimi. Aşağıdaki inceleme adımları (dosya adları) Founder'a değil iç çalışmaya aittir.
 - Founder'a hata mesajını geri yapıştırtma; kendin oku.
 - Teknik ayrıntıyı yalnızca işe yarıyorsa ver; Founder'ın öğrenmesi zorunlu değil.
 - Para, yayın, credential, remote git ve geri döndürülemez işlemler Founder onayı gerektirir (`founder-approval.md`).

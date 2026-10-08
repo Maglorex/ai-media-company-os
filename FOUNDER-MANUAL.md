@@ -1,11 +1,29 @@
 # Founder Kullanım Kılavuzu
 
-Kısa prosedürler. Teknik ayrıntı bilmen gerekmez; takıldığında Claude'a "ne yapmam lazım?" yaz, o önce dosyalara bakıp çözümü verir.
+Kısa prosedürler. Teknik ayrıntı bilmen gerekmez.
+
+## Ana komut
+Bilgisayarı açıp Claude'a şunu yaz:
+
+> **Agam bugün napcaz?**
+
+(Alternatif: **Founder oturumunu başlat.** · Ayrıca "Devam edelim." / "Şimdi ne yapmam gerekiyor?" da çalışır.)
+
+Company OS şirketin durumunu kendisi inceler ve sana sade Türkçe ile şunları söyler: bugünkü hedef, neden, senin yapacağın şey, benim arka planda yapacağım şey, tahmini zamanın. Gerekli iç işleri kendisi seçer; sen agent, skill veya dosya adı bilmek zorunda değilsin.
+
+Teknik ayrıntıyı görmek istersen: **Detayları göster.** Bu komut ilgili raporu, kaynakları ve dosyaları açar.
+
+Dil: Benimle yazışma Türkçedir. Ama kanalın gerçek yayın metinleri (başlık, kapak yazısı, senaryo, seslendirme, açıklama) kanalın dilinde (İngilizce) gösterilir; hemen altında Türkçe anlamını yazarım. Her mesajda senden yalnızca tek bir karar isterim.
+
+Not: Para, yayın, hesap, GitHub'a gönderme gibi işlemler yine senin açık onayını ister; bu değişmedi.
+
+---
+Aşağısı yalnızca ihtiyaç olursa bakacağın referans bölümüdür. Takıldığında "ne yapmam lazım?" yazman yeter.
 
 ## 1. Çalışma gününe başlama
 1. (İkinci bilgisayardan geldiysen) GitHub Desktop → **Fetch / Pull**.
 2. Claude Code'da projeyi aç.
-3. Claude günlük **Founder Brief**'i verir. Onay gerektiren bir şey varsa brief'in son satırında yazar.
+3. "Agam bugün napcaz?" yaz; Claude günün tek işini ve senden gerekeni söyler. Onay gerektiren bir şey varsa açıkça sorar.
 
 ## 2. Çalışma gününü kapatma
 1. Claude'a "kapanış" de → hafızayı günceller, yerel commit atar.

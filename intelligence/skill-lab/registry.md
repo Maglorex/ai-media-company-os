@@ -15,3 +15,5 @@
 - 2026-10-08: SL-001–SL-004 Founder talimatıyla aday olarak eklendi. Repoların varlığı, içeriği ve lisansı **henüz kontrol edilmedi**; hiçbiri indirilmedi, kurulmadı, çalıştırılmadı.
 - Adobe Premiere / After Effects MCP'leri bilinçli olarak eklenmedi (production olgunlaşınca).
 - 2026-10-08: SL-002 statik olarak incelendi (commit 603367b). Hiçbir şey kurulmadı, çalıştırılmadı, uyarlanmadı; Founder onayı bekleniyor.
+- 2026-10-08: SL-002 `youtube-virality-gate` mantığından Company OS'a uyarlanan ilk bileşen oluşturuldu: `.claude/skills/documentary-virality-gate/` (metin kopyalanmadı, yeniden yazıldı; kaynak: commit 603367b, MIT). Diğer 4 bileşen (packaging, script, edit-list, outliers) henüz adapte edilmedi. İlk test: P3 → REVISE BEFORE PILOT (`production/pilots/2026-10-n2-pilot-test/P3-virality-gate-eval.md`).
+- 2026-10-08: SL-002 ikinci uyarlanmış bileşen: `youtube-packaging` prensiplerinden `.claude/skills/documentary-packaging/` oluşturuldu (yeniden yazıldı, metin kopyalanmadı; kaynak commit 603367b, MIT). Kalan: script, edit-list, outliers. İlk test: P3 (`production/pilots/2026-10-n2-pilot-test/P3-packaging-eval.md`).

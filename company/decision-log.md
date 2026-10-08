@@ -116,3 +116,13 @@
 - Geri dönüş koşulu: Repo yeni commit'e geçerse yeniden inceleme; adaptasyon sonrası pilotta fayda görülmezse skill'ler kullanımdan çıkarılır (kayıt silinmez).
 - Durum: Aktif (adaptasyon onayı bekleniyor)
 - Detay: `intelligence/skill-lab/evaluations/2026-10-08-youtuber-skills.md`, `intelligence/skill-lab/registry.md`
+
+### D-011 — Video fikri kapıları, Founder arayüzü ve dil kuralı
+- Tarih: 2026-10-08
+- Karar veren: Founder
+- Bağlam: SL-002 değerlendirmesi (D-010) sonrası ilk iki uyarlama ve Founder'ın teknik detay bilmeden çalışabilmesi ihtiyacı.
+- Karar: (1) `documentary-virality-gate` ve `documentary-packaging` skill'leri Company OS'a özgü yazıldı (metin kopyalanmadı; SL-002 kaynağı atıflı); danışma niteliğinde, karar Founder'da. (2) P3 NS Savannah premise'i GAO'nun gösterdiği seviyeye indirildi (v2: nükleere özgü kalemler konvansiyonel gemilere göre yaklaşık yıllık ~2M $ ek yük/fazla sübvansiyon; kaynaksız vitrin nedenselliği çıkarıldı); gate sonucu READY FOR PILOT; packaging önerisi Concept 1, yedek Concept 5 (koşullu). (3) `founder-interface` skill'i: Founder-facing iletişim sade Türkçe, teknik detay arkada, günlük komut "Agam bugün napcaz?", "Detayları göster" teknik raporu açar. (4) Dil kuralı: yönetim iletişimi Türkçe; gerçek yayın materyalleri (başlık, thumbnail yazısı, script, voice-over, description, branding) hedef dilinde (İngilizce) kalır, altına Türkçe anlamı yazılır. (5) Aynı mesajda tek karar istenir.
+- Gerekçe: Founder'ın zihinsel yükünü azaltmak; yayın materyalinin çeviriyle bozulmaması.
+- Geri dönüş koşulu: Founder kararı; packaging/gate sonuçları şirketin kendi Studio verisiyle çelişirse veri önceliklidir.
+- Durum: Aktif. Onay bekleyen: P3 packaging yönü, ardından P3 tam senaryosu.
+- Detay: `.claude/skills/{documentary-virality-gate,documentary-packaging,founder-interface}/`, `production/pilots/2026-10-n2-pilot-test/`

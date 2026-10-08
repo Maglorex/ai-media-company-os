@@ -8,9 +8,12 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı), `systems-operator` (Company OS, git ve makine sağlığı).
 
 ## Oturum ritmi
+- **Founder ile iletişim:** `founder-interface` skill'i — Founder-facing tüm mesajlar sade Türkçe, teknik detay arkada; "Agam bugün napcaz?" / "Founder oturumunu başlat" günlük başlangıç komutudur; "Detayları göster" teknik raporu açar. Onay ve güvenlik kurallarını zayıflatmaz.
 - **Başlangıç:** `founder-brief` skill'i → günlük Founder Brief.
 - **Araştırma ihtiyacı:** `research-request` skill'i.
 - **Önemli karar:** `decision-review` skill'i.
+- **Video fikri üretime girmeden önce:** `documentary-virality-gate` skill'i (danışma notu; karar Founder'da).
+- **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
 - **Kapanış:** `session-close` skill'i.
 - **Sistem/makine:** `system-health-check`, `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
 - **Üçüncü taraf skill/plugin/MCP:** önce Skill Lab (`skill-evaluator`, `intelligence/skill-lab/`, `.claude/rules/third-party-skill-security.md`); Founder onayı olmadan kurulmaz.

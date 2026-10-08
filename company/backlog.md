@@ -7,13 +7,14 @@
 - [x] 2026-10-07 — Birincil niş kararı onaylandı: N2 (D-007).
 - [x] 2026-10-08 — Skill Lab v0.1 kuruldu (D-009); 4 aday PENDING REVIEW.
 - [x] 2026-10-07 — Pilot taslak testi Aşama 1: 3 pilot (Brewster, J40, NS Savannah) + Pilot Selection Report (D-008, EXP-001).
-- [ ] `[ONAY]` İlk tam pilot senaryosu: P3 NS Savannah (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
+- [ ] `[ONAY]` P3 packaging yönü (Concept 1) → ardından ilk tam pilot senaryosu: P3 NS Savannah (premise v2, READY FOR PILOT) (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
 - [ ] P3 ölçülen süresine göre D-007'nin >40 s koşulunu yeniden yaz → Founder onayı.
 
 ## Sıradaki — Skill Lab
 - [x] 2026-10-08 — Skill Lab `.claude` kopyalaması tamamlandı (D-009).
 - [x] 2026-10-08 — SL-002 statik değerlendirmesi: 5 bileşen ADAPT BEFORE USE, connect/AGENTS.md REJECT (D-010).
-- [ ] `[ONAY]` SL-002 adaptasyonu: 5 bileşeni Company OS'a özgü skill olarak yeniden yaz (sıra: virality-gate → packaging → script → edit-list → outliers).
+- [x] 2026-10-08 — SL-002 uyarlamaları: `documentary-virality-gate`, `documentary-packaging` (D-011); Founder Interface (D-011).
+- [ ] `[ONAY]` SL-002 kalan uyarlamalar: script, edit-list, outliers (ayrı onay).
 - [ ] SL-001, SL-003, SL-004 statik incelemeleri (`skill-evaluator`), Founder ne zaman isterse.
 
 ## Sıradaki — pilot
