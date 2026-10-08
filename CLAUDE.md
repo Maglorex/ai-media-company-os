@@ -13,6 +13,7 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Önemli karar:** `decision-review` skill'i.
 - **Kapanış:** `session-close` skill'i.
 - **Sistem/makine:** `system-health-check`, `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
+- **Üçüncü taraf skill/plugin/MCP:** önce Skill Lab (`skill-evaluator`, `intelligence/skill-lab/`, `.claude/rules/third-party-skill-security.md`); Founder onayı olmadan kurulmaz.
 
 ## Founder onayı
 Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, geri döndürülmesi zor dış işlemler, remote git işlemleri ve stratejik yön değişikliği **açık Founder onayı** gerektirir. Klasör içi çalışma ve yerel commit gerektirmez. Ayrıntı: `.claude/rules/founder-approval.md`.

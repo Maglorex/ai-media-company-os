@@ -6,7 +6,7 @@
 ## Aktif hedefler
 | # | Hedef | Ölçüt | Hedef tarih | Durum |
 |---|---|---|---|---|
-| G-2 | Faz 1: Niş araştırması ve seçimi | Puanlanmış niş karşılaştırması + birincil niş önerisi + H-001 doğrulama sonucu | Önerilen: 2026-10-20 | Founder onayı bekliyor |
+| G-3 | Faz 2: Pilot üretim testi (EXP-001) | 3 karşılaştırılabilir pilot taslağı ✅ + 1 tam pilot senaryosu/ekran planı/kaynak günlüğü + ölçülen süre | Önerilen: 2026-10-21 | Aktif. Aşama 1 ✅ (2026-10-07); P3 tam senaryosu Founder onayı bekliyor |
 
 ## Henüz belirlenmemiş
 - Kanal metrik hedefleri (retention, CTR, izlenme, abone) — kanal ve veri oluştuktan sonra.
@@ -16,3 +16,4 @@
 |---|---|---|---|
 | G-0 | Şirket işletim sistemini kur | Tamamlandı | 2026-10-06 |
 | G-1 | Founder Intake'i tamamla | Tamamlandı (D-003) | 2026-10-06 |
+| G-2 | Faz 1: Niş araştırması ve seçimi | Tamamlandı: N2 (D-007) | 2026-10-07 |
