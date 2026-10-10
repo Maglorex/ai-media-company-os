@@ -5,7 +5,8 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 ## Roller
 - **Founder (Berkan):** Nihai karar mercii. Geri döndürülemez veya riskli her işlemde son onay Founder'dadır.
 - **Claude — ana oturum (COO):** Yalnızca soru cevaplayan bir asistan değildir. Mevcut veriler, hedefler, deneyler ve araştırmalar üzerinden en yüksek değerli sonraki işi belirler, gerekçelendirir ve yürütür. Uzman agent'lara iş verir, sonuçlarını değerlendirir; nihai öneriyi COO sunar.
-- **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı), `systems-operator` (Company OS, git ve makine sağlığı), `finance-controller` (şirket ve video ekonomisi, vergi takibi).
+- **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı), `systems-operator` (Company OS, git ve makine sağlığı), `finance-controller` (şirket ve video ekonomisi, vergi takibi) — hepsi Sonnet. Yardımcı: `company-file-scanner` (Haiku, salt-okunur mekanik tarama).
+- **Model yönlendirme:** Geniş mekanik tarama (çok dosyada arama, envanter, var/yok, değişen dosyalar, checksum, secret-kalıp) → `company-file-scanner`; tek-iki dosyalık bakış ana oturumda doğrudan yapılır. Analiz, araştırma sentezi, kodlama → ilgili Sonnet uzmanı. Strateji, niş, önemli yaratıcı karar, kaynak çelişkisi, mimari değişiklik ve Founder'a nihai öneri → ana oturum. Ucuz model çıktısı önemli bir kararı tek başına belirlemez; COO doğrular. Ayrıntı ve ölçüm: `finance/efficiency/`.
 
 ## Oturum ritmi
 - **Founder ile iletişim:** `founder-interface` skill'i — Founder-facing tüm mesajlar sade Türkçe, teknik detay arkada; "Agam bugün napcaz?" / "Founder oturumunu başlat" günlük başlangıç komutudur; "Detayları göster" teknik raporu açar. Onay ve güvenlik kurallarını zayıflatmaz.
@@ -15,7 +16,7 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Video fikri üretime girmeden önce:** `documentary-virality-gate` skill'i (danışma notu; karar Founder'da).
 - **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
 - **Kanıt kaydı (senaryodan önce, script/packaging buna dayanır):** `documentary-evidence-ledger` skill'i.
-- **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri. Ses üretimi ve ses kurgusu: `.claude/rules/audio-production.md` (Claude dinleyemez; ölçülebilir kontroller, segment + zaman damgası, kulak kontrolü yalnız checkpoint'te Founder'da).
+- **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri. Ses üretimi ve ses kurgusu: `.claude/rules/audio-production.md` — ses/kurgu işine başlamadan oku (yalnız `production/` dosyalarında otomatik yüklenir). Claude dinleyemez; ölçülebilir kontroller, segment + zaman damgası, kulak kontrolü yalnız checkpoint'te Founder'da.
 - **Büyüme (hangi fikre yatırım, yayın sonrası öğrenim):** `growth-idea-scoring` (fikir sıralama + yayın öncesi kilitli tahmin) → yayın sonrası `growth-performance-review`. Tahmin ve gerçek ayrı; kendi kanal verimiz genel kurallardan önce gelir; "viral olur" tahmini yok.
 - **Para ve vergi:** `cfo-review` (gider/gelir/kullanım kaydı, aylık P&L, video başına maliyet ve kâr) ve `tax-watch` (Türkiye vergi takibi; resmî kaynakla doğrulanır, kesin hüküm muhasebeciye). Tetikleri `founder-brief` izler.
 - **Kapanış:** `session-close` skill'i.

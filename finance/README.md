@@ -52,3 +52,4 @@ Kanal kurulum işleri (ses seçimi testi, marka kimliği, şablon kurulumu): `al
 - Growth: aynı `video_id`; maliyet ve kârlılık Growth'un C6 kriterine ve sonuç kartına girer (`intelligence/growth/README.md`).
 - Production: P3 ve sonraki videoların ölçülen ses kredisi `production/.../voice-ledger.md`'de **operasyonel** kayıttır; finans tarafı aynı ölçümü `usage.csv`'ye kaynak referansıyla alır. Süre ölçümü production time-log'unda başlar; finans `time.csv` video toplamını tutar.
 - Pano: `dashboards/company.md` Finans bölümü aylık kapanış özetini gösterir.
+- Claude kullanım verimliliği (model yönlendirme, context yükü, oturum kullanım ölçümü): `efficiency/` (D-023).

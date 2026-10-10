@@ -6,6 +6,7 @@ description: Company OS sağlık kontrolü. Dosya yapısı, agent/skill/rule bü
 # System Health Check
 
 Uygulayıcı: `systems-operator` (veya COO doğrudan). Kural: `.claude/rules/self-repair-and-escalation.md`. Yalnızca salt-okunur kontrol + güvenli yerel düzeltme; remote işlem yok.
+Mekanik taramalar (1–3, 5, 7, 8: var/yok, frontmatter envanteri, referans kontrolü, secret-kalıp, numara sırası) tek görevde `company-file-scanner`'a verilebilir; çelişki değerlendirmesi (4), düzeltme ve durum kararı COO/`systems-operator`'da kalır. Secret eşleşmesinin gerçek secret olup olmadığına scanner değil COO karar verir.
 
 ## Kontroller
 1. **Çekirdek dosyalar var mı:** `CLAUDE.md`, `company/{mission,strategy,constraints,goals,backlog,decision-log,lessons,machines}.md`, `dashboards/company.md`, `intelligence/`, `channels/`, `production/tools/README.md`, `FOUNDER-MANUAL.md`.

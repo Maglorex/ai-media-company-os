@@ -1,3 +1,10 @@
+---
+paths:
+  - "production/**"
+  - ".claude/skills/documentary-voice-director/**"
+  - ".claude/skills/documentary-edit-plan/**"
+---
+
 # Ses Üretimi ve Ses Kurgusu Kuralları
 
 Kaynak: Founder talimatı 2026-10-10 (D-022). Amaç: Claude teknik ses kurgusunu ve senkronizasyonu büyük ölçüde kendisi yapar; Founder yalnız kısa ses QA'sı ve final video kontrolü yapar.

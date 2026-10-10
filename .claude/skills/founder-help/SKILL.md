@@ -1,6 +1,6 @@
 ---
 name: founder-help
-description: Founder sistem soruları sorduğunda ("ne yapmam lazım?", "bu neden çalışmıyor?", "hangi bilgisayarı kullanmalıyım?", "bunu nasıl kurarım?") önce Company OS dosyalarını ve durumu inceleyip doğrudan çözüm verir. Dosyalardan çıkarılabilecek bilgiyi Founder'a sordurmaz.
+description: Founder sistem/kurulum/hata sorusu sorduğunda ("bu neden çalışmıyor?", "hangi bilgisayarı kullanmalıyım?", "bunu nasıl kurarım?") önce Company OS dosyalarını ve durumu inceleyip doğrudan çözüm verir. Dosyalardan çıkarılabilecek bilgiyi Founder'a sordurmaz.
 ---
 
 # Founder Help

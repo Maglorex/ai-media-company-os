@@ -76,3 +76,4 @@
 - [x] 2026-10-06 — Founder Intake tamamlandı (D-003).
 - [x] 2026-10-06 — Company OS v0.2: agents, skills, rules (D-004).
 - [x] 2026-10-06 — Company OS v0.3: self-management katmanı (D-005).
+- [x] 2026-10-10 — Efficiency Audit v1: model yönlendirme, `company-file-scanner`, ses kuralı kapsamı, efficiency log (D-023). Değerlendirme: 5–10 ölçümlü oturum sonra.

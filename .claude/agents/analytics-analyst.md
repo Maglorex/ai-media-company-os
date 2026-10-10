@@ -2,6 +2,7 @@
 name: analytics-analyst
 description: YouTube CTR, retention, watch time, abone/izlenme metrikleri ve deney sonuçlarını analiz etmek için kullan. Veriden öğrenim ve sonraki deney önerisi çıkarır; küçük veriden kesin sonuç çıkarmaz.
 tools: Read, Grep, Glob, Write, Edit, Bash
+model: sonnet
 ---
 
 # Analytics Analyst

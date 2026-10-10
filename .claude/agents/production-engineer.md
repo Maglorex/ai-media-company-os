@@ -2,6 +2,7 @@
 name: production-engineer
 description: Remotion, FFmpeg, seslendirme entegrasyonu, render, üretim otomasyonu ve teknik production pipeline işleri için kullan. Ücretsiz/açık kaynak araçları önceliklendirir; ücretli araç veya lisans gerekiyorsa COO'ya gerekçeli öneri sunar.
 tools: Read, Grep, Glob, Write, Edit, Bash, WebFetch
+model: sonnet
 ---
 
 # Production Engineer

@@ -216,3 +216,13 @@
 - Karar: Claude sesi dinleyemediği için bunu gizlemez; final VO ve ses kurgusu script segmentleri, cümle/kelime zaman damgaları, süre, dalga formu, sessizlik tespiti ve clipping/loudness ölçümleriyle yapılır. Final narration bölüm segmentleri halinde üretilir ve edit timeline'ında birleştirilir (akışı bozarsa daha uzun bloklar). Dosya adı/metadata ile cümle–dosya eşlemesi tutulur. Kulak kontrolleri (doğallık, telaffuz, müzik–VO dengesi, geçiş/kesme, final bütünlük) yalnız anlamlı checkpoint'lerde Founder'a gelir; Founder'dan edit sürecini elle yönetmesi istenmez.
 - Uygulama: `.claude/rules/audio-production.md`; `documentary-voice-director`, `documentary-edit-plan` referans verir.
 - Durum: Aktif.
+
+### D-023 — Efficiency Audit v1: model yönlendirme ve context düzeni
+- Tarih: 2026-10-10
+- Karar veren: Founder (talimat) / COO (uygulama)
+- Bağlam: Claude Pro / Claude Code kullanım limitini kaliteyi düşürmeden verimli kullanmak.
+- Seçenekler: (a) değişiklik yok; (b) native Claude Code özellikleriyle model yönlendirme + dar context düzeni; (c) üçüncü taraf token-saver / Agent Teams (Founder talimatıyla dışarıda).
+- Karar: (b). Beş uzman agent `model: sonnet`; yeni salt-okunur `company-file-scanner` (Haiku, effort low, maxTurns 12, omitClaudeMd). Strateji, yaratıcı karar, kaynak çelişkisi, mimari ve nihai öneri ana modelde. `audio-production.md` yalnız `production/**` ve ilgili iki skill'de otomatik yüklenir (CLAUDE.md'de "işe başlamadan oku" referansı duruyor). Onay/güvenlik/Founder Interface kuralları değişmedi.
+- Gerekçe / kanıt: [VERİ] Claude Code 2.1.295 binary'sinde `model`, `effort`, `maxTurns`, `omitClaudeMd`, rules `paths` alanları doğrulandı. [VERİ] Proje sabit context yükü ~27.6 KB → ~26.0 KB (küçük). [VARSAYIM] Asıl kazanç mekanik iş ve uzman işlerin daha ucuz modele gitmesinden gelir; ölçülmedi.
+- Geri dönüş koşulu: Bir Sonnet uzmanında 2 kalite hatası → o agent `inherit`; scanner dosya değiştirir veya secret değeri gösterirse kapatılır; ses kuralı production dışı ses işinde atlanırsa global yapılır. Ölçüm `finance/efficiency/efficiency-log.md`; 5–10 oturumdan önce tasarruf iddiası yok.
+- Durum: Aktif.

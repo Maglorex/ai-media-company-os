@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-10 (render PC session-close: P3 grafikler tamam + final VO v1 + kanonik karar düzeltmeleri)
+**Son güncelleme:** 2026-10-10 (Efficiency Audit v1: model yönlendirme, D-023)
 **Faz:** Faz 2 (Pilot üretim testi) — P3 NS Savannah tam pilot üretimde: grafikler + final VO hazır; kurgu/senkron sırada
 
 ## Özet
@@ -20,6 +20,7 @@
 | Founder Interface (D-011) | ✅ |
 | Render bilgisayarı onboarding (D-017) | ✅ Node 24 LTS + Remotion 4.0.529 |
 | Growth / Content Intelligence + Finance / CFO + Tax Watch (D-020) | ✅ kuruldu; veri bekliyor (kanal yok, ilk aylık kapanış Kasım başı) |
+| Efficiency Audit v1 (D-023) | ✅ uzmanlar Sonnet, mekanik tarama Haiku yardımcıda; tasarruf 5–10 oturumla ölçülecek (`finance/efficiency/`) |
 | G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ · P3 premise v2 + gate READY + packaging onaylı (D-012) + kanıt kaydı + senaryo v2.1 kilitli + görsel plan + edit plan v1 · **P3 grafikler: 32 kompozisyon (S1–S8) tamam** · **final VO v1: 8:19, 3.085 kredi (Bill L. Oxley + Multilingual v2, D-021)** · Founder kulak kontrolü bekliyor · final render yok; Production Autonomy Mode (D-019) |
 
 ## Kanallar

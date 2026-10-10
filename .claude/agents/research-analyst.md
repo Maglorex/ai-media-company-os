@@ -2,6 +2,7 @@
 name: research-analyst
 description: Güncel pazar, niş, konu, rakip, izleyici, YouTube platform politikası ve kaynak araştırmaları için kullan. Kaynaklı, kanıt düzeyi belirtilmiş araştırma raporu üretir; karar vermez, COO'ya öneri sunar.
 tools: Read, Grep, Glob, Write, Edit, WebSearch, WebFetch
+model: sonnet
 ---
 
 # Research Analyst

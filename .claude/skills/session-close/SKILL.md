@@ -13,6 +13,7 @@ description: Çalışma oturumunu kapatır; şirket hafızasını, backlog'u ve 
 5. **Öğrenimler:** Kalıcı öğrenim varsa `company/lessons.md`.
 6. **Deneyler:** Açık deney dosyaları güncel mi?
 6b. **Para ve süre:** Bu oturumda ölçülen servis kullanımı (ör. ses kredisi), yeni fatura/harcama, gelir veya ölçülen Founder/AI süresi oluştuysa `finance/ledgers/` dosyalarına işlendi mi? (`cfo-review` §A; tahmin ve gerçek ayrı). Yeni video fikri veya yayın sonrası veri varsa `intelligence/growth/` güncel mi?
+6c. **Kullanım verimliliği:** `finance/efficiency/efficiency-log.md`'ye oturum satırı ekle (iş, subagent kullanımı, ana modelin yaptığı mekanik iş). Founder'ın `/usage` ölçümünü hatırlamasını bekleme: yalnız ölçüme değer bir oturumdan sonra (normal iş oturumu, son ölçümden beri en az 2 oturum geçmiş) kapanış notunda tek işlem olarak iste: "Claude Code'da /usage aç ve Session ile Weekly yüzdelerini bana söyle." Her oturumda isteme. 5–10 ölçümlü oturum birikince `finance/efficiency/README.md` §5 değerlendirmesini yap.
 7. **Git:**
    - Secret/credential kontrolü yap (`.claude/rules/git-and-secrets.md`).
    - Shell erişimi varsa anlamlı mesajla **yerel commit** oluştur. Push yapma.
