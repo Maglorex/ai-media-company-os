@@ -8,15 +8,16 @@ Araç envanteri, script'ler ve iş akışları.
 | Claude Pro / Claude Code | Aktif | Mevcut abonelik | Operasyon, araştırma, yazım, analiz, otomasyon |
 | ChatGPT Plus | Aktif | Mevcut abonelik | Dış araştırma, ikinci görüş, fact checking, web araştırması |
 | ElevenLabs | Aktif — **API ile doğrulandı 2026-10-08: tier `starter` aktif (ticari lisans var), karakter limiti 63.174** (önceki durum: `payg`). API bağlantısı çalışıyor (`production/tools/elevenlabs/el-common.ps1`, anahtar repo dışında DPAPI). ( Starter API v3 kotası ≈60.000 karakter — Founder kaydı, kesin değil; gerçek tüketim ölçülerek kaydedilir) | Pay-as-you-go (kredi); **ticari lisans yalnız ücretli abonelikte** (resmî Help Center, 2026-10-08) | Seslendirme — entegrasyon önerisi: doğrudan API + şirket betiği (SL-005…008 değerlendirmesi) |
-| Remotion | Lisans doğrulandı, henüz kurulmadı | **Ücretsiz (Free License)** — şirket ≤3 kişi olduğu sürece; ticari kullanım dahil | Programatik video (grafik, belge animasyonu) |
+| Node.js | **Kurulu — render bilgisayarı, 24.21.0 LTS** (Founder onayı 2026-10-10) | Ücretsiz, MIT | Remotion çalışma ortamı |
+| Remotion | **Kurulu — render bilgisayarı, `production/remotion/`**, sürüm sabit **4.0.529** (+ React 19.3.0; lockfile repoda; `--ignore-scripts` ile kuruldu) — Founder onayı 2026-10-10. Test 2026-10-10: H.264 1080p30 10 sn → 10 sn (CPU); ProRes 4444 alfa → 17 sn. Remotion donanım hızlandırması Windows'ta çalışmadı (EPIPE) → CPU kodlama; final export Media Encoder'da. | **Ücretsiz (Free License)** — şirket ≤3 kişi olduğu sürece; ticari kullanım dahil. `licenseKey` ayarlanmadı → sunucu tarafı render'da telemetri gönderilmez (remotion.dev/docs/license/telemetry, erişim 2026-10-10) | Programatik video (grafik, belge animasyonu) |
 | FFmpeg | Ayrı kurulum gerekmiyor (Remotion v4 kendi FFmpeg'ini getiriyor — remotion.dev/docs/ffmpeg) | Ücretsiz | Video/ses işleme |
-| Adobe Creative Cloud Pro | Render bilgisayarında mevcut (Founder beyanı; onboarding'de doğrulanacak) | Mevcut abonelik | Son montaj (Premiere), render (Media Encoder), fotoğraf temizliği (Photoshop) |
+| Adobe Creative Cloud Pro | Render bilgisayarında kurulu — doğrulandı 2026-10-10 (Premiere Pro 2026, Media Encoder 2026, Photoshop 2026, After Effects 2026, Illustrator 2026) | Mevcut abonelik | Son montaj (Premiere), render (Media Encoder), fotoğraf temizliği (Photoshop) |
 | ChatGPT Image Generation | Aktif (ChatGPT Plus içinde) | Mevcut abonelik | Açıklayıcı illüstrasyon, konsept, atmosfer, thumbnail öğesi — **kanıt değil**; kurallar aşağıda |
 
 ## Donanım
 | Makine | Özellik | Rol |
 |---|---|---|
-| Render bilgisayarı | Ryzen 5 5600, 16 GB RAM, RX 580 8 GB | Video render / kurgu (bu oturuma bağlı makine değil) |
+| Render bilgisayarı (DESKTOP-KVLH9B2) | Ryzen 5 5600, 16 GB RAM, RX 580 8 GB, 224 GB SSD + 1 TB HDD — komutla doğrulandı 2026-10-10 | Ana production/render makinesi (D-017). Ayrıntı: `company/machines.md` |
 
 `[VARSAYIM]` RX 580'de NVIDIA NVENC yok; FFmpeg'de AMD AMF donanım kodlaması veya CPU kodlaması kullanılacak. Pipeline aşamasında test edilecek.
 

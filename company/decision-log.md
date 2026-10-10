@@ -169,4 +169,4 @@
 - Tarih: 2026-10-08
 - Karar veren: Founder
 - Karar: `production/tools/production-pipeline-plan.md` onaylandı (Premiere Pro son montaj + Media Encoder render; Remotion tekrar eden grafik/şema şablonları; ayrı FFmpeg kurulmaz; büyük medya GitHub dışında). İkinci bilgisayar ana production/render makinesi. Sıra: `machine-onboarding` ile bağlama ve durum doğrulama → ancak sonra Node.js + Remotion. Premiere'e hazır timeline (XML) yalnız P3'te küçük test; güvenilir çıkarsa standart olur.
-- Durum: Aktif (onboarding başlıyor).
+- Durum: Aktif. Onboarding tamamlandı 2026-10-10 (render bilgisayarı DESKTOP-KVLH9B2; Node.js 24.21.0 LTS + Remotion 4.0.529 Founder onayıyla kuruldu; ayrıntı `company/machines.md`).
