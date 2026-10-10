@@ -1,0 +1,2 @@
+id,date,video_id,month,category,item,estimate_low_try,estimate_high_try,estimate_low_hours,estimate_high_hours,basis,note
+E-001,2026-10-07,VID-001,,founder_time,P3 ilk video insan uretim suresi,,,77,109,time-log.md Asama 1 tahmini [TAHMIN],Sablon kurulumu (50-70 s) haric; olcumle karsilastirilacak

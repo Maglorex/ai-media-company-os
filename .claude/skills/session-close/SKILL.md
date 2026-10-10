@@ -12,6 +12,7 @@ description: Çalışma oturumunu kapatır; şirket hafızasını, backlog'u ve 
 4. **Kararlar:** Bu oturumda alınan önemli kararlar `company/decision-log.md`'de mi? Değilse ekle.
 5. **Öğrenimler:** Kalıcı öğrenim varsa `company/lessons.md`.
 6. **Deneyler:** Açık deney dosyaları güncel mi?
+6b. **Para ve süre:** Bu oturumda ölçülen servis kullanımı (ör. ses kredisi), yeni fatura/harcama, gelir veya ölçülen Founder/AI süresi oluştuysa `finance/ledgers/` dosyalarına işlendi mi? (`cfo-review` §A; tahmin ve gerçek ayrı). Yeni video fikri veya yayın sonrası veri varsa `intelligence/growth/` güncel mi?
 7. **Git:**
    - Secret/credential kontrolü yap (`.claude/rules/git-and-secrets.md`).
    - Shell erişimi varsa anlamlı mesajla **yerel commit** oluştur. Push yapma.

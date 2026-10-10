@@ -1,0 +1,3 @@
+id,date,service,video_id,allocation,activity,unit,quantity,measured,source,note
+U-001,2026-10-08,elevenlabs,,channel,Kanal sesi testi (Bill L. Oxley / multilingual_v2),credits,468,yes,voice-ledger #1 (character-cost basligi),Kanal kurulum isi; VID-001'e yuklenmez
+U-002,2026-10-08,elevenlabs,,channel,Model karsilastirma (Bill L. Oxley / v4),credits,129,yes,voice-ledger #2 (character-cost basligi),Kanal kurulum isi; v4 indirimi gecici
