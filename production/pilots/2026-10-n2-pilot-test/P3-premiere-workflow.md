@@ -1,0 +1,38 @@
+# P3 — Premiere aktarımı (XML) ve iş akışı
+
+> 2026-10-10 · D-017 (Premiere son montaj) · Araç: `production/tools/premiere/build-xml.ps1` (FCP 7 XML / xmeml v4 — Premiere'in "Import" ile açtığı biçim; ek paket yok) · Tanım: `P3-premiere.json` · Zamanlar: `voCues.ts` (VO v2) + 2,5 sn açılış teaser'ı.
+
+## Dosyalar (repo dışı)
+| Ne | Yer |
+|---|---|
+| Test XML (4 klip, ilk 38 sn) | `05_premiere\P3_XML_TEST.xml` |
+| Başlangıç timeline XML (tam) | `05_premiere\P3_NS_Savannah_START_v1.xml` |
+| Grafik klipleri (Remotion SYNC, ProRes 422, 1080p30) | `02_graphics\sync\SYNC-*.mov` (34 dosya) |
+| VO | `03_vo\final\P3_VO_full_v2.wav` |
+| Fotoğraflar | `01_archive\photos\` |
+
+## Track düzeni
+- **V1:** grafik klipleri + ana fotoğraflar (beat sırasıyla, boşluksuz).
+- **V2:** üst iz — b23 Q-02 belgesi, tek gemi klibinin üstünde.
+- **V3:** opsiyonel fotoğraf eklemeleri (V-24, V-08, V-26) — **devre dışı** gelir; editör karar verir.
+- **A1:** VO v2 (0:02,5'ten başlar). **A2/A3:** boş — müzik ve SFX için ayrıldı.
+- **Sequence marker'ları:** `[MUSIC]`, `[SFX]`, `[SILENCE]` (müzik/SFX planı §2 zamanlarında). **Klip marker'ları:** fotoğraflarda `PREMIERE MOTION` notu (pan / detay kesmesi; tek sürekli zoom değil), opsiyonel eklemelerde `OPTIONAL INSERT`.
+- Debug zaman/sahne damgası yok (yalnız `P3-ANIMATIC`'te). Branding, logo, intro/outro yok.
+
+## Doğrulananlar (Claude, otomatik)
+- XML ayrıştırma, V1'de boşluk/çakışma kontrolü, tüm dosya yollarının varlığı.
+- Grafik dosyalarının kare sayısı = XML süresi (ProRes 422, 1920×1080, 30 fps).
+- Doğrulanamayan: Premiere'in dosyayı açması → Founder testi (aşağıda).
+
+## Founder testi (tek işlem)
+Premiere Pro → **File → Import…** → `P3_XML_TEST.xml` → açılan `P3_XML_TEST` sekansına çift tıkla. Kontrol: (1) "media offline" kırmızı kare yok, (2) ses 0:02,5'te başlıyor, (3) harita 0:10 civarında, rapor kapağı 0:32 civarında.
+
+## XML güvenilir çalışmazsa (yedek yol)
+1. Remotion'da tüm kurguyu **tek bir referans video** olarak render et (grafik + fotoğraf yerleşimi + VO; animatic'in damgasız, tam çözünürlük sürümü).
+2. Premiere'de bu dosyayı V1'e, VO WAV'ı A1'e koy; fotoğraf beat'lerinde fotoğrafı V2'ye yerleştir (zamanlar `P3-edit-timeline.md`), hareketleri orada ver.
+3. Müzik/SFX A2/A3'e. Bu yol daha az esnek ama her durumda açılır.
+
+## Test sonucu (2026-10-10, Founder)
+- Premiere Pro 2026: yeni proje `05_premiere\P3_NS_Savannah.prproj` → `P3_XML_TEST.xml` içe aktarıldı (menü kilitliyken dosyayı Project paneline sürükleyerek). **Media Offline yok**, VO 0:02,5'te başlıyor, harita ve rapor kapağı beklenen zamanlarda. Siyah aralar beklenen (test yalnız 4 klip). Süreler Premiere'de birebir: teaser 2:15, harita 14:29, kapak 5:25, sekans 8:21:01. → **XML yolu güvenilir; tam timeline XML ile üretilir.**
+- Not: Premiere açılışta "Import" menüsü proje açılmadan kapalıdır; açık bir proje varken menü kilitliyse arkada kalmış diyalog olabilir — sürükle-bırak her durumda çalışır.
+- Render notu: Remotion render'ı yarıda kesilirse ProRes dosyası bozuk kalır (2 dosya: invalid frame header). Toplu render artık geçici dosyaya yazıp başarıda yeniden adlandırıyor; kare sayısı ffprobe ile doğrulanır.
