@@ -42,3 +42,11 @@
 - Öğrenim: Stage B'deki 25–35 s/video tahmini, üçüncü taraf solo yapımcı verisine (16–28 s) dayanıyordu ve özgün diyagram/harita/belge animasyonu yükünü içermiyordu. Format bazlı tahmin ilk video için 77–125 s (+50–70 s şablon), olgun üretimde 41–62 s `[TAHMİN]`. Ölçümle doğrulanmadı.
 - Güven: Düşük-orta (tahmin; ölçüm bekleniyor)
 - Uygulama: Süreye bağlı karar koşulları (D-007 >40 s) tahmine göre değil, ölçülen süreye göre işletilir. Süre aşımında ilk seçenek format sadeleştirmedir.
+
+### L-005 — Taranmış belgeden alıntı, metin çıkarımına değil sayfa görüntüsüne göre doğrulanır
+- Tarih: 2026-10-10
+- Kaynak: P3 evidence ledger E-14, E-11 (`production/pilots/2026-10-n2-pilot-test/P3-evidence-ledger.md`); render bilgisayarı P3 checkpoint'i
+- Öğrenim: GAO B-136209 s.12'deki 'one ship system' ifadesi metin çıkarımında açılış tırnağı "l" okunarak "lone ship system" oldu ve senaryo, ledger ve animasyona yayıldı. C-31'deki ekipman özeti de kaynağı kısaltmıştı. Metin çıkarımı (OCR/PDF text) alıntı için güvenilir kanıt değildir.
+- Güven: Orta (tek video, iki somut hata)
+- Uygulama: Ekranda veya VO'da tırnak içinde kullanılacak her ifade kaynağın sayfa görüntüsünden (`production/tools/pdf/pdf-to-png.ps1`) okunarak ledger'a yazılır. Aynı yöntem vergi/mevzuat PDF doğrulamasında da kullanılır (2026-10-10, GİB rehberi).
+

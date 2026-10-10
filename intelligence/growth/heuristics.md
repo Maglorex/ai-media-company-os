@@ -1,7 +1,7 @@
 # Growth Heuristics ve Yatırım Puanı
 
 > Kanıt hiyerarşisi: K1 kendi kanal verisi > K2 kendi deneyleri > K3 niş karşılaştırmaları > K4 genel heuristics (`README.md` §1). Bu dosyadaki K4 kuralları **varsayılandır**; kendi verimiz çelişince geçersiz kılınır ve aşağıya yazılır. Silinmez.
-> Sürüm: v1.0 (2026-10-10). Ağırlıklar ≥10 video 28g verisinden sonra `calibration.md`'ye göre yeniden ayarlanır.
+> Sürüm: v1.1 (2026-10-10). Ağırlıklar `calibration.md`'de birden fazla videoda tutarlı sapma görüldüğünde, kanıtla ve Founder onayıyla yeniden ayarlanır (sabit video eşiği yok).
 
 ## 1. Yatırım puanı kriterleri (her biri 1–5, gerekçe + kanıt seviyesi zorunlu)
 | # | Kriter | Soru | Kanıt kaynağı | Ağırlık v1 |
@@ -29,7 +29,7 @@
 
 ## 3. Tahmin kuralları
 - Tahmin aralıkla verilir ve kanal **baz çizgisine göre** ifade edilir ("baz çizgisinin altında / civarında / üstünde"). Kanal verisi yokken baz çizgisi = niş karşılaştırma bandı (K3), güven = Düşük.
-- Mutlak sayı tahmini yalnız K1 baz çizgisi varken (≥5 video) yapılır.
+- Mutlak sayı tahmini yalnız K1 baz çizgisinin güveni en az Orta iken yapılır (örneklem + tutarlılık, README §1); aksi halde yalnız göreli konum ve aralık.
 - Her tahmin "Bu tahmini ne yanlışlar?" sorusuna bir cümle cevap içerir.
 
 ## 4. Kendi verimizle geçersiz kılınanlar
@@ -41,3 +41,4 @@
 | Tarih | Değişiklik | Gerekçe |
 |---|---|---|
 | 2026-10-10 | v1.0 ilk sürüm | Growth sistemi kurulumu |
+| 2026-10-10 | v1.1: sabit "5 video" / "10 video" eşikleri kaldırıldı; K1 ağırlığı örneklem ve tutarlılıkla kademeli | Founder talimatı: küçük örneklemde belirsizlik korunmalı |

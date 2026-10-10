@@ -170,3 +170,32 @@
 - Karar veren: Founder
 - Karar: `production/tools/production-pipeline-plan.md` onaylandı (Premiere Pro son montaj + Media Encoder render; Remotion tekrar eden grafik/şema şablonları; ayrı FFmpeg kurulmaz; büyük medya GitHub dışında). İkinci bilgisayar ana production/render makinesi. Sıra: `machine-onboarding` ile bağlama ve durum doğrulama → ancak sonra Node.js + Remotion. Premiere'e hazır timeline (XML) yalnız P3'te küçük test; güvenilir çıkarsa standart olur.
 - Durum: Aktif. Onboarding tamamlandı 2026-10-10 (render bilgisayarı DESKTOP-KVLH9B2; Node.js 24.21.0 LTS + Remotion 4.0.529 Founder onayıyla kuruldu; ayrıntı `company/machines.md`).
+
+### D-018 — P3 "lone ship" anlatımında kapasite: yalnız GAO'nun "several" ifadesi
+- Tarih: 2026-10-10
+- Karar veren: Founder (COO önerisi)
+- Karar: Lone ship animasyonunda ve ana görsel anlatımda kesin gemi sayısı verilmez; kapasite yalnız GAO'nun "several" ifadesiyle gösterilir. "Facility could easily service 10" (Maritime/Todd yetkililerinin görüşü, C-13) yalnız evidence ledger'da ikinci seviye bağlam olarak kalır; final videoda kesin gerçek gibi öne çıkarılmaz.
+- Gerekçe: 10 sayısı GAO'nun bağımsız tespiti değil, yalnız servis tesisi için ve yetkili görüşü (C-12, C-13, D-REJ-5).
+- Uygulama: `production/remotion/src/videos/p3/shots.ts` (`p3LoneShip`); edit plan S6 p2–p3 ve visual plan notları kaldırıldı. Animasyonda yalnız kara personeli + servis tesisi ölçeklenebilir gösterilir; eğitim bloğu paylaşılmaz.
+- Ek (2026-10-10, Founder onayı): Kanıt disiplini düzeltmesi olarak S6 VO'dan "Maritime and contractor officials told the auditors the Galveston facility could easily service ten." cümlesi çıkarıldı → script v2.2; ledger E-10. Senaryonun başka bölümü değişmedi.
+- Durum: Aktif.
+- Aktarım: 2026-10-10, `production/pilots/2026-10-n2-pilot-test/P3-pending-decisions.md`'den (render bilgisayarı).
+
+### D-019 — P3 Production Autonomy Mode
+- Tarih: 2026-10-10
+- Karar veren: Founder
+- Karar: P3 üretiminde güvenli, ücretsiz, geri alınabilir ve onaylı yaratıcı/kanıt yönünü değiştirmeyen kararlar COO tarafından onay beklemeden alınır, kayda geçirilir ve iş sürer. Kapsam: kanıtı daha doğru ifade eden küçük script düzeltmeleri, evidence ledger uyum düzeltmeleri, grafik/timeline yerleşimi, teknik bug fix, kamu malı küçük production asset'leri, onaylı araçlarla şablon üretimi, görsel doğruluk düzeltmeleri. Yalnız kanıt disiplinini artıran ve ana yaratıcı vaadi değiştirmeyen düzeltme Founder kararı sayılmaz.
+- Founder'a durulacak haller: para/kredi harcama; yeni yazılım/paket kurulumu; credential/yetki; önemli title/thumbnail değişikliği; ana premise veya sonucu değiştirmek; önemli lisans/telif belirsizliği; final voice seçimi; final render/yayın kararı; yıkıcı veya zor geri alınabilir işlem. Güçlü ikinci görüş gerekirse `founder-interface` kuralıyla hazır ChatGPT promptu.
+- Raporlama: her küçük adım değil; anlamlı checkpoint'te kısa Founder özeti.
+- Sınır: `founder-approval.md` ve `CLAUDE.md` değişmez kuralları geçerliliğini korur (commit yerel serbest; push/remote, harcama, yayın yine onaylı).
+- Durum: Aktif (P3 kapsamı).
+- Uyum kontrolü (2026-10-10, laptop): `founder-approval.md` (harcama, kurulum/dependency, credential, yayın, remote git onaylı kalır), `founder-interface` (sade dil, tek karar, checkpoint özeti) ve `third-party-skill-security.md` ile çelişki yok; mod onay listesini daraltmaz, yalnız onay gerektirmeyen iç production kararlarını tanımlar.
+- Aktarım: 2026-10-10, `P3-pending-decisions.md`'den.
+
+### D-020 — Growth / Content Intelligence ve Finance / CFO sistemleri kuruldu
+- Tarih: 2026-10-10
+- Karar veren: Founder (talimat) · Hazırlayan: COO
+- Karar: (1) `intelligence/growth/` — fikir portföyü, yatırım puanı, yayın öncesi kilitli tahmin ile yayın sonrası sonuç ayrımı, kanıt hiyerarşisi (kendi kanal verisi > deneyler > niş karşılaştırmaları > genel kurallar), kalibrasyon; skill'ler `growth-idea-scoring`, `growth-performance-review`. (2) `finance/` — tahmin/gerçek ayrı CSV ledger'lar, ölçülen kullanım, video başına doğrudan + dağıtılmış maliyet, P&L, nakit akışı, break-even, geri dönüş; Tax Watch (resmî kaynakla doğrulama, muhasebeci soru listesi); agent `finance-controller`, skill'ler `cfo-review`, `tax-watch`. Tetikler `founder-brief`'e bağlandı.
+- Gerekçe: Kaynakların büyüme ihtimali yüksek fikirlere ayrılması ve gerçek video ekonomisinin bilinmesi; vergi takibinin Founder'ın hafızasına bırakılmaması.
+- Geri dönüş koşulu: Kendi yayın verimiz biriktikçe puan ağırlıkları ve maliyet dağıtım kuralı gözden geçirilir (sabit video eşiği yok; örneklem ve tutarlılığa göre — `intelligence/growth/README.md` §1).
+- Durum: Aktif.

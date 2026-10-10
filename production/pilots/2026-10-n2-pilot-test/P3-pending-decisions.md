@@ -3,6 +3,7 @@
 > Oluşturma: 2026-10-10, render bilgisayarı (DESKTOP-KVLH9B2). **Neden burada:** Laptop'ta paralel Growth/CFO değişiklikleri var ve bu makineden `git fetch` yapılamadı (GitHub kimlik bilgisi yalnız GitHub Desktop'ta). Founder talimatı: ortak Company OS dosyalarında çakışma yaratacak değişiklik yapılmaz. Bu yüzden aşağıdaki kayıtlar `company/decision-log.md` ve `company/lessons.md` yerine geçici olarak burada.
 > **Aktarım:** Laptop değişiklikleri bu makineye çekildikten sonra (GitHub Desktop → Fetch/Pull) kayıtlar sıradaki boş D-/L- numaralarıyla ortak dosyalara aktarılır; P3 dosyalarındaki "D-018"/"D-019" atıfları gerekirse yeni numaralarla güncellenir. Bu dosya o zaman "Aktarıldı → D-XXX" notuyla kapatılır (silinmez).
 > Numaralar **geçicidir**.
+> **Durum: Aktarıldı (2026-10-10, laptop, birleşme sonrası)** → D-018, D-019 (numaralar korundu; çakışma yoktu), öğrenim → L-005, backlog ve dashboard satırları işlendi. Growth/Finance kararı D-020 oldu.
 
 ## Kararlar
 ### D-018 — P3 "lone ship" anlatımında kapasite: yalnız GAO'nun "several" ifadesi

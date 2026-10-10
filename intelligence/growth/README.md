@@ -10,13 +10,18 @@
 3. **Kanıt hiyerarşisi** (üstteki alttakini ezer):
    | Seviye | Kaynak | Ne zaman geçerli |
    |---|---|---|
-   | K1 | Kanalın kendi yayın sonrası verisi (Studio) | ≥5 yayınlı videoda 28 günlük veri oluşunca **birincil** |
+   | K1 | Kanalın kendi yayın sonrası verisi (Studio) | İlk videodan itibaren kullanılır; ağırlığı örneklem ve tutarlılıkla **kademeli** artar (aşağıda) |
    | K2 | Kanalın kendi deneyleri (Test & Compare, EXP-XXX) | Deney eşiği karşılandığında |
    | K3 | Niş karşılaştırmaları: rakip/outlier kaydı (`outliers.md`) | Her zaman; K1 oluşunca ikincil |
    | K4 | Genel YouTube heuristics'leri (`heuristics.md`) | Yalnız K1–K3 yokken veya çelişmiyorsa |
-   Çelişkide üst seviye kazanır ve çelişki `heuristics.md` → "Geçersiz kılınanlar" bölümüne yazılır.
+   **K1 ağırlığı sabit eşikle değil, kanıtın gücüyle artar:**
+   - Bakılanlar: kaç video ve kaç gösterim/izlenme var (örneklem), videolar arasında sonuç tutarlı mı (aynı yönde mi, dağılım dar mı), dış etken var mı (tek videoyu şişiren dış trafik, sezon, konu farkı).
+   - Örneklem küçük veya sonuçlar dağınıksa: K1 **sinyal** olarak yazılır, K3/K4 ile birlikte okunur, sonuç "Belirsiz" kalır; tek videonun sonucu genel kuralı geçersiz kılmaz.
+   - Birden fazla videoda aynı yönde ve makul örneklemle tekrar eden K1 bulgusu: ilgili konuda K3/K4'ün önüne geçer.
+   - Her değerlendirmede K1 için güven düzeyi (Düşük / Orta / Yüksek) ve gerekçesi yazılır; "kaç video oldu" tek başına gerekçe değildir.
+   Güçlü K1 ile çelişkide K1 kazanır ve çelişki `heuristics.md` → "Kendi verimizle geçersiz kılınanlar" bölümüne yazılır; zayıf K1 ile çelişki yalnız "izlenecek sinyal" olarak not edilir.
 4. **Yatırım dili.** Her fikir bir yatırımdır: beklenen getiri sinyali ÷ (Founder saati + doğrudan maliyet). Maliyet tarafı Finance'ten gelir (`finance/README.md`).
-5. **Küçük veri uyarısı.** <5 video veya <1.000 gösterim: sonuç "Belirsiz"; ölçüt değiştirilmez (`analytics-analyst` kuralları).
+5. **Küçük veri uyarısı.** Örneklem küçükse (az video, az gösterim) veya sonuçlar dağınıksa sonuç "Belirsiz" kalır; belirsizlik sabit bir sayıyla değil örneklem + tutarlılık değerlendirmesiyle kalkar (§1). Ölçüt sonradan değiştirilmez (`analytics-analyst` kuralları).
 
 ## 2. Akış (fikirden öğrenime)
 ```
@@ -55,5 +60,5 @@ Veri girişi: Founder'ın Studio CSV dışa aktarımı veya ileride Founder onay
 
 ## 6. Kaynak ayırma kuralı (v1)
 - Üretime girecek fikirler **yatırım puanı** ile sıralanır (`heuristics.md` §2). Puan farkı <8 ise puan tek başına karar ölçütü değildir (L-001); öğrenme değeri ve maliyet bakılır.
-- Portföy kuralı (K1 oluşana kadar): her 3 videonun en az 2'si en güçlü kanıtlı alt konudan; en fazla 1'i "keşif" (yeni alt konu / yeni format açısı). Keşif videosunun amacı `forecasts`'ta açıkça "öğrenme" olarak yazılır.
-- K1 oluştuktan sonra: alt konu × trafik kaynağı × maliyet performansı ile alt konu bütçesi yeniden dağıtılır (`growth-performance-review` §C).
+- Portföy kuralı (K1 güveni düşükken): her 3 videonun en az 2'si en güçlü kanıtlı alt konudan; en fazla 1'i "keşif" (yeni alt konu / yeni format açısı). Keşif videosunun amacı `forecasts`'ta açıkça "öğrenme" olarak yazılır.
+- K1 güveni arttıkça: alt konu × trafik kaynağı × maliyet performansı ile alt konu bütçesi yeniden dağıtılır (`growth-performance-review` §C).

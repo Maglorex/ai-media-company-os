@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-08 (Skill Lab, SL-002 uyarlamaları, Founder Interface)
+**Son güncelleme:** 2026-10-10 (iki makine birleşmesi: P3 grafik checkpoint'i + Growth / Finance / Tax Watch)
 **Faz:** Faz 2 (Pilot üretim testi) — Aşama 1 tamamlandı; P3 tam pilotu onay bekliyor (D-008)
 
 ## Özet
@@ -18,7 +18,9 @@
 | G-2 Niş araştırması ve seçimi | ✅ N2 (D-007) |
 | Skill Lab v0.1 (D-009) | ✅ kuruldu · SL-002 incelendi (D-010), 2/5 uyarlandı (D-011) · SL-001/003/004 PENDING REVIEW |
 | Founder Interface (D-011) | ✅ |
-| G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ · P3 premise v2 + gate READY + packaging onaylı (D-012) + kanıt kaydı + senaryo v2.1 kilitli + görsel plan + ses (Bill L. Oxley, v2; Starter aktif) + **edit plan v1 hazır** |
+| Render bilgisayarı onboarding (D-017) | ✅ Node 24 LTS + Remotion 4.0.529 |
+| Growth / Content Intelligence + Finance / CFO + Tax Watch (D-020) | ✅ kuruldu; veri bekliyor (kanal yok, ilk aylık kapanış Kasım başı) |
+| G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ · P3 premise v2 + gate READY + packaging onaylı (D-012) + kanıt kaydı + senaryo v2.1 kilitli + görsel plan + ses (Bill L. Oxley, v2; Starter aktif) + edit plan v1 · **P3 grafik üretimi: S4–S7 + S5 tamam (19 kompozisyon, final render yok)**; Production Autonomy Mode (D-019) |
 
 ## Kanallar
 | Kanal | Durum | Video | Abone | Ort. retention | CTR |
@@ -31,7 +33,9 @@
 ## Finans
 - Reklam bütçesi: 0
 - Sabit abonelikler: Claude Pro, ChatGPT Plus · ElevenLabs: kullanım başı
-- Bu ay yeni harcama: 0 · Onay bekleyen: yok
+- Bu ay yeni harcama: ElevenLabs Starter (D-015; fatura tutarı kayda girilmedi) · Onay bekleyen: yok
+- Finans sistemi kuruldu (`finance/`); ilk aylık kapanış Kasım'ın ilk haftası.
+- Vergi: henüz gelir yok. 2026 sosyal içerik istisna eşiği 5.300.000 TL ve %15 banka tevkifatı resmî GİB rehberiyle doğrulandı; takip aktif.
 
 ## Founder onayı / kararı bekleyenler
 - Seslendirme (ElevenLabs) için ayrı onay — henüz istenmedi. SL-002 kalan 3 uyarlama ayrı onay bekliyor.
@@ -42,4 +46,4 @@
 - Kanıt kalitesi: küçük kanal breakout'ları tek kaynaklı ve anlık görüntü; dar dikey + şablonlu formül (L-001, L-003).
 - N2'nin ana riskleri: olgusal/hukuki doğruluk yükü ve klon/inauthentic content riski (karar dosyası §6).
 - Platform (doğrulandı): 2027-02-01'den itibaren yeni YPP başvurularında 1.000 abone + 8.000 saat → retention ve izlenme süresi birincil metrik. RPM bilinmiyor (L-002).
-- Not: Render bilgisayarı henüz Company OS'a bağlanmadı (`company/machines.md`).
+- Render bilgisayarı bağlandı (2026-10-10). Açık: makine dışı yedek ve final render yedeği (`company/machines.md`).

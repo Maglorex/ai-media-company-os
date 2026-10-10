@@ -197,9 +197,13 @@ def report_tax(d, year):
         print(f"  {s}: {tl(v)}")
     if outside:
         print(f"UYARI: Özel hesap dışı / belirtilmemiş tahsilat: {', '.join(outside)} → muhasebeci teyidi")
-    for t in d["thresholds"]:
-        if t.get("year") != str(year):
-            continue
+    latest = {}
+    for t in d["thresholds"]:  # eski satırlar silinmez; her kuralın en son kontrol edilen satırı geçerlidir
+        if t.get("year") == str(year):
+            key = t.get("rule_id")
+            if key not in latest or (t.get("checked_on") or "") >= (latest[key].get("checked_on") or ""):
+                latest[key] = t
+    for t in latest.values():
         limit = num(t.get("amount_try"))
         if not limit:
             continue

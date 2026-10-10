@@ -26,13 +26,21 @@
 - [x] 2026-10-08 — `documentary-edit-plan` skill'i + P3 edit plan v1 (~9 dk, ölçülen anlatıcı hızıyla).
 - [x] 2026-10-08 — Üretim/montaj hattı kurulum planı (`production/tools/production-pipeline-plan.md`).
 - [x] 2026-10-08 — Production planı onaylandı (D-017).
-- [ ] Render bilgisayarı onboarding (durum doğrulama) → sonra Node.js LTS + Remotion.
+- [x] Render bilgisayarı onboarding (durum doğrulama) → sonra Node.js LTS + Remotion. (2026-10-10)
 - [ ] P3: Premiere timeline XML küçük testi (garanti değil).
 - [ ] Kanal marka kimliği (Founder + ChatGPT) — yayından önce; şablonlar tema dosyasıyla bekler.
 - [ ] Eksik kalıcı sistem: müzik/SFX kaynak ve lisans kuralları (ücretsiz kaynak öncelikli).
 - [ ] Eksik kalıcı sistem: yayın öncesi QA kapısı (kanıt, haklar, AI açıklaması, altyazı).
 - [ ] `[ONAY]` Ses testi ≤4.500 kredi; sonra ana ses seçimi; tam seslendirme ayrı onay. (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
 - [ ] P3 ölçülen süresine göre D-007'nin >40 s koşulunu yeniden yaz → Founder onayı.
+- [x] 2026-10-10 — Render bilgisayarı onboarding tamamlandı; Node.js 24 LTS + Remotion 4.0.529 (D-017 güncellemesi).
+- [x] 2026-10-10 — P3 'lone ship' kapasite anlatımı: yalnız GAO 'several' (D-018); script v2.2–v2.5 kanıt düzeltmeleri.
+- [x] 2026-10-10 — P3 Production Autonomy Mode (D-019).
+- [x] 2026-10-10 — P3 grafik üretimi: S4–S7 + S5 tamam (19 kompozisyon, final render yok) — `P3-graphics-status.md`.
+- [x] 2026-10-10 — Growth / Content Intelligence v1.0 ve Finance / CFO v1.0 + Tax Watch kuruldu (D-020).
+- [ ] İlk aylık kapanış (Ekim 2026): Claude, ChatGPT, ElevenLabs, Adobe son fatura tutarları Founder'dan tek liste ile; birim kredi değeri.
+- [ ] P3 (VID-001) yayından önce: geriye dönük yatırım puanı + kilitli tahmin (FC-001) + maliyet tahmini; production'ın ölçtüğü ses kredisi ve süreler finans ledger'ına aktarılacak.
+- [ ] Muhasebeci görüşmesi (Q-01…Q-07) — monetizasyondan önce.
 
 ## Sıradaki — Skill Lab
 - [x] 2026-10-08 — Skill Lab `.claude` kopyalaması tamamlandı (D-009).

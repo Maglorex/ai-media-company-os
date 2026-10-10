@@ -22,12 +22,12 @@ Sistem: `intelligence/growth/README.md`. Analiz `analytics-analyst` agent'ına v
 2. 28 gün noktasında: FC ile karşılaştır, `calibration.md`'ye satır ekle. Başarı tanımı FC'de yazandır; değiştirilmez.
 3. Retention eğrisindeki belirgin düşüşleri edit plan sahnelerine eşle (production dosyalarını yalnız oku).
 4. Ekonomi: `python finance/tools/finance_report.py --videos` çıktısından VID'in maliyet/gelir/kâr ve break-even izlenmesini oku; sonuç kartına yalnız bağlantı ve tek cümle yaz.
-5. Öğrenim adayı ve sonraki deney önerisi (≤5 video: "Belirsiz" etiketiyle).
+5. Öğrenim adayı ve sonraki deney önerisi; örneklem küçük veya sonuçlar dağınıksa "Belirsiz" etiketiyle.
 
 ## C. Aylık büyüme değerlendirmesi
 - Alt konu × (CTR, APV, izlenme saati, abone/1k, video başına maliyet) tablosu.
 - Trafik kaynağı karışımı değişimi.
-- Kaynak ayırma önerisi: hangi alt konuya daha fazla video, hangisi keşifte kalsın, hangisi dursun. ≥5 video yoksa yalnız gözlem.
+- Kaynak ayırma önerisi: hangi alt konuya daha fazla video, hangisi keşifte kalsın, hangisi dursun. K1 güveni düşükse yalnız gözlem ve sinyal.
 - `heuristics.md` §4: kendi verimizin çürüttüğü genel kural varsa ekle.
 - Tekrar doğrulanan öğrenim → `company/lessons.md`; strateji etkisi varsa `decision-review`.
 

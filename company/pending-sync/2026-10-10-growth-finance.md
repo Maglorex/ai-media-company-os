@@ -2,7 +2,7 @@
 
 > Neden ayrı dosya: Bu iş operasyon bilgisayarında, production bilgisayarı P3 üzerinde paralel çalışırken yapıldı. Çakışmayı önlemek için ortak dosyalar (`company/decision-log.md`, `company/backlog.md`, `dashboards/company.md`) bu oturumda düzenlenmedi.
 > Uygulama: İki makinenin değişiklikleri GitHub'da birleştikten sonraki ilk oturumda aşağıdaki kayıtlar işlenir ve bu dosyanın durumu "İşlendi" yapılır (silinmez).
-> Durum: **Bekliyor**
+> Durum: **İşlendi** (2026-10-10, birleşme sonrası) → D-020, backlog, dashboard. D numarası D-0XX yerine D-020 oldu.
 
 ## decision-log.md — sıradaki D numarası
 ```
