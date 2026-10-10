@@ -68,9 +68,9 @@ Zorluk: K = kolay · O = orta · Z = zor. Süreler v2'deki tahmini aralıklardı
 ### S6 — The lone ship (~7:05–8:25)
 | Beat | Objective | Primary | Secondary | Asset / status | Rights | Motion | Zorluk |
 |---|---|---|---|---|---|---|---|
-| "They called the Savannah a 'lone ship system.'" | Kavramı belgeden ver | V-12 GAO s.12, ifade vurgulu | — | Hazır | PD | Zoom + highlight | K |
+| "They called the Savannah a 'one ship system.'" (E-14) | Kavramı belgeden ver | V-12 GAO s.12, ifade vurgulu | — | Hazır | PD | Zoom + highlight | K |
 | "…existed for nuclear ships. But there was only one. So one ship carried their entire cost." | Yükü görselleştir | Özgün animasyon: üç destek bloğu (training · shore staff · facility) tek gemi ikonunun üzerinde | — | Üretilecek | Özgün | Bloklar tek gemiye iner | O |
-| "…could have handled several nuclear ships… officials… could easily service ten… pool of licensed crew…" | Ölçeği göster, sayıları doğru ayır | Aynı bloklar birkaç gemi ikonu arasında paylaşılır (sayı **verilmez**, "several") | Küçük atıflı not yalnız tesis bloğunda: "Officials: could service 10" | Üretilecek (C-12, C-13, C-33) | Özgün | Gemi ikonları belirir, yük dağılır | O |
+| "…could have handled several nuclear ships… officials… could easily service ten… pool of licensed crew…" | Ölçeği göster, sayıları doğru ayır | Aynı bloklar birkaç gemi ikonu arasında paylaşılır (sayı **verilmez**, "several") | — (D-018: "10" notu kaldırıldı; yalnız kara personeli + tesis "several" ile yayılır, eğitim yayılmaz) | Üretilecek (C-12, C-13, C-33) | Özgün | Gemi ikonları belirir, yük dağılır | O |
 | "…'as long as one vessel must absorb the full cost.'" | Kanıtı ekranda bırak | Q-02 belge satırı (PDF 6) | — | Hazır | PD | Highlight | K |
 | "So this is what the auditors' count shows… built around a single ship…" | Payoff | Animasyon tek gemiye geri döner; üç blok + "≈ $1.9M of ≈ $2M" | — | Üretilecek | Özgün | Sade, bekleyen kare | K |
 

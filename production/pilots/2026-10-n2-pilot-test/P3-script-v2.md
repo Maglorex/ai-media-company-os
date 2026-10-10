@@ -2,6 +2,10 @@
 
 > **DURUM: FOUNDER ONAYLI — pilotun kilitli senaryosu (2026-10-08, D-013).** Yeni kanıt veya ciddi production problemi olmadıkça metin yeniden yazılmaz; gerekirse değişiklik Founder'a tek karar olarak getirilir.
 > **Teknik düzeltme v2.1 (2026-10-08, Founder onaylı, D-014):** S3'te "fuel bundles" → "fuel elements" (ledger E-8, C-43). Başka hiçbir değişiklik yok.
+> **Kanıt disiplini düzeltmesi v2.2 (2026-10-10, Founder onaylı, D-018):** S6 VO'dan "Maritime and contractor officials told the auditors the Galveston facility could easily service ten." cümlesi çıkarıldı (S6 bölümü ve VO-only kopyası; ledger E-10). Kapasite yalnız GAO'nun "several nuclear ships, at a lower cost per ship" seviyesinde. Başka hiçbir değişiklik yok.
+> **Kanıt disiplini düzeltmesi v2.3 (2026-10-10, D-019 kapsamında):** S7 VO'da "And they didn't calculate what a fleet of nuclear ships would have cost." → "And the report doesn't estimate what a fleet of nuclear ships would have cost." (GAO'ya söz yüklenmez; raporda böyle bir hesabın olmaması bizim okumamız — ledger E-12). Başka hiçbir değişiklik yok.
+> **Kanıt disiplini düzeltmesi v2.4 (2026-10-10, D-019):** S5 VO — "planning that an ordinary freighter didn't need" → "more work and planning than an ordinary freighter needed" (GAO s.14: "require more work and planning than the operation of a conventional ship does"); "agreements with other governments" → "entry arrangements with other governments" (GAO s.14: "port entry arrangements with foreign governments"). Ledger E-13. Başka hiçbir değişiklik yok.
+> **Alıntı düzeltmesi v2.5 (2026-10-10, D-019):** S6 VO ve S6 VO-only kopyası: "lone ship system" → "one ship system". GAO s.12 (PDF 16) taramasında ifade ''one ship system''; önceki metin çıkarımı açılış tırnağını "l" okumuştu. Anlam ve premise aynı; ledger E-14. Bölüm başlığı "The lone ship" bizim tanımımız (alıntı değil), korundu. Başka hiçbir değişiklik yok.
 
 > Tarih: 2026-10-08 · Skill: `documentary-script` · Kanıt: `P3-evidence-ledger.md` · Packaging: D-012 · Önceki: `P3-script-v1.md` (korunur)
 > **v2 kapsamı (Founder talimatı, tek revizyon turu):** (1) açılış çelişkiyle başlar; (2) "worked" anlamı daraltıldı; (3) arka plan sıkılaştırıldı; (4) ana sonuç ledger seviyesine indirildi. Üç kalem, Galveston'ın iki yıl kullanılmaması, "lone ship system", audit sınırları ve "fleet of one" finali korundu.
@@ -102,7 +106,7 @@ Of the ship's sixty-seven crew members, twenty-seven needed at least some nuclea
 
 Line two: about four hundred and nine thousand dollars a year for a specially trained nuclear shore staff.
 
-This was a team of about ten people. As the first nuclear-powered merchant ship, the Savannah was watched closely to protect her crew and the communities in the ports she visited. Every port visit took planning that an ordinary freighter didn't need — surveys, entry and departure arrangements, and in foreign ports, agreements with other governments, worked out together with the Maritime Administration, the Atomic Energy Commission and the State Department.
+This was a team of about ten people. As the first nuclear-powered merchant ship, the Savannah was watched closely to protect her crew and the communities in the ports she visited. Every port visit took more work and planning than an ordinary freighter needed — surveys, entry and departure arrangements, and in foreign ports, entry arrangements with other governments, worked out together with the Maritime Administration, the Atomic Energy Commission and the State Department.
 
 Line three — the biggest: about one point one six million dollars a year for a nuclear ship-servicing facility.
 
@@ -118,11 +122,11 @@ The facility was there, and paid for — every year.
 **Amaç / Evidence / Görsel:** v1 ile aynı (C-11, Q-03, Q-02, C-33, C-12, C-13/Q-04, C-06).
 
 **VO:**
-The auditors had a name for this. They called the Savannah a "lone ship system."
+The auditors had a name for this. They called the Savannah a "one ship system."
 
 The training program, the shore staff and the servicing facility existed for nuclear ships. But there was only one. So one ship carried their entire cost.
 
-The report says the shore staff and the facility could have handled several nuclear ships, at a lower cost per ship. Maritime and contractor officials told the auditors the Galveston facility could easily service ten. And the training had already produced a pool of licensed crew who could have worked on future nuclear ships.
+The report says the shore staff and the facility could have handled several nuclear ships, at a lower cost per ship. And the training had already produced a pool of licensed crew who could have worked on future nuclear ships.
 
 The auditors' conclusion was simple. These costs would keep adding significantly to the Savannah's expense "as long as one vessel must absorb the full cost."
 
@@ -136,7 +140,7 @@ So this is what the auditors' count shows. Most of the identified extra cost cam
 **VO:**
 It's worth being clear about what this report doesn't tell us.
 
-The auditors say plainly that they did not review whether the experimental operation was effective. They didn't include the fuel. And they didn't calculate what a fleet of nuclear ships would have cost.
+The auditors say plainly that they did not review whether the experimental operation was effective. They didn't include the fuel. And the report doesn't estimate what a fleet of nuclear ships would have cost.
 
 They also pointed to other expenses. The Savannah carried a bigger crew than comparable conventional ships — sixty-seven people, compared with roughly forty-six to fifty-five — and spent more on supplies and maintenance. They even recommended that the government stop buying one kind of insurance for the ship, to save up to seventy-three thousand dollars a year.
 
@@ -236,7 +240,7 @@ Of the ship's sixty-seven crew members, twenty-seven needed at least some nuclea
 
 Line two: about four hundred and nine thousand dollars a year for a specially trained nuclear shore staff.
 
-This was a team of about ten people. As the first nuclear-powered merchant ship, the Savannah was watched closely to protect her crew and the communities in the ports she visited. Every port visit took planning that an ordinary freighter didn't need — surveys, entry and departure arrangements, and in foreign ports, agreements with other governments, worked out together with the Maritime Administration, the Atomic Energy Commission and the State Department.
+This was a team of about ten people. As the first nuclear-powered merchant ship, the Savannah was watched closely to protect her crew and the communities in the ports she visited. Every port visit took more work and planning than an ordinary freighter needed — surveys, entry and departure arrangements, and in foreign ports, entry arrangements with other governments, worked out together with the Maritime Administration, the Atomic Energy Commission and the State Department.
 
 Line three — the biggest: about one point one six million dollars a year for a nuclear ship-servicing facility.
 
@@ -246,11 +250,11 @@ And here is the detail that matters. After her first year of commercial service,
 
 The facility was there, and paid for — every year.
 
-The auditors had a name for this. They called the Savannah a "lone ship system."
+The auditors had a name for this. They called the Savannah a "one ship system."
 
 The training program, the shore staff and the servicing facility existed for nuclear ships. But there was only one. So one ship carried their entire cost.
 
-The report says the shore staff and the facility could have handled several nuclear ships, at a lower cost per ship. Maritime and contractor officials told the auditors the Galveston facility could easily service ten. And the training had already produced a pool of licensed crew who could have worked on future nuclear ships.
+The report says the shore staff and the facility could have handled several nuclear ships, at a lower cost per ship. And the training had already produced a pool of licensed crew who could have worked on future nuclear ships.
 
 The auditors' conclusion was simple. These costs would keep adding significantly to the Savannah's expense "as long as one vessel must absorb the full cost."
 
@@ -258,7 +262,7 @@ So this is what the auditors' count shows. Most of the identified extra cost cam
 
 It's worth being clear about what this report doesn't tell us.
 
-The auditors say plainly that they did not review whether the experimental operation was effective. They didn't include the fuel. And they didn't calculate what a fleet of nuclear ships would have cost.
+The auditors say plainly that they did not review whether the experimental operation was effective. They didn't include the fuel. And the report doesn't estimate what a fleet of nuclear ships would have cost.
 
 They also pointed to other expenses. The Savannah carried a bigger crew than comparable conventional ships — sixty-seven people, compared with roughly forty-six to fifty-five — and spent more on supplies and maintenance. They even recommended that the government stop buying one kind of insurance for the ship, to save up to seventy-three thousand dollars a year.
 
