@@ -50,3 +50,9 @@
 - Güven: Orta (tek video, iki somut hata)
 - Uygulama: Ekranda veya VO'da tırnak içinde kullanılacak her ifade kaynağın sayfa görüntüsünden (`production/tools/pdf/pdf-to-png.ps1`) okunarak ledger'a yazılır. Aynı yöntem vergi/mevzuat PDF doğrulamasında da kullanılır (2026-10-10, GİB rehberi).
 
+### L-006 — Founder kararı nerede verilirse verilsin aynı gün kanonik karar kaydına işlenir
+- Tarih: 2026-10-10
+- Kaynak: D-016/D-021 (ses modeli kararı backlog ve EXP-002'de vardı, decision-log'da yoktu); D-008, D-010–D-013 durum satırları eskimişti.
+- Öğrenim: Kararın yalnız backlog/deney/üretim kaydında kalması, sonraki oturumun aynı kararı Founder'a yeniden sormasına yol açtı (2026-10-10, v2/v4 sorusu). Durum satırları sonraki kararlarla güncellenmezse karar kaydı gerçek durumu yansıtmaz.
+- Güven: Yüksek (iki somut örnek)
+- Uygulama: Founder kararı alındığında aynı turda `company/decision-log.md`'ye D- olarak işlenir; önceki kararın "bekleniyor/sıradaki" durumu karşılandığında o satıra tarihli güncelleme eklenir. Soru sormadan önce `founder-interface` §6b-2 kontrolü yapılır.

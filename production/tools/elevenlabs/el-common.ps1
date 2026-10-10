@@ -1,4 +1,4 @@
-# Company OS - ElevenLabs ortak yardımcı (şirketin kendi betiği; üçüncü taraf kod yok)
+﻿# Company OS - ElevenLabs ortak yardımcı (şirketin kendi betiği; üçüncü taraf kod yok)
 # Anahtar repo DIŞINDA, Windows kullanıcısına bağlı DPAPI şifreli dosyada durur:
 #   $env:USERPROFILE\.companyos\elevenlabs.xml  (Founder tarafından Export-Clixml ile oluşturulur)
 # Bu betik anahtarı asla ekrana, dosyaya veya loga yazmaz.
@@ -51,6 +51,38 @@ function Invoke-ElTts([string]$VoiceId, [string]$ModelId, [string]$Text, [string
         $detail = ''; try { $detail = $_.ErrorDetails.Message } catch {}
         if ($detail.Length -gt 400) { $detail = $detail.Substring(0,400) }
         throw "ElevenLabs TTS basarisiz (HTTP $code). $detail"
+    }
+    finally { $h.Clear() }
+}
+
+# TTS + karakter zaman damgaları (with-timestamps). previous_text / next_text yalnız bağlamdır, seslendirilmez.
+# Ses dosyasını ve hizalamayı döndürür; ölçülen kredi yanıt başlığından (character-cost).
+function Invoke-ElTtsTimestamps([string]$VoiceId, [string]$ModelId, [string]$Text, [string]$OutFile,
+                                [string]$PreviousText = '', [string]$NextText = '',
+                                [string]$OutputFormat = 'mp3_44100_128') {
+    $h = Get-ElHeaders
+    $h['Accept'] = 'application/json'
+    $payload = [ordered]@{ text = $Text; model_id = $ModelId }
+    if ($PreviousText) { $payload['previous_text'] = $PreviousText }
+    if ($NextText) { $payload['next_text'] = $NextText }
+    $bytes = [Text.Encoding]::UTF8.GetBytes(($payload | ConvertTo-Json -Compress))
+    $uri = "$script:ElBase/v1/text-to-speech/$VoiceId/with-timestamps`?output_format=$OutputFormat"
+    try {
+        $r = Invoke-WebRequest -UseBasicParsing -Method Post -Uri $uri -Headers $h -ContentType 'application/json; charset=utf-8' -Body $bytes
+        $json = [Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray()) | ConvertFrom-Json
+        New-Item -ItemType Directory -Force (Split-Path $OutFile) | Out-Null
+        [IO.File]::WriteAllBytes($OutFile, [Convert]::FromBase64String($json.audio_base64))
+        return [pscustomobject]@{
+            file = $OutFile; model = $ModelId; voice = $VoiceId; chars = $Text.Length
+            character_cost = $r.Headers['character-cost']; request_id = $r.Headers['request-id']
+            alignment = $json.alignment
+        }
+    }
+    catch {
+        $code = $null; try { $code = [int]$_.Exception.Response.StatusCode } catch {}
+        $detail = ''; try { $detail = $_.ErrorDetails.Message } catch {}
+        if ($detail.Length -gt 400) { $detail = $detail.Substring(0,400) }
+        throw "ElevenLabs TTS (timestamps) basarisiz (HTTP $code). $detail"
     }
     finally { $h.Clear() }
 }

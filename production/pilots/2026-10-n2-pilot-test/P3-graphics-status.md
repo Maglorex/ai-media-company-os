@@ -38,7 +38,7 @@
 | V-05 fotoğraf etiketi | `P3-Label-V05` | SourceLabel (ProRes 4444 alfa) | V-05 | Test edildi |
 
 ## Kalan grafik işleri (edit plan §52 listesinden)
-Remotion tarafı tamam (S5 p1'de V-01 artık bulanıktan nete açılır). Fotoğraflar indirildi (`P3-asset-manifest.md`); hareketleri (Ken Burns) Premiere'de: S1 V-19/V-05, S2 V-07/V-21, S3 V-24, S8 V-26/V-09. Sıradaki blokaj: seslendirme (final ses seçimi + ElevenLabs kredisi = Founder kararı); grafik zamanlamaları VO'ya göre ayarlanacak. S2 için gemi profil şeması bilinçli olarak çizilmedi: GAO yerleşim vermez → yolcu/kargo kapsam kartı kullanıldı.
+Remotion tarafı tamam (S5 p1'de V-01 artık bulanıktan nete açılır). Fotoğraflar indirildi (`P3-asset-manifest.md`); hareketleri (Ken Burns) Premiere'de: S1 V-19/V-05, S2 V-07/V-21, S3 V-24, S8 V-26/V-09. Final VO v1 hazır (2026-10-10; 8 segment, 3.085 kredi, 8:19; `03_vo\final\P3_VO_full_v1.timing.json` cümle zamanları). Founder kulak kontrolü bekleniyor; ardından grafik `from` değerleri ve edit plan zaman kodları timing.json'a göre ayarlanacak. S2 için gemi profil şeması bilinçli olarak çizilmedi: GAO yerleşim vermez → yolcu/kargo kapsam kartı kullanıldı.
 
 ## Bu turda yapılan kanıt düzeltmeleri
 Script v2.2 (S6 "ten" cümlesi çıkarıldı, D-018) · v2.3 (S7 fleet cümlesi, E-12) · v2.4 (S5 port planlama ifadeleri, E-13) · v2.5 ("lone ship system" → GAO'nun gerçek ifadesi "one ship system", E-14) · ledger E-10..E-13, V-28, V-29 · edit/visual plan notları (10 gemi, ×3 damga, kapsam kartı).

@@ -57,6 +57,11 @@ Para, yayın, hesap, remote git, üçüncü taraf kurulum vb. onay gerektiren ko
 - Sonraki güvenli adım belliyse "Başlayayım mı?" diye sorma.
 - Founder onayı yalnızca gerçekten gerektiğinde istenir: para harcama, içerik yayınlama, önemli hesap ayarı, dış dünyada geri dönüşü zor işlem, credential/yetki kullanımı, önemli nihai yaratıcı karar, yıkıcı işlem; ayrıca `founder-approval.md`'de sayılan diğer durumlar (remote git, üçüncü taraf kurulum vb.). Bu kural o listeyi daraltmaz.
 
+## 6b-2. Verilmiş kararı yeniden sorma
+- Daha önce verilmiş ve hâlâ geçerli olan Founder kararını **tekrar sorma**. Soru hazırlamadan önce kararın verilip verilmediğini kontrol et: `company/decision-log.md` + `company/backlog.md`, `dashboards/company.md`, ilgili deney (`intelligence/experiments/`) ve üretim kayıtları (ör. voice-ledger, edit plan). Bir dosyada Founder kararı olup karar kaydında yoksa önce kararı kanonik kayda işle, soruyu sorma.
+- Bir karar yalnızca **yeni bilgi kararı maddi biçimde etkiliyorsa** yeniden açılır (ör. ciddi kalite sorunu, araç/lisans değişikliği, kalıcı ve büyük maliyet farkı). Bu durumda neyin değiştiğini tek cümleyle söyle ve tek öneri getir.
+- **Yeni test yapılması tek başına eski kararı geçersiz kılmaz.** Test sonrası soru, kararın kendisi değil yalnız QA bulgusudur (ör. "şu kelime yanlış okunuyor").
+- Geçici fiyat/kampanya avantajı tek başına kalıcı kararı değiştirme gerekçesi değildir.
 ## 6c. Dış yaratıcı danışman (ChatGPT)
 ChatGPT, gerektiğinde bağımsız **yaratıcı ve stratejik ikinci görüş** kaynağıdır. Ne zaman gerektiğine Founder değil COO karar verir.
 - **Değerlendir:** kanal adı ve marka kimliği; profil fotoğrafı ve banner yönü; kanal açıklaması ve konumlandırma; genel görsel dil; yeni kanal lansmanı; yaratıcı açıdan birbirine yakın birkaç güçlü seçenek arasında seçim; şirket verisinin henüz karar vermeye yetmediği önemli title/thumbnail durumları.

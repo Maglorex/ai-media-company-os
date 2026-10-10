@@ -39,3 +39,4 @@
 
 ### Finance usage aktarımı (2026-10-10)
 - ElevenLabs: 2026-10-10, P3 (VID-001) ses testi, Bill L. Oxley, eleven_v4 568 karakter / 62 kredi (req GCpDLMZHpf6kmD5poKvE); eleven_multilingual_v2 568 karakter / 227 kredi (req nWn2ztTVHIxkgyWD7EPO). Kaynak: `voice-ledger.md` #3–#4. → `finance/ledgers/usage.csv` formatına laptop senkronundan sonra işlenecek.
+- ElevenLabs final VO v1: 2026-10-10, VID-001, Bill L. Oxley / eleven_multilingual_v2, 8 segment, 7.710 karakter / **3085 kredi** (voice-ledger #5–#12) → `finance/ledgers/usage.csv`.

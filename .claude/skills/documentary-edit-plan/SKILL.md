@@ -4,6 +4,8 @@ description: Founder onaylı script + evidence ledger + visual plan hazır oldu�
 ---
 
 # Documentary Edit Plan
+> Ses üretimi/kurgusu için bağlayıcı kural: `.claude/rules/audio-production.md` (Claude dinleyemez; segment + zaman damgası + ölçüm; kulak kontrolleri yalnız checkpoint'te Founder'da). Kanal sesi ve birincil model: D-021.
+
 
 Kapsam: N2 (Industrial & Technology Autopsies) faceless belgeseller. Ön koşullar: kilitli script, güncel ledger, görsel plan. Çıktı: `production/.../<video>-edit-plan-vN.md`. Founder'a tablo varsayılan olarak gösterilmez (`founder-interface`).
 

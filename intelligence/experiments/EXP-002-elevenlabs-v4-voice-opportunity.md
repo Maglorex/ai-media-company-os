@@ -42,3 +42,7 @@ Her stok/final seslendirmede kaydedilecekler: script sürümü · voice_id · mo
 
 ## Kapanış
 - 2026-10-12 sonrası: sonuç yazılır (beklenen: "Kullanılmadı — kalite önceliği ve düşük tasarruf"). Öğrenim adayı: "Kampanya fiyatı model seçimini belirlemez; ölçülen kalite + ölçülen kredi belirler."
+
+## Güncelleme 2026-10-10
+- Birincil model kararı kanonik kayda işlendi: **D-021** (Bill L. Oxley + Multilingual v2). v4 = yedek / deneysel / geçici fiyat avantajı. Geçici indirim tek başına kararı değiştirmez.
+- Güncel script ile QA testi (voice-ledger #3–#4; v4 62 kredi, v2 227 kredi) model seçimini yeniden açmak için değildir.

@@ -94,7 +94,7 @@
 - Karar: 3 pilot taslağı hazırlandı: P1 Brewster Aeronautical, P2 Westinghouse J40, P3 NS Savannah. Baldwin YouTube kapsaması yüksek olduğu için elendi. Kanal, yayın, ElevenLabs, ücretli araç ve render yok.
 - Öneri (onay bekliyor): İlk tam pilot P3 NS Savannah (karşılaştırma 33/40; en iyi kaynak, en düşük risk ve süre). Sonraki P2.
 - Geri dönüş koşulu: P3 senaryosunda merkezdeki nedensellik ("vitrin tasarımı → maliyet") kaynakla desteklenemezse açı daraltılır veya P2'ye geçilir.
-- Durum: Aktif (P3 tam senaryosu için onay bekleniyor)
+- Durum: Aktif (P3 tam senaryosu için onay bekleniyor) → **Güncelleme 2026-10-10:** P3 senaryosu onaylandı ve kilitlendi (D-013; v2.1 D-014). P3 üretimde.
 - Detay: `production/pilots/2026-10-n2-pilot-test/`, `intelligence/experiments/EXP-001-n2-pilot-taslak-testi.md`
 
 ### D-009 — Skill Lab v0.1: üçüncü taraf araç değerlendirme sistemi
@@ -114,7 +114,7 @@
 - Karar: `ravsau/youtuber-skills` commit `603367b` statik incelendi (MIT, yalnız Markdown, script/credential yok; risk Orta). `youtube-packaging`, `youtube-script`, `youtube-edit-list`, `youtube-outliers`, `youtube-virality-gate`: **ADAPT BEFORE USE**. `youtube-connect` ve `AGENTS.md`: **REJECT**. Hiçbir bileşen kurulmadı veya adapte edilmedi; adaptasyon ayrı Founder onayı bekliyor. P3 pilotu beklemede.
 - Gerekçe / kanıt: Teknik risk düşük `[VERİ]` (dosya incelemesi); asıl risk creator kaynaklı kuralların 10–25 dk belge-öncelikli faceless formata körü körüne uygulanması `[VARSAYIM]` — kurallar heuristic olarak etiketlenip uyarlanacak.
 - Geri dönüş koşulu: Repo yeni commit'e geçerse yeniden inceleme; adaptasyon sonrası pilotta fayda görülmezse skill'ler kullanımdan çıkarılır (kayıt silinmez).
-- Durum: Aktif (adaptasyon onayı bekleniyor)
+- Durum: Aktif (adaptasyon onayı bekleniyor) → **Güncelleme 2026-10-10:** 5 bileşenin 2'si uyarlandı (`documentary-virality-gate`, `documentary-packaging` — D-011); kalan 3 (script, edit-list, outliers) ayrı Founder onayı bekliyor (backlog).
 - Detay: `intelligence/skill-lab/evaluations/2026-10-08-youtuber-skills.md`, `intelligence/skill-lab/registry.md`
 
 ### D-011 — Video fikri kapıları, Founder arayüzü ve dil kuralı
@@ -124,7 +124,7 @@
 - Karar: (1) `documentary-virality-gate` ve `documentary-packaging` skill'leri Company OS'a özgü yazıldı (metin kopyalanmadı; SL-002 kaynağı atıflı); danışma niteliğinde, karar Founder'da. (2) P3 NS Savannah premise'i GAO'nun gösterdiği seviyeye indirildi (v2: nükleere özgü kalemler konvansiyonel gemilere göre yaklaşık yıllık ~2M $ ek yük/fazla sübvansiyon; kaynaksız vitrin nedenselliği çıkarıldı); gate sonucu READY FOR PILOT; packaging önerisi Concept 1, yedek Concept 5 (koşullu). (3) `founder-interface` skill'i: Founder-facing iletişim sade Türkçe, teknik detay arkada, günlük komut "Agam bugün napcaz?", "Detayları göster" teknik raporu açar. (4) Dil kuralı: yönetim iletişimi Türkçe; gerçek yayın materyalleri (başlık, thumbnail yazısı, script, voice-over, description, branding) hedef dilinde (İngilizce) kalır, altına Türkçe anlamı yazılır. (5) Aynı mesajda tek karar istenir.
 - Gerekçe: Founder'ın zihinsel yükünü azaltmak; yayın materyalinin çeviriyle bozulmaması.
 - Geri dönüş koşulu: Founder kararı; packaging/gate sonuçları şirketin kendi Studio verisiyle çelişirse veri önceliklidir.
-- Durum: Aktif. Onay bekleyen: P3 packaging yönü, ardından P3 tam senaryosu.
+- Durum: Aktif. Onay bekleyen: P3 packaging yönü, ardından P3 tam senaryosu. → **Güncelleme 2026-10-10:** packaging onaylandı (D-012), senaryo onaylandı (D-013).
 - Detay: `.claude/skills/{documentary-virality-gate,documentary-packaging,founder-interface}/`, `production/pilots/2026-10-n2-pilot-test/`
 
 ### D-012 — P3 NS Savannah packaging onaylandı
@@ -133,7 +133,7 @@
 - Karar: Final başlık: "America's Nuclear Cargo Ship Worked. Then Auditors Counted the Extra Cost." Kapak: GAO denetim sayfasından gerçek kesit, nükleere özgü 3 maliyet satırı vurgulu, geminin gerçek fotoğrafı destek görseli, yazısız veya çok sade. Ana vaat: teknik olarak çalışan gemi ile nükleere özgü ekonomik yük arasındaki gerilim.
 - Sınırlar: "loss/failure/waste" ve kaynaksız nedensellik yok; kapakta uydurma rakam veya toplam etiketi yok.
 - Geri dönüş koşulu: Kaynak doğrulamasında GAO satırları farklı çıkarsa veya fotoğraf lisansı uygun değilse kapak/başlık yeniden değerlendirilir; yayın sonrası şirketin kendi CTR/Test & Compare verisi önceliklidir.
-- Durum: Aktif. Sıradaki: kaynak doğrulaması, ardından tam senaryo onayı.
+- Durum: Aktif. Sıradaki: kaynak doğrulaması, ardından tam senaryo onayı. → **Güncelleme 2026-10-10:** evidence ledger tamamlandı; senaryo onaylandı (D-013).
 - Detay: `production/pilots/2026-10-n2-pilot-test/P3-packaging-eval.md`
 
 ### D-013 — P3 senaryo v2 onaylandı ve kilitlendi
@@ -142,7 +142,7 @@
 - Karar: `production/pilots/2026-10-n2-pilot-test/P3-script-v2.md` pilotun onaylı senaryosudur. Yeni kanıt veya ciddi production problemi çıkmadıkça metin kendiliğinden yeniden yazılmaz. ElevenLabs kullanılmaz ve kredi harcanmaz (ayrı onay gerekir).
 - Gerekçe: Dört revizyon noktası (açılış, "worked" tanımı, arka plan, ana sonuç) uygulandı; kanıt kontrolü temiz.
 - Geri dönüş koşulu: Ledger'ı değiştiren yeni kanıt veya üretimde çözülemeyen görsel/hak sorunu → değişiklik Founder'a tek karar olarak gelir.
-- Durum: Aktif. Sıradaki: görsel plan (`documentary-visual-plan`).
+- Durum: Aktif. Sıradaki: görsel plan (`documentary-visual-plan`). → **Güncelleme 2026-10-10:** görsel plan v1.1 ve edit plan v1 hazırlandı; senaryo kanıt düzeltmeleriyle v2.5 (D-018, D-019 kapsamı).
 
 ### D-014 — P3 senaryo v2.1 teknik düzeltme
 - Tarih: 2026-10-08
@@ -163,7 +163,7 @@
 - Karar veren: Founder (ücretsiz önizleme dinlemesiyle)
 - Karar: 3 finalist (Annie K, Bill L. Oxley, Max) arasından Founder **Bill L. Oxley**'i (voice_id `iiidtqDt9FBdT1vfBluA`, professional, American, 730 gün kaldırılma bildirimi, ek ücret yok) tercih etti. COO önerisi Annie K idi; Founder tercihi geçerli.
 - Koşul: Kalıcı kanal sesi kararı, senaryo test metniyle kısa API testinden (telaffuz + model seçimi) sonra kesinleşir.
-- Durum: Aktif (test bekleniyor).
+- Durum: Aktif (test bekleniyor) → **Güncelleme 2026-10-10:** test 2026-10-08'de yapıldı (voice-ledger #1–#2); Founder Bill L. Oxley + **Multilingual v2**'yi seçti (backlog, EXP-002). Bu karar o gün buraya işlenmemişti; kalıcı kayıt **D-021**. Ana anlatıcı kararı kesinleşti.
 
 ### D-017 — Production hattı planı onaylandı; ikinci bilgisayar ana production/render makinesi
 - Tarih: 2026-10-08
@@ -198,4 +198,20 @@
 - Karar: (1) `intelligence/growth/` — fikir portföyü, yatırım puanı, yayın öncesi kilitli tahmin ile yayın sonrası sonuç ayrımı, kanıt hiyerarşisi (kendi kanal verisi > deneyler > niş karşılaştırmaları > genel kurallar), kalibrasyon; skill'ler `growth-idea-scoring`, `growth-performance-review`. (2) `finance/` — tahmin/gerçek ayrı CSV ledger'lar, ölçülen kullanım, video başına doğrudan + dağıtılmış maliyet, P&L, nakit akışı, break-even, geri dönüş; Tax Watch (resmî kaynakla doğrulama, muhasebeci soru listesi); agent `finance-controller`, skill'ler `cfo-review`, `tax-watch`. Tetikler `founder-brief`'e bağlandı.
 - Gerekçe: Kaynakların büyüme ihtimali yüksek fikirlere ayrılması ve gerçek video ekonomisinin bilinmesi; vergi takibinin Founder'ın hafızasına bırakılmaması.
 - Geri dönüş koşulu: Kendi yayın verimiz biriktikçe puan ağırlıkları ve maliyet dağıtım kuralı gözden geçirilir (sabit video eşiği yok; örneklem ve tutarlılığa göre — `intelligence/growth/README.md` §1).
+- Durum: Aktif.
+
+### D-021 — Kanal ana anlatıcısı ve birincil anlatım modeli
+- Tarih: 2026-10-08 (karar) · Kayıt: 2026-10-10 (kanonik kayda geç işlendi — bkz. L-006)
+- Karar veren: Founder
+- Karar: **Kanal ana anlatıcısı: Bill L. Oxley** (voice_id `iiidtqDt9FBdT1vfBluA`). **Birincil anlatım modeli: Eleven Multilingual v2** (`eleven_multilingual_v2`). Eleven v4 yalnız yedek model / deneysel alternatif / geçici kampanya-fiyat avantajı olan seçenek olarak kalır.
+- Gerekçe: Founder değerlendirmesi (2026-10-08, aynı ses, aynı metin, varsayılan ayarlar — voice-ledger #1–#2, EXP-002): Multilingual v2, v4 testinden daha doğal ve kanalın sakin/güvenilir belgesel tonuna daha uygun. **Geçici fiyat indirimi (v4) tek başına birincil model kararını değiştirmez.**
+- Uygulama: Final VO Multilingual v2 ile üretilir (üretim öncesi Founder onayı — `founder-approval.md` açık nokta). 2026-10-10 testleri (voice-ledger #3–#4, güncel script v2.5) model seçimini yeniden açmak için değil, telaffuz/kalite QA'sı içindir.
+- Geri dönüş koşulu: Yalnız maddi yeni bilgi: Multilingual v2'de giderilemeyen ciddi telaffuz/artefact/kalite sorunu, sesin veya modelin kullanımdan kalkması, lisans/ToS değişikliği ya da kalıcı ve büyük maliyet farkının Founder tarafından önceliklendirilmesi. Yeni test yapılması tek başına kararı geçersiz kılmaz.
+- Durum: Aktif. Kanal klasörü açıldığında `channels/<kanal>/voice.md` bu kayda referans verir.
+
+### D-022 — Ses üretimi ve ses kurgusu kuralı
+- Tarih: 2026-10-10
+- Karar veren: Founder
+- Karar: Claude sesi dinleyemediği için bunu gizlemez; final VO ve ses kurgusu script segmentleri, cümle/kelime zaman damgaları, süre, dalga formu, sessizlik tespiti ve clipping/loudness ölçümleriyle yapılır. Final narration bölüm segmentleri halinde üretilir ve edit timeline'ında birleştirilir (akışı bozarsa daha uzun bloklar). Dosya adı/metadata ile cümle–dosya eşlemesi tutulur. Kulak kontrolleri (doğallık, telaffuz, müzik–VO dengesi, geçiş/kesme, final bütünlük) yalnız anlamlı checkpoint'lerde Founder'a gelir; Founder'dan edit sürecini elle yönetmesi istenmez.
+- Uygulama: `.claude/rules/audio-production.md`; `documentary-voice-director`, `documentary-edit-plan` referans verir.
 - Durum: Aktif.
