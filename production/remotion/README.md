@@ -23,6 +23,9 @@ Plan: `production/tools/production-pipeline-plan.md` §1–3 · Karar: D-017 · 
 | `Timeline` | Yer şeritli zaman çizelgesi: olaylar, süre parantezleri, eksen kilometre taşları, bitişi solabilen maliyet şeridi (kaynak kesin bitiş vermiyorsa). `ym(yıl, ay)` ay ortası | `range`, `lanes`, `events[]`, `spans[]`, `band`, `milestones` |
 | `ScopeCard` | Kapsam/dürüstlük kartı: kaynağın neyi incelediği ve neyi açıkça incelemediği, yan yana; opsiyonel birebir alıntı | `title`, `sections[]` (`tone`, `items`, `quote`) |
 | `FlowDiagram` | Düğümlü şema: `arrow` yalnız kaynak sıra veriyorsa, aksi halde `none`; `groupLabel`/`groupSpan` ortak başlığı yalnız kaynak cümlesinin kapsadığı düğümlere çeker; opsiyonel oran noktaları ve olgu satırları | `nodes[]`, `connector`, `groupLabel`, `groupSpan`, `ratio`, `facts[]` |
+| `EquationCard` | Kaynağın tanımladığı ilişki (A − B = C), eşit kutular, ölçek yok; tutar kaynakta yoksa yazılmaz | `terms[]`, `operators`, `note`, `footnote` |
+| `QuoteCard` | Birebir alıntı + atıf (ikincil aktarım atıfta açık) | `quote`, `attribution` |
+| `UnitGrid` | "N içinden M" birim ızgarası; konum bilinmiyorsa `tag` ile belirtilir | `total`, `highlighted`, `columns`, `caption`, `tag` |
 
 Bar kuralı: ölçek gerçek değerlerden, eksen kırpılmaz; ekranda yazan rakam ve toplam metni ledger/kaynak ifadesidir, kodda toplanıp yuvarlanmaz.
 

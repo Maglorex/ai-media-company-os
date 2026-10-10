@@ -7,7 +7,7 @@ type Ring = number[][];
 type Geometry = {type: 'Polygon'; coordinates: Ring[]} | {type: 'MultiPolygon'; coordinates: Ring[][]};
 type Feature = {properties: Record<string, unknown>; geometry: Geometry | null};
 
-export type MapPoint = {lon: number; lat: number; label: string; detail?: string; from: number};
+export type MapPoint = {lon: number; lat: number; label: string; detail?: string; from: number; /** Yazı noktanın solunda mı (sağ kenara yakın noktalar). */ align?: 'left' | 'right'};
 
 export type LocatorMapProps = {
   /** Public klasöre göre GeoJSON yolu (ör. Natural Earth admin-1). */
@@ -27,6 +27,8 @@ export type LocatorMapProps = {
   /** Hafif yaklaşma (1 = yok). Dramatik değil; 1.0–1.15 önerilir. */
   zoomTo?: number;
   tag?: string;
+  title?: string;
+  subtitle?: string;
   label?: SourceLabelProps;
 };
 
@@ -45,6 +47,8 @@ export const LocatorMap: React.FC<LocatorMapProps> = ({
   points,
   zoomTo = 1.08,
   tag,
+  title,
+  subtitle,
   label,
 }) => {
   const frame = useCurrentFrame();
@@ -132,6 +136,12 @@ export const LocatorMap: React.FC<LocatorMapProps> = ({
         ))}
       </AbsoluteFill>
 
+      {title ? (
+        <div style={{position: 'absolute', left: 160, top: 100, textShadow: `0 0 18px ${theme.background}`}}>
+          <div style={{fontSize: 52, fontWeight: 700}}>{title}</div>
+          {subtitle ? <div style={{fontSize: 30, color: theme.muted, marginTop: 8}}>{subtitle}</div> : null}
+        </div>
+      ) : null}
       {tag ? (
         <div style={{position: 'absolute', right: 160, top: 100, fontSize: 24, color: theme.muted, border: `2px dashed ${theme.muted}`, padding: '8px 14px'}}>
           {tag}
@@ -150,7 +160,7 @@ const Point: React.FC<{point: MapPoint; xy: number[]; zoom: number}> = ({point, 
   return (
     <div style={{position: 'absolute', left: xy[0], top: xy[1], opacity: appear, transform: `scale(${1 / zoom})`, transformOrigin: '0 0'}}>
       <div style={{position: 'absolute', left: -11, top: -11, width: 22, height: 22, borderRadius: 11, backgroundColor: theme.accent, border: `3px solid ${theme.background}`}} />
-      <div style={{position: 'absolute', left: 24, top: -30, whiteSpace: 'nowrap'}}>
+      <div style={{position: 'absolute', ...(point.align === 'left' ? {right: 24, textAlign: 'right' as const} : {left: 24}), top: -30, whiteSpace: 'nowrap'}}>
         <div style={{fontSize: 40, fontWeight: 700}}>{point.label}</div>
         {point.detail ? <div style={{fontSize: 26, color: theme.muted}}>{point.detail}</div> : null}
       </div>

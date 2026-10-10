@@ -6,8 +6,10 @@ import {FlowDiagramProps} from '../../templates/FlowDiagram';
 import {ComponentSchematicProps} from '../../templates/ComponentSchematic';
 import {LoadShareProps} from '../../templates/LoadShare';
 import {LocatorMapProps} from '../../templates/LocatorMap';
+import {QuoteCardProps} from '../../templates/QuoteCard';
 import {ScopeCardProps} from '../../templates/ScopeCard';
 import {TimelineProps, ym} from '../../templates/Timeline';
+import {UnitGridProps} from '../../templates/UnitGrid';
 import {SourceLabelProps} from '../../templates/SourceLabel';
 
 // P3 — NS Savannah. Kaynak: GAO B-136209 (S1, evidence ledger). Kamu malı.
@@ -412,6 +414,154 @@ export const p3Q02FullCost: DocumentHighlightProps = {
   ],
   dimOthers: 0.25,
   label: {text: 'GAO report B-136209 (1970), p. 2', detail: GAO, from: 25},
+};
+
+// ── S1 / S2 / S3 / S8 (GAO kapak, s.3, s.4, s.5, s.6 — sayfa görüntülerinden doğrudan okundu 2026-10-10; NPS atıflı satırlar ledger S4)
+
+/** S1 p2 — C-14, C-44: "made 19 voyages, sailing about 240,000 miles … from U.S. Atlantic ports, included 10 trips to the
+ * Mediterranean, seven to northern Europe, and two to the Far East" (s.6). Bölge düzeyi; rota çizilmez (kaynakta yok). */
+export const p3VoyageMap: LocatorMapProps = {
+  geojson: 'maps/ne_50m_land.geojson',
+  bounds: [-100, -5, 150, 70],
+  points: [
+    {lon: -75, lat: 39, label: 'U.S. Atlantic ports', detail: 'Where the trade routes began', from: 20},
+    {lon: 15, lat: 38, label: 'Mediterranean', detail: '10 trips', from: 50},
+    {lon: 6, lat: 54, label: 'Northern Europe', detail: '7 trips', from: 80},
+    {lon: 128, lat: 33, label: 'Far East', detail: '2 trips', from: 110, align: 'left'},
+  ],
+  zoomTo: 1,
+  title: '19 voyages, about 240,000 miles',
+  subtitle: 'First 3 commercial years',
+  tag: 'Destinations by region · routes not shown',
+  label: {text: 'Map: Natural Earth (public domain)', detail: 'Voyages: GAO report B-136209 (1970), p. 6', from: 10},
+};
+
+/** S1 p2 — Q-06 / C-36: operatörlerin ifadesi, NPS aktarımı (birincil belgesi okunmadı → atıf şart). */
+export const p3QuoteReliable: QuoteCardProps = {
+  quote: 'the most reliable ship we have operating',
+  attribution: "Her operators, as quoted in a National Park Service history",
+  label: {text: 'National Park Service, National Historic Landmark nomination', detail: 'N.S. Savannah', from: 10},
+};
+
+/** S1 p3 — V-03: kapak, "JUNE 26, 1970" damgası (E-2: rapor tarihi kapak damgasıdır). */
+export const p3V03Cover: DocumentHighlightProps = {
+  src: 'pages/page-01.png',
+  pageSize: {width: 2400, height: 3061},
+  camera: [{from: 40, duration: 80, region: {x: 1450, y: 2560, w: 760, h: 260}}],
+  highlights: [{region: {x: 1610, y: 2665, w: 490, h: 80}, from: 125, duration: 20, style: 'outline'}],
+  label: {text: 'GAO report B-136209, cover', detail: GAO, from: 20},
+};
+
+/** S2 p1–p2 — V-18 / C-18, C-39: s.4 "Completed in 1962 … prototype vessel …" cümlesi. */
+export const p3V18Prototype: DocumentHighlightProps = {
+  src: 'pages/page-08.png',
+  pageSize: {width: 2400, height: 3082},
+  camera: [{from: 15, duration: 75, region: {x: 250, y: 2120, w: 1800, h: 500}}],
+  highlights: [
+    {region: {x: 430, y: 2190, w: 1330, h: 55}, from: 95, duration: 18},
+    {region: {x: 290, y: 2246, w: 1645, h: 55}, from: 113, duration: 20},
+    {region: {x: 290, y: 2301, w: 1645, h: 55}, from: 133, duration: 20},
+    {region: {x: 290, y: 2357, w: 1645, h: 55}, from: 153, duration: 20},
+    {region: {x: 290, y: 2412, w: 1645, h: 55}, from: 173, duration: 20},
+    {region: {x: 290, y: 2468, w: 1530, h: 55}, from: 193, duration: 18},
+  ],
+  dimOthers: 0.25,
+  label: {text: 'GAO report B-136209 (1970), p. 4', detail: GAO, from: 25},
+};
+
+/** S2 p3 — C-19 (s.5). Yerleşim/profil çizilmez (kaynakta yok); kullanılan/kullanılmayan alanlar kaynağın ifadesiyle. */
+export const p3PassengerCargo: ScopeCardProps = {
+  title: 'A combination passenger-cargo ship',
+  subtitle: 'What was used in commercial service, and what was not',
+  sections: [
+    {heading: 'Used: cargo', tone: 'neutral', items: ['Seven cargo holds', 'Room for 8,498 tons of freight'], from: 20},
+    {
+      heading: 'Not used: passenger facilities',
+      tone: 'accent',
+      items: ['30 staterooms for 60 passengers', 'Dining room, lounge and lobby, veranda, swimming pool'],
+      quote: 'because the cost of operating the facilities would be greater than the revenue received from passenger service',
+      from: 80,
+    },
+  ],
+  label: {text: 'GAO report B-136209 (1970), p. 5', detail: GAO, from: 10},
+};
+
+/** S2 p4 — C-20, C-38: s.5–6 (bareboat charter, $1/yıl, Todd sözleşmesi); yakıt ücretsiz = NPS (atıflı). Ok yok (ilişki, sıra değil). */
+export const p3Contracts: FlowDiagramProps = {
+  title: 'From August 1965: a commercial operator',
+  subtitle: 'How the government-owned ship was run',
+  connector: 'none',
+  nodes: [
+    {title: 'Maritime Administration', detail: 'Administers the contracts for the government-owned ship', from: 20},
+    {title: 'First Atomic Ship Transport (FAST)', detail: 'Subsidiary of American Export Isbrandtsen Lines; "bareboat" charter', from: 50, emphasis: true},
+    {title: 'Todd Shipyards', detail: 'Long-term cost-plus-fixed-fee contract for servicing the vessel', from: 80},
+  ],
+  facts: [
+    {value: '$1', text: 'charter hire per year, paid by FAST (GAO)', from: 120},
+    {value: 'Fuel', text: 'provided free of charge, according to the National Park Service', from: 160},
+  ],
+  label: {text: 'GAO report B-136209 (1970), pp. 5–6 · NPS history', detail: GAO, from: 10},
+};
+
+/** S3 p1 — C-34 (NPS, atıflı), terim "fuel elements" (E-8, C-43). Hangi 4 elemanın değiştiği bilinmiyor → konum ima edilmez. */
+export const p3FuelElements: UnitGridProps = {
+  title: '1968 refueling',
+  subtitle: 'The reactor core: 32 fuel elements',
+  total: 32,
+  highlighted: 4,
+  columns: 8,
+  caption: 'Only 4 of the 32 original fuel elements needed replacing, according to the National Park Service',
+  tag: 'Illustration · positions not shown',
+  label: {text: 'National Park Service, National Historic Landmark nomination', detail: 'N.S. Savannah', from: 10},
+};
+
+/** S3 p2–p3 — "worked" tanımı (script v2 "Worked" tanımı; C-14, C-36). Finansal soru ayrı (Q-05 ile tutarlı). */
+export const p3WorkedMeans: ScopeCardProps = {
+  title: 'What “worked” means here',
+  sections: [
+    {
+      heading: 'She worked',
+      tone: 'neutral',
+      items: ['Sailed regular commercial cargo routes', 'The people running her found her reliable'],
+      from: 20,
+    },
+    {
+      heading: 'A separate question',
+      tone: 'accent',
+      items: ['Did running her make financial sense?', 'The report shows, line by line, what she cost'],
+      from: 90,
+    },
+  ],
+  label: {text: 'GAO report B-136209 (1970) · NPS history', detail: GAO, from: 10},
+};
+
+/** S8 p1 — V-14 / C-23: Özet s.3 "lay up the vessel as proposed in the President's fiscal year 1971 budget". */
+export const p3V14LayUp: DocumentHighlightProps = {
+  src: 'pages/page-07.png',
+  pageSize: {width: 2400, height: 3085},
+  camera: [{from: 15, duration: 75, region: {x: 300, y: 2220, w: 1850, h: 360}}],
+  highlights: [
+    {region: {x: 466, y: 2335, w: 1632, h: 48}, from: 95, duration: 24},
+    {region: {x: 466, y: 2383, w: 1650, h: 50}, from: 119, duration: 24},
+    {region: {x: 466, y: 2433, w: 1280, h: 50}, from: 143, duration: 18},
+  ],
+  dimOthers: 0.25,
+  label: {text: 'GAO report B-136209 (1970), p. 3', detail: GAO, from: 25},
+};
+
+/** S8 p1–p2 — 1962–1971 zaman şeridi: C-39, C-14 (s.4–5), C-20, rapor tarihi (kapak, E-2), C-23 (s.3), C-24 (NPS, atıflı). */
+export const p3Strip: TimelineProps = {
+  title: 'N.S. Savannah, 1962–1971',
+  range: [1961.8, 1972.3],
+  lanes: ['The ship', 'The report'],
+  events: [
+    {at: ym(1962, 3), lane: 0, title: 'March 1962', detail: 'Demonstration phase begins', from: 20},
+    {at: ym(1965, 8), lane: 0, title: 'August 1965', detail: 'Chartered to FAST; commercial service', from: 60},
+    {at: 1971.85, lane: 0, title: 'Late 1971', detail: 'Deactivated (National Park Service)', from: 160, align: 'right'},
+    {at: 1970 + 5 / 12 + 25 / 365, lane: 1, title: 'June 26, 1970', detail: 'GAO report to Congress; FY1971 budget proposed laying the ship up', from: 110, align: 'right', width: 460},
+  ],
+  spans: [{start: ym(1962, 3), end: ym(1965, 8), lane: 0, label: 'Demonstration phase', from: 40}],
+  label: {text: 'GAO report B-136209 (1970) · NPS history', detail: GAO, from: 10},
 };
 
 /**
