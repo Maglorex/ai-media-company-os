@@ -36,3 +36,8 @@ Premiere Pro → **File → Import…** → `P3_XML_TEST.xml` → açılan `P3_X
 - Premiere Pro 2026: yeni proje `05_premiere\P3_NS_Savannah.prproj` → `P3_XML_TEST.xml` içe aktarıldı (menü kilitliyken dosyayı Project paneline sürükleyerek). **Media Offline yok**, VO 0:02,5'te başlıyor, harita ve rapor kapağı beklenen zamanlarda. Siyah aralar beklenen (test yalnız 4 klip). Süreler Premiere'de birebir: teaser 2:15, harita 14:29, kapak 5:25, sekans 8:21:01. → **XML yolu güvenilir; tam timeline XML ile üretilir.**
 - Not: Premiere açılışta "Import" menüsü proje açılmadan kapalıdır; açık bir proje varken menü kilitliyse arkada kalmış diyalog olabilir — sürükle-bırak her durumda çalışır.
 - Render notu: Remotion render'ı yarıda kesilirse ProRes dosyası bozuk kalır (2 dosya: invalid frame header). Toplu render artık geçici dosyaya yazıp başarıda yeniden adlandırıyor; kare sayısı ffprobe ile doğrulanır.
+
+## Tam başlangıç timeline'ı (2026-10-10)
+- `05_premiere\P3_NS_Savannah_START_v1.xml`: V1 37 klip (34 Remotion SYNC klibi — biri V2'de — + 4 ana fotoğraf), boşluk/çakışma yok; V2 1 (b23 Q-02); V3 3 opsiyonel fotoğraf (devre dışı); A1 VO v2 498,5 sn; 12 marker; sekans 8:21. 42 benzersiz dosya, kayıp yol 0. Tüm ProRes kliplerin kare sayısı doğrulandı (34/34, 2,33 GB).
+- Düzeltme: yuvarlamadan doğan 1 karelik klip çakışmaları (15 yer) — her V1 klibi bir sonrakinin başlangıcına kırpılır.
+- Premiere'de doğrulama: Founder (aynı projeye ikinci import).

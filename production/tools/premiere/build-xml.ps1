@@ -53,14 +53,14 @@ function Clip([string]$name, [string]$fileXml, [int]$start, [int]$len, [string]$
 $problems = @(); $want = { param($b) (-not $onlySet) -or ($onlySet -contains $b) }
 # Grafik klipleri
 $compList = @(Get-Content $Comps -Encoding UTF8 | ForEach-Object { $p = $_ -split ','; [pscustomobject]@{ id = $p[0]; frames = [int]$p[1]; beat = ($p[0] -split '-')[1] } })
-$v1 = @(); $v2 = @(); $v3 = @()
+$v1 = @(); $v2 = @(); $v3 = @(); $v1raw = @()
 foreach ($c in $compList) {
     if (-not (& $want $c.beat)) { continue }
     $path = Join-Path $cfg.graphics_dir "$($c.id).mov"
     if (-not (Test-Path $path)) { $problems += "eksik medya: $path"; continue }
     $start = if ($c.beat -eq 'b00') { 0 } else { & $ToFrame $beats[$c.beat].start }
-    $item = Clip $c.id (FileXml $path $c.frames 'video') $start $c.frames
-    if ($cfg.overlay_beats -contains $c.beat) { $v2 += $item } else { $v1 += $item }
+    if ($cfg.overlay_beats -contains $c.beat) { $v2 += Clip $c.id (FileXml $path $c.frames 'video') $start $c.frames }
+    else { $v1raw += [pscustomobject]@{ name = $c.id; file = (FileXml $path $c.frames 'video'); start = $start; len = $c.frames; extra = '' } }
 }
 # Ana fotoğraflar (beat boyunca)
 foreach ($ph in $cfg.photos) {
@@ -69,8 +69,11 @@ foreach ($ph in $cfg.photos) {
     if (-not (Test-Path $path)) { $problems += "eksik foto: $path"; continue }
     $s = & $ToFrame $beats[$ph.beat].start; $e = & $ToFrame $beats[$ph.beat].end; $len = $e - $s
     $extra = (MotionFilter (Scale $ph.w $ph.h $ph.fit)) + (Marker 'PREMIERE MOTION' $ph.note 0)
-    $v1 += Clip ("PHOTO " + $ph.file) (FileXml $path ($len) 'still' $ph.w $ph.h) $s $len $extra
+    $v1raw += [pscustomobject]@{ name = ("PHOTO " + $ph.file); file = (FileXml $path ($len) 'still' $ph.w $ph.h); start = $s; len = $len; extra = $extra }
 }
+# V1: her klip bir sonrakinin başlangıcına kırpılır (yuvarlamadan doğan 1 karelik çakışmalar; kırpma = son karelerin atılması)
+$v1raw = @($v1raw | Sort-Object start)
+for ($i = 0; $i -lt $v1raw.Count; $i++) { $it = $v1raw[$i]; if ($i -lt $v1raw.Count - 1) { $it.len = [math]::Min($it.len, $v1raw[$i + 1].start - $it.start) }; $v1 += Clip $it.name $it.file $it.start $it.len $it.extra }
 # Opsiyonel eklemeler (devre dışı)
 foreach ($ins in $cfg.inserts) {
     if ($onlySet) { continue }
