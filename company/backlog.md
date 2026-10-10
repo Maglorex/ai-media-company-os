@@ -31,7 +31,7 @@
 - [ ] Kanal marka kimliği (Founder + ChatGPT) — yayından önce; şablonlar tema dosyasıyla bekler.
 - [ ] Eksik kalıcı sistem: müzik/SFX kaynak ve lisans kuralları (ücretsiz kaynak öncelikli).
 - [ ] Eksik kalıcı sistem: yayın öncesi QA kapısı (kanıt, haklar, AI açıklaması, altyazı).
-- [ ] `[ONAY]` Ses testi ≤4.500 kredi; sonra ana ses seçimi; tam seslendirme ayrı onay. (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
+- [x] 2026-10-08/10 — Ses testi + ana ses seçimi (D-016, **D-021**: Bill L. Oxley + Multilingual v2); 2026-10-10 güncel script ile telaffuz QA (Founder: tamam); tam seslendirme Founder onayıyla üretildi. (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
 - [ ] P3 ölçülen süresine göre D-007'nin >40 s koşulunu yeniden yaz → Founder onayı.
 - [x] 2026-10-10 — Render bilgisayarı onboarding tamamlandı; Node.js 24 LTS + Remotion 4.0.529 (D-017 güncellemesi).
 - [x] 2026-10-10 — P3 'lone ship' kapasite anlatımı: yalnız GAO 'several' (D-018); script v2.2–v2.5 kanıt düzeltmeleri.
@@ -41,6 +41,12 @@
 - [ ] İlk aylık kapanış (Ekim 2026): Claude, ChatGPT, ElevenLabs, Adobe son fatura tutarları Founder'dan tek liste ile; birim kredi değeri.
 - [ ] P3 (VID-001) yayından önce: geriye dönük yatırım puanı + kilitli tahmin (FC-001) + maliyet tahmini; production'ın ölçtüğü ses kredisi ve süreler finans ledger'ına aktarılacak.
 - [ ] Muhasebeci görüşmesi (Q-01…Q-07) — monetizasyondan önce.
+- [x] 2026-10-10 — P3 grafik üretimi tamam: 32 Remotion kompozisyonu (S1–S8), 13 şablon; önizleme only — `P3-graphics-status.md`.
+- [x] 2026-10-10 — P3 kamu malı/CC0 fotoğraflar indirildi, lisans ve SHA-256 kaydı (`P3-asset-manifest.md`; D-019 eki).
+- [x] 2026-10-10 — **P3 final VO v1**: 8 segment, 3.085 kredi, 8:19; segment metin/ses/zaman damgası/QA, dinleme kopyası, zamanlama haritası, yedek ve checksum (`P3-vo-manifest.md`; finance U-003…U-005).
+- [x] 2026-10-10 — Kanonik karar düzeltmeleri: D-021, D-022 (`.claude/rules/audio-production.md`), L-006, Founder Interface §6b-2 (verilmiş kararı yeniden sorma); D-008/D-010–D-013/D-016 durum güncellemeleri.
+- [ ] **Sıradaki P3 checkpoint 1:** Founder kulak kontrolü — `P3_VO_full_v1_LISTEN.mp3` (doğallık, 7 bölüm geçişi, 4:19 duraklama). Sorun olursa yalnız ilgili segment yeniden üretilir.
+- [ ] **Sıradaki P3 checkpoint 2:** VO zamanlamasına senkron: grafik `from` değerleri + edit plan zaman kodları `P3_VO_full_v1.timing.json`'a göre (8:19); Premiere timeline (XML küçük testi) ve fotoğraf hareketleri; ardından müzik/SFX kaynağı (kural yok — önce kural).
 
 ## Sıradaki — Skill Lab
 - [x] 2026-10-08 — Skill Lab `.claude` kopyalaması tamamlandı (D-009).
@@ -60,7 +66,7 @@
 
 ## Sonra
 - [ ] Remotion / FFmpeg değerlendirmesi (production pipeline aşamasında).
-- [ ] Render bilgisayarını `machine-onboarding` ile bağla; operasyon bilgisayarının donanımını `company/machines.md`'ye işle.
+- [x] 2026-10-10 — Render bilgisayarı bağlandı (`company/machines.md`). Açık: operasyon bilgisayarının donanım kaydı.
 - [ ] Sayısal expansion kriterlerini tanımla (ilk kanal verisi oluştuktan sonra).
 
 ## Tamamlandı

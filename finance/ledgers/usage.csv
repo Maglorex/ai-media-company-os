@@ -1,3 +1,6 @@
 id,date,service,video_id,allocation,activity,unit,quantity,measured,source,note
 U-001,2026-10-08,elevenlabs,,channel,Kanal sesi testi (Bill L. Oxley / multilingual_v2),credits,468,yes,voice-ledger #1 (character-cost basligi),Kanal kurulum isi; VID-001'e yuklenmez
 U-002,2026-10-08,elevenlabs,,channel,Model karsilastirma (Bill L. Oxley / v4),credits,129,yes,voice-ledger #2 (character-cost basligi),Kanal kurulum isi; v4 indirimi gecici
+U-003,2026-10-10,elevenlabs,VID-001,video,P3 telaffuz/kalite QA testi (Bill L. Oxley / v4; model karari yeniden acilmadi D-021),credits,62,yes,voice-ledger #3 (character-cost basligi),Render PC anahtari
+U-004,2026-10-10,elevenlabs,VID-001,video,P3 telaffuz/kalite QA testi (Bill L. Oxley / multilingual_v2),credits,227,yes,voice-ledger #4 (character-cost basligi),Founder kulak kontrolu: telaffuz tamam
+U-005,2026-10-10,elevenlabs,VID-001,video,P3 final VO v1 - 8 segment S1-S8 7710 karakter (Bill L. Oxley / multilingual_v2),credits,3085,yes,voice-ledger #5-#12; P3-vo-manifest.md,Yeniden uretim yok; tavan 4000
