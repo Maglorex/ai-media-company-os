@@ -45,6 +45,11 @@ export type DocumentHighlightProps = {
    * Ör. S1 teaser'da sabit bulanık (from = to), S5'te bulanıktan nete. Metin değiştirilmez, yalnız odak.
    */
   blur?: {from: number; to: number; start: number; end: number};
+  /**
+   * Opsiyonel odak penceresi: pencere dışındaki sayfa neredeyse tamamen arka plana gömülür (strength, varsayılan 0.92).
+   * Kadrajda görünen ama anlatıda öne çıkmaması gereken komşu satırlar için (ör. D-018). Metin değiştirilmez.
+   */
+  focus?: {region: Region; strength?: number; from?: number};
 };
 
 const FADE = 10;
@@ -66,6 +71,7 @@ export const DocumentHighlight: React.FC<DocumentHighlightProps> = ({
   padding = 0.08,
   label,
   blur,
+  focus,
 }) => {
   const frame = useCurrentFrame();
   const {width: vw, height: vh} = useVideoConfig();
@@ -185,7 +191,23 @@ export const DocumentHighlight: React.FC<DocumentHighlightProps> = ({
             />
           </svg>
         ) : null}
-      </div>
+        {focus ? (
+          <svg width={pageSize.width} height={pageSize.height} style={{position: 'absolute', left: 0, top: 0}}>
+            <defs>
+              <mask id="dh-focus">
+                <rect width={pageSize.width} height={pageSize.height} fill="white" />
+                <rect x={focus.region.x} y={focus.region.y} width={focus.region.w} height={focus.region.h} rx={12} fill="black" />
+              </mask>
+            </defs>
+            <rect
+              width={pageSize.width}
+              height={pageSize.height}
+              fill={theme.background}
+              opacity={(focus.strength ?? 0.92) * interpolate(frame, [focus.from ?? 0, (focus.from ?? 0) + 20], [0, 1], clamp)}
+              mask="url(#dh-focus)"
+            />
+          </svg>
+        ) : null}      </div>
 
       {label ? <SourceLabel {...label} /> : null}
     </AbsoluteFill>

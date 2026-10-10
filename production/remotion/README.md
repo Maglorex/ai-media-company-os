@@ -13,7 +13,7 @@ Plan: `production/tools/production-pipeline-plan.md` §1–3 · Karar: D-017 · 
 ## Şablonlar (`src/templates/`)
 | Şablon | Ne yapar | Veri |
 |---|---|---|
-| `DocumentHighlight` | Gerçek belge sayfası + yavaş kamera (zoom/pan) + soldan sağa kalem vurgusu + hafif kararma + opsiyonel kaynak etiketi | `src`, `pageSize`, `camera[]`, `highlights[]` (sayfa pikseli koordinatları), `dimOthers` (0.25–0.3), `label` |
+| `DocumentHighlight` | Gerçek belge sayfası + yavaş kamera (zoom/pan) + soldan sağa kalem vurgusu + hafif kararma + opsiyonel kaynak etiketi; `blur` (rack focus), `focus` (odak penceresi: kadrajdaki ama anlatıda öne çıkmaması gereken komşu satırları gizler) | `src`, `pageSize`, `camera[]`, `highlights[]` (sayfa pikseli koordinatları), `dimOthers` (0.25–0.3), `label` |
 | `SourceLabel` | Sade kaynak etiketi; tek başına şeffaf (ProRes 4444) veya başka şablon içinde | `text`, `detail`, `position`, `from`, `until` |
 | `BarChart` | Sıfırdan başlayan yatay bar. `stacked`: parçalar tek barda + lejant + kaynaktan aynen alınan toplam parantezi · `grouped`: ayrı satırlar; aralık (ör. "about 46 to 55") düz + çizgili kısımla gösterilir | `mode`, `items[]` (`value` veya `range`, ekrandaki `valueLabel` metni — hesaplanmaz), `total`, `max`, `title`, `label` |
 | `Crossfade` | İki sahne arası sade çapraz geçiş (ör. belge → bar) | `a`, `aDuration`, `b`, `overlap` |
@@ -37,3 +37,6 @@ Her video yalnız veri dosyası ekler (ör. `videos/p3/shots.ts`) ve `Root.tsx`'
 ## Belge sayfası hazırlama
 `production/tools/pdf/pdf-to-png.ps1 -Pdf <pdf> -Pages 5,6 -OutDir <video>\01_archive\pages -Width 2400` (Windows yerleşik PDF API'si, ek araç yok). Koordinatlar bu görüntüden ölçülür ve still render ile doğrulanır:
 `npx.cmd remotion still src/index.ts <Comp> <çıktı>.png --frame=<n> --public-dir=<video>\01_archive`
+
+## VO senkronu
+Kurgu sürümleri `src/videos/<video>/synced.ts` içinde: her klip bir VO beat'ine bağlı (süre = beat), grafik içi `from` değerleri `at(cue, beat)` ile VO kelime zamanından gelir. `voCues.ts` elle düzenlenmez; `production/tools/elevenlabs/vo-cues.ps1` üretir (girdi: `<video>-vo-cues.json` + 03_vo segment JSON'ları + timing.json). Kontrol için `<VIDEO>-ANIMATIC` (VO + tüm klipler, yarım çözünürlük).

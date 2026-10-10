@@ -424,7 +424,10 @@ export const p3Q02FullCost: DocumentHighlightProps = {
     {region: {x: 212, y: 1200, w: 1685, h: 50}, from: 121, duration: 26},
     {region: {x: 212, y: 1250, w: 970, h: 50}, from: 147, duration: 18},
   ],
+  // Kadrajda üstteki "could easily service 10 nuclear vessels" satırı da görünüyor (gerçek sayfa, vurgulanmaz).
+  // D-018: 10 sayısı görsel anlatımda öne çıkmaz → odak penceresi yalnız Q-02 cümlesini açık bırakır.
   dimOthers: 0.25,
+  focus: {region: {x: 180, y: 1128, w: 1760, h: 196}, strength: 1, from: 20},
   label: {text: 'GAO report B-136209 (1970), p. 2', detail: GAO, from: 25},
 };
 

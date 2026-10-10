@@ -42,3 +42,11 @@ Remotion tarafı tamam (S5 p1'de V-01 artık bulanıktan nete açılır). Fotoğ
 
 ## Bu turda yapılan kanıt düzeltmeleri
 Script v2.2 (S6 "ten" cümlesi çıkarıldı, D-018) · v2.3 (S7 fleet cümlesi, E-12) · v2.4 (S5 port planlama ifadeleri, E-13) · v2.5 ("lone ship system" → GAO'nun gerçek ifadesi "one ship system", E-14) · ledger E-10..E-13, V-28, V-29 · edit/visual plan notları (10 gemi, ×3 damga, kapsam kartı).
+
+## VO senkronu (2026-10-10)
+- Kurgu sürümleri: `SYNC-<beat>-<görsel>` (30 kompozisyon, `src/videos/p3/synced.ts`); süre = VO beat'i, grafik içi anlar = VO kelime zamanları (`voCues.ts`, otomatik).
+- Zaman çizelgesi: `P3-edit-timeline.md` (35 beat, 31 cue; edit plan tahminlerinin yerini alır). Tanım: `P3-vo-cues.json`; üretim: `production/tools/elevenlabs/vo-cues.ps1`.
+- S6: tek gemi klibi b22–b24 boyunca tek parça (1386 kare); b23'te Q-02 belgesi üst izde; dönüş b24 başında.
+- Q-02 (b23) belge kadrajında "could easily service 10 nuclear vessels" satırı görünüyordu → D-018 gereği odak penceresi (`focus`) yalnız Q-02 cümlesini açık bırakır.
+- Animatic (senkron kontrolü, final değil): `P3-ANIMATIC` → `06_renders\P3_ANIMATIC_v1_halfres.mp4`.
+- Segment yeniden üretilirse: `vo-segments.ps1 -Only Sxx` → `vo-assemble.ps1` → `vo-cues.ps1`; SYNC kompozisyonları ve animatic kendiliğinden güncellenir.

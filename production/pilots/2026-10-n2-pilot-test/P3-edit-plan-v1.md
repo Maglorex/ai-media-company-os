@@ -1,4 +1,5 @@
 # P3 NS Savannah — Edit Plan v1
+> **2026-10-10:** Bu plandaki zaman kodları tahmindir. Gerçek VO (8:19) ile ölçülmüş beat zamanları: `P3-edit-timeline.md` (otomatik). Sahne içeriği ve görsel kararlar bu planda kalır.
 
 > Tarih: 2026-10-08 · Skill: `documentary-edit-plan` (ilk kullanım) · Script: `P3-script-v2.md` v2.1 (kilitli) · Görsel plan: `P3-visual-plan-v1.md` (v1.1) · Kanıt/haklar: `P3-evidence-ledger.md` · Ses: Bill L. Oxley, Multilingual v2 (Founder kalite referansı)
 > **Zamanlama yöntemi:** VO süreleri, anlatıcının ölçülen test hızından (voice-ledger #1: 1.169 karakter ≈ 76 sn → ≈15,3 karakter/sn) hesaplandı; final VO üretildiğinde gerçek dosyaya göre güncellenir. Kurgu, render, asset üretimi, ses üretimi yapılmadı.
