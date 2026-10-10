@@ -300,7 +300,7 @@ export const p3PortFlow: FlowDiagramProps = {
     {title: 'Annual inspections', from: 80},
     {
       title: 'Legal counsel',
-      detail: 'For matters such as port entry arrangements with foreign governments, with Maritime, the AEC and the State Department',
+      detail: 'Foreign port entry arrangements, with Maritime, the AEC and the State Department',
       from: 105,
       emphasis: true,
     },
@@ -571,12 +571,66 @@ export const p3Strip: TimelineProps = {
   lanes: ['The ship', 'The report'],
   events: [
     {at: ym(1962, 3), lane: 0, title: 'March 1962', detail: 'Demonstration phase begins', from: 20},
-    {at: ym(1965, 8), lane: 0, title: 'August 1965', detail: 'Chartered to FAST; commercial service', from: 60},
+    {at: ym(1965, 8), lane: 0, title: 'August 1965', detail: 'Chartered to FAST; commercial service', from: 60, width: 330},
     {at: 1971.85, lane: 0, title: 'Late 1971', detail: 'Deactivated (National Park Service)', from: 160, align: 'right'},
     {at: 1970 + 5 / 12 + 25 / 365, lane: 1, title: 'June 26, 1970', detail: 'GAO report to Congress; FY1971 budget proposed laying the ship up', from: 110, align: 'right', width: 460},
   ],
   spans: [{start: ym(1962, 3), end: ym(1965, 8), lane: 0, label: 'Demonstration phase', from: 40}],
   label: {text: 'GAO report B-136209 (1970) · NPS history', detail: GAO, from: 10},
+};
+
+// ── Kart ritmi için belge araları (ChatGPT önizleme notu 6, 2026-10-10; Production Autonomy Mode)
+
+/** S2 p3 — V-18 s.5 (PDF 9): "The passenger facilities have not been utilized … greater than the revenue received from passenger service." */
+export const p3V18bUnused: DocumentHighlightProps = {
+  src: 'pages/page-09.png',
+  pageSize: {width: 2400, height: 3091},
+  camera: [{from: 0, duration: 45, region: {x: 420, y: 700, w: 1720, h: 290}}],
+  highlights: [
+    {region: {x: 459, y: 736, w: 1623, h: 57}, from: 20, duration: 18},
+    {region: {x: 459, y: 793, w: 1646, h: 57}, from: 38, duration: 18},
+    {region: {x: 459, y: 850, w: 1646, h: 57}, from: 56, duration: 18},
+    {region: {x: 459, y: 907, w: 1341, h: 57}, from: 74, duration: 14},
+  ],
+  dimOthers: 0.25,
+  label: {text: 'GAO report B-136209 (1970), p. 5', detail: GAO, from: 10},
+};
+
+/** S3 p3 — rapor kapağı, tam sayfa, yavaş yaklaşma ("line by line, what she cost" köprüsü). Vurgu yok. */
+export const p3V03CoverPage: DocumentHighlightProps = {
+  src: 'pages/page-01.png',
+  pageSize: {width: 2400, height: 3061},
+  camera: [{from: 0, duration: 130, region: {x: 300, y: 500, w: 1800, h: 1400}}],
+  label: {text: 'GAO report B-136209, cover', detail: GAO, from: 5},
+};
+
+/** S7 p1 — V-17 s.4 (PDF 8): "We did not review the effectiveness of the experimental commercial operation of the SAVANNAH." (Q-05) */
+export const p3V17NotReviewed: DocumentHighlightProps = {
+  src: 'pages/page-08.png',
+  pageSize: {width: 2400, height: 3082},
+  camera: [{from: 0, duration: 50, region: {x: 250, y: 900, w: 1800, h: 330}}],
+  highlights: [
+    {region: {x: 1030, y: 1017, w: 888, h: 55}, from: 25, duration: 16},
+    {region: {x: 293, y: 1072, w: 1594, h: 55}, from: 41, duration: 22},
+    {region: {x: 293, y: 1128, w: 262, h: 55}, from: 63, duration: 8},
+  ],
+  dimOthers: 0.25,
+  label: {text: 'GAO report B-136209 (1970), p. 4', detail: GAO, from: 10},
+};
+
+/** S7 p2 — kapsam kartının kısa sürümü (momentum): belge alıntısı bir önceki sahnede (V-17) gösterildiği için kartta tekrar yok. */
+export const p3NotInReportShort: ScopeCardProps = {
+  title: 'What this report reviewed — and what it did not',
+  sections: [
+    {
+      heading: 'Reviewed',
+      tone: 'neutral',
+      items: ["Maritime's contract administration, Aug 1965 – Aug 1968", 'Certain nuclear-related costs (shore staff, technical facilities)'],
+      from: 5,
+    },
+    {heading: 'Not reviewed', tone: 'accent', items: ['The effectiveness of the experimental commercial operation'], from: 25},
+  ],
+  label: {text: 'GAO report B-136209 (1970), p. 4', detail: GAO, from: 5},
 };
 
 /**

@@ -66,3 +66,7 @@
 | `P3_VO_S08_v1_eleven_multilingual_v2.mp3` | 626 | `54C2CD8BD583FEA13A2E21C2B2CCB27B78A6F3018581FA8E1F79F2432D25A234` |
 | `P3_VO_S08_v1_eleven_multilingual_v2.txt` | 1 | `84A82D303FF7BF3A60FD12B2C7BDE16D35E816FE9E76E7BA3DA85C1CCCE7333D` |
 | `segments.json` | 12 | `BAB5287EBB5AFC8FE5150B73058549C3FC840E4B8287DE3BFE3C9F85CD79E4B0` |
+
+## v2 (2026-10-10) — birleştirme düzeltmesi, yeni üretim yok
+- S05 içi duraklama 1,456 → 0,97 sn (`-PauseEdits 'S05:21.585:23.041:0.97'`; ölçülen 0,94 sn) — `P3-edit-polish-notes.md` #1. Segment dosyaları değişmedi.
+- `P3_VO_full_v2.wav` · `P3_VO_full_v2_LISTEN.mp3` · `P3_VO_full_v2.timing.json` — toplam 498,5 sn (8:18,5). Kurgu bundan sonra v2'yi kullanır.

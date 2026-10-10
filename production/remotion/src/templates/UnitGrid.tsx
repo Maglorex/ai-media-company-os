@@ -38,7 +38,7 @@ export const UnitGrid: React.FC<UnitGridProps> = ({title, subtitle, total, highl
         {subtitle ? <div style={{fontSize: 30, color: theme.muted, marginTop: 8}}>{subtitle}</div> : null}
       </div>
       {tag ? (
-        <div style={{position: 'absolute', right: 160, top: 110, fontSize: 24, color: theme.muted, border: `2px dashed ${theme.muted}`, padding: '8px 14px', opacity: appear(0)}}>
+        <div style={{position: 'absolute', right: 160, top: 110, fontSize: 26, color: theme.muted, border: `2px dashed ${theme.muted}`, padding: '8px 14px', opacity: appear(0)}}>
           {tag}
         </div>
       ) : null}

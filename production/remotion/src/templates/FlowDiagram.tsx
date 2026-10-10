@@ -23,19 +23,21 @@ export type FlowDiagramProps = {
   /** Opsiyonel oran noktaları (ör. 67 kişiden 27'si). */
   ratio?: {total: number; highlighted: number; label: string; from: number};
   label?: SourceLabelProps;
+  /** Giriş hareketi: fade (varsayılan) veya rise (hafif yukarı kayarak). Şablon hissini kırmak için kliplere göre değişir. */
+  motion?: 'fade' | 'rise';
 };
 
 const LEFT = 160;
 const RIGHT = 1760;
 const NODE_TOP = 330;
-const NODE_H = 230;
+const NODE_H = 270;
 const GAP = 70;
 const FADE = 15;
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 /** Sade akış/bileşen şeması: düğümler, opsiyonel oklar, altta olgu satırları ve oran noktaları. */
-export const FlowDiagram: React.FC<FlowDiagramProps> = ({title, subtitle, nodes, connector, groupLabel, groupSpan, facts = [], ratio, label}) => {
+export const FlowDiagram: React.FC<FlowDiagramProps> = ({title, subtitle, nodes, connector, groupLabel, groupSpan, facts = [], ratio, label, motion = 'fade'}) => {
   const frame = useCurrentFrame();
   const appear = (from: number) => interpolate(frame, [from, from + FADE], [0, 1], clamp);
   const nodeW = (RIGHT - LEFT - GAP * (nodes.length - 1)) / nodes.length;
@@ -71,10 +73,11 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({title, subtitle, nodes,
                 borderTop: `6px solid ${n.emphasis ? theme.accent : theme.series[0]}`,
                 padding: '18px 20px',
                 opacity: o,
+                transform: motion === 'rise' ? `translateY(${(1 - o) * 28}px)` : undefined,
               }}
             >
-              <div style={{fontSize: 30, fontWeight: 700, lineHeight: 1.2}}>{n.title}</div>
-              {n.detail ? <div style={{fontSize: 24, color: theme.muted, marginTop: 10, lineHeight: 1.3}}>{n.detail}</div> : null}
+              <div style={{fontSize: 33, fontWeight: 700, lineHeight: 1.18}}>{n.title}</div>
+              {n.detail ? <div style={{fontSize: 27, color: theme.muted, marginTop: 10, lineHeight: 1.28}}>{n.detail}</div> : null}
             </div>
             {connector === 'arrow' && i < nodes.length - 1 ? <Arrow x={nodeX(i) + nodeW} from={nodes[i + 1].from} /> : null}
           </div>
@@ -87,7 +90,7 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({title, subtitle, nodes,
         {facts.map((f, i) => (
           <div key={i} style={{display: 'flex', alignItems: 'baseline', marginBottom: 18, opacity: appear(f.from)}}>
             <div style={{fontSize: 44, fontWeight: 700, color: theme.accent, marginRight: 18, whiteSpace: 'nowrap'}}>{f.value}</div>
-            <div style={{fontSize: 27, color: theme.text, lineHeight: 1.3}}>{f.text}</div>
+            <div style={{fontSize: 29, color: theme.text, lineHeight: 1.3}}>{f.text}</div>
           </div>
         ))}
       </div>
@@ -137,7 +140,7 @@ const Ratio: React.FC<{ratio: NonNullable<FlowDiagramProps['ratio']>}> = ({ratio
           />
         ))}
       </div>
-      <div style={{fontSize: 27, marginTop: 10}}>{ratio.label}</div>
+      <div style={{fontSize: 29, marginTop: 10}}>{ratio.label}</div>
     </div>
   );
 };

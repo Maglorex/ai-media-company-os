@@ -22,6 +22,8 @@ export type EquationCardProps = {
   /** Altta küçük açıklama satırları (ör. sübvansiyon kalemleri). */
   footnote?: {text: string; from: number};
   label?: SourceLabelProps;
+  /** Giriş hareketi: fade (varsayılan) veya rise. */
+  motion?: 'fade' | 'rise';
 };
 
 const LEFT = 160;
@@ -37,7 +39,7 @@ const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
  * Sade "denklem" kartı: kaynağın tanımladığı ilişkiyi (A − B = C) terim terim kurar.
  * Ölçek yoktur; kutular eşit boydadır, büyüklük ima etmez.
  */
-export const EquationCard: React.FC<EquationCardProps> = ({title, subtitle, terms, operators, note, footnote, label}) => {
+export const EquationCard: React.FC<EquationCardProps> = ({title, subtitle, terms, operators, note, footnote, label, motion = 'fade'}) => {
   const frame = useCurrentFrame();
   const appear = (from: number) => interpolate(frame, [from, from + FADE], [0, 1], clamp);
   const boxW = (RIGHT - LEFT - OP_W * operators.length) / terms.length;
@@ -64,6 +66,7 @@ export const EquationCard: React.FC<EquationCardProps> = ({title, subtitle, term
               borderTop: `6px solid ${t.emphasis ? theme.accent : theme.series[0]}`,
               padding: '22px 24px',
               opacity: appear(t.from),
+              transform: motion === 'rise' ? `translateY(${(1 - appear(t.from)) * 28}px)` : undefined,
             }}
           >
             {t.value ? (
@@ -101,7 +104,7 @@ export const EquationCard: React.FC<EquationCardProps> = ({title, subtitle, term
         </div>
       ) : null}
       {footnote ? (
-        <div style={{position: 'absolute', left: LEFT, top: TOP + BOX_H + (note ? 120 : 50), width: RIGHT - LEFT, fontSize: 26, color: theme.muted, lineHeight: 1.35, opacity: appear(footnote.from)}}>
+        <div style={{position: 'absolute', left: LEFT, top: TOP + BOX_H + (note ? 120 : 50), width: RIGHT - LEFT, fontSize: 28, color: theme.muted, lineHeight: 1.35, opacity: appear(footnote.from)}}>
           {footnote.text}
         </div>
       ) : null}

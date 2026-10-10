@@ -43,7 +43,11 @@ const v01End: DocumentHighlightProps = {
 const loneTotal = beatFrames('b22') + beatFrames('b23') + beatFrames('b24');
 const loneReturn = beatFrames('b22') + beatFrames('b23');
 
-export const syncedClips: Synced[] = [
+// Şablon hissini kırmak (ChatGPT önizleme notu 5): kart tipi kliplerde giriş hareketi sırayla fade / rise.
+const RISE = new Set(['b07', 'b10', 'b12', 'b17', 'b25b', 'b14']);
+const withMotion = (c: Synced): Synced => (RISE.has(c.beat) && c.props ? {...c, props: {...c.props, motion: 'rise'}} : c);
+
+const clips: Synced[] = [
   // S1
   clip('b02', 'VoyageMap', LocatorMap, {
     ...s.p3VoyageMap,
@@ -62,8 +66,10 @@ export const syncedClips: Synced[] = [
   clip('b06b', 'Prototype', DocumentHighlight, s.p3V18Prototype),
   clip('b07', 'PassengerCargo', ScopeCard, {
     ...s.p3PassengerCargo,
-    sections: [s.p3PassengerCargo.sections[0], {...s.p3PassengerCargo.sections[1], from: lead(at('pass_staterooms', 'b07'))}],
+    // Alıntı kartta yok: hemen ardından (b07b) belgenin kendisi gösterilir.
+    sections: [s.p3PassengerCargo.sections[0], {...s.p3PassengerCargo.sections[1], quote: undefined, from: lead(at('pass_staterooms', 'b07'))}],
   }),
+  clip('b07b', 'Unused', DocumentHighlight, s.p3V18bUnused),
   clip('b08b', 'Contracts', FlowDiagram, {
     ...s.p3Contracts,
     nodes: s.p3Contracts.nodes.map((n, i) => ({...n, from: 10 + i * 15})),
@@ -75,6 +81,7 @@ export const syncedClips: Synced[] = [
     ...s.p3WorkedMeans,
     sections: [s.p3WorkedMeans.sections[0], {...s.p3WorkedMeans.sections[1], from: lead(at('worked_separate', 'b10'))}],
   }),
+  clip('b10b', 'CoverPage', DocumentHighlight, s.p3V03CoverPage),
   // S4
   clip('b11', 'NetCost', EquationCard, {
     ...s.p3NetCost,
@@ -174,7 +181,9 @@ export const syncedClips: Synced[] = [
   }, loneTotal),
   clip('b23', 'Q02FullCost', DocumentHighlight, s.p3Q02FullCost),
   // S7
-  clip('b25', 'NotInReport', ScopeCard, s.p3NotInReport),
+  // Kapsam: önce belge (V-17), sonra kısa kart (momentum; ChatGPT önizleme notu 6).
+  clip('b25', 'NotReviewed', DocumentHighlight, {...s.p3V17NotReviewed, highlights: (s.p3V17NotReviewed.highlights ?? []).map((h, i) => ({...h, from: lead(at('nr_plainly', 'b25')) + [0, 16, 38][i]}))}),
+  clip('b25b', 'NotInReportShort', ScopeCard, s.p3NotInReportShort),
   clip('b26', 'CrewBar', BarChart, s.p3CrewBar),
   clip('b26b', 'V01End', DocumentHighlight, v01End),
   // S8
@@ -185,3 +194,8 @@ export const syncedClips: Synced[] = [
   }),
   clip('b29', 'FinalFrame', P3FinalFrame),
 ];
+export const syncedClips: Synced[] = clips.map(withMotion);
+
+/** Açılış teaser'ı (VO öncesi): gemi + bulanık üç maliyet satırı; thumbnail vaadiyle aynı kare (ChatGPT önizleme notu 4). */
+export const PREROLL_S = 2.5;
+export const prerollClip = {id: 'SYNC-b00-Teaser', component: P3FinalFrame, durationInFrames: Math.round(PREROLL_S * 30), props: {teaser: true}};

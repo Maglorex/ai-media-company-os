@@ -92,7 +92,7 @@ export const Timeline: React.FC<TimelineProps> = ({title, subtitle, range, lanes
       {milestones.map((m, i) => (
         <div key={i} style={{position: 'absolute', left: x(m.at), top: AXIS_Y, opacity: appear(m.from)}}>
           <div style={{position: 'absolute', left: -9, top: -8, width: 18, height: 18, borderRadius: 9, backgroundColor: theme.text}} />
-          <div style={{position: 'absolute', left: -9, top: 22, fontSize: 24, color: theme.text, whiteSpace: 'nowrap'}}>{m.label}</div>
+          <div style={{position: 'absolute', left: -9, top: 22, fontSize: 27, color: theme.text, whiteSpace: 'nowrap'}}>{m.label}</div>
         </div>
       ))}
 
@@ -136,14 +136,14 @@ export const Timeline: React.FC<TimelineProps> = ({title, subtitle, range, lanes
             <div
               style={{
                 position: 'absolute',
-                top: below ? y + 26 : y - 100,
+                top: below ? y + 26 : y - 124,
                 ...(right ? {right: 1920 - (x(e.end ?? e.at) + 7)} : {left: x(e.at) - 7}),
                 textAlign: right ? 'right' : 'left',
                 width: e.width ?? 420,
               }}
             >
-              <div style={{fontSize: 27, fontWeight: 700, lineHeight: 1.2}}>{e.title}</div>
-              {e.detail ? <div style={{fontSize: 23, color: theme.muted, marginTop: 4, lineHeight: 1.25}}>{e.detail}</div> : null}
+              <div style={{fontSize: 30, fontWeight: 700, lineHeight: 1.2}}>{e.title}</div>
+              {e.detail ? <div style={{fontSize: 26, color: theme.muted, marginTop: 4, lineHeight: 1.25}}>{e.detail}</div> : null}
             </div>
           </div>
         );
@@ -170,7 +170,7 @@ const Band: React.FC<{band: TimelineBand; x: (t: number) => number}> = ({band, x
           borderLeft: `3px solid ${theme.accent}`,
         }}
       />
-      <div style={{position: 'absolute', left: 16, top: 6, fontSize: 24, fontWeight: 600, whiteSpace: 'nowrap'}}>{band.label}</div>
+      <div style={{position: 'absolute', left: 16, top: 5, fontSize: 27, fontWeight: 600, whiteSpace: 'nowrap'}}>{band.label}</div>
     </div>
   );
 };

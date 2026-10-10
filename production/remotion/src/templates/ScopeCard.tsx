@@ -18,6 +18,8 @@ export type ScopeCardProps = {
   subtitle?: string;
   sections: ScopeSection[];
   label?: SourceLabelProps;
+  /** Giriş hareketi: fade (varsayılan) veya rise. */
+  motion?: 'fade' | 'rise';
 };
 
 const FADE = 15;
@@ -32,7 +34,7 @@ const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
  * Kapsam kartı: bir kaynağın neyi incelediğini ve neyi açıkça incelemediğini yan yana gösterir.
  * Dürüstlük sahnesi; yalnız kaynağın kendi kapsam ifadelerini taşır, yorum eklemez.
  */
-export const ScopeCard: React.FC<ScopeCardProps> = ({title, subtitle, sections, label}) => {
+export const ScopeCard: React.FC<ScopeCardProps> = ({title, subtitle, sections, label, motion = 'fade'}) => {
   const frame = useCurrentFrame();
   const titleIn = interpolate(frame, [0, FADE], [0, 1], clamp);
   return (
@@ -54,6 +56,7 @@ export const ScopeCard: React.FC<ScopeCardProps> = ({title, subtitle, sections, 
               top: TOP,
               width: COL_W,
               opacity: o,
+              transform: motion === 'rise' ? `translateY(${(1 - o) * 28}px)` : undefined,
               borderTop: `6px solid ${color}`,
               paddingTop: 22,
             }}

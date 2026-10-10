@@ -1,13 +1,14 @@
 import {AbsoluteFill, Audio, Img, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {SourceLabel} from '../../templates/SourceLabel';
 import {theme} from '../../theme';
-import {syncedClips} from './synced';
+import {PREROLL_S, prerollClip, syncedClips} from './synced';
 import {beats, BeatId, VO_FPS, VO_TOTAL_S} from './voCues';
 
 // P3 animatic: tüm SYNC klipleri beat başlangıçlarında + VO. Yalnız senkron kontrolü içindir (final render değil).
 // Fotoğraf beat'leri burada geçici yavaş yaklaşmayla gösterilir; final hareket Premiere'de (plan §1).
 
-export const ANIMATIC_FRAMES = Math.ceil(VO_TOTAL_S * VO_FPS);
+const PRE = Math.round(PREROLL_S * VO_FPS);
+export const ANIMATIC_FRAMES = PRE + Math.ceil(VO_TOTAL_S * VO_FPS);
 
 const photos: {beat: BeatId; src: string; label: string}[] = [
   {beat: 'b01', src: 'photos/V-19_rotterdam_1964-09-30_cc0.jpg', label: 'Rotterdam, 1964 · Nationaal Archief / Anefo (CC0)'},
@@ -16,7 +17,7 @@ const photos: {beat: BeatId; src: string; label: string}[] = [
   {beat: 'b28', src: 'photos/V-05_nara-542141_golden-gate_1962.jpg', label: 'Photo: AEC / National Archives · 1962'},
 ];
 
-const f = (b: BeatId) => Math.round(beats[b].start * VO_FPS);
+const f = (b: BeatId) => PRE + Math.round(beats[b].start * VO_FPS);
 const len = (b: BeatId) => Math.round((beats[b].end - beats[b].start) * VO_FPS);
 
 const Photo: React.FC<{src: string; label: string; dark?: boolean}> = ({src, label, dark}) => {
@@ -33,11 +34,11 @@ const Photo: React.FC<{src: string; label: string; dark?: boolean}> = ({src, lab
 
 const Stamp: React.FC = () => {
   const frame = useCurrentFrame();
-  const s = frame / VO_FPS;
+  const s = Math.max(0, frame - PRE) / VO_FPS;
   const id = (Object.keys(beats) as BeatId[]).filter((b) => beats[b].start <= s).pop();
   return (
     <div style={{position: 'absolute', right: 24, top: 18, fontFamily: 'monospace', fontSize: 26, color: '#ffffffcc', background: '#000a', padding: '4px 10px'}}>
-      ANIMATIC · {Math.floor(s / 60)}:{String(Math.floor(s % 60)).padStart(2, '0')} · {id}
+      ANIMATIC (debug — final export'ta yok) · {Math.floor(s / 60)}:{String(Math.floor(s % 60)).padStart(2, '0')} · {id}
     </div>
   );
 };
@@ -60,7 +61,12 @@ export const P3Animatic: React.FC = () => (
         <c.component {...(c.props ?? {})} />
       </Sequence>
     ))}
-    <Audio src={staticFile('vo/P3_VO_full_v1_LISTEN.mp3')} />
+    <Sequence from={0} durationInFrames={PRE}>
+      <prerollClip.component {...prerollClip.props} />
+    </Sequence>
+    <Sequence from={PRE}>
+      <Audio src={staticFile('vo/P3_VO_full_v2_LISTEN.mp3')} />
+    </Sequence>
     <Stamp />
   </AbsoluteFill>
 );

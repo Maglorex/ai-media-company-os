@@ -65,7 +65,7 @@ export const SourceLabel: React.FC<SourceLabelProps> = ({
       >
         <div style={{fontSize: 30, fontWeight: 600, lineHeight: 1.25}}>{text}</div>
         {detail ? (
-          <div style={{fontSize: 24, color: theme.muted, marginTop: 4, lineHeight: 1.25}}>{detail}</div>
+          <div style={{fontSize: 26, color: theme.muted, marginTop: 4, lineHeight: 1.25}}>{detail}</div>
         ) : null}
       </div>
     </AbsoluteFill>

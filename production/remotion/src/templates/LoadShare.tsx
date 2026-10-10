@@ -123,7 +123,7 @@ export const LoadShare: React.FC<LoadShareProps> = ({
             alignItems: 'center',
             paddingLeft: 18,
             boxSizing: 'border-box',
-            fontSize: 26,
+            fontSize: 28,
             fontWeight: 600,
             color: theme.background,
             whiteSpace: 'nowrap',

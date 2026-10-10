@@ -25,8 +25,10 @@ $map = Get-Content $Timing -Raw -Encoding UTF8 | ConvertFrom-Json
 $offsets = @{}; foreach ($s in $map.segments) { $offsets[$s.id] = [double]$s.offset_s }
 $words = @{}
 foreach ($id in $offsets.Keys) {
-    $j = Get-Content (Join-Path $VoDir ($Pattern -f $id)) -Raw -Encoding UTF8 | ConvertFrom-Json
-    $words[$id] = @($j.words | ForEach-Object { [pscustomobject]@{ n = (Norm $_.w); start = [double]$_.start } } | Where-Object { $_.n })
+    # Birleştirmedeki duraklama kısaltmaları uygulanmış kelime zamanları timing.json'da (words_local); yoksa segment JSON'ı.
+    $segMap = $map.segments | Where-Object { $_.id -eq $id }
+    $src = if ($segMap.words_local) { $segMap.words_local } else { (Get-Content (Join-Path $VoDir ($Pattern -f $id)) -Raw -Encoding UTF8 | ConvertFrom-Json).words }
+    $words[$id] = @($src | ForEach-Object { [pscustomobject]@{ n = (Norm $_.w); start = [double]$_.start } } | Where-Object { $_.n })
 }
 
 function Find-Phrase($seg, $phrase) {

@@ -143,7 +143,7 @@ export const LocatorMap: React.FC<LocatorMapProps> = ({
         </div>
       ) : null}
       {tag ? (
-        <div style={{position: 'absolute', right: 160, top: 100, fontSize: 24, color: theme.muted, border: `2px dashed ${theme.muted}`, padding: '8px 14px'}}>
+        <div style={{position: 'absolute', right: 160, top: 100, fontSize: 26, color: theme.muted, border: `2px dashed ${theme.muted}`, padding: '8px 14px'}}>
           {tag}
         </div>
       ) : null}
@@ -162,7 +162,7 @@ const Point: React.FC<{point: MapPoint; xy: number[]; zoom: number}> = ({point, 
       <div style={{position: 'absolute', left: -11, top: -11, width: 22, height: 22, borderRadius: 11, backgroundColor: theme.accent, border: `3px solid ${theme.background}`}} />
       <div style={{position: 'absolute', ...(point.align === 'left' ? {right: 24, textAlign: 'right' as const} : {left: 24}), top: -30, whiteSpace: 'nowrap'}}>
         <div style={{fontSize: 40, fontWeight: 700}}>{point.label}</div>
-        {point.detail ? <div style={{fontSize: 26, color: theme.muted}}>{point.detail}</div> : null}
+        {point.detail ? <div style={{fontSize: 28, color: theme.muted}}>{point.detail}</div> : null}
       </div>
     </div>
   );

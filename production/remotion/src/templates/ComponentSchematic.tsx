@@ -69,7 +69,7 @@ export const ComponentSchematic: React.FC<ComponentSchematicProps> = ({
           position: 'absolute',
           right: 160,
           top: 100,
-          fontSize: 24,
+          fontSize: 26,
           color: theme.muted,
           border: `2px dashed ${theme.muted}`,
           padding: '8px 14px',
@@ -100,7 +100,7 @@ export const ComponentSchematic: React.FC<ComponentSchematicProps> = ({
           }}
         >
           <div style={{fontSize: 34, fontWeight: 700}}>{separateFigure.title}</div>
-          <div style={{fontSize: 26, color: theme.muted, marginTop: 4}}>{separateFigure.detail}</div>
+          <div style={{fontSize: 28, color: theme.muted, marginTop: 4}}>{separateFigure.detail}</div>
         </div>
       ) : null}
 
@@ -133,7 +133,7 @@ const Card: React.FC<{group: SchematicGroup; left: number}> = ({group, left}) =>
         // Maddeler kartla birlikte, kısa aralıklarla sırayla belirir.
         const itemIn = interpolate(frame, [group.from + 8 + j * 10, group.from + 20 + j * 10], [0, 1], clamp);
         return (
-          <div key={j} style={{display: 'flex', fontSize: 25, lineHeight: 1.28, marginTop: 9, opacity: itemIn}}>
+          <div key={j} style={{display: 'flex', fontSize: 27, lineHeight: 1.26, marginTop: 8, opacity: itemIn}}>
             <span style={{color: theme.accent, marginRight: 12}}>—</span>
             <span>{item}</span>
           </div>
@@ -166,12 +166,12 @@ const Areas: React.FC<{areas: SchematicArea[]; from: number}> = ({areas, from}) 
                   backgroundColor: i === 0 ? `${theme.accent}55` : 'transparent',
                 }}
               />
-              <div style={{fontSize: 21, color: theme.muted, marginTop: 6, maxWidth: 190}}>{a.label}</div>
+              <div style={{fontSize: 24, color: theme.muted, marginTop: 6, maxWidth: 200}}>{a.label}</div>
             </div>
           );
         })}
       </div>
-      <div style={{fontSize: 20, color: theme.muted, marginTop: 8, fontStyle: 'italic'}}>Area comparison only, not a site plan</div>
+      <div style={{fontSize: 23, color: theme.muted, marginTop: 8, fontStyle: 'italic'}}>Area comparison only, not a site plan</div>
     </div>
   );
 };
