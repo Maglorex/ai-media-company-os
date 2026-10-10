@@ -17,6 +17,7 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
 - **Kanıt kaydı (senaryodan önce, script/packaging buna dayanır):** `documentary-evidence-ledger` skill'i.
 - **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri. Ses üretimi ve ses kurgusu: `.claude/rules/audio-production.md` — ses/kurgu işine başlamadan oku (yalnız `production/` dosyalarında otomatik yüklenir). Claude dinleyemez; ölçülebilir kontroller, segment + zaman damgası, kulak kontrolü yalnız checkpoint'te Founder'da.
+- **Müzik / SFX (final mix öncesi):** `documentary-music-sfx` skill'i — YouTube Audio Library öncelikli, lisans kaydı `production/audio-library/`, attribution yayına otomatik.
 - **Büyüme (hangi fikre yatırım, yayın sonrası öğrenim):** `growth-idea-scoring` (fikir sıralama + yayın öncesi kilitli tahmin) → yayın sonrası `growth-performance-review`. Tahmin ve gerçek ayrı; kendi kanal verimiz genel kurallardan önce gelir; "viral olur" tahmini yok.
 - **Para ve vergi:** `cfo-review` (gider/gelir/kullanım kaydı, aylık P&L, video başına maliyet ve kâr) ve `tax-watch` (Türkiye vergi takibi; resmî kaynakla doğrulanır, kesin hüküm muhasebeciye). Tetikleri `founder-brief` izler.
 - **Kapanış:** `session-close` skill'i.

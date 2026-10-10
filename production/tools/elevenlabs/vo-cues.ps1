@@ -72,7 +72,7 @@ foreach ($c in $cueList) { [void]$ts.AppendLine(("  {0}: {1}," -f $c.id, $c.star
 [IO.File]::WriteAllText($OutTs, $ts.ToString().Replace("`r`n", "`n"), (New-Object Text.UTF8Encoding $false))
 
 # Kurgu zaman çizelgesi
-function Tc([double]$s) { $t = [TimeSpan]::FromSeconds($s); '{0}:{1:00}.{2}' -f [int]$t.TotalMinutes, $t.Seconds, [int]($t.Milliseconds / 100) }
+function Tc([double]$s) { $d = [math]::Floor($s * 10); '{0}:{1:00}.{2}' -f [math]::Floor($d / 600), [math]::Floor(($d % 600) / 10), ($d % 10) }
 $md = New-Object System.Text.StringBuilder
 [void]$md.AppendLine('# P3 — Kurgu zaman çizelgesi (VO senkron)')
 [void]$md.AppendLine('')

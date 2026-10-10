@@ -29,7 +29,8 @@
 - [x] Render bilgisayarı onboarding (durum doğrulama) → sonra Node.js LTS + Remotion. (2026-10-10)
 - [ ] P3: Premiere timeline XML küçük testi (garanti değil).
 - [ ] Kanal marka kimliği (Founder + ChatGPT) — yayından önce; şablonlar tema dosyasıyla bekler.
-- [ ] Eksik kalıcı sistem: müzik/SFX kaynak ve lisans kuralları (ücretsiz kaynak öncelikli).
+- [x] 2026-10-10 — Müzik/SFX sistemi kuruldu (D-024; `documentary-music-sfx`, `production/audio-library/`). P3 planı: `P3-music-sfx-plan.md`.
+- [ ] P3 müzik adayları: Founder Audio Library'den ≤3 parça + ≤3 SFX indirir (`_audio-library\incoming\`) → COO ledger + mix planı.
 - [ ] Eksik kalıcı sistem: yayın öncesi QA kapısı (kanıt, haklar, AI açıklaması, altyazı).
 - [x] 2026-10-08/10 — Ses testi + ana ses seçimi (D-016, **D-021**: Bill L. Oxley + Multilingual v2); 2026-10-10 güncel script ile telaffuz QA (Founder: tamam); tam seslendirme Founder onayıyla üretildi. (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
 - [ ] P3 ölçülen süresine göre D-007'nin >40 s koşulunu yeniden yaz → Founder onayı.

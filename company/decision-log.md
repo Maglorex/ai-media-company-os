@@ -226,3 +226,12 @@
 - Gerekçe / kanıt: [VERİ] Claude Code 2.1.295 binary'sinde `model`, `effort`, `maxTurns`, `omitClaudeMd`, rules `paths` alanları doğrulandı. [VERİ] Proje sabit context yükü ~27.6 KB → ~26.0 KB (küçük). [VARSAYIM] Asıl kazanç mekanik iş ve uzman işlerin daha ucuz modele gitmesinden gelir; ölçülmedi.
 - Geri dönüş koşulu: Bir Sonnet uzmanında 2 kalite hatası → o agent `inherit`; scanner dosya değiştirir veya secret değeri gösterirse kapatılır; ses kuralı production dışı ses işinde atlanırsa global yapılır. Ölçüm `finance/efficiency/efficiency-log.md`; 5–10 oturumdan önce tasarruf iddiası yok.
 - Durum: Aktif.
+
+### D-024 — Müzik/SFX sistemi (documentary-music-sfx)
+- Tarih: 2026-10-10
+- Karar veren: Founder (talimat) · Hazırlayan: COO
+- Karar: Kaynak önceliği (1) YouTube Audio Library — önce 'Attribution not required'; CC/attribution parça yalnız yaratıcı olarak açıkça daha iyiyse, kredi metni birebir ledger → yayın açıklaması; (2) Adobe Stock yalnız hesapta gerçek lisans + lisans kodu + kapsam doğrulanırsa (CC aboneliği lisans sayılmaz; ek ücretli lisans Founder onayı); (3) PD/CC0/CC her asset ayrı doğrulanır, belirsizse kullanılmaz. 'Copyright free' kanallar, reupload ve lisansı açık olmayan siteler kullanılmaz. Müzik yönü: sakin modern belgesel, anlatıcıyla yarışmayan, epik/kurumsal değil; sessizlik araç. SFX az ve anlamlı; gerçek olmayan makine/ortam sesi kanıt gibi kullanılmaz. Anlatıcı ana katman; sabit evrensel dB/LUFS dayatılmaz, ölçüm + Founder kulak QA'sı.
+- Gerekçe: Monetizasyon uyumu, Content ID riski, kaynak izlenebilirliği; YouTube Help 3376882 (erişim 2026-10-10) [VERİ]; Adobe Stock resmî sayfaları okunamadı [VARSAYIM].
+- Uygulama: `.claude/skills/documentary-music-sfx/`, `production/audio-library/` (ledger + README), `production/tools/audio/attribution.ps1`; ilk uygulama `P3-music-sfx-plan.md`.
+- Geri dönüş koşulu: YouTube Audio Library şartları değişirse veya Content ID sorunu yaşanırsa kaynak politikası yeniden değerlendirilir.
+- Durum: Aktif.

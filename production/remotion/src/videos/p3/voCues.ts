@@ -1,5 +1,5 @@
 // OTOMATİK ÜRETİLDİ — elle düzenleme. Kaynak: production/tools/elevenlabs/vo-cues.ps1
-// VO: P3_VO_full_v2.timing.json · toplam 498.522 sn · 30 fps · üretim 2026-10-10 21:17
+// VO: P3_VO_full_v2.timing.json · toplam 498.522 sn · 30 fps · üretim 2026-10-10 21:39
 export const VO_FPS = 30;
 export const VO_TOTAL_S = 498.522;
 export const beats = {
