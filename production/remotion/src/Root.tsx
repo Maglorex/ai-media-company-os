@@ -12,8 +12,9 @@ import {ScopeCard} from './templates/ScopeCard';
 import {SourceLabel} from './templates/SourceLabel';
 import {Timeline} from './templates/Timeline';
 import {UnitGrid} from './templates/UnitGrid';
+import {P3FinalFrame} from './videos/p3/FinalFrame';
 import {P3LinesToBar} from './videos/p3/LinesToBar';
-import {p3Contracts, p3FuelElements, p3PassengerCargo, p3QuoteReliable, p3Strip, p3V03Cover, p3V14LayUp, p3V18Prototype, p3VoyageMap, p3WorkedMeans, p3CrewBar, p3NetCost, p3NetCostBar, p3NotIncluded, p3Q02FullCost, p3Subsidy, p3TwoMillionMore, p3V12OneShip, p3Facility, p3FacilityTimeline, p3GalvestonMap, p3LabelV05, p3LoneShip, p3NotInReport, p3PortFlow, p3TrainingFlow, p3ThreeItemsBar, p3V01, p3V02} from './videos/p3/shots';
+import {p3V01Teaser, p3Contracts, p3FuelElements, p3PassengerCargo, p3QuoteReliable, p3Strip, p3V03Cover, p3V14LayUp, p3V18Prototype, p3VoyageMap, p3WorkedMeans, p3CrewBar, p3NetCost, p3NetCostBar, p3NotIncluded, p3Q02FullCost, p3Subsidy, p3TwoMillionMore, p3V12OneShip, p3Facility, p3FacilityTimeline, p3GalvestonMap, p3LabelV05, p3LoneShip, p3NotInReport, p3PortFlow, p3TrainingFlow, p3ThreeItemsBar, p3V01, p3V02} from './videos/p3/shots';
 
 const FPS = 30;
 const HD = {fps: FPS, width: 1920, height: 1080} as const;
@@ -25,6 +26,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="EncodeTest" component={EncodeTest} durationInFrames={300} {...HD} />
 
       {/* P3 — NS Savannah */}
+      <Composition id="P3-S1-V01Teaser" component={DocumentHighlight} durationInFrames={120} {...HD} defaultProps={p3V01Teaser} />
+      <Composition id="P3-S8-FinalFrame" component={P3FinalFrame} durationInFrames={150} {...HD} />
       <Composition id="P3-S1-VoyageMap" component={LocatorMap} durationInFrames={210} {...HD} defaultProps={p3VoyageMap} />
       <Composition id="P3-S1-QuoteReliable" component={QuoteCard} durationInFrames={150} {...HD} defaultProps={p3QuoteReliable} />
       <Composition id="P3-V03-Cover" component={DocumentHighlight} durationInFrames={210} {...HD} defaultProps={p3V03Cover} />

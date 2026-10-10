@@ -29,3 +29,10 @@
 
 ## Atlanan session-close adımları (2026-10-10)
 `company/backlog.md`, `dashboards/company.md`, `company/goals.md` güncellenmedi (ortak dosya; laptop çakışma riski). P3 güncel durumu: `P3-graphics-status.md`. Aktarım sırasında dashboard'a tek satır: "P3 grafik üretimi: S4–S7 + S5 tamam (19 kompozisyon, final render yok)".
+
+## Bekleyen (2. tur, 2026-10-10) — ortak dosyaya aktarılacak
+
+### D-019 eki — Asset indirme kapsamı (Founder, 2026-10-10)
+- Ücretsiz, kamu malı veya açık lisanslı, mevcut production işi için gerekli küçük/orta boy asset indirmeleri (public domain fotoğraf, kamu malı belge, Natural Earth gibi açık coğrafi veri, açık lisanslı teknik çizim, küçük arşiv asset'i) güvenli kaynaktan geliyorsa Founder onayı beklenmeden indirilir; kaynak/lisans kaydı tutulur.
+- Founder'a durulacak haller: ücretli asset; lisans belirsizliği; kullanım hakkı tartışmalı materyal; çok büyük indirme/depolama etkisi; yeni yazılım/paket; credential/yetki; geri dönüşü zor işlem.
+- İlk uygulama: P3 fotoğrafları (`P3-asset-manifest.md`).

@@ -44,6 +44,8 @@ export const p3V01: DocumentHighlightProps = {
   src: 'pages/page-06.png',
   pageSize: {width: 2400, height: 3084},
   camera: [{from: 15, duration: 75, region: {x: 231, y: 170, w: 1712, h: 401}}],
+  // Edit plan S5 p1: S1'deki bulanık kesit burada netleşir (rack focus).
+  blur: {from: 12, to: 0, start: 10, end: 80},
   highlights: [
     // "--$300,000 average annual cost for nuclear crew training,"
     {region: {x: 260, y: 204, w: 1345, h: 60}, from: 100, duration: 26},
@@ -308,6 +310,16 @@ export const p3PortFlow: FlowDiagramProps = {
     {value: 'Why', text: '“the first nuclear-powered merchant vessel … required close surveillance” to protect the crew and port communities', from: 190},
   ],
   label: {text: 'GAO report B-136209 (1970), p. 14', detail: GAO, from: 10},
+};
+
+/** S1 p6–p7 — teaser (edit plan): V-01 kesiti bulanık/kısmi, netleşmeden kesilir; "three specific lines" sorusu. Vurgu yok. */
+export const p3V01Teaser: DocumentHighlightProps = {
+  src: 'pages/page-06.png',
+  pageSize: {width: 2400, height: 3084},
+  camera: [{from: 0, duration: 120, region: {x: 231, y: 170, w: 1712, h: 401}}],
+  // Teaser: rakamlar okunur hale gelmez (S5'te ilk kez net açılır).
+  blur: {from: 16, to: 10, start: 0, end: 120},
+  padding: 0.12,
 };
 
 // ── S4 — How the auditors counted (C-01, C-02, C-04, C-05, C-16; GAO Özet s.1 / PDF 5 ve s.12 / PDF 16, doğrudan okundu 2026-10-10)

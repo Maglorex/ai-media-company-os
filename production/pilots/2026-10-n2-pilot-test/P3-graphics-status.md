@@ -23,6 +23,8 @@
 | S6 p4 Q-02 | `P3-Q02-FullCost` | DocumentHighlight | Q-02 | Test edildi |
 | S7 p1–p2 kapsam | `P3-NotInReport` | ScopeCard | Q-05, E-12 | Test edildi |
 | S7 p3 mürettebat | `P3-CrewBar` | BarChart (grouped) | C-17 | Test edildi |
+| S1 p6–p7 V-01 teaser (bulanık) | `P3-S1-V01Teaser` | DocumentHighlight (blur) | V-01 | Test edildi |
+| S8 p4 son kare (V-01 + V-05) | `P3-S8-FinalFrame` | özel (videos/p3/FinalFrame.tsx) | V-01, V-05 | Test edildi |
 | S1 p2 sefer haritası | `P3-S1-VoyageMap` | LocatorMap (dünya, bölge) | C-14, C-44 | Test edildi |
 | S1 p2 NPS alıntısı | `P3-S1-QuoteReliable` | QuoteCard | Q-06 (NPS atıflı) | Test edildi |
 | S1 p3 kapak damgası (V-03) | `P3-V03-Cover` | DocumentHighlight (outline) | E-2 | Test edildi |
@@ -36,7 +38,7 @@
 | V-05 fotoğraf etiketi | `P3-Label-V05` | SourceLabel (ProRes 4444 alfa) | V-05 | Test edildi |
 
 ## Kalan grafik işleri (edit plan §52 listesinden)
-Remotion tarafı tamam. Kalan görsel işler fotoğraf tabanlı ve Premiere'de yapılır: S1 V-19/V-05 açılış, S2 V-07/V-21, S3 V-24, S8 V-26/V-09 ve son kare (V-01 + V-05). Fotoğraf asset'leri henüz indirilmedi (her indirme ayrı Founder onayı). S2 için gemi profil şeması bilinçli olarak çizilmedi: GAO yerleşim vermez → yolcu/kargo kapsam kartı kullanıldı.
+Remotion tarafı tamam (S5 p1'de V-01 artık bulanıktan nete açılır). Fotoğraflar indirildi (`P3-asset-manifest.md`); hareketleri (Ken Burns) Premiere'de: S1 V-19/V-05, S2 V-07/V-21, S3 V-24, S8 V-26/V-09. Sıradaki blokaj: seslendirme (final ses seçimi + ElevenLabs kredisi = Founder kararı); grafik zamanlamaları VO'ya göre ayarlanacak. S2 için gemi profil şeması bilinçli olarak çizilmedi: GAO yerleşim vermez → yolcu/kargo kapsam kartı kullanıldı.
 
 ## Bu turda yapılan kanıt düzeltmeleri
 Script v2.2 (S6 "ten" cümlesi çıkarıldı, D-018) · v2.3 (S7 fleet cümlesi, E-12) · v2.4 (S5 port planlama ifadeleri, E-13) · v2.5 ("lone ship system" → GAO'nun gerçek ifadesi "one ship system", E-14) · ledger E-10..E-13, V-28, V-29 · edit/visual plan notları (10 gemi, ×3 damga, kapsam kartı).

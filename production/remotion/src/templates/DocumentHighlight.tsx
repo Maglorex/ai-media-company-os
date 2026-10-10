@@ -40,6 +40,11 @@ export type DocumentHighlightProps = {
   /** Kadraj kenar payı (ekranın oranı). */
   padding?: number;
   label?: SourceLabelProps;
+  /**
+   * Opsiyonel bulanıklık (rack focus): sayfa [start, end] karelerinde `from` → `to` piksel bulanıklığa geçer.
+   * Ör. S1 teaser'da sabit bulanık (from = to), S5'te bulanıktan nete. Metin değiştirilmez, yalnız odak.
+   */
+  blur?: {from: number; to: number; start: number; end: number};
 };
 
 const FADE = 10;
@@ -60,6 +65,7 @@ export const DocumentHighlight: React.FC<DocumentHighlightProps> = ({
   dimOthers = 0,
   padding = 0.08,
   label,
+  blur,
 }) => {
   const frame = useCurrentFrame();
   const {width: vw, height: vh} = useVideoConfig();
@@ -111,6 +117,7 @@ export const DocumentHighlight: React.FC<DocumentHighlightProps> = ({
           height: pageSize.height,
           transformOrigin: '0 0',
           transform: `translate(${tx}px, ${ty}px) scale(${view.scale})`,
+          filter: blur ? `blur(${interpolate(frame, [blur.start, blur.end], [blur.from, blur.to], {...clamp, easing: ease})}px)` : undefined,
           boxShadow: '0 0 40px rgba(0,0,0,0.45)',
         }}
       >

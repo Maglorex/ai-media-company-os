@@ -99,6 +99,7 @@
 | V-27 | fotoğraf | Savannah, atomik Baltimore deniz feneri ve White Pine şamandıra gemisi, Chesapeake Körfezi | NARA NAID 205573657 (RG 26, U.S. Coast Guard), Local ID 26-G-6078 | — | bilinmiyor (indirilmedi) | NARA kaydı; tarih ve kullanım alanı **görülmedi** → unclear | Hayır (teyide kadar) | Tarih/kullanım teyidi gerekirse |
 | V-28 | harita verisi | ABD eyalet sınırları (admin-1, 1:50m) — Galveston konum haritası | Natural Earth `ne_50m_admin_1_states_provinces.geojson` — github.com/nvkelso/natural-earth-vector (master, indirme 2026-10-10, SHA-256 69A0E06E…C426B9) | — | 1:50m | **public domain** (repo LICENSE.md: "Everything here is public domain"; naturalearthdata.com terms) | Evet (S5 harita) | Repo dışı: `D:\CompanyOS-Production\P3-ns-savannah\01_archive\maps\`; Founder onayı 2026-10-10. Meksika vb. içermez → V-29 ile birlikte kullanılır |
 | V-29 | harita verisi | Kara katmanı (land, 1:50m) | Natural Earth `ne_50m_land.geojson` — aynı repo (indirme 2026-10-10, SHA-256 E874B27A…F9826B) | — | 1:50m | **public domain** | Evet (S5 harita) | Repo dışı, aynı klasör; Founder onayı 2026-10-10. Galveston noktası şehir düzeyi (≈29.30° K, 94.80° B, genel coğrafi konum); tesisin şehir içi yeri gösterilmez |
+> **İndirme kaydı (2026-10-10):** V-05, V-07, V-08, V-09, V-19 (916-9499), V-21, V-24, V-26 indirildi; lisanslar Commons'tan yeniden doğrulandı, değişiklik yok. Dosya, çözünürlük ve SHA-256: `P3-asset-manifest.md`.
 
 ## D. Reddedilen / kullanılmayacak
 | ID | İddia veya materyal | Neden | Tarih / karar |
