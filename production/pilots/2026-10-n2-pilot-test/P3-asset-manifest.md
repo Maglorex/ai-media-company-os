@@ -19,3 +19,9 @@
 ## Ayrıca (önceden)
 - GAO B-136209 PDF (V-01..V-04, V-12..V-18 sayfaları): `01_archive\b-136209.pdf` (Founder tarayıcıdan indirdi, SHA-256 1070EB40…936B0) · sayfa görüntüleri `01_archive\pages\` (`pdf-to-png.ps1`).
 - Natural Earth: V-28, V-29 (`01_archive\maps\`).
+
+## Güncelleme 2026-10-11
+| ID | Dosya | Çözünürlük | Kaynak | Lisans | SHA-256 (ilk 16) | Not | Kaynak sayfası |
+|---|---|---|---|---|---|---|---|
+| V-20 | `V-20_malmo_1964-09_cc0.jpg` | 1920×1893 | Malmö Museer / Arno Melms (Commons; carlotta.malmo.se/carlotta-mmus/web/object/3968886) | CC0 | 9467E521E425A241… | Eylül 1964 (gösterim dönemi); S2 b08 | https://commons.wikimedia.org/wiki/File:Savannah_i_Malm%C3%B6.jpg |
+- **V-21 kullanım dışı (lisans belirsizliği):** görüntüde "UPI TELEPHOTO" ajans başlığı var; Commons'taki CC0 beyanı MAS Antwerpen (müze) tarafından, yazar "unknown". Ajans fotoğrafı üzerindeki hakkı müzenin serbest bırakıp bırakamayacağı doğrulanamadı → kullanılmaz (D-024 / D-019 eki: belirsizse kullanma). Dosya yerinde kalır, timeline'da yok. Ledger E-15.

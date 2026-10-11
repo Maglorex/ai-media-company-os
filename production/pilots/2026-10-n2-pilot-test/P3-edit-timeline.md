@@ -1,6 +1,6 @@
 # P3 — Kurgu zaman çizelgesi (VO senkron)
 
-> OTOMATİK ÜRETİLDİ (2026-10-10 21:39) — `production/tools/elevenlabs/vo-cues.ps1`. Kaynak VO: `03_vo\final\P3_VO_full_v2.timing.json` (toplam 8:18.5). Tanım: `P3-vo-cues.json`. Zamanlar edit plan v1'deki tahminlerin yerini alır (plan: ~9–10 dk; gerçek VO: 8:18.5).
+> OTOMATİK ÜRETİLDİ (2026-10-11 20:30) — `production/tools/elevenlabs/vo-cues.ps1`. Kaynak VO: `03_vo\final\P3_VO_full_v2.timing.json` (toplam 8:18.5). Tanım: `P3-vo-cues.json`. Zamanlar edit plan v1'deki tahminlerin yerini alır (plan: ~9–10 dk; gerçek VO: 8:18.5).
 > Kurgu: her görsel beat başlangıcında başlar, sonraki beat başlangıcında biter. ``photo:`` = Premiere'de fotoğraf hareketi; ``@return``/``@end`` = kompozisyonun son bölümünden kullanım.
 
 | Beat | Başlangıç | Bitiş | Süre (sn) | Plan | Görsel | VO başlangıcı |
@@ -52,6 +52,7 @@
 | voy_far | 0:16.2 |
 | voy_miles | 0:18.5 |
 | notloss | 0:44.8 |
+| agencies | 1:05.3 |
 | pass_staterooms | 1:29.1 |
 | pass_unused | 1:36.7 |
 | nr_plainly | 7:01.7 |

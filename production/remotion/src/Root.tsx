@@ -62,6 +62,8 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="P3-LoneShip" component={LoadShare} durationInFrames={420} {...HD} defaultProps={p3LoneShip} />
 
       <Composition id="P3-ANIMATIC" component={P3Animatic} durationInFrames={ANIMATIC_FRAMES} {...HD} />
+      {/* Founder inceleme kopyası: damgasız tam çözünürlük; final YouTube export değil (müzik/SFX yok) */}
+      <Composition id="P3-REVIEW" component={P3Animatic} durationInFrames={ANIMATIC_FRAMES} {...HD} defaultProps={{review: true}} />
       {/* P3 kurgu sürümleri: VO senkron (videos/p3/synced.ts, voCues.ts) */}
       <Composition id={prerollClip.id} component={prerollClip.component} durationInFrames={prerollClip.durationInFrames} {...HD} defaultProps={prerollClip.props} />
       {syncedClips.map((c) => (

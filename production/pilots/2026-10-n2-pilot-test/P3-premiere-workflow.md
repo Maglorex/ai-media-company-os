@@ -41,3 +41,9 @@ Premiere Pro → **File → Import…** → `P3_XML_TEST.xml` → açılan `P3_X
 - `05_premiere\P3_NS_Savannah_START_v1.xml`: V1 37 klip (34 Remotion SYNC klibi — biri V2'de — + 4 ana fotoğraf), boşluk/çakışma yok; V2 1 (b23 Q-02); V3 3 opsiyonel fotoğraf (devre dışı); A1 VO v2 498,5 sn; 12 marker; sekans 8:21. 42 benzersiz dosya, kayıp yol 0. Tüm ProRes kliplerin kare sayısı doğrulandı (34/34, 2,33 GB).
 - Düzeltme: yuvarlamadan doğan 1 karelik klip çakışmaları (15 yer) — her V1 klibi bir sonrakinin başlangıcına kırpılır.
 - Premiere'de doğrulama: Founder (aynı projeye ikinci import).
+
+## v2 (2026-10-11) — Founder: "tüm yapacaklarını yap, sonra karar veririm"
+- Fotoğraf hareketleri Premiere yerine Remotion'da: `PhotoShots` şablonu (çekim içi yavaş pan/yaklaşma + çekimler arası detay kesmesi). b01 V-19 (pruva → rıhtım kalabalığı), b06 V-07 çerçeve + iki kurum adı ("run jointly by…"), b08 **V-20** (ziyaretçi kuyruğu → "U.S. ATOMIC ENERGY COMMISSION" yazısı), b28 V-05 koyulaştırılmış geri çekilme. Premiere'de değiştirilebilir ama zorunlu değil.
+- V-21 lisans belirsizliği nedeniyle kullanım dışı (ledger E-15).
+- `05_premiere\P3_NS_Savannah_START_v2.xml`: V1 37 klip (hepsi render edilmiş klip), kayıp yol 0. v1 korunur.
+- Founder inceleme kopyası: `06_renders\P3_REVIEW_v1.mp4` (1080p, damgasız, müzik/SFX yok — final export değil).

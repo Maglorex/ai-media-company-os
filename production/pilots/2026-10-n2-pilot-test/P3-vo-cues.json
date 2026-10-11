@@ -46,6 +46,7 @@
     {"id": "voy_far", "seg": "S01", "phrase": "to the Far East"},
     {"id": "voy_miles", "seg": "S01", "phrase": "About two hundred and forty thousand miles"},
     {"id": "notloss", "seg": "S01", "phrase": "Not a loss"},
+    {"id": "agencies", "seg": "S02", "phrase": "run jointly by the Maritime Administration"},
     {"id": "pass_staterooms", "seg": "S02", "phrase": "but she also had staterooms"},
     {"id": "pass_unused", "seg": "S02", "phrase": "those passenger spaces went unused"},
     {"id": "nr_plainly", "seg": "S07", "phrase": "The auditors say plainly"},

@@ -1,36 +1,117 @@
-{
-  "_note": "P3 Premiere başlangıç timeline'ı tanımı. Zamanlar voCues.ts'ten (VO v2) + 2,5 sn açılış teaser'ı. production/tools/premiere/build-xml.ps1 okur. Grafik klipleri: 02_graphics\\sync\\<SYNC-id>.mov (Remotion, ProRes 422). Fotoğraflar 01_archive\\photos. Müzik/SFX yok: yalnız marker.",
-  "name": "P3_NS_Savannah_START_v1",
-  "fps": 30,
-  "width": 1920,
-  "height": 1080,
-  "preroll_s": 2.5,
-  "vo": "D:\\CompanyOS-Production\\P3-ns-savannah\\03_vo\\final\\P3_VO_full_v2.wav",
-  "graphics_dir": "D:\\CompanyOS-Production\\P3-ns-savannah\\02_graphics\\sync",
-  "photos_dir": "D:\\CompanyOS-Production\\P3-ns-savannah\\01_archive\\photos",
-  "photos": [
-    {"beat": "b01", "file": "V-19_rotterdam_1964-09-30_cc0.jpg", "w": 1920, "h": 1907, "fit": "cover", "note": "Rotterdam 1964 (CC0). Premiere: tek zoom değil — pruva → rıhtım kalabalığına hafif pan; altyazı/etiket 1964 (gösterim dönemi)."},
-    {"beat": "b06", "file": "V-07_launch_marad.jpg", "w": 330, "h": 428, "fit": "contain-small", "note": "Denize indirme (MARAD, PD). Düşük çözünürlük: küçük çerçeve, büyütme yok; tarih verilmez."},
-    {"beat": "b08", "file": "V-21_panama-canal_1962_cc0.jpg", "w": 3840, "h": 2866, "fit": "cover", "note": "Panama Kanalı 1962 (CC0). Premiere: geniş kadraj → gemiye detay kesmesi."},
-    {"beat": "b28", "file": "V-05_nara-542141_golden-gate_1962.jpg", "w": 1920, "h": 1588, "fit": "cover", "dim": true, "note": "V-05 koyulaştırılmış (edit plan S8 p3). Atıf: Photo: AEC / National Archives. Premiere: yavaş geri çekilme (zoom out), tek hareket yeterli — kısa beat."}
-  ],
-  "inserts": [
-    {"cue": "fuel_four", "offset_s": 0.0, "dur_s": 3.5, "file": "V-24_fuel-element_marad-1961.jpg", "w": 960, "h": 309, "fit": "contain", "note": "OPSİYONEL (edit plan S3 p1): gerçek yakıt elemanı fotoğrafı, grid üstüne kısa ekleme. MARAD 1961, PD."},
-    {"cue": "tr_class", "offset_s": 4.0, "dur_s": 3.5, "file": "V-08_reactor-drawing_marad-1960.jpg", "w": 500, "h": 1204, "fit": "contain", "note": "OPSİYONEL (edit plan S5 p2): reaktör kesit çizimi kısa. Düşük çözünürlük (500 px) — tam ekran değil; daha yüksek çözünürlük Commons'tan elle indirilebilir."},
-    {"cue": "strip_deact", "offset_s": 2.6, "dur_s": 4.0, "file": "V-26_patriots-point_1990_nps.jpg", "w": 1280, "h": 777, "fit": "contain", "note": "OPSİYONEL (edit plan S8 p2): müze dönemi 1990 (NPS, PD). Alternatif V-09 (1987, CC0)."}
-  ],
-  "overlay_beats": ["b23"],
-  "markers": [
-    {"cue_beat": "b01", "name": "MUSIC A in (soft)", "kind": "music", "comment": "P3-music-sfx-plan §2 — açılış merakı; müzik seçilmedi"},
-    {"cue_beat": "b03", "name": "MUSIC A thins + SFX paper (soft)", "kind": "sfx", "comment": "Kapak damgası çerçevesi; tek hafif kâğıt sesi"},
-    {"cue_beat": "b11", "name": "MUSIC out (S4 method)", "kind": "music", "comment": "Yoğun bilgi; müzik yok/çok düşük"},
-    {"cue_beat": "b15", "name": "MUSIC B in (very low)", "kind": "music", "comment": "Karşılaştırma; 'not a loss' sonrası söner"},
-    {"cue_beat": "b16", "name": "SILENCE — main evidence", "kind": "music", "comment": "Üç satırın ilk tam açılışı; müzik ve SFX yok"},
-    {"cue_beat": "b17", "name": "MUSIC B low", "kind": "music", "comment": ""},
-    {"cue": "tl_paid", "name": "SFX low accent", "kind": "sfx", "comment": "'The facility was there, and paid for — every year.'"},
-    {"cue_beat": "b21", "name": "MUSIC B returns + SFX paper (soft)", "kind": "sfx", "comment": "'one ship system' belgesi"},
-    {"cue_beat": "b24", "name": "MUSIC B swell + SFX low accent", "kind": "sfx", "comment": "Payoff: About $1.9 million a year"},
-    {"cue_beat": "b25", "name": "MUSIC neutral/very low", "kind": "music", "comment": "Kapsam; momentum"},
-    {"cue_beat": "b27", "name": "MUSIC A reprise", "kind": "music", "comment": "Kapanış; son kare müzikle 3–4 sn"}
-  ]
+﻿{
+    "_note":  "P3 Premiere başlangıç timeline\u0027ı tanımı. Zamanlar voCues.ts\u0027ten (VO v2) + 2,5 sn açılış teaser\u0027ı. production/tools/premiere/build-xml.ps1 okur. Grafik klipleri: 02_graphics\\sync\\\u003cSYNC-id\u003e.mov (Remotion, ProRes 422). Fotoğraflar 01_archive\\photos. Müzik/SFX yok: yalnız marker. v2 (2026-10-11): fotoğraf beat\u0027leri artık Remotion klipleri (pan + detay kesmesi, photos.tsx); photos listesi boş. V-21 (UPI telephoto, lisans belirsiz) kullanılmıyor → V-20.",
+    "name":  "P3_NS_Savannah_START_v2",
+    "fps":  30,
+    "width":  1920,
+    "height":  1080,
+    "preroll_s":  2.5,
+    "vo":  "D:\\CompanyOS-Production\\P3-ns-savannah\\03_vo\\final\\P3_VO_full_v2.wav",
+    "graphics_dir":  "D:\\CompanyOS-Production\\P3-ns-savannah\\02_graphics\\sync",
+    "photos_dir":  "D:\\CompanyOS-Production\\P3-ns-savannah\\01_archive\\photos",
+    "photos":  [
+
+               ],
+    "inserts":  [
+                    {
+                        "cue":  "fuel_four",
+                        "offset_s":  0.0,
+                        "dur_s":  3.5,
+                        "file":  "V-24_fuel-element_marad-1961.jpg",
+                        "w":  960,
+                        "h":  309,
+                        "fit":  "contain",
+                        "note":  "OPSİYONEL (edit plan S3 p1): gerçek yakıt elemanı fotoğrafı, grid üstüne kısa ekleme. MARAD 1961, PD."
+                    },
+                    {
+                        "cue":  "tr_class",
+                        "offset_s":  4.0,
+                        "dur_s":  3.5,
+                        "file":  "V-08_reactor-drawing_marad-1960.jpg",
+                        "w":  500,
+                        "h":  1204,
+                        "fit":  "contain",
+                        "note":  "OPSİYONEL (edit plan S5 p2): reaktör kesit çizimi kısa. Düşük çözünürlük (500 px) — tam ekran değil; daha yüksek çözünürlük Commons\u0027tan elle indirilebilir."
+                    },
+                    {
+                        "cue":  "strip_deact",
+                        "offset_s":  2.6,
+                        "dur_s":  4.0,
+                        "file":  "V-26_patriots-point_1990_nps.jpg",
+                        "w":  1280,
+                        "h":  777,
+                        "fit":  "contain",
+                        "note":  "OPSİYONEL (edit plan S8 p2): müze dönemi 1990 (NPS, PD). Alternatif V-09 (1987, CC0)."
+                    }
+                ],
+    "overlay_beats":  [
+                          "b23"
+                      ],
+    "markers":  [
+                    {
+                        "cue_beat":  "b01",
+                        "name":  "MUSIC A in (soft)",
+                        "kind":  "music",
+                        "comment":  "P3-music-sfx-plan §2 — açılış merakı; müzik seçilmedi"
+                    },
+                    {
+                        "cue_beat":  "b03",
+                        "name":  "MUSIC A thins + SFX paper (soft)",
+                        "kind":  "sfx",
+                        "comment":  "Kapak damgası çerçevesi; tek hafif kâğıt sesi"
+                    },
+                    {
+                        "cue_beat":  "b11",
+                        "name":  "MUSIC out (S4 method)",
+                        "kind":  "music",
+                        "comment":  "Yoğun bilgi; müzik yok/çok düşük"
+                    },
+                    {
+                        "cue_beat":  "b15",
+                        "name":  "MUSIC B in (very low)",
+                        "kind":  "music",
+                        "comment":  "Karşılaştırma; \u0027not a loss\u0027 sonrası söner"
+                    },
+                    {
+                        "cue_beat":  "b16",
+                        "name":  "SILENCE — main evidence",
+                        "kind":  "music",
+                        "comment":  "Üç satırın ilk tam açılışı; müzik ve SFX yok"
+                    },
+                    {
+                        "cue_beat":  "b17",
+                        "name":  "MUSIC B low",
+                        "kind":  "music",
+                        "comment":  ""
+                    },
+                    {
+                        "cue":  "tl_paid",
+                        "name":  "SFX low accent",
+                        "kind":  "sfx",
+                        "comment":  "\u0027The facility was there, and paid for — every year.\u0027"
+                    },
+                    {
+                        "cue_beat":  "b21",
+                        "name":  "MUSIC B returns + SFX paper (soft)",
+                        "kind":  "sfx",
+                        "comment":  "\u0027one ship system\u0027 belgesi"
+                    },
+                    {
+                        "cue_beat":  "b24",
+                        "name":  "MUSIC B swell + SFX low accent",
+                        "kind":  "sfx",
+                        "comment":  "Payoff: About $1.9 million a year"
+                    },
+                    {
+                        "cue_beat":  "b25",
+                        "name":  "MUSIC neutral/very low",
+                        "kind":  "music",
+                        "comment":  "Kapsam; momentum"
+                    },
+                    {
+                        "cue_beat":  "b27",
+                        "name":  "MUSIC A reprise",
+                        "kind":  "music",
+                        "comment":  "Kapanış; son kare müzikle 3–4 sn"
+                    }
+                ]
 }

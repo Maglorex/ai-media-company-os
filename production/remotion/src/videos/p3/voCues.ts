@@ -1,5 +1,5 @@
 // OTOMATİK ÜRETİLDİ — elle düzenleme. Kaynak: production/tools/elevenlabs/vo-cues.ps1
-// VO: P3_VO_full_v2.timing.json · toplam 498.522 sn · 30 fps · üretim 2026-10-10 21:39
+// VO: P3_VO_full_v2.timing.json · toplam 498.522 sn · 30 fps · üretim 2026-10-11 20:30
 export const VO_FPS = 30;
 export const VO_TOTAL_S = 498.522;
 export const beats = {
@@ -48,6 +48,7 @@ export const cues = {
   voy_far: 16.23,
   voy_miles: 18.576,
   notloss: 44.814,
+  agencies: 65.312,
   pass_staterooms: 89.101,
   pass_unused: 96.705,
   nr_plainly: 421.76,

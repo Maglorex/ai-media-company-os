@@ -11,6 +11,8 @@ import {ScopeCard} from '../../templates/ScopeCard';
 import {Timeline} from '../../templates/Timeline';
 import {UnitGrid} from '../../templates/UnitGrid';
 import {P3FinalFrame} from './FinalFrame';
+import {PhotoShots} from '../../templates/PhotoShots';
+import {P3B06, p3PhotoB01, p3PhotoB08, p3PhotoB28} from './photos';
 import * as s from './shots';
 import {at, beatFrames, BeatId} from './voCues';
 
@@ -193,6 +195,11 @@ const clips: Synced[] = [
     events: s.p3Strip.events.map((e, i) => (i === 2 ? {...e, from: lead(at('strip_deact', 'b27b'))} : e)),
   }),
   clip('b29', 'FinalFrame', P3FinalFrame),
+  // Fotoğraf beat'leri (pan + detay kesmesi; Premiere'de yeniden yapılmak zorunda değil)
+  clip('b01', 'PhotoRotterdam', PhotoShots, p3PhotoB01(beatFrames('b01'))),
+  clip('b06', 'LaunchAgencies', P3B06, {agenciesAt: lead(at('agencies', 'b06'))}),
+  clip('b08', 'PhotoMalmo', PhotoShots, p3PhotoB08(beatFrames('b08'))),
+  clip('b28', 'PhotoGoldenGate', PhotoShots, p3PhotoB28()),
 ];
 export const syncedClips: Synced[] = clips.map(withMotion);
 

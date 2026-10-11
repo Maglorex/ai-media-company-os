@@ -10,12 +10,8 @@ import {beats, BeatId, VO_FPS, VO_TOTAL_S} from './voCues';
 const PRE = Math.round(PREROLL_S * VO_FPS);
 export const ANIMATIC_FRAMES = PRE + Math.ceil(VO_TOTAL_S * VO_FPS);
 
-const photos: {beat: BeatId; src: string; label: string}[] = [
-  {beat: 'b01', src: 'photos/V-19_rotterdam_1964-09-30_cc0.jpg', label: 'Rotterdam, 1964 · Nationaal Archief / Anefo (CC0)'},
-  {beat: 'b06', src: 'photos/V-07_launch_marad.jpg', label: 'Launch · Maritime Administration (public domain)'},
-  {beat: 'b08', src: 'photos/V-21_panama-canal_1962_cc0.jpg', label: 'Panama Canal, 1962 · MAS Antwerpen (CC0)'},
-  {beat: 'b28', src: 'photos/V-05_nara-542141_golden-gate_1962.jpg', label: 'Photo: AEC / National Archives · 1962'},
-];
+// Fotoğraflar artık SYNC kliplerinde (photos.tsx).
+const photos: {beat: BeatId; src: string; label: string}[] = [];
 
 const f = (b: BeatId) => PRE + Math.round(beats[b].start * VO_FPS);
 const len = (b: BeatId) => Math.round((beats[b].end - beats[b].start) * VO_FPS);
@@ -43,7 +39,7 @@ const Stamp: React.FC = () => {
   );
 };
 
-export const P3Animatic: React.FC = () => (
+export const P3Animatic: React.FC<{review?: boolean}> = ({review}) => (
   <AbsoluteFill style={{backgroundColor: theme.background}}>
     {photos.map((p) => (
       <Sequence key={p.beat} from={f(p.beat)} durationInFrames={len(p.beat)}>
@@ -67,6 +63,6 @@ export const P3Animatic: React.FC = () => (
     <Sequence from={PRE}>
       <Audio src={staticFile('vo/P3_VO_full_v2_LISTEN.mp3')} />
     </Sequence>
-    <Stamp />
+    {review ? null : <Stamp />}
   </AbsoluteFill>
 );
