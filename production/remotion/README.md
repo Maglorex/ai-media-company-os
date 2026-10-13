@@ -10,6 +10,14 @@ Plan: `production/tools/production-pipeline-plan.md` §1–3 · Karar: D-017 · 
   - Tam kare: `--codec=h264`
 - `licenseKey` ayarlanmaz (Free License; ayarlanırsa telemetri açılır).
 
+## Brand System v1 modülü (`src/brand/`) — yeni işler bunu kullanır
+Kaynak: `intelligence/creative/brand/brand-system-v1.md`, `video-ui-spec-v1.md` (D-031, D-032).
+- `tokens.ts`: renk (`ink`, `paper`, `steel`, `iron`, `accentBrand`), font rolleri (`font.display` / `font.meta` / `font.editorial`), tip ölçeği, çizgi ve yerleşim değerleri. Değer değişikliği yalnız burada. Case accent video verisinden gelir.
+- `worlds.ts`: ARCHIVE · EVIDENCE · ENGINEERING · CASE LAYER kuralları (arşiv tintlenmez, belge mürekkebi değişmez, Engineering grid/çizgi dili, Case Layer kutusuz).
+- `fonts.ts`: yerel font bağlama. Yüzler kurulu fonttan `local()` ile `CasebookDisplay` / `CasebookMeta` / `CasebookEditorial` takma ailelerine kaydedilir; kompozisyon `useBrandFonts()` çağırır. **Bir yüz eksikse render durur (`cancelRender`) — yedek font yok.** Fontlar render PC'de kullanıcı düzeyinde kurulu (`production/tools/README.md`); font dosyası repoya girmez, npm paketi yok.
+- `Brand-Tokens-Proof`: genel sistem proof'u (tek kare; dava içeriği yok): `npx.cmd remotion still src/index.ts Brand-Tokens-Proof <çıktı>.png`.
+- `src/theme.ts` = **legacy pilot teması** (eski lacivert dil). Değiştirilmez; mevcut şablonların yeni modüle taşınması P3 v3 handoff'unun işidir.
+
 ## Şablonlar (`src/templates/`)
 | Şablon | Ne yapar | Veri |
 |---|---|---|

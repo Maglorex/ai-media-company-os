@@ -1,5 +1,6 @@
 import {Composition} from 'remotion';
 import {EncodeTest} from './EncodeTest';
+import {BrandProof} from './brand/BrandProof';
 import {BarChart} from './templates/BarChart';
 import {ComponentSchematic} from './templates/ComponentSchematic';
 import {DocumentHighlight} from './templates/DocumentHighlight';
@@ -26,6 +27,8 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition id="EncodeTest" component={EncodeTest} durationInFrames={300} {...HD} />
+      {/* Brand System v1: genel token + yerel font proof'u (src/brand/; video içeriği yok) */}
+      <Composition id="Brand-Tokens-Proof" component={BrandProof} durationInFrames={1} {...HD} />
 
       {/* P3 — NS Savannah */}
       <Composition id="P3-S1-V01Teaser" component={DocumentHighlight} durationInFrames={120} {...HD} defaultProps={p3V01Teaser} />
