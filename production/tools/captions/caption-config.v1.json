@@ -1,0 +1,27 @@
+{
+  "schema": "companyos.caption-config/v1",
+  "rules": {
+    "max_line_chars": {"value": 42, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2"},
+    "max_lines": {"value": 2, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2"},
+    "min_cue_ms": {"value": 1000, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2 (cue 1–7 s)"},
+    "max_cue_ms": {"value": 7000, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2 (cue 1–7 s)"},
+    "max_cps": {"value": 20, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2 ('≤~20 karakter/sn'); enforced at exactly 20.0 — interpretation of '~'"},
+    "min_gap_frames": {"value": 2, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2 (cue'lar arası ≥2 kare)"},
+    "no_split_numbers_names": {"value": true, "severity": "hard", "source": "CAPTION-PROTOCOL.md §2 (sayı ve ismin ortasından bölme yok)"},
+    "break_at_sentence_or_meaning": {"value": true, "severity": "preference", "source": "CAPTION-PROTOCOL.md §2 (cümle/anlam sınırında böl) — not machine-measurable; applied as segmentation cost"}
+  },
+  "internal_defaults": {
+    "fps_default": {"value": 30, "source": "internal default (company render standard 30 fps)"},
+    "silence_split_ms": {"value": 1000, "source": "internal default: speech pause ≥ this forces a new cue"},
+    "hold_ms": {"value": 500, "source": "internal default: cue stays up to this long after the last word"},
+    "long_gap_warn_ms": {"value": 10000, "source": "internal default: warn on gaps between cues longer than this"},
+    "video_duration_tolerance_ms": {"value": 50, "source": "internal default: allowed difference between supplied video_duration_s and --video measurement"},
+    "auto_protect_caps_max_tokens": {"value": 4, "source": "internal default: adjacent capitalised words (2..N) are kept on one line"},
+    "max_sound_cues": {"value": 1, "source": "CAPTION-PROTOCOL.md §3 ('[music]' sahne başında bir kez)"},
+    "penalty_break_clause": {"value": 1000, "source": "internal default (segmentation cost)"},
+    "penalty_break_word": {"value": 3000, "source": "internal default (segmentation cost)"},
+    "penalty_inner_sentence_end": {"value": 4000, "source": "internal default (segmentation cost)"},
+    "penalty_single_word_cue": {"value": 2000, "source": "internal default (segmentation cost)"},
+    "penalty_line_break_word": {"value": 300, "source": "internal default (line split cost)"}
+  }
+}

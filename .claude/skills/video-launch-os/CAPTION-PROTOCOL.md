@@ -12,6 +12,7 @@
 - Dosya: `<VID>-captions-en-v<N>.srt` (production klasörü; repoya küçük metin olarak girebilir).
 - Bölme kuralları: satır ≤42 karakter, cue başına ≤2 satır, cue süresi 1–7 sn, okuma hızı ≤~20 karakter/sn; cümle/anlam sınırında böl; sayı ve ismin ortasından bölme yok.
 - Cue sınırları kelime zaman damgasından; cue'lar arası ≥2 kare boşluk.
+- **Araç:** `production/tools/captions/caption-build.mjs` (DF-4; Node, paket yok). Yukarıdaki kurallar **hard** uygulanır (okuma hızı tam 20,0 karakter/sn; "~" yorumu config'te yazılı); eşikler ve internal default'lar `caption-config.v1.json`'da kaynaklarıyla. Transcript birebir kalır; tek istisna açık `display_map` (yalnız sayı/para/tarih/ölçü, kayıtlı ve QC'de listelenir). Hizalama her zaman konuşulan transcript'e karşı; bozuk girdi veya hizalama hatasında SRT üretilmez.
 
 ## 3. Ses/konuşmacı politikası
 - Tek anlatıcı → konuşmacı etiketi yok.
@@ -24,7 +25,7 @@
 2. **Özel isim/terim/sayı/kurum/yer listesi** evidence ledger'dan çıkarılır (ör. NS Savannah, Galveston, Atomic Servant, General Accounting Office, 1967, $1.16 million) → caption'da yazım birebir; sayılar VO'da nasıl söylendiyse okunabilir biçimde (ör. "about $1.16 million a year").
 3. Zaman: ilk/son cue, en uzun boşluk, örtüşme yok, süre ≤ video süresi.
 4. Format doğrulama: UTF-8, SRT sözdizimi.
-Sonuç `<VID>-caption-qc.md` (kısa) → Release Gate G-03.
+Sonuç `<VID>-caption-qc.json` (makine okunur, araç üretir) + `<VID>-caption-qc.md` (kısa özet, aynı JSON'dan) → Release Gate G-03. G-03 PASS için: `result = PASS`, `alignment.status = MATCH`, `errors = []`, `srt_sha256` yüklenecek SRT ile aynı, video süresi final render ile aynı; `warnings` (ör. `unresolved_terms`) COO tarafından tek tek kapatılmış.
 
 ## 5. Dil bağı
 `settings.language.video = English` ↔ caption dili `en` ↔ title/description dili English. Uyuşmazlık = FAIL.

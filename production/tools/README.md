@@ -13,6 +13,7 @@ Araç envanteri, script'ler ve iş akışları.
 | FFmpeg | Ayrı kurulum gerekmiyor (Remotion v4 kendi FFmpeg'ini getiriyor — remotion.dev/docs/ffmpeg) | Ücretsiz | Video/ses işleme |
 | Adobe Creative Cloud Pro | Render bilgisayarında kurulu — doğrulandı 2026-10-10 (Premiere Pro 2026, Media Encoder 2026, Photoshop 2026, After Effects 2026, Illustrator 2026) | Mevcut abonelik | Son montaj (Premiere), render (Media Encoder), fotoğraf temizliği (Photoshop) |
 | Marka fontları: IBM Plex Sans Condensed 2.0.0 · IBM Plex Mono 2.5.0 · Source Serif 4.005R | **Kurulu — render bilgisayarı, kullanıcı düzeyi** (Founder onayı 2026-10-13); resmî sürümler: github.com/IBM/plex, github.com/adobe-fonts/source-serif | Ücretsiz, **OFL-1.1** (dosyalar repoya girmez) | Brand System v1 tipografisi (`font.display`, `font.meta`, `font.editorial`) |
+| Caption/SRT aracı (`production/tools/captions/caption-build.mjs`) | **Aktif** (DF-4, 2026-10-13) — şirketin kendi script'i; Node 24 yerleşik modülleri; testler `node --test "production/tools/captions/test/*.test.mjs"` (sentetik fixture) | Ücretsiz | Final VO kelime zamanlarından deterministik İngilizce SRT + `<VID>-caption-qc.json/.md` (Release Gate G-03). `from-vo` modu vo-assemble timing map'inden girdi üretir. Kurallar: `.claude/skills/video-launch-os/CAPTION-PROTOCOL.md` |
 | ChatGPT Image Generation | Aktif (ChatGPT Plus içinde) | Mevcut abonelik | Açıklayıcı illüstrasyon, konsept, atmosfer, thumbnail öğesi — **kanıt değil**; kurallar aşağıda |
 
 ## Donanım

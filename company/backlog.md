@@ -11,7 +11,8 @@
 - [x] 2026-10-13 — Video Launch OS v1 + pre-publish-qa + resmî ilkeler (D-035); P3 launch audit.
 - [x] 2026-10-13 — Launch OS tamamlandı (D-036): upload matrisi, rights ledger + Copyright Gate, caption protokolü, A/B uygunluğu, publish package şeması, Release Gate, öğrenme sözleşmesi, kanal durumu, thumbnail spec; main-PC readiness audit.
 - [x] 2026-10-13 — BL-1 çözüldü: ana bilgisayar kapanış commit'i + push ("Close main-PC Company OS"). Sonraki aşama: güçlü PC bu commit'i çeker.
-- [ ] Deferred: P3 hak bilgisini rights ledger CSV'ye taşı (DF-6) · caption script'i (render PC, DF-4) · thumbnail aracı seçimi (render PC, DF-3).
+- [ ] Deferred: P3 hak bilgisini rights ledger CSV'ye taşı (DF-6) · thumbnail aracı seçimi (render PC, DF-3).
+- [x] 2026-10-13 — DF-4 caption/SRT aracı: `production/tools/captions/` (Node, paket yok; 18/18 sentetik test PASS; deterministik; display_map yalnız onaylı sayı/para/tarih/ölçü; G-03 artifact = `<VID>-caption-qc.json`). Studio insan senkron kontrolü ayrı son kapı olarak kalır.
 - [ ] ⏸ (D-035) **P3 launch hazırlığı** (donma kalkınca, full production'dan önce): talep araştırması (hazır ChatGPT isteği) → Search Intent Brief + dağıtım tipi → Packaging v2 finalistleri + 2 A/B varyantı → FC-001 kilidi. Bkz. `P3-launch-os-audit-v1.md`.
 - [x] 2026-10-13 — Kanal oluşturuldu, logo/profil görseli ayarlandı (Founder; D-037).
 - [ ] Kanal Studio doğrulaması (Founder, Studio): C-02…C-12 — güvenlik/izinler, telefon doğrulaması (Intermediate), Advanced Features, custom thumbnail, chapters, A/B aracı, upload defaults, default description, ülke/dil, audience varsayılanı, ayar etiketleri; ayrıca kanal adı/handle kaydı — yayından önce (`intelligence/growth/launch-os/capabilities.md`).

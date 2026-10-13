@@ -20,7 +20,7 @@ Girdi: publish package JSON (`video-launch-os/PUBLISH-PACKAGE-SCHEMA.json`) + `U
 |---|---|---|---|
 | G-01 | Render integrity | Final export oynuyor; süre = timeline; çözünürlük ≥1080p (hedef master); siyah kare/donma/kırpılma yok (ffprobe + baş/orta/son kare kontrolü) | ffprobe çıktısı + kare listesi |
 | G-02 | Audio QC | `audio-production.md` ölçümleri (LUFS/TP, clipping yok, sessizlik haritası); **Founder kulak checkpoint'i** final bütünlük için tamamlandı | ölçüm raporu + Founder notu |
-| G-03 | Caption QC | `CAPTION-PROTOCOL` §4 PASS; dil = video dili | caption-qc.md |
+| G-03 | Caption QC | `CAPTION-PROTOCOL` §4 PASS; dil = video dili | caption-qc.json (+ .md) |
 | G-04 | Title–thumbnail promise match | Vaat ilk bölümde ödeniyor; title/thumbnail tekrar etmiyor; her iddia ledger'da; Thumbnail Spec §11 | QC raporu |
 | G-05 | Description | Benzersiz; ilk 2–3 satır; stuffing yok; Sources ledger ile birebir; Credits rights/audio ledger'dan birebir; ≤5.000 karakter | package.description |
 | G-06 | Chapters | Kullanılıyorsa 00:00 · ≥3 · artan · ≥10 sn · spoiler yok; kullanılmıyorsa gerekçe; automatic ayarı tutarlı | package.chapters |

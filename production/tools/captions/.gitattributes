@@ -1,0 +1,2 @@
+# Golden SRT fixtures are byte-exact (CRLF): never convert line endings, and CR is not a whitespace error.
+*.srt -text -whitespace
