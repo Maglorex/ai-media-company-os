@@ -16,7 +16,8 @@
 - [x] 2026-10-13 — Kanal oluşturuldu, logo/profil görseli ayarlandı (Founder; D-037).
 - [ ] Kanal Studio doğrulaması (Founder, Studio): C-02…C-12 — güvenlik/izinler, telefon doğrulaması (Intermediate), Advanced Features, custom thumbnail, chapters, A/B aracı, upload defaults, default description, ülke/dil, audience varsayılanı, ayar etiketleri; ayrıca kanal adı/handle kaydı — yayından önce (`intelligence/growth/launch-os/capabilities.md`).
 - [ ] ⏸ (D-031, D-032) **P3 handoff v3** — v2 + brand retrofit (audit §6) + AI-01 + muted gate + `theme.ts` dünya token'ları. Marka spec'i hazır (logo gerektirmez): `intelligence/creative/brand/video-ui-spec-v1.md` + `P3-brand-retrofit-spec-v1.md`. **Bekliyor:** Founder donmayı kaldırır. Logo/banner ayrı iş, P3'ü bloklamaz.
-- [ ] [ONAY] Render PC'ye IBM Plex Sans Condensed / Plex Mono / Source Serif 4 kurulumu (OFL, ücretsiz; repo dışı) — P3 v3 production'ında.
+- [x] 2026-10-13 — Render PC'ye IBM Plex Sans Condensed 2.0.0 / Plex Mono 2.5.0 / Source Serif 4.005R kuruldu (Founder onayı; OFL-1.1; resmî GitHub sürümleri; kullanıcı düzeyi, repo dışı). Doğrulandı: Windows, Remotion Chromium, Photoshop, Illustrator (betikle); After Effects, Premiere Pro (Founder görsel kontrolü). **STRONG-PC BRAND FONTS READY = YES.**
+- [ ] Remotion Brand System v1 token + yerel font bağlama (sistem altyapısı; P3 dışı) — plan: Founder onayı bekliyor.
 - [ ] Founder (isteğe bağlı, 10 dk): 2 benchmark videonun ilk 2 dk'sını sesli dinleyip müzik/sessizlik notu → doctrine §9.
 - [ ] Ruined America Tucker açılışı görsel taraması (tarayıcı çöktü; premise analizi katalogla yapıldı) — düşük öncelik.
 - [x] 2026-10-07 — Birincil niş kararı onaylandı: N2 (D-007).

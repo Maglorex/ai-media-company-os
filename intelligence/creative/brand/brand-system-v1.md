@@ -35,7 +35,7 @@
 | Editorial | **Source Serif 4** (Regular/Italic) | Gerçek belge alıntısının yeniden dizilmiş hali, editoryal alıntı, arşiv/editoryal kontrast |
 - **Hiyerarşi:** bir karede en fazla iki aile; üçü birlikte yalnız gerekçeli tek anlarda. Display bir kerede tek ifade.
 - Telefon okunabilirliği (1080p'de): birincil ≥ 30 px, ikincil ≥ 23 px (P3 polish kuralı korunur).
-- **Lisans:** üçü de SIL Open Font License 1.1 (IBM Plex: github.com/IBM/plex; Source Serif 4: github.com/adobe-fonts/source-serif). Font dosyaları **repoya eklenmez**; render bilgisayarına yerel kurulur. Kurulum ve production ortamında gerçek kullanılabilirlik **doğrulanmadı** → ilk production oturumunda kontrol (dependency kurma = Founder onayı, `founder-approval.md`).
+- **Lisans:** üçü de SIL Open Font License 1.1 (IBM Plex: github.com/IBM/plex; Source Serif 4: github.com/adobe-fonts/source-serif). Font dosyaları **repoya eklenmez**; render bilgisayarına yerel kurulur. **Kuruldu ve doğrulandı (render PC, 2026-10-13, Founder onayı):** IBM Plex Sans Condensed 2.0.0, IBM Plex Mono 2.5.0, Source Serif 4.005R (statik TTF, kullanıcı düzeyi) — Windows, Remotion Chromium (11 temel stil; sentetik/yedek font yok), Photoshop, Illustrator, After Effects, Premiere Pro. Remotion'a bağlanması (token + font binding) ayrı adım.
 
 ## E. Renk sistemi
 | Token | Hex | Rol |
