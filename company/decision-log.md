@@ -345,3 +345,12 @@
 - Geri dönüş koşulu: Studio ayar adları/kuralları değişirse matris ve principles güncellenir (kanal checklist C-12); kendi verimiz bir varsayılanı çürütürse (ör. Shorts remixing, featured places) matris değişir.
 - Durum: Aktif. P3 donuk.
 
+### D-037 — YouTube kanalı oluşturuldu; temel marka kurulumu başladı
+- Tarih: 2026-10-13
+- Karar veren: Founder (bildirim)
+- Bağlam: Önceki kayıtlar kanalın olmadığını varsayıyordu (D-035, D-036 capability durumu BLOCKED_BY_FUTURE_SETUP).
+- Karar: CHANNEL CREATED = YES · BASIC BRANDING STARTED = YES · LOGO / PROFILE IMAGE = SET. Studio'da fiziksel olarak doğrulanmamış yetenekler (güvenlik/izinler, telefon doğrulaması, Intermediate/Advanced Features, custom thumbnail, A/B aracı, upload defaults, default description, ülke/dil, audience varsayılanı, series playlist uygunluğu, ayar etiketleri) **NEEDS_VERIFICATION** olarak kalır; varsayılmaz. CHANNEL CAPABILITY VERIFIED = NO. Kanal adı/handle ve logonun hangi konsept olduğu henüz kayda geçmedi.
+- Gerekçe / kanıt: [VERİ] Founder bildirimi. Studio doğrulaması yok.
+- Geri dönüş koşulu: —
+- Durum: Aktif. MAIN-PC SYSTEM READY değişmedi (YES). P3 donuk.
+

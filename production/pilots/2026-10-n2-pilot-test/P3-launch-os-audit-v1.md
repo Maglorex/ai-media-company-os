@@ -12,7 +12,7 @@
 | G5 Search Intent Brief | **EKSİK** | — | Adaylar (metrik değil, `[VARSAYIM]`): primary "NS Savannah"; supporting: nuclear merchant ship · nuclear cargo ship · NS Savannah history · nuclear ship economics |
 | Title kuralları (§5) | **KISMEN** | Doğru, kanıtlı, case no yok, ALL CAPS yok | Uzunluk ~70 karakter → mobilde kesilebilir; en önemli bilgi başta mı (dağıtım tipine göre) — packaging v2 turunda değerlendirilecek (değiştirilmedi) |
 | Thumbnail (§6) | **KISMEN** | Konsept D-012: GAO üç satırı + V-05, yazısız | Thumbnail dosyası üretilmedi; Brand v1 + case accent uyarlaması; hero asset planı full handoff'a; mobil QA yok |
-| Native A/B (§7) | **PENDING** | — | Kanal yok → advanced features PENDING (`capabilities.md`); 3 varyant + PT- hipotezi launch package'te |
+| Native A/B (§7) | **PENDING** | — | Kanal var (D-037); Advanced Features NEEDS_VERIFICATION (`capabilities.md` C-04); 3 varyant + PT- hipotezi launch package'te |
 | Description + Sources (§8–§9) | **EKSİK** | Kaynaklar ledger'da hazır (GAO B-136209, NPS form, NARA 542141, Commons/CC0 asset'ler) | Benzersiz description metni; kredi bloğu (V-05 "AEC / National Archives" vb.) |
 | Chapters (§10) | **YOK (zamanı değil)** | — | Final edit sonrası karar |
 | Captions (§11) | **KISMEN** | Eski VO'nun kelime zaman damgaları (JSON) var; opening v2 VO üretilmedi | SRT üretimi + isim/terim QA final VO'dan |
@@ -24,5 +24,5 @@
 | Yayın zamanı (§19) | **EKSİK** | — | İlk yayın zamanı deney hipotezi FC'de |
 | FC-001 tahmin kilidi | **EKSİK** | idea-registry I-003: "Yayın öncesi FC-001 kilitlenmeli" | `growth-idea-scoring` §B |
 | Launch Package | **YOK (zamanı değil)** | — | Final sonrası şablondan |
-| Kanal / yetenekler | **PENDING** | Kanal henüz açılmadı | Kanal kurulumu Founder işlemi (onaylı); telefon doğrulaması, custom thumbnail seviyesi Studio'da doğrulanacak |
+| Kanal / yetenekler | **KISMEN** | Kanal oluşturuldu + logo (2026-10-13, D-037) | Studio doğrulaması (C-02…C-12); telefon doğrulaması, custom thumbnail seviyesi Studio'da doğrulanacak |
 **Özet:** P3 kanıt ve yaratıcı tarafta güçlü; launch tarafında henüz yalnız packaging çekirdeği var. Eksiklerin hiçbiri şu an production'ı bloklamaz; **production'ı etkileyen iki madde** var: (1) Packaging v2 finalistleri + 2 A/B varyantı ve dağıtım tipi **full production'dan önce** (thumbnail hero asset'i planlanabilsin diye), (2) full handoff'ta end-screen alanı. Talep araştırması (G1/G5) packaging v2'den önce yapılmalı.

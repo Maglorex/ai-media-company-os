@@ -2,7 +2,7 @@
 
 > Amaç: Şirketin sınırlı kaynağını (Founder saati, AI, para) **izlenme ve büyüme ihtimali en yüksek fikirlere** ayırmak ve her yayından öğrenip bir sonraki seçimi daha iyi yapmak.
 > Sahip: COO. Analiz: `analytics-analyst` (kanal verisi), `research-analyst` (talep / rakip / outlier). Prosedürler: `growth-idea-scoring`, `growth-performance-review` skill'leri.
-> Kurulum: 2026-10-10 (v1.0). Kanal henüz yok; sistem veri gelmeden önce hazır, veri geldikçe ağırlık kendi verimize kayar.
+> Kurulum: 2026-10-10 (v1.0). Kanal 2026-10-13'te oluşturuldu (yayın yok); sistem veri gelmeden önce hazır, veri geldikçe ağırlık kendi verimize kayar.
 
 ## 1. Temel ilkeler
 1. **Tahmin ≠ sonuç.** Yayın öncesi tahmin (`forecasts/`) yayından önce **kilitlenir** ve sonradan değiştirilmez. Yayın sonrası gerçek sonuç (`results/`, `data/video-metrics.csv`) ayrı dosyada tutulur. Karşılaştırma `calibration.md`'de yapılır.

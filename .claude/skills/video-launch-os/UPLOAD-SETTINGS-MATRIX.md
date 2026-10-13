@@ -1,6 +1,6 @@
 # Upload Settings Matrix v1 (long-form)
 
-> Karar: D-036. Kaynak: `intelligence/growth/launch-os/youtube-official-principles.md` (P-01…P-21, erişim 2026-10-13). Studio etiketleri değişebilir → kanal açılışında `capabilities.md` checklist'i ve her yayında `pre-publish-qa` (Release Gate) doğrular.
+> Karar: D-036. Kaynak: `intelligence/growth/launch-os/youtube-official-principles.md` (P-01…P-21, erişim 2026-10-13). Studio etiketleri değişebilir → `capabilities.md` kanal checklist'i (C-12) ve her yayında `pre-publish-qa` (Release Gate) doğrular.
 > **WHO DECIDES:** `SYSTEM` = Company OS paketi doldurur, Founder sormaz · `FOUNDER` = yalnız tabloda yazan istisnada · `FOUNDER (gate)` = yalnız Release Gate MANUAL-DECISION verirse.
 > Değerler publish package JSON'undaki alan adlarıyla (`settings.*`) eşleşir.
 
@@ -26,8 +26,8 @@
 | `distribution.embedding` | **Allow** | Hak sahibi şartı gerektirirse | SYSTEM | Rights ledger kısıtı | — |
 | `distribution.notify_subscribers` | **On** (yayın anında) | Sessiz yeniden yükleme/düzeltme | SYSTEM | — | — |
 | `shorts_remixing` | **Off** (üçüncü taraf ses/müzik lisansı remix'e uygun olmayabilir) | Tüm ses kendi + lisans izin veriyorsa On | SYSTEM | Audio ledger lisans koşulları | Uygun |
-| `category` | **Education** (alternatif: Science & Technology) — kanal genelinde tek seçim, kanal açılışında kilitlenir | Konu tamamen başka kategoriye aitse | SYSTEM | — | Kanal varsayılanıyla aynı |
-| `comments` | **On**, "Hold potentially inappropriate comments for review" (Studio seçeneği adı kanal açılışında doğrulanır) | Hassas konu/taciz riski | SYSTEM | — | — |
+| `category` | **Education** (alternatif: Science & Technology) — kanal genelinde tek seçim, kanal checklist C-08'de kilitlenir | Konu tamamen başka kategoriye aitse | SYSTEM | — | Kanal varsayılanıyla aynı |
+| `comments` | **On**, "Hold potentially inappropriate comments for review" (Studio seçeneği adı checklist C-08/C-12'de doğrulanır) | Hassas konu/taciz riski | SYSTEM | — | — |
 | `ratings.show_like_count` | **On** | — | SYSTEM | — | — |
 | `cards` | Yok | İzleyiciye gerçek değer (ilgili case, açıklayıcı video, playlist) | SYSTEM | Hedef video | Retention'ı bozmayan TC |
 | `end_screen` | Video ≥25 sn; son 5–20 sn; ilk video: Subscribe + (varsa) best for viewer/playlist | Kanalda ilgili video oluştukça | SYSTEM | Edit'te ayrılan alan TC | Release Gate G-07 |

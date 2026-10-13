@@ -17,7 +17,7 @@ Mekanik taramalar (1–3, 5, 7, 8: var/yok, frontmatter envanteri, referans kont
 6. **Git:** `git status -sb` (commit edilmemiş değişiklik, ahead/behind), `git remote -v`, `git log -3`. Kontrol için `git fetch` yapma; remote ile farkı yalnızca yerel bilgiyle raporla, gerekirse Founder'a GitHub Desktop'ta Fetch öner.
 7. **Secret:** değişen/takip edilen dosyalarda `key`, `token`, `secret`, `password`, `Bearer`, `sk-` taraması; `.gitignore` kapsamı (`.env`, `*.key`, `*.pem`, `*secret*`…). Eşleşmeleri bağlamıyla değerlendir (kural metni ≠ secret). Değer asla gösterilmez.
 8. **Hafıza düzeni:** `D-`, `L-`, `EXP-`, `H-`, `G-` numaralandırması sıralı ve tekrarsız mı; `dashboards/company.md` "Son güncelleme" tarihi güncel mi.
-8b. **Launch OS durumu (D-036):** `intelligence/growth/launch-os/capabilities.md` — kanal maddeleri `BLOCKED_BY_FUTURE_SETUP` ise **hata sayılmaz**; raporda ayrı satır ("Gelecek kurulum: N madde"). SYSTEM READY yalnız sistem dosyalarına (kurallar, şablonlar, kapılar, çapraz referanslar) bakar.
+8b. **Launch OS durumu (D-036):** `intelligence/growth/launch-os/capabilities.md` — kanal maddeleri `NEEDS_VERIFICATION` / `BLOCKED_BY_DATA` (veya kanal yokken `BLOCKED_BY_FUTURE_SETUP`) ise **hata sayılmaz**; raporda ayrı satır ("Kanal doğrulaması bekleyen: N madde"). SYSTEM READY yalnız sistem dosyalarına (kurallar, şablonlar, kapılar, çapraz referanslar) bakar.
 9. **Makine kayıtları:** `company/machines.md` mevcut ve `production/tools/README.md` donanım tablosuyla tutarlı mı.
 
 ## Düzeltme
@@ -32,6 +32,6 @@ Durum: Sağlıklı / Dikkat / Bozuk
 Kontrol: [N/9 geçti]
 Düzeltilenler: [yoksa "yok"]
 Açık sorunlar: [sorun → önerilen tek çözüm; yoksa "yok"]
-Gelecek kurulum (BLOCKED_BY_FUTURE_SETUP): [N madde; hata değil]
+Kanal doğrulaması bekleyen (NEEDS_VERIFICATION / BLOCKED_BY_DATA): [N madde; hata değil]
 Founder'dan gereken: [yoksa "yok"]
 ```

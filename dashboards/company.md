@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-13 (Ana bilgisayar kapandı, D-036 — MAIN-PC SYSTEM READY, blocker 0; sıradaki: güçlü PC pull; P3 donuk)
+**Son güncelleme:** 2026-10-13 (Kanal oluşturuldu + logo, D-037; Studio yetenek doğrulaması bekliyor; MAIN-PC SYSTEM READY; P3 donuk)
 **Faz:** Faz 2 (Pilot üretim testi) — P3 NS Savannah tam pilot üretimde: grafikler + final VO hazır; kurgu/senkron sırada
 
 ## Özet
@@ -19,7 +19,7 @@
 | Skill Lab v0.1 (D-009) | ✅ kuruldu · SL-002 incelendi (D-010), 2/5 uyarlandı (D-011) · SL-001/003/004 PENDING REVIEW |
 | Founder Interface (D-011) | ✅ |
 | Render bilgisayarı onboarding (D-017) | ✅ Node 24 LTS + Remotion 4.0.529 |
-| Growth / Content Intelligence + Finance / CFO + Tax Watch (D-020) | ✅ kuruldu; veri bekliyor (kanal yok, ilk aylık kapanış Kasım başı) |
+| Growth / Content Intelligence + Finance / CFO + Tax Watch (D-020) | ✅ kuruldu; veri bekliyor (kanal oluşturuldu 2026-10-13, yayın yok; ilk aylık kapanış Kasım başı) |
 | Efficiency Audit v1 (D-023) | ✅ uzmanlar Sonnet, mekanik tarama Haiku yardımcıda; tasarruf 5–10 oturumla ölçülecek (`finance/efficiency/`) |
 | Documentary creative mimarisi (D-025, D-026) | ✅ yaratıcı yön katmanı, prototype kapısı, benchmark **PROVISIONAL v0.1 (kare kalibrasyonlu)**, CF kaydı · P3 tam review kurgusu reddedildi (CF-001) → treatment v3.1 + prototype handoff **FINAL**; 1964 film kullanılmaz; açılış VO onaylı (≤700 kredi) |
 | G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ · P3 premise v2 + gate READY + packaging onaylı (D-012) + kanıt kaydı + senaryo v2.1 kilitli + görsel plan + edit plan v1 · **P3 grafikler: 32 kompozisyon (S1–S8) tamam** · **final VO v1: 8:19, 3.085 kredi (Bill L. Oxley + Multilingual v2, D-021)** · Founder kulak kontrolü bekliyor · final render yok; Production Autonomy Mode (D-019) |
