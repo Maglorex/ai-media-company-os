@@ -1,0 +1,91 @@
+{
+  "$comment": "Video Launch OS v1 publish package (D-035, D-036). Machine-readable canonical file per video: production/<video>/<VID>-publish-package.json. Human-readable mirror: <VID>-launch-package.md (LAUNCH-PACKAGE-TEMPLATE.md). Every field is filled by the system; 'founder_decision' fields are null unless the Upload Settings Matrix marks an exception. Enum values in UPPER_CASE.",
+  "schema_version": "1.0",
+  "video_id": "VID-XXX",
+  "idea_id": "I-XXX",
+  "forecast_id": "FC-XXX",
+  "case": { "number": "CASE 00X", "title": "", "accent_hex": "" },
+  "status": "DRAFT | READY_FOR_GATE | GATE_PASS | FOUNDER_APPROVED | UPLOADED_PRIVATE | PUBLISHED",
+  "strategy": {
+    "distribution_type": "BROWSE_FIRST | SEARCH_ASSISTED_BROWSE | SEARCH_FIRST | EXISTING_AUDIENCE_FIRST",
+    "rationale": "",
+    "primary_search_intent": "",
+    "support_concepts": ["", ""],
+    "name_variants_misspellings": [],
+    "demand_evidence": [{ "source": "", "date": "YYYY-MM-DD", "finding": "", "label": "VERI | VARSAYIM" }]
+  },
+  "packaging": {
+    "final": { "title": "", "thumbnail_file": "VID-XXX-thumb-A-v1.jpg", "promise": "" },
+    "ab_variants": [
+      { "id": "B", "test_axis": "TITLE | THUMBNAIL | COMBINATION", "title": "", "thumbnail_file": "", "difference_from_final": "" },
+      { "id": "C", "test_axis": "TITLE | THUMBNAIL | COMBINATION", "title": "", "thumbnail_file": "", "difference_from_final": "" }
+    ],
+    "evidence_refs": ["C-XX", "V-XX"],
+    "thumbnail_qc_report": "path"
+  },
+  "ab_plan": {
+    "eligibility": "ELIGIBLE | BLOCKED_ADVANCED_FEATURES | BLOCKED_VIDEO_TYPE | BLOCKED_AGE_RESTRICTED | NOT_PLANNED",
+    "start_moment": "AT_PUBLISH | AFTER_PUBLISH",
+    "pt_id": "PT-XXX",
+    "hypothesis": "",
+    "on_winner": "keep winner; log PT; update packaging heuristics if repeated",
+    "on_performed_same": "keep final (A) unless evidence favors other; log",
+    "on_inconclusive": "first uploaded (A) stays; log as not failure",
+    "low_impressions_rule": "if no result within 14 days, stop test, keep A, log INCONCLUSIVE_LOW_IMPRESSIONS",
+    "freeze_rule": "no manual title/thumbnail edits during test (edit stops the test)"
+  },
+  "description": { "text": "", "first_lines_check": true, "char_count": 0 },
+  "sources_credits": {
+    "sources": [{ "ledger_ref": "S1", "citation": "" }],
+    "credits": [{ "asset_id": "", "attribution_text": "", "from": "RIGHTS_LEDGER | AUDIO_LEDGER" }]
+  },
+  "rights": {
+    "rights_ledger": "production/<video>/VID-XXX-rights-ledger.csv",
+    "audio_ledger": "production/audio-library/audio-ledger.csv",
+    "unknown_or_unresolved_count": 0,
+    "youtube_checks": "NOT_RUN | NO_ISSUES | ISSUES_FOUND",
+    "youtube_checks_note": "Checks are not a final guarantee (P-10)"
+  },
+  "chapters": { "use_manual": false, "reason": "", "list": [{ "t": "00:00", "title": "" }], "automatic_chapters": "ON | OFF" },
+  "captions": { "file": "VID-XXX-captions-en-v1.srt", "language": "en", "source": "FINAL_VO_TIMESTAMPS", "qc_report": "path", "status": "NOT_STARTED | QC_PASS | QC_FAIL" },
+  "settings": {
+    "audience": { "made_for_kids": false, "age_restriction": false },
+    "branded_content": { "paid_promotion": false },
+    "altered_content": { "disclose": false, "rationale": "", "policy_page_checked": "YYYY-MM-DD" },
+    "featured_places": true,
+    "tags": [],
+    "tags_rationale": "",
+    "language": { "video": "English", "title_description": "English" },
+    "caption_certification": "NEVER_AIRED_ON_US_TV",
+    "recording_date_location": null,
+    "license": "STANDARD_YOUTUBE",
+    "distribution": { "embedding": true, "notify_subscribers": true },
+    "shorts_remixing": false,
+    "category": "Education",
+    "comments": { "enabled": true, "moderation": "HOLD_POTENTIALLY_INAPPROPRIATE" },
+    "ratings": { "show_like_count": true },
+    "playlist": null,
+    "cards": [],
+    "end_screen": { "start_tc": "", "elements": ["SUBSCRIBE"], "safe_area_reserved_in_edit": true }
+  },
+  "publication": {
+    "upload_visibility": "PRIVATE",
+    "final_visibility": "PUBLIC",
+    "scheduled_time": "YYYY-MM-DDTHH:MM",
+    "timezone": "",
+    "timing_experiment": ""
+  },
+  "hypothesis_locked": { "forecast_file": "intelligence/growth/forecasts/FC-XXX.md", "locked_on": "YYYY-MM-DD" },
+  "measurement_plan": {
+    "windows": ["EARLY", "48H", "7D", "28D", "90D_IF_USEFUL"],
+    "questions": [""],
+    "official_concepts": ["APPEAL", "ENGAGEMENT", "SATISFACTION"],
+    "internal_proxies": ["impressions_ctr_by_source", "avd", "apv", "intro_30s_retention", "subs_gained", "returning_viewers", "end_screen_ctr", "search_terms", "suggested_sources"]
+  },
+  "founder_decisions": {
+    "strategic_creative_approval": null,
+    "final_publish_approval": null,
+    "exceptions": []
+  },
+  "release_gate": { "report": "path", "result": "PASS | FAIL | MANUAL_DECISION" }
+}

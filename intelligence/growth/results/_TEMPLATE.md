@@ -21,6 +21,12 @@
 ## Ekonomi (Finance'ten okunur, burada çoğaltılmaz)
 - Video P&L: `finance/videos/VID-XXX.md`
 
+## Bulgular (D-036 formatı)
+| Observation | Confidence | Possible cause | Evidence | Action | Rule update needed? |
+|---|---|---|---|---|---|
+| | | | | | |
+Not: Studio metrikleri iç proxy'dir; YouTube'un resmî satisfaction sinyali bize görünmez.
+
 ## Yorum
 - Ne çalıştı (kanıtla):
 - Ne çalışmadı:

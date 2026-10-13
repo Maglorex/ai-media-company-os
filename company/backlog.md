@@ -8,6 +8,12 @@
 - [x] 2026-10-13 — Doctrine v1 sıfır kredi uygulama testi (P3 ilk ~90 sn): **PASS**, kritik REVISE yok → `production/pilots/2026-10-n2-pilot-test/P3-doctrine-test-opening-v1.md`.
 - [x] 2026-10-13 — Brand System v1 + Source-to-Visual v1 + Muted Preview Gate kuruldu (D-031); P3 ilk 90 sn audit: `P3-brand-source-to-visual-audit-v1.md`.
 - [x] 2026-10-13 — Video UI spec v1 (CASE/EVIDENCE label, dünya treatment'ları) + P3 brand retrofit spec + Dynamic Case Ident System (D-034).
+- [x] 2026-10-13 — Video Launch OS v1 + pre-publish-qa + resmî ilkeler (D-035); P3 launch audit.
+- [x] 2026-10-13 — Launch OS tamamlandı (D-036): upload matrisi, rights ledger + Copyright Gate, caption protokolü, A/B uygunluğu, publish package şeması, Release Gate, öğrenme sözleşmesi, kanal durumu, thumbnail spec; main-PC readiness audit.
+- [x] 2026-10-13 — BL-1 çözüldü: ana bilgisayar kapanış commit'i + push ("Close main-PC Company OS"). Sonraki aşama: güçlü PC bu commit'i çeker.
+- [ ] Deferred: P3 hak bilgisini rights ledger CSV'ye taşı (DF-6) · caption script'i (render PC, DF-4) · thumbnail aracı seçimi (render PC, DF-3).
+- [ ] ⏸ (D-035) **P3 launch hazırlığı** (donma kalkınca, full production'dan önce): talep araştırması (hazır ChatGPT isteği) → Search Intent Brief + dağıtım tipi → Packaging v2 finalistleri + 2 A/B varyantı → FC-001 kilidi. Bkz. `P3-launch-os-audit-v1.md`.
+- [ ] [ONAY] Kanal kurulumu + telefon doğrulaması (Founder, Studio) — yayından önce; custom thumbnail/advanced features seviyesi doğrulanır (`intelligence/growth/launch-os/capabilities.md`).
 - [ ] ⏸ (D-031, D-032) **P3 handoff v3** — v2 + brand retrofit (audit §6) + AI-01 + muted gate + `theme.ts` dünya token'ları. Marka spec'i hazır (logo gerektirmez): `intelligence/creative/brand/video-ui-spec-v1.md` + `P3-brand-retrofit-spec-v1.md`. **Bekliyor:** Founder donmayı kaldırır. Logo/banner ayrı iş, P3'ü bloklamaz.
 - [ ] [ONAY] Render PC'ye IBM Plex Sans Condensed / Plex Mono / Source Serif 4 kurulumu (OFL, ücretsiz; repo dışı) — P3 v3 production'ında.
 - [ ] Founder (isteğe bağlı, 10 dk): 2 benchmark videonun ilk 2 dk'sını sesli dinleyip müzik/sessizlik notu → doctrine §9.

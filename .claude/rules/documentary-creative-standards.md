@@ -13,7 +13,7 @@ Kaynak: Founder talimatı 2026-10-11 (D-025). P3 tam review kurgusu "voice-over 
 Bağlayıcı yaratıcı taban: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (D-029) + marka/görsel sistem `.claude/rules/brand-and-visual-system.md` (D-031). Bu kural akışı ve kapıyı, doctrine içeriği (anlatı/görsel/motion grameri, anti-pattern, prototype rubric) tanımlar.
 
 ## 1. Akış (her video)
-virality gate → growth puanı → packaging → evidence ledger → **creative treatment** (`documentary-creative-treatment`, `documentary-creative-director`; case accent + `source-to-visual` tablosu) → taslak anlatı → **prototype handoff** (`documentary-production-handoff`) → production PC'de ilk 60–90 sn → **`muted-preview-gate`** → **Founder prototype kapısı** → senaryo kilidi + tam görsel/edit plan + tam VO → full handoff → full production → yayın öncesi QA.
+virality gate → growth puanı → packaging → evidence ledger → **creative treatment** (`documentary-creative-treatment`, `documentary-creative-director`; case accent + `source-to-visual` tablosu) → taslak anlatı → **prototype handoff** (`documentary-production-handoff`) → production PC'de ilk 60–90 sn → **`muted-preview-gate`** → **Founder prototype kapısı** → senaryo kilidi + tam görsel/edit plan + tam VO → full handoff → full production → Launch Package (`video-launch-os`) → **`pre-publish-qa`** → Founder launch onayı → yayın → `growth-performance-review`.
 Creative treatment olmadan senaryo kilitlenmez; prototype kapısı geçilmeden full production'a geçilmez.
 
 ## 2. Prototype kapısı (değişmez)
@@ -28,7 +28,7 @@ Creative treatment olmadan senaryo kilitlenmez; prototype kapısı geçilmeden f
 - "Fotoğraf + yavaş zoom/pan + tam ekran bilgi kartı" varsayılan çözüm değildir. Ayrıntı: `documentary-visual-storytelling`.
 - Görsel değişim = yeni bilgi veya yeni bakış açısı. Sabit "her X saniyede kesme" kuralı yok; ama bilgisini vermiş görsel durum yeni bir şey katmadan ekranda kalmaz.
 - Title/thumbnail'ın sattığı çatışma veya merak videonun erken bölümünde görünür olur; bağlam otomatik olarak başa konmaz.
-- AI görsel hiçbir zaman arşiv kanıtı gibi gösterilmez; gerçek olayın foto-gerçekçi yeniden üretimi yayın öncesi QA'da AI açıklama riski olarak işaretlenir.
+- AI görsel hiçbir zaman arşiv kanıtı gibi gösterilmez; gerçek olayın foto-gerçekçi yeniden üretimi Release Gate G-11'de (`pre-publish-qa`) disclosure açısından değerlendirilir.
 - Arşivde bulunmak telif güvenliği demek değildir; her footage evidence/rights ledger'dan geçer. Hakkı açıkça doğrulanmamış materyal prototype'ta da kullanılmaz (D-026).
 - YouTube closed captions her videoda hazırlanır; sürekli hardcoded altyazı varsayılan değildir.
 

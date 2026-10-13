@@ -327,3 +327,21 @@
 - Geri dönüş koşulu: ident anında retention düşüşü görülürse davranış EXP olarak değişir; kanal verisi bağımsız intro'yu desteklerse yeniden test.
 - Durum: Aktif. P3 donuk.
 
+### D-035 — Video Launch OS v1
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: Her video için keşif, SEO, packaging, metadata, yayın ve öğrenim Founder müdahalesi olmadan yönetilmeli.
+- Karar: (1) `video-launch-os` skill'i (dağıtım tipi, talep araştırması, Search Intent Brief, Packaging v2, title/thumbnail/description/kaynak/chapters/captions/dil/disclosure/haklar/upload/end screen/cards/playlist/zaman, native A/B, Launch Package) + `LAUNCH-PACKAGE-TEMPLATE.md`. (2) `pre-publish-qa` = tek yayın öncesi kapı (önceki dağınık "yayın öncesi QA" maddeleri buraya yönlendirildi). (3) Resmî ilkeler SOURCE-VERIFIED: `intelligence/growth/launch-os/youtube-official-principles.md` (P-01…P-13, erişim 2026-10-13). (4) Kanal yetenekleri takibi `capabilities.md` (advanced features açılınca Founder'a bir kez hatırlatma). (5) Packaging v2: ≥3 farklı açılı finalist, birincil + 2 A/B varyantı (önceki "1 yedek" yerine). (6) Yayın sonrası: Appeal/Engagement/Satisfaction/Discovery, sabit evrensel eşik yok, sorun sınıfları → sistem güncellemesi. (7) Varsayılan upload Private/Unlisted → QA → public; native A/B launch onayının parçası. (8) Founder'a yalnız: prototype kapısı, gerekirse ≤3 packaging finalisti, tek launch onayı, gerekirse disclosure toggle'ı. (9) P3: yalnız denetim (`P3-launch-os-audit-v1.md`); P3 donuk.
+- Gerekçe / kanıt: [VERİ] resmî YouTube Help sayfaları (P-01…P-13). [VARSAYIM] belgeselde geniş erişim çoğunlukla packaging + öneriden gelir — kendi kanal verisiyle test (dağıtım tipi FC'de).
+- Geri dönüş koşulu: kendi kanal verimiz bir varsayımı çürütürse (ör. Search trafiği baskın çıkarsa) dağıtım tipi seçimi ve packaging kuralları güncellenir; YouTube politika değişikliği → principles dosyası.
+- Durum: Aktif.
+
+### D-036 — Video Launch OS v1 tamamlama: upload matrisi, rights ledger, caption protokolü, A/B uygunluğu, publish package, Release Gate, öğrenme sözleşmesi, kanal durumu, thumbnail spec
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: D-035 sonrası, güçlü PC'ye geçmeden ana bilgisayardaki sistemin kapanması.
+- Karar: (1) `UPLOAD-SETTINGS-MATRIX.md` (her upload alanı: DEFAULT / WHEN TO OVERRIDE / WHO DECIDES / EVIDENCE / PRE-PUBLISH CHECK). (2) Rights Ledger Standard + Copyright Gate (`production/rights/`): kullanım hakkı ≠ kredi; UNKNOWN/UNRESOLVED varsa public yok; YouTube Checks tek başına yeterli değil; hak durumunun kanonik kaydı rights ledger (evidence ledger §C referans). (3) `CAPTION-PROTOCOL.md` (final VO + zaman damgası → SRT, QC, dil bağı, Studio doğrulaması; auto-caption yalnız yedek). (4) A/B eligibility karar ağacı + test sırasında değişiklik yasağı + Winner/Performed Same/Inconclusive/düşük gösterim kuralları. (5) `PUBLISH-PACKAGE-SCHEMA.json` (kanonik makine paketi) + md aynası. (6) Release Gate (`pre-publish-qa`): G-01…G-19, PASS/FAIL/MANUAL-DECISION, FAIL → public yasak. (7) Öğrenme sözleşmesi: YouTube resmî kavramları ≠ iç proxy'ler; kayıt formatı observation/confidence/possible cause/evidence/action/rule update; tek videodan genelleme yok. (8) SYSTEM READY ↔ CHANNEL CAPABILITY VERIFIED; kanal maddeleri BLOCKED_BY_FUTURE_SETUP (hata değil). (9) `THUMBNAIL-PRODUCTION-SPEC.md` (araçtan bağımsız). (10) Normal videoda Founder kararı = 2 (yaratıcı onay + publish onayı). Readiness: `intelligence/growth/launch-os/main-pc-readiness-audit.md`.
+- Gerekçe / kanıt: [VERİ] resmî YouTube Help P-14…P-21 (erişim 2026-10-13).
+- Geri dönüş koşulu: Studio ayar adları/kuralları değişirse matris ve principles güncellenir (kanal checklist C-12); kendi verimiz bir varsayılanı çürütürse (ör. Shorts remixing, featured places) matris değişir.
+- Durum: Aktif. P3 donuk.
+

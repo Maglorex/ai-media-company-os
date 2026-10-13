@@ -68,6 +68,11 @@ Başlangıç–bitiş (VO cümlesiyle) · bitişin nasıl kapandığı · review
 ## 13. Evidence restrictions
 Kullanılmayacak iddialar/sayılar/ifadeler · birebir alıntılar · ekranda verilmeyecek rakamlar · zorunlu atıflar.
 
+## 13b. Launch hazırlığı (D-035; full handoff'ta zorunlu)
+- End screen alanı: son 5–20 sn TC aralığı, ekranda boş bırakılacak bölge, kapanış görseli
+- Thumbnail hero asset: kaynak (V-ID) veya AI (prompt + dosya adı), teslim yeri
+- Captions: final VO timing JSON yolu
+
 ## 14. Teslim ve geri bildirim
 - Zorunlu: `muted-preview-gate` grid + PASS/REVISE raporu (REVISE ise teslim yok).
 Çıktılar (dosya adı/konum) · üretim raporu dosyası · teşhis testleri (§10) sonucu · ölçülen süre/kredi · production problemleri. Founder'a giden tek soru: "Bunu izlemeye devam eder miydin?"

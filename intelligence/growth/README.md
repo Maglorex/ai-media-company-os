@@ -11,7 +11,7 @@
    | Seviye | Kaynak | Ne zaman geçerli |
    |---|---|---|
    | K1 | Kanalın kendi yayın sonrası verisi (Studio) | İlk videodan itibaren kullanılır; ağırlığı örneklem ve tutarlılıkla **kademeli** artar (aşağıda) |
-   | K2 | Kanalın kendi deneyleri (Test & Compare, EXP-XXX) | Deney eşiği karşılandığında |
+   | K2 | Kanalın kendi deneyleri (native A/B — eski adı Test & compare, EXP-XXX) | Deney eşiği karşılandığında |
    | K3 | Niş karşılaştırmaları: rakip/outlier kaydı (`outliers.md`) | Her zaman; K1 oluşunca ikincil |
    | K4 | Genel YouTube heuristics'leri (`heuristics.md`) | Yalnız K1–K3 yokken veya çelişmiyorsa |
    **K1 ağırlığı sabit eşikle değil, kanıtın gücüyle artar:**
@@ -29,6 +29,7 @@ Fikir (idea-registry: I-XXX)
   → Talep/rakip sinyali (outliers.md, research-analyst)
   → Yatırım puanı + kilitli tahmin (growth-idea-scoring → forecasts/FC-XXX)
   → [mevcut kapılar: documentary-virality-gate → packaging → evidence ledger → üretim]
+  → Video Launch OS (D-035): dağıtım tipi + talep araştırması + Search Intent Brief + Packaging v2 + Launch Package → pre-publish-qa (`intelligence/growth/launch-os/`)
   → Yayın (video_id: VID-XXX; maliyet finance/ledgers'ta aynı video_id ile)
   → Kontrol noktaları 48s / 7g / 28g / 90g (growth-performance-review → results/VID-XXX, data/video-metrics.csv)
   → Tahmin vs gerçek (calibration.md) → öğrenim (company/lessons.md) → puan ağırlıkları güncellenir
@@ -40,7 +41,7 @@ Bu sistem mevcut documentary kapılarını **tekrarlamaz**: virality gate "bu fi
 - `FC-XXX` — kilitli yayın öncesi tahmin.
 - `VID-XXX` — üretime giren video. **Finance ledger'ları, metrik CSV'si ve sonuç dosyaları bu anahtarı kullanır.**
 - `OL-XXX` — rakip/outlier kaydı.
-- `PT-XXX` — packaging testi (title/thumbnail; Test & Compare).
+- `PT-XXX` — packaging testi (title/thumbnail; native A/B).
 
 ## 4. Dosyalar
 | Dosya | İçerik |

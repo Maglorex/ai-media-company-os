@@ -48,7 +48,7 @@ Müzik ve SFX yönü treatment'ta **işlev** olarak yazılır (gerilim kurmak, n
 - **Ne zaman değil:** gerçek arşiv varsa sırf daha güzel diye; doğrulanmamış yerleşim/görünüş ayrıntısı uydurması gerekiyorsa; kanıt taşıması beklenen her yerde.
 - **Founder deneyimi:** Founder "ChatGPT'ye ne yazayım?" diye düşünmez. COO, `VISUAL-LANGUAGE-LIBRARY.md` §AI prompt formatıyla tek kod bloğunda eksiksiz prompt verir: "Bu sahne için ChatGPT'ye şunu olduğu gibi gönder:". Gelen görsel production klasörüne konur, asset kaydına `AI-GENERATED / ILLUSTRATIVE` + prompt + sahne ile işlenir.
 - **Ekranda:** AI görsel arşiv katmanından stil olarak ayrılır (stilize, foto-gerçekçi değil); gerekirse küçük "Illustration" etiketi. Asla arşiv kanıtı gibi gösterilmez, kaynak etiketi taklit edilmez.
-- **Açıklama riski:** Gerçek bir olayın/yerin foto-gerçekçi yeniden üretimi yapılırsa yayın öncesi QA'ya "AI disclosure gerekli olabilir" maddesi düşülür (resmî YouTube sayfası yayın öncesi yeniden kontrol edilir). Kurallar ayrıca: `production/tools/README.md` §ChatGPT Image Generation.
+- **Açıklama riski:** Gerçek bir olayın/yerin foto-gerçekçi yeniden üretimi yapılırsa Release Gate G-11'de (`pre-publish-qa`) disclosure değerlendirilir (D-036) (resmî YouTube sayfası yayın öncesi yeniden kontrol edilir). Kurallar ayrıca: `production/tools/README.md` §ChatGPT Image Generation.
 
 ## 10. Teşhis testleri (treatment, handoff ve prototype QA'sında zorunlu)
 1. **Literal test:** Sahnelerin çoğu yalnız "söyleneni gösteriyor" mu? → iş eklenmeli.

@@ -24,7 +24,7 @@ Renk, font, ident, geçiş, kanıt görünümü, sahne başına görsel türü, 
 ## 3. Kanıt dürüstlüğü
 - `EVIDENCE NN` etiketi ve kaynak etiketi her zaman evidence ledger satırına bağlıdır; karşılığı yoksa kullanılmaz.
 - Belgeye sahte metin/damga eklenmez; Evidence Pull'da çekilen değer belgedekiyle birebir aynıdır.
-- AI görsel `AI-GENERATED / ILLUSTRATIVE` olarak asset kaydına girer, kanıt olarak kullanılmaz, gerektiğinde "Illustration" etiketi alır, gerçek tarihî fotoğraf gibi görünmesi istenmez. Foto-gerçekçi rekonstrüksiyonda yayın öncesi QA YouTube synthetic-content disclosure gereksinimini resmî sayfadan kontrol eder.
+- AI görsel `AI-GENERATED / ILLUSTRATIVE` olarak asset kaydına girer, kanıt olarak kullanılmaz, gerektiğinde "Illustration" etiketi alır, gerçek tarihî fotoğraf gibi görünmesi istenmez. Foto-gerçekçi rekonstrüksiyonda Release Gate G-11 (`pre-publish-qa`) YouTube synthetic-content disclosure gereksinimini resmî sayfadan kontrol eder.
 
 ## 4. "Güzel fotoğraf yok" → lacivert bilgi kartı DEĞİL
 Her önemli beat `source-to-visual` karar sırasından geçer. Tam ekran bilgi kartı varsayılan fallback değildir.
@@ -33,4 +33,4 @@ Her önemli beat `source-to-visual` karar sırasından geçer. Tam ekran bilgi k
 - **Handoff öncesi:** `source-to-visual` tablosu + Brand System uyumu (dünya ataması, case accent, EVIDENCE eşlemesi).
 - **Prototype ve full video sonrası, Founder'a göstermeden önce:** `muted-preview-gate` (muted sample grid + brand diversity QA) — **bağlayıcı**; FAIL ise Founder'a gitmez; düzeltilir.
 - **Brand proof (D-032):** logo yönü, banner yönü, CASE 001 UI mockup, evidence label mockup ve P3 branded frame örnekleri gelmeden brand retrofit'li handoff yazılmaz (`brand-system-v1.md` §N).
-- **Yayın öncesi QA:** muted preview gate PASS · AI asset etiket/disclosure kontrolü · EVIDENCE etiketleri ledger'la eşleşiyor · thumbnail → video ilk bölüm sürekliliği (object · evidence · conflict).
+- **Yayın öncesi QA:** tek yer `pre-publish-qa` (D-035) — marka maddeleri Release Gate'te G-17a (muted gate + EVIDENCE eşlemesi), G-11 (AI etiket/disclosure), G-04 (thumbnail → video sürekliliği) olarak yer alır.

@@ -19,6 +19,8 @@ Sakin, modern belgesel; düşük/orta yoğunluk; merak ve araştırma hissi; anl
 
 **Marka (D-031):** kanal ses kimliği (stinger, jingle, logo sesi) yok; case ident (`CASE 001 · …`) müzik altında veya sessiz, kendi SFX'i yok.
 
+**Launch (D-035):** audio ledger'daki attribution metni Launch Package description §Credits'e otomatik aktarılır; Release Gate G-09 (rights + audio ledger) ve G-05 (description) kontrol eder.
+
 ## 3. SFX
 Az ve anlamlı: belge/satır vurgusunda çok hafif accent, harita/zaman şeridinde ince geçiş, önemli rakam reveal'ı, bölüm geçişi. **Yapılmaz:** her grafik için whoosh, sürekli click/pop, TikTok tarzı efekt, gerçek olmayan makine/ortam sesini tarihî kanıt gibi kullanmak (arşiv fotoğrafına "o anın sesi" izlenimi veren gemi düdüğü, makine dairesi vb.). SFX ritim ve anlam aracıdır.
 

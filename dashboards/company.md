@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-13 (Dynamic Case Ident System, D-034; video UI spec + P3 brand retrofit spec hazır; P3 donuk)
+**Son güncelleme:** 2026-10-13 (Ana bilgisayar kapandı, D-036 — MAIN-PC SYSTEM READY, blocker 0; sıradaki: güçlü PC pull; P3 donuk)
 **Faz:** Faz 2 (Pilot üretim testi) — P3 NS Savannah tam pilot üretimde: grafikler + final VO hazır; kurgu/senkron sırada
 
 ## Özet
