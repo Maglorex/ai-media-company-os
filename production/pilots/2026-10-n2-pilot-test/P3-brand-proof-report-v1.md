@@ -1,6 +1,6 @@
 # P3 / CASE 001 — Brand Proof #3–#5 raporu (v1)
 
-> Tarih: 2026-10-13 · Üreten: render PC (DESKTOP-KVLH9B2) · Karar: **D-040** (kapsamlı unfreeze) · Durum: **Founder PASS/REVISE bekliyor**.
+> Tarih: 2026-10-13 · Üreten: render PC (DESKTOP-KVLH9B2) · Karar: **D-040** (kapsamlı unfreeze) · Durum: **PROVISIONAL PASS / APPROVED FOR MOTION TEST (D-041, Founder 2026-10-13)** — canonical final estetik değil; gerçek estetik kapısı motion prototype (`P3-production-handoff-prototype-v3.md`). Founder notu: still'ler teknik olarak yeterli, yön henüz tam içe sinmedi (CF-002).
 > Kapsam dışı (D-040): full production, final render/VO, kredi, müzik, V-20/V-21, 1964 filmi, AI asset, eski prototype kodu, Premiere XML, legacy `theme.ts`, narration/beat/evidence değişikliği. Proof PASS olsa da full production otomatik başlamaz.
 
 ## 1. Teslim

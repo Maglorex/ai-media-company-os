@@ -384,3 +384,12 @@
 - Gerekçe / kanıt: [VERİ] strong-PC checkpoint audit (2026-10-13), Brand-Tokens-Proof PASS, rights ledger (V-20 UNKNOWN_RIGHTS, V-21 REJECTED). [VARSAYIM] SAFE asset'lerle (V-05, GAO sayfaları, Natural Earth) üretilen proof'lar marka kararını vermeye yeter.
 - Geri dönüş koşulu: Founder bir proof'a iki kez REVISE verirse sorun Brand System v1 seviyesinde değerlendirilir (CF kaydı; gerekirse v1.1) ve P3 yeniden donabilir.
 - Durum: Aktif.
+
+### D-041 — P3 Brand Proof #3–#5: PROVISIONAL PASS / APPROVED FOR MOTION TEST; Handoff v3 minimum görsel yoğunlukla
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: D-040 kapsamında üretilen Brand Proof #3–#5 (`P3-brand-proof-report-v1.md`, `b574e4f`) teknik olarak yeterli; Founder görsel yönün henüz tamamen içine sinmediğini belirtti.
+- Karar: (1) #3, #4, #5 = **PROVISIONAL PASS / APPROVED FOR MOTION TEST**; canonical final estetik olarak kilitlenmez. (2) Sıradaki aşama yalnız **Handoff v3 + kısa motion prototype hazırlığı**; full production otomatik başlamaz; v3 sonrası ayrı Founder kararı. (3) v3 Brand System v1'i kullanır ama **görsel yoğunluk minimum:** gerçek subject / arşiv ana kahraman · UI destekleyici, baskın değil · büyük nesne ve güçlü görüntü öncelikli · sürekli koyu zemin / dashboard hissi yok · EVIDENCE yalnız kanıt gerektiğinde · CASE LAYER yalnız yapısal yönlendirme gerektiğinde · gereksiz label, grid, metadata yok. (4) İlk motion prototype Founder'ın **gerçek estetik kapısı**; soru: **"Bunu gerçekten The Industrial Casebook videosu olarak izlemeye devam eder miydim?"** — EVET olmadan full production yok.
+- Gerekçe / kanıt: [VERİ] Founder değerlendirmesi 2026-10-13. [VARSAYIM] Still kareler hareket, tempo ve anlatıyla birlikte değerlendirilmeden marka kararı verilemez; motion prototype bu boşluğu kapatır.
+- Geri dönüş koşulu: Motion prototype HAYIR / EMİN DEĞİLİM → creative director teşhisi (CF), Brand System uygulama yoğunluğu veya dünya ağırlıkları revize; iki ardışık HAYIR → fikir/brand v1.1 değerlendirmesi (creative-standards §2).
+- Durum: Aktif. D-040 kapsamı sürer (yasaklar aynen).

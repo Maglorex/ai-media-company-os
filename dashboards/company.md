@@ -40,7 +40,7 @@
 - Vergi: henüz gelir yok. 2026 sosyal içerik istisna eşiği 5.300.000 TL ve %15 banka tevkifatı resmî GİB rehberiyle doğrulandı; takip aktif.
 
 ## Founder onayı / kararı bekleyenler
-- 🔓 **P3 KAPSAMLI AÇIK (D-040, 2026-10-13):** yalnız Brand Proof #3–#5 (render PC) → Founder PASS → Handoff v3 + hazır ChatGPT prompt'ları. **Full production, final render/VO, kredi, müzik, V-20/V-21, AI asset yok;** v3 sonrası ayrı Founder kararı. (Önceki: D-028/D-031 donması.) (Eski not:) P3 prototype: onaylar tamam (D-026, D-027; Ship-first açılış). Founder'dan: 2 AI görseli (ChatGPT, hazır prompt) + müzik adayları (Audio Library) + commit/push → production PC başlar.
+- 🔓 **P3 KAPSAMLI AÇIK (D-040, D-041, 2026-10-13):** Brand Proof #3–#5 = PROVISIONAL PASS / APPROVED FOR MOTION TEST · Handoff v3 hazır (`P3-production-handoff-prototype-v3.md`) → Founder kararı: motion prototype render + VO yeniden kullanımı + AI-01. **Full production, final render/VO, kredi, müzik, V-20/V-21, AI asset yok;** v3 sonrası ayrı Founder kararı. (Önceki: D-028/D-031 donması.) (Eski not:) P3 prototype: onaylar tamam (D-026, D-027; Ship-first açılış). Founder'dan: 2 AI görseli (ChatGPT, hazır prompt) + müzik adayları (Audio Library) + commit/push → production PC başlar.
 - (Eski) v1 VO kulak kontrolü D-025 ile beklemeye alındı.
 - **P3 final VO kulak kontrolü** (dinleme kopyası: `D:\CompanyOS-Production\P3-ns-savannah\03_vo\final\P3_VO_full_v1_LISTEN.mp3`). SL-002 kalan 3 uyarlama ayrı onay bekliyor.
 - P3 NS Savannah tam pilot üretimde (D-008 → D-013; final VO v1 hazır).
