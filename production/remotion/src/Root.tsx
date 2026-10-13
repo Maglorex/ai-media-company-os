@@ -16,6 +16,8 @@ import {P3FinalFrame} from './videos/p3/FinalFrame';
 import {P3LinesToBar} from './videos/p3/LinesToBar';
 import {prerollClip, syncedClips} from './videos/p3/synced';
 import {ANIMATIC_FRAMES, P3Animatic} from './videos/p3/Animatic';
+import {P3OpeningV2} from './videos/p3/opening/OpeningV2';
+import {TOTAL_FRAMES as OPENING_V2_FRAMES} from './videos/p3/opening/timing';
 import {p3V01Teaser, p3Contracts, p3FuelElements, p3PassengerCargo, p3QuoteReliable, p3Strip, p3V03Cover, p3V14LayUp, p3V18Prototype, p3VoyageMap, p3WorkedMeans, p3CrewBar, p3NetCost, p3NetCostBar, p3NotIncluded, p3Q02FullCost, p3Subsidy, p3TwoMillionMore, p3V12OneShip, p3Facility, p3FacilityTimeline, p3GalvestonMap, p3LabelV05, p3LoneShip, p3NotInReport, p3PortFlow, p3TrainingFlow, p3ThreeItemsBar, p3V01, p3V02} from './videos/p3/shots';
 
 const FPS = 30;
@@ -61,7 +63,10 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="P3-FacilityTimeline" component={Timeline} durationInFrames={330} {...HD} defaultProps={p3FacilityTimeline} />
       <Composition id="P3-LoneShip" component={LoadShare} durationInFrames={420} {...HD} defaultProps={p3LoneShip} />
 
-      <Composition id="P3-ANIMATIC" component={P3Animatic} durationInFrames={ANIMATIC_FRAMES} {...HD} />
+      {/* P3 opening prototype v2 (D-030): VO + görüntü tek kompozisyon; müzik track'i boş */}
+      <Composition id="P3-OPENING-v2" component={P3OpeningV2} durationInFrames={OPENING_V2_FRAMES} {...HD} />
+
+      <Composition id="P3-ANIMATIC"component={P3Animatic} durationInFrames={ANIMATIC_FRAMES} {...HD} />
       {/* Founder inceleme kopyası: damgasız tam çözünürlük; final YouTube export değil (müzik/SFX yok) */}
       <Composition id="P3-REVIEW" component={P3Animatic} durationInFrames={ANIMATIC_FRAMES} {...HD} defaultProps={{review: true}} />
       {/* P3 kurgu sürümleri: VO senkron (videos/p3/synced.ts, voCues.ts) */}

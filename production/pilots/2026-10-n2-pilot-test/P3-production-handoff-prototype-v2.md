@@ -1,7 +1,7 @@
 # P3 (VID-001) — Production Handoff (prototype) v2 — Opening v2, Ship-first
 
 > Tarih: 2026-10-13 · Hazırlayan: COO · Uygulayan: render bilgisayarındaki Claude (DESKTOP-KVLH9B2, `production-engineer` rolü) · Karar: **D-030**
-> **Durum: HAZIR (2026-10-13).** Narration §2'de (P3 opening v2, Founder onaylı). Render bilgisayarında uygulanır.
+> **Durum: UYGULANDI (2026-10-13)** — prototype teslim edildi, rapor: `P3-prototype-v2-report.md`. Founder prototype kapısı bekleniyor.
 > Yerine geçtiği: `P3-production-handoff-prototype-v1.md` (v1.1, donuk; silinmez). Bağlayıcı: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` · olay planı ve kanıt eşlemesi: `P3-doctrine-test-opening-v1.md` §4–§11 (bu dosya onu opening v2 metnine uyarlar) · `P3-evidence-ledger.md` · `.claude/rules/audio-production.md`.
 
 ## 0. Kapsam ve onaylar (D-030)
