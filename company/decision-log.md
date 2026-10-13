@@ -289,7 +289,7 @@
 - Karar: (1) D-028 donması **yalnız ilk 60–90 sn prototype** için kalktı; tam video, gövde VO'su, Premiere final yok. (2) Anlatım: Founder'ın getirdiği ChatGPT sıkılaştırılmış sürüm = **P3 opening v2** (birebir). (3) VO: Bill L. Oxley, Multilingual v2, **≤700 kredi**, yalnız opening. (4) Müzik yoksa track boş; placeholder yok. AI görsel yok, hakkı belirsiz footage yok. (5) Uygulama: `P3-production-handoff-prototype-v2.md` + doctrine v1. (6) Prototype sonrası önce Founder'a izleme dosyası + tek soru.
 - Gerekçe / kanıt: [VERİ] doctrine testi 13/13 PASS. [VARSAYIM] hak-temiz footage olmadan motion/illüstrasyonla canlılık sağlanabilir — prototype bunu test eder.
 - Geri dönüş koşulu: Founder "izlemeye devam etmezdim" derse creative director teşhisi + revize prototype; iki kez geçemezse fikir yeniden değerlendirilir (creative-standards §2).
-- Durum: Aktif — narration Founder'dan geldi (2026-10-13); tek değişiklik Founder onaylı: son cümle "built to serve several" → "that could serve several" (C-33). Handoff v2 HAZIR.
+- Durum: Aktif — narration Founder'dan geldi (2026-10-13); tek değişiklik Founder onaylı: son cümle "built to serve several" → "that could serve several" (C-33). Handoff v2 HAZIR. → Uygulandı (render PC, 2026-10-13 14:38), ardından D-031 ile bekletildi; tarihsel kayıt D-039.
 
 ### D-031 — The Industrial Casebook Brand System v1 + Source-to-Visual Pipeline v1 + Muted Preview Gate; P3 yeniden donduruldu
 - Tarih: 2026-10-13
@@ -363,3 +363,14 @@
 - Geri dönüş koşulu: Shorts long-form'a anlamlı geçiş üretmezse veya üretim maliyeti değerini aşarsa sayı/hedef düşürülür.
 - Durum: Aktif. P3 donuk.
 
+
+### D-039 — Render PC'deki P3 yerel commit'leri arşivlendi; main canonical ile eşitlendi; gerçek maliyet ve hak kayıtları main'e taşındı
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: Güçlü PC (DESKTOP-KVLH9B2) audit'i: local main, origin/main `2fb709b`'nin 6 commit önündeydi (`c1fe2ef`, `b2764be`, `f483b8c`, `470a4d3`, `8d4deec`, `ee9bb80`) — reddedilmiş P3 Premiere XML hattı (D-025), PhotoShots/P3-REVIEW kurgu işleri, iki otomatik pull merge'i ve **Opening Prototype v2 üretimi** (D-030 yürürlükteyken, 2026-10-13 14:38). P3 aynı gün 17:26'da D-031 ile yeniden donduruldu; bu commit'lerin push'u canonical main'e eski/deneysel P3 durumu ve çelişen handoff durumu eklerdi.
+- Seçenekler: hepsini push et / arşiv branch'i + main'i eşitle + gerçek kayıtları ayrı taşı → ikincisi.
+- Karar: (1) 6 commit `archive/render-pc-p3-2026-10-13` (`ee9bb80`) branch'inde korunur; branch remote'a push edildi. (2) Local main `origin/main`'e eşitlendi. (3) Arşivden yalnız gerçek şirket kayıtları main'e taşındı (cherry-pick yok): `usage.csv` U-006 (467 kredi), voice-ledger "Opening prototype v2 — TARİHSEL KAYIT", `VID-001-rights-ledger.csv` (V-21 REJECTED — DO NOT USE / EXCLUDED FOR RIGHTS; V-20 UNKNOWN_RIGHTS — kanıt doğrulanacak), evidence ledger §C V-20/V-21 satırlarında rights ledger işaretçisi. (4) Prototype kodu (`remotion/src/videos/p3/opening/`), raporu, Premiere XML hattı, PhotoShots ve P3 Root kompozisyonları main'e **dönmez**.
+- Gerekçe / kanıt: [VERİ] git audit (merge-base `2fb709b`; `origin/main..ee9bb80` 23 dosya, yalnız P3 + U-006; canonical sistem dosyası farkı yok). Finance ve hak kayıtları tek doğruluk kaynağında olmalı (company-memory).
+- Tarihsel not: Opening Prototype v2 render PC'de üretildi; repo dışındaki `D:\CompanyOS-Production\P3-ns-savannah\06_renders\P3_OPENING_PROTOTYPE_v2.mp4` ve `03_vo\prototype-v2\` dosyaları durabilir ama **aktif production durumu değildir**; Founder prototype kapısına gitmedi. P3 **FROZEN** (D-031).
+- Geri dönüş koşulu: P3 yeniden açılırsa arşivdeki kod/rapor yalnız referans olarak okunur; v3 handoff (Brand System retrofit) yeni iş olarak yazılır.
+- Durum: Aktif. Açık: V-20 lisans kanıtı (proof) yakalanacak; P3 §C'nin geri kalanının rights ledger'a taşınması (DF-6) sürüyor.
