@@ -62,6 +62,11 @@ Credits
 - Upload: Private / Unlisted (QA) → Public tarihi/saati (+ saat dilimi) · zaman gerekçesi (deney):
 - Launch onayı: Founder — tarih:
 
+## 7b. Shorts türevleri (§25)
+| ID | Long-form TC | İlk 1–2 sn | Tek başına yay | Long-form köprüsü | Kanıt | Haklar (Shorts) | 9:16 planı | Karar |
+|---|---|---|---|---|---|---|---|---|
+- Hedef 2–4; eşiği geçmeyen üretilmez. Yayın: long-form public sonrası; zaman deneyi:
+
 ## 8. Yayın sonrası
 - İnceleme pencereleri: erken (ilk anlamlı gösterim) · 48s · 7g · 28g · 90g → `growth-performance-review`
 - Ölçülecek ana sorular (hipoteze bağlı):

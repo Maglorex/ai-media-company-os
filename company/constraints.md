@@ -9,7 +9,7 @@
 - İlk gelir modeli: **organik dağıtım kullanan dijital medya varlıkları.**
 - İlk ana platform: **YouTube.**
 - İlk ana format: **orijinal, faceless, long-form** içerik.
-- **Shorts ana ürün değildir;** gerektiğinde long-form içerikten türetilir.
+- **Shorts ana ürün değildir;** gerektiğinde long-form içerikten türetilir. Uygulama: her long-form için uygun materyal varsa 2–4 özgün Short (sayı doldurmak için zayıf Short yok) — `video-launch-os` §25 (D-038).
 - Başkasının içeriğini düşük değerli biçimde yeniden paketleyen veya platform politikalarını riske atan modeller **kullanılmaz.**
 - Yeni kanal açmak **otomatik değildir.** İlk kanalın verisi ve üretim kapasitesi expansion kriterlerini karşılamadan yeni kanal önerilmez.
 

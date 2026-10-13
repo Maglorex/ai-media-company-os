@@ -354,3 +354,12 @@
 - Geri dönüş koşulu: —
 - Durum: Aktif. MAIN-PC SYSTEM READY değişmedi (YES). P3 donuk.
 
+### D-038 — Long-form'dan Shorts türevleri iş akışına bağlandı
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: D-002 ve strategy "Shorts türev" ilkesini koyuyordu; ancak kontrol (2026-10-13) aday seçimi, 9:16 yeniden kurgu ve zamanlama için **hiçbir iş akışı bulunmadığını** gösterdi ("Shorts converter" sistemde yoktu).
+- Karar: Ayrı sistem kurulmadan `video-launch-os` §25 + G8b adımı: long-form final kilitten sonra hedef 2–4 (eşik geçmezse 0–1) özgün Short; yalnız kendi long-form araştırma/anlatım/materyalimizden; tek başına anlam, ilk saniye, merak/payoff, long-form köprüsü, kanıt bağlamı, haklar, dikey uygunluk kriterleri; 9:16 yeniden kurgu (reframe, dikey layout, burned-in caption, kısa-form ritmi); yayın long-form public olduktan sonra, zamanlama deney; Shorts için kısaltılmış Release Gate; publish package `shorts_plan`; handoff eki.
+- Gerekçe / kanıt: [VERİ] D-002, constraints, strategy. [VARSAYIM] Shorts long-form'a ilgi/geçiş yaratır — kendi verimizle ölçülecek.
+- Geri dönüş koşulu: Shorts long-form'a anlamlı geçiş üretmezse veya üretim maliyeti değerini aşarsa sayı/hedef düşürülür.
+- Durum: Aktif. P3 donuk.
+

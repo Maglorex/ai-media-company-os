@@ -72,6 +72,7 @@ Kullanılmayacak iddialar/sayılar/ifadeler · birebir alıntılar · ekranda ve
 - End screen alanı: son 5–20 sn TC aralığı, ekranda boş bırakılacak bölge, kapanış görseli
 - Thumbnail hero asset: kaynak (V-ID) veya AI (prompt + dosya adı), teslim yeri
 - Captions: final VO timing JSON yolu
+- Shorts (D-038): long-form final kilitten sonra seçilen adaylar (`video-launch-os` §25) ayrı ek olarak gelir; full handoff'ta yalnız 9:16 varyant üretilebilecek kompozisyonların (Remotion) dikey render'a uygun kurulması notu
 
 ## 14. Teslim ve geri bildirim
 - Zorunlu: `muted-preview-gate` grid + PASS/REVISE raporu (REVISE ise teslim yok).

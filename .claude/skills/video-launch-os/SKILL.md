@@ -1,6 +1,6 @@
 ---
 name: video-launch-os
-description: The Industrial Casebook videolarının fikirden yayın sonrası öğrenime kadar keşif, dağıtım stratejisi (Browse-first / Search-assisted Browse / Search-first / Existing-audience-first), talep araştırması, Search Intent Brief, Packaging v2 finalistleri, title/thumbnail kuralları, description, kaynaklar, chapters, captions, dil, disclosure, end screen, cards, playlist, yayın zamanı, native A/B testi ve Launch Package'ı Founder müdahalesi olmadan yönetir. Fikir shortliste girdiğinde, packaging aşamasında, production handoff yazılırken (end screen ve thumbnail asset planı), final edit sonrası ve yayın öncesi kullan. Yayınlamaz, upload etmez, hesap ayarı değiştirmez.
+description: The Industrial Casebook videolarının fikirden yayın sonrası öğrenime kadar keşif, dağıtım stratejisi (Browse-first / Search-assisted Browse / Search-first / Existing-audience-first), talep araştırması, Search Intent Brief, Packaging v2 finalistleri, title/thumbnail kuralları, description, kaynaklar, chapters, captions, dil, disclosure, end screen, cards, playlist, yayın zamanı, native A/B testi, long-form'dan türetilen Shorts adaylarını ve Launch Package'ı Founder müdahalesi olmadan yönetir. Fikir shortliste girdiğinde, packaging aşamasında, production handoff yazılırken (end screen ve thumbnail asset planı), final edit sonrası ve yayın öncesi kullan. Yayınlamaz, upload etmez, hesap ayarı değiştirmez.
 ---
 
 # Video Launch OS v1
@@ -20,7 +20,8 @@ Uygulayıcı: COO; talep araştırması `research-analyst`; packaging yaratıcı
 | G6 | Yaratıcı yön + prototype | Treatment, source-to-visual, ident, prototype + muted gate + Founder kapısı | creative-standards, brand rule |
 | G7 | Full handoff | **End-screen aware son 5–20 sn** + **thumbnail hero asset planı** (§6, §16) | `documentary-production-handoff` |
 | G8 | Final edit sonrası | Chapters kararı, captions dosyası, description, credits, end screen/cards planı | bu skill §8–§12 |
-| G9 | Launch Package | Tek kanonik paket (şablon) | bu skill §20 |
+| G8b | Shorts türevleri | Final kilitten sonra **0–4 aday** (hedef 2–4, kalite eşiği yoksa daha az) seçilir ve 9:16 yeniden kurgu planı yazılır (§25) | bu skill §25 |
+| G9 | Launch Package | Tek kanonik paket (şablon; `shorts_plan` dahil) | bu skill §20 |
 | G10 | **Release Gate** A (G-01…G-17a) | PASS / FAIL / MANUAL-DECISION; FAIL → public yasak | `pre-publish-qa` |
 | G11 | Founder onayı | Paket + yayın (tek onay) | `founder-interface` |
 | G12 | Upload (Private) → Release Gate B (G-17…G-19) → Public | `pre-publish-qa` | Founder (Studio işlemi; paketten birebir) |
@@ -122,3 +123,31 @@ Muted preview gate korunur (`muted-preview-gate`, Release Gate G-17a); thumbnail
 
 ## 22–24. Yayın sonrası döngü
 `growth-performance-review` yürütür (pencereler; YouTube resmî kavramları ile bizim proxy metriklerimiz **ayrı** sınıflanır; kayıt formatı observation/confidence/possible cause/evidence/action/rule update; sabit eşik yok; problem sınıfları → sistem güncellemesi). Search Terms ve Suggested kaynakları bir sonraki talep araştırmasına (§2) girer.
+
+## 25. Shorts türevleri (long-form'dan; D-002 / strategy "Shorts türev", D-038)
+Ayrı bir Shorts sistemi değildir; long-form akışının post-production + launch adımıdır. Shorts ana ürün değildir (`company/constraints.md`).
+**Kaynak kuralı:** yalnız kendi long-form videomuzun araştırması, anlatımı ve özgün materyali (bizim grafiklerimiz, VO'muz, rights ledger'da Shorts kullanımına uygun asset'ler). Başka içeriklerin yeniden kullanımı yok.
+**Ne zaman:** long-form **final edit kilitlendikten sonra** aday seçimi (G8b); üretim long-form release paketinden sonra (render PC; aynı handoff'un ekinde). **Yayın long-form public olduktan sonra** (Shorts'taki "related video" bağlantısı long-form'a verilebilsin; P-14) — ilk Short'un zamanı ve aralık bir deney olarak FC'ye yazılır, sabit kural yok.
+**Sayı:** hedef **2–4**; ama aşağıdaki eşiği geçmeyen aday üretilmez (0 veya 1 kabul edilebilir). Sayı doldurmak için zayıf Short yok.
+**Aday seçimi (her aday için tablo; COO + creative director):**
+| Kriter | Soru |
+|---|---|
+| Tek başına anlam | Long-form'u izlememiş biri için 15–60 sn'de kendi başına bir merak → cevap (veya güçlü soru) yayı var mı? |
+| İlk saniye | İlk 1–2 sn'de nesne + anormallik görünüyor mu (bağlamsız giriş yok)? |
+| Merak / payoff | Long-form'un en güçlü reveal, paradoks veya rakam anlarından biri mi (ör. "two years", "only one")? |
+| Long-form'a köprü | İzleyiciye tam vakayı izlemek için gerçek bir sebep bırakıyor mu (spoiler değil, açık soru)? |
+| Kanıt | Short'taki her iddia ledger'da ve **bağlamından koparılınca anlamı değişmiyor mu** (D-REJ kuralları geçerli)? |
+| Haklar | İçindeki her asset'in rights ledger'da Shorts kullanımı uygun mu (dönüşüm/crop izni, müzik lisansı)? |
+| Dikey uygunluk | Görsel materyal 9:16'ya yeniden kurulabiliyor mu (yalnız ortadan kırpma değil)? |
+Eşik: hepsi EVET → aday. Biri HAYIR → üretilmez.
+**9:16 yeniden kurgu kuralları (yalnız kırpılmış yatay video değil):**
+- Tuval 1080×1920; ana nesne ve metin dikey güvenli alanda (alt ~%20 ve sağ kenar YouTube arayüzü için boş).
+- Reframe: her sahne ayrı kadrajlanır (nesne takibi, dikey yeniden kompozisyon); geniş görseller **dikey layout** ile (üst: kanıt/belge, alt: nesne/harita; ya da tek nesne büyük). Remotion kompozisyonları dikey varyantla yeniden render edilir; düz center-crop yalnız kadraj zaten uygunsa.
+- Altyazı: **burned-in** büyük altyazı (Shorts'ta sessiz izleme; caption metni final VO'dan, CAPTION-PROTOCOL QC'si geçerli), brand tipografisi.
+- Ritim: kısa-form tempo — giriş bağlamı atılır, ilk cümle sorunun kendisi; VO gerekirse aynı final VO'dan kesilir (yeni ses üretimi = ayrı kredi onayı).
+- Brand: Case Layer küçük (CASE 001), Founder-approved yön; long-form ident tekrar edilmez.
+- Son: long-form'a sözlü/görsel köprü (soru), "related video" alanında long-form.
+**Upload ayarları:** UPLOAD-SETTINGS-MATRIX geçerli + Shorts farkları: related video = long-form; Shorts A/B testi yok (P-18); thumbnail yalnız masaüstü Studio'da (P-19); title ≤100, açıklamada long-form linki ve kredi (rights/audio ledger'dan).
+**Release Gate:** her Short için kısaltılmış kontrol: G-01, G-03, G-04 (vaat), G-05, G-09/G-10 (haklar), G-11, G-12, G-13, G-17 + muted preview (tek örnek yeterli). FAIL → yayın yok.
+**Ölçüm:** Shorts metrikleri long-form'dan ayrı (`growth-performance-review`); asıl soru Short'tan long-form'a geçiş (Studio'da görünen "related video" tıklamaları / long-form trafik kaynağında Shorts) — iç proxy, tek videodan genelleme yok.
+

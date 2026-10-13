@@ -59,6 +59,7 @@ Para tarafı: [maliyet], [gelir], [kâr/zarar]; kendini [X] izlenmede amorti ede
 Bundan sonra: [tek öneri].
 ```
 
+- **Shorts (D-038):** Shorts metrikleri long-form'dan ayrı satırlarda; asıl soru Short → long-form geçişi (iç proxy).
 - **Launch değişkenleri (D-035/D-036):** publish package (dağıtım tipi, A/B sonucu, yayın zamanı deneyi) sonuç kartına bağlanır.
 - **Marka değişkenleri (D-031):** sonuç kartına case accent, thumbnail DNA (object/evidence/conflict), ident biçimi ve muted preview gate sonucu yazılır; bunlar zamanla CTR/retention ile karşılaştırılır (tek videodan kural çıkarılmaz).
 
