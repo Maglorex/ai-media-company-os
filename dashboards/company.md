@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-10 (Efficiency Audit v1: model yönlendirme, D-023)
+**Son güncelleme:** 2026-10-13 (Documentary Production Doctrine v1 tamamlandı, D-029; P3 hâlâ donuk)
 **Faz:** Faz 2 (Pilot üretim testi) — P3 NS Savannah tam pilot üretimde: grafikler + final VO hazır; kurgu/senkron sırada
 
 ## Özet
@@ -21,6 +21,7 @@
 | Render bilgisayarı onboarding (D-017) | ✅ Node 24 LTS + Remotion 4.0.529 |
 | Growth / Content Intelligence + Finance / CFO + Tax Watch (D-020) | ✅ kuruldu; veri bekliyor (kanal yok, ilk aylık kapanış Kasım başı) |
 | Efficiency Audit v1 (D-023) | ✅ uzmanlar Sonnet, mekanik tarama Haiku yardımcıda; tasarruf 5–10 oturumla ölçülecek (`finance/efficiency/`) |
+| Documentary creative mimarisi (D-025, D-026) | ✅ yaratıcı yön katmanı, prototype kapısı, benchmark **PROVISIONAL v0.1 (kare kalibrasyonlu)**, CF kaydı · P3 tam review kurgusu reddedildi (CF-001) → treatment v3.1 + prototype handoff **FINAL**; 1964 film kullanılmaz; açılış VO onaylı (≤700 kredi) |
 | G-3 Pilot üretim testi (EXP-001) | 🔄 3 pilot taslağı ✅ · P3 premise v2 + gate READY + packaging onaylı (D-012) + kanıt kaydı + senaryo v2.1 kilitli + görsel plan + edit plan v1 · **P3 grafikler: 32 kompozisyon (S1–S8) tamam** · **final VO v1: 8:19, 3.085 kredi (Bill L. Oxley + Multilingual v2, D-021)** · Founder kulak kontrolü bekliyor · final render yok; Production Autonomy Mode (D-019) |
 
 ## Kanallar
@@ -39,6 +40,8 @@
 - Vergi: henüz gelir yok. 2026 sosyal içerik istisna eşiği 5.300.000 TL ve %15 banka tevkifatı resmî GİB rehberiyle doğrulandı; takip aktif.
 
 ## Founder onayı / kararı bekleyenler
+- ⛔ **P3 DONDURULDU (D-028):** Doctrine v1 hazır (D-029); donmayı kaldırıp P3'ü doctrine ile yeniden tasarlama kararı Founder'da. Hâlâ: kredi harcaması, AI görsel, müzik, render yok. (Eski not:) P3 prototype: onaylar tamam (D-026, D-027; Ship-first açılış). Founder'dan: 2 AI görseli (ChatGPT, hazır prompt) + müzik adayları (Audio Library) + commit/push → production PC başlar.
+- (Eski) v1 VO kulak kontrolü D-025 ile beklemeye alındı.
 - **P3 final VO kulak kontrolü** (dinleme kopyası: `D:\CompanyOS-Production\P3-ns-savannah\03_vo\final\P3_VO_full_v1_LISTEN.mp3`). SL-002 kalan 3 uyarlama ayrı onay bekliyor.
 - P3 NS Savannah tam pilot üretimde (D-008 → D-013; final VO v1 hazır).
 

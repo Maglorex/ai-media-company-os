@@ -16,6 +16,7 @@
 | Deneyler | `intelligence/experiments/EXP-XXX-ad.md` |
 | Kanal özel bilgi | `channels/<kanal>/` |
 | Fikir portföyü, yayın öncesi tahmin, yayın sonrası sonuç | `intelligence/growth/` (I-, FC-, VID-, OL-, PT-) |
+| Yaratıcı yön: stil benchmark'ı, Founder yaratıcı geri bildirimi | `intelligence/creative/` (CF-) |
 | Gider, gelir, kullanım, süre, P&L, vergi takibi | `finance/` (ledger CSV'leri tek doğruluk kaynağı) |
 
 ## Kurallar
@@ -23,7 +24,7 @@
 - **Başarısız deneyler** kalır; neden başarısız olduğu yazılır.
 - **Strateji değişikliği** yalnızca kanıtla ve Founder onayıyla; `strategy.md` değişiklik geçmişine işlenir.
 - **Öğrenim → strateji:** Birden fazla kanıtla tekrar doğrulanan öğrenim, `strategy.md`'ye taşınmak üzere Founder'a önerilir.
-- **Numaralandırma:** D-, L-, EXP-, H-, G-, I-, FC-, VID-, OL-, PT- numaraları sıralı ve tekrarsızdır.
+- **Numaralandırma:** D-, L-, EXP-, H-, G-, I-, FC-, VID-, OL-, PT-, CF- numaraları sıralı ve tekrarsızdır.
 - **Tarih formatı:** YYYY-MM-DD.
 - **Tek doğruluk kaynağı:** Aynı bilgi birden fazla dosyada çoğaltılmaz; diğer dosyalar referans verir.
 

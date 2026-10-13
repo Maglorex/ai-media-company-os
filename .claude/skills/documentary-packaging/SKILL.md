@@ -10,6 +10,9 @@ Kapsam: `Industrial & Technology Autopsies` (N2), faceless, belge-öncelikli bel
 ## Kanıt bağı
 Videonun `documentary-evidence-ledger` kaydı varsa her başlık/thumbnail iddiası oradaki bir satıra bağlanır; yoksa bu skill'in doğruluk sınırları sonradan ledger'a aktarılır.
 
+## Sonraki adım
+Onaylı vaat `documentary-creative-treatment`'a girer: title/thumbnail'ın sattığı çatışma videonun erken bölümünde (sözle ve görselle) karşılanmalıdır; thumbnail'daki obje/belge ilk dakikada ekrana gelir.
+
 ## Ne yapmaz
 - Tıklanma veya CTR **tahmin etmez**; "algoritma böyle ister" demez.
 - Nihai packaging'i seçmez: öneri danışma notudur; onay `decision-review`/Founder'dadır. Yayın, thumbnail yapımı, harcama ve araç kurulumu başlatmaz.

@@ -56,3 +56,17 @@
 - Öğrenim: Kararın yalnız backlog/deney/üretim kaydında kalması, sonraki oturumun aynı kararı Founder'a yeniden sormasına yol açtı (2026-10-10, v2/v4 sorusu). Durum satırları sonraki kararlarla güncellenmezse karar kaydı gerçek durumu yansıtmaz.
 - Güven: Yüksek (iki somut örnek)
 - Uygulama: Founder kararı alındığında aynı turda `company/decision-log.md`'ye D- olarak işlenir; önceki kararın "bekleniyor/sıradaki" durumu karşılandığında o satıra tarihli güncelleme eklenir. Soru sormadan önce `founder-interface` §6b-2 kontrolü yapılır.
+
+### L-007 — Kanıt doğruluğu izlenebilirlik değildir; yaratıcı yön üretimden önce, kısa kesitle test edilir
+- Tarih: 2026-10-11
+- Kaynak: CF-001 (P3 tam review kurgusu reddedildi), D-025
+- Öğrenim: P3'te kanıt, ses ve grafik hattı doğru çalıştı ama video "slayt sunumu" gibi oldu. Kök neden sistemdeydi: yaratıcı yön katmanı yoktu; senaryo hook ve görsel dil düşünülmeden kilitlendi; görsel plan "söyleneni göster" mantığıyla literal eşleme yaptı; foto + pan + kart fiilî varsayılan oldu, hareketli arşiv hiç aranmadı; en görsel paradoks (Galveston tesisi) videonun ortasına gömüldü, bağlam başa yığıldı; ve yön, kısa bir kesitle denenmeden 8:19 tam üretim yapıldı.
+- Güven: Orta (tek video, ama kök nedenler süreçte açıkça görülüyor)
+- Uygulama: Her videoda creative treatment senaryo kilidinden önce; her sahnenin işi yazılır; arşiv footage taranır; ilk 60–90 sn prototype Founder kapısından geçmeden full production yok (`documentary-creative-standards`).
+
+### L-008 — İzlenebilirlik görsel değişim hızından ve sorulardan gelir; premise tavanı belirler
+- Tarih: 2026-10-13
+- Kaynak: D-029, doctrine v1 §1–§2 (16 video shot-level)
+- Öğrenim: Başarılı kanallarda ekran ortalama 2,6–4,4 sn'de yeni bir şey gösteriyor, açılışta somut nesne + anormallik + açık soru var ve mekanizma bir insan senaryosunda anlatılıyor; P3'te ~12,8 sn/beat, hareketli görüntü yok, insan yok, yapı rapor sırasıydı. Kanal içinde üretim dili sabitken izlenme 3–30× değişiyor → görsel dil tabanı, premise tavanı belirliyor (çıkarım).
+- Güven: Orta-yüksek (ölçüm DV; premise nedenselliği INF)
+- Uygulama: doctrine v1 §12 rubric her prototype öncesi; kendi render'ımız aynı araçla (shotscan) ölçülür.

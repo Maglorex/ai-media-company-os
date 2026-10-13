@@ -4,6 +4,11 @@
 > Durum: `Şimdi` → `Sıradaki` → `Sonra` → `Tamamlandı`. Onay gerektiren maddeler `[ONAY]` ile işaretlenir.
 
 ## Şimdi
+- [x] 2026-10-13 — **Documentary Production Doctrine v1** yazıldı ve bağlayıcı taban (D-029): `intelligence/creative/doctrine/documentary-production-doctrine-v1.md`.
+- [x] 2026-10-13 — Doctrine v1 sıfır kredi uygulama testi (P3 ilk ~90 sn): **PASS**, kritik REVISE yok → `production/pilots/2026-10-n2-pilot-test/P3-doctrine-test-opening-v1.md`.
+- [ ] **P3 opening prototype v2 (D-030)** — render PC `P3-production-handoff-prototype-v2.md`'yi uygular (VO ≤700 kredi, müzik boş) → COO Founder'a izleme dosyası + tek soru. Tam video YOK.
+- [ ] Founder (isteğe bağlı, 10 dk): 2 benchmark videonun ilk 2 dk'sını sesli dinleyip müzik/sessizlik notu → doctrine §9.
+- [ ] Ruined America Tucker açılışı görsel taraması (tarayıcı çöktü; premise analizi katalogla yapıldı) — düşük öncelik.
 - [x] 2026-10-07 — Birincil niş kararı onaylandı: N2 (D-007).
 - [x] 2026-10-08 — Skill Lab v0.1 kuruldu (D-009); 4 aday PENDING REVIEW.
 - [x] 2026-10-07 — Pilot taslak testi Aşama 1: 3 pilot (Brewster, J40, NS Savannah) + Pilot Selection Report (D-008, EXP-001).
@@ -31,7 +36,7 @@
 - [ ] Kanal marka kimliği (Founder + ChatGPT) — yayından önce; şablonlar tema dosyasıyla bekler.
 - [x] 2026-10-10 — Müzik/SFX sistemi kuruldu (D-024; `documentary-music-sfx`, `production/audio-library/`). P3 planı: `P3-music-sfx-plan.md`.
 - [ ] P3 müzik adayları: Founder Audio Library'den ≤3 parça + ≤3 SFX indirir (`_audio-library\incoming\`) → COO ledger + mix planı.
-- [ ] Eksik kalıcı sistem: yayın öncesi QA kapısı (kanıt, haklar, AI açıklaması, altyazı).
+- [ ] Eksik kalıcı sistem: yayın öncesi QA kapısı (kanıt, haklar, AI açıklaması — foto-gerçekçi AI yeniden üretimleri dahil (D-025), closed captions SRT, footage hakları).
 - [x] 2026-10-08/10 — Ses testi + ana ses seçimi (D-016, **D-021**: Bill L. Oxley + Multilingual v2); 2026-10-10 güncel script ile telaffuz QA (Founder: tamam); tam seslendirme Founder onayıyla üretildi. (senaryo + ekran planı + kaynak günlüğü + süre ölçümü; ses/render/yayın yok).
 - [ ] P3 ölçülen süresine göre D-007'nin >40 s koşulunu yeniden yaz → Founder onayı.
 - [x] 2026-10-10 — Render bilgisayarı onboarding tamamlandı; Node.js 24 LTS + Remotion 4.0.529 (D-017 güncellemesi).
@@ -46,8 +51,17 @@
 - [x] 2026-10-10 — P3 kamu malı/CC0 fotoğraflar indirildi, lisans ve SHA-256 kaydı (`P3-asset-manifest.md`; D-019 eki).
 - [x] 2026-10-10 — **P3 final VO v1**: 8 segment, 3.085 kredi, 8:19; segment metin/ses/zaman damgası/QA, dinleme kopyası, zamanlama haritası, yedek ve checksum (`P3-vo-manifest.md`; finance U-003…U-005).
 - [x] 2026-10-10 — Kanonik karar düzeltmeleri: D-021, D-022 (`.claude/rules/audio-production.md`), L-006, Founder Interface §6b-2 (verilmiş kararı yeniden sorma); D-008/D-010–D-013/D-016 durum güncellemeleri.
-- [ ] **Sıradaki P3 checkpoint 1:** Founder kulak kontrolü — `P3_VO_full_v1_LISTEN.mp3` (doğallık, 7 bölüm geçişi, 4:19 duraklama). Sorun olursa yalnız ilgili segment yeniden üretilir.
-- [ ] **Sıradaki P3 checkpoint 2:** VO zamanlamasına senkron: grafik `from` değerleri + edit plan zaman kodları `P3_VO_full_v1.timing.json`'a göre (8:19); Premiere timeline (XML küçük testi) ve fotoğraf hareketleri; ardından müzik/SFX kaynağı (kural yok — önce kural).
+- [x] 2026-10-11 — **Documentary creative mimarisi (D-025):** creative director agent, creative treatment / visual storytelling / production handoff skill'leri, prototype kapısı kuralı, stil benchmark v0.1, CF kaydı; P3 tam review kurgusu reddedildi (CF-001, L-007).
+- [x] 2026-10-11 — P3 creative treatment v3 + yeni hook + KEEP/REBUILD/REMOVE + prototype handoff v1; arşiv footage taraması (1964 AEC/MARAD filmi, hak belirsiz).
+- [x] 2026-10-11 — Kalibrasyon (D-026): benchmark kare incelemesi (8 video; statü PROVISIONAL v0.1, D-027); 1964 film hak durumu çözülmedi → kullanılmaz; VO onaylı (≤700 kredi); treatment v3.1 + prototype handoff FINAL.
+- [x] 2026-10-11 — Son creative kalibrasyon (D-027): Ship-first açılış, Mustard farkı, prototype kabul kriterleri, 2 AI görsel prompt'u; treatment v3.2 + handoff v1.1 FINAL.
+- [ ] ⛔ (DONDURULDU — D-028) **P3 prototype:** Founder AI-1/AI-2'yi ChatGPT'de üretir + müzik adaylarını indirir + commit/push → production PC handoff v1.1'i uygular → COO Founder'a önce izleme dosyasını verir ("Bunu izlemeye devam eder miydin?").
+- [ ] P3 prototype "Evet" sonrası: script v3 (açılış + yeniden sıralama; S4–S8 VO büyük ölçüde yeniden kullanılır), görsel/edit plan v3, full handoff.
+- [ ] (İsteğe bağlı, final öncesi) 1964 filmi hak teyidi: açılış jeneriği, 1964 Catalog of Copyright Entries; gerekirse NARA'ya soru (dış mesaj, Founder onayı). Çözülmezse film kullanılmaz (D-026).
+- [ ] P3 growth tahmini (FC-001) girdisi: Mustard'ın NS Savannah videosu (4,7M) örtüşmesi — açı farkı (GAO maliyet) originality riskine yazılsın.
+- [x] 2026-10-11 — Stil benchmark kare incelemesi — statü PROVISIONAL v0.1 (D-027). Açık: müzik/SFX ve kesme sıklığı doğrulanmadı → prototype kapısı ve Founder gözlemleriyle.
+- [ ] (Beklemede — D-025: yerini prototype akışı aldı; v1 VO S4–S8 aday olarak korunur) **Eski P3 checkpoint 1:** Founder kulak kontrolü — `P3_VO_full_v1_LISTEN.mp3` (doğallık, 7 bölüm geçişi, 4:19 duraklama). Sorun olursa yalnız ilgili segment yeniden üretilir.
+- [ ] (Beklemede — D-025) **Eski P3 checkpoint 2:** VO zamanlamasına senkron: grafik `from` değerleri + edit plan zaman kodları `P3_VO_full_v1.timing.json`'a göre (8:19); Premiere timeline (XML küçük testi) ve fotoğraf hareketleri; ardından müzik/SFX kaynağı (kural yok — önce kural).
 
 ## Sıradaki — Skill Lab
 - [x] 2026-10-08 — Skill Lab `.claude` kopyalaması tamamlandı (D-009).
