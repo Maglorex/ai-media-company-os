@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
 import {EncodeTest} from './EncodeTest';
 import {BrandProof} from './brand/BrandProof';
+import {BrandProofP3, ProofVariant} from './videos/p3/brand-proof/BrandProofP3';
 import {BarChart} from './templates/BarChart';
 import {ComponentSchematic} from './templates/ComponentSchematic';
 import {DocumentHighlight} from './templates/DocumentHighlight';
@@ -29,6 +30,11 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="EncodeTest" component={EncodeTest} durationInFrames={300} {...HD} />
       {/* Brand System v1: genel token + yerel font proof'u (src/brand/; video içeriği yok) */}
       <Composition id="Brand-Tokens-Proof" component={BrandProof} durationInFrames={1} {...HD} />
+      {/* P3 / CASE 001 Brand Proof #3–#5 (D-040): sessiz; yalnız SAFE asset; --public-dir=<P3>\01_archive */}
+      <Composition id="P3-BrandProof-3-Ident" component={BrandProofP3} durationInFrames={120} {...HD} defaultProps={{variant: 'ident' as ProofVariant}} />
+      {(['evidence-cover', 'evidence-page', 'evidence-sourcemark', 'world-archive', 'world-evidence', 'world-engineering', 'world-caselayer'] as ProofVariant[]).map((v) => (
+        <Composition key={v} id={`P3-BrandProof-${v.startsWith('evidence') ? '4' : '5'}-${v}`} component={BrandProofP3} durationInFrames={1} {...HD} defaultProps={{variant: v}} />
+      ))}
 
       {/* P3 — NS Savannah */}
       <Composition id="P3-S1-V01Teaser" component={DocumentHighlight} durationInFrames={120} {...HD} defaultProps={p3V01Teaser} />
