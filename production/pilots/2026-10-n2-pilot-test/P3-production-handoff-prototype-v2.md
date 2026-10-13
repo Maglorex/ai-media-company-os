@@ -1,5 +1,7 @@
 # P3 (VID-001) — Production Handoff (prototype) v2 — Opening v2, Ship-first
 
+> **⏸ BEKLETİLİYOR (D-031, Founder 2026-10-13):** P3 tekrar donduruldu. Bu handoff uygulanmaz; Brand System v1 + Source-to-Visual retrofit'i (`P3-brand-source-to-visual-audit-v1.md` §6) ile **v3** yazılınca yerini alır. Narration (§2) ve beat sırası değişmeyecek. §1'deki "lacivert-siyah zemin, tek palet" satırı **geçersiz** (D-032: koyu-mavi şablon yasak; dört dünya). v3 için önce brand proof asset'leri (`intelligence/creative/brand/brand-system-v1.md` §N).
+
 > Tarih: 2026-10-13 · Hazırlayan: COO · Uygulayan: render bilgisayarındaki Claude (DESKTOP-KVLH9B2, `production-engineer` rolü) · Karar: **D-030**
 > **Durum: HAZIR (2026-10-13).** Narration §2'de (P3 opening v2, Founder onaylı). Render bilgisayarında uygulanır.
 > Yerine geçtiği: `P3-production-handoff-prototype-v1.md` (v1.1, donuk; silinmez). Bağlayıcı: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` · olay planı ve kanıt eşlemesi: `P3-doctrine-test-opening-v1.md` §4–§11 (bu dosya onu opening v2 metnine uyarlar) · `P3-evidence-ledger.md` · `.claude/rules/audio-production.md`.

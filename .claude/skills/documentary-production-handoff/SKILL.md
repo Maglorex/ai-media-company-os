@@ -1,6 +1,6 @@
 ---
 name: documentary-production-handoff
-description: Ana Company OS'tan production/render bilgisayarındaki Claude'a giden üretim brief'ini hazırlar (prototype handoff: ilk 60–90 sn; full handoff: prototype kapısından sonra tüm video). Core promise, hook, yapı, sahne amaçları, asset planı, görsel dil, footage listesi, AI görsel istekleri, tipografi anları, müzik yönü, prototype sınırı ve kanıt kısıtlarını içerir. Founder production promptu yazmaz. Render veya ses üretimi başlatmaz.
+description: Ana Company OS'tan production/render bilgisayarındaki Claude'a giden üretim brief'ini hazırlar (prototype handoff = ilk 60–90 sn; full handoff = prototype kapısından sonra tüm video). Core promise, hook, yapı, sahne amaçları, asset planı, görsel dil, footage listesi, AI görsel istekleri, tipografi anları, müzik yönü, prototype sınırı ve kanıt kısıtlarını içerir. Founder production promptu yazmaz. Render veya ses üretimi başlatmaz.
 ---
 
 # Documentary Production Handoff
@@ -18,6 +18,7 @@ Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygula
 4. **Kanıt kısıtları açık yazılır:** kullanılmayacak iddia/sayı/ifade, alıntıların birebir metni, ekranda verilmeyecek rakamlar, hak durumu `unclear` olan asset'ler.
 5. **Onay/harcama:** ses kredisi, yeni araç/paket, ücretli asset handoff'ta "Founder onayı: alındı / bekleniyor (tavan)" olarak yazılır. Onay yoksa ilgili adım başlamaz.
 6. **Teslim:** prototype için 1080p review kopyası + kısa üretim raporu (yapılanlar, sapmalar, production problemleri, süre/kredi ölçümü, teşhis testleri sonucu). Büyük medya repo dışında kalır; rapor repoya.
-7. **QA:** teslimden önce production Claude `documentary-visual-storytelling` §10 testlerini ve ölçülebilir ses kontrollerini (`audio-production.md`) çalıştırır.
+7. **QA:** teslimden önce production Claude `documentary-visual-storytelling` §10 testlerini, ölçülebilir ses kontrollerini (`audio-production.md`) ve **`muted-preview-gate`**'i (grid + brand diversity QA) çalıştırır; REVISE ise teslim etmez.
+7b. **Marka (D-031, canonical D-032):** brand proof asset'leri (`brand-system-v1.md` §N) gelmeden brand retrofit'li handoff yazılmaz. handoff Brand System v1'e bağlıdır: case identity (CASE NNN, case accent), dünya ataması, `EVIDENCE NN` → ledger eşleme tablosu, imza geçişler, font/renk token'ları ve `source-to-visual` tablosu zorunlu bölümdür (TEMPLATE §7b).
 8. **Founder'a soru:** prototype gösterildiğinde yalnız "Bunu izlemeye devam eder miydin?" Mikro edit sorusu sorulmaz.
 9. **Senkron:** handoff repoya yazılır; production PC'ye ulaşması için yerel commit + Founder'ın GitHub Desktop push'u gerekir (`git-and-secrets.md`). Bu adım Founder'a tek cümleyle söylenir.

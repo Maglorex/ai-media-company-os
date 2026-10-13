@@ -17,6 +17,7 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
 - **Kanıt kaydı (senaryodan önce, script/packaging buna dayanır):** `documentary-evidence-ledger` skill'i.
 - **Yaratıcı yön (senaryo kilidinden önce):** `documentary-creative-treatment` (hook-first yapı, görsel dil, KEEP/REBUILD/REMOVE) + `documentary-visual-storytelling` (her sahnenin bir işi var; foto+pan+kart varsayılan değil). Benchmark: `intelligence/creative/`. Kural: `.claude/rules/documentary-creative-standards.md`.
+- **Marka ve görsel sistem (D-031):** Brand System v1 (`intelligence/creative/brand/brand-system-v1.md`; dört dünya, tipografi, renk token'ları, case identity, imza geçişler) + `source-to-visual` (her beat: kaynak ne diyor → izleyici ne görmeli; AI görsel yalnız problem çözerse, Founder'a hazır prompt) + `muted-preview-gate` (Founder'a göstermeden önce sessiz önizleme QA). Kural: `.claude/rules/brand-and-visual-system.md`. Founder renk/font/görsel mikro kararı vermez.
 - **Prototype kapısı (değişmez):** full production'dan önce production PC yalnız ilk ~60–90 sn'yi neredeyse final kalitede üretir; Founder'a tek soru: "Bunu izlemeye devam eder miydin?". Production PC'ye iş `documentary-production-handoff` ile gider; Founder production promptu yazmaz.
 - **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri. Ses üretimi ve ses kurgusu: `.claude/rules/audio-production.md` — ses/kurgu işine başlamadan oku (yalnız `production/` dosyalarında otomatik yüklenir). Claude dinleyemez; ölçülebilir kontroller, segment + zaman damgası, kulak kontrolü yalnız checkpoint'te Founder'da.
 - **Müzik / SFX (final mix öncesi):** `documentary-music-sfx` skill'i — YouTube Audio Library öncelikli, lisans kaydı `production/audio-library/`, attribution yayına otomatik.
@@ -53,7 +54,7 @@ Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, ger
 | Strateji ve varsayımlar | `company/strategy.md` |
 | Güncel durum | `dashboards/company.md` |
 | Büyüme / içerik zekâsı | `intelligence/growth/` |
-| Yaratıcı yön (benchmark, Founder geri bildirimi) | `intelligence/creative/` |
+| Yaratıcı yön (benchmark, Founder geri bildirimi, doctrine, marka sistemi) | `intelligence/creative/` |
 | Finans, video ekonomisi, vergi takibi | `finance/` |
 | Kurallar | `.claude/rules/` |
 | Prosedürler | `.claude/skills/` |

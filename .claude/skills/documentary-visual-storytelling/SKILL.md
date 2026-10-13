@@ -5,7 +5,7 @@ description: Bütün belgesel videoları (N2 / Industrial Casebook) için kalıc
 
 # Documentary Visual Storytelling
 
-Kapsam: bütün faceless belgesel videolar. Bağlayıcı taban: `.claude/rules/documentary-creative-standards.md`. Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör).
+Kapsam: bütün faceless belgesel videolar. Bağlayıcı taban: `.claude/rules/documentary-creative-standards.md`. Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör). **Marka ve sahne kararı (D-031):** `intelligence/creative/brand/brand-system-v1.md` · `source-to-visual` (karar sırası, AI politikası, hazır prompt şablonu — bu skill'in §9'undan önce gelir) · `muted-preview-gate`.
 
 ## 1. Sahne işi kuralı
 Bir sahne yalnız anlatıcının söylediği nesneyi göstermek için var olamaz. Her sahne en az bir iş yapar ve bu iş planda yazılır:

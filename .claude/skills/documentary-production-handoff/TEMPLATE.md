@@ -31,6 +31,13 @@ Birebir metin; üretim kopyası farkları (sayı yazımı, telaffuz) ayrıca.
 ## 6. Asset plan
 KEEP / REBUILD / NEW listesi (dosya adı, konum, ne yapılacak). Kullanılmayacaklar (REMOVE) ayrıca.
 
+## 7b. Brand + Source-to-Visual (D-031)
+- Case: CASE NNN · case accent (hex) · motif · ident anı (TC, metin) · Case Tab(lar)
+- Dünya ataması (beat → ARCHIVE / EVIDENCE / ENGINEERING / CASE UI) + imza geçiş (Evidence Pull / Object Carry / Case Tab / Source Mark)
+- `EVIDENCE NN` → ledger satırı eşleme tablosu + Source Mark metinleri
+- Font/renk: Brand System v1 token'ları; render PC'de font kurulumu doğrulandı mı
+- `source-to-visual` tablosu (karar adımı, hak, AI gerekçesi)
+
 ## 7. Visual language
 İmza araç + destekler · katman ayrımı (arşiv / bizim grafik / illüstrasyon) · palet, font · kamera ve geçiş dili · yapılmayacaklar (ör. foto+pan zinciri, tam ekran bilgi kartı).
 
@@ -57,4 +64,5 @@ Başlangıç–bitiş (VO cümlesiyle) · bitişin nasıl kapandığı · review
 Kullanılmayacak iddialar/sayılar/ifadeler · birebir alıntılar · ekranda verilmeyecek rakamlar · zorunlu atıflar.
 
 ## 14. Teslim ve geri bildirim
+- Zorunlu: `muted-preview-gate` grid + PASS/REVISE raporu (REVISE ise teslim yok).
 Çıktılar (dosya adı/konum) · üretim raporu dosyası · teşhis testleri (§10) sonucu · ölçülen süre/kredi · production problemleri. Founder'a giden tek soru: "Bunu izlemeye devam eder miydin?"

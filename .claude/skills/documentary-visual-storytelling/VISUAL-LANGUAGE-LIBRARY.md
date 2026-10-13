@@ -27,6 +27,7 @@
 3. **İllüstrasyon (AI/rekonstrüksiyon):** stilize; gerekirse "Illustration" etiketi.
 
 ## AI prompt formatı (Founder'a hazır, tek kod bloğu, İngilizce)
+> Güncel ve geniş şablon: `.claude/skills/source-to-visual/SKILL.md` §6 (D-031; narrative purpose, known evidence, must-not-invent, motion/text boşluğu, yasak tarihî ayrıntılar). Bu kısa format yalnız geriye dönük referanstır.
 ```
 Create an original illustration for a documentary video. It is ILLUSTRATIVE, not a historical record.
 Purpose in the video: [sahnenin işi — tek cümle]
@@ -34,7 +35,7 @@ Subject: [ne gösterilecek — yalnız doğrulanmış unsurlar]
 Period / setting: [dönem ve yer; belirsizse "generic, unspecified"]
 Style: [ör. technical blueprint line art / muted gouache illustration / isometric vector]; clearly stylized, NOT photorealistic.
 Composition: [kadraj, odak, boş alan (yazı/grafik için)], aspect ratio 16:9, high resolution.
-Palette: [marka paleti — ör. deep navy, off-white, single amber accent]
+Palette: [Brand System v1 — charcoal #14181C, steel #334854, paper #E7DFCF, tek kontrollü accent (case accent veya amber #C58B3B); tek lacivert filtre yok]
 Must NOT include: readable text, logos, real people, [uydurma riski taşıyan ayrıntılar], photographic film grain imitating archival photos.
 Output: one image.
 ```

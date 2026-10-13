@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-13 (Documentary Production Doctrine v1 tamamlandı, D-029; P3 hâlâ donuk)
+**Son güncelleme:** 2026-10-13 (Founder-approved visual direction kilitlendi, D-033 — font/accent PROVISIONAL; P3 donuk, brand proof bekleniyor)
 **Faz:** Faz 2 (Pilot üretim testi) — P3 NS Savannah tam pilot üretimde: grafikler + final VO hazır; kurgu/senkron sırada
 
 ## Özet

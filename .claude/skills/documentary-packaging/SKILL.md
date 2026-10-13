@@ -31,6 +31,7 @@ Onaylı vaat `documentary-creative-treatment`'a girer: title/thumbnail'ın satt�
 7. **Feed Readability:** küçük boyutta tek bakışta anlaşılır: en fazla 1 ana obje + 1 yardımcı unsur; text zorunlu değil, gerekiyorsa çok kısa.
 8. **Originality:** rakip thumbnail taklit edilmez; fark mümkünse belge/grafik/teknik kanıttan gelir.
 9. **Sourceable Visuals:** temel görselin lisans/kaynak durumu önceden kontrol edilebilir olmalı (kamu malı mı, öğe bazında doğrulandı mı).
+9b. **Brand continuity (D-031):** thumbnail = hero object + evidence/consequence + case accent; videonun ilk bölümünde aynı object · evidence · conflict DNA'sı görünür (birebir animasyon gerekmez). Brand System v1 paleti ve klişe yasakları geçerli; CASE numarası başlıkta zorunlu değil.
 10. **Testable Hypotheses:** her seçim "şu varsayım test edilecek" biçiminde yazılır.
 
 ## Süreç

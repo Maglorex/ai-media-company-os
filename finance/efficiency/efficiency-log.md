@@ -8,3 +8,4 @@
 |---|---|---|---|---|---|---|---|---|
 | 2026-10-10 | Efficiency Audit v1 (baseline) | — | — | — | yok | evet (audit ölçümü) | yok | Değişiklik öncesi/sonrası context ölçüsü `README.md` §1 |
 | 2026-10-10 | Efficiency v1 kabul + kapanış | — | — | — | yok | hayır | yok | Sonraki /usage isteği: en az 2 normal oturum sonra |
+| 2026-10-11→13 | Creative sistem (D-025..D-027), Doctrine v1 araştırması + test (D-028..D-030), Brand System + Source-to-Visual + Muted Gate (D-031), canonical yön (D-032), görsel yön kilidi (D-033) | çok oturumlu (uzun) | — | — | yok | evet (tarayıcı shot-level tarama, dosya entegrasyonları ana modelde) | tarayıcı gizli panelde yavaşladı/çöktü (Tucker taraması yapılamadı) | Sonraki /usage isteği: bu kapanışta |

@@ -17,6 +17,8 @@ description: Industrial & Technology Autopsies belgeselleri için müzik ve SFX 
 ## 2. Müzik yönü (kanal varsayılanı)
 Sakin, modern belgesel; düşük/orta yoğunluk; merak ve araştırma hissi; anlatıcıyla yarışmayan (vokalsiz, dar frekans/az melodi tercih). **Değil:** epik fragman, aşırı dramatik, kurumsal reklam, neşeli/pazarlama. Her videoda aynı parça şart değil; zamanla tutarlı ses kimliği hedeflenir (aynı tür/tempo/enstrümantasyon ailesi). Sürekli müzik zorunlu değil; **sessizlik anlatıya hizmet ediyorsa kullanılır** (ör. ana kanıtın ilk açılışı).
 
+**Marka (D-031):** kanal ses kimliği (stinger, jingle, logo sesi) yok; case ident (`CASE 001 · …`) müzik altında veya sessiz, kendi SFX'i yok.
+
 ## 3. SFX
 Az ve anlamlı: belge/satır vurgusunda çok hafif accent, harita/zaman şeridinde ince geçiş, önemli rakam reveal'ı, bölüm geçişi. **Yapılmaz:** her grafik için whoosh, sürekli click/pop, TikTok tarzı efekt, gerçek olmayan makine/ortam sesini tarihî kanıt gibi kullanmak (arşiv fotoğrafına "o anın sesi" izlenimi veren gemi düdüğü, makine dairesi vb.). SFX ritim ve anlam aracıdır.
 

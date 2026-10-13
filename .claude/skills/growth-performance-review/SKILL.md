@@ -39,6 +39,8 @@ Para tarafı: [maliyet], [gelir], [kâr/zarar]; kendini [X] izlenmede amorti ede
 Bundan sonra: [tek öneri].
 ```
 
+- **Marka değişkenleri (D-031):** sonuç kartına case accent, thumbnail DNA (object/evidence/conflict), ident biçimi ve muted preview gate sonucu yazılır; bunlar zamanla CTR/retention ile karşılaştırılır (tek videodan kural çıkarılmaz).
+
 ## Kurallar
 - Korelasyonu nedensellik gibi sunma; küçük örneklemi belirt.
 - Sonuç kartı tahmini değiştirmez; başarısız tahminler silinmez.

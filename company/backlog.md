@@ -6,7 +6,9 @@
 ## Şimdi
 - [x] 2026-10-13 — **Documentary Production Doctrine v1** yazıldı ve bağlayıcı taban (D-029): `intelligence/creative/doctrine/documentary-production-doctrine-v1.md`.
 - [x] 2026-10-13 — Doctrine v1 sıfır kredi uygulama testi (P3 ilk ~90 sn): **PASS**, kritik REVISE yok → `production/pilots/2026-10-n2-pilot-test/P3-doctrine-test-opening-v1.md`.
-- [ ] **P3 opening prototype v2 (D-030)** — render PC `P3-production-handoff-prototype-v2.md`'yi uygular (VO ≤700 kredi, müzik boş) → COO Founder'a izleme dosyası + tek soru. Tam video YOK.
+- [x] 2026-10-13 — Brand System v1 + Source-to-Visual v1 + Muted Preview Gate kuruldu (D-031); P3 ilk 90 sn audit: `P3-brand-source-to-visual-audit-v1.md`.
+- [ ] ⏸ (D-031, D-032) **P3 handoff v3** — v2 + brand retrofit (audit §6) + AI-01 + muted gate + `theme.ts` dünya token'ları. **Bekliyor:** Founder + ChatGPT brand proof (logo yönü · banner yönü · CASE 001 UI mockup · evidence label mockup · P3 branded frame örnekleri; brief: `intelligence/creative/brand/logo-banner-brief.md`) + Founder donmayı kaldırır.
+- [ ] [ONAY] Render PC'ye IBM Plex Sans Condensed / Plex Mono / Source Serif 4 kurulumu (OFL, ücretsiz; repo dışı) — P3 v3 production'ında.
 - [ ] Founder (isteğe bağlı, 10 dk): 2 benchmark videonun ilk 2 dk'sını sesli dinleyip müzik/sessizlik notu → doctrine §9.
 - [ ] Ruined America Tucker açılışı görsel taraması (tarayıcı çöktü; premise analizi katalogla yapıldı) — düşük öncelik.
 - [x] 2026-10-07 — Birincil niş kararı onaylandı: N2 (D-007).

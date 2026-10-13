@@ -7,6 +7,8 @@
 
 ---
 
+> **Marka ve görsel sistem (D-031):** `intelligence/creative/brand/brand-system-v1.md` (dört dünya, tipografi, renk, case identity, imza geçişler) · sahne kararı `.claude/skills/source-to-visual/SKILL.md` · render sonrası `.claude/skills/muted-preview-gate/SKILL.md`. Doctrine anlatı/görsel gramerini, Brand System görünüm ve kimliği tanımlar; çelişkide kanıt kuralı > doctrine > brand.
+
 ## 0. Tek cümle
 **İzleyici bilgi için değil, ilerleme hissi için kalır:** her 10–30 saniyede bir soru cevaplanır ve daha büyük biri açılır; ekrandaki görüntü bu ilerlemenin kendisidir, anlatıcının cümlesinin resmi değil.
 
