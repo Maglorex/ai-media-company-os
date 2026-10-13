@@ -19,6 +19,7 @@ Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygula
 5. **Onay/harcama:** ses kredisi, yeni araç/paket, ücretli asset handoff'ta "Founder onayı: alındı / bekleniyor (tavan)" olarak yazılır. Onay yoksa ilgili adım başlamaz.
 6. **Teslim:** prototype için 1080p review kopyası + kısa üretim raporu (yapılanlar, sapmalar, production problemleri, süre/kredi ölçümü, teşhis testleri sonucu). Büyük medya repo dışında kalır; rapor repoya.
 7. **QA:** teslimden önce production Claude `documentary-visual-storytelling` §10 testlerini, ölçülebilir ses kontrollerini (`audio-production.md`) ve **`muted-preview-gate`**'i (grid + brand diversity QA) çalıştırır; REVISE ise teslim etmez.
+7c. **Dynamic Case Ident (D-034):** her handoff TEMPLATE §7c alanlarını doldurur (`intelligence/creative/brand/dynamic-case-ident-system.md`); boş ident alanı = eksik handoff.
 7b. **Marka (D-031, canonical D-032):** brand proof asset'leri (`brand-system-v1.md` §N) gelmeden brand retrofit'li handoff yazılmaz. handoff Brand System v1'e bağlıdır: case identity (CASE NNN, case accent), dünya ataması, `EVIDENCE NN` → ledger eşleme tablosu, imza geçişler, font/renk token'ları ve `source-to-visual` tablosu zorunlu bölümdür (TEMPLATE §7b).
 8. **Founder'a soru:** prototype gösterildiğinde yalnız "Bunu izlemeye devam eder miydin?" Mikro edit sorusu sorulmaz.
 9. **Senkron:** handoff repoya yazılır; production PC'ye ulaşması için yerel commit + Founder'ın GitHub Desktop push'u gerekir (`git-and-secrets.md`). Bu adım Founder'a tek cümleyle söylenir.

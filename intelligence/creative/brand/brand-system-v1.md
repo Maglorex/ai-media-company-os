@@ -22,6 +22,7 @@
 - **Dekor değil:** `EVIDENCE NN` her zaman evidence ledger'daki bir satıra bağlıdır (handoff'ta `EVIDENCE 01 = V-03` gibi eşleme tablosu zorunlu). Kaynak etiketi gerçek provenance'ı gösterir (kurum · yıl · gerekiyorsa sayfa). Ledger'da karşılığı olmayan EVIDENCE etiketi kullanılamaz.
 
 ## C. Intro / ident
+> **D-034:** kalıcı sistem → `intelligence/creative/brand/dynamic-case-ident-system.md` (sabit/değişken öğeler, hareket kütüphanesi, handoff alanları). Aşağıdaki maddeler onun özetidir.
 - **Varsayılan: bağımsız 4–7 sn logo introsu YOK.**
 - Format: **cold open hemen başlar** → hero object ekranda → kısa `CASE 001 · NS SAVANNAH` reveal (≈1,5–2,5 sn, alt-sol, Plex Mono + Condensed; hikâye durmaz) → story devam eder.
 - Yeniden test koşulu: kendi kanal verimiz (retention ilk 30 sn) bağımsız ident'in işe yaradığını gösterirse EXP olarak test edilir.
@@ -85,7 +86,7 @@ Yön (D-032): industrial · modern · strong · YouTube avatarında okunacak kad
 Marka ses kimliği (stinger, jingle) **yok**; case ident sessiz/müzik altı. Müzik yönü `documentary-music-sfx`. Ses kararları UNVERIFIED — HUMAN EAR REQUIRED.
 
 ## N. Brand proof (production'a dönmeden önce beklenen asset'ler — D-032)
-Founder + ChatGPT üretir; Company OS bunları üretmez, beklemede tutar. Hepsi gelmeden P3 brand retrofit'i (handoff v3) yapılmaz.
+Founder + ChatGPT üretir; Company OS bunları üretmez. **Güncelleme (Founder 2026-10-13):** final logo beklenmez, geçici logo/monogram üretilmez; P3 retrofit'i logo gerektirmeyen parçalarla (#3–#5) ilerler — spec: `video-ui-spec-v1.md`, `production/pilots/2026-10-n2-pilot-test/P3-brand-retrofit-spec-v1.md`. #1–#2 (logo, banner) kanal sayfası için ayrı iş.
 | # | Asset | Kabul ölçütü (COO kontrol eder, Founder'a tek öneri) |
 |---|---|---|
 | 1 | Seçilmiş logo yönü | §K; 48–98 px okunur; klişe yok |

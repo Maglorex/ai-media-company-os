@@ -318,3 +318,12 @@
 - Geri dönüş koşulu: Founder başka bir referansı açıkça onaylarsa veya brand proof mockup'ları yönün video içinde çalışmadığını gösterirse.
 - Durum: Aktif.
 
+### D-034 — Dynamic Case Ident System v1
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: Bağımsız logo intro'su yok (D-031); her videoda hikâyeyi kesmeyen, videoya özel marka anı isteniyor.
+- Karar: `intelligence/creative/brand/dynamic-case-ident-system.md` kalıcı. ~1,5–3 sn; story önce başlar veya ident story'den doğar; siyah ekran + logo yok; aynı ident render'ı tekrar kullanılmaz. Sabit: CASE formatı, tipografi hiyerarşisi, teknik çizgi dili, kanıt/kaynak hareket grameri, wordmark (final logo gelene kadar yalnız dizilmiş yazı). Değişken (creative director otomatik): CASE no, başlık, accent, hero object, motif, açılış görseline bağlantı, kaynak/yıl etiketi. Hareket case'in kendi görselinden doğar (6 davranışlık kütüphane; Founder düzeltmesi: mekanik tekrardan kaçınılır ama en güçlü çözümse aynı motion grammar gerekçeyle tekrar kullanılabilir; çeşitlilik uğruna zayıf çözüm seçilmez; birebir aynı timing/kompozisyon/sekans tekrar edilmez). Handoff TEMPLATE §7c alanları zorunlu. P3: Object Outline → Label → Object Carry (plan; narration/sıra değişmedi).
+- Gerekçe / kanıt: [VERİ] doctrine v1 (hook ilk 30–60 sn; benchmark kanallarında bağımsız intro yok, başlık kartı hook'tan sonra — Mustard 6/6). [VARSAYIM] case'e özel ident retention'ı kesmeden tanınırlık sağlar — ilk 30 sn retention ile test.
+- Geri dönüş koşulu: ident anında retention düşüşü görülürse davranış EXP olarak değişir; kanal verisi bağımsız intro'yu desteklerse yeniden test.
+- Durum: Aktif. P3 donuk.
+

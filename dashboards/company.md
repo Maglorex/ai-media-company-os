@@ -2,7 +2,7 @@
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.
 
-**Son güncelleme:** 2026-10-13 (Founder-approved visual direction kilitlendi, D-033 — font/accent PROVISIONAL; P3 donuk, brand proof bekleniyor)
+**Son güncelleme:** 2026-10-13 (Dynamic Case Ident System, D-034; video UI spec + P3 brand retrofit spec hazır; P3 donuk)
 **Faz:** Faz 2 (Pilot üretim testi) — P3 NS Savannah tam pilot üretimde: grafikler + final VO hazır; kurgu/senkron sırada
 
 ## Özet

@@ -38,6 +38,11 @@ KEEP / REBUILD / NEW listesi (dosya adı, konum, ne yapılacak). Kullanılmayaca
 - Font/renk: Brand System v1 token'ları; render PC'de font kurulumu doğrulandı mı
 - `source-to-visual` tablosu (karar adımı, hak, AI gerekçesi)
 
+## 7c. Dynamic Case Ident (D-034)
+| Case number | Case title | Ident concept (davranış) | Hero object | Case accent | Visual motif | Start TC | End TC (≤3 sn) | Transition into story | Asset source / right |
+|---|---|---|---|---|---|---|---|---|---|
+Kurallar: `intelligence/creative/brand/dynamic-case-ident-system.md` — story önce/ident story'den doğar; siyah ekran + logo yok; VO durmaz; ident render'ı videoya özel.
+
 ## 7. Visual language
 İmza araç + destekler · katman ayrımı (arşiv / bizim grafik / illüstrasyon) · palet, font · kamera ve geçiş dili · yapılmayacaklar (ör. foto+pan zinciri, tam ekran bilgi kartı).
 
