@@ -5,7 +5,7 @@ description: Bütün belgesel videoları (N2 / Industrial Casebook) için kalıc
 
 # Documentary Visual Storytelling
 
-Kapsam: bütün faceless belgesel videolar. Bağlayıcı taban: `.claude/rules/documentary-creative-standards.md`. Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör).
+Kapsam: bütün faceless belgesel videolar. Bağlayıcı taban: `.claude/rules/documentary-creative-standards.md`. Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör). **Marka ve sahne kararı (D-031):** `intelligence/creative/brand/brand-system-v1.md` · `source-to-visual` (karar sırası, AI politikası, hazır prompt şablonu — bu skill'in §9'undan önce gelir) · `muted-preview-gate`.
 
 ## 1. Sahne işi kuralı
 Bir sahne yalnız anlatıcının söylediği nesneyi göstermek için var olamaz. Her sahne en az bir iş yapar ve bu iş planda yazılır:
@@ -48,7 +48,7 @@ Müzik ve SFX yönü treatment'ta **işlev** olarak yazılır (gerilim kurmak, n
 - **Ne zaman değil:** gerçek arşiv varsa sırf daha güzel diye; doğrulanmamış yerleşim/görünüş ayrıntısı uydurması gerekiyorsa; kanıt taşıması beklenen her yerde.
 - **Founder deneyimi:** Founder "ChatGPT'ye ne yazayım?" diye düşünmez. COO, `VISUAL-LANGUAGE-LIBRARY.md` §AI prompt formatıyla tek kod bloğunda eksiksiz prompt verir: "Bu sahne için ChatGPT'ye şunu olduğu gibi gönder:". Gelen görsel production klasörüne konur, asset kaydına `AI-GENERATED / ILLUSTRATIVE` + prompt + sahne ile işlenir.
 - **Ekranda:** AI görsel arşiv katmanından stil olarak ayrılır (stilize, foto-gerçekçi değil); gerekirse küçük "Illustration" etiketi. Asla arşiv kanıtı gibi gösterilmez, kaynak etiketi taklit edilmez.
-- **Açıklama riski:** Gerçek bir olayın/yerin foto-gerçekçi yeniden üretimi yapılırsa yayın öncesi QA'ya "AI disclosure gerekli olabilir" maddesi düşülür (resmî YouTube sayfası yayın öncesi yeniden kontrol edilir). Kurallar ayrıca: `production/tools/README.md` §ChatGPT Image Generation.
+- **Açıklama riski:** Gerçek bir olayın/yerin foto-gerçekçi yeniden üretimi yapılırsa Release Gate G-11'de (`pre-publish-qa`) disclosure değerlendirilir (D-036) (resmî YouTube sayfası yayın öncesi yeniden kontrol edilir). Kurallar ayrıca: `production/tools/README.md` §ChatGPT Image Generation.
 
 ## 10. Teşhis testleri (treatment, handoff ve prototype QA'sında zorunlu)
 1. **Literal test:** Sahnelerin çoğu yalnız "söyleneni gösteriyor" mu? → iş eklenmeli.

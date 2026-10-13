@@ -31,6 +31,18 @@ Birebir metin; üretim kopyası farkları (sayı yazımı, telaffuz) ayrıca.
 ## 6. Asset plan
 KEEP / REBUILD / NEW listesi (dosya adı, konum, ne yapılacak). Kullanılmayacaklar (REMOVE) ayrıca.
 
+## 7b. Brand + Source-to-Visual (D-031)
+- Case: CASE NNN · case accent (hex) · motif · ident anı (TC, metin) · Case Tab(lar)
+- Dünya ataması (beat → ARCHIVE / EVIDENCE / ENGINEERING / CASE UI) + imza geçiş (Evidence Pull / Object Carry / Case Tab / Source Mark)
+- `EVIDENCE NN` → ledger satırı eşleme tablosu + Source Mark metinleri
+- Font/renk: Brand System v1 token'ları; render PC'de font kurulumu doğrulandı mı
+- `source-to-visual` tablosu (karar adımı, hak, AI gerekçesi)
+
+## 7c. Dynamic Case Ident (D-034)
+| Case number | Case title | Ident concept (davranış) | Hero object | Case accent | Visual motif | Start TC | End TC (≤3 sn) | Transition into story | Asset source / right |
+|---|---|---|---|---|---|---|---|---|---|
+Kurallar: `intelligence/creative/brand/dynamic-case-ident-system.md` — story önce/ident story'den doğar; siyah ekran + logo yok; VO durmaz; ident render'ı videoya özel.
+
 ## 7. Visual language
 İmza araç + destekler · katman ayrımı (arşiv / bizim grafik / illüstrasyon) · palet, font · kamera ve geçiş dili · yapılmayacaklar (ör. foto+pan zinciri, tam ekran bilgi kartı).
 
@@ -56,5 +68,12 @@ Başlangıç–bitiş (VO cümlesiyle) · bitişin nasıl kapandığı · review
 ## 13. Evidence restrictions
 Kullanılmayacak iddialar/sayılar/ifadeler · birebir alıntılar · ekranda verilmeyecek rakamlar · zorunlu atıflar.
 
+## 13b. Launch hazırlığı (D-035; full handoff'ta zorunlu)
+- End screen alanı: son 5–20 sn TC aralığı, ekranda boş bırakılacak bölge, kapanış görseli
+- Thumbnail hero asset: kaynak (V-ID) veya AI (prompt + dosya adı), teslim yeri
+- Captions: final VO timing JSON yolu
+- Shorts (D-038): long-form final kilitten sonra seçilen adaylar (`video-launch-os` §25) ayrı ek olarak gelir; full handoff'ta yalnız 9:16 varyant üretilebilecek kompozisyonların (Remotion) dikey render'a uygun kurulması notu
+
 ## 14. Teslim ve geri bildirim
+- Zorunlu: `muted-preview-gate` grid + PASS/REVISE raporu (REVISE ise teslim yok).
 Çıktılar (dosya adı/konum) · üretim raporu dosyası · teşhis testleri (§10) sonucu · ölçülen süre/kredi · production problemleri. Founder'a giden tek soru: "Bunu izlemeye devam eder miydin?"

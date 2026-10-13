@@ -2,7 +2,7 @@
 
 Her kanal kendi klasörüne sahiptir: `channels/<kanal-adi>/`.
 
-Henüz kanal yok.
+- **The Industrial Casebook** — kanal oluşturuldu 2026-10-13 (D-037); logo/profil görseli ayarlandı. Klasör: `channels/the-industrial-casebook/`. Studio yetenekleri: `intelligence/growth/launch-os/capabilities.md`.
 
 **Kanal kararları (kanal klasörü açılınca `voice.md` vb. buraya referans verir):** ana anlatıcı ve birincil model → `company/decision-log.md` D-021.
 

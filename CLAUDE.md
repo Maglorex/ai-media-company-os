@@ -17,10 +17,12 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
 - **Kanıt kaydı (senaryodan önce, script/packaging buna dayanır):** `documentary-evidence-ledger` skill'i.
 - **Yaratıcı yön (senaryo kilidinden önce):** `documentary-creative-treatment` (hook-first yapı, görsel dil, KEEP/REBUILD/REMOVE) + `documentary-visual-storytelling` (her sahnenin bir işi var; foto+pan+kart varsayılan değil). Benchmark: `intelligence/creative/`. Kural: `.claude/rules/documentary-creative-standards.md`.
+- **Marka ve görsel sistem (D-031):** Brand System v1 (`intelligence/creative/brand/brand-system-v1.md`; dört dünya, tipografi, renk token'ları, case identity, imza geçişler) + `source-to-visual` (her beat: kaynak ne diyor → izleyici ne görmeli; AI görsel yalnız problem çözerse, Founder'a hazır prompt) + `muted-preview-gate` (Founder'a göstermeden önce sessiz önizleme QA). Kural: `.claude/rules/brand-and-visual-system.md`. Founder renk/font/görsel mikro kararı vermez.
 - **Prototype kapısı (değişmez):** full production'dan önce production PC yalnız ilk ~60–90 sn'yi neredeyse final kalitede üretir; Founder'a tek soru: "Bunu izlemeye devam eder miydin?". Production PC'ye iş `documentary-production-handoff` ile gider; Founder production promptu yazmaz.
 - **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri. Ses üretimi ve ses kurgusu: `.claude/rules/audio-production.md` — ses/kurgu işine başlamadan oku (yalnız `production/` dosyalarında otomatik yüklenir). Claude dinleyemez; ölçülebilir kontroller, segment + zaman damgası, kulak kontrolü yalnız checkpoint'te Founder'da.
 - **Müzik / SFX (final mix öncesi):** `documentary-music-sfx` skill'i — YouTube Audio Library öncelikli, lisans kaydı `production/audio-library/`, attribution yayına otomatik.
 - **Büyüme (hangi fikre yatırım, yayın sonrası öğrenim):** `growth-idea-scoring` (fikir sıralama + yayın öncesi kilitli tahmin) → yayın sonrası `growth-performance-review`. Tahmin ve gerçek ayrı; kendi kanal verimiz genel kurallardan önce gelir; "viral olur" tahmini yok.
+- **Yayın (Video Launch OS v1, D-035):** `video-launch-os` (dağıtım stratejisi, talep araştırması, Search Intent Brief, Packaging v2 finalistleri, description/kaynaklar/chapters/captions/end screen/cards/playlist/yayın zamanı, native A/B, Launch Package) → `pre-publish-qa` (PASS olmadan public yok; Private/Unlisted upload → QA → public) → yayın sonrası `growth-performance-review`. Founder'a tag/keyword/chapter/caption/card/playlist sorulmaz; yayın öncesi tek soru: "Önerilen paket bu; launch onaylıyor musun?". Resmî ilkeler: `intelligence/growth/launch-os/`.
 - **Para ve vergi:** `cfo-review` (gider/gelir/kullanım kaydı, aylık P&L, video başına maliyet ve kâr) ve `tax-watch` (Türkiye vergi takibi; resmî kaynakla doğrulanır, kesin hüküm muhasebeciye). Tetikleri `founder-brief` izler.
 - **Kapanış:** `session-close` skill'i.
 - **Sistem/makine:** `system-health-check`, `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
@@ -53,7 +55,7 @@ Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, ger
 | Strateji ve varsayımlar | `company/strategy.md` |
 | Güncel durum | `dashboards/company.md` |
 | Büyüme / içerik zekâsı | `intelligence/growth/` |
-| Yaratıcı yön (benchmark, Founder geri bildirimi) | `intelligence/creative/` |
+| Yaratıcı yön (benchmark, Founder geri bildirimi, doctrine, marka sistemi) | `intelligence/creative/` |
 | Finans, video ekonomisi, vergi takibi | `finance/` |
 | Kurallar | `.claude/rules/` |
 | Prosedürler | `.claude/skills/` |

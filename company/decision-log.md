@@ -291,3 +291,75 @@
 - Geri dönüş koşulu: Founder "izlemeye devam etmezdim" derse creative director teşhisi + revize prototype; iki kez geçemezse fikir yeniden değerlendirilir (creative-standards §2).
 - Durum: Aktif — narration Founder'dan geldi (2026-10-13); tek değişiklik Founder onaylı: son cümle "built to serve several" → "that could serve several" (C-33). Handoff v2 HAZIR.
 
+### D-031 — The Industrial Casebook Brand System v1 + Source-to-Visual Pipeline v1 + Muted Preview Gate; P3 yeniden donduruldu
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: P3 opening v2 storytelling PASS adayı (D-030); Founder her videoda renk/font/intro/geçiş/kanıt görünümü/AI ihtiyacı/preview kalitesi hakkında yeniden karar vermek istemiyor.
+- Karar: (1) Brand System v1 (`intelligence/creative/brand/brand-system-v1.md`): marka özü, case identity (CASE NNN video içinde; başlıkta zorunlu değil), bağımsız intro yok (cold open + kısa case ident), tipografi IBM Plex Sans Condensed / IBM Plex Mono / Source Serif 4, renk token'ları ink #14181C · paper #E7DFCF · steel #334854 · amber #C58B3B + video başına case accent (P3: Atomic Teal #4E8A88), dört dünya (Archive · Evidence · Engineering · Case UI), dört imza geçiş (Evidence Pull · Object Carry · Case Tab · Source Mark), logo/banner yönü. (2) Source-to-Visual Pipeline v1 (`source-to-visual` skill): 7 adımlı karar sırası, SOURCE→EXTRACT→EXPLAIN→CONSEQUENCE, foto dönüştürme, AI görsel politikası (ChatGPT image generation onaylı araç; yalnız problem çözerse; ILLUSTRATIVE, kanıt değil), Founder'a hazır prompt. (3) Muted Preview Gate (`muted-preview-gate` skill): render sonrası, Founder'dan önce. (4) Kural: `.claude/rules/brand-and-visual-system.md`; Founder renk/font/görsel mikro kararı vermez. (5) P3 donduruldu; handoff v2 bekletiliyor, retrofit sonrası v3. Narration/evidence değişmedi.
+- Gerekçe / kanıt: [VERİ] CF-001 (tek görsel dile çöküş), doctrine v1 §2 (P3: tam ekran lacivert kart ritmi). [VARSAYIM] dört dünya + ortak gramer, tek filtreden daha izlenebilir ve kanal tanınırlığı sağlar — kendi CTR/retention ve muted gate sonuçlarıyla test edilecek.
+- Geri dönüş koşulu: iki ardışık videoda muted gate aynı nedenle REVISE verirse veya kanal verisi bağımsız intro/farklı paletin daha iyi olduğunu gösterirse v1.1.
+- Durum: Aktif. Açık: font kurulumu render PC'de doğrulanmadı (kurulum Founder onayı); final logo/banner Founder + ChatGPT.
+
+### D-032 — Brand Direction v1 canonical (Founder + ChatGPT)
+- Tarih: 2026-10-13
+- Karar veren: Founder (ChatGPT ile)
+- Bağlam: D-031 Brand System v1 kuruldu; Founder + ChatGPT yaratıcı marka yönünü kilitledi.
+- Karar: (1) `intelligence/creative/brand/brand-system-v1.md` = canonical brand direction. Konsept: premium industrial documentary + engineering dossier; ton: intelligent, technical, investigative, industrial, evidence-led, cinematic, modern. (2) Kaymayacağı yönler: true crime, dedektif estetiği, kırmızı ip, suç mahalli, steampunk, nostaljik fabrika-logosu, jenerik kurumsal danışmanlık, jenerik faceless-AI belgesel, bütün videoyu kaplayan koyu-mavi PowerPoint şablonu. (3) Canonical kural: "Source establishes truth. Visualization establishes understanding." (4) Logo yönü: industrial, modern, strong, avatar için minimal; jenerik kurumsal IC logosu / dişli-fabrika / dedektif-dosya ikonu değil (D-031'deki "IC monogram + case-file geometry" zorunluluğu kalktı). (5) Muted Preview Gate bağlayıcı; FAIL → Founder'a gelmeden revize. (6) Brand proof: logo yönü, banner yönü, CASE 001 UI mockup, evidence label mockup, P3 branded frame örnekleri gelmeden P3 brand retrofit'i yok. (7) P3 donması sürüyor. Dört dünya, case numbering, intro yok, dört imza geçiş, per-case accent (P3 Atomic Teal), thumbnail grameri D-031 ile aynı.
+- Gerekçe / kanıt: [VERİ] Founder + ChatGPT kararı. [VARSAYIM] ortak gramer + değişken görünüm kanal tanınırlığı ve izlenebilirliği artırır — muted gate ve kanal verisiyle test.
+- Geri dönüş koşulu: brand proof mockup'ları token/fontların çalışmadığını gösterirse §D–§E güncellenir; kanal verisi aksi yönde ise v1.1.
+- Durum: Aktif. Eski koyu-lacivert tema (`production/remotion/src/theme.ts`) retrofit'te dünyalara göre token'lara ayrılacak.
+
+### D-033 — Founder-approved visual direction reference
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: Founder + ChatGPT brand board denemeleri; Founder bir board'u ana görsel yön olarak seçti.
+- Karar: (1) `intelligence/creative/brand/reference/founder-approved-visual-direction-2026-10-13.webp` = Founder-approved visual direction reference; analiz `reference/founder-approved-visual-direction.md`. (2) Final logo veya template değildir; birebir kopyalanmaz. (3) Diğer logo/brand board denemeleri canonical referans değildir. (4) Brand Direction v1 (D-032) ile birlikte kullanılır; yasaklar (damga, grunge, true-crime, sahte belge) önceliklidir. (5) **Canonical olan yaratıcı yöndür:** ağır ve dar industrial typography · engineering drawing / technical line character · physical metal / oxidation / industrial material feeling · güçlü ana konu silueti · küçük ve disiplinli technical metadata · sade ama karakterli premium composition. (6) **PROVISIONAL (Founder ek talimatı 2026-10-13):** Barlow Condensed font seçimi ve #C7542B rust-orange accent — tasarım örneklerinde (brand proof) test edilip Founder onaylamadan canonical token olmaz; o zamana kadar D-031 token'ları geçerli.
+- Gerekçe / kanıt: [VERİ] Founder tercihi. [VARSAYIM] daha ağır endüstriyel karakter kanal kimliğini güçlendirir — muted preview gate + kanal verisiyle test.
+- Geri dönüş koşulu: Founder başka bir referansı açıkça onaylarsa veya brand proof mockup'ları yönün video içinde çalışmadığını gösterirse.
+- Durum: Aktif.
+
+### D-034 — Dynamic Case Ident System v1
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: Bağımsız logo intro'su yok (D-031); her videoda hikâyeyi kesmeyen, videoya özel marka anı isteniyor.
+- Karar: `intelligence/creative/brand/dynamic-case-ident-system.md` kalıcı. ~1,5–3 sn; story önce başlar veya ident story'den doğar; siyah ekran + logo yok; aynı ident render'ı tekrar kullanılmaz. Sabit: CASE formatı, tipografi hiyerarşisi, teknik çizgi dili, kanıt/kaynak hareket grameri, wordmark (final logo gelene kadar yalnız dizilmiş yazı). Değişken (creative director otomatik): CASE no, başlık, accent, hero object, motif, açılış görseline bağlantı, kaynak/yıl etiketi. Hareket case'in kendi görselinden doğar (6 davranışlık kütüphane; Founder düzeltmesi: mekanik tekrardan kaçınılır ama en güçlü çözümse aynı motion grammar gerekçeyle tekrar kullanılabilir; çeşitlilik uğruna zayıf çözüm seçilmez; birebir aynı timing/kompozisyon/sekans tekrar edilmez). Handoff TEMPLATE §7c alanları zorunlu. P3: Object Outline → Label → Object Carry (plan; narration/sıra değişmedi).
+- Gerekçe / kanıt: [VERİ] doctrine v1 (hook ilk 30–60 sn; benchmark kanallarında bağımsız intro yok, başlık kartı hook'tan sonra — Mustard 6/6). [VARSAYIM] case'e özel ident retention'ı kesmeden tanınırlık sağlar — ilk 30 sn retention ile test.
+- Geri dönüş koşulu: ident anında retention düşüşü görülürse davranış EXP olarak değişir; kanal verisi bağımsız intro'yu desteklerse yeniden test.
+- Durum: Aktif. P3 donuk.
+
+### D-035 — Video Launch OS v1
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: Her video için keşif, SEO, packaging, metadata, yayın ve öğrenim Founder müdahalesi olmadan yönetilmeli.
+- Karar: (1) `video-launch-os` skill'i (dağıtım tipi, talep araştırması, Search Intent Brief, Packaging v2, title/thumbnail/description/kaynak/chapters/captions/dil/disclosure/haklar/upload/end screen/cards/playlist/zaman, native A/B, Launch Package) + `LAUNCH-PACKAGE-TEMPLATE.md`. (2) `pre-publish-qa` = tek yayın öncesi kapı (önceki dağınık "yayın öncesi QA" maddeleri buraya yönlendirildi). (3) Resmî ilkeler SOURCE-VERIFIED: `intelligence/growth/launch-os/youtube-official-principles.md` (P-01…P-13, erişim 2026-10-13). (4) Kanal yetenekleri takibi `capabilities.md` (advanced features açılınca Founder'a bir kez hatırlatma). (5) Packaging v2: ≥3 farklı açılı finalist, birincil + 2 A/B varyantı (önceki "1 yedek" yerine). (6) Yayın sonrası: Appeal/Engagement/Satisfaction/Discovery, sabit evrensel eşik yok, sorun sınıfları → sistem güncellemesi. (7) Varsayılan upload Private/Unlisted → QA → public; native A/B launch onayının parçası. (8) Founder'a yalnız: prototype kapısı, gerekirse ≤3 packaging finalisti, tek launch onayı, gerekirse disclosure toggle'ı. (9) P3: yalnız denetim (`P3-launch-os-audit-v1.md`); P3 donuk.
+- Gerekçe / kanıt: [VERİ] resmî YouTube Help sayfaları (P-01…P-13). [VARSAYIM] belgeselde geniş erişim çoğunlukla packaging + öneriden gelir — kendi kanal verisiyle test (dağıtım tipi FC'de).
+- Geri dönüş koşulu: kendi kanal verimiz bir varsayımı çürütürse (ör. Search trafiği baskın çıkarsa) dağıtım tipi seçimi ve packaging kuralları güncellenir; YouTube politika değişikliği → principles dosyası.
+- Durum: Aktif.
+
+### D-036 — Video Launch OS v1 tamamlama: upload matrisi, rights ledger, caption protokolü, A/B uygunluğu, publish package, Release Gate, öğrenme sözleşmesi, kanal durumu, thumbnail spec
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: D-035 sonrası, güçlü PC'ye geçmeden ana bilgisayardaki sistemin kapanması.
+- Karar: (1) `UPLOAD-SETTINGS-MATRIX.md` (her upload alanı: DEFAULT / WHEN TO OVERRIDE / WHO DECIDES / EVIDENCE / PRE-PUBLISH CHECK). (2) Rights Ledger Standard + Copyright Gate (`production/rights/`): kullanım hakkı ≠ kredi; UNKNOWN/UNRESOLVED varsa public yok; YouTube Checks tek başına yeterli değil; hak durumunun kanonik kaydı rights ledger (evidence ledger §C referans). (3) `CAPTION-PROTOCOL.md` (final VO + zaman damgası → SRT, QC, dil bağı, Studio doğrulaması; auto-caption yalnız yedek). (4) A/B eligibility karar ağacı + test sırasında değişiklik yasağı + Winner/Performed Same/Inconclusive/düşük gösterim kuralları. (5) `PUBLISH-PACKAGE-SCHEMA.json` (kanonik makine paketi) + md aynası. (6) Release Gate (`pre-publish-qa`): G-01…G-19, PASS/FAIL/MANUAL-DECISION, FAIL → public yasak. (7) Öğrenme sözleşmesi: YouTube resmî kavramları ≠ iç proxy'ler; kayıt formatı observation/confidence/possible cause/evidence/action/rule update; tek videodan genelleme yok. (8) SYSTEM READY ↔ CHANNEL CAPABILITY VERIFIED; kanal maddeleri BLOCKED_BY_FUTURE_SETUP (hata değil). (9) `THUMBNAIL-PRODUCTION-SPEC.md` (araçtan bağımsız). (10) Normal videoda Founder kararı = 2 (yaratıcı onay + publish onayı). Readiness: `intelligence/growth/launch-os/main-pc-readiness-audit.md`.
+- Gerekçe / kanıt: [VERİ] resmî YouTube Help P-14…P-21 (erişim 2026-10-13).
+- Geri dönüş koşulu: Studio ayar adları/kuralları değişirse matris ve principles güncellenir (kanal checklist C-12); kendi verimiz bir varsayılanı çürütürse (ör. Shorts remixing, featured places) matris değişir.
+- Durum: Aktif. P3 donuk.
+
+### D-037 — YouTube kanalı oluşturuldu; temel marka kurulumu başladı
+- Tarih: 2026-10-13
+- Karar veren: Founder (bildirim)
+- Bağlam: Önceki kayıtlar kanalın olmadığını varsayıyordu (D-035, D-036 capability durumu BLOCKED_BY_FUTURE_SETUP).
+- Karar: CHANNEL CREATED = YES · BASIC BRANDING STARTED = YES · LOGO / PROFILE IMAGE = SET. Studio'da fiziksel olarak doğrulanmamış yetenekler (güvenlik/izinler, telefon doğrulaması, Intermediate/Advanced Features, custom thumbnail, A/B aracı, upload defaults, default description, ülke/dil, audience varsayılanı, series playlist uygunluğu, ayar etiketleri) **NEEDS_VERIFICATION** olarak kalır; varsayılmaz. CHANNEL CAPABILITY VERIFIED = NO. Kanal adı/handle ve logonun hangi konsept olduğu henüz kayda geçmedi.
+- Gerekçe / kanıt: [VERİ] Founder bildirimi. Studio doğrulaması yok.
+- Geri dönüş koşulu: —
+- Durum: Aktif. MAIN-PC SYSTEM READY değişmedi (YES). P3 donuk.
+
+### D-038 — Long-form'dan Shorts türevleri iş akışına bağlandı
+- Tarih: 2026-10-13
+- Karar veren: Founder
+- Bağlam: D-002 ve strategy "Shorts türev" ilkesini koyuyordu; ancak kontrol (2026-10-13) aday seçimi, 9:16 yeniden kurgu ve zamanlama için **hiçbir iş akışı bulunmadığını** gösterdi ("Shorts converter" sistemde yoktu).
+- Karar: Ayrı sistem kurulmadan `video-launch-os` §25 + G8b adımı: long-form final kilitten sonra hedef 2–4 (eşik geçmezse 0–1) özgün Short; yalnız kendi long-form araştırma/anlatım/materyalimizden; tek başına anlam, ilk saniye, merak/payoff, long-form köprüsü, kanıt bağlamı, haklar, dikey uygunluk kriterleri; 9:16 yeniden kurgu (reframe, dikey layout, burned-in caption, kısa-form ritmi); yayın long-form public olduktan sonra, zamanlama deney; Shorts için kısaltılmış Release Gate; publish package `shorts_plan`; handoff eki.
+- Gerekçe / kanıt: [VERİ] D-002, constraints, strategy. [VARSAYIM] Shorts long-form'a ilgi/geçiş yaratır — kendi verimizle ölçülecek.
+- Geri dönüş koşulu: Shorts long-form'a anlamlı geçiş üretmezse veya üretim maliyeti değerini aşarsa sayı/hedef düşürülür.
+- Durum: Aktif. P3 donuk.
+

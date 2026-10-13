@@ -20,10 +20,13 @@ Sistem tanımı: `intelligence/growth/README.md` · Kriterler: `intelligence/gro
 5. Portföy kuralını uygula (README §6: 3 videoda ≥2 ana hat, ≤1 keşif).
 6. `idea-registry.md`'yi güncelle (puan, güven, durum) ve "Kaynak ayırma notları"na tek satır ekle.
 
+## A2. Talep ve dağıtım tipi (D-035)
+Shortliste giren fikir için `video-launch-os` §2 talep araştırması (Trends, arama önerileri, outlier, erişilebilen metrik, K1; kesin hacim uydurulmaz; gerekiyorsa Founder'a hazır ChatGPT isteği) ve §1 **dağıtım tipi** (Browse-first / Search-assisted Browse / Search-first / Existing-audience-first) seçilir; yeni kanalda varsayılan Search-first değildir. Tip ve gerekçe idea-registry notuna ve FC'ye yazılır.
+
 ## B. Tahmin kilidi (yayından önce)
 1. `forecasts/_TEMPLATE.md`'yi `forecasts/FC-XXX-kisa-ad.md` olarak kopyala; sıradaki FC numarası.
 2. Tahminleri **aralık + baz çizgisine göre konum + güven** olarak yaz (`heuristics.md` §3). Mutlak izlenme yalnız K1 baz çizgisinin güveni en az Orta iken.
-3. "Başarı tanımı" ve "Bu tahmini ne yanlışlar?" doldurulmadan kilitlenmez.
+3. "Başarı tanımı" ve "Bu tahmini ne yanlışlar?" doldurulmadan kilitlenmez. Dağıtım tipi ve ilk yayın zamanının deney hipotezi FC'ye yazılır (D-035).
 4. Kilit tarihi yaz. Bundan sonra dosya düzenlenmez.
 
 ## Founder'a sunum (founder-interface diliyle)
