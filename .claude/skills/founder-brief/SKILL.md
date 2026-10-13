@@ -14,6 +14,7 @@ description: Günlük Founder Brief'i hazırlar. Her yeni oturumun başında vey
    - Aylık kapanış: ayın ilk haftasıysa ve `finance/pnl/` altında geçen ayın dosyası yoksa `cfo-review` §B'yi bugünkü arka plan işine ekle.
    - Yayın sonrası: yayınlı videolardan 48 saat / 7 gün / 28 gün / 90 gün noktasına gelen varsa (`intelligence/growth/results/`) `growth-performance-review`; Founder'dan Studio verisi gerekiyorsa "Senden gereken"e tek adım olarak yaz.
    - Yayın öncesi: yayına hazırlanan video için kilitli tahmin (`intelligence/growth/forecasts/`) yoksa önce o hazırlanır.
+2c. **Video üretim aşaması (D-025):** üretimdeki video için sıradaki kapıyı belirle: packaging → kanıt kaydı → creative treatment → taslak anlatı → prototype handoff → prototype (production PC) → Founder prototype kapısı → senaryo kilidi + tam plan → full handoff → yayın öncesi QA. Eksik kapı varsa bugünkü iş odur; prototype kapısı geçilmeden full production önerilmez.
 3. Son brief'ten bu yana değişenleri belirle (dosya değişiklikleri, tamamlanan işler, yeni veri).
 4. Backlog'dan en yüksek değerli sonraki işi seç: etki × öğrenme değeri ÷ efor, kısıtlar içinde.
 5. Aşağıdaki formatta yaz.

@@ -71,6 +71,12 @@ ChatGPT, gerektiğinde bağımsız **yaratıcı ve stratejik ikinci görüş** k
 - **Dönüş:** Founder cevabı getirdiğinde cevap **otomatik emir değildir** ve kaynakları kontrol edilene kadar varsayım sayılır (`evidence-and-research.md`). Şirket kayıtları ve kanıtla birlikte değerlendirilir; Company OS'un görüşüyle çelişki varsa açıkça söylenir; sonuç Founder'a tek öneri olarak sunulur. Gönderilen prompt ve özetlenmiş cevap ilgili şirket dosyasına kaydedilir.
 - Amaç Founder'ın karar yükünü azaltmaktır; gereksiz yönlendirme bu amaca aykırıdır.
 
+## 6d. Video üretiminde Founder'ın düşünmediği şeyler (D-025)
+- Hangi videonun yapılacağı, araştırma ihtiyacı, hook, anlatı yapısı, görsel dil, asset/footage ihtiyacı, production PC'ye ne gideceği ve prototype zamanlaması Company OS'un işidir. Founder'dan production promptu, "hook ekle", "daha hareketli yap" gibi yönlendirme beklenmez.
+- **AI görsel:** Bir sahnede ChatGPT görseli gerekiyorsa: "Bu sahne için ChatGPT'ye şunu olduğu gibi gönder:" + tek kod bloğunda hazır prompt (`documentary-visual-storytelling` §9). Founder'dan prompt düşünmesi istenmez.
+- **Prototype kapısı:** Founder'a ilk ~60–90 sn gösterilir ve tek soru sorulur: **"Bunu izlemeye devam eder miydin?"** (Evet / Hayır / Emin değilim; istersen tek cümle neden). Mikro edit kararı (font, geçiş, kadraj) sorulmaz.
+- Founder bir sorun işaretlerse önce "bu video mu, sistem mi?" teşhisi yapılır; cevapta sistemin neyi değiştirdiği tek cümleyle söylenir (`documentary-creative-standards` §4).
+
 ## 7. Sorun olduğunda
 Önce kendin teşhis et ve çözebiliyorsan çöz (`self-repair-and-escalation.md`). Founder müdahalesi gerekiyorsa:
 "Şu anda şu problem var. → Bunun anlamı şu. → Senden sadece bunu yapmanı istiyorum." Ham hata mesajını yapıştırtma, tek çözüm öner.

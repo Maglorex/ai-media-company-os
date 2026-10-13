@@ -15,17 +15,18 @@ Kapsam: N2 (Industrial & Technology Autopsies) faceless belgeseller. Ön koşull
 - Videonun doğal toplam süresi raporlanır; süre uzatmak için dolgu eklenmez.
 
 ## Beat kaydı (her satır)
-Zaman kodu (giriş–çıkış) · VO bölümü (sahne/paragraf + ilk kelimeler) · sahnenin amacı · ana asset (ledger V-ID) · destek asset · tür (belge / fotoğraf / grafik / harita / motion / tipografi) · ekrandaki metin veya sayı · zoom/pan/highlight/motion · geçiş mantığı · müzik/SFX amacı (varsa) · asset hazır mı · lisans durumu · zorluk (K/O/Z).
+Zaman kodu (giriş–çıkış) · VO bölümü (sahne/paragraf + ilk kelimeler) · sahnenin işi · yeni bilgi/yeni bakış · ana asset (ledger V-ID) · destek asset · tür (belge / fotoğraf / grafik / harita / motion / tipografi) · ekrandaki metin veya sayı · zoom/pan/highlight/motion · geçiş mantığı · müzik/SFX amacı (varsa) · asset hazır mı · lisans durumu · zorluk (K/O/Z).
 
 ## Edit prensipleri
-1. Video sürekli hareket etmek zorunda değil; kesimler retention heuristic'i yüzünden rastgele hızlandırılmaz. Sabit "her X saniyede kesme" kuralı yok.
+0. **Prototype önce (D-025):** İlk edit plan yalnız prototype kesitini (ilk ~60–90 sn) kapsar ve `documentary-production-handoff` ile production PC'ye gider; tüm videonun edit planı Founder prototype kapısından sonra yazılır.
+1. Sabit "her X saniyede kesme" kuralı yok; kesimler rastgele hızlandırılmaz. Ama **görsel yenilenme = yeni bilgi veya yeni bakış**: bilgi bütçesi bitmiş görsel durum yeni bir şey katmadan ekranda kalmaz (`documentary-visual-storytelling` §3). Fotoğraf + pan ve tam ekran kart zinciri kurulmaz.
 2. **Belge ekrandayken okunabilir süre** verilir (vurgulanan satır VO'da geçiyorsa VO süresi + kısa bekleme).
 3. **Önemli rakam söylenirken o rakam veya grafiği ekranda** olur; senaryodaki rakam ile ekrandaki rakam aynı anlamdadır (ledger).
 4. VO başka şey anlatırken alakasız stock footage yok.
 5. Motion graphics bilgiyi açıklar; dekoratif karmaşa yok. Bizim grafiklerimiz arşiv/belge gibi görünmez (görsel plan kural 4).
 6. Uzun kalan asset'te crop, detay, vurgu veya anlamlı hareketle amaç korunur.
 7. **Müzik anlatıcıyla yarışmaz** (VO altında belirgin biçimde geride; bölüm geçişlerinde kısa nefes). **SFX** yalnız anlama veya geçişe gerçekten yardım ettiğinde. Müzik/SFX kaynağı ve lisansı ledger'a bağlanmadan final sayılmaz.
-8. Altyazı ve kaynak etiketleri okunabilir; belge kaynak notu ekranda kısa süre görünür.
+8. YouTube closed captions (SRT) her videoda; hardcoded sürekli altyazı varsayılan değil, ekran tipografisi yalnız seçici anlarda. Kaynak etiketleri okunabilir; belge kaynak notu ekranda kısa süre görünür.
 9. Kanalın kendi retention verisi oluştuğunda gerçek sonuçlar genel internet tavsiyelerinden önce gelir; plan şablonu buna göre güncellenir.
 10. Script metni değişmez; edit sorunu "production problemi" olarak işaretlenir.
 

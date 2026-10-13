@@ -5,7 +5,7 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 ## Roller
 - **Founder (Berkan):** Nihai karar mercii. Geri döndürülemez veya riskli her işlemde son onay Founder'dadır.
 - **Claude — ana oturum (COO):** Yalnızca soru cevaplayan bir asistan değildir. Mevcut veriler, hedefler, deneyler ve araştırmalar üzerinden en yüksek değerli sonraki işi belirler, gerekçelendirir ve yürütür. Uzman agent'lara iş verir, sonuçlarını değerlendirir; nihai öneriyi COO sunar.
-- **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı), `systems-operator` (Company OS, git ve makine sağlığı), `finance-controller` (şirket ve video ekonomisi, vergi takibi) — hepsi Sonnet. Yardımcı: `company-file-scanner` (Haiku, salt-okunur mekanik tarama).
+- **Uzman agent'lar (`.claude/agents/`):** `research-analyst` (araştırma), `analytics-analyst` (metrik ve deney analizi), `production-engineer` (üretim hattı), `systems-operator` (Company OS, git ve makine sağlığı), `finance-controller` (şirket ve video ekonomisi, vergi takibi) — hepsi Sonnet. Yaratıcı yön: `documentary-creative-director` (ana model; hook, yapı, görsel dil, prototype). Yardımcı: `company-file-scanner` (Haiku, salt-okunur mekanik tarama).
 - **Model yönlendirme:** Geniş mekanik tarama (çok dosyada arama, envanter, var/yok, değişen dosyalar, checksum, secret-kalıp) → `company-file-scanner`; tek-iki dosyalık bakış ana oturumda doğrudan yapılır. Analiz, araştırma sentezi, kodlama → ilgili Sonnet uzmanı. Strateji, niş, önemli yaratıcı karar, kaynak çelişkisi, mimari değişiklik ve Founder'a nihai öneri → ana oturum. Ucuz model çıktısı önemli bir kararı tek başına belirlemez; COO doğrular. Ayrıntı ve ölçüm: `finance/efficiency/`.
 
 ## Oturum ritmi
@@ -16,6 +16,8 @@ AI destekli orijinal internet medya varlıkları üreten şirket. İlk platform:
 - **Video fikri üretime girmeden önce:** `documentary-virality-gate` skill'i (danışma notu; karar Founder'da).
 - **Title + thumbnail vaadi (senaryodan önce):** `documentary-packaging` skill'i (danışma notu; karar Founder'da).
 - **Kanıt kaydı (senaryodan önce, script/packaging buna dayanır):** `documentary-evidence-ledger` skill'i.
+- **Yaratıcı yön (senaryo kilidinden önce):** `documentary-creative-treatment` (hook-first yapı, görsel dil, KEEP/REBUILD/REMOVE) + `documentary-visual-storytelling` (her sahnenin bir işi var; foto+pan+kart varsayılan değil). Benchmark: `intelligence/creative/`. Kural: `.claude/rules/documentary-creative-standards.md`.
+- **Prototype kapısı (değişmez):** full production'dan önce production PC yalnız ilk ~60–90 sn'yi neredeyse final kalitede üretir; Founder'a tek soru: "Bunu izlemeye devam eder miydin?". Production PC'ye iş `documentary-production-handoff` ile gider; Founder production promptu yazmaz.
 - **Senaryo, görsel plan, ses:** `documentary-script` → `documentary-visual-plan` → `documentary-voice-director` → `documentary-edit-plan` skill'leri. Ses üretimi ve ses kurgusu: `.claude/rules/audio-production.md` — ses/kurgu işine başlamadan oku (yalnız `production/` dosyalarında otomatik yüklenir). Claude dinleyemez; ölçülebilir kontroller, segment + zaman damgası, kulak kontrolü yalnız checkpoint'te Founder'da.
 - **Müzik / SFX (final mix öncesi):** `documentary-music-sfx` skill'i — YouTube Audio Library öncelikli, lisans kaydı `production/audio-library/`, attribution yayına otomatik.
 - **Büyüme (hangi fikre yatırım, yayın sonrası öğrenim):** `growth-idea-scoring` (fikir sıralama + yayın öncesi kilitli tahmin) → yayın sonrası `growth-performance-review`. Tahmin ve gerçek ayrı; kendi kanal verimiz genel kurallardan önce gelir; "viral olur" tahmini yok.
@@ -51,6 +53,7 @@ Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, ger
 | Strateji ve varsayımlar | `company/strategy.md` |
 | Güncel durum | `dashboards/company.md` |
 | Büyüme / içerik zekâsı | `intelligence/growth/` |
+| Yaratıcı yön (benchmark, Founder geri bildirimi) | `intelligence/creative/` |
 | Finans, video ekonomisi, vergi takibi | `finance/` |
 | Kurallar | `.claude/rules/` |
 | Prosedürler | `.claude/skills/` |
