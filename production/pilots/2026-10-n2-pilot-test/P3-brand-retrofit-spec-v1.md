@@ -24,9 +24,9 @@
 **Değişmeyenler:** narration, beat sırası, kanıt, hak durumu.
 
 ## 2. Teknik uygulama notu (render PC, donma kalkınca)
-- `production/remotion/src/theme.ts` → dünya bazlı token seti (`archive`, `evidence`, `engineering`, `caseLayer`) + `video-ui-spec-v1.md` §0 token'ları; mevcut şablonlar (`DocumentHighlight`, `LinesToBar`, `LoadShare`, harita) bu token'lardan beslenir.
+- Token ve dünyalar: canonical `production/remotion/src/brand/` modülü (`tokens.ts`, `worlds.ts`, `fonts.ts`; `17adef1`). `src/theme.ts` legacy (lacivert pilot teması) kalır, P3'te kullanılmaz; gereken şablonlar (`DocumentHighlight`, `LinesToBar`, `LoadShare`, harita) v3'te `brand/` token'larına taşınır.
 - Yeni bileşenler: `CaseLabel`, `EvidenceLabel` (+ SourceMark varyantı), `CaseTab`, `BlueprintGrid`, `ScaleRule`. Logo bileşeni yok.
-- Fontlar render PC'ye yerel kurulur (OFL; Founder onayı — backlog [ONAY]); PROVISIONAL font onaylanmazsa IBM Plex Sans Condensed Bold.
+- Fontlar render PC'de kurulu ve doğrulandı (2026-10-13; IBM Plex Sans Condensed, IBM Plex Mono, Source Serif 4; OFL-1.1); Remotion'da `brand/fonts.ts` yerel bağlama — eksik font render'ı durdurur. Display = IBM Plex Sans Condensed Bold.
 
 ## 3. Muted Preview Gate — örnek frame planı (bu 90 sn için)
 Prototype tamamı kapsamda; 9 örnek × ~3 sn, her biri farklı beat (TC'ler VO zaman damgalarına göre kayar):

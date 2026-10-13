@@ -32,5 +32,5 @@ Her önemli beat `source-to-visual` karar sırasından geçer. Tam ekran bilgi k
 ## 5. Kapılar (zorunlu)
 - **Handoff öncesi:** `source-to-visual` tablosu + Brand System uyumu (dünya ataması, case accent, EVIDENCE eşlemesi).
 - **Prototype ve full video sonrası, Founder'a göstermeden önce:** `muted-preview-gate` (muted sample grid + brand diversity QA) — **bağlayıcı**; FAIL ise Founder'a gitmez; düzeltilir.
-- **Brand proof (D-032):** logo yönü, banner yönü, CASE 001 UI mockup, evidence label mockup ve P3 branded frame örnekleri gelmeden brand retrofit'li handoff yazılmaz (`brand-system-v1.md` §N).
+- **Brand proof (D-032; §N Founder güncellemesi 2026-10-13; D-040):** Video handoff'u için gereken proof'lar #3 CASE UI, #4 evidence/source label ve #5 branded frame örnekleridir; üçü Founder PASS almadan brand retrofit'li handoff yazılmaz. Logo ve banner (#1–#2) kanal sayfasının işidir, video handoff'unu bloklamaz; videoda logo kullanılmaz (`video-ui-spec-v1.md`).
 - **Yayın öncesi QA:** tek yer `pre-publish-qa` (D-035) — marka maddeleri Release Gate'te G-17a (muted gate + EVIDENCE eşlemesi), G-11 (AI etiket/disclosure), G-04 (thumbnail → video sürekliliği) olarak yer alır.

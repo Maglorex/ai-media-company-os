@@ -29,7 +29,7 @@
 | C-10 | Kanal ülkesi/bölgesi + kanal dili (English) | NEEDS_VERIFICATION | Vergi/ödeme ile ilişkisi `tax-watch` |
 | C-11 | Audience varsayılanı (kanal düzeyi: Not made for kids) | NEEDS_VERIFICATION | P-15 |
 | C-12 | Studio ayar etiketleri matrisle karşılaştırıldı (adı değişen alan varsa matris güncellenir) | NEEDS_VERIFICATION | P-14 |
-| C-13 | Logo/profil görseli · banner | Profil görseli: **SET** (Founder 2026-10-13; hangi konsept olduğu ve final logo sayılıp sayılmadığı kayıtlı değil) · Banner: NEEDS_VERIFICATION | Brand §K–§L |
+| C-13 | Logo/profil görseli · banner | Profil görseli: **SET** (Founder 2026-10-13; hangi konsept olduğu kayıtlı değil) · Banner: **DONE** (Founder 2026-10-13, D-040) | Brand §K–§L |
 | C-14 | "When your viewers are on YouTube" raporu yeterli veriyle | BLOCKED_BY_DATA | Yayın zamanı deneyi |
 | C-15 | Series playlist (gerektiğinde): doğrulanmış hesap · bir video yalnız bir resmî series playlist'te · yalnız kendi yüklediğimiz ve haklarına sahip olduğumuz videolar | NEEDS_VERIFICATION (uygunluk) · kullanım ≥2 aynı kova video sonrası | P-22 |
 Tüm C-01…C-12 tamam → **CHANNEL CAPABILITY VERIFIED = YES** (tarih). C-13, C-14, C-15 bunu bloklamaz.

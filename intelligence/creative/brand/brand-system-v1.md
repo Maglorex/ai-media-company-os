@@ -86,7 +86,7 @@ Yön (D-032): industrial · modern · strong · YouTube avatarında okunacak kad
 Marka ses kimliği (stinger, jingle) **yok**; case ident sessiz/müzik altı. Müzik yönü `documentary-music-sfx`. Ses kararları UNVERIFIED — HUMAN EAR REQUIRED.
 
 ## N. Brand proof (production'a dönmeden önce beklenen asset'ler — D-032)
-Founder + ChatGPT üretir; Company OS bunları üretmez. **Güncelleme (Founder 2026-10-13):** final logo beklenmez, geçici logo/monogram üretilmez; P3 retrofit'i logo gerektirmeyen parçalarla (#3–#5) ilerler — spec: `video-ui-spec-v1.md`, `production/pilots/2026-10-n2-pilot-test/P3-brand-retrofit-spec-v1.md`. #1–#2 (logo, banner) kanal sayfası için ayrı iş.
+#1–#2 (logo, banner) Founder + ChatGPT üretir. #3–#5 Company OS render PC'de Brand System v1 ve `video-ui-spec-v1.md` ile üretir; Founder PASS/REVISE verir (D-040). **Güncelleme (Founder 2026-10-13):** final logo beklenmez, geçici logo/monogram üretilmez; P3 retrofit'i logo gerektirmeyen parçalarla (#3–#5) ilerler — spec: `video-ui-spec-v1.md`, `production/pilots/2026-10-n2-pilot-test/P3-brand-retrofit-spec-v1.md`. #1–#2 (logo, banner) kanal sayfası için ayrı iş.
 | # | Asset | Kabul ölçütü (COO kontrol eder, Founder'a tek öneri) |
 |---|---|---|
 | 1 | Seçilmiş logo yönü | §K; 48–98 px okunur; klişe yok |
