@@ -4,6 +4,10 @@ paths:
   - "intelligence/creative/**"
   - "channels/the-industrial-casebook/**"
   - ".claude/skills/documentary-*/**"
+  - ".claude/skills/story-viability/**"
+  - ".claude/skills/production-scene-plan/**"
+  - ".claude/skills/creative-qa/**"
+  - ".claude/agents/creative-qa-evaluator.md"
   - ".claude/agents/documentary-creative-director.md"
 ---
 

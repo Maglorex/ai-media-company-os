@@ -32,7 +32,7 @@
 | `muted-preview-gate` skill | Sessiz önizleme grid'i; "≤ ~6 sn" anlam | DIAGNOSTIC girdi (TIC-29/30); creative PASS bağımsız QA | Daraltıldı |
 | `documentary-style-benchmarks.md` | PROVISIONAL benchmark | TIC-27 (HEURISTIC) | HISTORICAL |
 
-## 2. Prosedür sırası (Stage 3'te tek hatta konsolide edilecek)
+## 2. Prosedür sırası — SUPERSEDED (D-046): güncel akış `../pipeline/README.md`; aşağıdaki liste tarihseldir
 1. Fikir: yazılı değerlendirme (`02` §2; araçlar `growth-idea-scoring`, `documentary-virality-gate` — girdi) → PURSUE/REVISE/KILL.
 2. Packaging hypothesis: `documentary-packaging` (fikirle birlikte).
 3. Kanıt: `documentary-evidence-ledger`; haklar: rights ledger.

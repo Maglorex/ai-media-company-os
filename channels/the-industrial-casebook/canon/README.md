@@ -36,7 +36,7 @@ Kuralların tam listesi ve sınıfları: `07-rule-register.md` (TIC-xx). Çeliş
 - Kanal anlatıcısı: D-021 · Launch: `video-launch-os` (D-035) · Release Gate: `pre-publish-qa`.
 
 ## Prosedürler (skill'ler) ve canon ilişkisi
-Mevcut `documentary-*`, `source-to-visual`, `muted-preview-gate`, `growth-idea-scoring`, `video-launch-os` skill'leri **prosedürdür**; bu canon onların üstündedir. Bir skill maddesi canon ile çelişirse **canon kazanır**. Skill'lerin canon'a göre konsolidasyonu (tek Production Scene Plan vb.) Stage 3'tür. Video işi sırası ve skill'ler: `09-v1-source-map.md` §Prosedür sırası.
+Mevcut `documentary-*`, `source-to-visual`, `muted-preview-gate`, `growth-idea-scoring`, `video-launch-os` skill'leri **prosedürdür**; bu canon onların üstündedir. Bir skill maddesi canon ile çelişirse **canon kazanır**. Skill'ler Stage 3'te konsolide edildi (D-046). Güncel prosedür sırası: `../pipeline/README.md`; `09-v1-source-map.md` §2 tarihseldir.
 
 ## Founder'a sorulmayanlar (D-031 §1 korunur)
 Renk, font, geçiş, kanıt görünümü, sahne başına görsel türü, AI görsel ihtiyacı, kaynak görselleştirme biçimi, preview kalitesi, video başına intro tasarımı sistemin işidir. Founder'a: fikir/packaging stratejik seçimi, gerçek taste kapıları (final yaratıcı soru; prototype kullanılırsa prototype), kalibrasyon seçimleri (Stage 5), yayın.

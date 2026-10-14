@@ -1,9 +1,11 @@
 ---
 name: documentary-visual-plan
-description: Founder onaylı documentary script'ini sahne sahne üretilebilir bir görsel plana çevirir; her görseli anlatıya, evidence ledger'a ve kullanım hakkına bağlar, eksik/riskli asset'leri işaretler. Asset indirmez, görsel/video üretmez, kurgu veya render başlatmaz.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine production-scene-plan. Eski açıklama: Founder onaylı documentary script'ini sahne sahne üretilebilir bir görsel plana çevirir; her görseli anlatıya, evidence ledger'a ve kullanım hakkına bağlar, eksik/riskli asset'leri işaretler. Asset indirmez, görsel/video üretmez, kurgu veya render başlatmaz."
 ---
 
 # Documentary Visual Plan
+
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **production-scene-plan** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
 
 Kapsam: N2 belge-öncelikli faceless belgeseller. Ön koşul: Founder onaylı script + güncel `documentary-evidence-ledger` + `documentary-creative-treatment` (görsel dil). **Bağlayıcı taban: `documentary-visual-storytelling`** (sahne işi kuralı, visual language library, footage kuralı, teşhis testleri); bu skill onunla çelişirse o geçerlidir. Çıktı: `production/.../<video>-visual-plan-vN.md`. Founder'a tablo varsayılan olarak gösterilmez (`founder-interface`); sade özet verilir, "Detayları göster" ile açılır.
 

@@ -1,3 +1,5 @@
+> **SUPERSEDED — 2026-10-14 (D-046).** Güncel araç kütüphanesi: `.claude/skills/production-scene-plan/TOOL-LIBRARY.md`. Aşağıdaki metin tarihseldir.
+
 # Visual Language Library
 
 > `documentary-visual-storytelling` §5'in ayrıntısı. Araçlar: Remotion 4.0.529 (render PC), Premiere/After Effects/Photoshop/Illustrator 2026 (render PC, mevcut abonelik), ChatGPT Image Generation (mevcut abonelik). Yeni paket/plugin Founder onayı ister.

@@ -1,9 +1,11 @@
 ---
 name: documentary-virality-gate
-description: Bir video fikri tam senaryo, seslendirme veya production zamanı harcanmadan önce üretime değer mi diye 12 kapıda değerlendirir; READY FOR PILOT / REVISE BEFORE PILOT / DO NOT PRIORITIZE **sinyali** (HEURISTIC/DIAGNOSTIC girdi) ve tek düzeltme önerir. Nihai fikir kararı değildir, production izni vermez: kanal kararı yazılı değerlendirmeyle PURSUE / REVISE / KILL (canon D-045, TIC-03). Viral tahmini yapmaz.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine story-viability. Eski açıklama: Bir video fikri tam senaryo, seslendirme veya production zamanı harcanmadan önce üretime değer mi diye 12 kapıda değerlendirir; READY FOR PILOT / REVISE BEFORE PILOT / DO NOT PRIORITIZE **sinyali** (HEURISTIC/DIAGNOSTIC girdi) ve tek düzeltme önerir. Nihai fikir kararı değildir, production izni vermez: kanal kararı yazılı değerlendirmeyle PURSUE / REVISE / KILL (canon D-045, TIC-03). Viral tahmini yapmaz."
 ---
 
 # Documentary Virality Gate
+
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **story-viability** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
 
 > **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Bu kapının dereceleri fikir değerlendirmesine **girdidir** (TIC-03); karar canon `02` §2'deki yazılı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir. "Broad human relevance" sorusu canon'dan eklenir.
 

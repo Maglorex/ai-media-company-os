@@ -5,7 +5,7 @@ description: Video fikirlerini yatırım gözüyle sıralar; talep, rekabet, pac
 
 # Growth — Fikir Puanlama ve Tahmin Kilidi
 
-> **The Industrial Casebook için (D-045, canon `02-ideas-growth-packaging.md`):** bu skill'in puanları fikir kararının kendisi değil, **HEURISTIC girdidir** (TIC-03); puan tek başına production izni veremez. Karar yazılı sekiz alanlı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir; forecast lock (§B) aynen geçerlidir.
+> **The Industrial Casebook için (D-045, canon `02-ideas-growth-packaging.md`):** bu skill'in puanları fikir kararının kendisi değil, **HEURISTIC girdidir** (TIC-03); puan tek başına production izni veremez. Karar `story-viability` skill'inde yazılı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir; forecast lock (§B) aynen geçerlidir.
 
 Sistem tanımı: `intelligence/growth/README.md` · Kriterler: `intelligence/growth/heuristics.md`.
 

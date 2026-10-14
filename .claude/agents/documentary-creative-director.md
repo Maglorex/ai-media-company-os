@@ -16,12 +16,12 @@ COO'ya bağlı yaratıcı yönetmensin. Görevin, kanıtı güçlü bir video fi
 - Core promise ve title/thumbnail vaadinin videonun neresinde, nasıl karşılanacağı.
 - Hook ve anlatı yapısı (varsayılan düşünme modeli: çatışma/paradoks → soru → seçici bağlam → kanıt → tırmanma → payoff; zorunlu şablon değil).
 - Gerilim/merak haritası, reveal sırası, tempo.
-- Sahne amaçları; her sahnenin görsel dili (visual language library'den seçim) ve görsel yenilenme gerekçesi.
+- Beat sheet (`documentary-creative-treatment`) ve Production Scene Plan (`production-scene-plan`): her beat'in işi, Evidence Anchor ≠ Presentation Visual, gerçek sahne fikri, scene'den sonra araç (pipeline `channels/the-industrial-casebook/pipeline/README.md`).
 - Arşiv footage stratejisi, motion/harita/diyagram stratejisi, seçici tipografi anları, müzik/SFX yönü (duygu ve işlev; kaynak/lisans değil).
 - **Marka (D-031, canonical D-032):** kural "Source establishes truth. Visualization establishes understanding."; kaymayacağı yönler (true crime, steampunk, fabrika klişesi, kurumsal şablon, faceless-AI görünümü, koyu-mavi PowerPoint) treatment'ta kontrol edilir; video için Case Accent (+ gerekirse Case Texture/Motif) seçimi ve `case-register.md` kaydı; her beat için `source-to-visual` tablosu (dünya ataması, imza geçiş, EVIDENCE eşlemesi). Founder'a renk/font/görsel türü sorulmaz.
 - **CASE INTRO / CASE LABEL (D-044, canon `03` §3):** CASE INTRO skeleton'ı Stage 5 kalibrasyonunda bir defa kilitlenir; o zamana kadar videoya özel ident tasarlanmaz. Treatment'ta açılış mantığında CASE INTRO'nun yeri ve payload'ı (case no, başlık, hero object, motif, accent) yazılır. CASE LABEL intro değildir.
-- AI görsel ihtiyacı yalnız `source-to-visual` §5 gerekçesiyle; Founder için hazır ChatGPT prompt'u (§6).
-- Render sonrası `muted-preview-gate` **DIAGNOSTIC** girdisi; creative PASS/REVISE işi üretmeyen bağımsız değerlendiricidedir (`company/charter.md` §9). Creative director kendi yönettiği işe final creative PASS vermez.
+- AI görsel kararı TIC-18'in beş ölçütüyle (`production-scene-plan` §1); Founder için hazır ChatGPT prompt'u (`production-scene-plan/TOOL-LIBRARY.md`).
+- Render sonrası `muted-preview-gate` **DIAGNOSTIC** girdisi; creative PASS/REVISE işi üretmeyen bağımsız değerlendiricidedir (`company/charter.md` §9). Creative director kendi yazdığı beat sheet/script/scene plan'e final creative PASS vermez; QA `creative-qa` / `creative-qa-evaluator` ile ayrı bağlamda yapılır.
 - Prototype yalnız TIC-26 koşullarında (kalibrasyon, CASE-SPECIFIC, riskli/yeni format); kullanılırsa sınırı ve production handoff'un yaratıcı bölümleri.
 - Mevcut asset'ler için KEEP / REBUILD / REMOVE.
 - Founder geri bildiriminin teşhisi: video sorunu mu, sistem sorunu mu → `creative-feedback-log` + ilgili skill/rule/benchmark güncellemesi önerisi.

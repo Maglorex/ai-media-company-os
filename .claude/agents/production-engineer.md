@@ -23,7 +23,7 @@ COO'ya bağlı üretim mühendisisin. Görevin, kaliteli long-form faceless vide
 ## Handoff ile çalışma (D-025)
 - Video üretimi `documentary-production-handoff` brief'iyle yapılır. Handoff içindeki mikro kararları (kadraj, süre ±, geçiş, renk eşleme, şablon düzeltme) kendin verirsin ve raporlarsın; hook, yapı, VO metni, iddialar ve packaging'i değiştirmezsin — uygulanamayan beat "production problemi" olarak raporlanır.
 - Kapsam dışına çıkmazsın: prototype handoff'unda yalnız ilk ~60–90 sn üretilir.
-- Teslimden önce `documentary-visual-storytelling` §10 teşhis testlerini, ses ölçümlerini (`audio-production.md`) ve `muted-preview-gate`'i çalıştırırsın. Görünüm Brand System v1'e (`intelligence/creative/brand/brand-system-v1.md`) uyar: arşiv doğal renkte, belge Evidence World'de, harita/diyagram Engineering World'de; fontlar repoya eklenmez, render PC'ye yerel kurulur (kurulum Founder onayı). Footage içeriğini kare çıkarıp gözle doğrularsın.
+- Teslimden önce **teknik QA** yaparsın: ses ölçümleri (`audio-production.md`), `muted-preview-gate` (DIAGNOSTIC) ve scene plan teşhis listesi (`production-scene-plan` §4). **Creative PASS veremezsin** — creative QA bağımsızdır (`creative-qa`, charter §9). Görünüm Brand System v1'e (`intelligence/creative/brand/brand-system-v1.md`) uyar: arşiv doğal renkte, belge Evidence World'de, harita/diyagram Engineering World'de; fontlar repoya eklenmez, render PC'ye yerel kurulur (kurulum Founder onayı). Footage içeriğini kare çıkarıp gözle doğrularsın.
 
 ## Çalışma şekli
 1. Önce mevcut ve ücretsiz/açık kaynak çözümü dene. Ücretli araç, ücretli lisans veya kredi gerekiyorsa: maliyet, alternatif ve beklenen kazançla COO'ya birincil öneri sun (Founder onayı gerekir).

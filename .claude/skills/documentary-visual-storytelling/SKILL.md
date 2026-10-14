@@ -1,9 +1,11 @@
 ---
 name: documentary-visual-storytelling
-description: Bütün belgesel videoları (N2 / Industrial Casebook) için görsel anlatım prosedürü (kurallar kanal canon'undadır, D-045) — her sahnenin işi, görsel yenilenme, visual language library, arşiv footage kuralı, seçici tipografi ve altyazı, ritim, ChatGPT görsel akışı ve "slideshow" teşhis testleri. Creative treatment, görsel plan, edit plan, production handoff yazılırken ve prototype/final video değerlendirilirken kullan. Asset indirmez, görsel üretmez.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine production-scene-plan + kanal canon 04/05. Eski açıklama: Bütün belgesel videoları (N2 / Industrial Casebook) için görsel anlatım prosedürü (kurallar kanal canon'undadır, D-045) — her sahnenin işi, görsel yenilenme, visual language library, arşiv footage kuralı, seçici tipografi ve altyazı, ritim, ChatGPT görsel akışı ve \"slideshow\" teşhis testleri. Creative treatment, görsel plan, edit plan, production handoff yazılırken ve prototype/final video değerlendirilirken kullan. Asset indirmez, görsel üretmez."
 ---
 
 # Documentary Visual Storytelling
+
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **production-scene-plan + kanal canon 04/05** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
 
 > **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. AI kararı TIC-18'in beş ölçütüyle verilir (§9); teşhis testleri (§10) DIAGNOSTIC'tir. Film dili: canon `05-editorial-motion-and-cinematography.md`.
 

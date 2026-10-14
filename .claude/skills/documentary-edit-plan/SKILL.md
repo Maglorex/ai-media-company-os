@@ -1,9 +1,11 @@
 ---
 name: documentary-edit-plan
-description: Founder onaylı script + evidence ledger + visual plan hazır olduğunda videoyu kurgulanabilir bir timeline planına (zaman kodlu beat listesi) çevirir; her beat'i VO'ya, asset'e, ekrandaki metne, harekete, geçişe, ses tasarımına ve hak durumuna bağlar. Kurgu, render, asset üretimi veya ses üretimi başlatmaz.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine production-scene-plan (sahne/edit fikri) ve Stage 4 production handoff (zaman kodu/VO senkronu). Eski açıklama: Founder onaylı script + evidence ledger + visual plan hazır olduğunda videoyu kurgulanabilir bir timeline planına (zaman kodlu beat listesi) çevirir; her beat'i VO'ya, asset'e, ekrandaki metne, harekete, geçişe, ses tasarımına ve hak durumuna bağlar. Kurgu, render, asset üretimi veya ses üretimi başlatmaz."
 ---
 
 # Documentary Edit Plan
+
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **production-scene-plan (sahne/edit fikri) ve Stage 4 production handoff (zaman kodu/VO senkronu)** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
 > Ses üretimi/kurgusu için bağlayıcı kural: `.claude/rules/audio-production.md` (Claude dinleyemez; segment + zaman damgası + ölçüm; kulak kontrolleri yalnız checkpoint'te Founder'da). Kanal sesi ve birincil model: D-021.
 
 

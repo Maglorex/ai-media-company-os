@@ -36,7 +36,7 @@ KEEP / REBUILD / NEW listesi (dosya adı, konum, ne yapılacak). Kullanılmayaca
 - Dünya ataması (beat → ARCHIVE / EVIDENCE / ENGINEERING / CASE UI) + imza geçiş (Evidence Pull / Object Carry / Case Tab / Source Mark)
 - `EVIDENCE NN` → ledger satırı eşleme tablosu + Source Mark metinleri
 - Font/renk: Brand System v1 token'ları; render PC'de font kurulumu doğrulandı mı
-- `source-to-visual` tablosu (karar adımı, hak, AI gerekçesi)
+- Production Scene Plan referansı (`05-scene-plan-vN.md`: Evidence Anchor / Presentation Visual, hak, AI gerekçesi, araç)
 
 ## 7c. CASE INTRO / CASE LABEL (D-044; canon `03` §3)
 | CASE INTRO | CASE LABEL (metin, yer, süre) | Not |
