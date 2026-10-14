@@ -31,8 +31,14 @@ const STAGE1_ALLOWED = [
   /^\.claude\/rules\/brand-and-visual-system\.md$/,
   /^\.claude\/skills\/(documentary-visual-storytelling|muted-preview-gate|documentary-virality-gate|growth-idea-scoring)\/SKILL\.md$/,
   /^\.claude\/agents\/documentary-creative-director\.md$/,
+  /^\.claude\/skills\/documentary-production-handoff\/TEMPLATE\.md$/,
+  // Stage 2 — eski kanal belgelerine yalnız SUPERSEDED/HISTORICAL işareti (içerik korunur; aşağıdaki test doğrular)
+  /^intelligence\/creative\/brand\/(dynamic-case-ident-system|brand-system-v1|case-register|logo-banner-brief)\.md$/,
+  /^intelligence\/creative\/(documentary-style-benchmarks|doctrine\/documentary-production-doctrine-v1)\.md$/,
 ];
-const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/canon\//]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
+const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
+  'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];
+const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/canon\//, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
 const KEEP = [/^production\//, /^finance\//, /^intelligence\//, /^channels\//, /^company\/(strategy|constraints|mission|goals|machines)\.md$/];
 
 const changed = () => {
@@ -58,5 +64,15 @@ test('migration: decision-log ve lessons yalnız ekleme aldı (geçmiş yeniden 
   for (const f of ['company/decision-log.md', 'company/lessons.md']) {
     const before = git('show', `${BASE}:${f}`).trimEnd();
     assert.ok(read(f).startsWith(before), `${f}: existing content changed`);
+  }
+});
+
+test('migration: işaretlenen eski kanal belgelerinde içerik korunuyor (yalnız işaret eklendi)', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+  for (const f of MARKED_ONLY) {
+    const before = git('show', `${BASE}:${f}`).split('\n').map((l) => l.trimEnd()).filter(Boolean);
+    const now = new Set(read(f).split('\n').map((l) => l.trimEnd()));
+    const lost = before.filter((l) => !now.has(l));
+    assert.ok(lost.length <= 1, `${f}: ${lost.length} original lines changed (only one marked header/heading allowed)`);
+    assert.match(read(f), /SUPERSEDED|HISTORICAL/, `${f}: marker missing`);
   }
 });

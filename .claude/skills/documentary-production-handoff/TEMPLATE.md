@@ -32,16 +32,17 @@ Birebir metin; üretim kopyası farkları (sayı yazımı, telaffuz) ayrıca.
 KEEP / REBUILD / NEW listesi (dosya adı, konum, ne yapılacak). Kullanılmayacaklar (REMOVE) ayrıca.
 
 ## 7b. Brand + Source-to-Visual (D-031)
-- Case: CASE NNN · case accent (hex) · motif · ident anı (TC, metin) · Case Tab(lar)
+- Case: CASE NNN · case accent (hex) · motif · CASE LABEL anı (TC, metin) · Case Tab(lar) — CASE INTRO kalibrasyona kadar yok (D-044)
 - Dünya ataması (beat → ARCHIVE / EVIDENCE / ENGINEERING / CASE UI) + imza geçiş (Evidence Pull / Object Carry / Case Tab / Source Mark)
 - `EVIDENCE NN` → ledger satırı eşleme tablosu + Source Mark metinleri
 - Font/renk: Brand System v1 token'ları; render PC'de font kurulumu doğrulandı mı
 - `source-to-visual` tablosu (karar adımı, hak, AI gerekçesi)
 
-## 7c. Dynamic Case Ident (D-034)
-| Case number | Case title | Ident concept (davranış) | Hero object | Case accent | Visual motif | Start TC | End TC (≤3 sn) | Transition into story | Asset source / right |
-|---|---|---|---|---|---|---|---|---|---|
-Kurallar: `intelligence/creative/brand/dynamic-case-ident-system.md` — story önce/ident story'den doğar; siyah ekran + logo yok; VO durmaz; ident render'ı videoya özel.
+## 7c. CASE INTRO / CASE LABEL (D-044; canon `03` §3)
+| CASE INTRO | CASE LABEL (metin, yer, süre) | Not |
+|---|---|---|
+| N/A — pre-calibration |  |  |
+Kural: CASE INTRO Golden Master kalibrasyonu (Stage 5) tamamlanana kadar CASE INTRO alanı `N/A — pre-calibration`; geçici/videoya özel ident tasarlanmaz. CASE LABEL intro değildir (TIC-11, TIC-12). Eski D-034 ident alanları SUPERSEDED.
 
 ## 7. Visual language
 İmza araç + destekler · katman ayrımı (arşiv / bizim grafik / illüstrasyon) · palet, font · kamera ve geçiş dili · yapılmayacaklar (ör. foto+pan zinciri, tam ekran bilgi kartı).

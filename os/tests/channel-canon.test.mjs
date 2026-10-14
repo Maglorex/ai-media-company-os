@@ -133,3 +133,24 @@ test('karar kaydı: D-045 kanal kapsamında aktif; D-029 ve D-034 canon\'a devre
   assert.equal(act.find((r) => r.ID === 'D-045')?.Kapsam, CH);
   for (const id of ['D-029', 'D-034']) assert.ok(/D-045/.test(ina.find((r) => r.ID === id)?.Yerine || ''), `${id} replaced by D-045`);
 });
+
+test('eski talimatlar canon\'u geçersiz kılamaz: videoya özel ident zorunluluğu ve bağlayıcı muted gate yok', () => {
+  const files = ['.claude/skills/documentary-production-handoff/SKILL.md', '.claude/skills/documentary-production-handoff/TEMPLATE.md',
+    '.claude/agents/documentary-creative-director.md', '.claude/skills/muted-preview-gate/SKILL.md', '.claude/skills/documentary-creative-treatment/SKILL.md',
+    '.claude/skills/documentary-visual-storytelling/SKILL.md'];
+  const bad = [/Dynamic Case Ident \(D-034\)/, /boş ident alanı = eksik handoff/, /ident render'ı videoya özel/, /her video için ident concept/i,
+    /\(bağlayıcı, D-032\)/, /REVISE ise Founder'a gitmez/, /Bağlayıcı taban/, /≤ ~6 sn/, /prototype QA'sında zorunlu/];
+  const hits = [];
+  for (const f of files) for (const b of bad) if (b.test(read(f))) hits.push(`${f} ~ ${b}`);
+  assert.deepEqual(hits, []);
+});
+
+test('kanal kapsamlı SUPERSEDED/HISTORICAL belgeler dosya içinde de işaretli', () => {
+  const rows = registry.filter((a) => a.scope === CH && ['SUPERSEDED', 'HISTORICAL'].includes(a.status) && a.path.endsWith('.md'));
+  assert.ok(rows.length >= 4);
+  for (const a of rows) {
+    const head = read(a.path).split('\n').slice(0, 6).join('\n');
+    assert.match(head, /SUPERSEDED|HISTORICAL/, `${a.path}: in-file marker missing`);
+  }
+  assert.match(read('intelligence/creative/brand/brand-system-v1.md'), /## C\. Intro \/ ident — SUPERSEDED/);
+});

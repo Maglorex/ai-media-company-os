@@ -21,7 +21,8 @@
 - Metadata etiketleri (Case UI World): `CASE 001` · `EVIDENCE 01` · `GAO · 1970` · `LOCATION` · `ROUTE` · `SYSTEM` · `COST`.
 - **Dekor değil:** `EVIDENCE NN` her zaman evidence ledger'daki bir satıra bağlıdır (handoff'ta `EVIDENCE 01 = V-03` gibi eşleme tablosu zorunlu). Kaynak etiketi gerçek provenance'ı gösterir (kurum · yıl · gerekiyorsa sayfa). Ledger'da karşılığı olmayan EVIDENCE etiketi kullanılamaz.
 
-## C. Intro / ident
+## C. Intro / ident — SUPERSEDED (2026-10-14, D-044/D-045)
+> Bu bölüm talimat değildir. CASE INTRO = tekrar eden skeleton + değişken payload, CASE LABEL intro değildir: canon `channels/the-industrial-casebook/canon/03-opening-and-case-intro.md` §3. Aşağıdaki metin tarihseldir.
 > **D-034:** kalıcı sistem → `intelligence/creative/brand/dynamic-case-ident-system.md` (sabit/değişken öğeler, hareket kütüphanesi, handoff alanları). Aşağıdaki maddeler onun özetidir.
 - **Varsayılan: bağımsız 4–7 sn logo introsu YOK.**
 - Format: **cold open hemen başlar** → hero object ekranda → kısa `CASE 001 · NS SAVANNAH` reveal (≈1,5–2,5 sn, alt-sol, Plex Mono + Condensed; hikâye durmaz) → story devam eder.

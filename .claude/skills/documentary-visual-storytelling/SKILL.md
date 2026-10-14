@@ -1,13 +1,13 @@
 ---
 name: documentary-visual-storytelling
-description: Bütün belgesel videoları (N2 / Industrial Casebook) için kalıcı görsel anlatım kuralları — her sahnenin işi, görsel yenilenme, visual language library, arşiv footage kuralı, seçici tipografi ve altyazı, ritim, ChatGPT görsel akışı ve "slideshow" teşhis testleri. Creative treatment, görsel plan, edit plan, production handoff yazılırken ve prototype/final video değerlendirilirken kullan. Asset indirmez, görsel üretmez.
+description: Bütün belgesel videoları (N2 / Industrial Casebook) için görsel anlatım prosedürü (kurallar kanal canon'undadır, D-045) — her sahnenin işi, görsel yenilenme, visual language library, arşiv footage kuralı, seçici tipografi ve altyazı, ritim, ChatGPT görsel akışı ve "slideshow" teşhis testleri. Creative treatment, görsel plan, edit plan, production handoff yazılırken ve prototype/final video değerlendirilirken kullan. Asset indirmez, görsel üretmez.
 ---
 
 # Documentary Visual Storytelling
 
 > **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. §9'daki "gerçek arşiv varsa sırf daha güzel diye AI yok" maddesi TIC-18'in beş ölçütüyle (production value dahil) okunur; teşhis testleri (§10) DIAGNOSTIC'tir. Film dili: canon `05-editorial-motion-and-cinematography.md`.
 
-Kapsam: bütün faceless belgesel videolar. Bağlayıcı taban: `.claude/rules/documentary-creative-standards.md`. Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör). **Marka ve sahne kararı (D-031):** `intelligence/creative/brand/brand-system-v1.md` · `source-to-visual` (karar sırası, AI politikası, hazır prompt şablonu — bu skill'in §9'undan önce gelir) · `muted-preview-gate`.
+Kapsam: bütün faceless belgesel videolar. Kurallar: kanal canon'u (`.claude/rules/documentary-creative-standards.md` yükleyicisi üzerinden). Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör). **Marka ve sahne kararı (D-031):** `intelligence/creative/brand/brand-system-v1.md` · `source-to-visual` (karar sırası, AI politikası, hazır prompt şablonu — bu skill'in §9'undan önce gelir) · `muted-preview-gate`.
 
 ## 1. Sahne işi kuralı
 Bir sahne yalnız anlatıcının söylediği nesneyi göstermek için var olamaz. Her sahne en az bir iş yapar ve bu iş planda yazılır:
@@ -52,7 +52,7 @@ Müzik ve SFX yönü treatment'ta **işlev** olarak yazılır (gerilim kurmak, n
 - **Ekranda:** AI görsel arşiv katmanından stil olarak ayrılır (stilize, foto-gerçekçi değil); gerekirse küçük "Illustration" etiketi. Asla arşiv kanıtı gibi gösterilmez, kaynak etiketi taklit edilmez.
 - **Açıklama riski:** Gerçek bir olayın/yerin foto-gerçekçi yeniden üretimi yapılırsa Release Gate G-11'de (`pre-publish-qa`) disclosure değerlendirilir (D-036) (resmî YouTube sayfası yayın öncesi yeniden kontrol edilir). Kurallar ayrıca: `production/tools/README.md` §ChatGPT Image Generation.
 
-## 10. Teşhis testleri (treatment, handoff ve prototype QA'sında zorunlu)
+## 10. Teşhis testleri (treatment, handoff ve QA'da çalıştırılır — DIAGNOSTIC)
 1. **Literal test:** Sahnelerin çoğu yalnız "söyleneni gösteriyor" mu? → iş eklenmeli.
 2. **Slideshow testi:** Primary görsellerin dizisi "fotoğraf/kart → fotoğraf/kart" zinciri mi? Bir bölüm tek araca mı çöktü?
 3. **Sessiz izleme testi:** Ses kapalıyken görsel dizi hikâyenin iskeletini (yer, ölçek, karşıtlık, kanıt) anlatıyor mu?

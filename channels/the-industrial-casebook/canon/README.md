@@ -12,6 +12,7 @@
 | `HEURISTIC` | İyi başlangıç noktası; hikâye daha iyi çalışıyorsa **gerekçe yazılarak** değiştirilir | L5 |
 | `EXPERIMENT` | Doğrulanmamış hipotez; test edilir | L5 |
 | `DIAGNOSTIC` | Ölçüm/sinyal; sorun bulur, hedef veya kapı değildir | L5 |
+**HEURISTIC zayıf demek değildir:** kanalın varsayılanıdır; yalnız yazılı gerekçeyle (treatment/sahne planında) veya daha yüksek katmandaki açık bir kayıtla (ör. CASE-SPECIFIC karar) geçilir, sessizce görmezden gelinemez. L5 olması yalnız çelişkide bağlayıcı kurallardan sonra geldiğini söyler.
 Kuralların tam listesi ve sınıfları: `07-rule-register.md` (TIC-xx). Çelişkide: L0 > L1 > canon kuralı (L2) > case durumu > case kararı > heuristic/experiment/diagnostic.
 
 ## Dosyalar

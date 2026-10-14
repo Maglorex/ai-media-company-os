@@ -5,6 +5,8 @@ description: Ana Company OS'tan production/render bilgisayarındaki Claude'a gid
 
 # Documentary Production Handoff
 
+> **Kanal canon'u önce gelir (D-045):** `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Her beat için Evidence Anchor ve Presentation Visual ayrı yazılır (TIC-15); prototype yalnız TIC-26 koşullarında.
+
 Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygulayan: production PC'deki Claude (`production-engineer` rolü). Şablon: `TEMPLATE.md` (bu klasör). Doctrine `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` §12 (prototype rubric; yalnız prototype kullanılırsa) ve §13 (handoff standardı) COO'nun HEURISTIC kontrol listesidir (D-029 LIMITED); sayısal maddeleri DIAGNOSTIC'tir. Çıktı: `production/.../<video>-production-handoff-<prototype|full>-vN.md`.
 
 ## Ne zaman
@@ -21,7 +23,7 @@ Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygula
 7. **QA:** teslimden önce production Claude `documentary-visual-storytelling` §10 testlerini, ölçülebilir ses kontrollerini (`audio-production.md`) ve **`muted-preview-gate`**'i (grid + brand diversity QA) çalıştırır; REVISE ise teslim etmez.
 7e. **Shorts eki (D-038):** long-form final kilitlendikten sonra `video-launch-os` §25 ile seçilen 0–4 Short adayı handoff'a ek olarak gider (kaynak TC, 9:16 reframe planı, burned-in caption, köprü); Short üretimi long-form release paketinden sonra.
 7d. **Launch hazırlığı (D-035):** full handoff videonun **son 5–20 sn**'sini end-screen aware tasarlar (öğeler için alan; kapanış metniyle çakışmaz) ve **thumbnail hero asset**'ini (kaynak foto veya AI, `video-launch-os` §6) üretim listesine koyar; captions için final VO timing JSON'u teslim edilir.
-7c. **Dynamic Case Ident (D-034):** her handoff TEMPLATE §7c alanlarını doldurur (`intelligence/creative/brand/dynamic-case-ident-system.md`); boş ident alanı = eksik handoff.
+7c. **CASE INTRO / CASE LABEL (D-044, canon `03` §3):** CASE INTRO Golden Master kalibrasyonu (Stage 5) tamamlanana kadar **CASE INTRO üretilmez ve yerine geçici/videoya özel ident tasarlanmaz**; TEMPLATE §7c'de alan `N/A — pre-calibration` yazılır. CASE LABEL yalnız küçük metadata/UI öğesidir (TIC-12, `video-ui-spec-v1.md`). Eski D-034 ident alanları SUPERSEDED.
 7b. **Marka (D-031, canonical D-032):** brand proof asset'leri (`brand-system-v1.md` §N) gelmeden brand retrofit'li handoff yazılmaz. handoff Brand System v1'e bağlıdır: case identity (CASE NNN, case accent), dünya ataması, `EVIDENCE NN` → ledger eşleme tablosu, imza geçişler, font/renk token'ları ve `source-to-visual` tablosu zorunlu bölümdür (TEMPLATE §7b).
 8. **Founder'a soru:** prototype gösterildiğinde yalnız "Bunu izlemeye devam eder miydin?" Mikro edit sorusu sorulmaz.
 9. **Senkron:** handoff repoya yazılır; production PC'ye ulaşması için yerel commit + Founder'ın GitHub Desktop push'u gerekir (`git-and-secrets.md`). Bu adım Founder'a tek cümleyle söylenir.
