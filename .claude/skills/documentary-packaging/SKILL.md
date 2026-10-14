@@ -5,7 +5,7 @@ description: Tam senaryodan önce bir video fikri için dürüst ama güçlü ti
 
 # Documentary Packaging
 
-Kapsam: `Industrial & Technology Autopsies` (N2), faceless, belge-öncelikli belgesel. Girdi: `documentary-virality-gate` sonucu `READY FOR PILOT` olan fikir + kaynak/kanıt notları (örn. `production/pilots/.../P*.md`). Çıktı: packaging değerlendirme dosyası; görsel, senaryo, ses veya render üretilmez.
+Kapsam: The Industrial Casebook (N2 nişi), faceless, belge-öncelikli belgesel. Girdi: kanal fikir değerlendirmesinde (canon `02` §2) PURSUE veya packaging için REVISE olan fikir (virality gate sinyali yalnız girdi) + kaynak/kanıt notları (örn. `production/pilots/.../P*.md`). Çıktı: packaging değerlendirme dosyası; görsel, senaryo, ses veya render üretilmez.
 
 ## Kanıt bağı
 Videonun `documentary-evidence-ledger` kaydı varsa her başlık/thumbnail iddiası oradaki bir satıra bağlanır; yoksa bu skill'in doğruluk sınırları sonradan ledger'a aktarılır.

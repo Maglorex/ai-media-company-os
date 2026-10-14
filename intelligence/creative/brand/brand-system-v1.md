@@ -1,10 +1,12 @@
+> **Kapsam (2026-10-14, D-045):** Bu dosya = **visual identity / static brand system** (fontlar, renk token'ları, dört görsel dünya, case kimliği, anti-klişe yön). **Editorial Motion & Cinematography** (film dili, hareket, geçiş, ritim) = `channels/the-industrial-casebook/canon/05-editorial-motion-and-cinematography.md`. **Kanal yaratıcı yetkisi** = kanal canon'u (`channels/the-industrial-casebook/canon/README.md`). Bu dosyadaki film/anlatı ifadeleri canon ile çelişirse canon kazanır.
+
 # The Industrial Casebook — Brand System v1
 
 > Karar: D-031 → **D-032 (Founder + ChatGPT, 2026-10-13): Brand Direction v1 = CANONICAL.** Bu dosya Company OS'un tek marka yönü kaynağıdır; çelişen eski talimat/şablon geçersizdir. Kendi kanal verimiz (CTR, retention, muted preview sonuçları) geldikçe güncellenir.
 > **Founder-approved visual direction reference (D-033):** onaylanan = 6 yaratıcı yön (ağır dar industrial typography · engineering line character · metal/oxidation material feeling · güçlü konu silueti · disiplinli technical metadata · sade-karakterli premium kompozisyon); **Barlow Condensed ve #C7542B PROVISIONAL**. `reference/founder-approved-visual-direction.md` + görseli. Endüstriyel ağırlık, mühendislik çizgi dili ve atmosfer için ana referans; final logo/template değil. Diğer board denemeleri canonical değil.
 > **Canonical kural:** *Source establishes truth. Visualization establishes understanding.*
 > Renk token'ları ve fontlar (§D–§E) **başlangıç değerleridir**; Founder + ChatGPT brand proof asset'leri (§N) geldiğinde doğrulanır/güncellenir.
-> Bağlayıcı kural: `.claude/rules/brand-and-visual-system.md` · Sahne kararı: `.claude/skills/source-to-visual/SKILL.md` · QA: `.claude/skills/muted-preview-gate/SKILL.md` · Anlatı/görsel grameri: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` · Logo/banner brief: `logo-banner-brief.md`.
+> Bağlayıcı kural: `.claude/rules/brand-and-visual-system.md` · Sahne kararı: `.claude/skills/source-to-visual/SKILL.md` · QA: `.claude/skills/muted-preview-gate/SKILL.md` · Film / motion / anlatı grameri: `channels/the-industrial-casebook/canon/05-editorial-motion-and-cinematography.md` (doctrine v1 HISTORICAL, yetkili değildir) · Logo/banner brief: `logo-banner-brief.md`.
 > **Temel ilke:** Consistency = aynı gramer. Consistency ≠ aynı arka plan / aynı renk filtresi.
 
 ## A. Marka özü
@@ -69,7 +71,7 @@ case numbering · evidence labels · typography hierarchy · metadata style · s
 | **Object Carry** | Hero object sahneler arasında taşınır | Savannah fotoğrafı → izole gemi → rota haritası token'ı → sistem diyagramı | Nesne her durumda tanınır kalır (siluet/kontur sabit) |
 | **Case Tab** | Önemli alt bölüm girişinde kısa dosya sekmesi | `GALVESTON FACILITY` | ≤2 sn, kenarda; title card değil, hikâye durmaz; videoda seyrek |
 | **Source Mark** | Kanıt/alıntı üzerinde kısa, sakin provenance | `GAO · 1970` · `NPS` | Plex Mono, küçük; damga değil |
-Diğer geçişler (cut, dissolve, zoom-through) serbest ama gerekçeli (doctrine §5).
+Diğer geçişler (cut, dissolve, zoom-through) serbest ama gerekçeli (canon `05` §5).
 
 ## I. Per-case visual personality
 Her yeni videoda creative director treatment'ta seçer: **Case Accent** (+ gerekirse **Case Texture/Motif**: ör. P3 için 1960'lar atom çağı teknik çizim motifi — ince orbit çizgisi, dönem teknik broşür çizgi dili). Motif marka sistemini override etmez; yalnız Engineering/Case UI ayrıntılarında ve thumbnail'da yaşar. Amaç: thumbnail'lar birbirine benzemeden aynı kanala ait hissettirmek. Kayıt: `case-register.md`.

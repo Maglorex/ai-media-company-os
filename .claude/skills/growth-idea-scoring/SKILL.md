@@ -1,11 +1,11 @@
 ---
 name: growth-idea-scoring
-description: Video fikirlerini yatırım gözüyle sıralar; talep, rekabet, packaging, retention potansiyeli, kanıt, maliyet ve öğrenme değerine göre puanlar ve üretime girecek fikir için yayın öncesi tahmini kilitler. Bir sonraki video seçilirken, yeni fikir havuza eklenirken veya bir video yayından önce tahmin kaydı gerektiğinde kullan. Viral tahmini yapmaz; karar Founder'dadır.
+description: Video fikirlerini yatırım gözüyle sıralar; talep, rekabet, packaging, retention potansiyeli, kanıt, maliyet ve öğrenme değerine göre puanlar (puan HEURISTIC girdidir; nihai fikir kararı veya production izni değildir — kanal kararı PURSUE / REVISE / KILL, canon D-045) ve üretime girecek fikir için yayın öncesi tahmini kilitler. Bir sonraki video seçilirken, yeni fikir havuza eklenirken veya bir video yayından önce tahmin kaydı gerektiğinde kullan. Viral tahmini yapmaz; karar Founder'dadır.
 ---
 
 # Growth — Fikir Puanlama ve Tahmin Kilidi
 
-> **The Industrial Casebook için (D-045, canon `02-ideas-growth-packaging.md`):** bu skill'in puanları fikir kararının kendisi değil, **HEURISTIC girdidir** (TIC-03). Karar yazılı sekiz alanlı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir; forecast lock (§B) aynen geçerlidir.
+> **The Industrial Casebook için (D-045, canon `02-ideas-growth-packaging.md`):** bu skill'in puanları fikir kararının kendisi değil, **HEURISTIC girdidir** (TIC-03); puan tek başına production izni veremez. Karar yazılı sekiz alanlı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir; forecast lock (§B) aynen geçerlidir.
 
 Sistem tanımı: `intelligence/growth/README.md` · Kriterler: `intelligence/growth/heuristics.md`.
 

@@ -154,3 +154,62 @@ test('kanal kapsamlı SUPERSEDED/HISTORICAL belgeler dosya içinde de işaretli'
   }
   assert.match(read('intelligence/creative/brand/brand-system-v1.md'), /## C\. Intro \/ ident — SUPERSEDED/);
 });
+
+test('compat: Brand System yalnız görsel kimlik; film grameri için doctrine yetkili değil', () => {
+  const b = read('intelligence/creative/brand/brand-system-v1.md');
+  assert.match(b, /visual identity \/ static brand system/);
+  assert.ok(b.includes('channels/the-industrial-casebook/canon/05-editorial-motion-and-cinematography.md'));
+  const bad = b.split('\n').filter((l) => /doctrine/i.test(l) && !/HISTORICAL|yetkili değildir/i.test(l));
+  assert.deepEqual(bad, [], 'brand system cites doctrine as authority');
+});
+
+test('compat: source-to-visual "source bulundu → görsel karar bitti / ilk evet kazanır" taşımıyor', () => {
+  const t = read('.claude/skills/source-to-visual/SKILL.md');
+  assert.ok(!/ilk\s*"?evet[^\n]*kazanır/i.test(t), 'first-yes-wins ordering still present');
+  assert.ok(!/karar sırası \(safe footage/i.test(t), 'description still presents footage→…→AI decision order');
+  for (const need of ['Evidence Anchor', 'Presentation Visual', 'otomatik son çare değildir', 'sunum kararını bitirmez']) assert.ok(t.includes(need), `missing: ${need}`);
+});
+
+test('compat: visual-storytelling "gerçek arşiv varsa AI yok" demiyor', () => {
+  for (const f of ['.claude/skills/documentary-visual-storytelling/SKILL.md', '.claude/skills/documentary-visual-storytelling/VISUAL-LANGUAGE-LIBRARY.md', '.claude/skills/source-to-visual/SKILL.md']) {
+    const t = read(f);
+    assert.ok(!/gerçek arşiv varsa[^\n]*(diye|AI)/i.test(t), `${f}: archive-forbids-AI rule`);
+    assert.ok(!/Arşiv footage\/foto önce; yoksa/i.test(t), `${f}: AI as automatic last resort`);
+  }
+  assert.ok(read('.claude/skills/documentary-visual-storytelling/SKILL.md').includes('TIC-18'));
+});
+
+test('compat: score/gate sonucu tek başına production kararı değil', () => {
+  const gate = read('.claude/skills/documentary-virality-gate/SKILL.md');
+  const score = read('.claude/skills/growth-idea-scoring/SKILL.md');
+  for (const t of [gate, score]) { assert.match(t, /HEURISTIC/); assert.match(t, /PURSUE \/ REVISE \/ KILL/); }
+  assert.match(gate.split('\n').find((l) => l.startsWith('description:')), /karar(ı)? değildir|production izni vermez/);
+  assert.match(score.split('\n').find((l) => l.startsWith('description:')), /production izni değildir/);
+  const prereq = [];
+  for (const f of ['.claude/skills/documentary-packaging/SKILL.md', '.claude/skills/documentary-script/SKILL.md', '.claude/skills/documentary-creative-treatment/SKILL.md']) {
+    for (const l of read(f).split('\n')) if (/(Girdi|Ön koşul)/.test(l) && /READY FOR PILOT/.test(l) && !/girdi\)|yalnız girdi/.test(l)) prereq.push(`${f}: ${l.slice(0, 80)}`);
+  }
+  assert.deepEqual(prereq, [], 'gate outcome used as production prerequisite');
+});
+
+test('compat: aktif skill/kural eski kanal adını güncel kapsam olarak kullanmıyor', () => {
+  const files = [];
+  const walk = (d) => readdirSync(join(ROOT, d), { withFileTypes: true }).forEach((e) => e.isDirectory() ? walk(`${d}/${e.name}`) : files.push(`${d}/${e.name}`));
+  walk('.claude');
+  const hits = files.filter((f) => f.endsWith('.md') && read(f).includes('Industrial & Technology Autopsies'));
+  assert.deepEqual(hits, []);
+  for (const f of ['CLAUDE.md', ...canonFiles.map((x) => `${DIR}/${x}`)]) assert.ok(!read(f).includes('Industrial & Technology Autopsies'), f);
+});
+
+test('compat: superseded prototype/timing dersleri aktif kural gibi okunamaz', () => {
+  const lessons = read('company/lessons.md');
+  const m = lessons.match(/### L-010 —[\s\S]*$/);
+  assert.ok(m, 'L-010 correction record missing');
+  for (const need of ['L-007', 'L-008', 'D-043', 'TIC-26', 'DIAGNOSTIC', 'SUPERSEDED']) assert.ok(m[0].includes(need), `L-010 missing ${need}`);
+  const ids = [...lessons.matchAll(/^### (L-\d{3}) /gm)].map((x) => x[1]);
+  assert.ok(ids.indexOf('L-010') > ids.indexOf('L-008'), 'correction must come after L-008');
+  const cites = [];
+  const walk = (d) => readdirSync(join(ROOT, d), { withFileTypes: true }).forEach((e) => e.isDirectory() ? walk(`${d}/${e.name}`) : (e.name.endsWith('.md') && /(?<![A-Z])L-00[78]\b/.test(read(`${d}/${e.name}`)) && cites.push(`${d}/${e.name}`)));
+  walk('.claude');
+  assert.deepEqual(cites, [], 'active .claude files cite L-007/L-008 as instruction');
+});

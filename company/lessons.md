@@ -77,3 +77,10 @@
 - Öğrenim: Genel izinler (yerel commit serbest, güvenli işi doğrudan yap, Production Autonomy) Founder'ın o oturum için koyduğu açık kısıtı geçersiz kılmaz. "Yararlı dokümantasyon" bir istisna değildir.
 - Güven: Yüksek (doğrudan Founder düzeltmesi)
 - Uygulama: Founder "read-only", "implementation yok", "dosya değiştirme", "commit alma" veya "yalnız Stage N" dediyse kapsam dışı hiçbir dosya oluşturulmaz/değiştirilmez, commit alınmaz; bulgu ve öneri yalnız raporda verilir. Kural: `.claude/rules/governance.md` §5; `founder-approval.md`, `self-repair-and-escalation.md`, `git-and-secrets.md` bu istisnayı taşır.
+
+### L-010 — Düzeltme/statü kaydı: L-007 ve L-008 güncel talimat değildir
+- Tarih: 2026-10-14
+- Kaynak: Company OS v2 Stage 2 (D-043, D-045; kanal canon TIC-26, TIC-28–TIC-30); clean-room kabul testi bulgusu.
+- Öğrenim: L-007 ve L-008 tarihî kayıt olarak aynen kalır, ancak içlerindeki iki uygulama artık geçerli değildir: (1) L-007'deki "her videoda ilk 60–90 sn prototype Founder kapısından geçmeden full production yok" yaklaşımı **D-043 / TIC-26 tarafından SUPERSEDED**'dır — rutin videoda zorunlu prototype yoktur; prototype yalnız kalibrasyon, CASE-SPECIFIC ihtiyaç veya riskli/yeni formatta kullanılır. (2) L-008'deki saniye değerleri (ör. görsel olay aralıkları, sn/beat) **DIAGNOSTIC gözlemdir**; creative threshold, hedef veya PASS/FAIL kuralı değildir (TIC-28–TIC-30; sabit saniye/oran kuralı yok, TIC-29).
+- Güven: Yüksek (Founder kararı D-043, D-045)
+- Uygulama: Hiçbir skill/oturum L-007 veya L-008'i güncel talimat olarak uygulamaz; kanal kuralları için yetkili kaynak kanal canon'udur (`channels/the-industrial-casebook/canon/README.md`). L-007'nin kalıcı kısmı (creative treatment senaryodan önce; her sahnenin bir işi) canon'da TIC-13/TIC-20 ile yaşar.

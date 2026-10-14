@@ -7,7 +7,7 @@ description: Founder onaylı script + evidence ledger + visual plan hazır oldu�
 > Ses üretimi/kurgusu için bağlayıcı kural: `.claude/rules/audio-production.md` (Claude dinleyemez; segment + zaman damgası + ölçüm; kulak kontrolleri yalnız checkpoint'te Founder'da). Kanal sesi ve birincil model: D-021.
 
 
-Kapsam: N2 (Industrial & Technology Autopsies) faceless belgeseller. Ön koşullar: kilitli script, güncel ledger, görsel plan. Çıktı: `production/.../<video>-edit-plan-vN.md`. Founder'a tablo varsayılan olarak gösterilmez (`founder-interface`).
+Kapsam: The Industrial Casebook (N2 nişi) faceless belgeseller. Ön koşullar: kilitli script, güncel ledger, görsel plan. Çıktı: `production/.../<video>-edit-plan-vN.md`. Founder'a tablo varsayılan olarak gösterilmez (`founder-interface`).
 
 ## Zamanlama
 - Süreler sabit kelime/dk varsayımıyla değil, **seçilen anlatıcının ölçülen hızıyla** hesaplanır (voice ledger'daki test üretimi: karakter ÷ saniye). Final VO üretildiğinde zaman kodları gerçek ses dosyasına göre güncellenir.

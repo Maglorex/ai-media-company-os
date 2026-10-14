@@ -19,7 +19,7 @@
 | **Selective kinetic typography** | kritik sayı, kısa alıntı, dönüm noktası, yer/tarih, isim, payoff | Yalnız bu anlar (SKILL §7) | Sürekli altyazı; cümle cümle yazı | Remotion; tek font ailesi | Alıntı birebir, atıflı |
 | **AI-generated illustration** | atmosfer, açıklama, kayıp görselin yerine açıkça illüstratif sahne | SKILL §9 koşulları | Foto-gerçekçi "tarihî kayıt" | ChatGPT (Founder'a hazır prompt) | `AI-GENERATED / ILLUSTRATIVE`; asla kanıt; disclosure riski QA'ya |
 | **Stylized reconstruction** | olayın/yerin kavranması | Kayıt yok, ama doğrulanmış bileşenlerle sade bir yeniden kurgu anlamı güçlendiriyor | Bilinmeyen ayrıntıyı uydurmak | Remotion/AE izometrik vektör, AI blueprint | Ekranda "reconstruction/illustration"; yalnız ledger'daki bileşenler |
-| **Atmospheric establishing visuals** | atmosfer, yer/zaman, bölüm nefesi | Bölüm girişleri, ton değişimi | Uzun, alakasız stock | Arşiv footage/foto önce; yoksa açıkça illüstratif AI | Kısa ve gerekçeli |
+| **Atmospheric establishing visuals** | atmosfer, yer/zaman, bölüm nefesi | Bölüm girişleri, ton değişimi | Uzun, alakasız stock | Sahne ihtiyacına göre arşiv footage/foto veya açıkça illüstratif AI (TIC-18; sıra yok) | Kısa ve gerekçeli |
 
 ## Görsel katman ayrımı (ekranda)
 1. **Arşiv (gerçek):** doğal doku, küçük kaynak etiketi (`SourceLabel`).
