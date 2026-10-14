@@ -9,7 +9,7 @@ Uygulayıcı: `systems-operator` (veya COO doğrudan). Kural: `.claude/rules/sel
 Mekanik taramalar (1–3, 5, 7, 8: var/yok, frontmatter envanteri, referans kontrolü, secret-kalıp, numara sırası) tek görevde `company-file-scanner`'a verilebilir; çelişki değerlendirmesi (4), düzeltme ve durum kararı COO/`systems-operator`'da kalır. Secret eşleşmesinin gerçek secret olup olmadığına scanner değil COO karar verir.
 
 ## 0. Deterministik testler (önce bunlar — D-042)
-`node --test os/tests/` (Node yerleşik test koşucusu; paket yok; Main PC ve Strong PC'de aynı). Kapsam: kernel dosyaları, `.claude/**`'un Git'te takip edilmesi (ör. `git-and-secrets.md`), frontmatter, referanslar, ID sırası, secret biçim taraması, current-state tekliği, active-decisions ↔ decision-log tutarlılığı, katman türetmesi, artifact registry (statü, yol, `superseded_by`), öncelik çözücüsü ve yukarı-yükselme yasağı, migration allowlist. FAIL = durum **Bozuk** veya **Dikkat**; aşağıdaki manuel kontroller testlerin kapsamadığı yorum gerektiren kısımlar içindir.
+`node --test "os/tests/*.test.mjs"` (Node yerleşik test koşucusu; paket yok; Main PC ve Strong PC'de aynı). Kapsam: kernel dosyaları, `.claude/**`'un Git'te takip edilmesi (ör. `git-and-secrets.md`), frontmatter, referanslar, ID sırası, secret biçim taraması, current-state tekliği, active-decisions ↔ decision-log tutarlılığı, katman türetmesi, artifact registry (statü, yol, `superseded_by`), öncelik çözücüsü ve yukarı-yükselme yasağı, migration allowlist. FAIL = durum **Bozuk** veya **Dikkat**; aşağıdaki manuel kontroller testlerin kapsamadığı yorum gerektiren kısımlar içindir.
 Ölçüler (context boyutu, dosya/skill sayısı) yalnız **DIAGNOSTIC** olarak raporlanabilir; hedef veya FAIL nedeni değildir.
 
 ## Kontroller

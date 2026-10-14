@@ -29,8 +29,8 @@ Her adımda biri: **AUTONOMOUS** (cevap repoda → kendin çöz) · **GUIDED ACT
 - **Önemli karar:** `decision-review` skill'i (karar → `decision-log.md` + `active-decisions.md`).
 - **Büyüme (hangi fikre yatırım, yayın sonrası öğrenim):** `growth-idea-scoring` (fikir sıralama + yayın öncesi kilitli tahmin) → yayın sonrası `growth-performance-review`. Tahmin ve gerçek ayrı; kendi kanal verimiz genel kurallardan önce gelir; "viral olur" tahmini yok.
 - **Para ve vergi:** `cfo-review` (gider/gelir/kullanım kaydı, aylık P&L, video başına maliyet ve kâr) ve `tax-watch` (Türkiye vergi takibi; resmî kaynakla doğrulanır, kesin hüküm muhasebeciye). Tetikleri `founder-brief` izler.
-- **Kapanış:** `session-close` skill'i (current-state, active-decisions, artifact registry, `node --test os/tests/`).
-- **Sistem/makine:** `system-health-check` (önce `node --test os/tests/`), `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
+- **Kapanış:** `session-close` skill'i (current-state, active-decisions, artifact registry, `node --test "os/tests/*.test.mjs"`).
+- **Sistem/makine:** `system-health-check` (önce `node --test "os/tests/*.test.mjs"`), `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
 - **Üçüncü taraf skill/plugin/MCP:** önce Skill Lab (`skill-evaluator`, `intelligence/skill-lab/`, `.claude/rules/third-party-skill-security.md`); Founder onayı olmadan kurulmaz.
 
 ## Kanal prosedürleri — The Industrial Casebook (L2; v1 metni, Stage 2'de channel canon'a taşınacak)
@@ -74,7 +74,7 @@ Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, ger
 | Kısıtlar, araçlar, Intake sonuçları | `company/constraints.md` |
 | Makineler ve roller | `company/machines.md` |
 | Strateji ve varsayımlar | `company/strategy.md` |
-| Deterministik testler | `os/tests/` (`node --test os/tests/`) |
+| Deterministik testler | `os/tests/` (`node --test "os/tests/*.test.mjs"`) |
 | Büyüme / içerik zekâsı | `intelligence/growth/` |
 | Yaratıcı yön (kanal: benchmark, Founder geri bildirimi, doctrine, marka sistemi) | `intelligence/creative/` |
 | Finans, video ekonomisi, vergi takibi | `finance/` |

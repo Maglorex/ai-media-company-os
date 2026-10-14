@@ -19,7 +19,7 @@ description: Çalışma oturumunu kapatır; şirket hafızasını, tek güncel d
 6c. **Kullanım verimliliği:** `finance/efficiency/efficiency-log.md`'ye oturum satırı ekle (iş, subagent kullanımı, ana modelin yaptığı mekanik iş). Founder'ın `/usage` ölçümünü hatırlamasını bekleme: yalnız ölçüme değer bir oturumdan sonra (normal iş oturumu, son ölçümden beri en az 2 oturum geçmiş) kapanış notunda tek işlem olarak iste: "Claude Code'da /usage aç ve Session ile Weekly yüzdelerini bana söyle." Her oturumda isteme. 5–10 ölçümlü oturum birikince `finance/efficiency/README.md` §5 değerlendirmesini yap.
 7. **Git:**
    - Founder bu oturum için "read-only / commit alma" dediyse commit **yok**; yalnız önerilen mesaj verilir (governance §5).
-   - Deterministik testleri çalıştır: `node --test os/tests/` — FAIL varsa commit'ten önce düzelt veya kapanış notunda açıkça yaz.
+   - Deterministik testleri çalıştır: `node --test "os/tests/*.test.mjs"` — FAIL varsa commit'ten önce düzelt veya kapanış notunda açıkça yaz.
    - Secret/credential kontrolü yap (`.claude/rules/git-and-secrets.md`).
    - Shell erişimi varsa anlamlı mesajla **yerel commit** oluştur. Push yapma.
    - Shell erişimi yoksa Founder'a commit için önerilen mesajı ver.

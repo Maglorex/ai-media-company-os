@@ -9,7 +9,7 @@ description: Founder sistem/kurulum/hata sorusu sorduğunda ("bu neden çalışm
 1. **Sorunun türünü belirle:** ne yapmalıyım · neden çalışmıyor · hangi bilgisayar · nasıl kurulur · diğer sistem sorusu.
 2. **Önce incele, sonra cevapla.** Türüne göre oku:
    - Ne yapmalıyım → `company/state/current-state.md` ("Bugün sıradaki iş", bekleyen kararlar), `company/state/active-decisions.md`, `company/backlog.md`, `company/goals.md` (gerekirse `founder-brief`).
-   - Neden çalışmıyor → hata/ilgili dosya, `git status -sb`, `.claude/` yapısı; gerekirse `system-health-check` (`node --test os/tests/`).
+   - Neden çalışmıyor → hata/ilgili dosya, `git status -sb`, `.claude/` yapısı; gerekirse `system-health-check` (`node --test "os/tests/*.test.mjs"`).
    - "Bu dosyayı / bu talimatı kullanabilir miyim?" → `company/state/artifact-registry.csv` (yalnız `ACTIVE` talimattır) ve `.claude/rules/governance.md` önceliği.
    - Hangi bilgisayar → `company/machines.md`, `production/tools/README.md`.
    - Nasıl kurulur → `production/tools/README.md`, `company/constraints.md`; resmi kurulum dokümanı gerekiyorsa resmi kaynağı kontrol et.
