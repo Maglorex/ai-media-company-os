@@ -7,7 +7,7 @@
 ## Kurallar
 | Dosya | Kapsam | Sınıf | Katman | Durum | Not |
 |---|---|---|---|---|---|
-| `.claude/rules/governance.md` | company | HARD | L0 | ACTIVE | Sınıflar, öncelik, modlar, lifecycle (D-042) |
+| `.claude/rules/governance.md` | company | — | L1 | ACTIVE | Sınıflar, öncelik, modlar, lifecycle (D-042). HARD değildir (charter §4); L0 HARD kurallarını gevşetemez, kanal/case katmanlarının üstündedir |
 | `.claude/rules/founder-approval.md` | company | HARD | L0 | ACTIVE | Founder'ın costly/external/irreversible yetkisi |
 | `.claude/rules/evidence-and-research.md` | company | HARD | L0 | ACTIVE | Truth/evidence çekirdeği HARD; etiket kullanım biçimi HEURISTIC (bölüm etiketli) |
 | `.claude/rules/git-and-secrets.md` | company | HARD | L0 | ACTIVE | Security; 2026-10-14'ten beri Git'te |

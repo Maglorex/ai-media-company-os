@@ -1,6 +1,6 @@
 # Governance — Kural Sınıfları, Öncelik, Katmanlar, Modlar
 
-> Katman: **L0 — HARD** (bu öncelik sistemi kendisi) · Kapsam: company · Kaynak: Founder Charter 2026-10-14 §11, §15, §19 · D-042.
+> Katman: **L1** — şirket kararı (D-042); HARD değildir (HARD tanımı §1). L0 HARD kurallarını gevşetemez; kanal ve case katmanlarının üstündedir · Kapsam: company · Kaynak: Founder Charter 2026-10-14 §11, §15, §19 · D-042.
 > Makine-okunur karşılığı: `os/precedence.json` + `os/lib/precedence.mjs` (testler: `os/tests/`). Metin ile JSON çelişirse test FAIL verir; ikisi birlikte düzeltilir.
 
 ## 1. Kural sınıfları

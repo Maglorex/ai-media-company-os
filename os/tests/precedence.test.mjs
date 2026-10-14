@@ -88,7 +88,7 @@ test('yalnız ACTIVE artifact talimattır', () => {
   assert.throws(() => artifactUsableAsInstruction('READY'));
 });
 
-test('gerçek kayıtlar: kernel kararı (D-042, L0) P3 case kararını (D-019) yener; kanal kararı başka kanala uygulanmaz', () => {
+test('gerçek kayıtlar: kernel kararı (D-042, L1) P3 case kararını (D-019) yener; kanal kararı başka kanala uygulanmaz', () => {
   const rows = parseTable(read('company/state/active-decisions.md'), '## Aktif kararlar');
   const toRec = (row) => ({ id: row.ID, type: row['Tür'], scope: row.Kapsam, class: row['Sınıf'] === '—' ? undefined : row['Sınıf'], status: row.Durum });
   const get = (id) => toRec(rows.find((x) => x.ID === id));
