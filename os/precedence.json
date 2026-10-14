@@ -1,6 +1,7 @@
 {
   "version": "1",
   "source": ".claude/rules/governance.md §1-§3 (D-042)",
+  "charter": "company/charter.md is not a separate layer: its HARD clauses define L0, its other principles frame L1",
   "classes": ["HARD", "HEURISTIC", "EXPERIMENT", "DIAGNOSTIC", "CASE-SPECIFIC"],
   "types": ["RULE", "DECISION", "STATE"],
   "active_statuses": ["ACTIVE", "LIMITED"],

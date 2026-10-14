@@ -5,7 +5,7 @@ description: Ana Company OS'tan production/render bilgisayarındaki Claude'a gid
 
 # Documentary Production Handoff
 
-Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygulayan: production PC'deki Claude (`production-engineer` rolü). Şablon: `TEMPLATE.md` (bu klasör). Handoff, doctrine `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` §12 COO ön kontrolünü (prototype rubric) ve §13 handoff standardını geçmeden production PC'ye gitmez. Çıktı: `production/.../<video>-production-handoff-<prototype|full>-vN.md`.
+Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygulayan: production PC'deki Claude (`production-engineer` rolü). Şablon: `TEMPLATE.md` (bu klasör). Doctrine `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` §12 (prototype rubric; yalnız prototype kullanılırsa) ve §13 (handoff standardı) COO'nun HEURISTIC kontrol listesidir (D-029 LIMITED); sayısal maddeleri DIAGNOSTIC'tir. Çıktı: `production/.../<video>-production-handoff-<prototype|full>-vN.md`.
 
 ## Ne zaman
 - **Prototype handoff (zorunlu değil — D-043):** yalnız kanal dili kalibrasyonunda, CASE-SPECIFIC kararla veya riskli/yeni videoda HEURISTIC olarak; creative treatment + taslak anlatı hazır olduğunda. Kapsam yalnız ilk ~60–90 sn.

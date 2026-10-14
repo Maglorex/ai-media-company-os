@@ -24,7 +24,7 @@ const STAGE1_ALLOWED = [
   /^\.claude\/agents\/analytics-analyst\.md$/,
   // Stage 1 acceptance düzeltmeleri (Founder 2026-10-14: prototype politikası D-043, kanal sızıntısı D-044)
   /^\.claude\/rules\/documentary-creative-standards\.md$/,
-  /^\.claude\/skills\/(documentary-edit-plan|documentary-production-handoff|documentary-script|documentary-creative-treatment|video-launch-os)\/SKILL\.md$/,
+  /^\.claude\/skills\/(documentary-edit-plan|documentary-production-handoff|documentary-script|documentary-creative-treatment|video-launch-os|source-to-visual)\/SKILL\.md$/,
   /^channels\/the-industrial-casebook\/v1-procedures\.md$/,
 ];
 const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)

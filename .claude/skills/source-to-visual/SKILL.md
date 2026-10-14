@@ -5,7 +5,7 @@ description: Belgesel videoda her önemli anlatı/hikâye beat'i için kaynağı
 
 # Source-to-Visual Pipeline v1
 
-Karar: D-031. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` · `intelligence/creative/brand/brand-system-v1.md` · doctrine v1 (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`) · evidence ledger (kanıt + haklar §C) · `documentary-visual-storytelling`. Uygulayıcı: `documentary-creative-director` / COO. Çıktı: treatment veya handoff içindeki Source-to-Visual tablosu.
+Karar: D-031. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` · `intelligence/creative/brand/brand-system-v1.md` · (HEURISTIC kaynak, binding değil: doctrine v1 `intelligence/creative/doctrine/documentary-production-doctrine-v1.md`, D-029 LIMITED) · evidence ledger (kanıt + haklar §C) · `documentary-visual-storytelling`. Uygulayıcı: `documentary-creative-director` / COO. Çıktı: treatment veya handoff içindeki Source-to-Visual tablosu.
 
 **Canonical kural (D-032):** *Source establishes truth. Visualization establishes understanding.*
 

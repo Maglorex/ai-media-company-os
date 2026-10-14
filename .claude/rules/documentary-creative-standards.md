@@ -10,7 +10,7 @@ paths:
 
 Kaynak: Founder talimatı 2026-10-11 (D-025). P3 tam review kurgusu "voice-over + arşiv fotoğrafı + bilgi kartı + basit pan" hissi verdiği için reddedildi; bu kural bütün belgesel videolar için kalıcıdır. Onay, kanıt ve güvenlik kurallarını zayıflatmaz.
 
-Bağlayıcı yaratıcı taban: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (D-029) + marka/görsel sistem `.claude/rules/brand-and-visual-system.md` (D-031). Bu kural akışı ve kapıyı, doctrine içeriği (anlatı/görsel/motion grameri, anti-pattern, prototype rubric) tanımlar.
+Yaratıcı kaynaklar: Doctrine v1 (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`) **binding canon değildir** — Stage 2'ye kadar araştırma/benchmark ve HEURISTIC kaynak (D-029 LIMITED; sayısal eşikleri DIAGNOSTIC) + marka/görsel sistem `.claude/rules/brand-and-visual-system.md` (D-031). Bu kural akışı tanımlar; doctrine içeriği (anlatı/görsel/motion grameri, anti-pattern, prototype rubric) HEURISTIC girdidir.
 
 ## 1. Akış (her video)
 virality gate → growth puanı → packaging → evidence ledger → **creative treatment** (`documentary-creative-treatment`, `documentary-creative-director`; case accent + `source-to-visual` tablosu) → taslak anlatı → [yalnız prototype kullanılacaksa (D-043): **prototype handoff** (`documentary-production-handoff`) → production PC'de ilk 60–90 sn → **`muted-preview-gate`** → **Founder prototype kapısı**] → senaryo kilidi + tam görsel/edit plan + tam VO → full handoff → full production → bağımsız creative QA → Founder final yaratıcı kapısı ("Ben bunu gerçekten izlemeye devam eder miydim?") → Launch Package (`video-launch-os`) → **`pre-publish-qa`** → Founder launch onayı → yayın → `growth-performance-review`.

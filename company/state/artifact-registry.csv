@@ -5,9 +5,12 @@ CO-DECISIONS,company/state/active-decisions.md,company,active-decisions,2.0,ACTI
 CO-RULES,company/state/rule-registry.md,company,rule-registry,2.0,ACTIVE,,D-042,
 CO-DASHBOARD-V1,dashboards/company.md,company,current-state,1.x,SUPERSEDED,CO-STATE,D-042,Historical snapshot 2026-10-13; not a state source
 CO-PENDING-SYNC-2026-10-10,company/pending-sync/2026-10-10-growth-finance.md,company,sync-note,1,HISTORICAL,,D-020,Processed 2026-10-10
+CH-TIC-V1-PROCEDURES,channels/the-industrial-casebook/v1-procedures.md,channel:the-industrial-casebook,channel-procedures,1,ACTIVE,,D-042;D-043;D-044,v1 channel procedures moved from CLAUDE.md (L2); limits in active-decisions; to be SUPERSEDED by Stage 2 channel canon
+CH-TIC-README,channels/the-industrial-casebook/README.md,channel:the-industrial-casebook,channel-record,1,ACTIVE,,D-037,Channel record (no credentials)
+CO-CHANNELS-INDEX,channels/README.md,company,channels-index,1,ACTIVE,,D-002,Channel index; new channel needs Founder approval
 CO-OSV2-DRAFT-CHARTER,git:draft/os-v2-phase1-plan:company/os-v2/FOUNDER-CHARTER.md,company,charter,draft,DRAFT,,D-042,Non-canonical draft (7354fb5; created without approval - L-009); source text for Stage 2 channel canon (sections 2-10)
 CO-OSV2-DRAFT-PLAN,git:draft/os-v2-phase1-plan:company/os-v2/MIGRATION-PLAN.md,company,migration-plan,draft,HISTORICAL,,D-042,Replaced by Founder-approved revised plan (chat 2026-10-14; summarized in D-042)
-CH-TIC-DOCTRINE-V1,intelligence/creative/doctrine/documentary-production-doctrine-v1.md,channel:the-industrial-casebook,doctrine,1,ACTIVE,,D-029,LIMITED by D-029 row: numeric thresholds DIAGNOSTIC; Stage 2 reclassification
+CH-TIC-DOCTRINE-V1,intelligence/creative/doctrine/documentary-production-doctrine-v1.md,channel:the-industrial-casebook,doctrine,1,HISTORICAL,,D-029,Research/benchmark and HEURISTIC source only (D-029 LIMITED; L5); not binding creative canon; numeric thresholds DIAGNOSTIC; items classified in Stage 2
 CH-TIC-BENCHMARKS-V01,intelligence/creative/documentary-style-benchmarks.md,channel:the-industrial-casebook,benchmark,0.1,HISTORICAL,,D-029,Historical reference matrix
 CH-TIC-BRAND-V1,intelligence/creative/brand/brand-system-v1.md,channel:the-industrial-casebook,brand-system,1,ACTIVE,,D-031;D-032,Intro/ident sections limited (active-decisions D-031)
 CH-TIC-UI-SPEC-V1,intelligence/creative/brand/video-ui-spec-v1.md,channel:the-industrial-casebook,ui-spec,1,ACTIVE,,D-034,CASE label spec (CASE LABEL is not CASE INTRO)

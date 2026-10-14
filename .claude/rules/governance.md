@@ -25,6 +25,7 @@
 | **L3** | Active video/case state | `current-state.md` ve case durum kayıtları |
 | **L4** | Case-specific decisions | CASE-SPECIFIC sınıfı kararlar |
 | **L5** | Heuristics / experiments / diagnostics | Sınıfı HEURISTIC, EXPERIMENT veya DIAGNOSTIC olan her kayıt (hangi kapsamda olursa olsun) |
+`company/charter.md` ayrı bir katman değildir: HARD maddeleri L0'ı tanımlar, diğer ilkeleri L1 şirket ilkeleri/kararları için çerçevedir.
 Çözüm algoritması (`resolve()`):
 1. Yalnız **aktif** (`ACTIVE`/`LIMITED`) ve bağlama **uygulanabilir** kayıtlar alınır: kapsam `company`, ya da `channel:<bu kanal>`, ya da `case:<bu case>`. Başka kanalın/case'in kaydı uygulanmaz.
 2. DIAGNOSTIC kayıtlar kazanamaz; yalnız bilgi verir. Yalnız DIAGNOSTIC kaldıysa sonuç `DIAGNOSTIC_ONLY` (karar yok).

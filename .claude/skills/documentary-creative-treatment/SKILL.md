@@ -5,7 +5,7 @@ description: Packaging ve evidence ledger hazır olduğunda, senaryo kilitlenmed
 
 # Documentary Creative Treatment
 
-Uygulayıcı: `documentary-creative-director` (ana model). Bağlayıcı: `.claude/rules/documentary-creative-standards.md`, `documentary-visual-storytelling`. Girdi: onaylı packaging, evidence ledger, growth kaydı, **Doctrine v1** (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`, bağlayıcı yaratıcı taban) + benchmark (`intelligence/creative/documentary-style-benchmarks.md`), CF geri bildirim kaydı. Çıktı: `production/.../<video>-creative-treatment-vN.md`.
+Uygulayıcı: `documentary-creative-director` (ana model). Bağlayıcı: `.claude/rules/documentary-creative-standards.md`, `documentary-visual-storytelling`. Girdi: onaylı packaging, evidence ledger, growth kaydı, **Doctrine v1** (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`; HEURISTIC araştırma/benchmark kaynağı — D-029 LIMITED, binding canon değil) + benchmark (`intelligence/creative/documentary-style-benchmarks.md`), CF geri bildirim kaydı. Çıktı: `production/.../<video>-creative-treatment-vN.md`.
 
 ## 1. Hook-first story system
 **Varsayılan düşünme modeli:** çatışma/paradoks → soru → seçici bağlam → kanıt → tırmanma → payoff.

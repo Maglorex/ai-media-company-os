@@ -1,7 +1,7 @@
 # AI MEDIA COMPANY — Company Charter
 
 > Kaynak: Founder Charter, 2026-10-14 (Company OS v2). Bu dosya yalnız **şirket seviyesindeki** ilkeleri taşır. Değişiklik yalnız Founder.
-> Katman: Charter, L0–L1'in üstündeki çerçevedir; kural sınıfları ve öncelik: `.claude/rules/governance.md` + `os/precedence.json`.
+> Öncelikteki yeri: Charter **ayrı bir öncelik katmanı değildir.** HARD maddeleri (§3, §4) **L0 HARD company boundaries**'i tanımlar; diğer ilkeleri **L1 company principles/decisions** için çerçevedir. Kural sınıfları ve öncelik: `.claude/rules/governance.md` §2 + `os/precedence.json`.
 > Kanalların yaratıcı kuralları (izleyici vaadi, açılış, görsel/motion/ses dili, intro vb.) bu dosyada **yer almaz**; her kanalın kendi channel canon'unda (`channels/<kanal>/`) yaşar ve kanal kapsamlı kararlarla (`company/state/active-decisions.md`, kapsam `channel:<id>`) yönetilir.
 
 ## 1. Amaç

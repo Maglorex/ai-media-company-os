@@ -14,7 +14,7 @@
 | D-004 | Company OS v0.2 iskeleti | DECISION | company | — | L1 | LIMITED | Kernel v2'ye geçiyor (D-042); v0.2 dosyaları çalışır, çelişkide v2 kernel kazanır |
 | D-005 | Company OS v0.3 self-management | DECISION | company | — | L1 | LIMITED | Aynı; self-repair kuralı v2 modlarıyla genişletildi (D-042) |
 | D-007 | İlk kanal nişi N2 — Industrial & Technology Autopsies | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Kanal adı: The Industrial Casebook (D-037) |
-| D-008 | Pilot taslak testi (EXP-001); P3 ilk tam pilot | DECISION | company | EXPERIMENT | L5 | ACTIVE | EXP-001 açık; Faz 2 OS v2 migration süresince durdurulmuş (current-state) |
+| D-008 | Pilot taslak testi (EXP-001); P3 ilk tam pilot | DECISION | channel:the-industrial-casebook | EXPERIMENT | L5 | ACTIVE | Kanalın N2 pilot deneyi (P1/P2/P3 karşılaştırması); P3'e özgü kısımlar case:VID-001 kararlarıyla (D-012…) yürür; Faz 2 OS v2 migration süresince durdurulmuş (current-state) |
 | D-009 | Skill Lab v0.1 | DECISION | company | — | L1 | ACTIVE | Güvenlik kuralı HARD: `third-party-skill-security.md` |
 | D-010 | SL-002 değerlendirmesi | DECISION | company | — | L1 | ACTIVE | Kalan 3 uyarlama ayrı Founder onayı bekliyor |
 | D-011 | Fikir kapıları, Founder arayüzü, dil kuralı | DECISION | company | — | L1 | LIMITED | Dil kuralı ve Founder arayüzü aktif; fikir kapısı skill'leri v2 pipeline aşamasında yeniden yazılacak (story-viability) |
@@ -32,7 +32,7 @@
 | D-024 | Müzik/SFX sistemi | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Lisans/hak kuralları HARD (rights) |
 | D-025 | Creative mimari + prototype kapısı | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | "Değişmez/zorunlu prototype kapısı" D-043 ile kaldırıldı (prototype yalnız kalibrasyon, CASE-SPECIFIC veya HEURISTIC); creative treatment katmanı ve Founder tek sorusu aktif; production Claude'un kendi creative QA/teslim kararı charter §9 ile geçersiz |
 | D-026 | P3 prototype kalibrasyonu | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | LIMITED | 1964 film kullanılmaz (aktif, hak); ≤700 kredi VO onayı D-028 ile askıya alındı, opening VO D-030'da üretildi |
-| D-029 | Documentary Production Doctrine v1 | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Sayısal eşikler DIAGNOSTIC (governance §1); §12 prototype rubric yalnız prototype kullanıldığında (D-043); maddeler Stage 2'de sınıflanarak channel canon'a taşınacak |
+| D-029 | Documentary Production Doctrine v1 | DECISION | channel:the-industrial-casebook | HEURISTIC | L5 | LIMITED | Doctrine v1 binding yaratıcı taban olarak uygulanmaz: Stage 2 channel canon'u kurulana kadar yalnız araştırma/benchmark ve HEURISTIC kaynak (artifact HISTORICAL); sayısal eşikler DIAGNOSTIC; §12 prototype rubric yalnız prototype kullanıldığında (D-043); maddeler Stage 2'de sınıflanır |
 | D-030 | P3 opening v2 anlatımı | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | ACTIVE | Narration metni geçerli; prototype v2 render'ı tarihsel (D-039) |
 | D-031 | Brand System v1 + Source-to-Visual + Muted Preview Gate | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Token/font/dünyalar aktif. Uygulanmaz: "ilk evet kazanır" sırasının kanıt=sunum gibi kullanımı (charter §3); muted gate creative PASS veremez (charter §9; DIAGNOSTIC girdi); intro/ident yaklaşımı D-044 ile daraltıldı |
 | D-032 | Brand Direction v1 canonical | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Intro yaklaşımı D-044 ile daraltıldı |
@@ -42,7 +42,7 @@
 | D-036 | Launch OS tamamlama: rights ledger, Copyright/Release Gate | DECISION | company | — | L1 | ACTIVE | Rights ve Copyright Gate HARD |
 | D-037 | YouTube kanalı oluşturuldu | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Studio yetenekleri NEEDS_VERIFICATION |
 | D-038 | Long-form'dan Shorts türevleri | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | |
-| D-039 | Render PC P3 commit'leri arşivlendi; main canonical | DECISION | company | — | L1 | ACTIVE | Arşiv branch'i main'e dönmez |
+| D-039 | Render PC P3 commit'leri arşivlendi; main canonical | DECISION | company | — | L1 | ACTIVE | Şirket kapsamı gerekçesi: kararın konusu repo/branch canonical düzeni (iki makine senkronu); P3 içeriği yalnız arşivlenen materyal. Arşiv branch'i main'e dönmez |
 | D-040 | P3 kapsamlı unfreeze | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | LIMITED | Yasak listesi aktif; izin verilen işler OS v2 migration'da duruyor (D-042) |
 | D-041 | P3 proof'lar PROVISIONAL PASS; Handoff v3 | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | LIMITED | Yoğunluk oranları DIAGNOSTIC; handoff v3 FROZEN (v1 formatı; Strong PC'ye v2 handoff ile gider); motion prototype kararı OS v2 sonrası |
 | D-042 | Company OS v2 governance kernel (Stage 1) | DECISION | company | — | L1 | ACTIVE | `os-v2-migration` dalında; `main`'e merge Founder kabulüyle. Kernel kararı HARD değildir (charter §4 HARD tanımı); içindeki HARD maddeler (secret, Founder yetkisi, kanıt) kendi L0 kural dosyalarındadır |

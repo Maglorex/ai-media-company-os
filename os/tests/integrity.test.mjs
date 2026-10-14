@@ -72,8 +72,9 @@ test('rule registry: her kural dosyası tam bir kez, geçerli kapsam/sınıf/kat
   for (const row of rows) {
     const cls = row['Sınıf'];
     scopeKind(row.Kapsam);
-    if (cls === 'MIXED') assert.equal(row.Durum, 'PENDING-STAGE-2', `MIXED only allowed while pending: ${row.Dosya}`);
-    const rec = { type: 'RULE', scope: row.Kapsam, class: cls === '—' || cls === 'MIXED' ? undefined : cls };
+    assert.ok(cls === '—' || config.classes.includes(cls), `undefined class ${cls}: ${row.Dosya}`);
+    assert.ok(config.artifact_statuses.includes(row.Durum), `undefined lifecycle status ${row.Durum}: ${row.Dosya}`);
+    const rec = { type: 'RULE', scope: row.Kapsam, class: cls === '—' ? undefined : cls };
     assert.equal(row.Katman, deriveLayer(rec), `layer mismatch: ${row.Dosya}`);
   }
 });
@@ -131,7 +132,7 @@ test('artifact registry: statü, yol, superseded_by, tek ACTIVE', () => {
 
 test('case/kanal yaratıcı dosyaları registry\'de (kayıtsız dosya talimat olamaz)', () => {
   const registered = new Set(parseCsv(read('company/state/artifact-registry.csv')).map((x) => x.path));
-  const dirs = ['production/pilots/2026-10-n2-pilot-test/', 'intelligence/creative/brand/', 'intelligence/creative/doctrine/'];
+  const dirs = ['production/pilots/2026-10-n2-pilot-test/', 'intelligence/creative/brand/', 'intelligence/creative/doctrine/', 'channels/'];
   const extra = ['intelligence/creative/README.md', 'intelligence/creative/creative-feedback-log.md', 'intelligence/creative/documentary-style-benchmarks.md'];
   const required = [...tracked].filter((f) => dirs.some((d) => f.startsWith(d))).concat(extra);
   const missing = required.filter((f) => !registered.has(f));
@@ -211,4 +212,23 @@ test('zorunlu/değişmez prototype kuralı ACTIVE talimatlarda yok (D-043)', () 
   const hits = [];
   for (const f of files) for (const b of bad) if (b.test(read(f))) hits.push(`${f} ~ ${b}`);
   assert.deepEqual(hits, []);
+});
+
+test('Stage 1 governance tutarlılığı: charter katman değil; P3 kararı şirket kapsamında değil; doctrine binding değil', () => {
+  const charter = read('company/charter.md');
+  assert.ok(charter.includes('**ayrı bir öncelik katmanı değildir.**'), 'charter must state it is not a layer');
+  assert.ok(!/üstündeki çerçeve/.test(charter), 'charter must not claim a layer above L0/L1');
+  assert.ok(read('.claude/rules/governance.md').includes('`company/charter.md` ayrı bir katman değildir'), 'governance must state charter mapping');
+  assert.match(config.charter, /not a separate layer/);
+  const active = parseTable(read('company/state/active-decisions.md'), '## Aktif kararlar');
+  const leaks = active.filter((r) => r.Kapsam === 'company' && /\bP3\b|VID-001/.test(r['Başlık']) && !r['Sınır / not'].includes('Şirket kapsamı gerekçesi'));
+  assert.deepEqual(leaks.map((r) => r.ID), [], 'P3-specific decision at company scope');
+  const d029 = active.find((r) => r.ID === 'D-029');
+  assert.equal(d029['Sınıf'], 'HEURISTIC');
+  assert.equal(d029.Durum, 'LIMITED');
+  const doctrine = parseCsv(read('company/state/artifact-registry.csv')).find((a) => a.artifact_id === 'CH-TIC-DOCTRINE-V1');
+  assert.notEqual(doctrine.status, 'ACTIVE', 'doctrine v1 must not be an ACTIVE instruction');
+  const binding = [...tracked].filter((f) => (f.startsWith('.claude/') || f.startsWith('channels/') || f === 'CLAUDE.md') && f.endsWith('.md'))
+    .filter((f) => /(Bağlayıcı yaratıcı taban|bağlayıcı yaratıcı taban)/.test(read(f)) || /Handoff, doctrine .* geçmeden production PC'ye gitmez/.test(read(f)));
+  assert.deepEqual(binding, [], 'files still describe doctrine v1 as binding');
 });
