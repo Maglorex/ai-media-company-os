@@ -9,6 +9,9 @@
 *credential*
 client_secret*.json
 token*.json
+# Tek, açık istisna: kural dosyası secret değildir ve takip edilmelidir (D-042, L-009).
+# Genel `!.claude/**` istisnası bilinçli olarak YOK; secret adlı başka dosyalar yine yok sayılır.
+!.claude/rules/git-and-secrets.md
 
 # Büyük medya / render çıktıları
 *.mp4
