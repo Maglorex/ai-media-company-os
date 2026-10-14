@@ -34,7 +34,7 @@ Her adımda biri: **AUTONOMOUS** (cevap repoda → kendin çöz) · **GUIDED ACT
 - **Üçüncü taraf skill/plugin/MCP:** önce Skill Lab (`skill-evaluator`, `intelligence/skill-lab/`, `.claude/rules/third-party-skill-security.md`); Founder onayı olmadan kurulmaz.
 
 ## Kanallar
-Kanalın yaratıcı kuralları ve video prosedürleri şirket katmanında değil, kanal klasöründedir. The Industrial Casebook işi (fikir, packaging, kanıt, senaryo, görsel, ses, handoff, yayın) yapmadan önce oku: `channels/the-industrial-casebook/v1-procedures.md` (L2; v1, Stage 2'de channel canon'a dönüşür) ve `channels/the-industrial-casebook/README.md`.
+Kanalın yaratıcı kuralları ve video prosedürleri şirket katmanında değil, kanal klasöründedir. The Industrial Casebook işi (fikir, packaging, kanıt, senaryo, görsel, ses, handoff, yayın) yapmadan önce oku: `channels/the-industrial-casebook/canon/README.md` (L2 channel canon; tek yetkili kanal kaynağı, D-045) ve `channels/the-industrial-casebook/README.md`.
 
 ## Founder onayı
 Para harcamak, içerik yayınlamak, hesap ayarlarında önemli değişiklik, geri döndürülmesi zor dış işlemler, remote git işlemleri ve stratejik yön değişikliği **açık Founder onayı** gerektirir. Klasör içi çalışma ve yerel commit gerektirmez — Founder o oturum için açık kısıt koymadıysa. Ayrıntı: `.claude/rules/founder-approval.md` (L0 HARD).

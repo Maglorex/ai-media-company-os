@@ -2,39 +2,18 @@
 paths:
   - "production/**"
   - "intelligence/creative/**"
+  - "channels/the-industrial-casebook/**"
   - ".claude/skills/documentary-*/**"
   - ".claude/agents/documentary-creative-director.md"
 ---
 
-# Documentary Creative Standartları
+# The Industrial Casebook — yaratıcı kurallar: canon yükleyicisi
 
-Kaynak: Founder talimatı 2026-10-11 (D-025). P3 tam review kurgusu "voice-over + arşiv fotoğrafı + bilgi kartı + basit pan" hissi verdiği için reddedildi; bu kural bütün belgesel videolar için kalıcıdır. Onay, kanıt ve güvenlik kurallarını zayıflatmaz.
+> Katman: **L2** · Kapsam: `channel:the-industrial-casebook` · D-045 (Stage 2). Başka kanala uygulanmaz.
 
-Yaratıcı kaynaklar: Doctrine v1 (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`) **binding canon değildir** — Stage 2'ye kadar araştırma/benchmark ve HEURISTIC kaynak (D-029 LIMITED; sayısal eşikleri DIAGNOSTIC) + marka/görsel sistem `.claude/rules/brand-and-visual-system.md` (D-031). Bu kural akışı tanımlar; doctrine içeriği (anlatı/görsel/motion grameri, anti-pattern, prototype rubric) HEURISTIC girdidir.
+The Industrial Casebook için yaratıcı ve growth kurallarının **tek yetkili kaynağı** kanal canon'udur:
+**`channels/the-industrial-casebook/canon/README.md`** (dosya haritası, bağlayıcılık, kural kaydı `07-rule-register.md`, reddedilen kararlar `08-rejected-decisions.md`).
 
-## 1. Akış (her video)
-virality gate → growth puanı → packaging → evidence ledger → **creative treatment** (`documentary-creative-treatment`, `documentary-creative-director`; case accent + `source-to-visual` tablosu) → taslak anlatı → [yalnız prototype kullanılacaksa (D-043): **prototype handoff** (`documentary-production-handoff`) → production PC'de ilk 60–90 sn → **`muted-preview-gate`** → **Founder prototype kapısı**] → senaryo kilidi + tam görsel/edit plan + tam VO → full handoff → full production → bağımsız creative QA → Founder final yaratıcı kapısı ("Ben bunu gerçekten izlemeye devam eder miydim?") → Launch Package (`video-launch-os`) → **`pre-publish-qa`** → Founder launch onayı → yayın → `growth-performance-review`.
-Creative treatment olmadan senaryo kilitlenmez. Prototype **zorunlu değildir** (D-043): kanal dili kalibre edilirken, CASE-SPECIFIC kararla veya riskli/yeni videoda HEURISTIC olarak kullanılır; kullanılmadıysa full handoff doğrudan senaryo kilidinden sonra gelir.
+Bu kanalda yaratıcı iş (fikir, packaging, treatment, senaryo, görsel/sahne planı, handoff, QA) yapmadan önce canon README'yi ve ilgili bölümü oku. Skill prosedürleri canon'a tabidir; çelişkide canon kazanır. Şirket HARD kuralları (`.claude/rules/`) her zaman canon'un üstündedir.
 
-## 2. Prototype kapısı — yalnız kullanıldığında (D-043; HEURISTIC / CASE-SPECIFIC, zorunlu değil)
-- Ön koşul: araştırma yeterli · evidence ledger temiz · packaging yönü hazır · taslak anlatı (en az ilk 90 sn VO metni + tüm videonun yapısı) hazır.
-- Production PC yalnız ilk ~60–90 sn'yi **neredeyse final kalitede** üretir: gerçek anlatıcı, gerçek görsel dil, arşiv/grafik, yaklaşık müzik yönü, gerçek kurgu temposu. Taslak kart, placeholder ses veya "sonra güzelleşecek" sahne prototype sayılmaz.
-- Founder'a tek soru: **"Bunu izlemeye devam eder miydin?"** (Evet / Hayır / Emin değilim + istersen tek cümle neden). Mikro edit kararı sorulmaz.
-- Prototype kullanılmadıysa bu bölüm uygulanmaz; Founder'ın yaratıcı sorusu final videoda sorulur (charter §9).
-- Evet → full production. Hayır/Emin değilim → creative director teşhis eder (§4), revize prototype. İki prototype üst üste geçemezse sorun fikirde olabilir: fikir growth/virality açısından yeniden değerlendirilir, devam/bırak kararı Founder'a tek öneriyle gelir.
-- Prototype için ses kredisi ve diğer harcamalar `founder-approval.md`'ye tabidir (tek, tavanlı onay).
-
-## 3. Görsel anlatım tabanı
-- Her sahnenin bir işi vardır (yeni bilgi, merak, gerilim, karşılaştırma, nedensellik, ölçek, yer/zaman, kanıt, atmosfer, payoff). Yalnız anlatıcının söylediği nesneyi göstermek iş değildir.
-- "Fotoğraf + yavaş zoom/pan + tam ekran bilgi kartı" varsayılan çözüm değildir. Ayrıntı: `documentary-visual-storytelling`.
-- Görsel değişim = yeni bilgi veya yeni bakış açısı. Sabit "her X saniyede kesme" kuralı yok; ama bilgisini vermiş görsel durum yeni bir şey katmadan ekranda kalmaz.
-- Title/thumbnail'ın sattığı çatışma veya merak videonun erken bölümünde görünür olur; bağlam otomatik olarak başa konmaz.
-- AI görsel hiçbir zaman arşiv kanıtı gibi gösterilmez; gerçek olayın foto-gerçekçi yeniden üretimi Release Gate G-11'de (`pre-publish-qa`) disclosure açısından değerlendirilir.
-- Arşivde bulunmak telif güvenliği demek değildir; her footage evidence/rights ledger'dan geçer. Hakkı açıkça doğrulanmamış materyal prototype'ta da kullanılmaz (D-026).
-- YouTube closed captions her videoda hazırlanır; sürekli hardcoded altyazı varsayılan değildir.
-
-## 4. Öğrenme döngüsü
-Founder prototype veya final videoda bir sorun işaretlediğinde önce sorulur: **Bu yalnız bu videonun sorunu mu, yoksa production sisteminin sorunu mu?**
-- Kayıt: `intelligence/creative/creative-feedback-log.md` (CF-XXX).
-- Sistem sorunuysa video tek başına düzeltilmez; ilgili skill/rule/benchmark aynı turda güncellenir ve CF kaydına nereye işlendiği yazılır.
-- Tek örnekten gelen zevk yorumu hemen evrensel kural olmaz: önce "gözlem" olarak kaydedilir; tekrar ederse, benchmark ilkesiyle örtüşürse veya kendi kanal verimiz desteklerse kurala taşınır. Founder açıkça "bu kural olsun" derse doğrudan kural olur.
+Bu dosyanın v1 metni (2026-10-11, D-025) canon'a eşlendi (`channels/the-industrial-casebook/canon/09-v1-source-map.md`) ve git geçmişinde durur: `git show pre-v2-checkpoint:.claude/rules/documentary-creative-standards.md`.

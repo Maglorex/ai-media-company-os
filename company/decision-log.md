@@ -422,3 +422,13 @@
 - Gerekçe / kanıt: Founder Charter kanal bölümü (kaynak metin: `draft/os-v2-phase1-plan` dalı, non-canonical draft içinde korunuyor; Stage 2'de channel canon'a işlenecek).
 - Geri dönüş koşulu: Kalibrasyonda Founder'ın Golden Master seçimi veya kanal verisi skeleton'ın değişmesini gerektirirse yeni kanal kararı.
 - Durum: Aktif.
+
+### D-045 — The Industrial Casebook Channel Canon v2 (Stage 2)
+- Tarih: 2026-10-14
+- Karar veren: Founder (Stage 2 talimatı 2026-10-14) · Uygulama: COO
+- Kapsam: `channel:the-industrial-casebook` (L2). Şirket kuralı değildir; başka kanala uygulanmaz.
+- Bağlam: Kanalın yaratıcı ve growth kuralları dağınıktı (creative-standards ve brand-and-visual-system kuralları, doctrine v1, v1 prosedürleri, source-to-visual sırası, ident sistemi) ve kısmen sayısal eşiklere, zorunlu prototype'a ve "kanıt = görsel" mantığına dayanıyordu.
+- Karar: (1) `channels/the-industrial-casebook/canon/` = kanalın tek yetkili yaratıcı/growth kaynağı: izleyici vaadi ve core principle; million-view mindset, yazılı sekiz alanlı fikir değerlendirmesi (pseudo-score yok; PURSUE/REVISE/KILL), packaging = story; merkezi soru zorunlu, açılış mantığı HEURISTIC, generic rhetorical question yasak; CASE INTRO ≠ CASE LABEL (D-044); Anti-PowerPoint (HEURISTIC); Evidence Anchor ≠ Presentation Visual; önce sahne sonra araç; AI rolü (kanıt değil; "source varsa AI yok" kuralı yok); motion/transition anlamı; ses (HEURISTIC); UI yalnız gerektiğinde, Brand System v1 kimliği korunur; ayrı Editorial Motion & Cinematography System; prototype politikası (D-043); Stage 5 Golden/Anti-reference kategorileri; öğrenme (benchmark HEURISTIC/EXPERIMENT, metrikler DIAGNOSTIC, first-party öncelikli); sabit yüzde/saniye/oran kuralı yok. (2) Kurallar `07-rule-register.md`'de TIC-01…TIC-33 olarak sınıflı; reddedilen tipik kararlar `08`; eski kaynak eşlemesi `09`. (3) `documentary-creative-standards.md` ve `brand-and-visual-system.md` canon yükleyicisine çevrildi (v1 metinleri git geçmişinde); `v1-procedures.md` ve ident sistemi SUPERSEDED; doctrine v1 ve benchmark HISTORICAL kaynak. (4) D-029 ve D-034 bu kararla yerini canon'a bıraktı.
+- Gerekçe / kanıt: Founder Charter 2026-10-14 kanal bölümü ve Stage 2 talimatı. [VARSAYIM] Tek ve sınıflı canon, oturumlar arası tutarsızlığı ve sayısal eşiklerin hedefe dönüşmesini önler; kalibrasyon (Stage 5) ve first-party veriyle test edilir.
+- Geri dönüş koşulu: Stage 5 kalibrasyonu veya first-party veri bir canon kuralını çürütürse yalnız Founder kararıyla ilgili TIC kuralı değişir (canon README "Canon nasıl değişir").
+- Durum: Aktif — `os-v2-migration` dalında.

@@ -224,8 +224,11 @@ test('Stage 1 governance tutarlılığı: charter katman değil; P3 kararı şir
   const leaks = active.filter((r) => r.Kapsam === 'company' && /\bP3\b|VID-001/.test(r['Başlık']) && !r['Sınır / not'].includes('Şirket kapsamı gerekçesi'));
   assert.deepEqual(leaks.map((r) => r.ID), [], 'P3-specific decision at company scope');
   const d029 = active.find((r) => r.ID === 'D-029');
-  assert.equal(d029['Sınıf'], 'HEURISTIC');
-  assert.equal(d029.Durum, 'LIMITED');
+  if (d029) { assert.equal(d029['Sınıf'], 'HEURISTIC'); assert.equal(d029.Durum, 'LIMITED'); }
+  else {
+    const gone = parseTable(read('company/state/active-decisions.md'), '## Aktif olmayan kararlar (yalnız tarih)').find((r) => r.ID === 'D-029');
+    assert.ok(gone && /D-045/.test(gone.Yerine), 'D-029 must be LIMITED/HEURISTIC or replaced by the channel canon (D-045)');
+  }
   const doctrine = parseCsv(read('company/state/artifact-registry.csv')).find((a) => a.artifact_id === 'CH-TIC-DOCTRINE-V1');
   assert.notEqual(doctrine.status, 'ACTIVE', 'doctrine v1 must not be an ACTIVE instruction');
   const binding = [...tracked].filter((f) => (f.startsWith('.claude/') || f.startsWith('channels/') || f === 'CLAUDE.md') && f.endsWith('.md'))

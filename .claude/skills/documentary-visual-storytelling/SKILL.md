@@ -5,6 +5,8 @@ description: Bütün belgesel videoları (N2 / Industrial Casebook) için kalıc
 
 # Documentary Visual Storytelling
 
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. §9'daki "gerçek arşiv varsa sırf daha güzel diye AI yok" maddesi TIC-18'in beş ölçütüyle (production value dahil) okunur; teşhis testleri (§10) DIAGNOSTIC'tir. Film dili: canon `05-editorial-motion-and-cinematography.md`.
+
 Kapsam: bütün faceless belgesel videolar. Bağlayıcı taban: `.claude/rules/documentary-creative-standards.md`. Kanıt/haklar: `documentary-evidence-ledger`. Doctrine: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (anlatı/görsel/motion grameri, anti-pattern, prototype rubric). Benchmark: `intelligence/creative/documentary-style-benchmarks.md`. Kütüphane ayrıntısı: `VISUAL-LANGUAGE-LIBRARY.md` (bu klasör). **Marka ve sahne kararı (D-031):** `intelligence/creative/brand/brand-system-v1.md` · `source-to-visual` (karar sırası, AI politikası, hazır prompt şablonu — bu skill'in §9'undan önce gelir) · `muted-preview-gate`.
 
 ## 1. Sahne işi kuralı

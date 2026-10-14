@@ -3,7 +3,7 @@
 > Tarih kaydı değil, **çalışma görünümü**dür. Kararların tam metni ve geçmişi: `company/decision-log.md` (append-only; silinmez, yeniden yazılmaz).
 > Katman/sınıf/kapsam: `.claude/rules/governance.md` §1–§3, `os/precedence.json`. "Katman" sütunu türetmeyle aynı olmak zorundadır (test). Sınıf boşsa (`—`) kayıt, katmanında bağlayıcı bir Founder/şirket kararıdır.
 > Durum: `ACTIVE` (aynen geçerli) · `LIMITED` (geçerli; "Sınır" sütunundaki kısım uygulanmaz veya sonraki kayıtla daraltıldı).
-> Güncelleme: yeni D- kararı alındığı turda burası da güncellenir (`company-memory.md`). Son güncelleme: 2026-10-14 (D-042, D-043, D-044).
+> Güncelleme: yeni D- kararı alındığı turda burası da güncellenir (`company-memory.md`). Son güncelleme: 2026-10-14 (D-042 … D-045).
 
 ## Aktif kararlar
 | ID | Başlık | Tür | Kapsam | Sınıf | Katman | Durum | Sınır / not |
@@ -30,14 +30,12 @@
 | D-022 | Ses üretimi ve ses kurgusu kuralı | DECISION | company | — | L1 | ACTIVE | "Claude dinleyemez / dinlemiş gibi davranmaz" = HARD (truth) — `audio-production.md` |
 | D-023 | Efficiency Audit v1: model yönlendirme | DECISION | company | — | L1 | ACTIVE | |
 | D-024 | Müzik/SFX sistemi | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Lisans/hak kuralları HARD (rights) |
-| D-025 | Creative mimari + prototype kapısı | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | "Değişmez/zorunlu prototype kapısı" D-043 ile kaldırıldı (prototype yalnız kalibrasyon, CASE-SPECIFIC veya HEURISTIC); creative treatment katmanı ve Founder tek sorusu aktif; production Claude'un kendi creative QA/teslim kararı charter §9 ile geçersiz |
+| D-025 | Creative mimari + prototype kapısı | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Yaratıcı yön katmanı ve creative director rolü aktif; kurallar artık canon'da (D-045). "Zorunlu prototype" D-043 ile kalktı; production Claude'un kendi creative QA/teslim kararı charter §9 ile geçersiz |
 | D-026 | P3 prototype kalibrasyonu | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | LIMITED | 1964 film kullanılmaz (aktif, hak); ≤700 kredi VO onayı D-028 ile askıya alındı, opening VO D-030'da üretildi |
-| D-029 | Documentary Production Doctrine v1 | DECISION | channel:the-industrial-casebook | HEURISTIC | L5 | LIMITED | Doctrine v1 binding yaratıcı taban olarak uygulanmaz: Stage 2 channel canon'u kurulana kadar yalnız araştırma/benchmark ve HEURISTIC kaynak (artifact HISTORICAL); sayısal eşikler DIAGNOSTIC; §12 prototype rubric yalnız prototype kullanıldığında (D-043); maddeler Stage 2'de sınıflanır |
 | D-030 | P3 opening v2 anlatımı | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | ACTIVE | Narration metni geçerli; prototype v2 render'ı tarihsel (D-039) |
-| D-031 | Brand System v1 + Source-to-Visual + Muted Preview Gate | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Token/font/dünyalar aktif. Uygulanmaz: "ilk evet kazanır" sırasının kanıt=sunum gibi kullanımı (charter §3); muted gate creative PASS veremez (charter §9; DIAGNOSTIC girdi); intro/ident yaklaşımı D-044 ile daraltıldı |
-| D-032 | Brand Direction v1 canonical | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Intro yaklaşımı D-044 ile daraltıldı |
+| D-031 | Brand System v1 + Source-to-Visual + Muted Preview Gate | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Brand System v1 kimliği aktif (TIC-24). Source-to-visual sırası yalnız aday listesi (TIC-15, TIC-18); muted gate DIAGNOSTIC (TIC-28–30); intro D-044/TIC-11. Kurallar canon'da (D-045) |
+| D-032 | Brand Direction v1 canonical | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | Yön ve anti-klişe listesi aktif (TIC-24); intro yaklaşımı D-044 ile daraltıldı; static brand board film dili değildir (TIC-24, canon `05`) |
 | D-033 | Founder-approved visual reference | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | |
-| D-034 | Dynamic Case Ident System v1 | DECISION | channel:the-industrial-casebook | — | L2 | LIMITED | "Her videoda yeni ident / ident render'ı tekrar kullanılmaz" D-044 (kanal kararı: aynı skeleton + değişken payload) ile daraltıldı → uygulanmaz; CASE INTRO tasarımı Stage 2 canon + kalibrasyon |
 | D-035 | Video Launch OS v1 | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | |
 | D-036 | Launch OS tamamlama: rights ledger, Copyright/Release Gate | DECISION | company | — | L1 | ACTIVE | Rights ve Copyright Gate HARD |
 | D-037 | YouTube kanalı oluşturuldu | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Studio yetenekleri NEEDS_VERIFICATION |
@@ -48,6 +46,7 @@
 | D-042 | Company OS v2 governance kernel (Stage 1) | DECISION | company | — | L1 | ACTIVE | `os-v2-migration` dalında; `main`'e merge Founder kabulüyle. Kernel kararı HARD değildir (charter §4 HARD tanımı); içindeki HARD maddeler (secret, Founder yetkisi, kanıt) kendi L0 kural dosyalarındadır |
 | D-043 | Prototype/proof politikası: rutin videoda zorunlu prototype yok | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Prototype: kalibrasyon, CASE-SPECIFIC veya HEURISTIC; kullanılırsa mevcut prosedür geçerli; Founder final kapısı charter §9 |
 | D-044 | CASE INTRO = tekrar eden motion DNA (aynı skeleton, değişken payload); CASE INTRO ≠ CASE LABEL | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Tasarım + Golden Master bir defalık kalibrasyon işi; o zamana kadar CASE INTRO tasarlanmaz |
+| D-045 | The Industrial Casebook Channel Canon v2 (tek yetkili kanal kaynağı) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/canon/` (TIC-01…TIC-33); `os-v2-migration` dalında |
 
 ## Aktif olmayan kararlar (yalnız tarih)
 | ID | Başlık | Neden aktif değil | Yerine |
@@ -56,3 +55,5 @@
 | D-016 | Kanal ana anlatıcı adayı Bill L. Oxley | Kesin karar ayrı kayda taşındı | D-021 |
 | D-027 | P3 son creative kalibrasyonu (Ship-first, AI-1/AI-2) | Açılış D-030 ile yeniden yazıldı; AI adımları D-028 ile askıya alındı; benchmark statüsü D-029 | D-030, D-041 |
 | D-028 | P3 donması + doctrine araştırması | Donma D-030/D-040 ile kalktı; araştırma D-029 ile sonuçlandı | D-029, D-040 |
+| D-029 | Documentary Production Doctrine v1 | Binding yaratıcı taban rolünü canon devraldı; doctrine HISTORICAL araştırma/HEURISTIC kaynak, ölçümleri DIAGNOSTIC (TIC-30) | D-045 |
+| D-034 | Dynamic Case Ident System v1 | Her videoya özel ident yaklaşımı CASE INTRO kararıyla yer değiştirdi; davranış kütüphanesi payload için HEURISTIC kaynak | D-044, D-045 |

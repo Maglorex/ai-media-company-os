@@ -5,6 +5,8 @@ description: Prototype veya full video render'ından sonra, Founder'a göstermed
 
 # Muted Preview Gate v1
 
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Bu kapı **DIAGNOSTIC** girdidir (TIC-28–TIC-30): içindeki süre ifadeleri hedef değildir; creative PASS/REVISE kararı işi üretmeyen bağımsız değerlendiricidedir (`company/charter.md` §9).
+
 Karar: D-031. Neden: YouTube ana sayfa/arama önizlemeleri videonun herhangi bir bölümünden sessiz oynayabilir; yalnız intronun markalı olması yeterli değildir. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` §5. Uygulayıcı: render'ın bulunduğu makinedeki Claude (`production-engineer`) üretir; değerlendirme COO / creative director.
 
 ## 1. Örnekleme

@@ -5,16 +5,26 @@ CO-DECISIONS,company/state/active-decisions.md,company,active-decisions,2.0,ACTI
 CO-RULES,company/state/rule-registry.md,company,rule-registry,2.0,ACTIVE,,D-042,
 CO-DASHBOARD-V1,dashboards/company.md,company,current-state,1.x,SUPERSEDED,CO-STATE,D-042,Historical snapshot 2026-10-13; not a state source
 CO-PENDING-SYNC-2026-10-10,company/pending-sync/2026-10-10-growth-finance.md,company,sync-note,1,HISTORICAL,,D-020,Processed 2026-10-10
-CH-TIC-V1-PROCEDURES,channels/the-industrial-casebook/v1-procedures.md,channel:the-industrial-casebook,channel-procedures,1,ACTIVE,,D-042;D-043;D-044,v1 channel procedures moved from CLAUDE.md (L2); limits in active-decisions; to be SUPERSEDED by Stage 2 channel canon
+CH-TIC-V1-PROCEDURES,channels/the-industrial-casebook/v1-procedures.md,channel:the-industrial-casebook,channel-procedures,1,SUPERSEDED,CH-TIC-CANON,D-045,Historical v1 text (banner); replaced by channel canon
 CH-TIC-README,channels/the-industrial-casebook/README.md,channel:the-industrial-casebook,channel-record,1,ACTIVE,,D-037,Channel record (no credentials)
+CH-TIC-CANON,channels/the-industrial-casebook/canon/README.md,channel:the-industrial-casebook,canon-index,2,ACTIVE,,D-045,Channel canon index; single authoritative channel source
+CH-TIC-CANON-01,channels/the-industrial-casebook/canon/01-viewer-promise.md,channel:the-industrial-casebook,canon-viewer-promise,2,ACTIVE,,D-045,
+CH-TIC-CANON-02,channels/the-industrial-casebook/canon/02-ideas-growth-packaging.md,channel:the-industrial-casebook,canon-ideas-growth,2,ACTIVE,,D-045,
+CH-TIC-CANON-03,channels/the-industrial-casebook/canon/03-opening-and-case-intro.md,channel:the-industrial-casebook,canon-opening-intro,2,ACTIVE,,D-045,CASE INTRO spec only; Golden Master in Stage 5
+CH-TIC-CANON-04,channels/the-industrial-casebook/canon/04-visual-storytelling.md,channel:the-industrial-casebook,canon-visual-storytelling,2,ACTIVE,,D-045,
+CH-TIC-CANON-05,channels/the-industrial-casebook/canon/05-editorial-motion-and-cinematography.md,channel:the-industrial-casebook,canon-motion-system,2,ACTIVE,,D-045,Film language; separate from brand board
+CH-TIC-CANON-06,channels/the-industrial-casebook/canon/06-prototype-and-calibration.md,channel:the-industrial-casebook,canon-prototype-calibration,2,ACTIVE,,D-045,Reference categories; references chosen in Stage 5
+CH-TIC-CANON-07,channels/the-industrial-casebook/canon/07-rule-register.md,channel:the-industrial-casebook,canon-rule-register,2,ACTIVE,,D-045,TIC-01..TIC-33
+CH-TIC-CANON-08,channels/the-industrial-casebook/canon/08-rejected-decisions.md,channel:the-industrial-casebook,canon-rejected-decisions,2,ACTIVE,,D-045,
+CH-TIC-CANON-09,channels/the-industrial-casebook/canon/09-v1-source-map.md,channel:the-industrial-casebook,canon-source-map,2,ACTIVE,,D-045,
 CO-CHANNELS-INDEX,channels/README.md,company,channels-index,1,ACTIVE,,D-002,Channel index; new channel needs Founder approval
 CO-OSV2-DRAFT-CHARTER,git:draft/os-v2-phase1-plan:company/os-v2/FOUNDER-CHARTER.md,company,charter,draft,DRAFT,,D-042,Non-canonical draft (7354fb5; created without approval - L-009); source text for Stage 2 channel canon (sections 2-10)
 CO-OSV2-DRAFT-PLAN,git:draft/os-v2-phase1-plan:company/os-v2/MIGRATION-PLAN.md,company,migration-plan,draft,HISTORICAL,,D-042,Replaced by Founder-approved revised plan (chat 2026-10-14; summarized in D-042)
-CH-TIC-DOCTRINE-V1,intelligence/creative/doctrine/documentary-production-doctrine-v1.md,channel:the-industrial-casebook,doctrine,1,HISTORICAL,,D-029,Research/benchmark and HEURISTIC source only (D-029 LIMITED; L5); not binding creative canon; numeric thresholds DIAGNOSTIC; items classified in Stage 2
+CH-TIC-DOCTRINE-V1,intelligence/creative/doctrine/documentary-production-doctrine-v1.md,channel:the-industrial-casebook,doctrine,1,HISTORICAL,,D-029;D-045,Research/benchmark and HEURISTIC source only; measurements DIAGNOSTIC (TIC-30); rules now in channel canon
 CH-TIC-BENCHMARKS-V01,intelligence/creative/documentary-style-benchmarks.md,channel:the-industrial-casebook,benchmark,0.1,HISTORICAL,,D-029,Historical reference matrix
-CH-TIC-BRAND-V1,intelligence/creative/brand/brand-system-v1.md,channel:the-industrial-casebook,brand-system,1,ACTIVE,,D-031;D-032,Intro/ident sections limited (active-decisions D-031)
+CH-TIC-BRAND-V1,intelligence/creative/brand/brand-system-v1.md,channel:the-industrial-casebook,brand-system,1,ACTIVE,,D-031;D-032;D-045,Identity source (TIC-24); section C intro/ident SUPERSEDED by canon 03; not film language
 CH-TIC-UI-SPEC-V1,intelligence/creative/brand/video-ui-spec-v1.md,channel:the-industrial-casebook,ui-spec,1,ACTIVE,,D-034,CASE label spec (CASE LABEL is not CASE INTRO)
-CH-TIC-IDENT-V1,intelligence/creative/brand/dynamic-case-ident-system.md,channel:the-industrial-casebook,case-intro,1,FROZEN,,D-034,Limited by D-044 (channel decision: recurring CASE INTRO skeleton); not executable until Stage 2 canon
+CH-TIC-IDENT-V1,intelligence/creative/brand/dynamic-case-ident-system.md,channel:the-industrial-casebook,case-intro,1,SUPERSEDED,CH-TIC-CANON-03,D-044;D-045,Behavior library readable only as HEURISTIC payload ideas
 CH-TIC-CASE-REGISTER,intelligence/creative/brand/case-register.md,channel:the-industrial-casebook,case-register,1,ACTIVE,,D-034,
 CH-TIC-LOGO-BANNER-BRIEF,intelligence/creative/brand/logo-banner-brief.md,channel:the-industrial-casebook,brand-brief,1,HISTORICAL,,D-040,Logo set and banner done (D-037; D-040)
 CH-TIC-VISUAL-REF,intelligence/creative/brand/reference/founder-approved-visual-direction.md,channel:the-industrial-casebook,visual-reference,1,ACTIVE,,D-033,

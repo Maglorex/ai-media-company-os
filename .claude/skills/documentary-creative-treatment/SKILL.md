@@ -5,6 +5,8 @@ description: Packaging ve evidence ledger hazır olduğunda, senaryo kilitlenmed
 
 # Documentary Creative Treatment
 
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Her treatment canon'a göre şunları içerir: **merkezi soru** ("What exact question is the viewer waiting to have answered?", TIC-06), her önemli beat için Evidence Anchor + Presentation Visual (TIC-15), açılışta CASE ENTRY → CASE INTRO yeri (TIC-08, TIC-11; Golden Master kalibrasyona kadar CASE INTRO tasarlanmaz).
+
 Uygulayıcı: `documentary-creative-director` (ana model). Bağlayıcı: `.claude/rules/documentary-creative-standards.md`, `documentary-visual-storytelling`. Girdi: onaylı packaging, evidence ledger, growth kaydı, **Doctrine v1** (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`; HEURISTIC araştırma/benchmark kaynağı — D-029 LIMITED, binding canon değil) + benchmark (`intelligence/creative/documentary-style-benchmarks.md`), CF geri bildirim kaydı. Çıktı: `production/.../<video>-creative-treatment-vN.md`.
 
 ## 1. Hook-first story system

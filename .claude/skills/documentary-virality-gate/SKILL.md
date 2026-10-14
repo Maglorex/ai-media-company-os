@@ -5,6 +5,8 @@ description: Bir video fikri tam senaryo, seslendirme veya production zamanı ha
 
 # Documentary Virality Gate
 
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Bu kapının dereceleri fikir değerlendirmesine **girdidir** (TIC-03); karar canon `02` §2'deki yazılı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir. "Broad human relevance" sorusu canon'dan eklenir.
+
 Kapsam: `Industrial & Technology Autopsies` (N2) için 10–25 dk belge-öncelikli, faceless belgesel fikirleri. Girdi: çalışma başlığı + fikir özeti (örn. `production/pilots/.../P*.md`). Senaryo gerekmez.
 
 ## Ne yapmaz

@@ -2,6 +2,7 @@
 paths:
   - "production/**"
   - "intelligence/creative/**"
+  - "channels/the-industrial-casebook/**"
   - ".claude/skills/documentary-*/**"
   - ".claude/skills/source-to-visual/**"
   - ".claude/skills/muted-preview-gate/**"
@@ -9,28 +10,13 @@ paths:
   - ".claude/agents/production-engineer.md"
 ---
 
-# Marka ve Görsel Sistem Kuralları
+# The Industrial Casebook — marka, görsel ve film dili: canon yükleyicisi
 
-Kaynak: Founder talimatı 2026-10-13 (D-031); **canonical Brand Direction v1 (D-032)**. Canonical kural: *Source establishes truth. Visualization establishes understanding.* Bütün The Industrial Casebook videoları, thumbnail'ları ve kanal görselleri için kalıcıdır. Ayrıntı: `intelligence/creative/brand/brand-system-v1.md`. Onay, kanıt ve hak kurallarını zayıflatmaz.
+> Katman: **L2** · Kapsam: `channel:the-industrial-casebook` · D-045 (Stage 2). Başka kanala uygulanmaz.
 
-## 1. Founder mikro karar vermez
-Renk, font, ident, geçiş, kanıt görünümü, sahne başına görsel türü, AI görsel ihtiyacı, kaynak görselleştirme biçimi ve preview kalitesi **sistemin** kararıdır (Brand System + `source-to-visual` + `muted-preview-gate`). Founder'a "hangi rengi kullanalım / hangi görseli yapalım / burada diyagram mı olsun" sorulmaz. Founder yalnız: marka konsepti, büyük yaratıcı prototype, final logo/banner, yayın.
+- **Görsel anlatım, UI ve marka rolü:** `channels/the-industrial-casebook/canon/04-visual-storytelling.md` (Anti-PowerPoint, Evidence Anchor ≠ Presentation Visual, AI rolü, subject hero / UI yalnız gerektiğinde, Brand System v1 kimliği).
+- **Film dili (motion, kamera, geçiş, ritim):** `channels/the-industrial-casebook/canon/05-editorial-motion-and-cinematography.md`. Static brand board film dili değildir.
+- **Marka kimliği (font, renk token'ları, dört dünya, anti-klişe yön):** `intelligence/creative/brand/brand-system-v1.md` (§C intro bölümü SUPERSEDED → canon `03`). CASE LABEL/UI: `intelligence/creative/brand/video-ui-spec-v1.md`.
+- Kanıt dürüstlüğü, AI etiketi/disclosure ve haklar şirket **HARD** kurallarıdır (`.claude/rules/evidence-and-research.md`, `production/rights/README.md`); canon bunları gevşetemez.
 
-## 2. Consistency = aynı gramer
-- Dört dünya ayrı yaşar: **Archive** (kaynağın doğal rengi) · **Evidence** (paper + gerçek mürekkep) · **Engineering** (ink/steel) · **Case UI** (ince metadata katmanı, bağlayıcı).
-- Markayı bağlayan: case numbering, evidence labels, typography hierarchy, metadata/source notation, case tabs, motion continuity, document treatment, annotation, dört imza geçiş (Evidence Pull · Object Carry · Case Tab · Source Mark).
-- Yasak: true crime / dedektif estetiği / suç mahalli · steampunk · nostaljik fabrika-logosu · jenerik kurumsal danışmanlık · jenerik faceless-AI belgesel görünümü · **bütün videoyu kaplayan koyu mavi PowerPoint şablonu** · bütün görselleri tek renk filtresiyle boyamak · arşivi marka rengiyle tintlemek · tam ekran Case UI template'i · bağımsız logo introsu (varsayılan) · true-crime klişeleri (kırmızı ip, polis dosyası, şerit, grunge damga, sahte eski kâğıt, büyük VERIFIED damgası).
-
-## 3. Kanıt dürüstlüğü
-- `EVIDENCE NN` etiketi ve kaynak etiketi her zaman evidence ledger satırına bağlıdır; karşılığı yoksa kullanılmaz.
-- Belgeye sahte metin/damga eklenmez; Evidence Pull'da çekilen değer belgedekiyle birebir aynıdır.
-- AI görsel `AI-GENERATED / ILLUSTRATIVE` olarak asset kaydına girer, kanıt olarak kullanılmaz, gerektiğinde "Illustration" etiketi alır, gerçek tarihî fotoğraf gibi görünmesi istenmez. Foto-gerçekçi rekonstrüksiyonda Release Gate G-11 (`pre-publish-qa`) YouTube synthetic-content disclosure gereksinimini resmî sayfadan kontrol eder.
-
-## 4. "Güzel fotoğraf yok" → lacivert bilgi kartı DEĞİL
-Her önemli beat `source-to-visual` karar sırasından geçer. Tam ekran bilgi kartı varsayılan fallback değildir.
-
-## 5. Kapılar (zorunlu)
-- **Handoff öncesi:** `source-to-visual` tablosu + Brand System uyumu (dünya ataması, case accent, EVIDENCE eşlemesi).
-- **Prototype ve full video sonrası, Founder'a göstermeden önce:** `muted-preview-gate` (muted sample grid + brand diversity QA) — **bağlayıcı**; FAIL ise Founder'a gitmez; düzeltilir.
-- **Brand proof (D-032; §N Founder güncellemesi 2026-10-13; D-040):** Video handoff'u için gereken proof'lar #3 CASE UI, #4 evidence/source label ve #5 branded frame örnekleridir; üçü Founder PASS almadan brand retrofit'li handoff yazılmaz. Logo ve banner (#1–#2) kanal sayfasının işidir, video handoff'unu bloklamaz; videoda logo kullanılmaz (`video-ui-spec-v1.md`).
-- **Yayın öncesi QA:** tek yer `pre-publish-qa` (D-035) — marka maddeleri Release Gate'te G-17a (muted gate + EVIDENCE eşlemesi), G-11 (AI etiket/disclosure), G-04 (thumbnail → video sürekliliği) olarak yer alır.
+Bu dosyanın v1 metni (D-031–D-034) canon'a eşlendi (`channels/the-industrial-casebook/canon/09-v1-source-map.md`) ve git geçmişinde durur: `git show pre-v2-checkpoint:.claude/rules/brand-and-visual-system.md`.

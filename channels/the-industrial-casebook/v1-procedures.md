@@ -1,3 +1,5 @@
+> **SUPERSEDED — 2026-10-14 (D-045).** Talimat olarak kullanılmaz. Yerine: `channels/the-industrial-casebook/canon/README.md`; eşleme: `channels/the-industrial-casebook/canon/09-v1-source-map.md`. Aşağıdaki metin tarihsel kayıttır.
+
 # The Industrial Casebook — v1 kanal prosedürleri (L2)
 
 > Kapsam: `channel:the-industrial-casebook` — şirket kuralı değildir; başka kanala uygulanmaz. Kaynak: 2026-10-14'e kadar `CLAUDE.md` içindeydi; şirket açılış dosyasından buraya taşındı (D-042 acceptance). Metin v1'dir; Stage 2'de madde madde sınıflanıp channel canon'a dönüşür.

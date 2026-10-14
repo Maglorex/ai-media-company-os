@@ -93,8 +93,8 @@ test('gerçek kayıtlar: kernel kararı (D-042, L1) P3 case kararını (D-019) y
   const toRec = (row) => ({ id: row.ID, type: row['Tür'], scope: row.Kapsam, class: row['Sınıf'] === '—' ? undefined : row['Sınıf'], status: row.Durum });
   const get = (id) => toRec(rows.find((x) => x.ID === id));
   assert.equal(resolve([get('D-019'), get('D-042')], TIC).winner.id, 'D-042');
-  assert.equal(applies(get('D-034'), { channel: 'some-future-channel' }), false);
-  assert.equal(resolve([get('D-034'), get('D-041')], TIC).winner.id, 'D-034');
+  assert.equal(applies(get('D-044'), { channel: 'some-future-channel' }), false);
+  assert.equal(resolve([get('D-044'), get('D-041')], TIC).winner.id, 'D-044');
 });
 
 test('governance.md öncelik tablosu os/precedence.json ile aynı', () => {

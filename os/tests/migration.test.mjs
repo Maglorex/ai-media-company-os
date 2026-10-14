@@ -26,8 +26,13 @@ const STAGE1_ALLOWED = [
   /^\.claude\/rules\/documentary-creative-standards\.md$/,
   /^\.claude\/skills\/(documentary-edit-plan|documentary-production-handoff|documentary-script|documentary-creative-treatment|video-launch-os|source-to-visual)\/SKILL\.md$/,
   /^channels\/the-industrial-casebook\/v1-procedures\.md$/,
+  // Stage 2 — The Industrial Casebook channel canon (Founder 2026-10-14, D-045)
+  /^channels\/the-industrial-casebook\/canon\//,
+  /^\.claude\/rules\/brand-and-visual-system\.md$/,
+  /^\.claude\/skills\/(documentary-visual-storytelling|muted-preview-gate|documentary-virality-gate|growth-idea-scoring)\/SKILL\.md$/,
+  /^\.claude\/agents\/documentary-creative-director\.md$/,
 ];
-const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
+const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/canon\//]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
 const KEEP = [/^production\//, /^finance\//, /^intelligence\//, /^channels\//, /^company\/(strategy|constraints|mission|goals|machines)\.md$/];
 
 const changed = () => {
@@ -44,7 +49,7 @@ test('migration: KEEP alanları değişmedi', { skip: !hasBase && 'pre-v2-checkp
   assert.deepEqual(changed().filter((c) => KEEP.some((k) => k.test(c.path)) && !KEEP_EXCEPTIONS.some((e) => e.test(c.path))).map((c) => c.path), []);
 });
 
-test('migration: değişiklikler yalnız onaylı Stage 1 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: değişiklikler yalnız onaylı Stage 1–2 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
   const outside = changed().filter((c) => !STAGE1_ALLOWED.some((a) => a.test(c.path))).map((c) => c.path);
   assert.deepEqual(outside, []);
 });
