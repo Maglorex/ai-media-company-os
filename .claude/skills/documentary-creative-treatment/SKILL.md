@@ -39,7 +39,7 @@ Zorunlu şablon değildir. Konuya göre başka yapı seçilebilir; seçilen yap�
 9. **AI görsel ihtiyacı:** var/yok; varsa hazır prompt(lar).
 10. **Tipografi anları** (yalnız seçici liste).
 11. **Müzik/SFX yönü:** bölüm başına işlev ve yoğunluk; sessizlik anları.
-12. **Prototype sınırı:** ilk 60–90 sn'nin içeriği ve neden bu kesitin videoyu temsil ettiği.
+12. **Prototype sınırı (yalnız prototype kullanılacaksa — D-043):** ilk 60–90 sn'nin içeriği ve neden bu kesitin videoyu temsil ettiği; kullanılmayacaksa neden gerekmediği tek cümle.
 13. **KEEP / REBUILD / REMOVE** (mevcut asset varsa): her asset için karar + neden + yeni iş.
 14. **Riskler:** kanıt, hak, üretim süresi, kredi.
 15. **Founder'a gidecek tek karar** (varsa).

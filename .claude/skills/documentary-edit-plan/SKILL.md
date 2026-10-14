@@ -18,7 +18,7 @@ Kapsam: N2 (Industrial & Technology Autopsies) faceless belgeseller. Ön koşull
 Zaman kodu (giriş–çıkış) · VO bölümü (sahne/paragraf + ilk kelimeler) · sahnenin işi · yeni bilgi/yeni bakış · ana asset (ledger V-ID) · destek asset · tür (belge / fotoğraf / grafik / harita / motion / tipografi) · ekrandaki metin veya sayı · zoom/pan/highlight/motion · geçiş mantığı · müzik/SFX amacı (varsa) · asset hazır mı · lisans durumu · zorluk (K/O/Z).
 
 ## Edit prensipleri
-0. **Prototype önce (D-025):** İlk edit plan yalnız prototype kesitini (ilk ~60–90 sn) kapsar ve `documentary-production-handoff` ile production PC'ye gider; tüm videonun edit planı Founder prototype kapısından sonra yazılır.
+0. **Prototype kullanılıyorsa (D-043; zorunlu değil):** İlk edit plan yalnız prototype kesitini (ilk ~60–90 sn) kapsar ve `documentary-production-handoff` ile production PC'ye gider; tüm videonun edit planı Founder prototype kapısından sonra yazılır. Prototype kullanılmıyorsa edit plan tüm video için senaryo kilidinden sonra yazılır.
 1. Sabit "her X saniyede kesme" kuralı yok; kesimler rastgele hızlandırılmaz. Ama **görsel yenilenme = yeni bilgi veya yeni bakış**: bilgi bütçesi bitmiş görsel durum yeni bir şey katmadan ekranda kalmaz (`documentary-visual-storytelling` §3). Fotoğraf + pan ve tam ekran kart zinciri kurulmaz.
 2. **Belge ekrandayken okunabilir süre** verilir (vurgulanan satır VO'da geçiyorsa VO süresi + kısa bekleme).
 3. **Önemli rakam söylenirken o rakam veya grafiği ekranda** olur; senaryodaki rakam ile ekrandaki rakam aynı anlamdadır (ledger).

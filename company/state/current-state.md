@@ -17,7 +17,7 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 | Aşama | Kapsam | Durum |
 |---|---|---|
 | 0 | Safety snapshot, pre-v2 checkpoint, restore drill, makine dışı yedek | **PASS** (2026-10-14) |
-| 1 | Governance kernel: company charter, sınıflar + öncelik, current state, active decisions, artifact lifecycle, git-secrets, testler | **Tamamlandı — Founder kabulü bekliyor** |
+| 1 | Governance kernel: company charter, sınıflar + öncelik, current state, active decisions, artifact lifecycle, git-secrets, testler | **Acceptance düzeltmeleri yapıldı (D-043 prototype politikası, D-044 CASE INTRO kanal kararı, kanal prosedürleri CLAUDE.md'den kanal klasörüne). Gerçek clean-room testi bekleniyor; ardından Founder lock** |
 | 2 | Channel canon (The Industrial Casebook; Founder Charter kanal maddeleri, CASE INTRO tanımı) | Onay bekliyor |
 | 3 | Creative pipeline (story-viability … scene-plan, bağımsız creative QA) | Planlı |
 | 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | Planlı |
@@ -26,12 +26,12 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder: Stage 1 sonucunu kabul et / reddet.** Kabul → Stage 2 (channel canon) için ayrı onay. Bu arada yapılacak başka iş yok; Strong PC iş almaz.
+**Founder (GUIDED ACTION): yeni, temiz bir Claude Code oturumunda Stage 1 clean-room testini çalıştır** (8 soru; hazır prompt sohbette verildi). Test 8/8 geçerse Stage 1 FINAL PASS → Founder lock → Stage 2 için ayrı onay. Bu arada başka iş yok; Strong PC iş almaz.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Stage 1 kabulü | FOUNDER DECISION | Bu oturumun raporu |
+| 1 | Stage 1 clean-room testi, ardından Stage 1 lock | GUIDED ACTION → FOUNDER DECISION | Temiz oturum testi 8/8 olmadan FINAL PASS yok |
 | 2 | Stage 2 başlatma onayı | FOUNDER DECISION | Stage 1 kabulünden sonra |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |

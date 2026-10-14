@@ -13,13 +13,14 @@ Kaynak: Founder talimatı 2026-10-11 (D-025). P3 tam review kurgusu "voice-over 
 Bağlayıcı yaratıcı taban: `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` (D-029) + marka/görsel sistem `.claude/rules/brand-and-visual-system.md` (D-031). Bu kural akışı ve kapıyı, doctrine içeriği (anlatı/görsel/motion grameri, anti-pattern, prototype rubric) tanımlar.
 
 ## 1. Akış (her video)
-virality gate → growth puanı → packaging → evidence ledger → **creative treatment** (`documentary-creative-treatment`, `documentary-creative-director`; case accent + `source-to-visual` tablosu) → taslak anlatı → **prototype handoff** (`documentary-production-handoff`) → production PC'de ilk 60–90 sn → **`muted-preview-gate`** → **Founder prototype kapısı** → senaryo kilidi + tam görsel/edit plan + tam VO → full handoff → full production → Launch Package (`video-launch-os`) → **`pre-publish-qa`** → Founder launch onayı → yayın → `growth-performance-review`.
-Creative treatment olmadan senaryo kilitlenmez; prototype kapısı geçilmeden full production'a geçilmez.
+virality gate → growth puanı → packaging → evidence ledger → **creative treatment** (`documentary-creative-treatment`, `documentary-creative-director`; case accent + `source-to-visual` tablosu) → taslak anlatı → [yalnız prototype kullanılacaksa (D-043): **prototype handoff** (`documentary-production-handoff`) → production PC'de ilk 60–90 sn → **`muted-preview-gate`** → **Founder prototype kapısı**] → senaryo kilidi + tam görsel/edit plan + tam VO → full handoff → full production → bağımsız creative QA → Founder final yaratıcı kapısı ("Ben bunu gerçekten izlemeye devam eder miydim?") → Launch Package (`video-launch-os`) → **`pre-publish-qa`** → Founder launch onayı → yayın → `growth-performance-review`.
+Creative treatment olmadan senaryo kilitlenmez. Prototype **zorunlu değildir** (D-043): kanal dili kalibre edilirken, CASE-SPECIFIC kararla veya riskli/yeni videoda HEURISTIC olarak kullanılır; kullanılmadıysa full handoff doğrudan senaryo kilidinden sonra gelir.
 
-## 2. Prototype kapısı (değişmez)
+## 2. Prototype kapısı — yalnız kullanıldığında (D-043; HEURISTIC / CASE-SPECIFIC, zorunlu değil)
 - Ön koşul: araştırma yeterli · evidence ledger temiz · packaging yönü hazır · taslak anlatı (en az ilk 90 sn VO metni + tüm videonun yapısı) hazır.
 - Production PC yalnız ilk ~60–90 sn'yi **neredeyse final kalitede** üretir: gerçek anlatıcı, gerçek görsel dil, arşiv/grafik, yaklaşık müzik yönü, gerçek kurgu temposu. Taslak kart, placeholder ses veya "sonra güzelleşecek" sahne prototype sayılmaz.
 - Founder'a tek soru: **"Bunu izlemeye devam eder miydin?"** (Evet / Hayır / Emin değilim + istersen tek cümle neden). Mikro edit kararı sorulmaz.
+- Prototype kullanılmadıysa bu bölüm uygulanmaz; Founder'ın yaratıcı sorusu final videoda sorulur (charter §9).
 - Evet → full production. Hayır/Emin değilim → creative director teşhis eder (§4), revize prototype. İki prototype üst üste geçemezse sorun fikirde olabilir: fikir growth/virality açısından yeniden değerlendirilir, devam/bırak kararı Founder'a tek öneriyle gelir.
 - Prototype için ses kredisi ve diğer harcamalar `founder-approval.md`'ye tabidir (tek, tavanlı onay).
 

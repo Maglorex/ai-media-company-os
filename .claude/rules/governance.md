@@ -12,8 +12,9 @@
 | **DIAGNOSTIC** | Oran, süre, kaynak yüzdesi, shot ölçümü vb. Sorun bulmaya yarar; **creative objective veya PASS/FAIL hedefi değildir**, tek başına karar vermez. |
 | **CASE-SPECIFIC** | Yalnız belirli video/case için verilen karar. |
 - Bir Founder gözlemi otomatik HARD veya global kural olmaz. Bir video sonucu otomatik doctrine oluşturmaz.
+- Şirket katmanında zorunlu yaratıcı kapı (ör. her videoda prototype) yoktur; böyle bir kapı yalnız kanal kararı, CASE-SPECIFIC veya HEURISTIC olabilir.
 - Dosya içinde bölüm etiketi kullanılabilir: `[HARD]`, `[HEURISTIC]`, `[EXPERIMENT]`, `[DIAGNOSTIC]`; HARD olmayan bağlayıcı şirket prosedürü kaynağını karar ID'siyle gösterir (ör. "(D-004)") ve L1 sayılır.
-- v1'den kalan sayısal eşikler (ör. "15 sn statik", "≥%55 arşiv", "≤%25 koyu", "2,6–4,4 sn/olay", "≤~6 sn") **DIAGNOSTIC**'tir; ölçülür ve raporlanır, kapı olarak kullanılmaz.
+- v1'den kalan sayısal eşikler (süre, oran, yüzde, kesme sıklığı) **DIAGNOSTIC**'tir; ölçülür ve raporlanır, kapı olarak kullanılmaz. Hangi kanal eşiklerinin bu kapsamda olduğu ilgili kanal kararlarının satırında yazılıdır (`company/state/active-decisions.md`).
 
 ## 2. Öncelik (precedence) — çelişkide kazanan
 | Sıra | Katman | Ne girer |

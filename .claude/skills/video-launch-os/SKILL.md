@@ -17,7 +17,7 @@ Uygulayıcı: COO; talep araştırması `research-analyst`; packaging yaratıcı
 | G3 | Packaging v2 | ≥3 farklı açılı finalist (§4), birincil + 2 A/B varyantı | `documentary-packaging` |
 | G4 | Kanıt | Ledger temiz | `documentary-evidence-ledger` |
 | G5 | Search Intent Brief | §3 (packaging ile aynı turda; script'i değiştirmez) | bu skill |
-| G6 | Yaratıcı yön + prototype | Treatment, source-to-visual, ident, prototype + muted gate + Founder kapısı | creative-standards, brand rule |
+| G6 | Yaratıcı yön (+ prototype yalnız kullanılırsa, D-043) | Treatment, source-to-visual, ident (D-044), [prototype + muted gate], bağımsız creative QA + Founder kapısı | creative-standards, brand rule |
 | G7 | Full handoff | **End-screen aware son 5–20 sn** + **thumbnail hero asset planı** (§6, §16) | `documentary-production-handoff` |
 | G8 | Final edit sonrası | Chapters kararı, captions dosyası, description, credits, end screen/cards planı | bu skill §8–§12 |
 | G8b | Shorts türevleri | Final kilitten sonra **0–4 aday** (hedef 2–4, kalite eşiği yoksa daha az) seçilir ve 9:16 yeniden kurgu planı yazılır (§25) | bu skill §25 |

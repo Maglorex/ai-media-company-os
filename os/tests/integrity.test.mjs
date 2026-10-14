@@ -191,3 +191,24 @@ test('secret biçim taraması (takip edilen metin dosyaları)', () => {
   }
   assert.deepEqual(hits, []);
 });
+
+test('şirket katmanında kanala özgü yaratıcı kural yok (Company/Channel ayrımı)', () => {
+  const companyFiles = ['company/charter.md', '.claude/rules/governance.md', '.claude/rules/founder-approval.md', '.claude/rules/evidence-and-research.md',
+    '.claude/rules/self-repair-and-escalation.md', '.claude/rules/company-memory.md', '.claude/rules/git-and-secrets.md', 'CLAUDE.md'];
+  const channelTerms = [/CASE INTRO/i, /Anti-PowerPoint/i, /opening grammar/i, /hook-first/i, /foto\s*\+\s*pan/i, /\bident\b/i, /motion DNA/i, /sound identity/i, /Industrial Casebook motion/i];
+  const hits = [];
+  for (const f of companyFiles) for (const t of channelTerms) if (t.test(read(f))) hits.push(`${f} ~ ${t}`);
+  assert.deepEqual(hits, []);
+  for (const id of ['D-043', 'D-044']) {
+    const row = parseTable(read('company/state/active-decisions.md'), '## Aktif kararlar').find((x) => x.ID === id);
+    assert.equal(row?.Kapsam, 'channel:the-industrial-casebook', `${id} must be channel-scoped`);
+  }
+});
+
+test('zorunlu/değişmez prototype kuralı ACTIVE talimatlarda yok (D-043)', () => {
+  const files = [...tracked].filter((f) => (f.startsWith('.claude/') || f.startsWith('channels/') || f === 'CLAUDE.md' || f.startsWith('company/')) && f.endsWith('.md') && f !== 'company/decision-log.md' && f !== 'company/lessons.md' && f !== 'company/backlog.md' && !f.startsWith('company/pending-sync/') && f !== 'dashboards/company.md');
+  const bad = [/prototype kapısı \(değişmez/i, /prototype kapısı geçilmeden full production'a geçilmez/i, /Prototype kapısı geçilmeden tam VO üretilmez\./i, /Prototype handoff:\*\* creative treatment \+ taslak anlatı hazır olduğunda, otomatik/i];
+  const hits = [];
+  for (const f of files) for (const b of bad) if (b.test(read(f))) hits.push(`${f} ~ ${b}`);
+  assert.deepEqual(hits, []);
+});

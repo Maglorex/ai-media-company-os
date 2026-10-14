@@ -403,3 +403,22 @@
 - Gerekçe / kanıt: [VERİ] repo audit 2026-10-14 (G1–G20 farkları); `git check-ignore` bulgusu; Stage 0 restore drill. [VARSAYIM] Sınıflı kurallar + tek durum + lifecycle, oturumlar arası tutarsızlığı ve yanlış dosyadan talimat alma riskini azaltır — temiz oturum testiyle ve sonraki aşamalarla doğrulanır.
 - Geri dönüş koşulu: Founder Stage 1'i kabul etmezse `os-v2-migration` dalı `main`'e alınmaz (v1 `main`'de değişmeden çalışır) veya `git revert` ile geri alınır; `pre-v2-checkpoint` ve yedekler dokunulmaz.
 - Durum: Aktif — `os-v2-migration` dalında; `main`'e merge ve push Founder kabulüyle.
+
+### D-043 — The Industrial Casebook prototype/proof politikası: rutin videoda zorunlu prototype yok
+- Tarih: 2026-10-14
+- Karar veren: Founder (Company OS v2 kararı; Stage 1 acceptance talimatı 2026-10-14)
+- Kapsam: `channel:the-industrial-casebook` (şirket katmanında prototype kapısı hiç yoktur; şirket hattı `company/charter.md` §6).
+- Bağlam: D-025 "ilk 60–90 sn prototype kapısı (değişmez)" kuralını kanalın bütün videoları için zorunlu kılıyordu; v2 bunu kabul etmiyor.
+- Karar: (1) Kanalın yaratıcı dili kalibre edilirken prototype/proof kullanılabilir. (2) CASE INTRO Golden Master bir defalık kalibrasyon işidir (D-044). (3) Rutin videolarda zorunlu near-final prototype **yoktur**. (4) Prototype gerektiğinde **CASE-SPECIFIC** (o videonun kararı) veya **HEURISTIC** (risk/yenilik yüksekse iyi başlangıç) olarak kullanılır; kullanıldığında mevcut prototype prosedürü (kapsam, kalite, Founder'a tek soru) aynen geçerlidir. (5) Founder'ın final yaratıcı kapısı değişmez: "Ben bunu gerçekten izlemeye devam eder miydim?" (charter §9).
+- Gerekçe / kanıt: Founder kararı. [VARSAYIM] Kalibre edilmiş kanal dili + bağımsız creative QA, her videoda ayrı prototype turunun maliyetini gereksiz kılar; risk yüksek videoda prototype yine seçilebilir.
+- Geri dönüş koşulu: Kalibrasyon sonrası videolar bağımsız creative QA'yı veya Founder final kapısını tekrar tekrar geçemezse prototype yeniden HEURISTIC varsayılan olarak önerilir (Founder kararı).
+- Durum: Aktif. D-025'in "değişmez prototype kapısı" kısmı bu kararla daraltıldı (LIMITED).
+
+### D-044 — The Industrial Casebook CASE INTRO: tekrar eden motion DNA (kanal kararı)
+- Tarih: 2026-10-14
+- Karar veren: Founder (Founder Charter 2026-10-14, kanal bölümü)
+- Kapsam: `channel:the-industrial-casebook` — şirket kuralı değildir; başka kanala uygulanmaz.
+- Karar: (1) CASE INTRO, The Industrial Casebook'un tekrar tanınabilir motion DNA'sıdır: **aynı skeleton, değişken case payload**. (2) CASE INTRO ≠ CASE LABEL: CASE LABEL küçük yardımcı metadata/UI öğesidir, tek başına intro değildir (`video-ui-spec-v1.md` §1). (3) Varsayılan açılış mantığı içinde yeri: paradox/question → case entry → CASE INTRO → evidence tease → investigation. (4) Skeleton'ın tasarımı ve Golden Master'ı bir defalık kalibrasyon işidir (OS v2 Stage 2 canon + kalibrasyon aşaması); o zamana kadar CASE INTRO tasarlanmaz/üretilmez. (5) D-034'ün "her videoda yeniden tasarlanan ident / ident render'ı tekrar kullanılmaz" ve D-031/D-032'nin intro yaklaşımı bu kararla daraltıldı (LIMITED).
+- Gerekçe / kanıt: Founder Charter kanal bölümü (kaynak metin: `draft/os-v2-phase1-plan` dalı, non-canonical draft içinde korunuyor; Stage 2'de channel canon'a işlenecek).
+- Geri dönüş koşulu: Kalibrasyonda Founder'ın Golden Master seçimi veya kanal verisi skeleton'ın değişmesini gerektirirse yeni kanal kararı.
+- Durum: Aktif.

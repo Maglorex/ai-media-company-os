@@ -1,6 +1,6 @@
 ---
 name: documentary-production-handoff
-description: Ana Company OS'tan production/render bilgisayarındaki Claude'a giden üretim brief'ini hazırlar (prototype handoff = ilk 60–90 sn; full handoff = prototype kapısından sonra tüm video). Core promise, hook, yapı, sahne amaçları, asset planı, görsel dil, footage listesi, AI görsel istekleri, tipografi anları, müzik yönü, prototype sınırı ve kanıt kısıtlarını içerir. Founder production promptu yazmaz. Render veya ses üretimi başlatmaz.
+description: Ana Company OS'tan production/render bilgisayarındaki Claude'a giden üretim brief'ini hazırlar (prototype handoff = ilk 60–90 sn, yalnız prototype kullanılacaksa — D-043; full handoff = tüm video). Core promise, hook, yapı, sahne amaçları, asset planı, görsel dil, footage listesi, AI görsel istekleri, tipografi anları, müzik yönü, prototype sınırı ve kanıt kısıtlarını içerir. Founder production promptu yazmaz. Render veya ses üretimi başlatmaz.
 ---
 
 # Documentary Production Handoff
@@ -8,8 +8,8 @@ description: Ana Company OS'tan production/render bilgisayarındaki Claude'a gid
 Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygulayan: production PC'deki Claude (`production-engineer` rolü). Şablon: `TEMPLATE.md` (bu klasör). Handoff, doctrine `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` §12 COO ön kontrolünü (prototype rubric) ve §13 handoff standardını geçmeden production PC'ye gitmez. Çıktı: `production/.../<video>-production-handoff-<prototype|full>-vN.md`.
 
 ## Ne zaman
-- **Prototype handoff:** creative treatment + taslak anlatı hazır olduğunda, otomatik. Kapsam yalnız ilk ~60–90 sn.
-- **Full handoff:** Founder prototype kapısında "Evet" dedikten, senaryo kilitlendikten ve görsel/edit plan güncellendikten sonra.
+- **Prototype handoff (zorunlu değil — D-043):** yalnız kanal dili kalibrasyonunda, CASE-SPECIFIC kararla veya riskli/yeni videoda HEURISTIC olarak; creative treatment + taslak anlatı hazır olduğunda. Kapsam yalnız ilk ~60–90 sn.
+- **Full handoff:** senaryo kilitlendikten ve görsel/edit plan hazır olduktan sonra; prototype kullanıldıysa Founder prototype kapısında "Evet" dedikten sonra.
 
 ## Kurallar
 1. **Kendi kendine yeterli.** Production PC'deki Claude sohbeti görmez; handoff + referans verdiği repo dosyaları yeterli olmalı. Founder'dan ek açıklama beklenmez.

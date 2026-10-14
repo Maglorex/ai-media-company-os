@@ -6,7 +6,7 @@ description: Onaylı video fikri + onaylı packaging + tamamlanmış evidence le
 # Documentary Script
 
 Kapsam: N2 belge-öncelikli faceless belgeseller. Ön koşullar: `documentary-virality-gate` READY FOR PILOT, packaging Founder onaylı, `documentary-evidence-ledger` kaydı var, **`documentary-creative-treatment` hazır** (hook, yapı, sahne amaçları). Eksikse önce onu tamamla. Senaryo treatment'ın yapısını izler; yapıyı değiştirmek gerekiyorsa önce treatment güncellenir.
-**Sıra (D-025):** önce taslak anlatı (tüm yapı + ilk ~90 sn tam VO metni) → prototype kapısı → senaryonun tamamı kilitlenir. Prototype kapısı geçilmeden tam VO üretilmez.
+**Sıra (D-025, D-043):** önce taslak anlatı (tüm yapı + ilk ~90 sn tam VO metni) → [prototype kullanılacaksa: prototype kapısı] → senaryonun tamamı kilitlenir. Prototype kullanıldıysa kapı geçilmeden tam VO üretilmez; prototype zorunlu değildir.
 Çıktı: `production/.../<video>-script-vN.md` (sahne tablosu + düz VO metni + self-review). Founder'a tam metin veya tablo varsayılan olarak gösterilmez (`founder-interface`); yayın metni İngilizce kalır.
 
 ## Kurallar

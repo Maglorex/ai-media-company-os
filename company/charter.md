@@ -2,7 +2,7 @@
 
 > Kaynak: Founder Charter, 2026-10-14 (Company OS v2). Bu dosya yalnız **şirket seviyesindeki** ilkeleri taşır. Değişiklik yalnız Founder.
 > Katman: Charter, L0–L1'in üstündeki çerçevedir; kural sınıfları ve öncelik: `.claude/rules/governance.md` + `os/precedence.json`.
-> **Kanala özgü** Founder Charter maddeleri (The Industrial Casebook viewer promise, opening grammar, CASE INTRO, Anti-PowerPoint, visual curiosity, production yöntemleri, transitions, sound) burada **yoktur**; Stage 2'de `channels/the-industrial-casebook/` altında channel canon olarak kurulur. Kaynak metin şu an non-canonical draft'ta korunuyor: `git show draft/os-v2-phase1-plan:company/os-v2/FOUNDER-CHARTER.md` (§2–§10) ve Stage 0 yedeği.
+> Kanalların yaratıcı kuralları (izleyici vaadi, açılış, görsel/motion/ses dili, intro vb.) bu dosyada **yer almaz**; her kanalın kendi channel canon'unda (`channels/<kanal>/`) yaşar ve kanal kapsamlı kararlarla (`company/state/active-decisions.md`, kapsam `channel:<id>`) yönetilir.
 
 ## 1. Amaç
 AI MEDIA COMPANY tek bir YouTube kanalı değildir; zamanla birden fazla güçlü YouTube markası çalıştırabilen bir medya şirketidir.

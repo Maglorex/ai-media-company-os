@@ -22,7 +22,12 @@ const STAGE1_ALLOWED = [
   /^\.claude\/rules\/(governance|git-and-secrets|founder-approval|evidence-and-research|self-repair-and-escalation|company-memory)\.md$/,
   /^\.claude\/skills\/(founder-interface|founder-brief|founder-help|session-close|system-health-check)\/SKILL\.md$/,
   /^\.claude\/agents\/analytics-analyst\.md$/,
+  // Stage 1 acceptance düzeltmeleri (Founder 2026-10-14: prototype politikası D-043, kanal sızıntısı D-044)
+  /^\.claude\/rules\/documentary-creative-standards\.md$/,
+  /^\.claude\/skills\/(documentary-edit-plan|documentary-production-handoff|documentary-script|documentary-creative-treatment|video-launch-os)\/SKILL\.md$/,
+  /^channels\/the-industrial-casebook\/v1-procedures\.md$/,
 ];
+const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
 const KEEP = [/^production\//, /^finance\//, /^intelligence\//, /^channels\//, /^company\/(strategy|constraints|mission|goals|machines)\.md$/];
 
 const changed = () => {
@@ -36,7 +41,7 @@ test('migration: hiçbir dosya silinmedi', { skip: !hasBase && 'pre-v2-checkpoin
 });
 
 test('migration: KEEP alanları değişmedi', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
-  assert.deepEqual(changed().filter((c) => KEEP.some((k) => k.test(c.path))).map((c) => c.path), []);
+  assert.deepEqual(changed().filter((c) => KEEP.some((k) => k.test(c.path)) && !KEEP_EXCEPTIONS.some((e) => e.test(c.path))).map((c) => c.path), []);
 });
 
 test('migration: değişiklikler yalnız onaylı Stage 1 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
