@@ -1,0 +1,30 @@
+{
+  "version": "1",
+  "source": ".claude/rules/governance.md §1-§3 (D-042)",
+  "classes": ["HARD", "HEURISTIC", "EXPERIMENT", "DIAGNOSTIC", "CASE-SPECIFIC"],
+  "types": ["RULE", "DECISION", "STATE"],
+  "active_statuses": ["ACTIVE", "LIMITED"],
+  "layers": [
+    { "id": "L0", "rank": 0, "name": "HARD company boundaries" },
+    { "id": "L1", "rank": 1, "name": "Company active decisions" },
+    { "id": "L2", "rank": 2, "name": "Channel canon" },
+    { "id": "L3", "rank": 3, "name": "Active video/case state" },
+    { "id": "L4", "rank": 4, "name": "Case-specific decisions" },
+    { "id": "L5", "rank": 5, "name": "Heuristics / experiments / diagnostics" }
+  ],
+  "derivation": [
+    "class HARD -> L0",
+    "class HEURISTIC | EXPERIMENT | DIAGNOSTIC -> L5",
+    "class CASE-SPECIFIC -> L4",
+    "type STATE -> L3",
+    "scope case:* (no class) -> L4",
+    "scope channel:* -> L2",
+    "scope company -> L1"
+  ],
+  "scope_rank": { "company": 0, "channel": 1, "case": 2 },
+  "artifact_statuses": ["ACTIVE", "DRAFT", "FROZEN", "SUPERSEDED", "HISTORICAL", "REJECTED"],
+  "artifact_instruction_statuses": ["ACTIVE"],
+  "decision_statuses": ["ACTIVE", "LIMITED"],
+  "gap_result": "BLOCKED_BY_CANONICAL_GAP",
+  "diagnostic_only_result": "DIAGNOSTIC_ONLY"
+}
