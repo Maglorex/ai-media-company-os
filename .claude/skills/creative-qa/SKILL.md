@@ -10,10 +10,12 @@ description: The Industrial Casebook için bağımsız Creative QA — script ve
 ## 1. Bağımsızlık
 - QA, değerlendirilen artifact'ı (beat sheet, script, scene plan; Stage 4 sonrası render) **üretmemiş** bir oturumda veya `creative-qa-evaluator` agent'ında yapılır.
 - Rapor başlığında `author:` (değerlendirilen artifact'ı üreten oturum/rol, artifact başlığından aynen) ve `evaluator:` (bu QA'yı yapan oturum/rol) ayrı yazılır; aynıysa rapor geçersizdir (lint).
+- **Girdi paketi (yalnız kanonik):** değerlendirilen artifact dosyaları, kanal canon'u, pipeline README ve ilgili evidence/rights ledger yolları. Üreticinin sohbet içi gerekçesi, taslak notları veya özetleri değerlendiriciye **taşınmaz**; değerlendirici yalnız dosyalardan okur. Rapor başlığındaki `inputs:` alanı aldığı dosyaları listeler (lint).
 - Değerlendirici artifact'ı düzeltmez; bulguyu yazar. Düzeltmeyi üretici yapar, sonra yeni QA turu.
 - `muted-preview-gate` ve teşhis ölçümleri (render sonrası) DIAGNOSTIC girdidir; karar burada verilir.
 
-## 2. Alanlar (her biri: STRONG / OK / WEAK / MISSING + gerekçe)
+## 2. Alanlar (her biri nitel: PASS / CONCERN / BLOCKER + gerekçe — puan yok)
+Toplam puan, ağırlıklı skor veya sabit PASS eşiği **yoktur**; QA teşhis üretir, skor optimize etmez. `PASS` = bu alanda düzeltme gerekmiyor · `CONCERN` = düzeltilmesi gereken veya bilinçli kabul edilecek sorun · `BLOCKER` = bu haliyle ilerlenemez (HARD kanıt/hak/disclosure sorunu veya hikâyeyi çökerten eksik). (Dry-run QA v1/v2 eski nitel etiketleri STRONG/OK/WEAK/MISSING kullandı; tarihseldir.)
 | Alan | Sorulan |
 |---|---|
 | **Central question strength** | Spesifik, cevaplanabilir, erken kuruluyor mu (TIC-06/07)? |
@@ -30,8 +32,8 @@ description: The Industrial Casebook için bağımsız Creative QA — script ve
 Değerlendirilen artifact'lar eksikse (ör. dry-run'da script yok, scene plan kısmi) rapor başında kapsamı yazar; kapsam dışı kısım için PASS verilmez, eksiklik "Required changes" veya kapsam notunda belirtilir. Rapor adı sürümlüdür: `06-creative-qa-vN.md`.
 
 ## 3. Sonuç
-- **PASS:** hiçbir alan WEAK/MISSING değil (OK olanların notu yazılır).
-- **REVISE:** en az bir alan WEAK/MISSING; her biri için **gerçek neden** (hangi beat/sahne, ne eksik) ve **somut düzeltme**; öncelik sırası.
+- **PASS:** hiçbir alan BLOCKER değil; CONCERN varsa her biri "Accepted concerns" altında neden kabul edildiğiyle yazılır.
+- **REVISE:** düzeltilmesi gereken CONCERN veya BLOCKER var; her biri için **gerçek neden** (hangi beat/sahne, ne eksik) ve **somut düzeltme**; öncelik sırası.
 - **BLOCKED:** karar canon/pipeline'da yoksa veya HARD sorun (kanıt, hak, disclosure) varsa — neden ve kime gittiği.
 - Yalnız "PASS/FAIL" yazmak geçersizdir; lint her alanın gerekçesini ister.
 

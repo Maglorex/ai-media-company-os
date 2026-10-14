@@ -1,6 +1,6 @@
 # VID-001 — Production Scene Plan v2 (dry-run)
 
-> author: COO main session (Stage 3 dry-run, 2026-10-14) · date: 2026-10-14 · status: DRAFT · skill: `production-scene-plan` · input: `03-beat-sheet-v2.md` (no script in dry-run) · supersedes: `05-scene-plan-sample.md` · responds to: `06-creative-qa-v1.md` · coverage: all 11 beats, beat order unchanged (adjacent beats only are combined)
+> author: COO main session (Stage 3 dry-run, 2026-10-14) · date: 2026-10-14 · status: DRAFT · readiness vocabulary updated 2026-10-14 (Stage 3 acceptance) · skill: `production-scene-plan` · input: `03-beat-sheet-v2.md` (no script in dry-run) · supersedes: `05-scene-plan-sample.md` · responds to: `06-creative-qa-v1.md` · coverage: all 11 beats, beat order unchanged (adjacent beats only are combined)
 
 Brand use (whole plan): archive in natural colour; documents in the warm paper world; engineering lines in `steel`; **amber only on the one active evidence line or key number per frame**; CASE 001 accent (Atomic Teal) reserved for the hero ship silhouette (SP-01, SP-09, SP-10). Sound arc: narration-led with a restrained bed that develops through the investigation; **silence is reserved for two turning points** — the central question (SP-02) and the empty berth (SP-08).
 
@@ -15,7 +15,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** Object Carry — the silhouette is the bridge from archive to engineering; at the end the token slides off-frame toward the paper world of SP-02.
 - **Sound Role:** Narration leads over a low, restrained bed; the operators' quote is spoken over the bed (no silence here — silence is saved for SP-02).
 - **UI Role:** label — source marks "AEC / NATIONAL ARCHIVES" (V-05), "ROTTERDAM · 1964" (V-19), "GAO · 1970" on the counts; "NPS" on the quote.
-- **Rights / Asset Readiness:** V-05 public domain (NARA NAID 542141, "Use: Unrestricted") — READY; V-19 CC0 (Nationaal Archief/Anefo) — READY; region map from Natural Earth V-28/V-29 public domain — READY; rights-ledger rows to be added before production (DF-6).
+- **Rights / Asset Readiness:** V-05 public domain (NARA NAID 542141, "Use: Unrestricted") — READY; V-19 CC0 (Nationaal Archief/Anefo) — READY; region map from Natural Earth V-28/V-29 public domain — READY (rights-ledger rows pending before production, DF-6).
 - **Anti-PowerPoint:** A slide would zoom slowly into a photo and print "19 voyages"; here the photographed object itself becomes the map marker and the regions fill as it "travels", so the claim is seen rather than read, and the eras are never mixed.
 - **Tool:** Photoshop subject isolation + After Effects for the object carry (one-off); the region fill is data-driven and fits a Remotion map primitive; no 3D because flat continuity is the idea.
 
@@ -30,7 +30,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The open bracket becomes the shape the next scene fills with the report's purpose; the paper world continues into SP-03.
 - **Sound Role:** The bed drops out as the phrase is lifted; the central question is asked over silence (first of the two reserved silences).
 - **UI Role:** highlight + source clarity — amber only on the lifted phrase; evidence label "EVIDENCE 01 · GAO B-136209 · 1970" mapped to C-04/Q-01.
-- **Rights / Asset Readiness:** V-02, V-03 public domain (U.S. government report) — READY (page render via `production/tools/pdf/pdf-to-png.ps1`); comparison bracket own graphic — TO PRODUCE.
+- **Rights / Asset Readiness:** V-02, V-03 public domain (U.S. government report) — READY (page render via `production/tools/pdf/pdf-to-png.ps1`); comparison bracket own graphic — TO_PRODUCE.
 - **Anti-PowerPoint:** The document is not "shown and done": the scene stages finding the number and turns it into an open gap the viewer wants closed — a slide could display the sentence but not make the gap the question.
 - **Tool:** After Effects for the file-opening and Evidence Pull (bespoke); exact page pixels from the PDF render keep the quote verbatim; no data tool needed because nothing is scaled.
 
@@ -45,7 +45,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The fork's centre point becomes the anchor where the next page (V-01) slides in.
 - **Sound Role:** Bed returns quietly under narration; no stinger on the CASE LABEL.
 - **UI Role:** label — CASE LABEL only (small, edge, per `video-ui-spec-v1.md`; TIC-12); the CASE INTRO slot stays empty before Golden Master calibration (TIC-11).
-- **Rights / Asset Readiness:** V-14, V-03 public domain (GAO) — READY; fork graphic own — TO PRODUCE.
+- **Rights / Asset Readiness:** V-14, V-03 public domain (GAO) — READY; fork graphic own — TO_PRODUCE.
 - **Anti-PowerPoint:** A slide would add a bullet "the report informed Congress"; here the report's own sentence turns the abstract gap into a decision with two outcomes, which is the reason to keep watching.
 - **Tool:** After Effects (page turn and isolation in the same file-opening system as SP-02).
 
@@ -60,7 +60,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The first block (training) detaches and becomes the starting object of SP-05.
 - **Sound Role:** Narration names each item once over the bed; a soft paper texture as each bracket draws (SFX only if it clarifies).
 - **UI Role:** highlight (one amber line at a time) + source clarity ("GAO · Summary p.2"; fuel note "GAO · Summary p.1 / NPS").
-- **Rights / Asset Readiness:** V-01 public domain (GAO) — READY; block graphics own — TO PRODUCE.
+- **Rights / Asset Readiness:** V-01 public domain (GAO) — READY; block graphics own — TO_PRODUCE.
 - **Anti-PowerPoint:** A slide would bullet three costs; here the page itself fills the question's gap, and what is excluded is shown as part of the measurement rather than hidden.
 - **Tool:** After Effects for the page-to-block transformation; blocks could be a reusable Remotion primitive since SP-09 reuses them.
 
@@ -75,7 +75,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The timelines run to the right edge and become the coastline of the shore map in SP-06.
 - **Sound Role:** Narration with the bed slightly lifted; no silence.
 - **UI Role:** compare — "27 / 67" labels; source mark "GAO p.13".
-- **Rights / Asset Readiness:** V-15 public domain (GAO) — READY; figure graphics own (non-photorealistic, no invented details) — TO PRODUCE.
+- **Rights / Asset Readiness:** V-15 public domain (GAO) — READY; figure graphics own (non-photorealistic, no invented details) — TO_PRODUCE.
 - **Anti-PowerPoint:** A slide would show the training page and highlight "27 of 67"; here the number becomes people on the ship and time away, which carries the human weight the line item hides.
 - **Tool:** After Effects (bespoke figures and timelines); Remotion would also fit for the counted figures — chosen by who builds SP-06, no 3D needed.
 
@@ -90,7 +90,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The stack of dossiers becomes the first object of the Galveston facility scene, setting the place where support lives.
 - **Sound Role:** Narration; light office/paper ambience at most.
 - **UI Role:** label — task labels in the source's wording; source mark "GAO p.14".
-- **Rights / Asset Readiness:** V-16 public domain (GAO) — READY; V-28/V-29 Natural Earth public domain — READY; own graphics — TO PRODUCE.
+- **Rights / Asset Readiness:** V-16 public domain (GAO) — READY; V-28/V-29 Natural Earth public domain — READY; own graphics — TO_PRODUCE.
 - **Anti-PowerPoint:** A slide would list three tasks; here the tasks are seen piling up between the ship and a port, so the viewer understands why a team on land was part of the ship's cost.
 - **Tool:** Remotion map primitive for the coastline and points (data-driven), After Effects for the dossier stacking.
 
@@ -105,7 +105,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The completed component sheet is reused in SP-08 with the ship silhouette removed.
 - **Sound Role:** Narration names components once; restrained mechanical texture only where it helps identify an object.
 - **UI Role:** label — component names from the page; "ILLUSTRATION · not to position" tag; source mark "GAO p.15".
-- **Rights / Asset Readiness:** V-13 public domain (GAO) — READY; component drawing own — TO PRODUCE (only ledger components, no layout invented, E-11).
+- **Rights / Asset Readiness:** V-13 public domain (GAO) — READY; component drawing own — TO_PRODUCE (only ledger components, no layout invented, E-11).
 - **Anti-PowerPoint:** A slide would bullet the equipment next to a ship photo; here the line on the page physically becomes the equipment around one ship, so scale is understood without reading a list.
 - **Tool:** After Effects line-draw build with Illustrator shapes; Blender not justified — a flat engineering drawing is clearer and cheaper.
 
@@ -120,7 +120,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The empty dashed outline becomes the place the ship returns to in SP-09, where the load is placed on it.
 - **Sound Role:** Silence (second and last reserved silence), at most faint water ambience.
 - **UI Role:** guide — calendar strip, "NEW YORK" label; source mark "GAO pp.15–16".
-- **Rights / Asset Readiness:** own drawing (from SP-07) — TO PRODUCE; V-28/V-29 public domain — READY.
+- **Rights / Asset Readiness:** own drawing (from SP-07) — TO_PRODUCE; V-28/V-29 public domain — READY.
 - **Anti-PowerPoint:** A slide would state "two years without a visit" on an image we do not have; here the absence is shown by subtraction from a scene the viewer has just learned, which makes the waiting felt.
 - **Tool:** After Effects. AI illustration was considered by the five TIC-18 criteria and not chosen here: the scene need is real, but the accuracy need fails — the evidence gives no site layout (E-11), and the subtraction idea is stronger than a new image.
 
@@ -135,7 +135,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** The narration returns to the actual record; the dashed outlines dim back to the hypothetical caption, leaving the single ship with the full load — this image opens SP-10.
 - **Sound Role:** The bed builds gently through the explanation without a stinger; it resolves at the start of SP-10.
 - **UI Role:** compare — "one ship system" (verbatim) vs "could serve several" (verbatim, no number, D-018); evidence label for V-12.
-- **Rights / Asset Readiness:** V-12 public domain (GAO) — READY; load-mechanism graphic own — TO PRODUCE.
+- **Rights / Asset Readiness:** V-12 public domain (GAO) — READY; load-mechanism graphic own — TO_PRODUCE.
 - **Anti-PowerPoint:** A slide would place the quote beside a diagram; here the quote becomes a physical load the viewer watches being shared only where the evidence allows, so the mechanism is understood, not read.
 - **Tool:** Remotion (reusing the SP-04 block data) or After Effects if the waterline motion needs hand-tuned easing; either fits, no 3D.
 
@@ -150,7 +150,7 @@ Brand use (whole plan): archive in natural colour; documents in the warm paper w
 - **Transition Logic:** Every earlier object returns (bracket, blocks, fork) so the end visibly assembles the parts; the cut to the photograph is deliberate punctuation.
 - **Sound Role:** The bed resolves on the answer; the final line is spoken over a quiet tail, not silence (silence was used twice already).
 - **UI Role:** label — caption "PATRIOTS POINT · 1990", source "NPS"; CASE LABEL small.
-- **Rights / Asset Readiness:** V-26 public domain (NPS, 1990) — READY; own graphics reused — TO PRODUCE; rights-ledger row pending (DF-6).
+- **Rights / Asset Readiness:** V-26 public domain (NPS, 1990) — READY (rights-ledger row pending, DF-6); own graphics reused — TO_PRODUCE.
 - **Anti-PowerPoint:** A slide would end on a summary bullet; here the viewer sees the opening gap filled by the objects of the investigation, which is the "so that's what it was" moment rather than a recap.
 - **Tool:** After Effects for the recomposition of earlier elements; the photograph is used as archive with natural colour.
 
@@ -161,4 +161,4 @@ Real ship (it worked) → the audit's open gap (question) → the decision it wa
 No literal "show what is said" scenes; documents always carry an Evidence Pull and a transformation; archive kept natural with dates; AI considered once and rejected for an evidence reason (not as last resort); tool mix: After Effects in most scenes, Remotion for map/blocks — watch for one-tool look in the full plan; silence used twice by design.
 
 ## Asset status & Founder actions
-READY: V-05, V-19, V-02, V-03, V-14, V-01, V-15, V-16, V-13, V-12, V-26, V-28/V-29. TO PRODUCE: own graphics (map regions, bracket, fork, blocks, figures, dossiers, component sheet, load mechanism). Before production (Stage 4): rights-ledger rows for every used V-ID (DF-6). Founder actions only when production opens: VO credits (FOUNDER DECISION). No AI asset needed in this plan.
+READY: V-05, V-19, V-02, V-03, V-14, V-01, V-15, V-16, V-13, V-12, V-26, V-28/V-29. TO_PRODUCE: own graphics (map regions, bracket, fork, blocks, figures, dossiers, component sheet, load mechanism). Before production (Stage 4): rights-ledger rows for every used V-ID (DF-6). Founder actions only when production opens: VO credits (FOUNDER DECISION). No AI asset needed in this plan.

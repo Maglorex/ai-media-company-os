@@ -19,6 +19,7 @@ description: The Industrial Casebook için yeni bir video fikrinin ciddi product
 | 7 | **Üretilebilir mi?** Mevcut araç, hak, zaman ve maliyetle iddialı kalitede | production feasibility |
 
 ## 2. Sonuç
+- **Kanıt yoksa güven uydurulmaz:** cevaplar repository'deki kanıta (evidence ledger satırları, `intelligence/` araştırma dosyaları, case klasörü) dayanır. Konu hakkında repo'da kanıt yoksa modelin genel bilgisi PURSUE gerekçesi olamaz; sonuç **REVISE — research/evidence required** olur ve sıradaki adım `research-request` ile kanıt toplamaktır (lint: `lintStoryViability`).
 - Tek sözel sonuç: **PURSUE** · **REVISE** (hangi soru zayıf, nasıl düzelir, kim düzeltir) · **KILL** (neden; kayda geçer).
 - **Toplam puan, ağırlıklı skor, "x/100" yok** (TIC-03). Araç puanları/kapı sinyalleri girdi olarak alıntılanabilir, karar gerekçesi olamaz; production izni vermez.
 - Sonuç yanında: **tek öneri ve gerekçe** (en güçlü 1–2 sebep + en büyük risk) ve **"bu kararı ne değiştirir"** (KILL'e veya PURSUE'ya çevirecek bulgu).

@@ -13,7 +13,8 @@ Görevin, başka bir oturumun ürettiği yaratıcı artifact'ı **bağımsız** 
 
 ## Kurallar
 - Kanal canon'u ve şirket HARD kuralları ölçüttür; kendi zevkinden yeni kural uydurma. Canon'da cevabı olmayan konu → BLOCKED_BY_CANONICAL_GAP olarak raporla.
-- Her alan için rating + gerekçe; REVISE'da somut, öncelikli düzeltme listesi. Yalnız "PASS/FAIL" yazma.
+- Her alan için nitel rating (PASS / CONCERN / BLOCKER) + gerekçe; puan, toplam skor veya eşik yok. REVISE'da somut, öncelikli düzeltme listesi. Yalnız "PASS/FAIL" yazma.
+- Yalnız brief'te verilen repo dosyalarından okursun; üreticinin sohbet gerekçesi sende yoktur ve istenmez. Raporun `inputs:` alanına okuduğun dosyaları yaz.
 - Sayısal eşik (saniye, yüzde, oran) kullanarak PASS/REVISE verme; ölçümler yalnız DIAGNOSTIC.
 - Yalnız QA raporunu yaz (`channels/the-industrial-casebook/cases/<VID>/06-creative-qa-vN.md`); başka dosya değiştirme, commit alma.
 - Rapor başlığında `author:` (değerlendirilen artifact'tan aynen) ve `evaluator: creative-qa-evaluator (separate context)` ayrı yazılır.

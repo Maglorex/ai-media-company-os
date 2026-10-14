@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT, read, exists, parseTable } from '../lib/records.mjs';
-import { lintStoryViability, lintBeatSheet, lintScenePlan, lintCreativeQA, header } from '../lib/pipeline.mjs';
+import { lintStoryViability, lintBeatSheet, lintScenePlan, lintCreativeQA, header, readinessErrors, productionBlockers } from '../lib/pipeline.mjs';
 
 const PIPE = 'channels/the-industrial-casebook/pipeline';
 const DR = 'channels/the-industrial-casebook/cases/VID-001/dry-run-v2';
@@ -91,8 +91,8 @@ test('lint: kötü kararlar makine tarafından da reddediliyor', () => {
   assert.ok(lintScenePlan(sp({ ...GOOD_SP, 'Presentation Visual': 'photo123.jpg, V-05', 'Visual Idea': 'photo123.jpg' })).some((e) => /asset reference/.test(e)));
   // her beat'e amaçsız motion
   assert.ok(lintScenePlan(sp({ ...GOOD_SP, 'Motion / Spatial Behaviour': 'slow zoom so it keeps moving' })).some((e) => /motion must state/.test(e)));
-  // hakkı belirsiz asset
-  assert.ok(lintScenePlan(sp({ ...GOOD_SP, 'Rights / Asset Readiness': 'V-20 UNKNOWN_RIGHTS — READY' })).some((e) => /HARD/.test(e)));
+  // hakkı çözülmemiş kaynak READY gibi sunuluyor
+  assert.ok(lintScenePlan(sp({ ...GOOD_SP, 'Rights / Asset Readiness': 'V-20 UNKNOWN_RIGHTS — READY' })).some((e) => /presented as READY/.test(e)));
   // alan eksik
   const { 'Sound Role': _s, ...missing } = GOOD_SP;
   assert.ok(lintScenePlan(sp(missing)).some((e) => /missing Sound Role/.test(e)));
@@ -100,7 +100,7 @@ test('lint: kötü kararlar makine tarafından da reddediliyor', () => {
 
 test('lint: story viability puan üretmez, sözel karar verir', () => {
   const base = ['Why viewers care', 'Central question', 'Real packaging promise', 'Evidence sufficiency', 'Visual opportunity', 'Differentiation', 'Feasibility', 'Recommendation', 'Biggest risk', 'What would change this verdict']
-    .map((k) => `- **${k}:** ${k === 'Central question' ? 'Why did it cost more?' : 'text here'}`).join('\n');
+    .map((k) => `- **${k}:** ${k === 'Central question' ? 'Why did it cost more?' : k === 'Evidence sufficiency' ? 'Ledger C-04, Q-01' : 'text here'}`).join('\n');
   assert.deepEqual(lintStoryViability(`${base}\n- **Verdict:** PURSUE`), []);
   assert.ok(lintStoryViability(`${base}\n- **Verdict:** PURSUE (score 78/100)`).some((e) => /pseudo-score/.test(e)));
   assert.ok(lintStoryViability(`${base}\n- **Verdict:** READY FOR PILOT`).some((e) => /PURSUE \| REVISE \| KILL/.test(e)));
@@ -115,12 +115,12 @@ test('lint: beat "bu bilgi doğru" diye screen time kazanmaz', () => {
 test('lint: üreten oturum kendi işine creative PASS veremez; REVISE gerekçe ister', () => {
   const areas = ['Central question strength', 'Narrative curiosity', 'Visual curiosity', 'Audiovisual momentum plan', 'Story progression', 'Evidence clarity', 'Anti-PowerPoint', 'CASE identity', 'Payoff'];
   const body = (rating) => areas.map((a) => `### ${a}\n- **Rating:** ${rating}\n- **Reason:** this area was checked against the canon with specific beat references\n`).join('');
-  const qa = (author, evaluator, rating, verdict, changes = '') => `> author: ${author} · evaluator: ${evaluator} · date: x\n## Areas\n${body(rating)}## Verdict\n- **Verdict:** ${verdict}\n- **Required changes:** ${changes}\n`;
-  assert.deepEqual(lintCreativeQA(qa('COO main session', 'creative-qa-evaluator', 'OK', 'PASS')), []);
-  assert.ok(lintCreativeQA(qa('COO main session', 'COO main session', 'OK', 'PASS')).some((e) => /self-QA/.test(e)));
-  assert.ok(lintCreativeQA(qa('production agent', 'creative-qa-evaluator', 'OK', 'PASS'), { producedBy: 'creative-qa-evaluator' }).some((e) => /producing session/.test(e)));
-  assert.ok(lintCreativeQA(qa('COO', 'evaluator', 'WEAK', 'PASS')).some((e) => /PASS with WEAK/.test(e)));
-  assert.ok(lintCreativeQA(qa('COO', 'evaluator', 'WEAK', 'REVISE', 'fix it')).some((e) => /concrete required changes/.test(e)));
+  const qa = (author, evaluator, rating, verdict, changes = '', inputs = 'channels/the-industrial-casebook/cases/VID-001/dry-run-v2/05-scene-plan-v2.md, channels/the-industrial-casebook/canon/README.md') => `> author: ${author} · evaluator: ${evaluator} · date: x · inputs: ${inputs}\n## Areas\n${body(rating)}## Verdict\n- **Verdict:** ${verdict}\n- **Required changes:** ${changes}\n`;
+  assert.deepEqual(lintCreativeQA(qa('COO main session', 'creative-qa-evaluator', 'PASS', 'PASS')), []);
+  assert.ok(lintCreativeQA(qa('COO main session', 'COO main session', 'PASS', 'PASS')).some((e) => /self-QA/.test(e)));
+  assert.ok(lintCreativeQA(qa('production agent', 'creative-qa-evaluator', 'PASS', 'PASS'), { producedBy: 'creative-qa-evaluator' }).some((e) => /producing session/.test(e)));
+  assert.ok(lintCreativeQA(qa('COO', 'evaluator', 'BLOCKER', 'PASS')).some((e) => /PASS with BLOCKER/.test(e)));
+  assert.ok(lintCreativeQA(qa('COO', 'evaluator', 'CONCERN', 'REVISE', 'fix it')).some((e) => /concrete required changes/.test(e)));
 });
 
 test('P3 dry-run: pipeline gerçek case\'te çalıştı (lint temiz, QA bağımsız ve döngü işledi)', () => {
@@ -131,7 +131,7 @@ test('P3 dry-run: pipeline gerçek case\'te çalıştı (lint temiz, QA bağıms
   const ev = [];
   for (const f of ['06-creative-qa-v1.md', '06-creative-qa-v2.md']) {
     const qa = read(`${DR}/${f}`);
-    assert.deepEqual(lintCreativeQA(qa, { producedBy: 'COO main session' }), [], f);
+    assert.deepEqual(lintCreativeQA(qa, { producedBy: 'COO main session', legacy: true }), [], f);
     assert.equal(header(qa, 'author'), author);
     ev.push(header(qa, 'evaluator'));
   }
@@ -141,4 +141,71 @@ test('P3 dry-run: pipeline gerçek case\'te çalıştı (lint temiz, QA bağıms
   const plan = read(`${DR}/05-scene-plan-v2.md`);
   assert.match(plan, /bespoke/i, 'at least one bespoke animation opportunity');
   assert.match(plan, /Evidence Pull/, 'document beat transformed, not just shown');
+});
+
+// ---- Stage 3 acceptance düzeltmeleri (Founder 2026-10-14) ----
+
+test('acceptance: yaratıcı planlama asset/hak hazırlığına mahkûm değil; durum açık olmalı', () => {
+  const strongIdea = { ...GOOD_SP, 'Rights / Asset Readiness': 'archival newsreel of the ship leaving port (to be located at NARA) — NEEDS_SOURCE; V-20 photo, rights UNKNOWN_RIGHTS (licence proof missing) — NEEDS_RIGHTS; own graphic — TO_PRODUCE' };
+  assert.deepEqual(lintScenePlan(sp(strongIdea)), [], 'explicit NEEDS_SOURCE / NEEDS_RIGHTS must not reject a creative scene');
+  assert.ok(readinessErrors('V-05 public domain').some((e) => /readiness not stated/.test(e)), 'unstated readiness');
+  assert.ok(readinessErrors('V-19 — READY').some((e) => /rights status hidden/.test(e)), 'hidden rights');
+  assert.ok(readinessErrors('V-20 UNKNOWN_RIGHTS — READY').some((e) => /presented as READY/.test(e)), 'unresolved rights shown as real/ready');
+  assert.ok(readinessErrors('V-21 REJECTED — NEEDS_RIGHTS').some((e) => /rejected asset/.test(e)), 'rejected asset');
+  assert.ok(readinessErrors('V-05 public domain — READY or NEEDS_SOURCE').some((e) => /ambiguous/.test(e)), 'ambiguous readiness');
+  assert.ok(readinessErrors('a newsreel we might find — MISSING').length === 0);
+});
+
+test('acceptance: HARD STOP Stage 4 handoff\'ta (çözülmemiş hak / eksik asset Strong PC\'ye gidemez)', () => {
+  const plan = sp({ ...GOOD_SP, 'Rights / Asset Readiness': 'V-02 public domain — READY; newsreel — NEEDS_SOURCE; V-20 UNKNOWN_RIGHTS — NEEDS_RIGHTS; diagram — MISSING; own graphic — TO_PRODUCE' });
+  const blockers = productionBlockers(plan);
+  assert.equal(blockers.length, 3, blockers.join(' | '));
+  assert.deepEqual(productionBlockers(sp(GOOD_SP)), []);
+  const t = read('channels/the-industrial-casebook/pipeline/README.md');
+  assert.match(t, /HARD STOP Stage 4 handoff'tadır/);
+});
+
+test('acceptance: Creative QA nitel — skor, ağırlık veya sabit PASS eşiği yok', () => {
+  const areas = ['Central question strength', 'Narrative curiosity', 'Visual curiosity', 'Audiovisual momentum plan', 'Story progression', 'Evidence clarity', 'Anti-PowerPoint', 'CASE identity', 'Payoff'];
+  const doc = (rating, extra = '', verdictBlock = '- **Verdict:** PASS\n- **Accepted concerns:** none\n- **Required changes:** none') =>
+    `> author: COO main session · evaluator: creative-qa-evaluator · date: x · inputs: channels/the-industrial-casebook/cases/VID-001/dry-run-v2/05-scene-plan-v2.md\n## Areas\n${areas.map((a) => `### ${a}\n- **Rating:** ${rating}\n- **Reason:** this area was checked against the canon with specific beat references ${extra}\n`).join('')}## Verdict\n${verdictBlock}\n`;
+  assert.deepEqual(lintCreativeQA(doc('PASS')), []);
+  assert.ok(lintCreativeQA(doc('PASS', '— overall 84/100')).some((e) => /numeric\/composite score/.test(e)), '84/100 proxy');
+  assert.ok(lintCreativeQA(doc('PASS', '— weighted score 4.2')).some((e) => /numeric\/composite score/.test(e)), 'weighted score');
+  assert.ok(lintCreativeQA(doc('8')).some((e) => /qualitative, no score/.test(e)), 'numeric rating');
+  assert.ok(lintCreativeQA(doc('STRONG')).some((e) => /PASS \| CONCERN \| BLOCKER/.test(e)), 'legacy labels only for historical reports');
+  assert.ok(lintCreativeQA(doc('CONCERN', '', '- **Verdict:** PASS\n- **Accepted concerns:** none\n- **Required changes:** none')).some((e) => /Accepted concerns/.test(e)));
+  assert.ok(!/STRONG \| OK \| WEAK \| MISSING/.test(read('.claude/skills/creative-qa/TEMPLATE.md')));
+  assert.match(read('.claude/skills/creative-qa/SKILL.md'), /Toplam puan, ağırlıklı skor veya sabit PASS eşiği \*\*yoktur\*\*/);
+});
+
+test('acceptance: Story Viability kanıt yoksa güven uydurmaz (repo-only epistemik test)', () => {
+  const sv = (evidence, verdict) => ['Why viewers care', 'Central question', 'Real packaging promise', 'Evidence sufficiency', 'Visual opportunity', 'Differentiation', 'Feasibility', 'Recommendation', 'Biggest risk', 'What would change this verdict']
+    .map((k) => `- **${k}:** ${k === 'Central question' ? 'Why was Concorde barred from landing in New York in 1977?' : k === 'Evidence sufficiency' ? evidence : 'text here'}`).join('\n') + `\n- **Verdict:** ${verdict}`;
+  const generalKnowledge = 'Well known from general knowledge: noise complaints and local opposition; no repository evidence.';
+  assert.ok(lintStoryViability(sv(generalKnowledge, 'PURSUE')).some((e) => /PURSUE without repository evidence/.test(e)), 'general knowledge cannot justify PURSUE');
+  assert.deepEqual(lintStoryViability(sv(generalKnowledge, 'REVISE — research/evidence required')), []);
+  assert.ok(lintStoryViability(sv(generalKnowledge, 'REVISE')).some((e) => /research\/evidence required/.test(e)));
+  assert.deepEqual(lintStoryViability(sv('Primary source in ledger: C-04, Q-01', 'PURSUE')), []);
+  assert.deepEqual(lintStoryViability(sv('Research file `intelligence/market-research/2026-10-06-faz1-stage-a-sentez.md`', 'PURSUE')), []);
+  assert.match(read('.claude/skills/story-viability/SKILL.md'), /REVISE — research\/evidence required/);
+});
+
+test('acceptance: bağımsız değerlendirici yalnız kanonik artifact paketini alır', () => {
+  const agent = read('.claude/agents/creative-qa-evaluator.md');
+  const tools = (agent.match(/^tools:\s*(.*)$/m) || [])[1] || '';
+  assert.ok(!/\b(Bash|Agent|Edit|WebFetch|WebSearch)\b/.test(tools), `evaluator tools must stay read + report only: ${tools}`);
+  assert.match(agent, /üreticinin sohbet gerekçesi sende yoktur/);
+  assert.match(read('.claude/skills/creative-qa/SKILL.md'), /Girdi paketi \(yalnız kanonik\)/);
+  assert.match(read('channels/the-industrial-casebook/pipeline/README.md'), /kanonik girdi paketi/);
+  const base = (inputs) => `> author: COO main session · evaluator: creative-qa-evaluator · date: x · inputs: ${inputs}\n## Areas\n## Verdict\n- **Verdict:** PASS\n`;
+  assert.ok(lintCreativeQA(base('summary from the producer conversation')).some((e) => /input package|repository artifacts only/.test(e)));
+  assert.ok(lintCreativeQA(base('channels/x/05-scene-plan-v2.md, producer\'s reasoning notes')).some((e) => /repository artifacts only/.test(e)));
+  assert.ok(lintCreativeQA('> author: a · evaluator: b · date: x\n').some((e) => /input package/.test(e)));
+});
+
+test('os kodunda görünmez kontrol karakteri yok (regex kaçış hatası koruması)', () => {
+  const files = ['os/lib/pipeline.mjs', 'os/lib/precedence.mjs', 'os/lib/records.mjs', ...readdirSync(join(ROOT, 'os/tests')).filter((f) => f.endsWith('.mjs')).map((f) => `os/tests/${f}`)];
+  const bad = files.filter((f) => /[\u0000-\u0008\u000B\u000C\u000E-\u001F]/.test(read(f)));
+  assert.deepEqual(bad, []);
 });

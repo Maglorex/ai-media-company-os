@@ -27,7 +27,7 @@ description: The Industrial Casebook için tek yetkili Production Scene Plan —
 - **Transition Logic:** bu sahnenin sonucu bir sonrakinin başlangıcına nasıl dönüşür (TIC-21) veya bilinçli kesme/noktalama nedeni
 - **Sound Role:** narration / müzik / ambiyans / sessizlik / SFX'in bu sahnedeki işi (TIC-22)
 - **UI Role:** guide / compare / label / highlight / source clarity — veya "none" (UI'sız daha güçlüyse UI yok, TIC-23)
-- **Rights / Asset Readiness:** her harici asset için V-/AI- ID + hak durumu (rights ledger / evidence ledger §C) + hazırlık (READY / TO PRODUCE / TO FIND / BLOCKED). `UNKNOWN_RIGHTS`, `UNRESOLVED_RIGHTS`, `REJECTED` asset kullanılmaz (HARD)
+- **Rights / Asset Readiness:** her asset için (`;` ile ayrılmış) V-/AI- ID veya "own graphic" + **hak durumu açıkça** (rights ledger / evidence ledger §C) + **tek hazırlık durumu**: `READY` (dosya var, hak kanıtlı) · `TO_PRODUCE` (bizim üreteceğimiz grafik/AI) · `NEEDS_SOURCE` (fikir güçlü, kaynak aranacak) · `NEEDS_RIGHTS` (kaynak var, hak çözülmedi) · `MISSING` (gerekli ama yok). Yaratıcı planlama mevcut asset havuzuna mahkûm değildir: güçlü bir Presentation Visual, açıkça `NEEDS_SOURCE`/`NEEDS_RIGHTS` işaretliyse reddedilmez. Reddedilen: hazırlığı belirsiz asset · hak durumu saklanan asset · hakkı çözülmemiş kaynağın `READY` (gerçek ve kullanılabilir) gibi sunulması · `REJECTED` asset'in kullanım planı
 - **Anti-PowerPoint:** scene test cevabı
 - **Tool:** önerilen araç(lar) + tek cümle gerekçe
 Örnek mantık: *"Belgedeki maliyet satırını Evidence Anchor olarak göster; rakamı izole et; ardından rakamı servicing infrastructure'ın fiziksel parçalarına dönüşen açıklayıcı sekansa bağla."* — "Presentation Visual = photo123.jpg" kabul edilmez.
@@ -46,7 +46,7 @@ Lint: `os/lib/pipeline.mjs` (`lintScenePlan`) alanları, dosya-adı-yalnız Pres
 ## 4. Planın sonunda
 - **Scene progression özeti:** sahneler merak yolculuğunu nasıl ilerletiyor (beat sheet ile tutarlı mı).
 - **Teşhis (DIAGNOSTIC, hedef değil):** literal sahneler (yalnız söyleneni gösteren) · tek araca çöken bölüm · bilgi bütçesi bitmiş görüntü · promise'in görsel karşılığı · kanıt/illüstrasyon ayrımı · sessiz izlemede iskelet okunuyor mu.
-- **Asset durumu:** READY / TO PRODUCE / TO FIND / BLOCKED listesi ve riskler; Founder'ın dış araçta yapacağı işler (GUIDED ACTION: araç · neden · tam prompt · dosya adı · klasör · sonraki adım).
+- **Asset durumu:** READY / TO_PRODUCE / NEEDS_SOURCE / NEEDS_RIGHTS / MISSING listesi ve riskler. **HARD STOP Stage 4'tedir:** handoff'a giren planda `NEEDS_SOURCE`, `NEEDS_RIGHTS`, `MISSING` veya çözülmemiş hak varsa iş Strong PC'ye gidemez (`os/lib/pipeline.mjs` `productionBlockers`; rights ledger satırı da zorunlu). Bu aşamada çözüm yolu yazılır (araştırma isteği, alternatif sahne, Founder GUIDED ACTION); Founder'ın dış araçta yapacağı işler (GUIDED ACTION: araç · neden · tam prompt · dosya adı · klasör · sonraki adım).
 - Final creative PASS bu planı yazan oturumdan gelmez → `creative-qa`.
 
 ## 5. Founder'a (sade Türkçe)

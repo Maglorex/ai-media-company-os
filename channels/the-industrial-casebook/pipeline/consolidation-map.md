@@ -21,7 +21,7 @@
 | documentary-visual-plan | Kanıt ekranda; uydurma kanıt yok; katman ayrımı | `.claude/skills/production-scene-plan/SKILL.md` | Katman ayrımı |
 | documentary-visual-plan | Haklara duyarlı, V-ID bağı, CC BY-SA notu | `.claude/skills/production-scene-plan/SKILL.md` | CC BY-SA yükümlülükleri ayrıca not edilir |
 | documentary-visual-plan | Script bütünlüğü (görsel yok diye claim eklenmez) | `.claude/skills/production-scene-plan/SKILL.md` | görsel bulunamadı diye yeni factual claim eklenmez |
-| documentary-visual-plan | Zorluk ölçeği, asset envanteri | `.claude/skills/production-scene-plan/SKILL.md` | READY / TO PRODUCE / TO FIND / BLOCKED |
+| documentary-visual-plan | Zorluk ölçeği, asset envanteri | `.claude/skills/production-scene-plan/SKILL.md` | READY / TO_PRODUCE / NEEDS_SOURCE / NEEDS_RIGHTS / MISSING |
 | documentary-edit-plan | Beat bazlı edit fikri, geçiş mantığı, müzik/SFX rolü | `.claude/skills/production-scene-plan/SKILL.md` | Transition Logic |
 | documentary-edit-plan | Belge okunabilir süre; söylenen rakam ekranda | `.claude/skills/production-scene-plan/SKILL.md` | okunabilir süre verilir |
 | documentary-edit-plan | Zaman kodu, ölçülen anlatıcı hızı, VO senkronu | Stage 4 production handoff (final VO'dan sonra) | Zaman kodları ve VO senkronu final VO'dan sonra Stage 4 handoff'ta üretilir |

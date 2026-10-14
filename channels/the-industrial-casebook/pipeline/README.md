@@ -6,7 +6,7 @@
 ## 1. Akış
 | # | Aşama | Skill | Çıktı (case klasöründe) | Çıkış ölçütü | Founder |
 |---|---|---|---|---|---|
-| 1 | Story Viability | `story-viability` | `01-story-viability.md` | Yedi soru kanıtla cevaplandı; sonuç **PURSUE / REVISE / KILL** + tek öneri ve gerekçe; toplam puan yok | **FOUNDER DECISION** yalnız PURSUE önerisinde (yatırım). REVISE/KILL'de COO düzeltir veya öldürür, Founder'a bilgi verir |
+| 1 | Story Viability | `story-viability` | `01-story-viability.md` | Yedi soru repo kanıtıyla cevaplandı; sonuç **PURSUE / REVISE / KILL** + tek öneri ve gerekçe; toplam puan yok; repo'da kanıt yoksa **REVISE — research/evidence required** (genel bilgiyle PURSUE yok) | **FOUNDER DECISION** yalnız PURSUE önerisinde (yatırım). REVISE/KILL'de COO düzeltir veya öldürür, Founder'a bilgi verir |
 | 2 | Packaging Hypothesis | `documentary-packaging` | `02-packaging-hypothesis.md` | Title hypothesis · thumbnail hypothesis · viewer promise · central curiosity gap; hepsi kanıtla karşılanabilir | Yalnız stratejik seçim gerekiyorsa en fazla 3 finalist |
 | — | Evidence Ledger | `documentary-evidence-ledger` | `<case>-evidence-ledger.md` | Önemli her claim ledger satırında; haklar rights ledger'da | Yok |
 | 3 | Creative Treatment / Beat Sheet | `documentary-creative-treatment` | `03-beat-sheet.md` | Her beat: Story Function · Viewer Question / Curiosity State · Claim · Evidence Anchor · Payoff / Next Question · screen time'ı neden hak ettiği | Yok (büyük yaratıcı yön değişikliği hariç) |
@@ -24,6 +24,11 @@ Case klasörü: `channels/the-industrial-casebook/cases/<VID>/`. Her yeni/yeni s
 - Değişiklik kaydı (Change Request'e hazır biçim): `CR-NN · neyi değiştiriyor · neden (hangi beat/QA bulgusu) · truth etkisi (yok / ledger satırı) · maliyet etkisi (VO yeniden üretimi vb.) · onay modu`. Truth etkisi olan değişiklik ledger'dan geçer; maliyet doğuran değişiklik Founder onayına tabidir. Tam Creative Change Request (production sonrası, Strong PC'den gelen) Stage 4'tür.
 - "Script asla değişmez" diye global kural yoktur. (Case kararı olarak kilitlenmiş eski metinler — ör. D-013 — kendi case'inde geçerlidir; yeni pipeline'da yeniden açılmaları bir change kaydı ile olur.)
 
+## 2b. Asset hazırlığı ve hak — planlama serbest, production'da HARD STOP
+- Scene plan yaratıcı planlamadır: asset henüz bulunmadı veya hakkı çözülmedi diye güçlü bir sahne fikri reddedilmez. Her asset açık bir durum taşır: `READY` · `TO_PRODUCE` · `NEEDS_SOURCE` · `NEEDS_RIGHTS` · `MISSING`.
+- Lint reddeder: durumu belirsiz asset, hak durumu saklanan asset, hakkı çözülmemiş kaynağın `READY` gibi sunulması, `REJECTED` asset kullanımı.
+- **HARD STOP Stage 4 handoff'tadır:** çözülmemiş hak veya eksik gerekli asset (`NEEDS_SOURCE` / `NEEDS_RIGHTS` / `MISSING`) varsa iş Strong PC'ye gidemez; rights ledger satırı olmayan harici asset de gidemez.
+
 ## 3. Anti-PowerPoint scene test (her önemli scene)
 Soru: **"Bu gerçekten scene mi, yoksa hareket verilmiş slide mı?"** Cevap scene plan'de cümleyle yazılır: görüntü bu beat'te izleyiciye **ne yeni anlayış** veriyor ve bir PowerPoint geçişiyle neden yaklaşık üretilemez? Fotoğraf, belge ve harita kullanılabilir; sorun bunların görsel fikir olmadan sıraya dizilmesidir. Oran veya sayı kuralı yoktur (TIC-13, TIC-29).
 
@@ -40,7 +45,7 @@ Scene tasarlanır, sonra araç önerilir: archive · 2.5D · After Effects · Re
 Founder'a **taşınmaz:** araç seçimi, kamera/geçiş/renk/font, beat sırası, scene fikirleri, QA'nın düzeltebileceği şeyler, repoda cevabı olan sistem soruları. Founder prompt yazmaz; dış AI gerekiyorsa prompt hazır verilir.
 
 ## 6. Independent Creative QA
-Script veya scene plan'i üreten oturum kendi işine **final creative PASS veremez**. QA ayrı bir oturumda veya `creative-qa-evaluator` agent'ında yapılır; rapor üreticiyi (`author`) ve değerlendiriciyi (`evaluator`) ayrı yazar. QA "PASS/FAIL" ile yetinmez: her alan için durum ve gerekçe, REVISE'da somut düzeltme listesi verir (`creative-qa`).
+Script veya scene plan'i üreten oturum kendi işine **final creative PASS veremez**. Değerlendiriciye yalnız **kanonik girdi paketi** verilir: değerlendirilen artifact dosyaları + kanal canon'u + pipeline + evidence/rights ledger yolları. Üreticinin sohbet içi gerekçesi, notları veya özetleri taşınmaz; rapor `inputs:` alanında aldığı dosyaları listeler. Alanlar nitel değerlendirilir (`PASS` / `CONCERN` / `BLOCKER` + gerekçe); toplam/ağırlıklı puan veya sabit PASS eşiği yoktur. QA ayrı bir oturumda veya `creative-qa-evaluator` agent'ında yapılır; rapor üreticiyi (`author`) ve değerlendiriciyi (`evaluator`) ayrı yazar. QA "PASS/FAIL" ile yetinmez: her alan için durum ve gerekçe, REVISE'da somut düzeltme listesi verir (`creative-qa`).
 
 ## 7. Reddedilen kararlar
 | Kötü karar | Sonuç | Neden | Dayanak |
