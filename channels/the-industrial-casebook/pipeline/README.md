@@ -14,6 +14,7 @@
 | 5 | Production Scene Plan | `production-scene-plan` | `05-scene-plan-vN.md` | Her önemli beat'te on alan + Anti-PowerPoint scene test + scene'den sonra araç | Yok |
 | 6 | Independent Creative QA | `creative-qa` (ayrı oturum/agent `creative-qa-evaluator`) | `06-creative-qa-vN.md` | PASS / REVISE (gerçek nedenlerle) / BLOCKED; değerlendirici, işi üreten oturum değildir | Yok — Founder'ın yaratıcı sorusu final videoda (charter §9) |
 | → | Stage 4 | Production Handoff (henüz yok) | — | — | — |
+CASE INTRO Golden Master kalibrasyonu (Stage 5) tamamlanana kadar videolarda CASE INTRO slotu **boş kalır**; yerine geçici intro üretilmez, yalnız CASE LABEL (TIC-11, TIC-12) kullanılır.
 Ses (`documentary-voice-director`) ve müzik/SFX (`documentary-music-sfx`) script ve scene plan'den beslenir; ses üretimi/kredi Founder onaylıdır.
 Case klasörü: `channels/the-industrial-casebook/cases/<VID>/`. Her yeni/yeni sürüm dosya `company/state/artifact-registry.csv`'ye aynı turda girer (DRAFT → kapı geçince ACTIVE; eski sürüm SUPERSEDED).
 

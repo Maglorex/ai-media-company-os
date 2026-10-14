@@ -3,7 +3,7 @@
 > Tarih kaydı değil, **çalışma görünümü**dür. Kararların tam metni ve geçmişi: `company/decision-log.md` (append-only; silinmez, yeniden yazılmaz).
 > Katman/sınıf/kapsam: `.claude/rules/governance.md` §1–§3, `os/precedence.json`. "Katman" sütunu türetmeyle aynı olmak zorundadır (test). Sınıf boşsa (`—`) kayıt, katmanında bağlayıcı bir Founder/şirket kararıdır.
 > Durum: `ACTIVE` (aynen geçerli) · `LIMITED` (geçerli; "Sınır" sütunundaki kısım uygulanmaz veya sonraki kayıtla daraltıldı).
-> Güncelleme: yeni D- kararı alındığı turda burası da güncellenir (`company-memory.md`). Son güncelleme: 2026-10-14 (D-042 … D-045).
+> Güncelleme: yeni D- kararı alındığı turda burası da güncellenir (`company-memory.md`). Son güncelleme: 2026-10-14 (D-042 … D-046).
 
 ## Aktif kararlar
 | ID | Başlık | Tür | Kapsam | Sınıf | Katman | Durum | Sınır / not |
@@ -17,7 +17,7 @@
 | D-008 | Pilot taslak testi (EXP-001); P3 ilk tam pilot | DECISION | channel:the-industrial-casebook | EXPERIMENT | L5 | ACTIVE | Kanalın N2 pilot deneyi (P1/P2/P3 karşılaştırması); P3'e özgü kısımlar case:VID-001 kararlarıyla (D-012…) yürür; Faz 2 OS v2 migration süresince durdurulmuş (current-state) |
 | D-009 | Skill Lab v0.1 | DECISION | company | — | L1 | ACTIVE | Güvenlik kuralı HARD: `third-party-skill-security.md` |
 | D-010 | SL-002 değerlendirmesi | DECISION | company | — | L1 | ACTIVE | Kalan 3 uyarlama ayrı Founder onayı bekliyor |
-| D-011 | Fikir kapıları, Founder arayüzü, dil kuralı | DECISION | company | — | L1 | LIMITED | Dil kuralı ve Founder arayüzü aktif; fikir kapısı skill'leri v2 pipeline aşamasında yeniden yazılacak (story-viability) |
+| D-011 | Fikir kapıları, Founder arayüzü, dil kuralı | DECISION | company | — | L1 | LIMITED | Dil kuralı ve Founder arayüzü aktif; virality gate SUPERSEDED → `story-viability` (D-046); packaging skill Packaging Hypothesis olarak sürüyor |
 | D-012 | P3 packaging onayı | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | ACTIVE | P3 işi OS v2 migration'da duruyor (current-state) |
 | D-013 | P3 senaryo v2 kilidi | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | LIMITED | Açılış anlatımı D-030 ile değişti; script v3 prototype kapısından sonra |
 | D-014 | P3 senaryo v2.1 "fuel elements" | DECISION | case:VID-001 | CASE-SPECIFIC | L4 | ACTIVE | |
@@ -47,6 +47,7 @@
 | D-043 | Prototype/proof politikası: rutin videoda zorunlu prototype yok | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Prototype: kalibrasyon, CASE-SPECIFIC veya HEURISTIC; kullanılırsa mevcut prosedür geçerli; Founder final kapısı charter §9 |
 | D-044 | CASE INTRO = tekrar eden motion DNA (aynı skeleton, değişken payload); CASE INTRO ≠ CASE LABEL | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Tasarım + Golden Master bir defalık kalibrasyon işi; o zamana kadar CASE INTRO tasarlanmaz |
 | D-045 | The Industrial Casebook Channel Canon v2 (tek yetkili kanal kaynağı) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/canon/` (TIC-01…TIC-33); `os-v2-migration` dalında |
+| D-046 | The Industrial Casebook Creative Production Pipeline v2 (Stage 3) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/pipeline/README.md`; yeni skill'ler story-viability, production-scene-plan, creative-qa; 5 eski skill SUPERSEDED |
 
 ## Aktif olmayan kararlar (yalnız tarih)
 | ID | Başlık | Neden aktif değil | Yerine |

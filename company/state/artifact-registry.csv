@@ -17,6 +17,17 @@ CH-TIC-CANON-06,channels/the-industrial-casebook/canon/06-prototype-and-calibrat
 CH-TIC-CANON-07,channels/the-industrial-casebook/canon/07-rule-register.md,channel:the-industrial-casebook,canon-rule-register,2,ACTIVE,,D-045,TIC-01..TIC-33
 CH-TIC-CANON-08,channels/the-industrial-casebook/canon/08-rejected-decisions.md,channel:the-industrial-casebook,canon-rejected-decisions,2,ACTIVE,,D-045,
 CH-TIC-CANON-09,channels/the-industrial-casebook/canon/09-v1-source-map.md,channel:the-industrial-casebook,canon-source-map,2,ACTIVE,,D-045,
+CH-TIC-PIPELINE,channels/the-industrial-casebook/pipeline/README.md,channel:the-industrial-casebook,pipeline-index,2,ACTIVE,,D-046,Creative production pipeline v2
+CH-TIC-PIPELINE-MAP,channels/the-industrial-casebook/pipeline/consolidation-map.md,channel:the-industrial-casebook,pipeline-consolidation-map,2,ACTIVE,,D-046,Old skill behaviours -> new location
+VID001-DRY-README,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/README.md,case:VID-001,dry-run-index,2,DRAFT,,D-046,Pipeline dry-run; not production authorization
+VID001-DRY-01-SV,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/01-story-viability.md,case:VID-001,story-viability,1,DRAFT,,D-046,PURSUE recommendation; Founder investment decision when P3 reopens
+VID001-DRY-02-PKG,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/02-packaging-hypothesis.md,case:VID-001,packaging-hypothesis,1,DRAFT,,D-012;D-046,
+VID001-DRY-03-BS-V1,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/03-beat-sheet.md,case:VID-001,beat-sheet,1,SUPERSEDED,VID001-DRY-03-BS-V2,D-046,Replaced after creative QA v1
+VID001-DRY-03-BS-V2,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/03-beat-sheet-v2.md,case:VID-001,beat-sheet,2,DRAFT,,D-046,Open items in creative QA v2
+VID001-DRY-05-SP-V1,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/05-scene-plan-sample.md,case:VID-001,scene-plan,1,SUPERSEDED,VID001-DRY-05-SP-V2,D-046,Replaced after creative QA v1
+VID001-DRY-05-SP-V2,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/05-scene-plan-v2.md,case:VID-001,scene-plan,2,DRAFT,,D-046,Open items in creative QA v2
+VID001-DRY-06-QA-V1,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/06-creative-qa-v1.md,case:VID-001,creative-qa,1,HISTORICAL,,D-046,Independent QA v1: REVISE
+VID001-DRY-06-QA-V2,channels/the-industrial-casebook/cases/VID-001/dry-run-v2/06-creative-qa-v2.md,case:VID-001,creative-qa,2,DRAFT,,D-046,Independent QA v2: REVISE; required changes open
 CO-CHANNELS-INDEX,channels/README.md,company,channels-index,1,ACTIVE,,D-002,Channel index; new channel needs Founder approval
 CO-OSV2-DRAFT-CHARTER,git:draft/os-v2-phase1-plan:company/os-v2/FOUNDER-CHARTER.md,company,charter,draft,DRAFT,,D-042,Non-canonical draft (7354fb5; created without approval - L-009); source text for Stage 2 channel canon (sections 2-10)
 CO-OSV2-DRAFT-PLAN,git:draft/os-v2-phase1-plan:company/os-v2/MIGRATION-PLAN.md,company,migration-plan,draft,HISTORICAL,,D-042,Replaced by Founder-approved revised plan (chat 2026-10-14; summarized in D-042)

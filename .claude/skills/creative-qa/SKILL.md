@@ -26,6 +26,9 @@ description: The Industrial Casebook için bağımsız Creative QA — script ve
 | **CASE identity** | Brand System kimliği ve CASE LABEL/INTRO kurallarına uyuyor mu (TIC-11, TIC-12, TIC-24); CASE INTRO kalibrasyon öncesi tasarlanmamış mı? |
 | **Payoff** | Final merkezi soruyu anlamlı biçimde kapatıyor mu; packaging promise'i karşılanıyor mu? |
 
+## 2b. Kısmi kapsam
+Değerlendirilen artifact'lar eksikse (ör. dry-run'da script yok, scene plan kısmi) rapor başında kapsamı yazar; kapsam dışı kısım için PASS verilmez, eksiklik "Required changes" veya kapsam notunda belirtilir. Rapor adı sürümlüdür: `06-creative-qa-vN.md`.
+
 ## 3. Sonuç
 - **PASS:** hiçbir alan WEAK/MISSING değil (OK olanların notu yazılır).
 - **REVISE:** en az bir alan WEAK/MISSING; her biri için **gerçek neden** (hangi beat/sahne, ne eksik) ve **somut düzeltme**; öncelik sırası.

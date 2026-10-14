@@ -92,7 +92,9 @@
 - [ ] Yayın sırası kararı (pilot ölçümleri sonrası).
 
 ## Sıradaki — kurulum
-- [ ] OS v2 migration Stage 2–6 (her biri ayrı Founder onayı; plan özeti D-042, durum `company/state/current-state.md`).
+- [ ] OS v2 migration Stage 4–6 (her biri ayrı Founder onayı; durum `company/state/current-state.md`).
+- [ ] P3 yeniden açıldığında: `channels/the-industrial-casebook/cases/VID-001/dry-run-v2/06-creative-qa-v2.md` "Required changes" → script → yeni bağımsız QA (D-046).
+- [ ] v2.1 BACKLOG: `video-ui-spec-v1.md` CASE LABEL zamanlaması (cold open) ile canon TIC-08 (CASE ENTRY) uyumlu hale getirilecek; o zamana kadar canon kazanır (L2). Thumbnail accent kuralı netleştirilecek.
 - [ ] EXP-002 kapanış notu (kampanya 2026-10-12'de bitti; stok üretim yapılmadı).
 - [ ] ElevenLabs kredi kullanım politikasını netleştir (mevcut kredilerin onaysız kullanımı serbest mi?).
 - [ ] Deney ve araştırma şablonları (`production/templates/`).

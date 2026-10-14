@@ -17,7 +17,7 @@ description: The Industrial Casebook için tek yetkili Production Scene Plan —
 6. **Tool:** sahne belli olduktan sonra önerilir (TOOL-LIBRARY); gerekçe: sahnenin ihtiyacı · doğruluk · haklar · maliyet/karmaşıklık · production value. Pahalı/karmaşık araç kendiliğinden daha iyi değildir. AI otomatik son çare değildir: beş ölçüt (scene need, accuracy need, rights, disclosure, production value — TIC-18).
 
 ## 2. Her önemli beat bloğu (`### SP-NN — kısa ad`; alanlar zorunlu)
-- **Beat:** B-NN (beat sheet)
+- **Beat:** B-NN (beat sheet) — bir SP yalnız **ardışık** beat'leri birleştirebilir; beat sırası scene plan'de sessizce değiştirilmez, gerekirse önce beat sheet değişiklik kaydıyla değişir
 - **Story Function:** …
 - **Claim:** … (veya "none — framing beat")
 - **Evidence Anchor:** ledger ID'leri (C-/Q-/V-/E-) veya "none — framing beat"

@@ -6,7 +6,7 @@
 | Alan | Değer |
 |---|---|
 | Son güncelleme | 2026-10-14 |
-| OS sürümü | `os/VERSION` → 2.0.0-stage2 (Stage 1 LOCK; Stage 2 tamamlandı, Founder kabulü bekliyor) |
+| OS sürümü | `os/VERSION` → 2.0.0-stage3 (Stage 1–2 LOCK; Stage 3 tamamlandı, Founder kabulü bekliyor) |
 | Çalışma dalı | `os-v2-migration` (yerel; push yok). `main` = `origin/main` = `4659823` (= `pre-v2-checkpoint`) |
 | Şirket fazı | Faz 2 — Pilot üretim testi (EXP-001) · **OS v2 migration süresince durdurulmuş** |
 | Kanallar | 1 — The Industrial Casebook (`channels/the-industrial-casebook/`; oluşturuldu D-037; yayın yok) |
@@ -18,20 +18,20 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 |---|---|---|
 | 0 | Safety snapshot, pre-v2 checkpoint, restore drill, makine dışı yedek | **PASS** (2026-10-14) |
 | 1 | Governance kernel: company charter, sınıflar + öncelik, current state, active decisions, artifact lifecycle, git-secrets, testler | **PASS — Founder LOCK** (2026-10-14) |
-| 2 | Channel canon (The Industrial Casebook) | **Tamamlandı — Founder kabulü bekliyor** (D-045; `channels/the-industrial-casebook/canon/`; clean-room testi bekleniyor) |
-| 3 | Creative pipeline (story-viability … scene-plan, bağımsız creative QA) | Planlı |
+| 2 | Channel canon (The Industrial Casebook) | **PASS — Founder LOCK** (2026-10-14; D-045) |
+| 3 | Creative pipeline (story viability → packaging → beat sheet → script → scene plan → bağımsız creative QA) | **Tamamlandı — Founder kabulü bekliyor** (D-046; P3 kağıt üstü dry-run, bağımsız QA v1/v2) |
 | 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | Planlı |
 | 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | Planlı |
 | 6 | Legacy konsolidasyonu + v2 kabulü | Planlı |
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder (GUIDED ACTION → FOUNDER DECISION): Stage 2 channel canon için temiz oturum kabul testini çalıştır, ardından Stage 2'yi kabul et.** Kabul → Stage 3 (creative pipeline) için ayrı onay. Bu arada başka iş yok; Strong PC iş almaz.
+**Founder: Stage 3 sonucunu değerlendir ve kabul et (FOUNDER DECISION).** Kabul → Stage 4 (factory interface) için ayrı onay. Bu arada başka iş yok; Strong PC iş almaz.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Stage 2 clean-room testi + kabulü | GUIDED ACTION → FOUNDER DECISION | Hazır test promptu sohbette |
+| 1 | Stage 3 kabulü | FOUNDER DECISION | Pipeline + P3 dry-run; isteğe bağlı temiz oturum testi |
 | 2 | Stage 2 başlatma onayı | FOUNDER DECISION | Stage 1 kabulünden sonra |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |

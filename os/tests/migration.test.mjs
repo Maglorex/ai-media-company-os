@@ -38,10 +38,15 @@ const STAGE1_ALLOWED = [
   // Stage 2 compatibility cleanup (Founder 2026-10-14): skill uyumu + eski kanal adı
   /^\.claude\/skills\/(documentary-packaging|documentary-music-sfx|documentary-voice-director)\/SKILL\.md$/,
   /^\.claude\/skills\/documentary-visual-storytelling\/VISUAL-LANGUAGE-LIBRARY\.md$/,
+  // Stage 3 — creative production pipeline (Founder 2026-10-14, D-046)
+  /^\.claude\/skills\/(story-viability|production-scene-plan|creative-qa)\//,
+  /^\.claude\/skills\/documentary-visual-plan\/SKILL\.md$/,
+  /^\.claude\/agents\/(creative-qa-evaluator|production-engineer|research-analyst)\.md$/,
+  /^channels\/the-industrial-casebook\/(pipeline|cases)\//,
 ];
 const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
   'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];
-const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/canon\//, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
+const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/(canon|pipeline|cases)\//, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
 const KEEP = [/^production\//, /^finance\//, /^intelligence\//, /^channels\//, /^company\/(strategy|constraints|mission|goals|machines)\.md$/];
 
 const changed = () => {
@@ -58,7 +63,7 @@ test('migration: KEEP alanları değişmedi', { skip: !hasBase && 'pre-v2-checkp
   assert.deepEqual(changed().filter((c) => KEEP.some((k) => k.test(c.path)) && !KEEP_EXCEPTIONS.some((e) => e.test(c.path))).map((c) => c.path), []);
 });
 
-test('migration: değişiklikler yalnız onaylı Stage 1–2 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: değişiklikler yalnız onaylı Stage 1–3 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
   const outside = changed().filter((c) => !STAGE1_ALLOWED.some((a) => a.test(c.path))).map((c) => c.path);
   assert.deepEqual(outside, []);
 });

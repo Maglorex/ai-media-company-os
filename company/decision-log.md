@@ -432,3 +432,13 @@
 - Gerekçe / kanıt: Founder Charter 2026-10-14 kanal bölümü ve Stage 2 talimatı. [VARSAYIM] Tek ve sınıflı canon, oturumlar arası tutarsızlığı ve sayısal eşiklerin hedefe dönüşmesini önler; kalibrasyon (Stage 5) ve first-party veriyle test edilir.
 - Geri dönüş koşulu: Stage 5 kalibrasyonu veya first-party veri bir canon kuralını çürütürse yalnız Founder kararıyla ilgili TIC kuralı değişir (canon README "Canon nasıl değişir").
 - Durum: Aktif — `os-v2-migration` dalında.
+
+### D-046 — The Industrial Casebook Creative Production Pipeline v2 (Stage 3)
+- Tarih: 2026-10-14
+- Karar veren: Founder (Stage 3 talimatı 2026-10-14) · Uygulama: COO
+- Kapsam: `channel:the-industrial-casebook` (L2 prosedür; canon D-045'e tabi).
+- Bağlam: Kanal canon'unu gerçek videoya çeviren hat dağınıktı ve tekrar ediyordu (virality gate + growth scoring; treatment + visual plan + edit plan + source-to-visual + visual storytelling); creative QA'yı üreten taraf veriyordu.
+- Karar: (1) Pipeline `channels/the-industrial-casebook/pipeline/README.md`: Story Viability → Packaging Hypothesis → (evidence ledger) → Beat Sheet → Script → Production Scene Plan → Independent Creative QA; Stage 4'te handoff. (2) Yeni skill'ler `story-viability` (PURSUE/REVISE/KILL, toplam puan yok), `production-scene-plan` (tek yetkili sahne planı; on alan + Anti-PowerPoint scene test + scene'den sonra araç; TOOL-LIBRARY), `creative-qa` + agent `creative-qa-evaluator` (üreten oturumdan ayrı değerlendirme). (3) `documentary-packaging` Packaging Hypothesis, `documentary-creative-treatment` Beat Sheet, `documentary-script` truth lock ≠ editorial lock + değişiklik kaydı olarak yeniden yazıldı. (4) `documentary-virality-gate`, `documentary-visual-plan`, `documentary-edit-plan`, `source-to-visual`, `documentary-visual-storytelling` SUPERSEDED (silinmedi); davranış eşlemesi `pipeline/consolidation-map.md`. (5) Deterministik lint `os/lib/pipeline.mjs`. (6) P3 kağıt üstü dry-run (`cases/VID-001/dry-run-v2/`): bağımsız QA v1 ve v2 REVISE verdi; döngü çalıştı; açık maddeler P3 yeniden açıldığında işlenecek.
+- Gerekçe / kanıt: Founder talimatı; dry-run'da iki bağımsız QA turu üreticinin kaçırdığı kanıt ihlallerini yakaladı (E-10, D-REJ-4, C-04 tabanı, E-11). [VARSAYIM] Tek sahne planı + bağımsız QA, slideshow riskini ve kanıt sızıntısını production'dan önce yakalar.
+- Geri dönüş koşulu: İlk gerçek videoda pipeline adımı tekrar veya boşluk üretirse yalnız Founder kararıyla ilgili skill değişir (change control: BLOCKER / EXPERIMENT / CASE-SPECIFIC / BACKLOG).
+- Durum: Aktif — `os-v2-migration` dalında.
