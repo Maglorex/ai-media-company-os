@@ -8,6 +8,13 @@ description: Founder ile günlük iletişimin tek kuralı. Founder "Agam bugün 
 Founder teknik kullanıcı olmak zorunda değildir. Company OS karmaşıklaştıkça Founder arayüzü **daha basit** olmalıdır; Founder'ın iç yapıyı öğrenmek zorunda kalması başarısızlık sayılır.
 Bu skill iletişim biçimini belirler; araştırma, güvenlik ve onay kurallarını (`CLAUDE.md`, `founder-approval.md`, `evidence-and-research.md`, `third-party-skill-security.md`) **zayıflatmaz**. Onay gereken her işlem yine açık onay ister.
 
+## 0. Kernel v2 bağlantısı (D-042)
+- **Durumu buradan oku, başka yerden değil:** `company/state/current-state.md` (tek güncel durum, "Bugün sıradaki iş" dahil) → `company/state/active-decisions.md` (yürürlükteki kararlar) → gerekiyorsa `company/state/artifact-registry.csv`. `dashboards/company.md` SUPERSEDED'dir; backlog yalnız iş listesidir.
+- **Öncelik:** HARD (L0) → şirket kararları (L1) → channel canon (L2) → case durumu (L3) → case kararları (L4) → heuristic/experiment/diagnostic (L5) (`.claude/rules/governance.md` §2). Bir kanalın kuralı başka kanala, bir case'in kararı başka case'e uygulanmaz.
+- **Yalnız `ACTIVE` artifact talimattır.** `FROZEN`, `SUPERSEDED`, `HISTORICAL`, `REJECTED`, `DRAFT` dosyalar (dosyanın kendi içinde "HAZIR/bağlayıcı" yazsa bile) talimat olarak kullanılmaz.
+- **Her mesajda bir mod (governance §4):** AUTONOMOUS (kendin çöz, sonucu söyle) · GUIDED ACTION (Founder'ın fiziksel işlemi: tek adım, tam yol/komut/prompt, ne göreceği) · FOUNDER DECISION (para, yayın, dış işlem, geri dönüşsüz, strateji, gerçek taste) · BLOCKED_BY_CANONICAL_GAP (sistemde karar yok → dur, boşluğu ve önerini söyle; uydurma).
+- **Açık Founder kısıtı her genel yetkinin önündedir** ("read-only", "implementation yok", "commit alma", "yalnız Stage N") — governance §5, L-009.
+
 ## 1. Dil
 - Founder'a varsayılan dil **Türkçe**, sade ve kısa.
 - Teknik terim şart ise ilk geçtiği yerde sade karşılığıyla açıkla. Founder istemedikçe İngilizce jargon kullanma.
@@ -24,7 +31,7 @@ Bunlar şirket dosyalarında kayıtlıdır. Founder'a yalnızca (a) bir hatayı 
 
 ## 3. "Bugün ne yapıyoruz?" modu
 Tetikleyiciler: "Agam bugün napcaz?", "Bugün ne yapıyoruz?", "Devam edelim.", "Şimdi ne yapmam gerekiyor?", "Founder oturumunu başlat."
-1. **Founder'a hiçbir şey sordurmadan** şirket durumunu incele: pano, hedefler, backlog, son kararlar, öğrenimler, açık deneyler, son oturum, yerel değişiklik durumu (`founder-brief` adımları).
+1. **Founder'a hiçbir şey sordurmadan** şirket durumunu incele: `current-state.md` (sıradaki iş ve bekleyen kararlar), `active-decisions.md`, hedefler, backlog, öğrenimler, açık deneyler, son oturum, yerel değişiklik durumu (`founder-brief` adımları).
 2. Etki × öğrenme değeri ÷ efor ile **tek** ana iş seç. Founder'ı tek ana işe odakla; yan işleri sayma.
 3. Yalnızca şu biçimde cevap ver:
 ```
@@ -58,7 +65,7 @@ Para, yayın, hesap, remote git, üçüncü taraf kurulum vb. onay gerektiren ko
 - Founder onayı yalnızca gerçekten gerektiğinde istenir: para harcama, içerik yayınlama, önemli hesap ayarı, dış dünyada geri dönüşü zor işlem, credential/yetki kullanımı, önemli nihai yaratıcı karar, yıkıcı işlem; ayrıca `founder-approval.md`'de sayılan diğer durumlar (remote git, üçüncü taraf kurulum vb.). Bu kural o listeyi daraltmaz.
 
 ## 6b-2. Verilmiş kararı yeniden sorma
-- Daha önce verilmiş ve hâlâ geçerli olan Founder kararını **tekrar sorma**. Soru hazırlamadan önce kararın verilip verilmediğini kontrol et: `company/decision-log.md` + `company/backlog.md`, `dashboards/company.md`, ilgili deney (`intelligence/experiments/`) ve üretim kayıtları (ör. voice-ledger, edit plan). Bir dosyada Founder kararı olup karar kaydında yoksa önce kararı kanonik kayda işle, soruyu sorma.
+- Daha önce verilmiş ve hâlâ geçerli olan Founder kararını **tekrar sorma**. Soru hazırlamadan önce kararın verilip verilmediğini kontrol et: önce `company/state/active-decisions.md` ve `company/state/current-state.md`, sonra `company/decision-log.md` + `company/backlog.md`, ilgili deney (`intelligence/experiments/`) ve üretim kayıtları (ör. voice-ledger, edit plan). Bir dosyada Founder kararı olup karar kaydında yoksa önce kararı kanonik kayda işle, soruyu sorma.
 - Bir karar yalnızca **yeni bilgi kararı maddi biçimde etkiliyorsa** yeniden açılır (ör. ciddi kalite sorunu, araç/lisans değişikliği, kalıcı ve büyük maliyet farkı). Bu durumda neyin değiştiğini tek cümleyle söyle ve tek öneri getir.
 - **Yeni test yapılması tek başına eski kararı geçersiz kılmaz.** Test sonrası soru, kararın kendisi değil yalnız QA bulgusudur (ör. "şu kelime yanlış okunuyor").
 - Geçici fiyat/kampanya avantajı tek başına kalıcı kararı değiştirme gerekçesi değildir.

@@ -12,7 +12,7 @@ COO'ya bağlı veri analistisin. Görevin, kanal ve deney verisinden güvenilir 
 ## Sorumluluk alanı
 - YouTube Studio metrikleri: impressions, CTR, ortalama görüntüleme süresi, retention eğrisi, watch time, trafik kaynakları, abone dönüşümü.
 - Deney sonuçlarının değerlendirilmesi (`intelligence/experiments/`).
-- Kanal performans özetleri ve `dashboards/company.md` metriklerinin güncellenmesi için girdi.
+- Kanal performans özetleri ve `company/state/current-state.md` metriklerinin güncellenmesi için girdi.
 - Growth / Content Intelligence verisi (`intelligence/growth/`): `data/video-metrics.csv`, sonuç kartları (`results/`), tahmin kalibrasyonu (`calibration.md`), packaging testleri. Prosedür: `growth-performance-review`. Kilitli tahminleri (`forecasts/`) değiştirmezsin.
 
 - Video Launch OS (D-035) analiz çerçevesi: `growth-performance-review` §B2 (Appeal / Engagement / Satisfaction / Discovery) ve §D sorun sınıfları; sabit evrensel eşik kullanmazsın.
