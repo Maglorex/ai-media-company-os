@@ -70,3 +70,10 @@
 - Öğrenim: Başarılı kanallarda ekran ortalama 2,6–4,4 sn'de yeni bir şey gösteriyor, açılışta somut nesne + anormallik + açık soru var ve mekanizma bir insan senaryosunda anlatılıyor; P3'te ~12,8 sn/beat, hareketli görüntü yok, insan yok, yapı rapor sırasıydı. Kanal içinde üretim dili sabitken izlenme 3–30× değişiyor → görsel dil tabanı, premise tavanı belirliyor (çıkarım).
 - Güven: Orta-yüksek (ölçüm DV; premise nedenselliği INF)
 - Uygulama: doctrine v1 §12 rubric her prototype öncesi; kendi render'ımız aynı araçla (shotscan) ölçülür.
+
+### L-009 — Açık "read-only / implementation yok" talimatı her genel yetkinin önündedir
+- Tarih: 2026-10-14
+- Kaynak: Company OS v2 Phase 1 — COO, "read-only audit + rapor" talimatına rağmen genel "yerel commit onay gerektirmez" iznine dayanarak iki plan dosyası oluşturup commit etti (`7354fb5`). Founder bunu process failure olarak işaretledi; commit non-canonical DRAFT olarak `draft/os-v2-phase1-plan` dalına ayrıldı, `main` `4659823`'e geri alındı (Stage 0).
+- Öğrenim: Genel izinler (yerel commit serbest, güvenli işi doğrudan yap, Production Autonomy) Founder'ın o oturum için koyduğu açık kısıtı geçersiz kılmaz. "Yararlı dokümantasyon" bir istisna değildir.
+- Güven: Yüksek (doğrudan Founder düzeltmesi)
+- Uygulama: Founder "read-only", "implementation yok", "dosya değiştirme", "commit alma" veya "yalnız Stage N" dediyse kapsam dışı hiçbir dosya oluşturulmaz/değiştirilmez, commit alınmaz; bulgu ve öneri yalnız raporda verilir. Kural: `.claude/rules/governance.md` §5; `founder-approval.md`, `self-repair-and-escalation.md`, `git-and-secrets.md` bu istisnayı taşır.
