@@ -104,4 +104,5 @@ CALS5-MEASURE-REQ-V1,channels/the-industrial-casebook/cases/CAL-S5/handoff/measu
 CALS5-MEASURE-REPORT-V1,channels/the-industrial-casebook/cases/CAL-S5/handoff/measurement-report-v1.md,case:CAL-S5,measurement-report,1,ACTIVE,,D-048,Strong PC observation record: 18 files no mismatch; V-90 verified; R1-R4 Audio Library no attribution; M-03 identity verified by Studio re-download (3:08 UI vs 3:12 file = observation); open: AI-01/02 backup missing
 CALS5-SP-V3,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v3.md,case:CAL-S5,scene-plan,3,SUPERSEDED,CALS5-SP-V4,D-048,Replaced after independent creative QA v3 (REVISE: binding fixes)
 CALS5-QA-V3,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v3.md,case:CAL-S5,creative-qa,3,HISTORICAL,,D-048,Independent QA v3: REVISE (6 binding/sound-instruction fixes)
-CALS5-SP-V4,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v4.md,case:CAL-S5,scene-plan,4,DRAFT,,D-048,Responds to QA v3; pending QA v4
+CALS5-SP-V4,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v4.md,case:CAL-S5,scene-plan,4,ACTIVE,,D-048,Independent creative QA v4 PASS (no concerns)
+CALS5-QA-V4,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v4.md,case:CAL-S5,creative-qa,4,ACTIVE,,D-048,Independent QA v4: PASS

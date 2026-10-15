@@ -6,12 +6,13 @@
 ## Dosyalar
 | Dosya | Durum |
 |---|---|
-| `05-scene-plan-v2.md` | Production Scene Plan v2 (14 SP: 9 golden/referans + 5 anti-reference; QA v1 düzeltmeleri); v1 SUPERSEDED |
-| `06-creative-qa-v1.md` · `06-creative-qa-v2.md` | Bağımsız creative QA (`creative-qa-evaluator`, ayrı bağlam): v1 REVISE → v2 PASS |
+| `05-scene-plan-v4.md` | Production Scene Plan v4 — **ACTIVE** (14 SP; v1–v3 SUPERSEDED; v3/v4 yalnız hazırlık, asset bağlama, müzik karşılaştırma planı) |
+| `06-creative-qa-v1.md` … `06-creative-qa-v4.md` | Bağımsız creative QA: v1 REVISE → v2 PASS → v3 REVISE → **v4 PASS** |
 | `rights-ledger.csv` + `rights-proof/2026-10-15-web-captures.md` | Kullanılan her harici/AI asset için hak satırı ve resmî sayfa kanıtı |
 | `handoff/asset-manifest.csv` | Stage 4 production manifest'i (`production_root: D:/CompanyOS-Production`) |
 | `handoff/07-production-handoff-v1.md` | `factory.mjs issue` çıktısı — **BLOCKED** (asset readiness) |
 | `handoff/measurement-request-v1.md` | Strong PC salt-okunur ölçüm turu: tam hash/boyut/süre + müzik hak doğrulaması |
+| `handoff/measurement-report-v1.md` | Strong PC ölçümü (2026-10-15): tam hash/boyut/süre, V-90 doğrulandı, M-01…M-04 hakları CLEAR, AI-01/02 yedeği yok |
 
 ## Önkoşul akışı
 1. Scene plan + bağımsız QA PASS → scene plan `ACTIVE`.
