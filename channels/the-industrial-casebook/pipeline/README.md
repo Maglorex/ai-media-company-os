@@ -1,7 +1,7 @@
 # The Industrial Casebook — Creative Production Pipeline v2
 
 > Karar: D-046 (Founder, 2026-10-14; Stage 3). Kapsam: `channel:the-industrial-casebook`. Bu belge **prosedürdür**: kanal canon'unu (`../canon/README.md`, L2) gerçek videoya çevirir; canon ve şirket HARD kuralları her zaman bu belgenin üstündedir.
-> Bu pipeline Independent Creative QA'da biter. Production Handoff ve Strong PC arayüzü Stage 4'tür; o zamana kadar render, Strong PC işi ve handoff yoktur.
+> Bu pipeline Independent Creative QA'da biter. Production Handoff ve Strong PC arayüzü Stage 4'tür (D-047, `os/factory/README.md`): Strong PC işi yalnız `ISSUED` Handoff v2 ve preflight `READY_FOR_PRODUCTION` ile başlar; render ayrıca Founder onayı ister.
 
 ## 1. Akış
 | # | Aşama | Skill | Çıktı (case klasöründe) | Çıkış ölçütü | Founder |
@@ -13,7 +13,7 @@
 | 4 | Script | `documentary-script` | `04-script-vN.md` + değişiklik kaydı | Evidence-locked; merkezi soru erken; final soruyu kapatır | Yok |
 | 5 | Production Scene Plan | `production-scene-plan` | `05-scene-plan-vN.md` | Her önemli beat'te on alan + Anti-PowerPoint scene test + scene'den sonra araç | Yok |
 | 6 | Independent Creative QA | `creative-qa` (ayrı oturum/agent `creative-qa-evaluator`) | `06-creative-qa-vN.md` | PASS / REVISE (gerçek nedenlerle) / BLOCKED; değerlendirici, işi üreten oturum değildir | Yok — Founder'ın yaratıcı sorusu final videoda (charter §9) |
-| → | Stage 4 | Production Handoff (henüz yok) | — | — | — |
+| → | Stage 4 | Production Handoff v2 (`documentary-production-handoff`) → Strong PC boot contract (`strong-pc-preflight`) | `handoff/07-production-handoff-vN.md` + `handoff/asset-manifest.csv` | Gate: ACTIVE scene plan + bağımsız QA PASS + temiz haklar + hazır asset; yoksa BLOCKED (protokol `os/factory/README.md`, D-047) | Yalnız para/render onayı ve push (GUIDED ACTION) |
 CASE INTRO Golden Master kalibrasyonu (Stage 5) tamamlanana kadar videolarda CASE INTRO slotu **boş kalır**; yerine geçici intro üretilmez, yalnız CASE LABEL (TIC-11, TIC-12) kullanılır.
 Ses (`documentary-voice-director`) ve müzik/SFX (`documentary-music-sfx`) script ve scene plan'den beslenir; ses üretimi/kredi Founder onaylıdır.
 Case klasörü: `channels/the-industrial-casebook/cases/<VID>/`. Her yeni/yeni sürüm dosya `company/state/artifact-registry.csv`'ye aynı turda girer (DRAFT → kapı geçince ACTIVE; eski sürüm SUPERSEDED).

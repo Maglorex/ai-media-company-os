@@ -1,29 +1,47 @@
 ---
 name: documentary-production-handoff
-description: Ana Company OS'tan production/render bilgisayarındaki Claude'a giden üretim brief'ini hazırlar (prototype handoff = ilk 60–90 sn, yalnız prototype kullanılacaksa — D-043; full handoff = tüm video). Core promise, hook, yapı, sahne amaçları, asset planı, görsel dil, footage listesi, AI görsel istekleri, tipografi anları, müzik yönü, prototype sınırı ve kanıt kısıtlarını içerir. Founder production promptu yazmaz. Render veya ses üretimi başlatmaz.
+description: The Industrial Casebook için Production Handoff v2 (Stage 4, D-047) — onaylanmış (ACTIVE) Production Scene Plan + bağımsız Creative QA PASS + asset manifest + rights ledger'dan, Strong PC'ye giden ince ve sürümlü sözleşmeyi `os/factory/factory.mjs issue` ile üretir; canon, scene plan ve ledger'lar yol + blob ile sabitlenir, doctrine kopyalanmaz. Gate geçmezse handoff BLOCKED yazılır ve Strong PC'ye gitmez. Eski Visual Plan / Edit Plan / Source-to-Visual girdisi ve v1 handoff'lar kullanılmaz. Render, ses üretimi veya push yapmaz.
 ---
 
-# Documentary Production Handoff
+# Production Handoff v2
 
-> **Kanal canon'u önce gelir (D-045):** `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Her beat için Evidence Anchor ve Presentation Visual ayrı yazılır (TIC-15); prototype yalnız TIC-26 koşullarında.
+> Protokol (tek kaynak): `os/factory/README.md` (L1, D-047). Kanal pipeline'ı: `channels/the-industrial-casebook/pipeline/README.md` (aşama 6'dan sonra). Kanal canon'u önce gelir (D-045); şirket HARD kuralları her zaman üsttedir.
+> v1 metni (prototype/full brief, 14 bölüm) git geçmişindedir: `git show 5d52fa5:.claude/skills/documentary-production-handoff/SKILL.md`. v1 formatındaki handoff'lar (P3 v1–v3) talimat değildir ve inherit edilmez.
 
-Hazırlayan: COO (yaratıcı bölümler `documentary-creative-director`). Uygulayan: production PC'deki Claude (`production-engineer` rolü). Şablon: `TEMPLATE.md` (bu klasör). Doctrine `intelligence/creative/doctrine/documentary-production-doctrine-v1.md` §12 (prototype rubric; yalnız prototype kullanılırsa) ve §13 (handoff standardı) COO'nun HEURISTIC kontrol listesidir (D-029 LIMITED); sayısal maddeleri DIAGNOSTIC'tir. Çıktı: `production/.../<video>-production-handoff-<prototype|full>-vN.md`.
+## 1. Girdi (yalnız kanonik)
+| Girdi | Koşul |
+|---|---|
+| Production Scene Plan (`05-scene-plan-vN.md`) | registry'de **ACTIVE**; `production-scene-plan` lint'i temiz — **tek yaratıcı girdi** |
+| Bağımsız Creative QA (`06-creative-qa-vN.md`) | bu scene plan sürümünü adıyla kapsar; **PASS**; author ≠ evaluator |
+| Asset manifest (`handoff/asset-manifest.csv`) | scene plan'deki her V-/AI- asset'i ve üretilecek OG- grafikleri; `REQUIRED` olanlar `READY` veya `TO_PRODUCE` |
+| Rights ledger (`production/<video>/<VID>-rights-ledger.csv`) | her harici/AI `REQUIRED` asset için temiz satır (`CLEAR` / `CLEAR_WITH_ATTRIBUTION`) |
+| Evidence ledger | sabitlenir; handoff iddia içermez |
+Eski `documentary-visual-plan`, `documentary-edit-plan`, `source-to-visual` ve `documentary-visual-storytelling` (SUPERSEDED, D-046) girdi değildir. Zaman kodu ve VO senkronu Strong PC'de final VO cue dosyasından (manifest'te asset) üretilir; handoff yazmaz.
 
-## Ne zaman
-- **Prototype handoff (zorunlu değil — D-043):** yalnız kanal dili kalibrasyonunda, CASE-SPECIFIC kararla veya riskli/yeni videoda HEURISTIC olarak; creative treatment + taslak anlatı hazır olduğunda. Kapsam yalnız ilk ~60–90 sn.
-- **Full handoff:** senaryo kilitlendikten ve görsel/edit plan hazır olduktan sonra; prototype kullanıldıysa Founder prototype kapısında "Evet" dedikten sonra.
+## 2. Üretim (elle yazılmaz)
+1. Girdiler commit'li ve çalışma ağacı temiz olsun.
+2. Çalıştır (örnek, VID-001):
+```bash
+node os/factory/factory.mjs issue --id VID-001-HO --version 1 --case VID-001 --channel the-industrial-casebook --scene-plan channels/the-industrial-casebook/cases/VID-001/<scene plan> --qa channels/the-industrial-casebook/cases/VID-001/<qa> --manifest channels/the-industrial-casebook/cases/VID-001/handoff/asset-manifest.csv --rights production/pilots/2026-10-n2-pilot-test/VID-001-rights-ledger.csv --evidence production/pilots/2026-10-n2-pilot-test/P3-evidence-ledger.md --production-root D:/CompanyOS-Production/P3-ns-savannah --allowed-code production/remotion/src/brand/,production/remotion/src/templates/ --forbidden-code production/remotion/src/videos/p3/ --out channels/the-industrial-casebook/cases/VID-001/handoff/07-production-handoff-v1.md
+```
+3. Sonuç `ISSUED` → registry'ye `ACTIVE` (önceki handoff `SUPERSEDED`); `BLOCKED` → registry'ye `DRAFT`, Strong PC'ye **gitmez**; engeller Main PC'de çözülür ve yeni sürüm üretilir. Engeli kapatmak için handoff elle `ISSUED` yapılmaz (Strong PC gate'i yeniden hesaplar).
+4. `node os/factory/factory.mjs lint handoff <yol>` temiz olmalı. Commit; push Founder'ın GUIDED ACTION'ıdır (GitHub Desktop).
+5. Render, VO kredisi, ücretli asset, AI üretimi `approvals` alanında `APPROVED` değilse Strong PC o işi yapmaz. Onay Founder kararıdır (`founder-approval.md`); onay alınmadan `--approve render=APPROVED` yazılmaz.
 
-## Kurallar
-1. **Kendi kendine yeterli.** Production PC'deki Claude sohbeti görmez; handoff + referans verdiği repo dosyaları yeterli olmalı. Founder'dan ek açıklama beklenmez.
-2. **Zorunlu bölümler** (`TEMPLATE.md`): core promise · hook · narrative structure · scene purposes (beat tablosu) · asset plan · visual language · footage list · AI visual requests · typography moments · music direction · prototype boundary · evidence restrictions · onay/harcama durumu · teslim ve geri bildirim.
-3. **Yetki sınırı.** Production Claude handoff içinde mikro kararları kendisi verir (kadraj, süre ±, geçiş, renk eşleme, şablon düzeltme; D-019 mantığı) ve kayda geçirir. Hook'u, yapıyı, VO metnini, iddiaları, packaging'i değiştiremez; bir beat uygulanamıyorsa en yakın eşdeğerle yapar ve "production problemi" olarak raporlar.
-4. **Kanıt kısıtları açık yazılır:** kullanılmayacak iddia/sayı/ifade, alıntıların birebir metni, ekranda verilmeyecek rakamlar, hak durumu `unclear` olan asset'ler.
-5. **Onay/harcama:** ses kredisi, yeni araç/paket, ücretli asset handoff'ta "Founder onayı: alındı / bekleniyor (tavan)" olarak yazılır. Onay yoksa ilgili adım başlamaz.
-6. **Teslim:** prototype için 1080p review kopyası + kısa üretim raporu (yapılanlar, sapmalar, production problemleri, süre/kredi ölçümü, teşhis testleri sonucu). Büyük medya repo dışında kalır; rapor repoya.
-7. **QA:** teslimden önce production Claude **teknik QA** yapar: ölçülebilir ses kontrolleri (`audio-production.md`), `muted-preview-gate` (DIAGNOSTIC) ve scene plan teşhis listesi (`production-scene-plan` §4). Creative PASS/REVISE bağımsız değerlendiricidedir (`creative-qa`); production Claude kendi işine creative PASS veremez.
-7e. **Shorts eki (D-038):** long-form final kilitlendikten sonra `video-launch-os` §25 ile seçilen 0–4 Short adayı handoff'a ek olarak gider (kaynak TC, 9:16 reframe planı, burned-in caption, köprü); Short üretimi long-form release paketinden sonra.
-7d. **Launch hazırlığı (D-035):** full handoff videonun **son 5–20 sn**'sini end-screen aware tasarlar (öğeler için alan; kapanış metniyle çakışmaz) ve **thumbnail hero asset**'ini (kaynak foto veya AI, `video-launch-os` §6) üretim listesine koyar; captions için final VO timing JSON'u teslim edilir.
-7c. **CASE INTRO / CASE LABEL (D-044, canon `03` §3):** CASE INTRO Golden Master kalibrasyonu (Stage 5) tamamlanana kadar **CASE INTRO üretilmez ve yerine geçici/videoya özel ident tasarlanmaz**; TEMPLATE §7c'de alan `N/A — pre-calibration` yazılır. CASE LABEL yalnız küçük metadata/UI öğesidir (TIC-12, `video-ui-spec-v1.md`). Eski D-034 ident alanları SUPERSEDED.
-7b. **Marka (D-031, canonical D-032):** brand proof asset'leri (`brand-system-v1.md` §N) gelmeden brand retrofit'li handoff yazılmaz. handoff Brand System v1'e bağlıdır: case identity (CASE NNN, case accent), dünya ataması, `EVIDENCE NN` → ledger eşleme tablosu, imza geçişler, font/renk token'ları ve `source-to-visual` tablosu zorunlu bölümdür (TEMPLATE §7b).
-8. **Founder'a soru:** prototype gösterildiğinde yalnız "Bunu izlemeye devam eder miydin?" Mikro edit sorusu sorulmaz.
-9. **Senkron:** handoff repoya yazılır; production PC'ye ulaşması için yerel commit + Founder'ın GitHub Desktop push'u gerekir (`git-and-secrets.md`). Bu adım Founder'a tek cümleyle söylenir.
+## 3. İnce kalma kuralı
+Handoff yalnız sözleşmedir: kim, hangi commit, hangi sabitlenmiş dosyalar, hangi asset'ler, ne serbest/ne yasak, hangi engeller, sonraki kapı. Sahne fikri, görsel dil, kamera, araç, canon/doctrine metni **kopyalanmaz** — yol + blob ile referanslanır (lint 12 kelimelik canon örtüşmesini ve bilinmeyen içerik alanını reddeder).
+
+## 4. v1 bölümlerinin v2'deki yeri
+| v1 handoff bölümü | v2'de |
+|---|---|
+| Core promise, hook, yapı, sahne amaçları, görsel dil, tipografi anları, müzik yönü | Sabitlenmiş Production Scene Plan + beat sheet/script + canon (kopyalanmaz) |
+| Asset plan, footage list, AI görsel istekleri | `handoff/asset-manifest.csv` (+ rights ledger); AI prompt'u Founder'a GUIDED ACTION olarak verilir |
+| Evidence restrictions | Sabitlenmiş evidence ledger (§D reddedilenler) + scene plan Evidence Anchor |
+| Onay/harcama durumu | `approvals` |
+| Prototype sınırı | `scope` (prototype yalnız D-043 koşullarında) |
+| CASE INTRO / CASE LABEL | Canon `03` + scene plan; CASE INTRO Golden Master (Stage 5) öncesi tasarlanmaz |
+| Launch hazırlığı (end screen alanı, thumbnail hero asset, captions) | Son sahne scene plan'de; thumbnail hero asset manifest satırı; captions teslim raporu alanı |
+| Teslim, teknik QA, muted preview | `strong-pc-preflight` teslim raporu (technical QA); creative karar `creative-qa` |
+
+## 5. Founder'a (sade Türkçe)
+"Handoff hazır / hazır değil; neden (tek cümle); senden: [push / onay / yok]." Branch, araç, klasör, dosya adı sorulmaz. Fiziksel işlem gerekiyorsa tek GUIDED ACTION: adım · hazır komut/prompt · tam yol · ne göreceği.

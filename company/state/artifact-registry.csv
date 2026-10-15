@@ -56,7 +56,7 @@ P3-PACKAGING-EVAL,production/pilots/2026-10-n2-pilot-test/P3-packaging-eval.md,c
 P3-SOURCE-LEDGER,production/pilots/2026-10-n2-pilot-test/P3-source-ledger.md,case:VID-001,source-ledger,1,ACTIVE,,D-012,KEEP data
 P3-EVIDENCE-LEDGER,production/pilots/2026-10-n2-pilot-test/P3-evidence-ledger.md,case:VID-001,evidence-ledger,1,ACTIVE,,D-018,KEEP data
 P3-RIGHTS-LEDGER,production/pilots/2026-10-n2-pilot-test/VID-001-rights-ledger.csv,case:VID-001,rights-ledger,1,ACTIVE,,D-036;D-039,KEEP data; canonical rights status (V-20 UNKNOWN_RIGHTS; V-21 REJECTED)
-P3-ASSET-MANIFEST,production/pilots/2026-10-n2-pilot-test/P3-asset-manifest.md,case:VID-001,asset-manifest,1,ACTIVE,,D-019,KEEP data
+P3-ASSET-MANIFEST,production/pilots/2026-10-n2-pilot-test/P3-asset-manifest.md,case:VID-001,asset-manifest,1,SUPERSEDED,VID001-ASSET-MANIFEST,D-019;D-047,KEEP data; photo inventory carried into the Stage 4 production asset manifest
 P3-FOOTAGE-SCAN,production/pilots/2026-10-n2-pilot-test/P3-archive-footage-scan.md,case:VID-001,footage-scan,1,ACTIVE,,D-026,KEEP research
 P3-SCRIPT-V1,production/pilots/2026-10-n2-pilot-test/P3-script-v1.md,case:VID-001,script,1,SUPERSEDED,P3-SCRIPT-V2,D-013,
 P3-SCRIPT-V2,production/pilots/2026-10-n2-pilot-test/P3-script-v2.md,case:VID-001,script,2.5,FROZEN,,D-013;D-030,Locked text; opening replaced by D-030; script v3 after prototype gate
@@ -81,4 +81,5 @@ P3-BRAND-PROOF-REPORT,production/pilots/2026-10-n2-pilot-test/P3-brand-proof-rep
 P3-LAUNCH-AUDIT-V1,production/pilots/2026-10-n2-pilot-test/P3-launch-os-audit-v1.md,case:VID-001,launch-audit,1,ACTIVE,,D-035,Reference for later launch prep
 P3-HANDOFF-V1,production/pilots/2026-10-n2-pilot-test/P3-production-handoff-prototype-v1.md,case:VID-001,production-handoff,1.1,SUPERSEDED,P3-HANDOFF-V2,D-027,
 P3-HANDOFF-V2,production/pilots/2026-10-n2-pilot-test/P3-production-handoff-prototype-v2.md,case:VID-001,production-handoff,2,SUPERSEDED,P3-HANDOFF-V3,D-030,Produced on Strong PC 2026-10-13 (historical; D-039)
-P3-HANDOFF-V3,production/pilots/2026-10-n2-pilot-test/P3-production-handoff-prototype-v3.md,case:VID-001,production-handoff,3,FROZEN,,D-041,v1 format; must be re-issued as v2 handoff before any Strong PC use
+P3-HANDOFF-V3,production/pilots/2026-10-n2-pilot-test/P3-production-handoff-prototype-v3.md,case:VID-001,production-handoff,3,FROZEN,,D-041,v1 format; not inherited by Handoff v2 (D-047); preflight rejects it (BLOCKED_BY_VERSION_MISMATCH)
+VID001-ASSET-MANIFEST,channels/the-industrial-casebook/cases/VID-001/handoff/asset-manifest.csv,case:VID-001,production-asset-manifest,1,ACTIVE,,D-047,Single production asset manifest; full hashes and rights-ledger rows (DF-6) still pending

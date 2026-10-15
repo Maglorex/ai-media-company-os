@@ -43,6 +43,8 @@ const STAGE1_ALLOWED = [
   /^\.claude\/skills\/documentary-visual-plan\/SKILL\.md$/,
   /^\.claude\/agents\/(creative-qa-evaluator|production-engineer|research-analyst)\.md$/,
   /^channels\/the-industrial-casebook\/(pipeline|cases)\//,
+  // Stage 4 — factory interface: Handoff v2, Strong PC boot contract, asset manifest, rights hard-fail, CCR (Founder 2026-10-15, D-047)
+  /^\.claude\/skills\/(documentary-production-handoff|strong-pc-preflight)\//,
 ];
 const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
   'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];
@@ -63,7 +65,7 @@ test('migration: KEEP alanları değişmedi', { skip: !hasBase && 'pre-v2-checkp
   assert.deepEqual(changed().filter((c) => KEEP.some((k) => k.test(c.path)) && !KEEP_EXCEPTIONS.some((e) => e.test(c.path))).map((c) => c.path), []);
 });
 
-test('migration: değişiklikler yalnız onaylı Stage 1–3 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: değişiklikler yalnız onaylı Stage 1–4 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
   const outside = changed().filter((c) => !STAGE1_ALLOWED.some((a) => a.test(c.path))).map((c) => c.path);
   assert.deepEqual(outside, []);
 });

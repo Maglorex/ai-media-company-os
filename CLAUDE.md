@@ -30,7 +30,7 @@ Her adımda biri: **AUTONOMOUS** (cevap repoda → kendin çöz) · **GUIDED ACT
 - **Büyüme (hangi fikre yatırım, yayın sonrası öğrenim):** `growth-idea-scoring` (fikir sıralama + yayın öncesi kilitli tahmin) → yayın sonrası `growth-performance-review`. Tahmin ve gerçek ayrı; kendi kanal verimiz genel kurallardan önce gelir; "viral olur" tahmini yok.
 - **Para ve vergi:** `cfo-review` (gider/gelir/kullanım kaydı, aylık P&L, video başına maliyet ve kâr) ve `tax-watch` (Türkiye vergi takibi; resmî kaynakla doğrulanır, kesin hüküm muhasebeciye). Tetikleri `founder-brief` izler.
 - **Kapanış:** `session-close` skill'i (current-state, active-decisions, artifact registry, `node --test "os/tests/*.test.mjs"`).
-- **Sistem/makine:** `system-health-check` (önce `node --test "os/tests/*.test.mjs"`), `machine-onboarding`, `founder-help` skill'leri; sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
+- **Sistem/makine:** `system-health-check` (önce `node --test "os/tests/*.test.mjs"`), `machine-onboarding`, `founder-help` skill'leri; Main PC → Strong PC teslimi: `documentary-production-handoff` (Handoff v2) ve Strong PC'de `strong-pc-preflight` (boot contract, CCR, technical QA; protokol `os/factory/README.md`, D-047); sorunlarda `.claude/rules/self-repair-and-escalation.md` (önce kendin çöz, Founder'a tek çözümle git). Founder kılavuzu: `FOUNDER-MANUAL.md`.
 - **Üçüncü taraf skill/plugin/MCP:** önce Skill Lab (`skill-evaluator`, `intelligence/skill-lab/`, `.claude/rules/third-party-skill-security.md`); Founder onayı olmadan kurulmaz.
 
 ## Kanallar
