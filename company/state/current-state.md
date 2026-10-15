@@ -26,7 +26,7 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder: CAL-S5 müzik yatağı için tek GUIDED ACTION — YouTube Audio Library'den en fazla 3 parça indir, Strong PC'de `D:\CompanyOS-Production\CAL-S5_music\` klasörüne kaydet.** Ardından push + Strong PC gözlem turu (salt-okunur) → Main PC hash'leri işler → Handoff v2 ISSUED.
+**Founder: CAL-S5 müzik yatağı için tek GUIDED ACTION — YouTube Audio Library'den en fazla 3 parça indir, Strong PC'de `D:/CompanyOS-Production/CAL-S5/04_music/` klasörüne kaydet.** Ardından push + Strong PC gözlem turu (salt-okunur) → Main PC hash'leri işler → Handoff v2 ISSUED.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |

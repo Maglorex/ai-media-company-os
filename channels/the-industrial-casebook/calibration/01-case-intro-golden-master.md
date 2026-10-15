@@ -36,9 +36,9 @@ Değişmeyen davranışlar: tek çizgi (çoğalmaz) · çizgi nesnenin **kendi e
 | Title | `NS SAVANNAH` | `WESTINGHOUSE J40` |
 | Hero object | NS Savannah gövdesi — V-05 (NARA 542141, 1962) arşiv fotoğrafından izole, doğal renk | J40 motoru — NASA Glenn arşiv fotoğrafı (P2 kaynak listesi; hak satırı ve kimlik doğrulaması önkoşul) |
 | Çizginin ekseni | Yatay gövde → çizgi gövde boyunca yatay uzanır, kesit yukarıdan aşağı açılır | Uzun eksenli motor → çizgi motor ekseni boyunca ilerler, kademe kademe açılır |
-| Motif | 1960'lar atom çağı teknik çizimi: tek ince yörünge yayı (case-register) | Aksiyal kompresör kademe çizgileri (kimlik motifi; teknik iddia değildir) |
+| Motif | 1960'lar atom çağı teknik çizimi: tek ince yörünge yayı (case-register) | Eşit aralıklı kademe işaretleri (kimlik motifi; motorun gerçek kademe sayısını temsil etmez) |
 | Case accent | Atomic Teal #4E8A88 (case-register) | Demo değeri: Atomic Teal ve amber'den ayrışan soğuk bir ton; case-register'a **yazılmaz** |
-| Entry element | G2'nin açık bracket'i (maliyet boşluğu) | I-B bağımsız: test standındaki motor karesinin ufuk çizgisi · E1'de: önceki case'in payoff motifinden gelen Case Line |
+| Entry element | G2'nin açık bracket'i (maliyet boşluğu) | I-B bağımsız: Altitude Wind Tunnel test bölümü karesinin yatay bir kenarı · E1'de: önceki case'in payoff motifinden gelen Case Line |
 | Exit target | GAO özet sayfasındaki ilk maliyet satırının alt çizgisi | Yok (bağımsız payload testi; başlıkta tutulur) |
 J40 yalnız **demo payload**'dır: skeleton'ın ikinci, farklı geometrili bir nesneye uyarlanabildiğini gösterir. "CASE 002 = J40" veya "sıradaki yayın J40" kararı üretmez; P2 fikri kendi story viability sürecindedir.
 Payload değişince skeleton aynı kalır ama **mekanik kopya olmaz**: çizginin yönü, açılış ritmi ve motifin şekli nesneye uyar. Ölçüt: iki intro yan yana izlendiğinde "aynı kanal, farklı vaka".

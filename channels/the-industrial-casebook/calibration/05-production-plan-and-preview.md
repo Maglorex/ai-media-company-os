@@ -20,7 +20,7 @@ P3 dosyalarına dokunulmaz; kalibrasyon P3'ün kanıtını yalnız okur (evidenc
 | 1 | `CAL-S5` scene plan'i yaz; lint temiz | AUTONOMOUS |
 | 2 | Bağımsız creative QA → PASS → scene plan `ACTIVE` | AUTONOMOUS (ayrı değerlendirici) |
 | 3 | Rights ledger satırları: V-05, V-19, V-28, V-29, V-01, V-02, V-03, V-13 (golden) · V-07, V-24 (anti-reference) · J40 NASA Glenn fotoğrafı (demo payload; önce kimlik ve PD teyidi, sonra D-019 eki koşullarında indirme) · opening v2 VO (ElevenLabs, mevcut kayıt) · yeni kalibrasyon VO satırları · müzik/SFX (audio ledger) · kendi dokularımız | AUTONOMOUS (kanıt yakalama dahil) |
-| 4 | Evidence: `02` §Kanıt denetimi tablosu scene plan'e aynen taşınır; VO kesim listesi ("Heavy cranes." · "The auditors wrote that…several nuclear ships." · "There was only one." · merkezi soru cümlesi çıkarılır) teslim paketine girer. J40 için olgu cümlesi **yok** (demo payload) | AUTONOMOUS |
+| 4 | Evidence: `02` §Kanıt denetimi tablosu scene plan'e aynen taşınır; VO kesim listesi ("The auditors wrote that…several nuclear ships." · "There was only one." · merkezi soru cümlesi çıkarılır; "Heavy cranes." E-11 ile doğrulandığı için kalır) teslim paketine girer. J40 için olgu cümlesi **yok** (demo payload) | AUTONOMOUS |
 | 5 | Manifest'te tam SHA-256 ve boyutlar: handoff v1 BLOCKED üretilir → Strong PC **yalnız preflight** çalıştırır (salt-okunur; gözlenen hash/boyutları raporlar) → Main PC manifest'e işler | AUTONOMOUS + push (GUIDED ACTION) |
 | 6 | Yeni kısa VO satırları — kalibrasyon kopyası (`04` §1: identity CTA, köprü, opsiyonel subscribe) | **FOUNDER DECISION** (mevcut kredi; yeni ödeme yok) |
 | 7 | Render onayı (`approvals.render`) | **FOUNDER DECISION** |
@@ -35,7 +35,7 @@ AI görsel üretimi **gerekmiyor**: arşiv ve kendi çizimlerimiz yeterli; Galve
 | G1 | Katman ayrımı + 2.5D kamera + kontur Object Carry + bölge haritası | Photoshop · After Effects · Remotion (harita primitifi) | Arşiv derinliği AE'de; veri haritası deterministik |
 | G2 | Belge fiziksel nesne + Evidence Pull + bloklar | `pdf-to-png.ps1` · After Effects · Illustrator | Piksel birebir kanıt; bespoke dönüşüm |
 | G3 | Ortografik bileşen çizimi, line-draw | Illustrator · After Effects · Remotion (harita inişi) | Bilinmeyen geometri uydurulmaz; **Blender seçilmez** |
-| G4 | G3 çizimi + harita kesiti + kapasite hayaletleri | After Effects · Remotion | Mevcut çizim yeniden kullanılır |
+| G4 | G3 çizimi + takvim şeridi + harita kesiti (Galveston → New York) | After Effects · Remotion | Mevcut çizim yeniden kullanılır |
 | C1 | Case Line + tek satır Case UI | After Effects | Intro DNA'sıyla aynı çizgi |
 | E1 | Payoff motifi → Case Line → NEXT CASE payload kaydı + end-screen alanı | After Effects | Intro master'ını yeniden kullanır; payload slotları değişken |
 | AR1–AR5 | Kasıtlı şablon davranışı, kısa emek | Premiere (varsayılan geçişler) · AE preset'leri | Farkı göstermek için yeterli |

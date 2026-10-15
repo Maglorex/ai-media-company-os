@@ -64,13 +64,13 @@ Gösterdiği hatalar: **PDF + highlight + cut** · **her şeyi dossier/card'a ç
 ---
 
 ## G3 — The system on the shore
-- **VO (kalibrasyon kesimi):** "A nuclear servicing facility in Galveston, Texas. A pier. A pool for spent fuel. A servicing barge called the Atomic Servant. Even a spare reactor core. About one point one six million dollars a year." — kayıttaki "Heavy cranes." cümlesi **kesilir**: ledger C-31 tek bir 75 tonluk portal vinç kaydeder; çoğul ifade sayfa görüntüsünden teyit edilmeden Golden'a girmez.
+- **VO:** "A nuclear servicing facility in Galveston, Texas. A pier. Heavy cranes. A pool for spent fuel. A servicing barge called the Atomic Servant. Even a spare reactor core. About one point one six million dollars a year." — **Düzeltme (QA v1, 2026-10-15):** "Heavy cranes." VERIFIED'dır: E-11 GAO sayfasından 75 tonluk bir gantry crane ve bakım binasında 75 tonluk bir bridge crane kaydeder (C-31 kısaltmaydı). Önceki "çözülmemiş" tespiti hatalıydı; cümle kalır.
 - **Evidence Anchor:** Galveston + bileşenler C-31 / E-11 / V-13 · ≈1,16M $ C-10 (V-01) · tek gemi bütün maliyeti taşıyordu C-11 / Q-02.
 - **Presentation Visual:** Para bir yere dönüşür: G2'nin üçüncü bloğu Galveston'da bir zemin plakası olur ve üzerinde, tek bir **boş rıhtım yuvasının** etrafında, ledger'daki bileşenler mühendislik çizimiyle sırayla kurulur.
 - **Shot progression & kamera niyeti:**
   1. Taban çizgisi (G2'den) bir kıyı çizgisine dönüşür; kısa harita inişi Teksas kıyısından Galveston'a (şehir düzeyi; tesisin şehir içi yeri gösterilmez).
   2. Üçüncü blok yere iner ve zemin plakası olur (**Evidence Pull devamı**: maliyet satırı → yer).
-  3. Kilitli kadraj (içerik hareket ettiği için kamera durur): bileşenler anlatımla eş zamanlı **ortografik bileşen sayfası** olarak çizilir — iskele, havuz, Atomic Servant mavnası, yedek çekirdek; ledger'daki tek `75-TON PORTAL CRANE` anlatımsız, yalnız etiketiyle (C-31) — her biri Plex Mono etiketle. Çizim köşede `DIAGRAM · NOT TO SCALE` taşır (kanıt değil, açıklama). Yerleşim planı **uydurulmaz** (E-11): bu bir site planı değil, envanter çizimidir; "not to scale".
+  3. Kilitli kadraj (içerik hareket ettiği için kamera durur): bileşenler anlatımla eş zamanlı **ortografik bileşen sayfası** olarak çizilir — GAO'nun kendi terimleriyle (E-11): PIER, 75-TON GANTRY CRANE, MAINTENANCE BUILDING (içinde 75-TON BRIDGE CRANE ve SPENT-FUEL PIT), ATOMIC SERVANT, SPARE REACTOR CORE — her biri Plex Mono etiketle. Harita tamamen söner, çizim coğrafyasız ayrı bir sayfadadır: `DIAGRAM · NOT TO SCALE · NOT A SITE PLAN` (kanıt değil, açıklama). Yerleşim planı **uydurulmaz** (E-11): bu bir site planı değil, envanter çizimidir; "not to scale".
   4. Bileşenler, ortadaki boş rıhtım yuvasına bakacak şekilde durur: sistemin kime hizmet ettiği görsel olarak okunur (**mechanism / spatial relationship**: tesisin bütün maliyetini tek gemi taşıyordu — C-11, Q-02).
   5. "About one point one six million dollars a year" — küçük, Source Mark'lı değer (`GAO · p.2`), amber tek odak.
 - **Motion taşıdığı:** transformation · spatial relationship · mechanism
@@ -124,7 +124,7 @@ Bilerek ama **kısa ve sınırlı emekle**: varsayılan geçişler, hazır prese
 | G2 | 1970 denetimi · ≈2M $ fazla, aynı rota karşılaştırması | E-2 / V-03 · C-04 / Q-01 | VERIFIED — kullanılır |
 | G2 | üç satır · üçüncüsü diğer ikisinin toplamından büyük | C-06, C-08…C-10 | VERIFIED — toplam ekranda yazılmaz |
 | G3 | Galveston tesisi, iskele, havuz, Atomic Servant, yedek çekirdek, ≈1,16M $ | C-31 · C-10 | VERIFIED — kullanılır |
-| G3 | "Heavy cranes" (çoğul) | C-31 tek 75 t portal vinç | **Çözülmemiş — VO'dan kesildi**; çizimde tek vinç, etiketle |
+| G3 | "Heavy cranes" (çoğul) | E-11 (GAO s.15: 75 t gantry crane + 75 t bridge crane) | VERIFIED — kullanılır (QA v1 düzeltmesi; önceki "çözülmemiş" tespiti hatalıydı) |
 | G3 / E1 | tek gemi bütün maliyeti taşıyordu | C-11 / Q-02 | VERIFIED — görsel ilişki ve köprü cümlesi |
 | G4 | iki yıl uğramadı · 1967/1968 denetimleri New York'ta, personel gitti | C-32 | VERIFIED — kullanılır |
 | — | "could serve several" · kapasite görseli · onu içeren merkezi soru cümlesi | C-12 / C-33 (iddia VERIFIED), birebir ifade için Q- yok | **Çözülmemiş ifade — Golden'dan çıkarıldı** |

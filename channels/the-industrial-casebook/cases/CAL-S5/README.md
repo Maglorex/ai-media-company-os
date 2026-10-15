@@ -6,7 +6,7 @@
 ## Dosyalar
 | Dosya | Durum |
 |---|---|
-| `05-scene-plan-v1.md` | Production Scene Plan (14 SP: 9 golden/referans + 5 anti-reference); lint temiz |
+| `05-scene-plan-v2.md` | Production Scene Plan v2 (14 SP: 9 golden/referans + 5 anti-reference; QA v1 düzeltmeleri); v1 SUPERSEDED |
 | `06-creative-qa-v1.md` | Bağımsız creative QA (`creative-qa-evaluator`, ayrı bağlam) |
 | `rights-ledger.csv` + `rights-proof/2026-10-15-web-captures.md` | Kullanılan her harici/AI asset için hak satırı ve resmî sayfa kanıtı |
 | `handoff/asset-manifest.csv` | Stage 4 production manifest'i (`production_root: D:/CompanyOS-Production`) |
