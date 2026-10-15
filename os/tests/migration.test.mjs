@@ -52,10 +52,12 @@ const STAGE1_ALLOWED = [
   /^channels\/the-industrial-casebook\/(pipeline|cases)\//,
   // Stage 4 — factory interface: Handoff v2, Strong PC boot contract, asset manifest, rights hard-fail, CCR (Founder 2026-10-15, D-047)
   /^\.claude\/skills\/(documentary-production-handoff|strong-pc-preflight)\//,
+  // Stage 5 — calibration design (Founder 2026-10-15): kanal kalibrasyon paketi
+  /^channels\/the-industrial-casebook\/calibration\//,
 ];
 const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
   'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];
-const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/(canon|pipeline|cases)\//, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
+const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/(canon|pipeline|cases|calibration)\//, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
 const KEEP = [/^production\//, /^finance\//, /^intelligence\//, /^channels\//, /^company\/(strategy|constraints|mission|goals|machines)\.md$/];
 
 const changed = () => {

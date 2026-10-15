@@ -6,7 +6,7 @@
 | Alan | Değer |
 |---|---|
 | Son güncelleme | 2026-10-15 |
-| OS sürümü | `os/VERSION` → 2.0.0-stage4 (Stage 1–3 LOCK; Stage 4 Main PC tarafı tamamlandı, Strong PC gerçek doğrulaması bekliyor) |
+| OS sürümü | `os/VERSION` → 2.0.0-stage5 (Stage 1–4 LOCK; Stage 5 kalibrasyon tasarımı hazır, production başlamadı) |
 | Çalışma dalı | `os-v2-migration` (yerel; push yok). `main` = `origin/main` = `4659823` (= `pre-v2-checkpoint`) |
 | Şirket fazı | Faz 2 — Pilot üretim testi (EXP-001) · **OS v2 migration süresince durdurulmuş** |
 | Kanallar | 1 — The Industrial Casebook (`channels/the-industrial-casebook/`; oluşturuldu D-037; yayın yok) |
@@ -20,19 +20,19 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 | 1 | Governance kernel: company charter, sınıflar + öncelik, current state, active decisions, artifact lifecycle, git-secrets, testler | **PASS — Founder LOCK** (2026-10-14) |
 | 2 | Channel canon (The Industrial Casebook) | **PASS — Founder LOCK** (2026-10-14; D-045) |
 | 3 | Creative pipeline (story viability → packaging → beat sheet → script → scene plan → bağımsız creative QA) | **PASS — Founder LOCK** (2026-10-15; D-046; clean-room kabul testi PASS) |
-| 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | **Main PC tamamlandı** (2026-10-15; D-047; `os/factory/README.md`; fixture testleri geçti; P3 handoff dry-run doğru biçimde BLOCKED). Strong PC gerçek boot doğrulaması bekliyor |
-| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | Planlı |
+| 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | **PASS — Founder LOCK** (2026-10-15; D-047; Strong PC factory kabulü + portability düzeltmesi) |
+| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **Main PC tasarımı hazır** (2026-10-15; `channels/the-industrial-casebook/calibration/`, DRAFT). Strong PC'ye iş gönderilmedi; GOLDEN yok |
 | 6 | Legacy konsolidasyonu + v2 kabulü | Planlı |
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder: Stage 4 Strong PC doğrulaması için `os-v2-migration` dalını GitHub Desktop'tan push et (GUIDED ACTION; remote push = Founder işlemi).** Sonra Strong PC'de yalnız boot contract self-test'i çalışır (render/production yok); sonuç Stage 4 kabulüne gider. Strong PC production işi almaz.
+**Founder: Stage 5 kalibrasyon tasarımını değerlendir; tek gruplu karar ver — kalibrasyon render'ı + yeni kısa VO satırları için mevcut ElevenLabs kredisi (FOUNDER DECISION, `channels/the-industrial-casebook/calibration/05-production-plan-and-preview.md` §5).** Onaydan sonra Main PC önkoşulları (CAL-S5 scene plan, bağımsız QA, rights satırları, manifest) yürütür; Strong PC yalnız Handoff v2 ile iş alır.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | `os-v2-migration` push (Stage 4 Strong PC doğrulaması için) | GUIDED ACTION | GitHub Desktop → Push origin; ardından Strong PC self-test (`strong-pc-preflight` §5) |
-| 2 | Stage 4 kabulü | FOUNDER DECISION | Strong PC self-test + P3 preflight sonucu geldikten sonra |
+| 1 | Stage 5 kalibrasyon: render + kısa VO satırları (≈250 kredi tavan önerisi) | FOUNDER DECISION | Tek gruplu onay; ardından müzik için GUIDED ACTION (Audio Library ≤3 parça) |
+| 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |
 | 5 | SL-002 kalan 3 uyarlama | FOUNDER DECISION | Ertelendi; v2 pipeline aşamasında yeniden değerlendirilecek |

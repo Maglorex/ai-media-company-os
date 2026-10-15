@@ -48,7 +48,7 @@
 | D-044 | CASE INTRO = tekrar eden motion DNA (aynı skeleton, değişken payload); CASE INTRO ≠ CASE LABEL | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Tasarım + Golden Master bir defalık kalibrasyon işi; o zamana kadar CASE INTRO tasarlanmaz |
 | D-045 | The Industrial Casebook Channel Canon v2 (tek yetkili kanal kaynağı) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/canon/` (TIC-01…TIC-33); `os-v2-migration` dalında |
 | D-046 | The Industrial Casebook Creative Production Pipeline v2 (Stage 3) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/pipeline/README.md`; yeni skill'ler story-viability, production-scene-plan, creative-qa; 5 eski skill SUPERSEDED |
-| D-047 | Factory interface: Production Handoff v2 ve Strong PC boot contract (Stage 4) | DECISION | company | — | L1 | ACTIVE | `os/factory/README.md`; Handoff v2 (`documentary-production-handoff`) + `strong-pc-preflight`; P3 dry-run BLOCKED; Strong PC gerçek doğrulaması bekliyor |
+| D-047 | Factory interface: Production Handoff v2 ve Strong PC boot contract (Stage 4) | DECISION | company | — | L1 | ACTIVE | `os/factory/README.md`; Handoff v2 (`documentary-production-handoff`) + `strong-pc-preflight`; P3 dry-run BLOCKED; Stage 4 Founder LOCK (2026-10-15) |
 
 ## Aktif olmayan kararlar (yalnız tarih)
 | ID | Başlık | Neden aktif değil | Yerine |
