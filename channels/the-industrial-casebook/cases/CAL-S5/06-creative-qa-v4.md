@@ -77,5 +77,5 @@ The cut sentences still match handoff §2.
 - **Verdict:** PASS
 - **Accepted concerns:** none. Non-blocking observations for the COO and Strong PC, which need no change to the plan:
   - `backup-production.ps1` copies only `03_vo` and `05_premiere`. CAL-S5's produced files under `02_graphics/`, `04_sfx/`, `05_projects/` and `06_renders/` are not covered by it. The plan's rule "produced LOCAL_ONLY outputs must be backed up before delivery" is enforced by the delivery report's Backup field (`os/factory/README.md` §6, §8), so Strong PC must show those outputs as PROTECTED in `factory.mjs backup` or report them.
-  - Some composite elements reuse other scenes' own graphics without their own manifest row: the SP-08 CTA clip shows the SP-05 sheet (OG-03), and SP-09's Savannah marker comes from the SP-01 hull token. They are own graphics with no rights implication; the delivery report's per-scene asset list should name them.
+  - Some reused own-graphic elements have no manifest row for the scene that reuses them: the SP-08 CTA clip shows the SP-05 sheet (OG-03), and SP-09's Savannah marker comes from the SP-01 hull token. They are own graphics with no rights implication; the delivery report's per-scene asset list should name them.
 - **Required changes:** none
