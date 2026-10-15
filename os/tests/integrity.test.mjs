@@ -5,6 +5,7 @@ import { readdirSync, statSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { ROOT, read, exists, git, parseTable, parseCsv, decisionLogIds } from '../lib/records.mjs';
 import { deriveLayer, scopeKind, config } from '../lib/precedence.mjs';
+import { checkpoints, registryGitRowErrors } from '../lib/checkpoints.mjs';
 
 const walk = (dir) => readdirSync(join(ROOT, dir)).flatMap((n) => {
   const rel = `${dir}/${n}`;
@@ -116,10 +117,8 @@ test('artifact registry: statü, yol, superseded_by, tek ACTIVE', () => {
   for (const a of rows) {
     assert.ok(config.artifact_statuses.includes(a.status), `${a.artifact_id}: status ${a.status}`);
     scopeKind(a.scope);
-    if (a.path.startsWith('git:')) {
-      const [, ref, ...p] = a.path.split(':');
-      git('cat-file', '-e', `${ref}:${p.join(':')}`);
-    } else assert.ok(exists(a.path), `${a.artifact_id}: path missing ${a.path}`);
+    // git: satırları makineye özel ref'tedir; beyan + ACTIVE olmama shared, içerik kontrolü Main PC'de (os/tests/main-pc/).
+    if (!a.path.startsWith('git:')) assert.ok(exists(a.path), `${a.artifact_id}: path missing ${a.path}`);
     if (a.status === 'SUPERSEDED') assert.ok(ids.includes(a.superseded_by), `${a.artifact_id}: superseded_by must reference a registered artifact`);
     if (a.superseded_by) assert.ok(ids.includes(a.superseded_by), `${a.artifact_id}: unknown superseded_by`);
     if (a.status === 'ACTIVE') {
@@ -234,4 +233,8 @@ test('Stage 1 governance tutarlılığı: charter katman değil; P3 kararı şir
   const binding = [...tracked].filter((f) => (f.startsWith('.claude/') || f.startsWith('channels/') || f === 'CLAUDE.md') && f.endsWith('.md'))
     .filter((f) => /(Bağlayıcı yaratıcı taban|bağlayıcı yaratıcı taban)/.test(read(f)) || /Handoff, doctrine .* geçmeden production PC'ye gitmez/.test(read(f)));
   assert.deepEqual(binding, [], 'files still describe doctrine v1 as binding');
+});
+
+test("registry git: satırları yalnız beyan edilmiş makineye özel ref'te ve asla ACTIVE değil (shared; yerel ref gerekmez)", () => {
+  assert.deepEqual(registryGitRowErrors(parseCsv(read('company/state/artifact-registry.csv')), checkpoints()), []);
 });

@@ -1,12 +1,19 @@
-// OS v2 migration koruması: pre-v2-checkpoint'ten beri değişen dosyalar yalnız onaylı aşama kapsamında olabilir;
-// KEEP alanları (veri ve araçlar) değişmez; hiçbir dosya silinmez. Tag yoksa (ör. tag'siz klon) test atlanır.
+// OS v2 migration koruması: kanonik Stage 0 checkpoint'ten beri değişen dosyalar yalnız onaylı aşama kapsamında olabilir;
+// KEEP alanları (veri ve araçlar) değişmez; hiçbir dosya silinmez.
+// Checkpoint commit SHA + tree ile doğrulanır (os/checkpoints.json): yerel `pre-v2-checkpoint` tag'i gerekmez, atlama yok —
+// aynı remote branch'ten gelen temiz clone'da da çalışır. Tag'in tutarlılığı Main-PC-only testtedir (os/tests/main-pc/).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { git, read } from '../lib/records.mjs';
+import { checkpoints, verifyCheckpoint } from '../lib/checkpoints.mjs';
 
-const BASE = 'pre-v2-checkpoint';
-let hasBase = true;
-try { git('rev-parse', '--verify', '--quiet', `${BASE}^{commit}`); } catch { hasBase = false; }
+const CP = checkpoints().pre_v2_checkpoint;
+const BASE = CP.commit;
+
+test("migration: kanonik checkpoint bu clone'da doğrulanıyor (SHA + tree, HEAD'in atası)", () => {
+  assert.equal(CP.scope, 'shared');
+  assert.deepEqual(verifyCheckpoint(CP), []);
+});
 
 // Stage 1 (D-042) onaylı kapsam. Yeni aşama onaylanınca bu liste o aşamanın kapsamıyla genişletilir.
 const STAGE1_ALLOWED = [
@@ -57,27 +64,27 @@ const changed = () => {
   return [...committed, ...untracked].map((l) => { const [s, ...p] = l.split('\t'); return { status: s, path: p[p.length - 1] }; });
 };
 
-test('migration: hiçbir dosya silinmedi', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: hiçbir dosya silinmedi', () => {
   assert.deepEqual(changed().filter((c) => c.status.startsWith('D')).map((c) => c.path), []);
 });
 
-test('migration: KEEP alanları değişmedi', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: KEEP alanları değişmedi', () => {
   assert.deepEqual(changed().filter((c) => KEEP.some((k) => k.test(c.path)) && !KEEP_EXCEPTIONS.some((e) => e.test(c.path))).map((c) => c.path), []);
 });
 
-test('migration: değişiklikler yalnız onaylı Stage 1–4 kapsamında', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: değişiklikler yalnız onaylı Stage 1–4 kapsamında', () => {
   const outside = changed().filter((c) => !STAGE1_ALLOWED.some((a) => a.test(c.path))).map((c) => c.path);
   assert.deepEqual(outside, []);
 });
 
-test('migration: decision-log ve lessons yalnız ekleme aldı (geçmiş yeniden yazılmadı)', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: decision-log ve lessons yalnız ekleme aldı (geçmiş yeniden yazılmadı)', () => {
   for (const f of ['company/decision-log.md', 'company/lessons.md']) {
     const before = git('show', `${BASE}:${f}`).trimEnd();
     assert.ok(read(f).startsWith(before), `${f}: existing content changed`);
   }
 });
 
-test('migration: işaretlenen eski kanal belgelerinde içerik korunuyor (yalnız işaret eklendi)', { skip: !hasBase && 'pre-v2-checkpoint tag yok' }, () => {
+test('migration: işaretlenen eski kanal belgelerinde içerik korunuyor (yalnız işaret eklendi)', () => {
   for (const f of MARKED_ONLY) {
     const before = git('show', `${BASE}:${f}`).split('\n').map((l) => l.trimEnd()).filter(Boolean);
     const now = new Set(read(f).split('\n').map((l) => l.trimEnd()));

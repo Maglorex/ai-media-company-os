@@ -1,0 +1,20 @@
+{
+  "_doc": "Company OS tarihsel referansları. 'shared' kayıtlar her makinede (aynı remote branch'ten gelen temiz clone dahil) commit SHA + tree ile doğrulanır; 'main-pc-only' ref'ler yalnız onları barındıran Main PC'de kontrol edilir (os/tests/main-pc/). Makineye özel ref shared integrity şartı olamaz.",
+  "pre_v2_checkpoint": {
+    "scope": "shared",
+    "commit": "46598239ccba7437903b3c84b2518d3c295ac691",
+    "tree": "698eef5ffe92628c6ab443406bc7e7d4c7de5434",
+    "subject": "P3 D-041: proofs provisional pass, CF-002, Handoff v3 (motion prototype, minimum visual density)",
+    "local_tag": "pre-v2-checkpoint",
+    "note": "Stage 0 checkpoint = origin/main at migration start; ancestor of os-v2-migration. The tag is a Main PC convenience, not pushed."
+  },
+  "machine_local_refs": [
+    {
+      "ref": "draft/os-v2-phase1-plan",
+      "commit": "7354fb5748009bee69ce8f74f63e619f42a62440",
+      "tree": "070b5cac4b1a5d87a58e15ac5b831c9367c316e4",
+      "scope": "main-pc-only",
+      "note": "Non-canonical draft (L-009); never pushed. Registry rows pointing at it can never be ACTIVE."
+    }
+  ]
+}

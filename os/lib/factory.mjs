@@ -7,6 +7,7 @@ import { readFileSync, existsSync, statSync, readdirSync, openSync, readSync, cl
 import { join, basename, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { parseCsv } from './records.mjs';
+import { findGit } from './gitbin.mjs';
 import { parseBlocks, header, lintScenePlan, productionBlockers, lintCreativeQA } from './pipeline.mjs';
 
 const norm = (t) => (t || '').replace(/\r\n/g, '\n');
@@ -271,18 +272,8 @@ export function renderHandoff(c) {
 }
 
 // ---------------------------------------------------------------- git / dosya ortamı
-let gitBinCache;
-export function findGit() {
-  if (gitBinCache) return gitBinCache;
-  try { execFileSync('git', ['--version'], { stdio: 'ignore' }); return (gitBinCache = 'git'); } catch { /* PATH'te yok */ }
-  // Strong PC: git PATH'te yok; GitHub Desktop'un gömülü git'i kullanılır (company/machines.md).
-  const base = process.env.LOCALAPPDATA ? join(process.env.LOCALAPPDATA, 'GitHubDesktop') : null;
-  if (base && existsSync(base)) {
-    const apps = readdirSync(base).filter((d) => /^app-/.test(d)).sort((a, b) => b.localeCompare(a, undefined, { numeric: true }));
-    for (const a of apps) { const p = join(base, a, 'resources', 'app', 'git', 'cmd', 'git.exe'); if (existsSync(p)) return (gitBinCache = p); }
-  }
-  throw new Error('git not found (PATH or GitHub Desktop)');
-}
+// Git bulucu ortaktır (os/lib/gitbin.mjs): Strong PC'de git PATH'te yok, GitHub Desktop'un gömülü git'i kullanılır.
+export { findGit };
 
 export function makeEnv(repoDir) {
   const bin = findGit();
