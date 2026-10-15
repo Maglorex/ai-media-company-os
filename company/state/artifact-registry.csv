@@ -107,3 +107,4 @@ CALS5-QA-V3,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v3.md,c
 CALS5-SP-V4,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v4.md,case:CAL-S5,scene-plan,4,ACTIVE,,D-048,Independent creative QA v4 PASS (no concerns)
 CALS5-QA-V4,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v4.md,case:CAL-S5,creative-qa,4,ACTIVE,,D-048,Independent QA v4: PASS
 CALS5-HO-V2,channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v2.md,case:CAL-S5,production-handoff-v2,2,ACTIVE,,D-048,ISSUED by factory gate; scene plan v4 + QA v4 PASS; render + VO credits approved (D-048); AI-01/02 backup warning (non-blocking)
+CALS5-DELIVERY-V1,channels/the-industrial-casebook/cases/CAL-S5/08-delivery-report-v1.md,case:CAL-S5,delivery-report,1,ACTIVE,,D-048,Strong PC technical QA PASS (11 review videos + contact sheet); Creative QA PENDING_INDEPENDENT; 97 ElevenLabs credits; no publish/push
