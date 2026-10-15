@@ -13,6 +13,9 @@
 | `handoff/07-production-handoff-v1.md` | `factory.mjs issue` çıktısı — **BLOCKED** (asset readiness) |
 | `handoff/measurement-request-v1.md` | Strong PC salt-okunur ölçüm turu: tam hash/boyut/süre + müzik hak doğrulaması |
 | `handoff/measurement-report-v1.md` | Strong PC ölçümü (2026-10-15): tam hash/boyut/süre, V-90 doğrulandı, M-01…M-04 hakları CLEAR, AI-01/02 yedeği yok |
+| `08-delivery-report-v1.md` | Strong PC v1 production (11 review files): technical QA PASS; AI-03 97 kredi |
+| `09-founder-review-v1.md` | Founder v1 değerlendirmesi: **REVISE**, Golden Lock yok; S-1 ve M-01 tercih edilen adaylar (GOLDEN değil) |
+| `05-scene-plan-v5.md` | Hedefli revizyon v2 (Reel A sürekliliği, mühendislik mekânsal sistem, Case Line işlevi, NEXT CASE, AR6, tek kesintisiz müzik yatağı) |
 
 ## Önkoşul akışı
 1. Scene plan + bağımsız QA PASS → scene plan `ACTIVE`.

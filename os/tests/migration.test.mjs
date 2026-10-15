@@ -56,10 +56,12 @@ const STAGE1_ALLOWED = [
   /^channels\/the-industrial-casebook\/calibration\//,
   // Stage 5 — CAL-S5 kalibrasyon kodu (D-048): yalnız bu alt klasör
   /^production\/remotion\/src\/calibration\//,
+  // Stage 5 — D-048 kalibrasyon kredi kullanımı (yalnız ekleme): usage ledger
+  /^finance\/ledgers\/usage\.csv$/,
 ];
 const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
   'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];
-const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/(canon|pipeline|cases|calibration)\//, /^production\/remotion\/src\/calibration\//, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
+const KEEP_EXCEPTIONS = [/^channels\/the-industrial-casebook\/v1-procedures\.md$/, /^channels\/the-industrial-casebook\/(canon|pipeline|cases|calibration)\//, /^production\/remotion\/src\/calibration\//, /^finance\/ledgers\/usage\.csv$/, ...MARKED_ONLY.map((p) => new RegExp(`^${p.replace(/[.\/]/g, (c) => `\\${c}`)}$`))]; // CLAUDE.md'den taşınan v1 kanal metni (yeni dosya)
 const KEEP = [/^production\//, /^finance\//, /^intelligence\//, /^channels\//, /^company\/(strategy|constraints|mission|goals|machines)\.md$/];
 
 const changed = () => {

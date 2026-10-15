@@ -37,3 +37,8 @@
 ## AI-01, AI-03 — ElevenLabs VO (Bill L. Oxley, eleven_multilingual_v2)
 - URL: https://elevenlabs.io/pricing — Starter planı "Commercial License" içerir (Free planda yok). Şirketin planı: Starter (D-015, `finance/`). AI-01 mevcut kayıt (D-030, usage U-006); AI-03 D-048 ile ≤150 kredi tavanında üretilecek.
 - Yapay ses kanıt değildir; yayın olursa disclosure kontrolü `pre-publish-qa`'dadır. Kalibrasyon dahili kullanımdır.
+
+## V-08 — The pressurized water reactor of NS Savannah (MARAD / AEC, 1960) — captured 2026-10-15 (revision v2)
+- URL: https://commons.wikimedia.org/wiki/File:The_pressurized_water_reactor_of_NS_Savannah.jpg · file: `Special:FilePath/The_pressurized_water_reactor_of_NS_Savannah.jpg` (931 × 2242, SHA-256 `d1652dde906a318264904a6dec46d7c81e411f6160d64b7a5991a2b129298118`)
+- Sayfa: "This work is in the public domain in the United States" · Public Domain Mark 1.0 · kaynak *The Nuclear ship Savannah: first atomic merchant ship, one of the world's safest* (U.S. Dept. of Commerce, Maritime Administration and Atomic Energy Commission) · 1960.
+- Görsel içerik (Main PC'de dosya incelendi): basınçlı su reaktörü kesit çizimi; basılı etiketler REACTOR CORE, FUEL ELEMENTS, PRESSURE VESSEL, CONTROL ROD DRIVE MOTORS vb.; alt bilgi tanıtım cümlesi kalibrasyonda kırpılır (iddia olarak kullanılmaz).
