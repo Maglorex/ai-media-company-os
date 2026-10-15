@@ -99,3 +99,4 @@ CALS5-ASSET-MANIFEST,channels/the-industrial-casebook/cases/CAL-S5/handoff/asset
 CALS5-SP-V2,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v2.md,case:CAL-S5,scene-plan,2,ACTIVE,,D-048,Independent creative QA v2 PASS (2 accepted concerns; render QA checks NOT A SITE PLAN label)
 CALS5-QA-V1,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v1.md,case:CAL-S5,creative-qa,1,HISTORICAL,,D-048,Independent QA v1: REVISE (11 changes)
 CALS5-QA-V2,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v2.md,case:CAL-S5,creative-qa,2,ACTIVE,,D-048,Independent QA v2: PASS
+CALS5-HO-V1,channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v1.md,case:CAL-S5,production-handoff-v2,1,DRAFT,,D-048,BLOCKED: full hashes/durations need Strong PC observation; M-01 music NEEDS_SOURCE; rights and creative gate clean
