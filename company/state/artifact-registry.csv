@@ -96,5 +96,6 @@ CALS5-SP-V1,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v1.md,ca
 CALS5-RIGHTS,channels/the-industrial-casebook/cases/CAL-S5/rights-ledger.csv,case:CAL-S5,rights-ledger,1,ACTIVE,,D-048,Canonical rights for CAL-S5 assets
 CALS5-RIGHTS-PROOF,channels/the-industrial-casebook/cases/CAL-S5/rights-proof/2026-10-15-web-captures.md,case:CAL-S5,rights-proof,1,ACTIVE,,D-048,Official page captures 2026-10-15
 CALS5-ASSET-MANIFEST,channels/the-industrial-casebook/cases/CAL-S5/handoff/asset-manifest.csv,case:CAL-S5,production-asset-manifest,1,ACTIVE,,D-048,Full hashes pending Strong PC observation; M-01 NEEDS_SOURCE
-CALS5-SP-V2,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v2.md,case:CAL-S5,scene-plan,2,DRAFT,,D-048,Responds to QA v1; pending QA v2
+CALS5-SP-V2,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v2.md,case:CAL-S5,scene-plan,2,ACTIVE,,D-048,Independent creative QA v2 PASS (2 accepted concerns; render QA checks NOT A SITE PLAN label)
 CALS5-QA-V1,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v1.md,case:CAL-S5,creative-qa,1,HISTORICAL,,D-048,Independent QA v1: REVISE (11 changes)
+CALS5-QA-V2,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v2.md,case:CAL-S5,creative-qa,2,ACTIVE,,D-048,Independent QA v2: PASS

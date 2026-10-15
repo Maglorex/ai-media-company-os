@@ -17,7 +17,7 @@
 Case'e özgü ifadeler (ör. *"…cases where the machine worked but the system around it didn't…"*) yalnız o case'in payload'ında, örnek olarak kullanılabilir; kanal sloganı olmaz. Like: yalnız spesifik değere bağlı ve opsiyonel (ör. *"If this changed how you see the Savannah…"* mantığı); kalibrasyonda render edilmez.
 
 ## 2. C1 — CTA / Subscribe motion reference
-- **Yer:** G2'nin intro sonrası kısmında üç blok yerine oturduktan hemen sonra (kalibrasyondaki ilk gerçek cevap anı). Kalibrasyonda ayrı bir klip olarak render edilir (Reel'i bölmez).
+- **Yer:** G3'te maliyet değeri (≈1,16M $) yerine oturduktan hemen sonra — paranın nereye gittiği sorusunun ilk gerçek cevabı; açık soru varken CTA yok (CAL-S5 scene plan v2, QA v1 bulgusu). Kalibrasyonda ayrı bir klip olarak render edilir (Reel'i bölmez).
 - **Hareket:** CASE INTRO'nun **Case Line**'ı kadrajın alt kenarında, subject'ten uzak güvenli alanda kısa bir çizgi olarak belirir; çizgiden tek satır Plex Mono metin kayar (örnek metin, kilitli değil: `NEXT CASE · SUBSCRIBE`); yalnız cümle söylenirken durur; metin çizgiye geri çekilir ve çizgi kaybolur; hikâye hemen kaldığı yerden sürer. Arka plandaki sahne (bloklar) durmaz, karartılmaz.
 - **Yok:** dev subscribe popup, zil animasyonu, el imleci, kırmızı düğme, stok YouTuber lower-third'ü, ekranı kaplayan kart, sosyal medya şablonu, ses efekti.
 - **Ses:** yalnız anlatım; müzik yatağı alçalmaz/yükselmez (reklam arası hissi yok).
