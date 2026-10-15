@@ -9,7 +9,7 @@
 | **Narration presence** | Her zaman ana katman; yakın, sakin, kendinden emin | Opening v2 VO (Bill L. Oxley, mevcut kayıt) tüm Golden'larda | Müzikle yarışmak, efektle boğulmak |
 | **Ambience / oda tonu** | Sessizlik anlarında bile "ölü dijital sessizlik" değil, nefes alan bir zemin | Sürekli, çok düşük; G4'teki sessizlik bunun üstünde | Arşiv fotoğrafına "o anın sesi" izlenimi veren gerçek-dışı ortam sesi (gemi düdüğü, makine dairesi) |
 | **Restrained music** | Merak ve soruşturma hissi; vokalsiz, dar frekans, az melodi | Reel A/B boyunca tek aile; G1'de doğar, G2 sorusunda çekilir, intro'da geri gelir, G3'te akar, G4'te incelir | Epik fragman, kurumsal reklam, sürekli dram |
-| **Silence** | Aktif anlatım aracı: bir sorunun ve bir yokluğun oturması | İki ayrılmış an: G2 "Where was that money going?" ve G4 "There was only one." | Her duraklamayı müzikle doldurmak |
+| **Silence** | Aktif anlatım aracı: bir sorunun ve bir yokluğun oturması | İki ayrılmış an: G2 "Where was that money going?" ve G4'te New York cümlesinden sonra boş yuvanın üstü | Her duraklamayı müzikle doldurmak |
 | **Transition texture** | Görsel dönüşümü (Object Carry, Evidence Pull) kulağa kısaca bağlamak | Kâğıt sürtünmesi / çok hafif mekanik kayma, yalnız dönüşüm anlamı netleştiriyorsa | Her harekete whoosh, click/pop, TikTok efekti |
 | **Mechanical texture** | Mühendislik dünyasında malzeme hissi | G3'te zemin plakası oturduğunda tek düşük doku | Bileşen başına ses (liste ritmini anlatım taşır) |
 | **Reveal sound** | Önemli bir şey göründüğünde dikkatin yönü | G1 gövdenin açığa çıkışı ve G2 Evidence Pull — çok kısa, alçak | Trailer boom, riser, sürekli hit |

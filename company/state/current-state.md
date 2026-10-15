@@ -31,7 +31,7 @@ Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ı
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Stage 5 kalibrasyon: render + kısa VO satırları (≈250 kredi tavan önerisi) | FOUNDER DECISION | Tek gruplu onay; ardından müzik için GUIDED ACTION (Audio Library ≤3 parça) |
+| 1 | Stage 5 kalibrasyon: render + kısa kalibrasyon VO kopyası (≈150 kredi tavan önerisi; yeni ödeme yok) | FOUNDER DECISION | Tek gruplu onay; ardından müzik için GUIDED ACTION (Audio Library ≤3 parça) |
 | 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |

@@ -1,6 +1,7 @@
 # CASE INTRO — Golden Master creative brief (Stage 5)
 
 > status: DRAFT (Founder Golden Lock bekliyor) · author: COO main session · canon: `03` §3 (D-044), `04` §6, `05` · kimlik: Brand System v1 §D–§F, §H
+> Golden Lock edilen: intro'nun **skeleton'ı, hareket karakteri, tipografi davranışı ve ses rolü**. Edilmeyen: P3'ün açılış yapısı veya intro'nun P3'te nereye gireceği (o karar P3'ün kendi v2 pipeline'ındadır). Uygulama aracı (AE master / Remotion / hybrid) Golden Lock'tan **sonra** seçilir (`05` §3).
 > CASE INTRO = **stable skeleton + variable case payload**. CASE LABEL değildir (küçük metadata, `video-ui-spec-v1.md`). Süre için evrensel kural yoktur; ölçülen süre DIAGNOSTIC olarak kaydedilir. Ölçüt: **merakı kesiyor mu, taşıyor mu?**
 
 ## 1. Creative intent
@@ -29,20 +30,22 @@ Zemin: hero object'in kendi dünyası (arşiv fotoğrafının derinliği, belgen
 Değişmeyen davranışlar: tek çizgi (çoğalmaz) · çizgi nesnenin **kendi ekseninde** hareket eder · tipografi çizgiyi taban/maske olarak kullanır · accent yalnız motif geçişinde · intro boyunca anlatım susar, müzik/ambiyans kesilmez (bkz. `03-sound-grammar.md`) · intro bir görsel sonuçla başlar ve bir kanıtla biter.
 
 ## 5. Variable payload
-| Alan | CASE 001 (I-A) | CASE 002 aday (I-B) |
+| Alan | CASE 001 payload'ı (I-A) | Demo payload B (I-B) — J40 |
 |---|---|---|
-| Case number | `CASE 001` | `CASE 002` (yayın sırasına göre kesinleşir; kalibrasyon renderi yayın değildir) |
+| Case number | `CASE 001` (case-register adayı) | `CASE 00X` (yer tutucu; numara ataması değildir — numaralar yalnız yayın sırasıyla `case-register.md`'de verilir) |
 | Title | `NS SAVANNAH` | `WESTINGHOUSE J40` |
 | Hero object | NS Savannah gövdesi — V-05 (NARA 542141, 1962) arşiv fotoğrafından izole, doğal renk | J40 motoru — NASA Glenn arşiv fotoğrafı (P2 kaynak listesi; hak satırı ve kimlik doğrulaması önkoşul) |
 | Çizginin ekseni | Yatay gövde → çizgi gövde boyunca yatay uzanır, kesit yukarıdan aşağı açılır | Uzun eksenli motor → çizgi motor ekseni boyunca ilerler, kademe kademe açılır |
 | Motif | 1960'lar atom çağı teknik çizimi: tek ince yörünge yayı (case-register) | Aksiyal kompresör kademe çizgileri (kimlik motifi; teknik iddia değildir) |
-| Case accent | Atomic Teal #4E8A88 (case-register) | Aday: soğuk gri-mavi (Atomic Teal ve amber'den ayrışan); kesin değer `documentary-creative-director` + case-register, Founder Golden Lock'ta görür |
-| Entry element | G2'nin açık bracket'i (maliyet boşluğu) | I-B bağımsız: test standındaki motor karesinin ufuk çizgisi · E1'de: Savannah sistem şemasının merkez yuvası |
+| Case accent | Atomic Teal #4E8A88 (case-register) | Demo değeri: Atomic Teal ve amber'den ayrışan soğuk bir ton; case-register'a **yazılmaz** |
+| Entry element | G2'nin açık bracket'i (maliyet boşluğu) | I-B bağımsız: test standındaki motor karesinin ufuk çizgisi · E1'de: önceki case'in payoff motifinden gelen Case Line |
 | Exit target | GAO özet sayfasındaki ilk maliyet satırının alt çizgisi | Yok (bağımsız payload testi; başlıkta tutulur) |
+J40 yalnız **demo payload**'dır: skeleton'ın ikinci, farklı geometrili bir nesneye uyarlanabildiğini gösterir. "CASE 002 = J40" veya "sıradaki yayın J40" kararı üretmez; P2 fikri kendi story viability sürecindedir.
 Payload değişince skeleton aynı kalır ama **mekanik kopya olmaz**: çizginin yönü, açılış ritmi ve motifin şekli nesneye uyar. Ölçüt: iki intro yan yana izlendiğinde "aynı kanal, farklı vaka".
 
-## 6. Storyboard / motion sequence (I-A, açılış akışı içinde)
-Anlatım: P3 opening v2 VO (mevcut kayıt; metin ve ledger eşlemesi `P3-production-handoff-prototype-v2.md` §2). Intro, VO'nun "Where was that money going?" cümlesinden sonra ölçülmüş sessizlikte açılan boşluğa girer; VO kesilmez, yalnız aralık açılır (yeni kayıt yok).
+## 6. Storyboard / motion sequence (I-A, akış içinde)
+> Bu tablo intro'nun bir soru taşınırken nasıl davrandığını göstermek için kurulmuş **kalibrasyon akışıdır**; P3'ün final açılış yapısı değildir.
+Anlatım: P3 opening v2 VO'sundan kanıtı doğrulanmış cümleler (mevcut kayıt; `02` §Kanıt denetimi). Intro, VO'nun "Where was that money going?" cümlesinden sonra ölçülmüş sessizlikte açılan boşluğa girer; VO kesilmez, yalnız aralık açılır (yeni kayıt yok).
 | Akış (canon `03` §2 varsayılanı) | Görüntü | Ses |
 |---|---|---|
 | PARADOX / QUESTION | G1 (çalışan gemi) → G2 (denetimin açık boşluğu) | anlatım + ölçülü yatak |
@@ -64,7 +67,7 @@ Kısa, tekrar tanınabilir, rahatsız etmeyen bir **kayıt dokusu**: çizgi çek
 
 ## 10. Founder değerlendirmesi (yalnız bu sorular)
 - Bu kanal premium hissettiriyor mu?
-- CASE INTRO başka bir videoda karşına çıksa tanır mısın? (I-A ve I-B art arda)
+- CASE INTRO başka bir videoda karşına çıksa tanır mısın? (I-A ve demo payload I-B art arda)
 - Intro merakı kesiyor mu, taşıyor mu? (Reel A içinde)
 - Ses profesyonel mi?
 Founder "bu olmadı" derse teşhis sistemdedir (uzunluk, okunabilirlik, carry-in, ses, nesne izolasyonu…); Founder'dan teknik çözüm istenmez.
