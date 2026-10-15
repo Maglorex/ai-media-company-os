@@ -7,14 +7,15 @@
 | Dosya | Durum |
 |---|---|
 | `05-scene-plan-v2.md` | Production Scene Plan v2 (14 SP: 9 golden/referans + 5 anti-reference; QA v1 düzeltmeleri); v1 SUPERSEDED |
-| `06-creative-qa-v1.md` | Bağımsız creative QA (`creative-qa-evaluator`, ayrı bağlam) |
+| `06-creative-qa-v1.md` · `06-creative-qa-v2.md` | Bağımsız creative QA (`creative-qa-evaluator`, ayrı bağlam): v1 REVISE → v2 PASS |
 | `rights-ledger.csv` + `rights-proof/2026-10-15-web-captures.md` | Kullanılan her harici/AI asset için hak satırı ve resmî sayfa kanıtı |
 | `handoff/asset-manifest.csv` | Stage 4 production manifest'i (`production_root: D:/CompanyOS-Production`) |
-| `handoff/07-production-handoff-vN.md` | `factory.mjs issue` çıktısı |
+| `handoff/07-production-handoff-v1.md` | `factory.mjs issue` çıktısı — **BLOCKED** (asset readiness) |
+| `handoff/measurement-request-v1.md` | Strong PC salt-okunur ölçüm turu: tam hash/boyut/süre + müzik hak doğrulaması |
 
 ## Önkoşul akışı
 1. Scene plan + bağımsız QA PASS → scene plan `ACTIVE`.
-2. **Müzik (M-01):** Founder GUIDED ACTION — YouTube Audio Library'den ≤3 parça → Strong PC `D:\CompanyOS-Production\CAL-S5\04_music\`.
+2. **Müzik:** Founder dört aday parçayı Strong PC `D:/CompanyOS-Production/CAL-S5/04_music/` klasörüne koydu (master: `_audio-library/`) — 2026-10-15. Manifest'te M-01…M-04 `NEEDS_RIGHTS` (lisans doğrulanmadı; hash/süre ölçülmedi); hiçbiri GOLDEN değil.
 3. **Strong PC gözlem turu (salt-okunur + tek indirme):** push sonrası Strong PC Claude: (a) V-90'ı manifest'teki NASA URL'sinden `CAL-S5/01_archive/` altına indirir (hash Main PC'de sabitlendi; preflight doğrular); (b) `preflight --json` ile mevcut dosyaların tam SHA-256/boyut değerlerini, AI-01'in süresini ve `04_music` dosyalarının hash/sürelerini raporlar. Render, VO üretimi, düzenleme yok.
 4. Main PC gözlenen değerleri manifest'e, müzik satırlarını audio ledger + manifest'e işler → handoff yeni sürümle `ISSUED`.
 5. Push → Strong PC preflight `READY_FOR_PRODUCTION` → kalibrasyon render'ları (D-048 kapsamı) → teslim raporu → bağımsız creative QA (render) → Founder preview paketi → Golden Lock (ayrı Founder kararı).

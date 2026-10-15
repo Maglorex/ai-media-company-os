@@ -26,12 +26,12 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder: CAL-S5 müzik yatağı için tek GUIDED ACTION — YouTube Audio Library'den en fazla 3 parça indir, Strong PC'de `D:/CompanyOS-Production/CAL-S5/04_music/` klasörüne kaydet.** Ardından push + Strong PC gözlem turu (salt-okunur) → Main PC hash'leri işler → Handoff v2 ISSUED.
+**Founder: GitHub Desktop → Push origin (`os-v2-migration`; GUIDED ACTION).** Ardından Strong PC'de CAL-S5 salt-okunur ölçüm turu (`channels/the-industrial-casebook/cases/CAL-S5/handoff/measurement-request-v1.md`): tam hash/boyut/süre + müzik lisans doğrulaması. Render ve production yok; handoff BLOCKED kalır.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | CAL-S5 müzik yatağı (Audio Library ≤3 parça → Strong PC `04_music`) | GUIDED ACTION | Render + ≤150 kredi onaylandı (D-048) |
+| 1 | Push origin + Strong PC CAL-S5 ölçüm turu | GUIDED ACTION | Dört müzik adayı Strong PC'de; render + ≤150 kredi onaylı (D-048) |
 | 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |
