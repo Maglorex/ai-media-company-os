@@ -21,17 +21,17 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 | 2 | Channel canon (The Industrial Casebook) | **PASS — Founder LOCK** (2026-10-14; D-045) |
 | 3 | Creative pipeline (story viability → packaging → beat sheet → script → scene plan → bağımsız creative QA) | **PASS — Founder LOCK** (2026-10-15; D-046; clean-room kabul testi PASS) |
 | 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | **PASS — Founder LOCK** (2026-10-15; D-047; Strong PC factory kabulü + portability düzeltmesi) |
-| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **CAL-S5 v1 preview → Founder REVISE** (Golden Lock yok; S-1 ve M-01 tercih edilen adaylar); revizyon v2 hazırlanıyor |
+| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **CAL-S5 revizyon v2 handoff ISSUED** (v1 Founder REVISE; S-1 ve M-01 tercih edilen adaylar, GOLDEN değil); render başlamadı |
 | 6 | Legacy konsolidasyonu + v2 kabulü | Planlı |
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**CAL-S5 revizyon v2 hazırlanıyor** (Founder v1 = REVISE, Golden Lock yok; `channels/the-industrial-casebook/cases/CAL-S5/09-founder-review-v1.md`). Scene plan v5 → bağımsız QA → handoff v3. Strong PC render ve push yok.
+**Founder: GitHub Desktop → Push origin (`os-v2-migration`; GUIDED ACTION).** CAL-S5 revizyon v2 handoff'u ISSUED (`channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v3.md`; scene plan v6 + bağımsız QA v6 PASS). Strong PC render'ı ayrı talimatla: önce V-08 indirme (hash sabit) + preflight, sonra yalnız v2 preview seti. Golden Lock ve müzik/doku seçimi Founder'da.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Push origin (CAL-S5 Handoff v2 ISSUED) | GUIDED ACTION | Ardından Strong PC production talimatı ayrı verilir; render + ≤150 kredi onaylı (D-048) |
+| 1 | Push origin (CAL-S5 handoff v3 ISSUED) | GUIDED ACTION | Ardından Strong PC v2 render talimatı ayrı verilir; render onayı D-048; yeni kredi yok |
 | 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |
