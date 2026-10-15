@@ -21,17 +21,17 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 | 2 | Channel canon (The Industrial Casebook) | **PASS — Founder LOCK** (2026-10-14; D-045) |
 | 3 | Creative pipeline (story viability → packaging → beat sheet → script → scene plan → bağımsız creative QA) | **PASS — Founder LOCK** (2026-10-15; D-046; clean-room kabul testi PASS) |
 | 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | **PASS — Founder LOCK** (2026-10-15; D-047; Strong PC factory kabulü + portability düzeltmesi) |
-| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **Production önkoşulları** (D-048 onaylı: render + ≤150 kredi). Case `channels/the-industrial-casebook/cases/CAL-S5/`; render başlamadı; GOLDEN yok |
+| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **CAL-S5 Handoff v2 ISSUED** (scene plan v4 ACTIVE, bağımsız QA v4 PASS, asset/rights temiz; render başlamadı; GOLDEN yok) |
 | 6 | Legacy konsolidasyonu + v2 kabulü | Planlı |
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder: GitHub Desktop → Push origin (`os-v2-migration`; GUIDED ACTION).** Ardından Strong PC'de CAL-S5 salt-okunur ölçüm turu (`channels/the-industrial-casebook/cases/CAL-S5/handoff/measurement-request-v1.md`): tam hash/boyut/süre + müzik lisans doğrulaması. Render ve production yok; handoff BLOCKED kalır.
+**Founder: GitHub Desktop → Push origin (`os-v2-migration`; GUIDED ACTION).** CAL-S5 Handoff v2 ISSUED (`channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v2.md`). Strong PC production ancak ayrı talimatla başlar: önce `strong-pc-preflight` (READY_FOR_PRODUCTION), sonra D-048 kapsamında kalibrasyon render'ları. Golden Lock ve müzik seçimi Founder'da.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Push origin + Strong PC CAL-S5 ölçüm turu | GUIDED ACTION | Dört müzik adayı Strong PC'de; render + ≤150 kredi onaylı (D-048) |
+| 1 | Push origin (CAL-S5 Handoff v2 ISSUED) | GUIDED ACTION | Ardından Strong PC production talimatı ayrı verilir; render + ≤150 kredi onaylı (D-048) |
 | 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |
