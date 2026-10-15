@@ -21,17 +21,17 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 | 2 | Channel canon (The Industrial Casebook) | **PASS — Founder LOCK** (2026-10-14; D-045) |
 | 3 | Creative pipeline (story viability → packaging → beat sheet → script → scene plan → bağımsız creative QA) | **PASS — Founder LOCK** (2026-10-15; D-046; clean-room kabul testi PASS) |
 | 4 | Factory interface (versiyonlu handoff + Strong PC handshake, asset manifest, rights hard-fail, CCR, production yedek/restore) | **PASS — Founder LOCK** (2026-10-15; D-047; Strong PC factory kabulü + portability düzeltmesi) |
-| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **Main PC tasarımı hazır** (2026-10-15; `channels/the-industrial-casebook/calibration/`, DRAFT). Strong PC'ye iş gönderilmedi; GOLDEN yok |
+| 5 | Calibration (Golden/Anti-reference, CASE INTRO Golden Master) | **Production önkoşulları** (D-048 onaylı: render + ≤150 kredi). Case `channels/the-industrial-casebook/cases/CAL-S5/`; render başlamadı; GOLDEN yok |
 | 6 | Legacy konsolidasyonu + v2 kabulü | Planlı |
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
 ## 2. Bugün sıradaki iş
-**Founder: Stage 5 kalibrasyon tasarımını değerlendir; tek gruplu karar ver — kalibrasyon render'ı + yeni kısa VO satırları için mevcut ElevenLabs kredisi (FOUNDER DECISION, `channels/the-industrial-casebook/calibration/05-production-plan-and-preview.md` §5).** Onaydan sonra Main PC önkoşulları (CAL-S5 scene plan, bağımsız QA, rights satırları, manifest) yürütür; Strong PC yalnız Handoff v2 ile iş alır.
+**Founder: CAL-S5 müzik yatağı için tek GUIDED ACTION — YouTube Audio Library'den en fazla 3 parça indir, Strong PC'de `D:\CompanyOS-Production\CAL-S5_music\` klasörüne kaydet.** Ardından push + Strong PC gözlem turu (salt-okunur) → Main PC hash'leri işler → Handoff v2 ISSUED.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Stage 5 kalibrasyon: render + kısa kalibrasyon VO kopyası (≈150 kredi tavan önerisi; yeni ödeme yok) | FOUNDER DECISION | Tek gruplu onay; ardından müzik için GUIDED ACTION (Audio Library ≤3 parça) |
+| 1 | CAL-S5 müzik yatağı (Audio Library ≤3 parça → Strong PC `04_music`) | GUIDED ACTION | Render + ≤150 kredi onaylandı (D-048) |
 | 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |

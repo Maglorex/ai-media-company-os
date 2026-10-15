@@ -3,7 +3,7 @@
 > Tarih kaydı değil, **çalışma görünümü**dür. Kararların tam metni ve geçmişi: `company/decision-log.md` (append-only; silinmez, yeniden yazılmaz).
 > Katman/sınıf/kapsam: `.claude/rules/governance.md` §1–§3, `os/precedence.json`. "Katman" sütunu türetmeyle aynı olmak zorundadır (test). Sınıf boşsa (`—`) kayıt, katmanında bağlayıcı bir Founder/şirket kararıdır.
 > Durum: `ACTIVE` (aynen geçerli) · `LIMITED` (geçerli; "Sınır" sütunundaki kısım uygulanmaz veya sonraki kayıtla daraltıldı).
-> Güncelleme: yeni D- kararı alındığı turda burası da güncellenir (`company-memory.md`). Son güncelleme: 2026-10-15 (D-047).
+> Güncelleme: yeni D- kararı alındığı turda burası da güncellenir (`company-memory.md`). Son güncelleme: 2026-10-15 (D-047, D-048).
 
 ## Aktif kararlar
 | ID | Başlık | Tür | Kapsam | Sınıf | Katman | Durum | Sınır / not |
@@ -49,6 +49,7 @@
 | D-045 | The Industrial Casebook Channel Canon v2 (tek yetkili kanal kaynağı) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/canon/` (TIC-01…TIC-33); `os-v2-migration` dalında |
 | D-046 | The Industrial Casebook Creative Production Pipeline v2 (Stage 3) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/pipeline/README.md`; yeni skill'ler story-viability, production-scene-plan, creative-qa; 5 eski skill SUPERSEDED |
 | D-047 | Factory interface: Production Handoff v2 ve Strong PC boot contract (Stage 4) | DECISION | company | — | L1 | ACTIVE | `os/factory/README.md`; Handoff v2 (`documentary-production-handoff`) + `strong-pc-preflight`; P3 dry-run BLOCKED; Stage 4 Founder LOCK (2026-10-15) |
+| D-048 | Stage 5 kalibrasyon production onayı (CAL-S5) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Strong PC render zamanı + ≤150 ElevenLabs kredisi; yeni ödeme yok; P3 production/yayın kapsam dışı; Golden Lock ayrı karar |
 
 ## Aktif olmayan kararlar (yalnız tarih)
 | ID | Başlık | Neden aktif değil | Yerine |

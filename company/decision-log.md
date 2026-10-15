@@ -452,3 +452,13 @@
 - Gerekçe / kanıt: Founder talimatı; fixture testleri gerçek git ve dosya sistemiyle doğru handoff'u READY, yanlış commit/kirli ağaç/eski veya legacy handoff'u VERSION_MISMATCH, eksik/yanlış asset'i ASSET, reddedilmiş hakkı (elle ISSUED yapılmış handoff dahil) RIGHTS, açık CCR'yi CCR_REQUIRED verdi. [VARSAYIM] Strong PC'de aynı davranış; gerçek makine doğrulaması Founder'ın tek GUIDED ACTION'ından sonra.
 - Geri dönüş koşulu: Strong PC self-test veya ilk gerçek handoff'ta boot contract yanlış engel ya da kaçırılan engel üretirse ilgili kontrol yalnız Founder kararıyla değişir (change control: BLOCKER / EXPERIMENT / CASE-SPECIFIC / BACKLOG).
 - Durum: Aktif — `os-v2-migration` dalında; Strong PC gerçek doğrulaması bekliyor.
+
+### D-048 — Stage 5 kalibrasyon production onayı (CAL-S5)
+- Tarih: 2026-10-15
+- Karar veren: Founder · Uygulama: COO
+- Kapsam: `channel:the-industrial-casebook` (Stage 5 kalibrasyonu; case `CAL-S5`).
+- Bağlam: Stage 5 kalibrasyon tasarımı (`channels/the-industrial-casebook/calibration/`) Founder düzeltmeleriyle kabul edildi (Stage 5 DESIGN FINAL).
+- Karar: (1) CAL-S5 kalibrasyon preview render'ı için Strong PC zamanı onaylı. (2) Stage 5 kalibrasyonu için toplam ≈150 ElevenLabs kredisine kadar kullanım onaylı (mevcut plan kredisi). (3) Yeni abonelik veya ek ödeme onaylı değil. (4) Onay P3 full production, yayın veya başka ücretli servisi kapsamaz. Koşullar: CTA kalibrasyon kopyası kanal sloganı değildir; J40 yalnız demo NEXT CASE payload'ıdır; P3 story/opening yapısı canonize edilmez; Golden Lock ayrı Founder kararıdır.
+- Gerekçe / kanıt: Founder talimatı (Stage 5 production prerequisites).
+- Geri dönüş koşulu: Kredi tavanı aşılacaksa veya ücretli bir kalem gerekirse iş durur, Founder'a yeni onay sorulur.
+- Durum: Aktif — production önkoşulları hazırlanıyor; render başlamadı.
