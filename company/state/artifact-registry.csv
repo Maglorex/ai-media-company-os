@@ -109,4 +109,6 @@ CALS5-QA-V4,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v4.md,c
 CALS5-HO-V2,channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v2.md,case:CAL-S5,production-handoff-v2,2,ACTIVE,,D-048,ISSUED by factory gate; scene plan v4 + QA v4 PASS; render + VO credits approved (D-048); AI-01/02 backup warning (non-blocking)
 CALS5-DELIVERY-V1,channels/the-industrial-casebook/cases/CAL-S5/08-delivery-report-v1.md,case:CAL-S5,delivery-report,1,ACTIVE,,D-048,Strong PC technical QA PASS (11 review videos + contact sheet); Creative QA PENDING_INDEPENDENT; 97 ElevenLabs credits; no publish/push
 CALS5-FOUNDER-REVIEW-V1,channels/the-industrial-casebook/cases/CAL-S5/09-founder-review-v1.md,case:CAL-S5,founder-review,1,ACTIVE,,D-048,Founder review of preview v1: REVISE; S-1 and M-01 preferred candidates (not GOLDEN); calibration evidence, not doctrine
-CALS5-SP-V5,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v5.md,case:CAL-S5,scene-plan,5,DRAFT,,D-048,Targeted revision v2 after Founder review; pending QA v5
+CALS5-SP-V5,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v5.md,case:CAL-S5,scene-plan,5,SUPERSEDED,CALS5-SP-V6,D-048,Replaced after independent creative QA v5 (REVISE: 7 changes)
+CALS5-QA-V5,channels/the-industrial-casebook/cases/CAL-S5/06-creative-qa-v5.md,case:CAL-S5,creative-qa,5,HISTORICAL,,D-048,Independent QA v5: REVISE (7 changes)
+CALS5-SP-V6,channels/the-industrial-casebook/cases/CAL-S5/05-scene-plan-v6.md,case:CAL-S5,scene-plan,6,DRAFT,,D-048,Responds to QA v5; pending QA v6
