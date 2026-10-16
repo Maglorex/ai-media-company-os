@@ -58,6 +58,8 @@ const STAGE1_ALLOWED = [
   /^production\/remotion\/src\/calibration\//,
   // Stage 5 — D-048 kalibrasyon kredi kullanımı (yalnız ekleme): usage ledger
   /^finance\/ledgers\/usage\.csv$/,
+  // Gate 1B P1 taşınabilirlik düzeltmesi (Founder 2026-10-16): runtime için deterministik EOL + arşiv baytlarının korunması — yalnız bu tek dosya
+  /^\.gitattributes$/,
 ];
 const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
   'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];
@@ -87,6 +89,18 @@ test('migration: decision-log ve lessons yalnız ekleme aldı (geçmiş yeniden 
   for (const f of ['company/decision-log.md', 'company/lessons.md']) {
     const before = git('show', `${BASE}:${f}`).trimEnd();
     assert.ok(read(f).startsWith(before), `${f}: existing content changed`);
+  }
+});
+
+// Gate 1B P1: etkin Git öznitelikleri (dosya metni değil). Canlı runtime her checkout'ta LF; arşiv kanıtı hiç EOL dönüşümü görmez
+// (aksi halde Windows checkout'u arşivi CRLF'ye çevirir ve genesis'teki bayt SHA-256'sı tutmaz).
+test('migration: runtime EOL öznitelikleri — canlı dosyalar text+eol=lf, arşiv -text ve eol belirtilmemiş', () => {
+  const attrs = (p) => Object.fromEntries(git('check-attr', 'text', 'eol', '--', p).trim().split('\n').map((l) => l.split(': ').slice(1)));
+  for (const p of ['company/state/runtime/events.jsonl', 'company/state/runtime/state.json', 'company/state/runtime/jobs/JOB-X.json', 'company/state/runtime/actions/ACT-X.json']) {
+    assert.deepEqual(attrs(p), { text: 'set', eol: 'lf' }, p);
+  }
+  for (const p of ['company/state/runtime/archive/events-unversioned-2026-10-16.jsonl', 'company/state/runtime/archive/state-unversioned-2026-10-16.json']) {
+    assert.deepEqual(attrs(p), { text: 'unset', eol: 'unspecified' }, p);
   }
 });
 
