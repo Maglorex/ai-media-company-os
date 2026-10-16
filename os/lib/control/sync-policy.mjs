@@ -72,9 +72,11 @@ export const PRODUCTION_SYNC_POLICY = Object.freeze({
   protected_paths: PROTECTED_PATHS,
   // Protected yol değişikliği için SYSTEM_CHANGE yolu üretimde yoktur (Founder onayı taklit edilmez).
   system_change_allowed: false,
-  // İlk yayın (uzak dal yok) yalnız iş için onaylı bir taban commit biliniyorsa. Üretimde yok → BLOCK; Gate 1D-B'de tanımlanacak.
-  first_publication_bases: Object.freeze({}),
-  first_publication_base_ref: 'main',
+  // Gate 1D-B: yetkili runtime olay günlüğünün yaşadığı kontrol dalı (ayrı Founder kararıyla değişir) ve tek yazıcı makine.
+  // İş sahipliği ve ilk yayın tabanı, uzak kontrol dalının tam commit'indeki olay günlüğünden okunur (JOB_ASSIGNED);
+  // kontrol dalını safe-sync asla push etmez (Founder GitHub Desktop ile manuel push).
+  control_branch: 'os-v2-migration',
+  runtime_writer: 'WIN-028TMNOG5MJ',
   verification_timeout_ms: 20 * 60 * 1000,
 });
 
@@ -102,14 +104,18 @@ export function buildPushArgs(remoteName, sha, branch) {
 
 // Yalnız tek dalın nesnelerini getirir; hiçbir yerel ref yazmaz: FETCH_HEAD yok (--no-write-fetch-head), etiket yok,
 // prune yok ve boş --refmap= ile yapılandırılmış remote.<ad>.fetch eşlemesinin "fırsatçı" refs/remotes/* güncellemesi kapalı.
+// Salt-okunur inceleme (ls-remote / nesne getirme) için izinli kontrol dalları; push hiçbir zaman (buildPushArgs → routineBranch).
+export const INSPECTABLE_CONTROL_BRANCHES = Object.freeze(['main', 'os-v2-migration']);
+const inspectable = (b) => INSPECTABLE_CONTROL_BRANCHES.includes(b) || JOB_BRANCH.test(b);
+
 export function buildFetchArgs(remoteName, branch) {
   if (!/^[a-z][a-z0-9-]{0,30}$/.test(remoteName ?? '')) throw new ControlError('FETCH_REFUSED', 'invalid remote name');
-  if (!(branch === 'main' || JOB_BRANCH.test(branch))) throw new ControlError('FETCH_REFUSED', `fetch of ${branch} not permitted`);
+  if (!inspectable(branch)) throw new ControlError('FETCH_REFUSED', `fetch of ${branch} not permitted`);
   return ['fetch', '--no-tags', '--no-prune', '--no-write-fetch-head', '--refmap=', '--recurse-submodules=no', remoteName, `refs/heads/${branch}`];
 }
 
 export function buildLsRemoteArgs(remoteName, branch) {
   if (!/^[a-z][a-z0-9-]{0,30}$/.test(remoteName ?? '')) throw new ControlError('LS_REMOTE_REFUSED', 'invalid remote name');
-  if (!(branch === 'main' || JOB_BRANCH.test(branch))) throw new ControlError('LS_REMOTE_REFUSED', `inspection of ${branch} not permitted`);
+  if (!inspectable(branch)) throw new ControlError('LS_REMOTE_REFUSED', `inspection of ${branch} not permitted`);
   return ['ls-remote', '--heads', remoteName, `refs/heads/${branch}`];
 }

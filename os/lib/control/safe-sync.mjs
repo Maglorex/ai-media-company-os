@@ -51,7 +51,10 @@ import { hostname, tmpdir } from 'node:os';
 import { findGit } from '../gitbin.mjs';
 import { ROOT } from '../records.mjs';
 import { ControlError, canon, sha256, readJson, writeJsonAtomic, secretFindings, runtimeContext } from './common.mjs';
-import { inspect } from './runtime.mjs';
+import { inspect, loadModel } from './runtime.mjs';
+import { parseEventLog } from './events.mjs';
+import { replay } from './model.mjs';
+import { assignJob } from './jobs.mjs';
 import { PRODUCTION_SYNC_POLICY, routineBranch, isProtectedPath, ambiguousWindowsPath, executableShadowName, buildPushArgs, buildFetchArgs, buildLsRemoteArgs } from './sync-policy.mjs';
 
 export const RECEIPT_SCHEMA = 'safe-sync-receipt/1';
@@ -358,7 +361,9 @@ function assertNoFilters(ctx, paths, where) {
 }
 
 // ---------- yerel ön kontrol (ağ yok) ----------
-export function preflight(ctx) {
+// routine=false: yalnız `start` / `recordAssignment` için (mevcut dal job/<ID> olmak zorunda değil); diğer her kontrol aynı.
+// Gate 1D-B: iş bağlama (sahip makine, dal, COMPLETE) burada YAPILMAZ — yerel projeksiyon yetki değildir; bindRemoteJob yapar.
+export function preflight(ctx, { routine = true } = {}) {
   const checks = [];
   const ok = (name) => checks.push(name);
   const top = git(ctx, ['rev-parse', '--show-toplevel'], { allowFail: true });
@@ -408,8 +413,8 @@ export function preflight(ctx) {
   const head = headR.text.trim();
   if (headR.code !== 0 || !SHA.test(head)) fail('NO_HEAD_COMMIT', 'HEAD does not resolve to a commit');
   ok('head-commit');
-  const { job_id } = routineBranch(branch);
-  ok('routine-branch');
+  const { job_id } = routine ? routineBranch(branch) : { job_id: null };
+  if (routine) ok('routine-branch');
   checkRemotePolicy(ctx);
   ok('remote-policy');
   checkTransportTrust(ctx);
@@ -418,20 +423,48 @@ export function preflight(ctx) {
   if (!s.exists || !s.log.ok || s.replayErrors.length || s.divergence.length || s.tempFiles.length || s.locked) {
     fail('RUNTIME_UNHEALTHY', 'Gate 1B runtime is not healthy (broken log, divergence, interrupted write or lock)');
   }
+  // Yerel PAUSED ek bir fail-closed engeldir (yetki vermez); yetkili mod uzak kontrol dalından da kontrol edilir.
   if (s.model.mode === 'PAUSED') fail('COMPANY_PAUSED', s.model.mode_reason);
   ok('runtime-healthy');
-  const job = s.model.jobs[job_id];
-  if (!job) fail('JOB_NOT_FOUND', `${job_id} is not in the canonical event log`);
+  // Profil girdileri izlenen dosyalar olmalı — taşımadan (ağdan) ÖNCE. Kayıtsız makine için PROFILE_UNKNOWN kararı uzak iş
+  // bağlamasından sonra verilir (sahiplik cevabı önce gelsin); o makine zaten profil çalıştıramaz.
+  const profile = hasOwn(ctx.policy.machine_profiles, ctx.machine) && hasOwn(ctx.policy.profiles, ctx.policy.machine_profiles[ctx.machine]) ? ctx.policy.machine_profiles[ctx.machine] : null;
+  if (profile) { checkProfileCodeTracked(ctx, profile); ok('profile-code-tracked'); }
+  return { branch, head, job_id, profile, checks };
+}
+
+function requireProfile(ctx, pf) {
+  if (!pf.profile) fail('PROFILE_UNKNOWN', `no verification profile for machine ${ctx.machine}`);
+  pf.checks.push('verification-profile');
+  return pf.profile;
+}
+
+// ---------- Gate 1D-B: uzak kontrol dalı yetkisi ----------
+// Yetkili iş durumu = onaylı uzaktaki kontrol dalının TAM commit'indeki olay günlüğü (yerel çalışma ağacı değil). Günlük o commit'ten
+// okunur, aynı Gate 1B kurallarıyla (biçim + hash zinciri + sürüm + anlamsal replay) doğrulanır; eksik/bozuk → fail-closed.
+export const RUNTIME_LOG_PATH = 'company/state/runtime/events.jsonl';
+export function remoteControlRuntime(ctx) {
+  const control = ctx.policy.control_branch;
+  if (!control) fail('CONTROL_BRANCH_UNSET', 'policy has no control branch');
+  const tip = lsRemote(ctx, control);
+  if (!tip) fail('REMOTE_RUNTIME_MISSING', `remote ${control} not found`);
+  fetchObjects(ctx, control, tip);
+  const blob = git(ctx, ['cat-file', 'blob', `${tip}:${RUNTIME_LOG_PATH}`], { allowFail: true });
+  if (blob.code !== 0) fail('REMOTE_RUNTIME_MISSING', `${RUNTIME_LOG_PATH} not found at remote ${control} ${tip.slice(0, 12)}`);
+  const log = parseEventLog(blob.buf.toString('utf8'));
+  if (!log.ok) fail('REMOTE_RUNTIME_BROKEN', `remote control runtime log is invalid (${log.errors.length} error(s), e.g. ${log.errors[0]})`);
+  const rep = replay(log.events);
+  if (rep.errors.length) fail('REMOTE_RUNTIME_BROKEN', `remote control runtime log does not replay: ${rep.errors[0]}`);
+  return { control, tip, model: rep.model };
+}
+export function bindRemoteJob(ctx, { job_id, branch }, rr) {
+  if (rr.model.mode === 'PAUSED') fail('COMPANY_PAUSED', `canonical runtime on remote ${rr.control} is PAUSED`);
+  const job = rr.model.jobs[job_id];
+  if (!job) fail('JOB_NOT_FOUND', `${job_id} is not in the canonical event log on remote ${rr.control}`);
   if (job.branch !== branch) fail('JOB_BRANCH_MISMATCH', `${job_id} is bound to branch ${job.branch}, not ${branch}`);
   if (job.state === 'COMPLETE') fail('JOB_COMPLETE', job_id);
-  if (job.owner_machine !== ctx.machine) fail('JOB_OWNER_MISMATCH', `${job_id} is owned by ${job.owner_machine}, not this machine`);
-  ok('job-binding');
-  const profile = hasOwn(ctx.policy.machine_profiles, ctx.machine) ? ctx.policy.machine_profiles[ctx.machine] : null;
-  if (!profile || !hasOwn(ctx.policy.profiles, profile)) fail('PROFILE_UNKNOWN', `no verification profile for machine ${ctx.machine}`);
-  ok('verification-profile');
-  checkProfileCodeTracked(ctx, profile);
-  ok('profile-code-tracked');
-  return { branch, head, job_id, job_state: job.state, profile, checks };
+  if (job.owner_machine !== ctx.machine) fail('JOB_OWNER_MISMATCH', `${job_id} is owned by ${job.owner_machine} on remote ${rr.control}, not this machine`);
+  return job;
 }
 
 // ---------- uzak inceleme ----------
@@ -627,8 +660,19 @@ export function safeSync(ctx, { mode = 'sync' } = {}) {
   try {
     res.git_executable = gitExecutable();
     const pf = preflight(ctx);
-    Object.assign(res, { branch: pf.branch, job_id: pf.job_id, local_head: pf.head, profile: pf.profile, checks: pf.checks });
-    if (mode === 'status') return done('PREFLIGHT_PASS');
+    Object.assign(res, { branch: pf.branch, job_id: pf.job_id, local_head: pf.head, checks: pf.checks });
+    if (mode === 'status') {
+      res.profile = requireProfile(ctx, pf);
+      return done('PREFLIGHT_PASS', { job_binding: 'REMOTE_REQUIRED (not checked in status mode; no network)' });
+    }
+
+    // Gate 1D-B: iş bağlama ve ilk yayın tabanı uzak kontrol dalının doğrulanmış olay günlüğünden.
+    const rr = remoteControlRuntime(ctx);
+    const job = bindRemoteJob(ctx, pf, rr);
+    pf.checks.push('remote-job-binding');
+    res.control_branch = rr.control;
+    res.control_tip = rr.tip;
+    res.profile = requireProfile(ctx, pf);
 
     const remoteTip = lsRemote(ctx, pf.branch);
     res.remote_head_before = remoteTip;
@@ -678,14 +722,12 @@ export function safeSync(ctx, { mode = 'sync' } = {}) {
         return done('FAST_FORWARDED', { local_head_after: now });
       }
       case 'REMOTE_BRANCH_MISSING': {
-        const approved = hasOwn(ctx.policy.first_publication_bases, pf.job_id) ? ctx.policy.first_publication_bases[pf.job_id] : null;
-        if (!approved || !SHA.test(approved)) fail('FIRST_PUBLICATION_NOT_PERMITTED', `no approved base commit for ${pf.job_id}; the base is never guessed`);
-        if (git(ctx, ['cat-file', '-e', `${approved}^{commit}`], { allowFail: true }).code !== 0 || !isAncestor(ctx, approved, pf.head)) fail('BASE_INVALID', 'approved base is not an ancestor of HEAD');
-        const baseRef = ctx.policy.first_publication_base_ref;
-        const remoteBase = lsRemote(ctx, baseRef);
-        if (!remoteBase) fail('BASE_NOT_ON_REMOTE', `remote ${baseRef} missing`);
-        fetchObjects(ctx, baseRef, remoteBase);
-        if (!isAncestor(ctx, approved, remoteBase)) fail('BASE_NOT_ON_REMOTE', 'approved base is not reachable on the remote');
+        // İlk yayın tabanı yalnız uzak kontrol dalındaki JOB_ASSIGNED olayından (publication_base); asla tahmin edilmez.
+        const approved = job.publication_base;
+        if (!approved || !SHA.test(approved)) fail('FIRST_PUBLICATION_NOT_PERMITTED', `${pf.job_id} has no recorded publication base on remote ${rr.control} (JOB_ASSIGNED); the base is never guessed`);
+        if (git(ctx, ['cat-file', '-e', `${approved}^{commit}`], { allowFail: true }).code !== 0 || !isAncestor(ctx, approved, pf.head)) fail('BASE_INVALID', 'recorded publication base is not an ancestor of HEAD');
+        if (!isAncestor(ctx, approved, rr.tip)) fail('BASE_NOT_ON_REMOTE', `recorded publication base is not reachable from remote ${rr.control}`);
+        res.publication_base = approved;
         exclude = approved;
         break;
       }
@@ -706,6 +748,8 @@ export function safeSync(ctx, { mode = 'sync' } = {}) {
     if (!ver.ok) fail('VERIFICATION_FAILED', `verification profile ${pf.profile} failed: ${ver.results.filter((r) => !r.ok).map((r) => r.name).join(', ') || 'not run'}`);
     const again = preflight(ctx);
     if (again.head !== pf.head || again.branch !== pf.branch) fail('VERIFICATION_CHANGED_WORKTREE', 'HEAD or branch changed during verification');
+    // Bayat yetki: sahiplik doğrulandığından beri kontrol dalı hareket ettiyse (ör. yeniden atama push edildi) push yok.
+    if (lsRemote(ctx, rr.control) !== rr.tip) fail('CONTROL_CHANGED', `remote ${rr.control} moved since job ownership was verified; rerun safe-sync`);
 
     // Makbuz alan adı "history_scan": "secret_*" anahtarları secret taramasında (doğru olarak) reddedilir.
     stamp('STARTED', { remote_head_before: remoteTip, classification: cls, history_scan: res.secret_scan, verification: ver.results, result: null });
@@ -722,4 +766,56 @@ export function safeSync(ctx, { mode = 'sync' } = {}) {
     if (!(e instanceof ControlError)) throw e;
     return Object.assign(res, { ok: false, result: 'BLOCKED', code: e.code, message: e.message });
   }
+}
+
+// ---------- Gate 1D-B: safe-sync start — job dalını yalnız kayıtlı yayın tabanından yerel olarak oluşturur ----------
+// Ağ: uzak kontrol dalı + job dalı varlığı okunur; hiçbir şey push edilmez. Taban tahmin edilmez; dal zaten varsa veya yayınlanmışsa durur.
+export function startJobBranch(ctx, { job_id } = {}) {
+  const res = { schema: RESULT_SCHEMA, mode: 'start', policy_id: ctx.policy.policy_id, machine: ctx.machine, ok: false, result: null, code: null, message: null };
+  try {
+    res.git_executable = gitExecutable();
+    const branch = `job/${job_id}`;
+    routineBranch(branch);
+    Object.assign(res, { branch, job_id });
+    const pf = preflight(ctx, { routine: false });
+    res.checks = pf.checks;
+    const rr = remoteControlRuntime(ctx);
+    const job = bindRemoteJob(ctx, { job_id, branch }, rr);
+    Object.assign(res, { control_branch: rr.control, control_tip: rr.tip });
+    const base = job.publication_base;
+    if (!base || !SHA.test(base)) fail('JOB_NOT_ASSIGNED', `${job_id} has no recorded publication base on remote ${rr.control} (JOB_ASSIGNED); the base is never guessed`);
+    if (git(ctx, ['cat-file', '-e', `${base}^{commit}`], { allowFail: true }).code !== 0) fail('BASE_INVALID', 'recorded publication base is not a known commit');
+    if (!isAncestor(ctx, base, rr.tip)) fail('BASE_NOT_ON_REMOTE', `recorded publication base is not reachable from remote ${rr.control}`);
+    if (git(ctx, ['rev-parse', '--verify', '-q', `refs/heads/${branch}`], { allowFail: true }).code === 0) fail('BRANCH_EXISTS', `local ${branch} already exists`);
+    if (lsRemote(ctx, branch)) fail('BRANCH_ALREADY_PUBLISHED', `remote ${branch} already exists; it is not re-created from the base`);
+    // Çalışma ağacı taban ağacına geçmeden önce: filtre / git'i gölgeleyen ad / belirsiz Windows yolu yok.
+    const names = git(ctx, ['ls-tree', '-r', '-z', '--name-only', '--full-tree', base]).text.split('\0').filter(Boolean);
+    assertNoFilters(ctx, names, 'start target-tree');
+    const unsafe = names.filter((p) => executableShadowName(p) || ambiguousWindowsPath(p));
+    if (unsafe.length) fail('UNSAFE_EXECUTABLE_NAME', `base tree contains ${unsafe.length} unsafe path(s)`);
+    git(ctx, ['switch', '--no-track', '--no-guess', '-c', branch, base]);
+    const ref = gtext(ctx, ['symbolic-ref', '-q', 'HEAD']);
+    const now = gtext(ctx, ['rev-parse', '--verify', 'HEAD^{commit}']);
+    if (ref !== `refs/heads/${branch}` || now !== base) fail('START_UNVERIFIED', 'job branch was not created at the recorded base');
+    return Object.assign(res, { ok: true, result: 'JOB_BRANCH_STARTED', publication_base: base, local_head: now });
+  } catch (e) {
+    if (!(e instanceof ControlError)) throw e;
+    return Object.assign(res, { ok: false, result: 'BLOCKED', code: e.code, message: e.message });
+  }
+}
+
+// ---------- Gate 1D-B: JOB_ASSIGNED kaydı — yalnız Main PC, temiz kontrol dalında ----------
+// Taban: işin kayıtlı publication_base'i (değişmez) yoksa kontrol dalının temiz HEAD'i. Olay yerel runtime'a yazılır; commit ve
+// kontrol dalının push'u Founder'ın manuel iş akışıdır (safe-sync kontrol dalını asla push etmez). Bu bir kimlik doğrulaması değildir:
+// makine adı ve dal kontrolü iş akışı sınırıdır; yetkili etki ancak kontrol dalı uzağa push edilince başlar.
+export function recordAssignment(ctx, { job_id, to_machine, reason, actor_role }) {
+  if (ctx.machine !== ctx.policy.runtime_writer) fail('RUNTIME_WRITER_ONLY', `only ${ctx.policy.runtime_writer} records runtime events`);
+  const pf = preflight(ctx, { routine: false });
+  if (pf.branch !== ctx.policy.control_branch) fail('CONTROL_BRANCH_REQUIRED', `assignments are recorded on ${ctx.policy.control_branch}, not ${pf.branch}`);
+  if (!hasOwn(ctx.policy.machine_profiles, to_machine)) fail('UNKNOWN_MACHINE', `${to_machine} is not a registered machine`);
+  const current = loadModel(ctx.rt).jobs[job_id];
+  if (!current) fail('JOB_NOT_FOUND', String(job_id));
+  const base_commit = current.publication_base ?? pf.head;
+  const job = assignJob(ctx.rt, job_id, { actor_role, to_machine, base_commit, reason });
+  return { job, base_commit, next: `commit the runtime change on ${ctx.policy.control_branch}; ownership takes effect only after the Founder pushes it` };
 }

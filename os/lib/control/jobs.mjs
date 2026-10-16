@@ -50,6 +50,16 @@ export function approveJob(rt, id, { actor_role, approval_ref = null }) {
   });
 }
 
+// Gate 1D-B: sahiplik devri / ilk yayın tabanı olayı. Doğrulama reducer'dadır (model.mjs JOB_ASSIGNED). Bu kütüphane çağrısı yetki
+// kanıtı değildir: yalnız Main PC kontrol dalı iş akışı (safe-sync.mjs recordAssignment / CLI `job assign`) bunu çağırır.
+export function assignJob(rt, id, { actor_role, to_machine, base_commit, reason }) {
+  if (!nonEmpty(reason)) throw new ControlError('REASON_REQUIRED', 'assignment needs a reason');
+  return mutate(rt, { actor_role }, (m) => {
+    if (!m.jobs[id]) throw new ControlError('JOB_NOT_FOUND', String(id));
+    return { event: { type: 'JOB_ASSIGNED', job_id: id, details: { to_machine, base_commit, reason: reason.trim() } }, result: (n) => clone(n.jobs[id]) };
+  });
+}
+
 // Okumalar yetkili replay modelinden gelir; projeksiyon dosyası değiştirilse bile cevap değişmez.
 export function readJob(rt, id) {
   const j = loadModel(rt).jobs[id];

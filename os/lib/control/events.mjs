@@ -11,7 +11,7 @@ export const GENESIS_HASH = '0'.repeat(64);
 export const EVENT_TYPES = [
   'RUNTIME_INITIALIZED', 'RUNTIME_REPROJECTED',
   'COMPANY_PAUSED', 'COMPANY_RESUMED',
-  'JOB_CREATED', 'JOB_STATE_CHANGED', 'JOB_APPROVED',
+  'JOB_CREATED', 'JOB_STATE_CHANGED', 'JOB_APPROVED', 'JOB_ASSIGNED',
   'ACTION_PREPARED', 'ACTION_AUTHORIZED', 'ACTION_EXECUTING', 'ACTION_EXECUTED', 'ACTION_VERIFIED', 'ACTION_FAILED',
 ];
 // Olay sürümü: gelecekteki Company OS sürümleri eski olayların şemasını tahmin etmek yerine açıkça ele alabilsin diye vardır.
@@ -49,7 +49,11 @@ export function eventShapeErrors(e, expectedSeq, expectedPrev) {
 export function readEventLog(dir) {
   const file = join(dir, EVENTS_FILE);
   if (!existsSync(file)) return { ok: false, events: [], head: null, errors: ['events.jsonl missing'] };
-  const raw = readFileSync(file, 'utf8');
+  return parseEventLog(readFileSync(file, 'utf8'));
+}
+
+// Saf ayrıştırma + zincir doğrulaması (Gate 1D-B: uzak kontrol dalındaki günlük de aynı kurallarla doğrulanır).
+export function parseEventLog(raw) {
   const errors = [];
   if (raw.length === 0) return { ok: false, events: [], head: null, errors: ['events.jsonl is empty (no genesis event)'] };
   if (!raw.endsWith('\n')) errors.push('events.jsonl does not end with a newline (torn or hand-edited final line)');

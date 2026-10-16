@@ -133,7 +133,7 @@ export function applyEvent(m, e) {
       if (m.jobs[d.job.job_id]) fail('JOB_EXISTS', d.job.job_id);
       if (!['PLANNED', 'READY'].includes(d.job.state)) fail('JOB_INVALID', 'new jobs start as PLANNED or READY');
       if (d.job.blockers.length) fail('JOB_INVALID', 'only BLOCKED jobs carry blockers');
-      m.jobs[d.job.job_id] = { ...d.job, approvals: [], founder_gate: null, created_at: e.ts, updated_at: e.ts };
+      m.jobs[d.job.job_id] = { ...d.job, approvals: [], founder_gate: null, publication_base: null, created_at: e.ts, updated_at: e.ts };
       break;
     }
     case 'JOB_STATE_CHANGED': {
@@ -160,6 +160,22 @@ export function applyEvent(m, e) {
       if (RELEASES.includes(d.to)) for (const r of j.resource_claims) if (m.resources[r]?.job_id === j.job_id) delete m.resources[r];
       Object.assign(j, { state: d.to, blockers: d.blockers, next_owner: d.next_owner, updated_at: e.ts,
         founder_gate: d.to === 'AWAITING_FOUNDER' ? { entered_seq: e.seq, approval: null } : null });
+      break;
+    }
+    // Gate 1D-B: iş sahipliği devri yalnız bu olayla (projeksiyon elle değişmez). İlk atama yayın tabanını sabitler; sonra değişmez.
+    // Etkin kaynak tutan iş devredilemez (zamanlayıcı/lease yok): önce PLANNED/READY'ye alınıp kaynağı bırakmalı.
+    case 'JOB_ASSIGNED': {
+      keysExactly(d, ['to_machine', 'base_commit', 'reason'], 'details');
+      const j = jobOf(m, e);
+      if (j.state === 'COMPLETE') fail('JOB_COMPLETE', `${j.job_id} is COMPLETE and cannot be reassigned`);
+      if (!/^[A-Za-z0-9][A-Za-z0-9._-]{0,62}$/.test(d.to_machine ?? '')) fail('JOB_INVALID', 'to_machine must be a machine name');
+      if (!/^[0-9a-f]{40}$/.test(d.base_commit ?? '')) fail('JOB_INVALID', 'base_commit must be a full commit id');
+      if (!nonEmpty(d.reason)) fail('REASON_REQUIRED', 'assignment needs a reason');
+      if (j.publication_base && d.base_commit !== j.publication_base) fail('PUBLICATION_BASE_IMMUTABLE', `${j.job_id} publication base is fixed at ${j.publication_base.slice(0, 12)}`);
+      if (j.publication_base && d.to_machine === j.owner_machine) fail('ALREADY_ASSIGNED', `${j.job_id} is already assigned to ${d.to_machine}`);
+      const held = Object.entries(m.resources).filter(([, h]) => h.job_id === j.job_id).map(([r]) => r);
+      if (held.length) fail('ASSIGNMENT_RESOURCE_HELD', `${j.job_id} holds ${held.join(', ')}; release it (PLANNED/READY) before reassignment`);
+      Object.assign(j, { owner_machine: d.to_machine, publication_base: j.publication_base ?? d.base_commit, updated_at: e.ts });
       break;
     }
     case 'JOB_APPROVED': {

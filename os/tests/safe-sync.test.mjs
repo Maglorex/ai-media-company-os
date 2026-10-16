@@ -10,7 +10,7 @@ import { findGit, gitCandidates, locateGit, pathGitCandidates } from '../lib/git
 import { ROOT } from '../lib/records.mjs';
 import { runtimeContext } from '../lib/control/common.mjs';
 import { initRuntime, pauseCompany } from '../lib/control/runtime.mjs';
-import { createJob, transitionJob } from '../lib/control/jobs.mjs';
+import { createJob, transitionJob, assignJob } from '../lib/control/jobs.mjs';
 import { safeSync, syncContext, transportDir, syncGitEnv, profileEnv, HOST_ENV_ACCEPTED } from '../lib/control/safe-sync.mjs';
 import { PRODUCTION_SYNC_POLICY, buildPushArgs, buildFetchArgs, buildLsRemoteArgs, routineBranch, isProtectedPath, ambiguousWindowsPath, executableShadowName } from '../lib/control/sync-policy.mjs';
 
@@ -28,6 +28,9 @@ const testPolicy = (url, extra = {}) => Object.freeze({
   policy_id: 'TEST-ONLY:safe-sync',
   remote: Object.freeze({ name: 'origin', url }),
   machine_profiles: Object.freeze({ [MACHINE]: 'TEST', 'OTHER-PC': 'TEST' }),
+  // Gate 1D-B: geçici depoda yetkili runtime kontrol dalı 'main'; tek yazıcı test makinesi.
+  control_branch: 'main',
+  runtime_writer: MACHINE,
   profiles: Object.freeze({ TEST: Object.freeze([Object.freeze({ name: 'test-only-pass', argv: Object.freeze(['-e', 'process.exit(0)']) })]) }),
   ...extra,
 });
@@ -66,6 +69,8 @@ function fixture(fn, { job = {} } = {}) {
     return fn(f);
   } finally { rmSync(base, { recursive: true, force: true }); }
 }
+// Kontrol dalında (main) runtime değişikliği kaydeder, commit + push eder (Founder'ın manuel push'unun fikstür karşılığı), job dalına döner.
+const onControl = (f, fn) => { const cur = g(f.work, 'symbolic-ref', '--short', 'HEAD'); g(f.work, 'checkout', '-q', 'main'); fn(); g(f.work, 'add', '-A'); g(f.work, 'commit', '-q', '-m', 'control-plane event'); g(f.work, 'push', '-q', 'origin', 'main'); g(f.work, 'checkout', '-q', cur); };
 const pushes = (trace) => trace.filter((a) => a[0] === 'push');
 // Ağ veya ref hareketi yapabilecek hiçbir git alt komutu çalışmadı (hoisted: dosyanın her yerinden kullanılabilir).
 function noNet(trace) { return !trace.some((a) => ['ls-remote', 'fetch', 'push', 'merge'].includes(a[0])); }
@@ -142,8 +147,8 @@ test('iş bağlama: olmayan iş, dal uyuşmazlığı, sahip makine uyuşmazlığ
   fixture((f) => { f.publish(); f.commit('n.md', 'n\n'); const { r, trace } = run(f, 'sync', { machine: 'OTHER-PC' }); blocked(r, 'JOB_OWNER_MISMATCH'); assert.equal(pushes(trace).length, 0); });
   fixture((f) => { blocked(run(f, 'sync', { machine: 'UNREGISTERED-PC' }).r, 'JOB_OWNER_MISMATCH'); });
   fixture((f) => {
-    for (const s of ['READY', 'IN_PROGRESS', 'COMPLETE']) transitionJob(f.rt, 'JOB-T1', s, { actor_role: 'coo', reason: s });
-    g(f.work, 'add', '-A'); g(f.work, 'commit', '-q', '-m', 'job complete');
+    // Gate 1D-B: COMPLETE yetkili uzak kontrol dalında (main) kaydedilmeli; job dalındaki yerel runtime yetki değildir.
+    onControl(f, () => { for (const s of ['READY', 'IN_PROGRESS', 'COMPLETE']) transitionJob(f.rt, 'JOB-T1', s, { actor_role: 'coo', reason: s }); });
     blocked(run(f).r, 'JOB_COMPLETE');
   });
 });
@@ -340,7 +345,7 @@ test('belirsiz uzlaştırma sırasında uzak üçüncü bir commit\'e geçtiyse 
 }));
 
 // ---------- ilk yayın ----------
-test('uzak dal yok: onaylı taban bilinmiyorsa engellenir; TEST-ONLY onaylı taban ile yayın; uzakta olmayan taban engellenir', () => {
+test('uzak dal yok: kayıtlı yayın tabanı yoksa engellenir; uzak kontrol dalındaki JOB_ASSIGNED tabanıyla yayın; uzakta olmayan taban engellenir', () => {
   fixture((f) => {
     f.commit('n.md', 'n\n');
     const { r, trace } = run(f);
@@ -352,14 +357,16 @@ test('uzak dal yok: onaylı taban bilinmiyorsa engellenir; TEST-ONLY onaylı tab
   fixture((f) => {
     const baseSha = g(f.work, 'rev-parse', 'main');
     const head = f.commit('n.md', 'n\n');
-    const r = run(f, 'sync', { policy: testPolicy(f.bare, { first_publication_bases: { 'JOB-T1': baseSha } }) }).r;
+    onControl(f, () => assignJob(f.rt, 'JOB-T1', { actor_role: 'coo', to_machine: MACHINE, base_commit: baseSha, reason: 'first publication base' }));
+    const r = run(f).r;
     assert.equal(r.result, 'PUSHED_VERIFIED', r.message);
     assert.equal(f.remote(), head);
   });
   fixture((f) => {
     const local = f.commit('local-only.md', 'x\n');
     f.commit('n.md', 'n\n');
-    blocked(run(f, 'sync', { policy: testPolicy(f.bare, { first_publication_bases: { 'JOB-T1': local } }) }).r, 'BASE_NOT_ON_REMOTE');
+    onControl(f, () => assignJob(f.rt, 'JOB-T1', { actor_role: 'coo', to_machine: MACHINE, base_commit: local, reason: 'local-only base' }));
+    blocked(run(f).r, 'BASE_NOT_ON_REMOTE');
   });
 });
 
