@@ -1,0 +1,14 @@
+{
+  "schema": "company-runtime/1",
+  "control_plane_version": "1B.3",
+  "mode": "OPERATING",
+  "mode_reason": null,
+  "mode_changed_at": "2026-10-16T11:13:49.890Z",
+  "active_gate": "1B",
+  "resource_ownership": {},
+  "event_head": {
+    "seq": 1,
+    "hash": "5e91fdcaa06d4f60fe6fc04fed0543ccad8b68d7bf0c8c3b9c2fe8736197afc6"
+  },
+  "updated_at": "2026-10-16T11:13:49.890Z"
+}
