@@ -3,7 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync, copyFileSync, existsSync } from 'node:fs';
-import { join, dirname, delimiter } from 'node:path';
+import { join, dirname, delimiter, isAbsolute } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execFileSync } from 'node:child_process';
 import { ROOT, git, read, parseCsv } from '../lib/records.mjs';
@@ -11,7 +11,7 @@ import { gitCandidates, locateGit, findGit } from '../lib/gitbin.mjs';
 import { checkpoints, verifyCheckpoint, registryGitRowErrors } from '../lib/checkpoints.mjs';
 
 const NESTED = process.env.COMPANYOS_NESTED_TEST === '1';
-const hasDesktopGit = () => gitCandidates({ env: { LOCALAPPDATA: process.env.LOCALAPPDATA } }).slice(1).some((p) => existsSync(p));
+const hasDesktopGit = () => gitCandidates({ env: { LOCALAPPDATA: process.env.LOCALAPPDATA } }).some((p) => existsSync(p));
 // PATH'ten git içeren dizinleri çıkarır (Strong PC simülasyonu).
 const pathWithoutGit = () => (process.env.PATH || process.env.Path || '').split(delimiter)
   .filter((d) => d && !existsSync(join(d, 'git.exe')) && !existsSync(join(d, 'git'))).join(delimiter);
@@ -34,7 +34,12 @@ test('git discovery: PATH\'te git yok ama GitHub Desktop git\'i var → en yeni 
     assert.equal(locateGit({ env: { LOCALAPPDATA: dir, ProgramFiles: join(dir, 'PF') }, probe: () => false }), null, 'no git anywhere → explicit failure, not a guess');
     const pfGit = join(dir, 'PF', 'Git', 'cmd', 'git.exe'); mkdirSync(dirname(pfGit), { recursive: true }); writeFileSync(pfGit, '');
     assert.equal(locateGit({ env: { ProgramFiles: join(dir, 'PF') }, probe: (b) => b === pfGit }), pfGit, 'standard Git for Windows install');
-    assert.equal(locateGit({ env: { LOCALAPPDATA: dir }, probe: (b) => b === 'git' }), 'git', 'PATH git still preferred when present');
+    // PATH'teki git hâlâ önce gelir — ama artık çıplak 'git' değil, mutlak yol olarak (Gate 1D-A R4).
+    const pathBin = join(dir, 'pathbin'); mkdirSync(pathBin); const pathGit = join(pathBin, process.platform === 'win32' ? 'git.exe' : 'git'); writeFileSync(pathGit, '');
+    assert.equal(locateGit({ env: { LOCALAPPDATA: dir, PATH: pathBin }, probe: (b) => b === pathGit || b === want }), pathGit, 'PATH git still preferred when present');
+    const probed = [];
+    locateGit({ env: { LOCALAPPDATA: dir, PATH: pathBin }, probe: (b) => { probed.push(b); return false; } });
+    assert.ok(probed.length > 0 && probed.every((b) => isAbsolute(b)), 'only absolute candidates are ever probed');
   } finally { rmSync(dir, { recursive: true, force: true }); }
   const src = read('os/lib/gitbin.mjs');
   assert.ok(!/[A-Z]:\\\\Users|Administrator|Berkan|\/Users\//.test(src), 'no personal hardcoded path');

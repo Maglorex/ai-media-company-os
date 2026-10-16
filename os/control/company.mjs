@@ -13,6 +13,9 @@
 //   node os/control/company.mjs job approve <JOB-ID> --as <role> --approval-ref <ref>                  Gate 1B: FOUNDER_APPROVAL_REQUIRED
 //   node os/control/company.mjs action authorize <ACT-ID> --as <role> --approval-ref <ref>             Gate 1B: fail-closed
 //   node os/control/company.mjs reproject --as <role> --reason "<text>"                               açık kurtarma (olaylar değişmez)
+//   node os/control/company.mjs safe-sync status|dry-run|sync [--json] [--repo-dir <path>]                 Gate 1D-A git.safe_sync
+//        status: yalnız yerel ön kontrol (ağ yok) · dry-run: uzak okunur, hiçbir şey değişmez · sync: politika kontrolleri + taşıma
+//        Uzak URL, refspec, doğrulama komutu verilemez: üretim politikası sabittir (os/lib/control/sync-policy.mjs).
 // Ortak: --runtime-dir <path> (varsayılan company/state/runtime). Çıkış kodu: 0 tamam · 1 sağlıksız/ret · 2 kullanım hatası.
 // --as yalnız denetim/atıf meta verisidir; yetki vermez. CLI hiçbir zaman trusted authority veya action policy enjekte etmez.
 import { readFileSync } from 'node:fs';
@@ -22,6 +25,7 @@ import { initRuntime, getMode, pauseCompany, resumeCompany, reproject, inspect }
 import { createJob, readJob, listJobs, transitionJob, approveJob } from '../lib/control/jobs.mjs';
 import { listActions, readAction, authorizeAction } from '../lib/control/actions.mjs';
 import { doctor, formatReport } from '../lib/control/doctor.mjs';
+import { safeSync, syncContext } from '../lib/control/safe-sync.mjs';
 
 function parse(argv) {
   const pos = [];
@@ -59,6 +63,12 @@ function main(argv) {
     case 'pause': print(pauseCompany(rt, { ...as, reason: opt.reason })); return 0;
     case 'resume': print(resumeCompany(rt, { ...as, reason: opt.reason, approval_ref: opt.approval_ref })); return 0;
     case 'reproject': print(reproject(rt, { ...as, reason: opt.reason })); return 0;
+    case 'safe-sync': {
+      if (!['status', 'dry-run', 'sync'].includes(sub)) break;
+      const r = safeSync(syncContext(opt.repo_dir ? { repoDir: resolve(opt.repo_dir) } : {}), { mode: sub });
+      print(opt.json ? r : `${r.ok ? 'OK' : 'BLOCKED'} ${r.result}${r.code ? ` ${r.code}` : ''}${r.message ? ` — ${r.message}` : ''}`);
+      return r.ok ? 0 : 1;
+    }
     case 'events': {
       if (sub !== 'verify') break;
       const s = inspect(rt);

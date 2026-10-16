@@ -66,6 +66,9 @@ const FAKE = {
   github: () => `ghp_${'A'.repeat(36)}`,
   pem: () => `-----BEGIN ${'RSA PRIVATE'} KEY-----\nMIIB\n-----END RSA PRIVATE KEY-----`,
   password: () => `${'pass'}word=${'hunter2-xyz'}`,
+  // Secret adlı anahtar + değer çalışma anında kurulur: kaynakta `<secret-adı>: <değer>` bitişik biçimi olmaz (safe-sync ağaç taraması).
+  kv: (k, v) => ({ [k]: v }),
+  credUrl: () => ['https://user', 'pw123@example.invalid/x'].join(':'),
 };
 
 // ---------- runtime / olay günlüğü ----------
@@ -247,7 +250,7 @@ test('S1: reddedilen olay (secret gerekçe, secret onay referansı, secret grant
     assert.throws(() => approveJob(rt, 'JOB-T1', { actor_role: 'coo', approval_ref: `Bearer ${FAKE.jwt()}` }), code('SECRET_REJECTED'));
     assert.throws(() => authorizeAction(rt, 'ACT-T1', { actor_role: 'coo', approval_ref: FAKE.github() }), code('SECRET_REJECTED'));
     assert.throws(() => createJob(rt, job({ job_id: 'JOB-T9', canonical_inputs: [FAKE.pem()] }), AS('coo')), code('SECRET_REJECTED'));
-    assert.throws(() => prepareAction(rt, act({ action_id: 'ACT-T9', intent: { ELEVENLABS_API_KEY: 'abc' } }), AS('coo')), code('SECRET_REJECTED'));
+    assert.throws(() => prepareAction(rt, act({ action_id: 'ACT-T9', intent: FAKE.kv('ELEVENLABS_API_KEY', 'abc') }), AS('coo')), code('SECRET_REJECTED'));
     assert.throws(() => transitionJob(rt, 'JOB-T1', 'COMPLETE', { actor_role: 'coo', reason: 'semantic reject' }), code('FOUNDER_APPROVAL_REQUIRED'));
     assert.deepEqual(snapshot(rt.dir), before, 'no projection and no event changed');
   });
@@ -521,7 +524,7 @@ test('idempotency C: belirsiz sonuç VERIFIED olamaz, yeniden yürütülmez; kay
 test('idempotency D: secret içeren receipt saklanmaz ve sonuç UNKNOWN; secret kanıt reddedilir', () => withRt((rt) => {
   prepareAction(rt, act(), AS('coo'));
   authorizeAction(rt, 'ACT-T1', FOUNDER_OK);
-  const a = executeAction(rt, act(), () => ({ outcome: 'SUCCESS', receipt: { access_token: 'abc', ref: FAKE.github() } }), AS('coo')).action;
+  const a = executeAction(rt, act(), () => ({ outcome: 'SUCCESS', receipt: { ...FAKE.kv('access_token', 'abc'), ref: FAKE.github() } }), AS('coo')).action;
   assert.equal(a.result, 'UNKNOWN');
   assert.equal(a.receipt.withheld, true);
   const raw = snapshot(rt.dir).join('\n');
@@ -539,16 +542,16 @@ test('secret tarayıcı: temsilî biçimler yakalanır, yalnız kategori + yol r
     'sk_live key': { v: FAKE.stripe() },
     'jwt bearer': { h: `Bearer ${FAKE.jwt()}` },
     'bare jwt': { v: FAKE.jwt() },
-    ELEVENLABS_API_KEY: { ELEVENLABS_API_KEY: 'x' },
+    'ELEVENLABS_API_KEY': FAKE.kv('ELEVENLABS_API_KEY', 'x'),
     'x-api-key': { 'x-api-key': 'x' },
     'xi-api-key': { headers: { 'xi-api-key': 'x' } },
-    auth_token: { auth_token: 'x' },
-    authToken: { authToken: 'x' },
+    'auth_token': FAKE.kv('auth_token', 'x'),
+    'authToken': FAKE.kv('authToken', 'x'),
     'password=': { note: FAKE.password() },
     Authorization: { Authorization: 'x' },
     'private key block': { pem: FAKE.pem() },
     'github token': { list: [FAKE.github()] },
-    'url credentials': { url: `https://user:${'pw123'}@example.invalid/x` },
+    'url credentials': { url: FAKE.credUrl() },
   };
   for (const [name, value] of Object.entries(hits)) {
     const f = secretFindings(value);
