@@ -13,6 +13,10 @@ token*.json
 # Genel `!.claude/**` istisnası bilinçli olarak YOK; secret adlı başka dosyalar yine yok sayılır.
 !.claude/rules/git-and-secrets.md
 
+# Claude Code proje-yerel / kişisel ayarı (Gate 1C): Claude Code kaydedilen yerel onaylar için bu dosyayı kendisi oluşturabilir.
+# İş istasyonuna özeldir; asla paylaşılan şirket yapılandırması olmaz. Yalnız bu tek dosya — .claude/settings.json ve .claude/** takip edilir.
+.claude/settings.local.json
+
 # Büyük medya / render çıktıları
 *.mp4
 *.mov

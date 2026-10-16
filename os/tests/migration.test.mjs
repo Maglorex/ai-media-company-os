@@ -60,6 +60,10 @@ const STAGE1_ALLOWED = [
   /^finance\/ledgers\/usage\.csv$/,
   // Gate 1B P1 taşınabilirlik düzeltmesi (Founder 2026-10-16): runtime için deterministik EOL + arşiv baytlarının korunması — yalnız bu tek dosya
   /^\.gitattributes$/,
+  // Gate 1C — izin ve rol sertleştirme (Founder 2026-10-16): paylaşılan proje ayarları + yalnız bu üç ajan dosyası
+  // (research-analyst ve production-engineer Stage 3 satırında zaten onaylı; test dosyası os/ altında)
+  /^\.claude\/settings\.json$/,
+  /^\.claude\/agents\/(systems-operator|finance-controller|company-file-scanner)\.md$/,
 ];
 const MARKED_ONLY = ['intelligence/creative/brand/dynamic-case-ident-system.md', 'intelligence/creative/brand/brand-system-v1.md', 'intelligence/creative/brand/case-register.md',
   'intelligence/creative/brand/logo-banner-brief.md', 'intelligence/creative/documentary-style-benchmarks.md', 'intelligence/creative/doctrine/documentary-production-doctrine-v1.md'];

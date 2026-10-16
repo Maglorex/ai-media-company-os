@@ -27,8 +27,10 @@ test('kernel dosyaları mevcut', () => {
   }
 });
 
+// Tek ve birebir istisna (Gate 1C): Claude Code'un iş istasyonuna özel yerel ayarı; şirket kanonu değildir, .gitignore'dadır.
+const CLAUDE_LOCAL_ONLY = ['.claude/settings.local.json'];
 test('.claude altındaki her dosya Git tarafından takip ediliyor (gitignore hiçbir kernel dosyasını yutmuyor)', () => {
-  const missing = walk('.claude').filter((f) => !tracked.has(f));
+  const missing = walk('.claude').filter((f) => !tracked.has(f) && !CLAUDE_LOCAL_ONLY.includes(f));
   assert.deepEqual(missing, [], `untracked/ignored .claude files: ${missing.join(', ')}`);
   assert.ok(tracked.has('.claude/rules/git-and-secrets.md'), 'git-and-secrets.md must be tracked');
 });
