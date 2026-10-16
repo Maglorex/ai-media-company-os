@@ -50,6 +50,7 @@
 | D-046 | The Industrial Casebook Creative Production Pipeline v2 (Stage 3) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | `channels/the-industrial-casebook/pipeline/README.md`; yeni skill'ler story-viability, production-scene-plan, creative-qa; 5 eski skill SUPERSEDED |
 | D-047 | Factory interface: Production Handoff v2 ve Strong PC boot contract (Stage 4) | DECISION | company | — | L1 | ACTIVE | `os/factory/README.md`; Handoff v2 (`documentary-production-handoff`) + `strong-pc-preflight`; P3 dry-run BLOCKED; Stage 4 Founder LOCK (2026-10-15) |
 | D-048 | Stage 5 kalibrasyon production onayı (CAL-S5) | DECISION | channel:the-industrial-casebook | — | L2 | ACTIVE | Strong PC render zamanı + ≤150 ElevenLabs kredisi; yeni ödeme yok; P3 production/yayın kapsam dışı; Golden Lock ayrı karar |
+| D-049 | Gate 1D-A deterministik safe-sync motoru: LOCKED (koşullu güvenlik kabulüyle) | DECISION | company | — | L1 | ACTIVE | Commit `3fdc517` (`os-v2-migration`, push yok); bağımsız denetim CONDITIONAL PASS, kapanış düzeltmeleri yalnız uygulayıcı doğrulamalı; kabul edilen kalan riskler `decision-log.md` D-049; Gate 1D-B başlamadı |
 
 ## Aktif olmayan kararlar (yalnız tarih)
 | ID | Başlık | Neden aktif değil | Yerine |

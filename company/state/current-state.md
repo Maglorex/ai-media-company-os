@@ -5,9 +5,9 @@
 
 | Alan | Değer |
 |---|---|
-| Son güncelleme | 2026-10-15 |
+| Son güncelleme | 2026-10-16 |
 | OS sürümü | `os/VERSION` → 2.0.0-stage5 (Stage 1–4 LOCK; Stage 5 kalibrasyon tasarımı hazır, production başlamadı) |
-| Çalışma dalı | `os-v2-migration` (yerel; push yok). `main` = `origin/main` = `4659823` (= `pre-v2-checkpoint`) |
+| Çalışma dalı | `os-v2-migration` — yerel HEAD = D-049 belge commit'i (`3fdc517` üzerinde); yerel izleme ref'ine göre `origin/os-v2-migration` = `7d4e45a`, yani Gate 1B/1C/1D-A commit'leri ve D-049 belge commit'i push edilmedi. `main` = `origin/main` = `4659823` (= `pre-v2-checkpoint`) |
 | Şirket fazı | Faz 2 — Pilot üretim testi (EXP-001) · **OS v2 migration süresince durdurulmuş** |
 | Kanallar | 1 — The Industrial Casebook (`channels/the-industrial-casebook/`; oluşturuldu D-037; yayın yok) |
 | Aktif case | VID-001 / P3 NS Savannah (CASE 001) — **DURUYOR** (aşağıda) |
@@ -25,7 +25,16 @@ Company OS v2 kernel migration'ı kontrollü aşamalarla ilerliyor (Founder onay
 | 6 | Legacy konsolidasyonu + v2 kabulü | Planlı |
 Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ın Google Drive'ı (`pre-v2-2026-10-14` klasörü; hash doğrulandı). Non-canonical draft: branch `draft/os-v2-phase1-plan` (`7354fb5`).
 
+Control-plane / güvenlik gate'leri (Gate 1; kod `os/lib/control/`, `os/control/`):
+| Gate | Kapsam | Durum |
+|---|---|---|
+| 1B | Yerel control-plane primitive'leri: olay günlüğü yetkili yazma modeli, PAUSED, job, eylem/receipt, doctor; runtime `company/state/runtime/` | **LOCKED** — Founder/mimari onayı oturum talimatında (2026-10-16); kanıt: yerel commit'ler `23ee84c` + `f0278f3` (satır sonu düzeltmesi). Ayrı D- karar kaydı yok |
+| 1C | İzin ve rol sertleştirme: `.claude/settings.json`, uzman ajan araç listeleri | **LOCKED** — Founder onayı oturum talimatında (2026-10-16); kanıt: yerel commit `78be0ec`. Ayrı D- karar kaydı yok |
+| 1D-A | Deterministik safe-sync motoru (`os/lib/control/safe-sync.mjs`) | **LOCKED — koşullu güvenlik kabulü** (D-049; commit `3fdc517`). Bağımsız denetim CONDITIONAL PASS; kapanış düzeltmeleri yalnız uygulayıcı doğrulamalı; kabul edilen kalan riskler D-049'da. D-049 belge değişiklikleri (`company/decision-log.md`, `company/state/active-decisions.md`, bu dosya) yerel commit'le kaydedildi (push yok) |
+| 1D-B | Makineler arası iş/runtime devri, job dalı ilk yayını | **Sıradaki geliştirme aşaması — başlamadı** |
+
 ## 2. Bugün sıradaki iş
+**OS geliştirme: sıradaki aşama Gate 1D-B — başlamadı; başlatma Founder talimatıyla.**
 **Founder: GitHub Desktop → Push origin (`os-v2-migration`; GUIDED ACTION).** CAL-S5 revizyon v2 handoff'u ISSUED (`channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v3.md`; scene plan v6 + bağımsız QA v6 PASS). Strong PC render'ı ayrı talimatla: önce V-08 indirme (hash sabit) + preflight, sonra yalnız v2 preview seti. Golden Lock ve müzik/doku seçimi Founder'da.
 
 ## 3. Founder kararı / işlemi bekleyenler
@@ -48,7 +57,7 @@ Stage 0 yedeği: `C:\CompanyOS-Backup\pre-v2-2026-10-14\` (Main PC) + Founder'ı
 ## 5. Makineler
 | Makine | Rol (charter §8) | Durum |
 |---|---|---|
-| Main PC (WIN-028TMNOG5MJ) | Brain | `os-v2-migration` dalında |
+| Main PC (WIN-028TMNOG5MJ) | Brain | `os-v2-migration` dalında (HEAD = D-049 belge commit'i; Gate 1B–1D-A ve D-049 commit'leri push edilmedi) |
 | Strong PC (DESKTOP-KVLH9B2) | Factory | **Beklemede; production işi almaz.** Stage 4 için yalnız boot contract self-test'i (render yok). Son bilinen: canonical `main`'e eşit (D-039/D-040). Marka fontları kurulu. |
 Ayrıntı: `company/machines.md`.
 
