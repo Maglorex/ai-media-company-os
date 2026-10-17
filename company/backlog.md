@@ -96,6 +96,7 @@
 - [ ] P3 yeniden açıldığında: `channels/the-industrial-casebook/cases/VID-001/dry-run-v2/06-creative-qa-v2.md` "Required changes" → script → yeni bağımsız QA (D-046).
 - [ ] v2.1 BACKLOG: `video-ui-spec-v1.md` CASE LABEL zamanlaması (cold open) ile canon TIC-08 (CASE ENTRY) uyumlu hale getirilecek; o zamana kadar canon kazanır (L2). Thumbnail accent kuralı netleştirilecek.
 - [ ] EXP-002 kapanış notu (kampanya 2026-10-12'de bitti; stok üretim yapılmadı).
+- [ ] safe-sync performansı (D-050): ilk gerçek Strong PC yayını ≈9 dk sürdü. Ölç (doğrulama profili mi, HEAD ağacı taraması mı, ağ mı) → güvenlik sınırını gevşetmeden iyileştirme önerisi; değişiklik ayrı Founder kararı.
 - [ ] ElevenLabs kredi kullanım politikasını netleştir (mevcut kredilerin onaysız kullanımı serbest mi?).
 - [ ] Deney ve araştırma şablonları (`production/templates/`).
 

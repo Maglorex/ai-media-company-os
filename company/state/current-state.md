@@ -5,9 +5,9 @@
 
 | Alan | Değer |
 |---|---|
-| Son güncelleme | 2026-10-16 |
+| Son güncelleme | 2026-10-17 |
 | OS sürümü | `os/VERSION` → 2.0.0-stage5 (Stage 1–4 LOCK; Stage 5 kalibrasyon tasarımı hazır, production başlamadı) |
-| Çalışma dalı | `os-v2-migration` — yerel HEAD = D-049 belge commit'i (`3fdc517` üzerinde); yerel izleme ref'ine göre `origin/os-v2-migration` = `7d4e45a`, yani Gate 1B/1C/1D-A commit'leri ve D-049 belge commit'i push edilmedi. `main` = `origin/main` = `4659823` (= `pre-v2-checkpoint`) |
+| Çalışma dalı | `os-v2-migration` — `origin/os-v2-migration` = `bcb6bc9` (Gate 1B–1D-B commit'leri, D-049 ve `JOB-1DB-SMOKE` atama kaydı Founder tarafından push edildi). Yerel HEAD = D-050 kapanış commit'i (`bcb6bc9` üzerinde), origin'den **1 commit ileride; push bekliyor** (Founder, GitHub Desktop). `main` = `origin/main` = `4659823` (= `pre-v2-checkpoint`; değişmedi) |
 | Şirket fazı | Faz 2 — Pilot üretim testi (EXP-001) · **OS v2 migration süresince durdurulmuş** |
 | Kanallar | 1 — The Industrial Casebook (`channels/the-industrial-casebook/`; oluşturuldu D-037; yayın yok) |
 | Aktif case | VID-001 / P3 NS Savannah (CASE 001) — **DURUYOR** (aşağıda) |
@@ -30,17 +30,18 @@ Control-plane / güvenlik gate'leri (Gate 1; kod `os/lib/control/`, `os/control/
 |---|---|---|
 | 1B | Yerel control-plane primitive'leri: olay günlüğü yetkili yazma modeli, PAUSED, job, eylem/receipt, doctor; runtime `company/state/runtime/` | **LOCKED** — Founder/mimari onayı oturum talimatında (2026-10-16); kanıt: yerel commit'ler `23ee84c` + `f0278f3` (satır sonu düzeltmesi). Ayrı D- karar kaydı yok |
 | 1C | İzin ve rol sertleştirme: `.claude/settings.json`, uzman ajan araç listeleri | **LOCKED** — Founder onayı oturum talimatında (2026-10-16); kanıt: yerel commit `78be0ec`. Ayrı D- karar kaydı yok |
-| 1D-A | Deterministik safe-sync motoru (`os/lib/control/safe-sync.mjs`) | **LOCKED — koşullu güvenlik kabulü** (D-049; commit `3fdc517`). Bağımsız denetim CONDITIONAL PASS; kapanış düzeltmeleri yalnız uygulayıcı doğrulamalı; kabul edilen kalan riskler D-049'da. D-049 belge değişiklikleri (`company/decision-log.md`, `company/state/active-decisions.md`, bu dosya) yerel commit'le kaydedildi (push yok) |
-| 1D-B | Makineler arası iş/runtime devri, job dalı ilk yayını | **Sıradaki geliştirme aşaması — başlamadı** |
+| 1D-A | Deterministik safe-sync motoru (`os/lib/control/safe-sync.mjs`) | **LOCKED — koşullu güvenlik kabulü** (D-049; commit `3fdc517`). Bağımsız denetim CONDITIONAL PASS; kapanış düzeltmeleri yalnız uygulayıcı doğrulamalı; kabul edilen kalan riskler D-049'da (koşullu kabul değişmedi). D-049 belge commit'i push edildi |
+| 1D-B | Makineler arası iş devri (Main PC tek runtime yazıcısı, `JOB_ASSIGNED`, uzak kontrol dalı yetkisi) ve kayıtlı tabandan job dalı ilk yayını | **LOCKED — operasyonel kabul** (D-050; commit `1e672e9`). Gerçek Main PC → Strong PC → GitHub devri doğrulandı: `JOB-1DB-SMOKE` ilk yayını `job/JOB-1DB-SMOKE` = `f5e2ec5`, uzak kontrol dalı `bcb6bc9`, `main` değişmedi; deneme işi COMPLETE, dal kanıt olarak kaldı. Bağımsız güvenlik denetimi yapılmadı; Founder'ın manuel kontrol dalı push'u zorunlu; job dalı merge ve genel kimlik doğrulama kapsam dışı |
 
 ## 2. Bugün sıradaki iş
-**OS geliştirme: sıradaki aşama Gate 1D-B — başlamadı; başlatma Founder talimatıyla.**
-**Founder: GitHub Desktop → Push origin (`os-v2-migration`; GUIDED ACTION).** CAL-S5 revizyon v2 handoff'u ISSUED (`channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v3.md`; scene plan v6 + bağımsız QA v6 PASS). Strong PC render'ı ayrı talimatla: önce V-08 indirme (hash sabit) + preflight, sonra yalnız v2 preview seti. Golden Lock ve müzik/doku seçimi Founder'da.
+**Founder: GitHub Desktop → Push origin (`os-v2-migration`; D-050 kapanış commit'i; GUIDED ACTION).** Gate 1D-B LOCKED (D-050).
+Sonra önerilen (ayrı Founder talimatı; **başlamadı**): Stage 5 — CAL-S5 revizyon v2 handoff'u ISSUED (`channels/the-industrial-casebook/cases/CAL-S5/handoff/07-production-handoff-v3.md`; scene plan v6 + bağımsız QA v6 PASS) yeni iş akışının ilk gerçek işi olarak: Main PC işi oluşturup Strong PC'ye atar, Founder kontrol dalını push eder; Strong PC önce V-08 indirme (hash sabit) + preflight, sonra yalnız v2 preview seti. Render onayı D-048 (yeni kredi/ödeme yok). Golden Lock ve müzik/doku seçimi Founder'da.
 
 ## 3. Founder kararı / işlemi bekleyenler
 | # | Konu | Mod | Not |
 |---|---|---|---|
-| 1 | Push origin (CAL-S5 handoff v3 ISSUED) | GUIDED ACTION | Ardından Strong PC v2 render talimatı ayrı verilir; render onayı D-048; yeni kredi yok |
+| 1 | Push origin (D-050 kapanış commit'i) | GUIDED ACTION | Yerel HEAD origin'den 1 commit ileride |
+| 1b | Stage 5 CAL-S5 v2 preview render'ını başlatma (Gate 1D-B iş akışıyla ilk gerçek iş) | FOUNDER DECISION | Render onayı D-048; yeni kredi yok; başlamadı |
 | 2 | Stage 5 Golden Lock | FOUNDER DECISION | Preview paketi izlendikten sonra; onaysız GOLDEN yok |
 | 3 | Ekim aylık kapanışı (Claude, ChatGPT, ElevenLabs, Adobe fatura tutarları) | GUIDED ACTION | Kasım'ın ilk haftası (`cfo-review` §B) |
 | 4 | Kanal Studio doğrulaması C-02…C-12 + kanal adı/handle kaydı | GUIDED ACTION | Yayından önce; acil değil (`intelligence/growth/launch-os/capabilities.md`) |
@@ -57,8 +58,8 @@ Control-plane / güvenlik gate'leri (Gate 1; kod `os/lib/control/`, `os/control/
 ## 5. Makineler
 | Makine | Rol (charter §8) | Durum |
 |---|---|---|
-| Main PC (WIN-028TMNOG5MJ) | Brain | `os-v2-migration` dalında (HEAD = D-049 belge commit'i; Gate 1B–1D-A ve D-049 commit'leri push edilmedi) |
-| Strong PC (DESKTOP-KVLH9B2) | Factory | **Beklemede; production işi almaz.** Stage 4 için yalnız boot contract self-test'i (render yok). Son bilinen: canonical `main`'e eşit (D-039/D-040). Marka fontları kurulu. |
+| Main PC (WIN-028TMNOG5MJ) | Brain · tek runtime yazıcısı (D-050) | `os-v2-migration` dalında (HEAD = D-050 kapanış commit'i; origin'den 1 commit ileride) |
+| Strong PC (DESKTOP-KVLH9B2) | Factory | Gate 1D-B gerçek devri doğrulandı (2026-10-17): kayıtlı tabandan job dalı, ortak doğrulama paketi PASS, Git Credential Manager girişi çözüldü, `safe-sync sync` `PUSHED_VERIFIED` (`job/JOB-1DB-SMOKE` = `f5e2ec5`). **Production işi yok** — Stage 5 render başlamadı. Marka fontları kurulu. |
 Ayrıntı: `company/machines.md`.
 
 ## 6. Bilinen riskler / açıklar
@@ -66,6 +67,7 @@ Ayrıntı: `company/machines.md`.
 - EXP-002 (ElevenLabs v4 kampanyası) 2026-10-12'de süresi doldu; dosyası kapanış notu bekliyor (backlog).
 - ElevenLabs mevcut kredilerin onaysız kullanım politikası belirsiz → ses üretimi Founder onaylı (`founder-approval.md`).
 - Vergi takibi: TW-R1 sonraki kontrol 2026-11-01 (`finance/tax-watch/thresholds.csv`).
+- safe-sync ilk gerçek yayını ≈9 dakika sürdü (push öncesi tam doğrulama profili + ağaç taraması); performans iyileştirmesi backlog'da (D-050).
 
 ## 7. Finans özeti
 Reklam bütçesi 0 · Sabit: Claude Pro, ChatGPT Plus, ElevenLabs Starter (D-015) · Gelir yok · Ayrıntı: `finance/` (ledger'lar tek doğruluk kaynağı).
