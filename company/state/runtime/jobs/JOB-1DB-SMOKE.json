@@ -1,0 +1,21 @@
+{
+  "state": "PLANNED",
+  "resource_claims": [],
+  "blockers": [],
+  "next_owner": null,
+  "external_actions": [],
+  "budget": null,
+  "job_id": "JOB-1DB-SMOKE",
+  "type": "handoff",
+  "scope": "company",
+  "owner_role": "coo",
+  "owner_machine": "WIN-028TMNOG5MJ",
+  "branch": "job/JOB-1DB-SMOKE",
+  "canonical_inputs": [],
+  "expected_outputs": [],
+  "approvals": [],
+  "founder_gate": null,
+  "publication_base": null,
+  "created_at": "2026-10-17T00:56:34.589Z",
+  "updated_at": "2026-10-17T00:56:34.589Z"
+}
