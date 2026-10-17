@@ -2,16 +2,25 @@
 // teslim raporu (technical QA), yedek. Fixture'lar gerçek git + gerçek dosya sistemi kullanır; render yok.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
+import { mkdtempSync, writeFileSync, readFileSync, mkdirSync, rmSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { execFileSync, spawnSync } from 'node:child_process';
 import { read, git, parseCsv, ROOT } from '../lib/records.mjs';
 import { readinessErrors, lintScenePlan } from '../lib/pipeline.mjs';
 import {
   STATUS, overall, rightsVerdict, validateManifest, scanCode, gateHandoff, parseManifest, parseHandoff, lintHandoff, shingles, renderHandoff,
-  lintCCR, lintDeliveryReport, backupStatus, mediaInfo, hashFile, preflight, makeEnv,
+  lintCCR, lintDeliveryReport, backupStatus, mediaInfo, hashFile, preflight, makeEnv, issueHandoff, findGit,
+  CANONICAL_CONTROL_BRANCH, STRONG_PC_MACHINE,
 } from '../lib/factory.mjs';
-import { runScenarios, png, wav, SCENE_PLAN } from '../factory/fixtures.mjs';
+import { runScenarios, png, wav, SCENE_PLAN, QA_PASS, PATHS, ledger as fxLedger, manifest as fxManifest } from '../factory/fixtures.mjs';
+import { runtimeContext, canon } from '../lib/control/common.mjs';
+import { initRuntime, pauseCompany } from '../lib/control/runtime.mjs';
+import { parseEventLog, buildEvent } from '../lib/control/events.mjs';
+import { replay } from '../lib/control/model.mjs';
+import { createJob, transitionJob, assignJob } from '../lib/control/jobs.mjs';
+import { recordAssignment, startJobBranch, syncContext } from '../lib/control/safe-sync.mjs';
+import { PRODUCTION_SYNC_POLICY } from '../lib/control/sync-policy.mjs';
 
 const CASE = 'channels/the-industrial-casebook/cases/VID-001/';
 const HANDOFF = `${CASE}handoff/07-production-handoff-v1.md`;
@@ -218,4 +227,471 @@ test('acceptance: Founder\'ın 8 kötü davranışı Stage 4 belgesinde REJECT; 
   assert.match(skill, /SUPERSEDED, D-046\) girdi değildir/);
   assert.match(read('.claude/skills/strong-pc-preflight/SKILL.md'), /final creative PASS/);
   assert.match(read('.claude/agents/production-engineer.md'), /strong-pc-preflight/);
+});
+
+// ---------------------------------------------------------------- Gate 1D-B / Stage 4 Factory job-branch preflight entegrasyonu
+const MAIN_PC = 'WIN-028TMNOG5MJ';
+const STRONG_PC = STRONG_PC_MACHINE;
+const REG_HEAD = 'artifact_id,path,scope,type,version,status,superseded_by,decision_ref,note';
+const FX_CANON = `# Fixture canon\nThe viewer should always understand why a scene exists before the scene asks for more attention from them.\nDocuments are evidence anchors; the presentation visual is a separate decision made for the viewer's understanding.`;
+const BASE_REG_ROWS = [
+  'FX-CANON,channels/fx/canon/README.md,channel:fx,canon-readme,1,ACTIVE,,D-000,',
+  `FX-SP-V1,${PATHS.scenePlan},case:VID-T,scene-plan,1,ACTIVE,,D-000,`,
+  `FX-QA-V1,${PATHS.qa},case:VID-T,creative-qa,1,ACTIVE,,D-000,`,
+  `FX-MANIFEST,${PATHS.manifest},case:VID-T,production-asset-manifest,1,ACTIVE,,D-000,`,
+  `FX-RIGHTS,${PATHS.rights},case:VID-T,rights-ledger,1,ACTIVE,,D-000,`,
+  `FX-EVIDENCE,${PATHS.evidence},case:VID-T,evidence-ledger,1,ACTIVE,,D-000,`,
+];
+
+const gitCleanEnv = () => {
+  const e = { ...process.env, GIT_TERMINAL_PROMPT: '0', LC_ALL: 'C' };
+  for (const k of Object.keys(e)) if (/^GIT_(DIR|WORK_TREE|INDEX_FILE|CONFIG.*)$/i.test(k)) delete e[k];
+  return e;
+};
+const runGit = (cwd, ...args) => execFileSync(findGit(), args, { cwd, env: gitCleanEnv(), encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
+
+const makeJobPolicy = (url, extra = {}) => Object.freeze({
+  ...PRODUCTION_SYNC_POLICY,
+  policy_id: 'TEST-ONLY:factory-job-branch',
+  remote: Object.freeze({ name: 'origin', url }),
+  ...extra,
+});
+
+// Gerçek yerel bare origin + Main PC (os-v2-migration) + Strong PC (job/<JOB-ID>) kurulumu; ağ erişimi yoktur.
+function withJobFixture(fn, opts = {}) {
+  const dir = mkdtempSync(join(tmpdir(), 'cos-factory-job-'));
+  const bare = join(dir, 'origin.git').replace(/\\/g, '/');
+  const mainRepo = join(dir, 'main');
+  const strongRepo = join(dir, 'strong');
+  const prod = join(dir, 'prod');
+  let clock = Date.UTC(2026, 9, 17, 10, 0, 0);
+  const now = () => new Date((clock += 1000)).toISOString();
+  const jobId = opts.jobId || 'JOB-CAL-S5';
+  const jobBranch = opts.jobBranch || `job/${jobId}`;
+  const jobScope = opts.jobScope || 'case:VID-T';
+  try {
+    mkdirSync(mainRepo, { recursive: true });
+    mkdirSync(join(prod, '01_archive'), { recursive: true });
+    writeFileSync(join(prod, '01_archive/V-01_page.png'), png(64, 48));
+    writeFileSync(join(prod, '01_archive/V-09_old.jpg'), Buffer.from('rejected photo bytes'));
+    const sha = hashFile(join(prod, '01_archive/V-01_page.png'));
+
+    const reg = [...BASE_REG_ROWS];
+    const writeMain = (rel, content) => { const p = join(mainRepo, rel); mkdirSync(join(p, '..'), { recursive: true }); writeFileSync(p, content); };
+    const writeReg = (repo = mainRepo) => { const p = join(repo, 'company/state/artifact-registry.csv'); mkdirSync(join(p, '..'), { recursive: true }); writeFileSync(p, [REG_HEAD, ...reg].join('\n') + '\n'); };
+
+    writeMain('os/VERSION', 'fx-1\n');
+    writeMain('company/charter.md', '# Charter (fixture)\n');
+    writeMain('.claude/rules/governance.md', '# Governance (fixture)\n');
+    writeMain('channels/fx/canon/README.md', FX_CANON);
+    writeMain('company/state/current-state.md', '# Current State (fixture)\n');
+    writeMain(PATHS.scenePlan, SCENE_PLAN);
+    writeMain(PATHS.qa, QA_PASS);
+    writeMain(PATHS.manifest, fxManifest(sha));
+    writeMain(PATHS.rights, fxLedger('CLEAR'));
+    writeMain(PATHS.evidence, '# Evidence ledger (fixture)\n| C-01 | cost line | V-01 |\n');
+    writeMain('production/remotion/src/videos/vid-t/Scene.tsx', "export const src = 'V-01_page.png'; // V-01\n");
+    writeMain('production/remotion/src/videos/legacy/Old.tsx', "export const old = 'photos/V-09_old.jpg'; // legacy\n");
+    writeReg();
+
+    const rt = runtimeContext({ dir: join(mainRepo, 'company', 'state', 'runtime'), machine: MAIN_PC, now });
+    initRuntime(rt, { actor_role: 'coo' });
+
+    runGit(dir, 'init', '--bare', '-q', '-b', CANONICAL_CONTROL_BRANCH, bare);
+    runGit(mainRepo, 'init', '-q', '-b', CANONICAL_CONTROL_BRANCH);
+    for (const [k, v] of [['user.name', 'main-pc'], ['user.email', 'main@example.invalid'], ['core.autocrlf', 'false']]) runGit(mainRepo, 'config', k, v);
+    runGit(mainRepo, 'remote', 'add', 'origin', bare);
+    runGit(mainRepo, 'add', '-A');
+    runGit(mainRepo, 'commit', '-q', '-m', 'fixture: base');
+
+    const policy = makeJobPolicy(bare, opts.policyExtra || {});
+    const issue = (version = 1) => {
+      const { contract, md } = issueHandoff(makeEnv(mainRepo, { policy, machine: MAIN_PC }), {
+        id: 'VID-T-HO', version, case: 'VID-T', channel: 'fx', scenePlanPath: PATHS.scenePlan, qaPath: PATHS.qa, manifestPath: PATHS.manifest,
+        rightsPath: PATHS.rights, evidencePath: PATHS.evidence, productionRoot: prod.replace(/\\/g, '/'),
+        allowedCode: ['production/remotion/src/videos/vid-t/'], forbiddenCode: ['production/remotion/src/videos/legacy/'],
+        supersedes: version > 1 ? `VID-T-HO@v${version - 1}` : null,
+      });
+      writeMain(PATHS.handoff(version), md);
+      for (let i = 0; i < reg.length; i++) {
+        if (reg[i].startsWith('FX-HO-') && /,ACTIVE,/.test(reg[i])) reg[i] = reg[i].replace(',ACTIVE,,', `,SUPERSEDED,FX-HO-V${version},`);
+      }
+      reg.push(`FX-HO-V${version},${PATHS.handoff(version)},case:VID-T,production-handoff,${version},${contract.status === 'ISSUED' ? 'ACTIVE' : 'DRAFT'},,D-000,`);
+      writeReg();
+      runGit(mainRepo, 'add', '-A');
+      runGit(mainRepo, 'commit', '-q', '-m', `fixture: issue handoff v${version}`);
+      return contract;
+    };
+
+    const createControlJob = () => {
+      createJob(rt, {
+        job_id: jobId, type: 'production', scope: jobScope, owner_role: 'production-engineer',
+        owner_machine: opts.initialOwner || MAIN_PC, branch: jobBranch, canonical_inputs: [PATHS.handoff(1)], expected_outputs: [],
+      }, { actor_role: 'coo' });
+      transitionJob(rt, jobId, 'READY', { actor_role: 'coo', reason: 'ready for Strong PC' });
+      runGit(mainRepo, 'add', '-A');
+      runGit(mainRepo, 'commit', '-q', '-m', `runtime: create ${jobId}`);
+    };
+
+    // Sıra seçeneği: handoff-then-job (gerçek CAL-S5 akışı: handoff required_commit'te yayınlanır, ardından kontrol dalında iş açılır ve atanır)
+    // veya job-then-handoff (iş önce açılır, sonra handoff yayınlanır ve atanır).
+    let handoff;
+    let handoffCommit;
+    if (opts.order === 'job-then-handoff') {
+      createControlJob();
+      handoff = issue(1);
+      handoffCommit = runGit(mainRepo, 'rev-parse', 'HEAD');
+    } else {
+      handoff = issue(1);
+      handoffCommit = runGit(mainRepo, 'rev-parse', 'HEAD');
+      createControlJob();
+    }
+    runGit(mainRepo, 'push', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+    const publicationBase = runGit(mainRepo, 'rev-parse', 'HEAD');
+
+    if (opts.assign !== false) {
+      const assignRes = recordAssignment(syncContext({ repoDir: mainRepo, policy, machine: MAIN_PC, now }), {
+        job_id: jobId, to_machine: opts.assignTo || STRONG_PC, actor_role: 'coo', reason: 'assign job to Strong PC',
+      });
+      assert.equal(assignRes.base_commit, publicationBase);
+      runGit(mainRepo, 'add', '-A');
+      runGit(mainRepo, 'commit', '-q', '-m', `runtime: assign ${jobId}`);
+      if (opts.pushAssignment !== false) {
+        runGit(mainRepo, 'push', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+      }
+    }
+
+    runGit(dir, 'clone', '-q', '--config', 'core.autocrlf=false', bare, strongRepo);
+    for (const [k, v] of [['user.name', 'strong-pc'], ['user.email', 'strong@example.invalid'], ['core.autocrlf', 'false']]) runGit(strongRepo, 'config', k, v);
+
+    if (opts.startViaSafeSync !== false && opts.assign !== false && opts.pushAssignment !== false && (opts.assignTo || STRONG_PC) === STRONG_PC && jobBranch === `job/${jobId}`) {
+      const startRes = startJobBranch(syncContext({ repoDir: strongRepo, policy, machine: STRONG_PC, now }), { job_id: jobId });
+      assert.equal(startRes.result, 'JOB_BRANCH_STARTED', startRes.message);
+    } else if (opts.checkoutBranch !== null) {
+      runGit(strongRepo, 'checkout', '-q', '-b', opts.checkoutBranch || `job/${jobId}`, publicationBase);
+    }
+
+    const onMainControl = (cb, msg = 'control update', push = true) => {
+      cb(rt);
+      runGit(mainRepo, 'add', '-A');
+      runGit(mainRepo, 'commit', '-q', '-m', msg);
+      if (push) runGit(mainRepo, 'push', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+      return runGit(mainRepo, 'rev-parse', 'HEAD');
+    };
+    const commitStrong = (rel, content, msg = `strong: ${rel}`) => {
+      const p = join(strongRepo, rel);
+      mkdirSync(join(p, '..'), { recursive: true });
+      writeFileSync(p, content);
+      runGit(strongRepo, 'add', '-A');
+      runGit(strongRepo, 'commit', '-q', '-m', msg);
+      return runGit(strongRepo, 'rev-parse', 'HEAD');
+    };
+    const runPreflight = (over = {}) => preflight({
+      env: makeEnv(over.repoDir || strongRepo, { policy: over.policy || policy, machine: over.machine || STRONG_PC }),
+      handoffPath: over.handoffPath || PATHS.handoff(over.version || 1),
+      expect: over.expect !== undefined ? over.expect : { id: 'VID-T-HO', version: over.version || 1 },
+    });
+
+    return fn({ dir, bare, mainRepo, strongRepo, prod, rt, now, policy, handoff, handoffCommit, publicationBase, jobId, issue, onMainControl, commitStrong, runPreflight });
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+test('Gate 1D-B / Stage 4: geçerli job/<JOB-ID> dalında (handoff→job→assign ve job→handoff→assign sıralarıyla) ve kontrol dalında preflight READY_FOR_PRODUCTION', () => {
+  // 1) Gerçek CAL-S5 sırası: handoff required_commit'te yayınlanır, ardından os-v2-migration'da iş oluşturulur (runtime ilerler) ve JOB_ASSIGNED ile Strong PC'ye atanır.
+  withJobFixture((f) => {
+    assert.notEqual(f.handoff.repo.required_commit, f.publicationBase, 'control branch advanced with runtime commits between required_commit and publication_base');
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.READY, r.findings.map((x) => `${x.code}: ${x.detail}`).join(' | '));
+    assert.deepEqual(codes(r.findings), []);
+    assert.equal(r.observed.job.job_id, 'JOB-CAL-S5');
+    assert.equal(r.observed.job.owner_machine, STRONG_PC);
+    assert.equal(r.observed.job.publication_base, f.publicationBase);
+  }, { order: 'handoff-then-job' });
+
+  // 2) Ters sıra: iş önce oluşturulur, sonra handoff yayınlanır (required_commit → publication_base arasında yalnız handoff/registry commit'i vardır), ardından JOB_ASSIGNED ile atanır.
+  withJobFixture((f) => {
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.READY, r.findings.map((x) => `${x.code}: ${x.detail}`).join(' | '));
+    assert.deepEqual(codes(r.findings), []);
+    // Kontrol dalında (Main PC) olağan preflight davranışı da korunur: publicationBase commit'inde kontrol dalı READY döner.
+    runGit(f.mainRepo, 'checkout', '-q', '-B', CANONICAL_CONTROL_BRANCH, f.publicationBase);
+    const atBase = f.runPreflight({ repoDir: f.mainRepo, machine: MAIN_PC });
+    assert.equal(atBase.status, STATUS.READY);
+  }, { order: 'job-then-handoff' });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (1): kanonik atama yok (atanmamış iş, push edilmemiş atama, uzakta olmayan iş)', () => {
+  // JOB_ASSIGNED hiç yazılmamış (publication_base = null, owner_machine = MAIN_PC)
+  withJobFixture((f) => {
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:JOB_OWNER_MISMATCH') || codes(r.findings).includes('publication-base'));
+  }, { assign: false });
+
+  // JOB_ASSIGNED Main PC'de commit edildi ama origin/os-v2-migration'a push edilmedi (yerel/push edilmemiş atama yetki değildir)
+  withJobFixture((f) => {
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:JOB_OWNER_MISMATCH') || codes(r.findings).includes('publication-base'));
+  }, { pushAssignment: false });
+
+  // Uzak kontrol dalında hiç var olmayan bir job/<ID> dalı
+  withJobFixture((f) => {
+    runGit(f.strongRepo, 'checkout', '-q', '-b', 'job/JOB-GHOST', f.publicationBase);
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:JOB_NOT_FOUND'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (2): yanlış makine kimliği veya yanlış job.owner_machine', () => {
+  // İş Strong PC'ye atanmış ama preflight Main PC veya kayıtsız bir makine kimliğiyle çalıştırılıyor
+  withJobFixture((f) => {
+    for (const badMachine of [MAIN_PC, 'OTHER-PC', 'UNREGISTERED-PC']) {
+      const r = f.runPreflight({ machine: badMachine });
+      assert.equal(r.status, STATUS.VERSION, `rejected for machine=${badMachine}`);
+      assert.ok(codes(r.findings).includes('job-owner'), `job-owner code present for ${badMachine}`);
+    }
+  });
+
+  // İş uzak kontrol dalında Main PC'ye yeniden atanmış (owner_machine !== DESKTOP-KVLH9B2)
+  withJobFixture((f) => {
+    f.onMainControl((rt) => assignJob(rt, f.jobId, { actor_role: 'coo', to_machine: MAIN_PC, base_commit: f.publicationBase, reason: 'reassign back to Main PC' }));
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:JOB_OWNER_MISMATCH') || codes(r.findings).includes('job-owner'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (3): yanlış iş kapsamı (scope), dal uyuşmazlığı veya kanonik olmayan kontrol dalı', () => {
+  // İş kapsamı başka bir vakaya veya genel company'ye ait (case:VID-T değil)
+  for (const wrongScope of ['company', 'case:OTHER-CASE']) {
+    withJobFixture((f) => {
+      const r = f.runPreflight();
+      assert.equal(r.status, STATUS.VERSION, `rejected for scope=${wrongScope}`);
+      assert.ok(codes(r.findings).includes('job-scope'), `job-scope code present for ${wrongScope}`);
+    }, { jobScope: wrongScope });
+  }
+
+  // İşin kayıtlı branch alanı yerel job/<ID> dalıyla uyuşmuyor
+  withJobFixture((f) => {
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:JOB_BRANCH_MISMATCH'));
+  }, { jobBranch: 'job/JOB-OTHER', startViaSafeSync: false, checkoutBranch: 'job/JOB-CAL-S5' });
+
+  // Politikadaki control_branch kanonik os-v2-migration değil
+  withJobFixture((f) => {
+    const nonCanonical = makeJobPolicy(f.bare, { control_branch: 'main' });
+    const r = f.runPreflight({ policy: nonCanonical });
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('control-branch'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (4) & (5): COMPLETE iş veya PAUSED şirket (yerel job dalı eski/sağlıklı görünse bile uzak kontrol dalı otoritedir)', () => {
+  // 4) Uzak kontrol dalında iş COMPLETE durumuna geçmiş
+  withJobFixture((f) => {
+    f.onMainControl((rt) => {
+      transitionJob(rt, f.jobId, 'IN_PROGRESS', { actor_role: 'coo', reason: 'started' });
+      transitionJob(rt, f.jobId, 'COMPLETE', { actor_role: 'coo', reason: 'finished' });
+    });
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:JOB_COMPLETE'));
+  });
+
+  // 5) Uzak kontrol dalında şirket PAUSED moduna alınmış
+  withJobFixture((f) => {
+    f.onMainControl((rt) => pauseCompany(rt, { actor_role: 'coo', reason: 'emergency stop' }));
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-binding:COMPANY_PAUSED'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (6): değiştirilmiş veya geçersiz uzak olay günlüğü (hash zinciri kırık, yeniden hash\'lenmiş semantik hata, eksik log)', () => {
+  // 6a) Uzak events.jsonl içinde tahrifat (hash zinciri kırılır)
+  withJobFixture((f) => {
+    const logPath = join(f.mainRepo, 'company/state/runtime/events.jsonl');
+    const raw = readFileSync(logPath, 'utf8');
+    writeFileSync(logPath, raw.replace('"reason":"ready for Strong PC"', '"reason":"forged reason"'));
+    runGit(f.mainRepo, 'add', '-A');
+    runGit(f.mainRepo, 'commit', '-q', '-m', 'tamper remote event log');
+    runGit(f.mainRepo, 'push', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('remote-runtime:REMOTE_RUNTIME_BROKEN'));
+  });
+
+  // 6b) Uzak events.jsonl geçerli hash zinciriyle (buildEvent ile gerçek Company OS olay şemasında) oluşturulmuş fakat anlamsal replay hatası içeriyor (var olmayan işe geçiş)
+  withJobFixture((f) => {
+    const logPath = join(f.mainRepo, 'company/state/runtime/events.jsonl');
+    const before = parseEventLog(readFileSync(logPath, 'utf8'));
+    assert.equal(before.ok, true);
+    const badEvent = buildEvent(f.rt, before.head, 'coo', {
+      type: 'JOB_STATE_CHANGED',
+      job_id: 'JOB-DOES-NOT-EXIST',
+      details: { from: 'READY', to: 'IN_PROGRESS', reason: 'semantic replay failure test', blockers: [], next_owner: null },
+    });
+    const forgedRaw = [...before.events, badEvent].map((e) => canon(e)).join('\n') + '\n';
+    // 1. parseEventLog() yapısal ve hash zinciri olarak geçerli kabul eder:
+    const parsed = parseEventLog(forgedRaw);
+    assert.equal(parsed.ok, true, `parseEventLog errors: ${parsed.errors.join('; ')}`);
+    assert.deepEqual(parsed.errors, []);
+    // 2. replay() olayı anlamsal olarak reddeder:
+    const replayed = replay(parsed.events);
+    assert.ok(replayed.errors.length > 0, 'replay must reject the semantically invalid event');
+    assert.match(replayed.errors[0], /JOB_NOT_FOUND/);
+    // 3. Factory preflight uzak runtime'ı beklenen engelleyici bulguyla reddeder:
+    writeFileSync(logPath, forgedRaw);
+    runGit(f.mainRepo, 'add', '-A');
+    runGit(f.mainRepo, 'commit', '-q', '-m', 'valid hash chain but invalid semantic replay');
+    runGit(f.mainRepo, 'push', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('remote-runtime:REMOTE_RUNTIME_BROKEN'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (7): geçersiz publication_base veya soy ağacı (required_commit öncesi taban, yerel HEAD publication_base soyundan değil, uzakta olmayan taban)', () => {
+  // 7a) publication_base handoff'un required_commit'inden ÖNCEKİ bir commit'e işaret ediyor
+  withJobFixture((f) => {
+    const rootCommit = f.handoff.repo.root_commit;
+    assert.notEqual(rootCommit, f.handoff.repo.required_commit);
+    f.onMainControl((rt) => assignJob(rt, f.jobId, { actor_role: 'coo', to_machine: STRONG_PC, base_commit: rootCommit, reason: 'stale base before handoff' }));
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('publication-base'));
+  }, { assign: false, order: 'job-then-handoff' });
+
+  // 7b) Yerel HEAD, kayıtlı publication_base'in soyundan gelmiyor (yerel job dalı handoffCommit'te, yani publicationBase öncesinde kaldı)
+  withJobFixture((f) => {
+    assert.notEqual(f.handoffCommit, f.publicationBase);
+    runGit(f.strongRepo, 'checkout', '-q', '-B', `job/${f.jobId}`, f.handoffCommit);
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('publication-base'));
+  }, { order: 'handoff-then-job' });
+
+  // 7c) Kayıtlı publication_base uzak kontrol dalı geçmişinde yer almıyor (yalnız yan dalda bulunan bir commit)
+  withJobFixture((f) => {
+    const sideSha = f.commitStrong('channels/fx/cases/VID-T/ccr/CCR-001.md', CCR({ Handoff: 'VID-T-HO@v1', Scene: 'SP-01', Status: 'APPROVED', 'Decision by': 'Main PC creative authority (COO)' }) + '\n');
+    f.onMainControl((rt) => assignJob(rt, f.jobId, { actor_role: 'coo', to_machine: STRONG_PC, base_commit: sideSha, reason: 'non-control base' }));
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('publication-base'));
+  }, { assign: false });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (8): job dalında yetkisiz runtime değişiklikleri (geçerli hash zincirli yerel olay + projeksiyon veya eklenip geri alınan runtime dosyası)', () => {
+  // 8a) Job dalında geçerli hash zinciri ve deterministik projeksiyonlarla bile olsa runtime değişikliği kesinlikle yasaktır
+  withJobFixture((f) => {
+    const localRt = runtimeContext({ dir: join(f.strongRepo, 'company', 'state', 'runtime'), machine: STRONG_PC, now: f.now });
+    transitionJob(localRt, f.jobId, 'IN_PROGRESS', { actor_role: 'production-engineer', reason: 'local self-transition on job branch' });
+    runGit(f.strongRepo, 'add', '-A');
+    runGit(f.strongRepo, 'commit', '-q', '-m', 'unauthorized runtime commit on job branch');
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-runtime-drift'));
+    assert.ok(codes(r.findings).includes('commit-drift'));
+  });
+
+  // 8b) Job dalında company/state/runtime/ altında bir dosya eklenip sonraki commit'te silinse (net ağaç farkı sıfır olsa) bile rangeChanged yakalar
+  withJobFixture((f) => {
+    f.commitStrong('company/state/runtime/forged.json', '{"forged":true}\n', 'add runtime file');
+    runGit(f.strongRepo, 'rm', '-q', 'company/state/runtime/forged.json');
+    runGit(f.strongRepo, 'commit', '-q', '-m', 'revert runtime file');
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('job-runtime-drift'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (9): eski handoff (v1 sonrası v2 yayınlanmış) veya kanonik blob kayması (canon / scene plan)', () => {
+  // 9a) Stale handoff: v2 yayınlandıktan sonra job dalında v1 ile preflight çalıştırılması reddedilir
+  withJobFixture((f) => {
+    f.issue(2);
+    runGit(f.mainRepo, 'push', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+    const newBase = runGit(f.mainRepo, 'rev-parse', 'HEAD');
+    f.onMainControl((rt) => assignJob(rt, f.jobId, { actor_role: 'coo', to_machine: STRONG_PC, base_commit: newBase, reason: 'assign at v2 base' }));
+    runGit(f.strongRepo, 'fetch', '-q', 'origin', CANONICAL_CONTROL_BRANCH);
+    runGit(f.strongRepo, 'checkout', '-q', '-B', `job/${f.jobId}`, newBase);
+    const rStale = f.runPreflight({ version: 1 });
+    assert.equal(rStale.status, STATUS.VERSION);
+    assert.ok(codes(rStale.findings).includes('stale-handoff'));
+    // Aynı dalda aktif v2 handoff ise geçer:
+    const rActive = f.runPreflight({ version: 2 });
+    assert.equal(rActive.status, STATUS.READY);
+  }, { assign: false });
+
+  // 9b) Kanonik blob kayması: canon dosyası değişmişse hem commit-drift hem canonical-stale ile reddedilir
+  withJobFixture((f) => {
+    f.commitStrong('channels/fx/canon/README.md', FX_CANON + '\n<!-- drift -->\n');
+    const r = f.runPreflight();
+    assert.equal(r.status, STATUS.VERSION);
+    assert.ok(codes(r.findings).includes('commit-drift'));
+    assert.ok(codes(r.findings).includes('canonical-stale'));
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (10): os/, governance, rights-ledger.csv veya 05-scene-plan-v1.md üzerinde yetkisiz değişiklikler', () => {
+  withJobFixture((f) => {
+    for (const [rel, content, extraCode] of [
+      ['os/VERSION', 'fx-1\n<!-- touch -->\n', 'os-version'],
+      ['company/charter.md', '# Charter modified on job branch\n', null],
+      ['.claude/rules/governance.md', '# Governance modified on job branch\n', null],
+      [PATHS.rights, fxLedger('CLEAR') + '# comment\n', 'canonical-stale'],
+      [PATHS.scenePlan, SCENE_PLAN + '\n<!-- scene plan edit -->\n', 'canonical-stale'],
+    ]) {
+      runGit(f.strongRepo, 'checkout', '-q', '-B', `job/${f.jobId}`, f.publicationBase);
+      f.commitStrong(rel, content);
+      const r = f.runPreflight();
+      assert.equal(r.status, STATUS.VERSION, `rejected unauthorized change to ${rel}`);
+      assert.ok(codes(r.findings).includes('commit-drift'), `commit-drift reported for ${rel}`);
+      if (extraCode) assert.ok(codes(r.findings).includes(extraCode), `${extraCode} reported for ${rel}`);
+    }
+  });
+});
+
+test('Gate 1D-B / Stage 4 REJECT (11): geçmiş incelemesi (rangeChanged / diff / rev-list / diff-tree) kullanılamazsa veya başarısız olursa fail-closed reddedilir', () => {
+  withJobFixture((f) => {
+    const baseEnv = makeEnv(f.strongRepo, { policy: f.policy, machine: STRONG_PC });
+    // 1) env.rangeChanged mevcut değilse env.changed'e geri düşülmez (no fallback):
+    const rNoRange = preflight({
+      env: { ...baseEnv, rangeChanged: undefined },
+      handoffPath: PATHS.handoff(1),
+      expect: { id: 'VID-T-HO', version: 1 },
+    });
+    assert.equal(rNoRange.status, STATUS.VERSION);
+    assert.ok(codes(rNoRange.findings).includes('history-inspection-failed'));
+
+    // 2) env.rangeChanged null döndürürse veya hata fırlatırsa fail-closed reddedilir:
+    for (const badRangeChanged of [() => null, () => { throw new Error('git rev-list failed'); }]) {
+      const rFail = preflight({
+        env: { ...baseEnv, rangeChanged: badRangeChanged },
+        handoffPath: PATHS.handoff(1),
+        expect: { id: 'VID-T-HO', version: 1 },
+      });
+      assert.equal(rFail.status, STATUS.VERSION);
+      assert.ok(codes(rFail.findings).includes('history-inspection-failed'));
+    }
+
+    // 3) makeEnv().rangeChanged içinde diff / rev-list / diff-tree gerçek bir Git hatasıyla karşılaştığında boş dizi yerine null döner
+    // ve ara commit'in ağaç nesnesi eksik/bozuk olduğunda (uç ağaçlar aynı olsa bile) preflight READY_FOR_PRODUCTION üretemez:
+    assert.equal(baseEnv.rangeChanged('invalid-revision-000', f.publicationBase), null, 'failed git diff/rev-list must return null, never []');
+    const midCommit = f.commitStrong('company/state/runtime/forged.json', '{"forged":true}\n', 'intermediate runtime edit');
+    const midTree = runGit(f.strongRepo, 'rev-parse', `${midCommit}^{tree}`);
+    runGit(f.strongRepo, 'rm', '-q', 'company/state/runtime/forged.json');
+    runGit(f.strongRepo, 'commit', '-q', '-m', 'revert intermediate runtime edit');
+    // Ara commit'in tree nesnesi silinirse: uçlar arası diff ve rev-list çalışsa bile ara commit için diff-tree başarısız olur:
+    const objPath = join(f.strongRepo, '.git', 'objects', midTree.slice(0, 2), midTree.slice(2));
+    unlinkSync(objPath);
+    assert.equal(baseEnv.rangeChanged(f.publicationBase, baseEnv.head()), null, 'failed diff-tree on intermediate commit must return null');
+    const rBrokenTree = f.runPreflight();
+    assert.equal(rBrokenTree.status, STATUS.VERSION);
+    assert.ok(codes(rBrokenTree.findings).includes('history-inspection-failed'));
+  });
 });

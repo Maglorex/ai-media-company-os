@@ -5,10 +5,16 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, existsSync, statSync, readdirSync, openSync, readSync, closeSync } from 'node:fs';
 import { join, basename, extname } from 'node:path';
+import { hostname } from 'node:os';
 import { execFileSync } from 'node:child_process';
 import { parseCsv } from './records.mjs';
 import { findGit } from './gitbin.mjs';
 import { parseBlocks, header, lintScenePlan, productionBlockers, lintCreativeQA } from './pipeline.mjs';
+import { ControlError, canon } from './control/common.mjs';
+import { parseEventLog } from './control/events.mjs';
+import { replay, projectionsOf } from './control/model.mjs';
+import { syncContext, preflight as syncPreflight, remoteControlRuntime, bindRemoteJob, RUNTIME_LOG_PATH } from './control/safe-sync.mjs';
+import { PRODUCTION_SYNC_POLICY, JOB_BRANCH, routineBranch, canonicalPolicyPath } from './control/sync-policy.mjs';
 
 const norm = (t) => (t || '').replace(/\r\n/g, '\n');
 const words = (t) => (t || '').split(/\s+/).filter(Boolean);
@@ -275,13 +281,19 @@ export function renderHandoff(c) {
 // Git bulucu ortaktır (os/lib/gitbin.mjs): Strong PC'de git PATH'te yok, GitHub Desktop'un gömülü git'i kullanılır.
 export { findGit };
 
-export function makeEnv(repoDir) {
+export const CANONICAL_CONTROL_BRANCH = 'os-v2-migration';
+export const STRONG_PC_MACHINE = 'DESKTOP-KVLH9B2';
+
+export function makeEnv(repoDir, { policy = PRODUCTION_SYNC_POLICY, machine = hostname(), trace = null } = {}) {
   const bin = findGit();
   const run = (...args) => execFileSync(bin, args, { cwd: repoDir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 64 * 1024 * 1024 }).replace(/\r\n/g, '\n');
   const tryRun = (...args) => { try { return run(...args); } catch { return null; } };
   const lines = (t) => (t || '').split('\n').map((x) => x.trim()).filter(Boolean);
   return {
     repoDir,
+    policy,
+    machine,
+    trace,
     head: () => tryRun('rev-parse', 'HEAD')?.trim() || null,
     branch: () => tryRun('rev-parse', '--abbrev-ref', 'HEAD')?.trim() || null,
     origin: () => tryRun('remote', 'get-url', 'origin')?.trim() || null,
@@ -289,8 +301,24 @@ export function makeEnv(repoDir) {
     commitExists: (c) => tryRun('cat-file', '-e', `${c}^{commit}`) !== null,
     isAncestor: (a, b) => tryRun('merge-base', '--is-ancestor', a, b) !== null,
     changed: (a, b) => lines(tryRun('diff', '--name-only', a, b)),
+    rangeChanged: (a, b) => {
+      const diffOut = tryRun('diff', '--name-only', a, b);
+      if (diffOut === null) return null;
+      const revOut = tryRun('rev-list', b, '--not', a);
+      if (revOut === null) return null;
+      const set = new Set(lines(diffOut));
+      for (const c of lines(revOut)) {
+        const treeOut = tryRun('diff-tree', '--no-commit-id', '--name-only', '-r', '-z', '--no-renames', '-m', '--root', c);
+        if (treeOut === null) return null;
+        for (const p of treeOut.split('\0')) {
+          if (p) set.add(p);
+        }
+      }
+      return [...set].sort();
+    },
     dirty: () => lines(tryRun('status', '--porcelain')),
     blob: (rev, path) => tryRun('rev-parse', `${rev}:${path}`)?.trim() || null,
+    readBlob: (rev, path) => tryRun('cat-file', 'blob', `${rev}:${path}`),
     readFile: (p) => (existsSync(join(repoDir, p)) ? norm(readFileSync(join(repoDir, p), 'utf8')) : null),
     listFiles: (prefix) => lines(tryRun('ls-files', '--', prefix)),
     fileInfo,
@@ -382,6 +410,168 @@ export function fileInfo(abs) {
 // ---------------------------------------------------------------- Strong PC boot contract (preflight)
 const caseDir = (c) => `channels/${c.channel}/cases/${c.case}/`;
 
+// Kontrol dalında (required_commit .. publication_base) değişen runtime dosyalarının gerçekten doğrulanmış uzak kontrol dalı
+// olay günlüğünün önekine ve deterministik replay projeksiyonlarına ait olduğunu doğrular.
+function verifyControlRuntimeAtBase(env, base, tip, runtimePaths) {
+  if (!env.readBlob) return { ok: false, reason: 'cannot inspect runtime blobs at publication_base' };
+  const baseRaw = env.readBlob(base, RUNTIME_LOG_PATH);
+  const tipRaw = env.readBlob(tip, RUNTIME_LOG_PATH);
+  if (baseRaw === null || tipRaw === null) return { ok: false, reason: `${RUNTIME_LOG_PATH} missing at publication_base or remote control tip` };
+  if (!tipRaw.startsWith(baseRaw)) return { ok: false, reason: `${RUNTIME_LOG_PATH} at publication_base is not a prefix of the verified remote control-branch log` };
+  const log = parseEventLog(baseRaw);
+  if (!log.ok) return { ok: false, reason: `runtime log at publication_base is invalid: ${log.errors[0]}` };
+  const rep = replay(log.events);
+  if (rep.errors.length) return { ok: false, reason: `runtime log at publication_base does not replay: ${rep.errors[0]}` };
+  const expected = projectionsOf(rep.model);
+  for (const p of runtimePaths) {
+    if (!p.startsWith('company/state/runtime/')) return { ok: false, reason: `non-canonical runtime path casing: ${p}` };
+    const rel = p.slice('company/state/runtime/'.length);
+    if (rel === 'events.jsonl') continue;
+    if (!Object.prototype.hasOwnProperty.call(expected, rel)) return { ok: false, reason: `unexpected file under company/state/runtime/ at publication_base: ${p}` };
+    const raw = env.readBlob(base, p);
+    if (raw === null) return { ok: false, reason: `missing runtime projection at publication_base: ${p}` };
+    let parsed;
+    try { parsed = JSON.parse(raw); } catch { return { ok: false, reason: `unparseable runtime projection at publication_base: ${p}` }; }
+    if (canon(parsed) !== canon(expected[rel])) return { ok: false, reason: `runtime projection ${p} at publication_base differs from replayed control-branch events` };
+  }
+  return { ok: true };
+}
+
+function preflightJobBranch({ env, c, handoffPath, branch, head, out, observed }) {
+  const policy = env.policy ?? PRODUCTION_SYNC_POLICY;
+  const machine = env.machine ?? hostname();
+  const isRuntimePath = (p) => canonicalPolicyPath(p).startsWith('company/state/runtime/');
+
+  if (policy.control_branch !== CANONICAL_CONTROL_BRANCH) {
+    out.push(finding(STATUS.VERSION, 'control-branch', `configured control_branch is ${policy.control_branch || '(unset)'}; canonical ${CANONICAL_CONTROL_BRANCH} is required`));
+  }
+  if (c.repo?.branch !== CANONICAL_CONTROL_BRANCH) {
+    out.push(finding(STATUS.VERSION, 'branch', `handoff repo.branch is ${c.repo?.branch || '(none)'}; job-branch preflight requires canonical ${CANONICAL_CONTROL_BRANCH}`));
+  }
+  let job_id = null;
+  try {
+    ({ job_id } = routineBranch(branch));
+  } catch (e) {
+    out.push(finding(STATUS.VERSION, 'branch', `branch ${branch} is not a valid job branch: ${e.message}`));
+  }
+  if (machine !== STRONG_PC_MACHINE || policy.machine_profiles?.[machine] !== 'FACTORY') {
+    out.push(finding(STATUS.VERSION, 'job-owner', `machine ${machine} is not the registered Strong PC (${STRONG_PC_MACHINE})`));
+  }
+  if (!env.repoDir || !job_id || policy.control_branch !== CANONICAL_CONTROL_BRANCH || c.repo?.branch !== CANONICAL_CONTROL_BRANCH) return;
+
+  const ctx = syncContext({ repoDir: env.repoDir, policy, machine, trace: env.trace ?? null });
+  let transportSafe = false;
+  try {
+    syncPreflight(ctx);
+    transportSafe = true;
+  } catch (e) {
+    if (!(e instanceof ControlError)) throw e;
+    out.push(finding(STATUS.VERSION, `job-sync-preflight:${e.code}`, e.message));
+    if (e.code === 'RUNTIME_UNHEALTHY' || e.code === 'COMPANY_PAUSED') transportSafe = true;
+  }
+  if (!transportSafe) return;
+
+  let rr;
+  try {
+    rr = remoteControlRuntime(ctx);
+  } catch (e) {
+    if (!(e instanceof ControlError)) throw e;
+    out.push(finding(STATUS.VERSION, `remote-runtime:${e.code}`, e.message));
+    return;
+  }
+
+  let job;
+  try {
+    job = bindRemoteJob(ctx, { job_id, branch }, rr);
+  } catch (e) {
+    if (!(e instanceof ControlError)) throw e;
+    out.push(finding(STATUS.VERSION, `job-binding:${e.code}`, e.message));
+    job = rr.model?.jobs?.[job_id] ?? null;
+  }
+  if (!job) return;
+
+  if (job.owner_machine !== STRONG_PC_MACHINE) {
+    out.push(finding(STATUS.VERSION, 'job-owner', `${job_id} owner_machine on remote ${rr.control} is ${job.owner_machine}, not Strong PC (${STRONG_PC_MACHINE})`));
+  }
+  const expectedScope = `case:${c.case}`;
+  if (job.scope !== expectedScope) {
+    out.push(finding(STATUS.VERSION, 'job-scope', `${job_id} scope is ${job.scope}; handoff requires ${expectedScope}`));
+  }
+
+  const base = job.publication_base;
+  observed.job = { job_id, branch: job.branch, owner_machine: job.owner_machine, state: job.state, scope: job.scope, publication_base: base, control_branch: rr.control, control_tip: rr.tip };
+  if (!base || !HEX40.test(base)) {
+    out.push(finding(STATUS.VERSION, 'publication-base', `${job_id} has no recorded publication_base on remote ${rr.control} (JOB_ASSIGNED required)`));
+    return;
+  }
+  if (!env.commitExists(c.repo.required_commit)) {
+    out.push(finding(STATUS.VERSION, 'commit-unknown', `required commit ${c.repo.required_commit.slice(0, 12)} not present — fetch/pull first`));
+    return;
+  }
+  if (!env.commitExists(base)) {
+    out.push(finding(STATUS.VERSION, 'publication-base', `recorded publication_base ${base.slice(0, 12)} not present in repository`));
+    return;
+  }
+  let ancestryOk = true;
+  if (!env.isAncestor(base, rr.tip)) {
+    out.push(finding(STATUS.VERSION, 'publication-base', `recorded publication_base ${base.slice(0, 12)} is not an ancestor of remote ${rr.control} (${rr.tip.slice(0, 12)})`));
+    ancestryOk = false;
+  }
+  if (!env.isAncestor(c.repo.required_commit, base)) {
+    out.push(finding(STATUS.VERSION, 'publication-base', `recorded publication_base ${base.slice(0, 12)} is not a descendant of handoff required_commit ${c.repo.required_commit.slice(0, 12)}`));
+    ancestryOk = false;
+  }
+  if (!env.isAncestor(base, head)) {
+    out.push(finding(STATUS.VERSION, 'publication-base', `recorded publication_base ${base.slice(0, 12)} is not an ancestor of HEAD ${head?.slice(0, 12)}`));
+    ancestryOk = false;
+  }
+  if (!env.isAncestor(c.repo.required_commit, head)) {
+    out.push(finding(STATUS.VERSION, 'commit', `HEAD ${head?.slice(0, 12)} does not contain required commit ${c.repo.required_commit.slice(0, 12)}`));
+    ancestryOk = false;
+  }
+  if (!ancestryOk) return;
+
+  if (typeof env.rangeChanged !== 'function') {
+    out.push(finding(STATUS.VERSION, 'history-inspection-failed', 'complete git history inspection (rangeChanged) is unavailable'));
+    return;
+  }
+  let controlPaths = null;
+  let jobPaths = null;
+  try {
+    controlPaths = env.rangeChanged(c.repo.required_commit, base);
+    jobPaths = env.rangeChanged(base, head);
+  } catch (e) {
+    out.push(finding(STATUS.VERSION, 'history-inspection-failed', `git history inspection failed: ${e.message}`));
+    return;
+  }
+  if (!Array.isArray(controlPaths) || !Array.isArray(jobPaths)) {
+    out.push(finding(STATUS.VERSION, 'history-inspection-failed', 'git history inspection failed (diff/rev-list/diff-tree did not complete)'));
+    return;
+  }
+
+  const allowedControl = new Set([handoffPath, 'company/state/artifact-registry.csv', 'company/state/current-state.md']);
+  const controlRuntimePaths = controlPaths.filter(isRuntimePath);
+  const rtCheck = verifyControlRuntimeAtBase(env, base, rr.tip, controlRuntimePaths);
+  if (!rtCheck.ok) {
+    out.push(finding(STATUS.VERSION, 'control-runtime-drift', rtCheck.reason));
+  }
+  const controlDrift = controlPaths.filter((p) => {
+    if (allowedControl.has(p) || p.startsWith(`${caseDir(c)}ccr/`)) return false;
+    if (isRuntimePath(p)) return !rtCheck.ok;
+    return true;
+  });
+
+  const jobRuntimePaths = jobPaths.filter(isRuntimePath);
+  if (jobRuntimePaths.length) {
+    out.push(finding(STATUS.VERSION, 'job-runtime-drift', `job branch modified canonical runtime path(s) after publication_base: ${jobRuntimePaths.slice(0, 5).join(', ')}`));
+  }
+  const jobDrift = jobPaths.filter((p) => !p.startsWith(`${caseDir(c)}ccr/`));
+  const drift = [...new Set([...controlDrift, ...jobDrift])];
+  if (drift.length) {
+    out.push(finding(STATUS.VERSION, 'commit-drift', `commits after the handoff changed ${drift.slice(0, 5).join(', ')}${drift.length > 5 ? ` (+${drift.length - 5})` : ''} — re-issue the handoff`));
+  }
+}
+
 export function preflight({ env, handoffPath, expect = null, productionRoot = null }) {
   const out = [];
   const observed = {};
@@ -402,15 +592,20 @@ export function preflight({ env, handoffPath, expect = null, productionRoot = nu
   if (!origin || !origin.replace(/\.git$/, '').endsWith(c.repo.origin)) out.push(finding(STATUS.VERSION, 'repo', `origin is ${origin || '(none)'}; handoff requires ${c.repo.origin}`));
   if (!env.roots().includes(c.repo.root_commit)) out.push(finding(STATUS.VERSION, 'repo-root', 'repository root commit differs (different repository)'));
   const branch = env.branch();
-  if (branch !== c.repo.branch) out.push(finding(STATUS.VERSION, 'branch', `branch is ${branch}; handoff requires ${c.repo.branch}`));
   const head = env.head();
   observed.head = head;
-  if (!env.commitExists(c.repo.required_commit)) out.push(finding(STATUS.VERSION, 'commit-unknown', `required commit ${c.repo.required_commit.slice(0, 12)} not present — fetch/pull first`));
-  else if (!env.isAncestor(c.repo.required_commit, head)) out.push(finding(STATUS.VERSION, 'commit', `HEAD ${head?.slice(0, 12)} does not contain required commit ${c.repo.required_commit.slice(0, 12)}`));
-  else {
-    const allowed = new Set([handoffPath, 'company/state/artifact-registry.csv', 'company/state/current-state.md']);
-    const drift = env.changed(c.repo.required_commit, head).filter((p) => !allowed.has(p) && !p.startsWith(`${caseDir(c)}ccr/`));
-    if (drift.length) out.push(finding(STATUS.VERSION, 'commit-drift', `commits after the handoff changed ${drift.slice(0, 5).join(', ')}${drift.length > 5 ? ` (+${drift.length - 5})` : ''} — re-issue the handoff`));
+  const isJobBranch = Boolean(branch && (branch.startsWith('job/') || JOB_BRANCH.test(branch)));
+  if (isJobBranch) {
+    preflightJobBranch({ env, c, handoffPath, branch, head, out, observed });
+  } else {
+    if (branch !== c.repo.branch) out.push(finding(STATUS.VERSION, 'branch', `branch is ${branch}; handoff requires ${c.repo.branch}`));
+    if (!env.commitExists(c.repo.required_commit)) out.push(finding(STATUS.VERSION, 'commit-unknown', `required commit ${c.repo.required_commit.slice(0, 12)} not present — fetch/pull first`));
+    else if (!env.isAncestor(c.repo.required_commit, head)) out.push(finding(STATUS.VERSION, 'commit', `HEAD ${head?.slice(0, 12)} does not contain required commit ${c.repo.required_commit.slice(0, 12)}`));
+    else {
+      const allowed = new Set([handoffPath, 'company/state/artifact-registry.csv', 'company/state/current-state.md']);
+      const drift = env.changed(c.repo.required_commit, head).filter((p) => !allowed.has(p) && !p.startsWith(`${caseDir(c)}ccr/`));
+      if (drift.length) out.push(finding(STATUS.VERSION, 'commit-drift', `commits after the handoff changed ${drift.slice(0, 5).join(', ')}${drift.length > 5 ? ` (+${drift.length - 5})` : ''} — re-issue the handoff`));
+    }
   }
   const dirty = env.dirty();
   if (dirty.length) out.push(finding(STATUS.VERSION, 'working-tree', `working tree not clean: ${dirty.slice(0, 5).join(' | ')}`));
