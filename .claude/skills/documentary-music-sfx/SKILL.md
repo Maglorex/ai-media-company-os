@@ -1,6 +1,6 @@
 ---
 name: documentary-music-sfx
-description: Industrial & Technology Autopsies belgeselleri için müzik ve SFX seçimi, lisans doğrulaması ve kaydı. Kaynak önceliği (YouTube Audio Library → doğrulanmış Adobe Stock lisansı → tek tek doğrulanmış PD/CC0/CC), müzik yönü, sahne bazlı müzik/sessizlik/SFX planı, audio ledger ve yayın için otomatik attribution. Final mix öncesinde ve her yeni videoda kullan. Ücretli asset almaz, lisansı belirsiz dosya indirmez, final mix yapmaz.
+description: The Industrial Casebook belgeselleri için müzik ve SFX seçimi, lisans doğrulaması ve kaydı. Kaynak önceliği (YouTube Audio Library → doğrulanmış Adobe Stock lisansı → tek tek doğrulanmış PD/CC0/CC), müzik yönü, sahne bazlı müzik/sessizlik/SFX planı, audio ledger ve yayın için otomatik attribution. Final mix öncesinde ve her yeni videoda kullan. Ücretli asset almaz, lisansı belirsiz dosya indirmez, final mix yapmaz.
 ---
 
 # Documentary Music & SFX

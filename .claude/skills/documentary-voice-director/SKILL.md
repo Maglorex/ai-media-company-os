@@ -7,7 +7,7 @@ description: İngilizce faceless belgesel videoları için kanalın anlatıcı s
 > Ses üretimi/kurgusu için bağlayıcı kural: `.claude/rules/audio-production.md` (Claude dinleyemez; segment + zaman damgası + ölçüm; kulak kontrolleri yalnız checkpoint'te Founder'da). Kanal sesi ve birincil model: D-021.
 
 
-Kapsam: N2 (Industrial & Technology Autopsies) İngilizce faceless belgeseller. Ön koşul: Founder onaylı script. Çıktı: `production/.../<video>-voice-brief.md` (brief + test planı + sonuçlar) ve kanal düzeyinde `channels/<kanal>/voice.md` (kalıcı ses kararı, oluşunca).
+Kapsam: The Industrial Casebook (N2 nişi) İngilizce faceless belgeseller. Ön koşul: Founder onaylı script. Çıktı: `production/.../<video>-voice-brief.md` (brief + test planı + sonuçlar) ve kanal düzeyinde `channels/<kanal>/voice.md` (kalıcı ses kararı, oluşunca).
 Founder'a ses listesi veya teknik ayar dökülmez (`founder-interface`).
 
 ## Kurallar

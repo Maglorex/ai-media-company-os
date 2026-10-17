@@ -1,11 +1,15 @@
 ---
 name: source-to-visual
-description: Belgesel videoda her önemli anlatı/hikâye beat'i için kaynağın kesin olarak ne söylediğinden izleyicinin ne görmesi gerektiğine giden görsel kararı verir — 7 adımlı karar sırası (safe footage → safe foto → birincil belge → motion/diagram → harita → cutaway → AI illüstrasyon), SOURCE→EXTRACT→EXPLAIN→CONSEQUENCE görselleştirme, fotoğraf dönüştürme, Brand System dünya ataması ve gerekiyorsa Founder için hazır ChatGPT görsel prompt'u. Creative treatment, görsel plan, production handoff ve mevcut asset denetimi (KEEP AS REAL SOURCE / TRANSFORM / REPLACE WITH DIAGRAM / REPLACE WITH AI ILLUSTRATION / REMOVE) sırasında kullan. Görsel üretmez, indirmez.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine production-scene-plan (Evidence Anchor / Presentation Visual, TOOL-LIBRARY, AI prompt şablonu). Eski açıklama: Belgesel videoda her önemli anlatı/hikâye beat'i için kaynağın kesin olarak ne söylediğinden izleyicinin ne görmesi gerektiğine giden görsel kararı hazırlar — Evidence Anchor (claim'i ne kanıtlıyor) ile Presentation Visual (izleyiciye en iyi ne anlatıyor) ayrı kararlar; gerçek source bulunması sunum kararını bitirmez, AI otomatik son çare değildir, araç sahne ihtiyacından sonra seçilir (kanal canon D-045, TIC-15/18/19); aday görsel türleri kontrol listesi, SOURCE→EXTRACT→EXPLAIN→CONSEQUENCE görselleştirme, fotoğraf dönüştürme, Brand System dünya ataması ve gerekiyorsa Founder için hazır ChatGPT görsel prompt'u. Creative treatment, görsel plan, production handoff ve mevcut asset denetimi (KEEP AS REAL SOURCE / TRANSFORM / REPLACE WITH DIAGRAM / REPLACE WITH AI ILLUSTRATION / REMOVE) sırasında kullan. Görsel üretmez, indirmez."
 ---
 
 # Source-to-Visual Pipeline v1
 
-Karar: D-031. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` · `intelligence/creative/brand/brand-system-v1.md` · doctrine v1 (`intelligence/creative/doctrine/documentary-production-doctrine-v1.md`) · evidence ledger (kanıt + haklar §C) · `documentary-visual-storytelling`. Uygulayıcı: `documentary-creative-director` / COO. Çıktı: treatment veya handoff içindeki Source-to-Visual tablosu.
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **production-scene-plan (Evidence Anchor / Presentation Visual, TOOL-LIBRARY, AI prompt şablonu)** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
+
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. §2 bir sıralama değil, aday kontrol listesidir; her beat'te Evidence Anchor ve Presentation Visual ayrı kararlardır (TIC-15) ve gerçek source bulunması AI/visualization'ı dışlamaz (TIC-18).
+
+Karar: D-031. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` · `intelligence/creative/brand/brand-system-v1.md` · (HEURISTIC kaynak, binding değil: doctrine v1 `intelligence/creative/doctrine/documentary-production-doctrine-v1.md`, D-029 LIMITED) · evidence ledger (kanıt + haklar §C) · `documentary-visual-storytelling`. Uygulayıcı: `documentary-creative-director` / COO. Çıktı: treatment veya handoff içindeki Source-to-Visual tablosu.
 
 **Canonical kural (D-032):** *Source establishes truth. Visualization establishes understanding.*
 
@@ -14,7 +18,11 @@ Karar: D-031. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` · `intel
 2. **İzleyici bunu anlamak için neyi görmeli?** (ilişki, ölçek, yer, mekanizma, zaman, sonuç)
 Kaynak asset ile final görsel aynı şey olmak zorunda değildir.
 
-## 2. Karar sırası (ilk "evet + anlatıya hizmet ediyor" kazanır; gerekçe yazılır)
+## 2. Evidence Anchor + Presentation Visual (iki ayrı karar) ve aday görsel türleri
+1. **Evidence Anchor:** claim'i ne kanıtlıyor? (ledger satırı; kanıt dürüstlüğü HARD).
+2. **Presentation Visual:** önce sahnenin izleyiciye ne anlatması gerektiği yazılır (ilişki, ölçek, yer, mekanizma, dönüşüm, sonuç); **sonra** araç seçilir (TIC-19). Gerçek source bulunması bu kararı bitirmez; source ekranda kanıt olarak görünebilir ve sahneyi başka bir görsel taşıyabilir.
+3. AI **otomatik son çare değildir**: kullanılıp kullanılmayacağı scene need · accuracy need · rights · disclosure · production value ile değerlendirilir (TIC-18).
+Aşağıdaki liste bir **sıralama değil**, Presentation Visual için aday türlerin **kontrol listesidir** (HEURISTIC); birden fazlası birlikte kullanılabilir, seçimin gerekçesi yazılır:
 1. Hakkı temiz (ledger §C "Evet") gerçek arşiv footage var mı?
 2. Hakkı temiz gerçek fotoğraf var mı? → varsa §4 dönüştürme sorusu.
 3. Birincil belge **kanıt olarak** ekranda görünmeli mi? (önemli iddia, rakam, alıntı → genelde evet; Evidence World)
@@ -36,7 +44,7 @@ Hedef his: "kaynağı gerçek" + "ne anlama geldiğini anladım".
 Uzun yavaş zoom varsayılan değildir. Önce: **bu fotoğraftan hangi hikâye bilgisi çıkar?** İşlemler: subject isolation · foreground/background ayrımı · parallax · detail reveal · spatial crop · before/after · map continuity · document continuity · Object Carry. Generic Ken Burns yalnız anlamlıysa. Arşiv fotoğrafı Archive World'de kalır (marka tinti yok).
 
 ## 5. AI görsel politikası
-ChatGPT image generation Company OS'un **aktif** yaratıcı üretim aracıdır (D-031, D-032); creative director gerektiğinde Founder'a doğrudan hazır prompt getirir. Yalnız bir information / spatial / mechanism / atmosphere problemini çözer: gerçek görsel yok · teknik illüstrasyon · mekânsal ortam · cutaway · blueprint/editoryal sahne · atmosfer · thumbnail hero asset. "Daha güzel görünsün" tek başına gerekçe değildir.
+ChatGPT image generation Company OS'un **aktif** yaratıcı üretim aracıdır (D-031, D-032); creative director gerektiğinde Founder'a doğrudan hazır prompt getirir. Kullanım kararı TIC-18'in beş ölçütüyle verilir: scene need · accuracy need · rights · disclosure · production value. Gerçek görselin varlığı AI'ı kendiliğinden dışlamaz; tipik kullanımlar: teknik illüstrasyon · mekânsal ortam · cutaway · blueprint/editoryal sahne · görünmeyen süreç · atmosfer · visual reset · thumbnail hero asset. Production value, sahne ihtiyacıyla birlikte geçerli bir ölçüttür.
 - Tercih: stylized technical illustration · editorial industrial illustration · blueprint/cutaway · schematic environment · non-photorealistic reconstruction · açıkça illüstratif sinematik establishing.
 - Gerçek tarihî fotoğraf gibi görünmesi istenmez. Asset kaydı: `AI-GENERATED / ILLUSTRATIVE` + prompt + sahne + dosya. Kanıt değildir. Gerekirse "Illustration" etiketi. Foto-gerçekçi rekonstrüksiyon → yayın öncesi disclosure kontrolü.
 - Bilinen bileşenler ledger'dan; ledger'da olmayan yerleşim/ayrıntı uydurulmaz (prompt "Must NOT invent" alanına yazılır).

@@ -1,3 +1,5 @@
+> **SUPERSEDED — 2026-10-14 (D-042).** Bu dosya artık güncel durum kaynağı **değildir**; aşağıdaki içerik 2026-10-13 itibarıyla tarihsel anlık görüntüdür ve talimat olarak kullanılmaz. Tek canonical güncel durum: `company/state/current-state.md` · Yürürlükteki kararlar: `company/state/active-decisions.md`.
+
 # Şirket Paneli
 
 > Tek sayfalık güncel durum. Her oturum sonunda güncellenir. Founder Brief: günlük.

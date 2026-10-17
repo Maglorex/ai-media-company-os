@@ -1,13 +1,15 @@
 ---
 name: documentary-edit-plan
-description: Founder onaylı script + evidence ledger + visual plan hazır olduğunda videoyu kurgulanabilir bir timeline planına (zaman kodlu beat listesi) çevirir; her beat'i VO'ya, asset'e, ekrandaki metne, harekete, geçişe, ses tasarımına ve hak durumuna bağlar. Kurgu, render, asset üretimi veya ses üretimi başlatmaz.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine production-scene-plan (sahne/edit fikri) ve Stage 4 production handoff (zaman kodu/VO senkronu). Eski açıklama: Founder onaylı script + evidence ledger + visual plan hazır olduğunda videoyu kurgulanabilir bir timeline planına (zaman kodlu beat listesi) çevirir; her beat'i VO'ya, asset'e, ekrandaki metne, harekete, geçişe, ses tasarımına ve hak durumuna bağlar. Kurgu, render, asset üretimi veya ses üretimi başlatmaz."
 ---
 
 # Documentary Edit Plan
+
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **production-scene-plan (sahne/edit fikri) ve Stage 4 production handoff (zaman kodu/VO senkronu)** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
 > Ses üretimi/kurgusu için bağlayıcı kural: `.claude/rules/audio-production.md` (Claude dinleyemez; segment + zaman damgası + ölçüm; kulak kontrolleri yalnız checkpoint'te Founder'da). Kanal sesi ve birincil model: D-021.
 
 
-Kapsam: N2 (Industrial & Technology Autopsies) faceless belgeseller. Ön koşullar: kilitli script, güncel ledger, görsel plan. Çıktı: `production/.../<video>-edit-plan-vN.md`. Founder'a tablo varsayılan olarak gösterilmez (`founder-interface`).
+Kapsam: The Industrial Casebook (N2 nişi) faceless belgeseller. Ön koşullar: kilitli script, güncel ledger, görsel plan. Çıktı: `production/.../<video>-edit-plan-vN.md`. Founder'a tablo varsayılan olarak gösterilmez (`founder-interface`).
 
 ## Zamanlama
 - Süreler sabit kelime/dk varsayımıyla değil, **seçilen anlatıcının ölçülen hızıyla** hesaplanır (voice ledger'daki test üretimi: karakter ÷ saniye). Final VO üretildiğinde zaman kodları gerçek ses dosyasına göre güncellenir.
@@ -18,7 +20,7 @@ Kapsam: N2 (Industrial & Technology Autopsies) faceless belgeseller. Ön koşull
 Zaman kodu (giriş–çıkış) · VO bölümü (sahne/paragraf + ilk kelimeler) · sahnenin işi · yeni bilgi/yeni bakış · ana asset (ledger V-ID) · destek asset · tür (belge / fotoğraf / grafik / harita / motion / tipografi) · ekrandaki metin veya sayı · zoom/pan/highlight/motion · geçiş mantığı · müzik/SFX amacı (varsa) · asset hazır mı · lisans durumu · zorluk (K/O/Z).
 
 ## Edit prensipleri
-0. **Prototype önce (D-025):** İlk edit plan yalnız prototype kesitini (ilk ~60–90 sn) kapsar ve `documentary-production-handoff` ile production PC'ye gider; tüm videonun edit planı Founder prototype kapısından sonra yazılır.
+0. **Prototype kullanılıyorsa (D-043; zorunlu değil):** İlk edit plan yalnız prototype kesitini (ilk ~60–90 sn) kapsar ve `documentary-production-handoff` ile production PC'ye gider; tüm videonun edit planı Founder prototype kapısından sonra yazılır. Prototype kullanılmıyorsa edit plan tüm video için senaryo kilidinden sonra yazılır.
 1. Sabit "her X saniyede kesme" kuralı yok; kesimler rastgele hızlandırılmaz. Ama **görsel yenilenme = yeni bilgi veya yeni bakış**: bilgi bütçesi bitmiş görsel durum yeni bir şey katmadan ekranda kalmaz (`documentary-visual-storytelling` §3). Fotoğraf + pan ve tam ekran kart zinciri kurulmaz.
 2. **Belge ekrandayken okunabilir süre** verilir (vurgulanan satır VO'da geçiyorsa VO süresi + kısa bekleme).
 3. **Önemli rakam söylenirken o rakam veya grafiği ekranda** olur; senaryodaki rakam ile ekrandaki rakam aynı anlamdadır (ledger).

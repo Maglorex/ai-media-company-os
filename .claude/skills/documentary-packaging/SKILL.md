@@ -1,17 +1,30 @@
 ---
 name: documentary-packaging
-description: Tam senaryodan önce bir video fikri için dürüst ama güçlü title + thumbnail vaadi tasarlar (5 concept), her vaadin videodaki kanıtla karşılanıp karşılanmadığını kontrol eder, ≥3 farklı açılı finalist çıkarır, birincil öneri + 2 A/B varyantı seçer (Packaging v2, D-035). Görsel üretmez, karar vermez.
+description: The Industrial Casebook için Packaging Hypothesis — story ile birlikte, production öncesi title hypothesis, thumbnail hypothesis, viewer promise ve central curiosity gap yazar; hepsi kanıtla karşılanabilir ve videonun vermediği bir sözü vermez; hipotezdir, evidence/story değişirse kontrollü değişir. Gerektiğinde 5 concept → ≥3 farklı açılı finalist → birincil + 2 A/B varyantı (Packaging v2, D-035). Pipeline aşama 2 (D-046). Görsel üretmez, karar vermez.
 ---
 
-# Documentary Packaging
+# Documentary Packaging — Packaging Hypothesis
 
-Kapsam: `Industrial & Technology Autopsies` (N2), faceless, belge-öncelikli belgesel. Girdi: `documentary-virality-gate` sonucu `READY FOR PILOT` olan fikir + kaynak/kanıt notları (örn. `production/pilots/.../P*.md`). Çıktı: packaging değerlendirme dosyası; görsel, senaryo, ses veya render üretilmez.
+> Kanal canon'u önce gelir (D-045): canon `02` §4 (packaging = story, TIC-05). Pipeline: `channels/the-industrial-casebook/pipeline/README.md` (aşama 2). Girdi: `01-story-viability.md`. Çıktı: `channels/the-industrial-casebook/cases/<VID>/02-packaging-hypothesis.md`.
+
+## 1. Packaging Hypothesis (her videoda, production öncesi)
+Packaging story'den ayrı değildir; fikirle birlikte geliştirilir. Zorunlu alanlar:
+- **Title hypothesis** (İngilizce; birincil + gerekiyorsa varyantlar)
+- **Thumbnail hypothesis** (ana obje + yardımcı unsur + varsa çok kısa metin; hak durumu)
+- **Viewer promise** (tek cümle: izleyici videoyu izleyince ne öğrenecek/çözecek)
+- **Central curiosity gap** (title+thumbnail'ın açtığı soru; beat sheet'teki merkezi soruyla aynı aile)
+- **Evidence check** (promise'i karşılayan ledger satırları; kanıtın söylemediği)
+- **Where the video pays it off** (hangi beat'te, nasıl)
+- **Change log** (hipotez değişirse: ne · neden · hangi kanıt/story değişikliği)
+Kurallar: bunlar **kilitli gerçek değildir**; evidence veya story değişirse kontrollü değişir ve kaydı tutulur. **Packaging videonun vermediği bir sözü veremez** — promise ile içerik uyumu her sürümde yeniden kontrol edilir. Önceden Founder'ın onayladığı bir packaging (case kararı) varsa o, değişiklik kaydıyla açılana kadar birincil hipotezdir.
+
+Kapsam: The Industrial Casebook (N2 nişi), faceless, belge-öncelikli belgesel. Girdi: kanal fikir değerlendirmesinde (canon `02` §2) PURSUE veya packaging için REVISE olan fikir (virality gate sinyali yalnız girdi) + kaynak/kanıt notları (örn. `production/pilots/.../P*.md`). Çıktı: packaging değerlendirme dosyası; görsel, senaryo, ses veya render üretilmez.
 
 ## Kanıt bağı
 Videonun `documentary-evidence-ledger` kaydı varsa her başlık/thumbnail iddiası oradaki bir satıra bağlanır; yoksa bu skill'in doğruluk sınırları sonradan ledger'a aktarılır.
 
 ## Sonraki adım
-Onaylı vaat `documentary-creative-treatment`'a girer: title/thumbnail'ın sattığı çatışma videonun erken bölümünde (sözle ve görselle) karşılanmalıdır; thumbnail'daki obje/belge ilk dakikada ekrana gelir.
+Packaging hypothesis `documentary-creative-treatment` beat sheet'ine girer: title/thumbnail'ın sattığı çatışma videonun erken bölümünde (sözle ve görselle) karşılanmalıdır; thumbnail'daki obje/belge ilk dakikada ekrana gelir.
 
 ## Ne yapmaz
 - Tıklanma veya CTR **tahmin etmez**; "algoritma böyle ister" demez.

@@ -1,3 +1,5 @@
+> **HISTORICAL — 2026-10-14.** Logo ayarlandı, banner tamamlandı (D-037, D-040). Talimat olarak kullanılmaz; tarihsel brief.
+
 # Logo ve Banner — ChatGPT requirements brief
 
 > Brand System v1 §K–§L (D-031). Founder bu blokları ChatGPT'ye olduğu gibi verir. **Company OS final logo/banner üretmez, placeholder üretmez.** Gelen konseptler `intelligence/creative/brand/concepts/` altına (küçük önizleme; klasör ilk konseptle oluşturulur) ve tam dosyalar render PC'de repo dışına konur; seçim Founder kararıdır.

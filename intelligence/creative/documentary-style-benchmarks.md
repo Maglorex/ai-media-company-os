@@ -1,3 +1,5 @@
+> **HISTORICAL — 2026-10-14 (D-045).** Talimat değildir; benchmark/araştırma kaynağıdır (HEURISTIC/EXPERIMENT, TIC-27). Aşağıdaki "bağlayıcı sentez" ifadesi geçersizdir; kanal kuralları: `channels/the-industrial-casebook/canon/README.md`.
+
 # Documentary Style Benchmarks
 
 > Şirket genelinde yaşayan stil referansı. Her yeni videoda internet sıfırdan taranmaz; bu kayıt okunur (`documentary-creative-treatment` §4).

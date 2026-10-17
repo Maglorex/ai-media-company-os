@@ -1,3 +1,5 @@
+> **SUPERSEDED — 2026-10-14 (D-044, D-045).** Talimat olarak kullanılmaz. CASE INTRO = tekrar eden skeleton + değişken payload: canon `channels/the-industrial-casebook/canon/03-opening-and-case-intro.md` §3. Aşağıdaki davranış kütüphanesi yalnız payload fikirleri için HEURISTIC kaynak olarak okunabilir.
+
 # Dynamic Case Ident System v1
 
 > Karar: D-034 (Founder 2026-10-13). Bağlı: `brand-system-v1.md` §C, `video-ui-spec-v1.md` §1 (CASE label), Founder-approved visual direction (D-033). Uygulayıcı: `documentary-creative-director` (concept) → `documentary-production-handoff` (alanlar) → render PC (`production-engineer`).

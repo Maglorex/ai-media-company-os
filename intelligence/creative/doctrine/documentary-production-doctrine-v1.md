@@ -1,3 +1,5 @@
+> **HISTORICAL — 2026-10-14 (D-045).** Binding canon değildir; araştırma/benchmark ve HEURISTIC kaynak. Ölçümler DIAGNOSTIC (TIC-30). Aşağıdaki "bağlayıcı", "kanıt > doctrine > brand" ve prototype rubric ifadeleri canon tarafından değiştirildi: `channels/the-industrial-casebook/canon/README.md`.
+
 # The Industrial Casebook — Documentary Production Doctrine v1
 
 > Karar: D-028 (araştırma) → bu dosya (2026-10-13). Statü: **v1 — araştırmaya dayalı, kendi kanal verimizle henüz doğrulanmadı.** İlk prototype + ilk yayın retention verisi v1.1'i tetikler.

@@ -1,11 +1,15 @@
 ---
 name: documentary-virality-gate
-description: Bir video fikri tam senaryo, seslendirme veya production zamanı harcanmadan önce üretime değer mi diye 12 kapıda değerlendirir; READY FOR PILOT / REVISE BEFORE PILOT / DO NOT PRIORITIZE sonucu ve tek düzeltme önerir. Viral tahmini yapmaz, karar vermez.
+description: "SUPERSEDED (D-046) — talimat olarak kullanma; yerine story-viability. Eski açıklama: Bir video fikri tam senaryo, seslendirme veya production zamanı harcanmadan önce üretime değer mi diye 12 kapıda değerlendirir; READY FOR PILOT / REVISE BEFORE PILOT / DO NOT PRIORITIZE **sinyali** (HEURISTIC/DIAGNOSTIC girdi) ve tek düzeltme önerir. Nihai fikir kararı değildir, production izni vermez: kanal kararı yazılı değerlendirmeyle PURSUE / REVISE / KILL (canon D-045, TIC-03). Viral tahmini yapmaz."
 ---
 
 # Documentary Virality Gate
 
-Kapsam: `Industrial & Technology Autopsies` (N2) için 10–25 dk belge-öncelikli, faceless belgesel fikirleri. Girdi: çalışma başlığı + fikir özeti (örn. `production/pilots/.../P*.md`). Senaryo gerekmez.
+> **SUPERSEDED — 2026-10-14 (D-046, Stage 3).** Bu skill talimat olarak kullanılmaz; yerine: **story-viability** (`channels/the-industrial-casebook/pipeline/README.md`). Davranışlarının yeni yeri: `channels/the-industrial-casebook/pipeline/consolidation-map.md`. Aşağıdaki metin tarihseldir.
+
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Bu kapının dereceleri fikir değerlendirmesine **girdidir** (TIC-03); karar canon `02` §2'deki yazılı değerlendirmeyle PURSUE / REVISE / KILL olarak verilir. "Broad human relevance" sorusu canon'dan eklenir.
+
+Kapsam: The Industrial Casebook (N2 nişi) için 10–25 dk belge-öncelikli, faceless belgesel fikirleri. Girdi: çalışma başlığı + fikir özeti (örn. `production/pilots/.../P*.md`). Senaryo gerekmez.
 
 ## Ne yapmaz
 - Viral olacağını, CTR'yi veya retention'ı **tahmin etmez**.
@@ -38,7 +42,7 @@ Her kapı: **Güçlü · Orta · Zayıf · Bilinmiyor** + 1 cümle gerekçe (kay
 | 11 | Policy / Legal Risk | Reused/inauthentic content, telif, yaşayan kişiye doğrulanamayan iddia, hukuki risk? | Doğrulanamayan suçlama, lisanssız ana materyal |
 | 12 | Only Us | Bu videoyu bizim kanalımızdan anlamlı kılan unsur (özgün birincil belge, az bilinen kaynak, özgün veri görselleştirme/teknik açıklama, farklı karar analizi)? | Başka kanalla yer değiştirilebilir |
 
-## Sonuç kuralı (mekanik, kesin skor değil)
+## Gate sinyali (mekanik; HEURISTIC/DIAGNOSTIC girdi — nihai karar ve production izni değildir)
 - **READY FOR PILOT:** Dört zorunlu kapının hepsi Güçlü; diğerlerinde en fazla 2 Zayıf ve her birinin düzeltme/kabul notu var.
 - **DO NOT PRIORITIZE:** Bir zorunlu kapı Zayıf **ve** düzeltilemiyor (kaynak yok, görsel kanıt yok, hukuki risk giderilemiyor); veya zorunlu kapılar birlikte Bilinmiyor.
 - **REVISE BEFORE PILOT:** Diğer tüm durumlar (zorunlu kapıda Orta/Zayıf-ama-düzeltilebilir, ya da 3+ Zayıf).
@@ -53,7 +57,8 @@ Evidence: [durum, merkez belge]
 Packaging: [durum]
 Production riski: ...
 Policy/legal riski: ...
-Sonuç: READY FOR PILOT | REVISE BEFORE PILOT | DO NOT PRIORITIZE
+Gate sinyali (girdi, karar değil): READY FOR PILOT | REVISE BEFORE PILOT | DO NOT PRIORITIZE
+Nihai kanal kararı: canon `02` §2 yazılı değerlendirme → PURSUE / REVISE / KILL
 Pilot öncesi tek en önemli düzeltme: ...
 ```
 Altında 12 kapılık tablo (kapı · derece · gerekçe · yalnızca Zayıf/Orta için tek uygulanabilir düzeltme). Kanıt etiketleri `[VERİ]/[VARSAYIM]/[TAHMİN]` yalnızca belirsizliğin sonucu etkilediği yerde. Çıktı değerlendirilen fikrin yanındaki dosyaya veya `production/pilots/` altına kaydedilir.

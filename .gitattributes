@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+company/state/runtime/** text eol=lf
+company/state/runtime/archive/** -text !eol

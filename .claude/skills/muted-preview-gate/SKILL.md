@@ -1,9 +1,11 @@
 ---
 name: muted-preview-gate
-description: Prototype veya full video render'ından sonra, Founder'a göstermeden önce kalıcı görsel QA kapısı — ilk yarıdan 8–10 ayrı ~3 sn'lik sessiz örnek seçer, contact sheet/grid üretir ve "sessizken ilgi çekiyor mu, aynı kanala ait mi, template tekrarı mı, Archive/Evidence/Engineering dünyaları dengeli mi" sorularıyla PASS/REVISE verir; ayrıca brand diversity QA (aynı arka plan modu, aynı foto işlemi, aynı geçiş tekrarı, marka tintiyle öldürülmüş kaynak, case accent kullanımı, semantic progression). Render dosyası gerektirir; render yapmaz.
+description: Prototype veya full video render'ından sonra, Founder'a göstermeden önce kalıcı görsel QA kapısı — ilk yarıdan 8–10 ayrı ~3 sn'lik sessiz örnek seçer, contact sheet/grid üretir ve "sessizken ilgi çekiyor mu, aynı kanala ait mi, template tekrarı mı, Archive/Evidence/Engineering dünyaları dengeli mi" sorularıyla DIAGNOSTIC sinyal üretir (creative PASS/REVISE kararı bağımsız değerlendiricidedir — kanal canon D-045); ayrıca brand diversity QA (aynı arka plan modu, aynı foto işlemi, aynı geçiş tekrarı, marka tintiyle öldürülmüş kaynak, case accent kullanımı, semantic progression). Render dosyası gerektirir; render yapmaz.
 ---
 
 # Muted Preview Gate v1
+
+> **Kanal canon'u önce gelir (D-045):** The Industrial Casebook için yaratıcı/growth kurallarının tek yetkili kaynağı `channels/the-industrial-casebook/canon/README.md`. Bu skill prosedürdür; çelişkide canon kazanır. Bu kapı **DIAGNOSTIC** girdidir (TIC-28–TIC-30): içindeki süre ifadeleri hedef değildir; creative PASS/REVISE kararı işi üretmeyen bağımsız değerlendiricidedir (`company/charter.md` §9).
 
 Karar: D-031. Neden: YouTube ana sayfa/arama önizlemeleri videonun herhangi bir bölümünden sessiz oynayabilir; yalnız intronun markalı olması yeterli değildir. Bağlayıcı: `.claude/rules/brand-and-visual-system.md` §5. Uygulayıcı: render'ın bulunduğu makinedeki Claude (`production-engineer`) üretir; değerlendirme COO / creative director.
 
@@ -31,11 +33,11 @@ Karar: D-031. Neden: YouTube ana sayfa/arama önizlemeleri videonun herhangi bir
 - Kaynak görseller marka tintiyle öldürülmüş mü? (Archive World doğal mı)
 - Archive / Evidence / Engineering gerçekten ayrışıyor mu?
 - Case Accent yalnız accent mi (zemin/filtre değil)? Amber tek odak mı?
-- Görseller semantic progression sağlıyor mu? (doctrine §4; değişmeyen anlam ≤ ~6 sn, bilinçli sessizlik hariç)
+- Görseller semantic progression sağlıyor mu? (değişmeyen anlam uzun süre bekliyor mu — süre hedefi yok, DIAGNOSTIC; bilinçli sessizlik hariç)
 - EVIDENCE etiketleri ledger'la eşleşiyor mu; AI görseller etiketli mi?
 
 ## 4. Sonuç
-- **PASS** → Founder'a izleme dosyası + tek soru (creative-standards §2). Grid Founder'a zorunlu değildir; istenirse gösterilir.
-- **FAIL / REVISE** (bağlayıcı, D-032) → Founder'a gitmez; düzeltme listesi (örnek no · sorun · çözüm) production'a; tekrar gate.
+- **Sinyal temiz** → bağımsız creative QA değerlendirmesine girdi; Founder'a izleme dosyası + tek soru yalnız creative QA'dan sonra (canon `06`). Grid Founder'a zorunlu değildir; istenirse gösterilir.
+- **Sorun sinyali** → düzeltme listesi (örnek no · sorun · çözüm) bağımsız creative QA'ya ve production'a girdi olur; karar (PASS/REVISE) bağımsız değerlendiricidedir (`company/charter.md` §9). Bu gate tek başına kapı değildir (TIC-28).
 - Rapor: `<video>-prototype/final-report.md` içinde "Muted Preview Gate" bölümü. Tekrarlayan REVISE nedeni → `creative-feedback-log` (SİSTEM) + ilgili skill/rule.
 - Ses bu kapının dışında (UNVERIFIED — HUMAN EAR REQUIRED).

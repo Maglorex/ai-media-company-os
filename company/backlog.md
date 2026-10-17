@@ -1,3 +1,5 @@
+> **2026-10-14 (D-042):** Bu dosya yalnız **iş listesidir**, durum kaynağı değildir. Güncel durum ve sıradaki iş: `company/state/current-state.md`. Aşağıdaki maddelerdeki eski durum notları (⛔ DONDURULDU, "Beklemede" vb.) tarihseldir; yürürlükteki kararlar `company/state/active-decisions.md`, artifact statüleri `company/state/artifact-registry.csv`. OS v2 migration süresince P3 maddeleri yürütülmez.
+
 # Backlog
 
 > Öncelik sırası: etki × öğrenme değeri ÷ efor. Her oturum başında gözden geçirilir.
@@ -18,7 +20,7 @@
 - [ ] Kanal Studio doğrulaması (Founder, Studio): C-02…C-12 — güvenlik/izinler, telefon doğrulaması (Intermediate), Advanced Features, custom thumbnail, chapters, A/B aracı, upload defaults, default description, ülke/dil, audience varsayılanı, ayar etiketleri; ayrıca kanal adı/handle kaydı — yayından önce (`intelligence/growth/launch-os/capabilities.md`).
 - [x] 2026-10-13 — (D-040) P3 Brand Proof #3–#5 üretildi → **PROVISIONAL PASS / APPROVED FOR MOTION TEST** (D-041; CF-002).
 - [x] 2026-10-13 — (D-041) **P3 Handoff v3** yazıldı: `P3-production-handoff-prototype-v3.md` (motion prototype ≈82 sn; minimum görsel yoğunluk bütçesi §7d; AI-01 + opsiyonel footage araştırma prompt'ları).
-- [ ] **Founder kararı:** v3 motion prototype render'ı + VO yeniden kullanımı (0 kredi) + AI-01 (ChatGPT) → render PC üretir → muted gate → Founder: "Bunu gerçekten The Industrial Casebook videosu olarak izlemeye devam eder miydim?" (EVET olmadan full production yok).
+- [ ] ⏸ (OS v2 migration süresince yürütülmez — D-042; handoff v3 FROZEN) **Founder kararı:** v3 motion prototype render'ı + VO yeniden kullanımı (0 kredi) + AI-01 (ChatGPT) → render PC üretir → muted gate → Founder: "Bunu gerçekten The Industrial Casebook videosu olarak izlemeye devam eder miydim?" (EVET olmadan full production yok).
 - [x] 2026-10-13 — Render PC'ye IBM Plex Sans Condensed 2.0.0 / Plex Mono 2.5.0 / Source Serif 4.005R kuruldu (Founder onayı; OFL-1.1; resmî GitHub sürümleri; kullanıcı düzeyi, repo dışı). Doğrulandı: Windows, Remotion Chromium, Photoshop, Illustrator (betikle); After Effects, Premiere Pro (Founder görsel kontrolü). **STRONG-PC BRAND FONTS READY = YES.**
 - [x] 2026-10-13 — Remotion Brand System v1 token + yerel font bağlama (sistem altyapısı; P3 dışı): `production/remotion/src/brand/` (`17adef1`, origin/main). Brand-Tokens-Proof PASS (4 dünya, 11/11 font yüzü), font eksikse render durur (test edildi), `theme.ts` legacy ve değişmedi, EncodeTest çıktısı birebir aynı. **BRAND SYSTEM v1 CANONICAL = YES.**
 - [ ] Founder (isteğe bağlı, 10 dk): 2 benchmark videonun ilk 2 dk'sını sesli dinleyip müzik/sessizlik notu → doctrine §9.
@@ -90,6 +92,11 @@
 - [ ] Yayın sırası kararı (pilot ölçümleri sonrası).
 
 ## Sıradaki — kurulum
+- [ ] OS v2 migration Stage 4–6 (her biri ayrı Founder onayı; durum `company/state/current-state.md`).
+- [ ] P3 yeniden açıldığında: `channels/the-industrial-casebook/cases/VID-001/dry-run-v2/06-creative-qa-v2.md` "Required changes" → script → yeni bağımsız QA (D-046).
+- [ ] v2.1 BACKLOG: `video-ui-spec-v1.md` CASE LABEL zamanlaması (cold open) ile canon TIC-08 (CASE ENTRY) uyumlu hale getirilecek; o zamana kadar canon kazanır (L2). Thumbnail accent kuralı netleştirilecek.
+- [ ] EXP-002 kapanış notu (kampanya 2026-10-12'de bitti; stok üretim yapılmadı).
+- [ ] safe-sync performansı (D-050): ilk gerçek Strong PC yayını ≈9 dk sürdü. Ölç (doğrulama profili mi, HEAD ağacı taraması mı, ağ mı) → güvenlik sınırını gevşetmeden iyileştirme önerisi; değişiklik ayrı Founder kararı.
 - [ ] ElevenLabs kredi kullanım politikasını netleştir (mevcut kredilerin onaysız kullanımı serbest mi?).
 - [ ] Deney ve araştırma şablonları (`production/templates/`).
 
